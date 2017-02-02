@@ -79,7 +79,7 @@ if has("gui_running")
   if has("gui_gtk2")
     set guifont=Powerline\ Consolas\ 11
   elseif has("gui_macvim")
-    set guifont=Monaco\ Regular:h13
+    set guifont=Powerline\ Monaco:h13
   elseif has("gui_win32")
     set guifont=Powerline\ Consolas:h10
   endif
@@ -87,6 +87,9 @@ endif
 
 " Go to last visited line on open.
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
+
+" Set certain file extensions to specific filetypes.
+au BufRead,BufNewFile *.pc set filetype=esqlc
 
 " Don't to spaces for tabs in makefiles.
 au FileType make set noexpandtab
