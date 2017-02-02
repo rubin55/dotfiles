@@ -1,0 +1,52 @@
+#!/bin/sh
+
+# A few defaults:
+set +u
+HOSTNAME=`uname -n`
+PS1="[${LOGNAME}@\${HOSTNAME} \${PWD}]\# "
+PATH=/sbin:/usr/sbin:$PATH
+MAIL=/var/mail/root
+EDITOR=/usr/bin/vi
+HISTFILE=$HOME/.history
+HISTSIZE=500
+
+export HOSTNAME PS1 PATH MAIL EDITOR HISTFILE HISTSIZE
+
+# Skip remaining setup if shell non-interactive:
+[[ -o interactive ]] || return 0
+
+
+# Turn on command line editing mode:
+set -o emacs
+
+# Short hand aliases:
+alias m=more h=history  ll='ls -l' j=jobs  p=print
+
+# Set positional parameters to corresponding code values (${27} = \033 = ESC):
+typeset -i8 _i=8#40
+while ((_i -= 1))
+	do set -- "$(print -n \\0${_i#8?})" ${@+"$@"}
+done
+
+# Set up cursor and function keys on ksh88 or posix sh:
+# alias keymap emacs keyboard          command
+# __D   \E[D   ^B    left arrow        move cursor left
+# __C   \E[C   ^F    right arrow       move cursor right
+# __A   \E[A   ^P    up arrow          previous history entry
+# __B   \E[B   ^N    down arrow        next     history entry
+# __5~  \E[5   M-b   prev              move cursor back    one word
+# __6~  \E[6   M-f   next              move cursor forward one word
+# __3~  \E[2         insert            repeat previous argument
+#       ^?     ^D    delete            delete current character
+# __H          ^A    home              move cursor to start of line
+
+#     up         down       right   left    prev             next
+alias __A=${16}  __B=${14}  __C=$6  __D=$2  __5=${27}b${29}  __6=${27}f${29}
+
+#     insert char                                          home
+alias __3="${27}b${27}f${27} ${27}${29} ${27}p${25}${29}"  __H=$1
+
+# Clean up:
+shift 8#40-1
+unset _i
+

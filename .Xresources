@@ -1,0 +1,75 @@
+! My preferred font - specified exactly, just to make sure
+#define FIXFONT -*-terminus-medium-r-*-*-12-*-*-*-*-*-*-*
+#define XFTFONT xft:Powerline Consolas:pixelsize=12:style=Regular
+
+! Font rendering settings
+! Xft.dpi: 96
+! Xft.antialias: true
+! Xft.autohint: false
+! Xft.hinting: true
+! Xft.hintstyle: hintfull
+! Xft.lcdfilter: lcddefault
+! Xft.rgba: rgb
+
+! Motif window manager settings
+!Mwm*fontList: FIXFONT
+!Mwm*client*title*fontList: FIXFONT
+!Mwm*icon*fontList: FIXFONT
+!Mwm*defaultFontList: FIXFONT
+!Mwm*background:#E9E4DD
+!Mwm*foreground:#000000
+!Mwm*activeBackground:#4A708B
+!Mwm*activeForeground:#FFFFFF
+!Mwm*saveUnder:	true
+!Mwm*feedback*background: #E9E4DD
+!Mwm*feedback*foreground: #000000
+!Mwm*icon*background: #E9E4DD
+!Mwm*icon*foreground: #000000
+!Mwm*menu*background: #E9E4DD
+!Mwm*menu*foreground: #000000
+!Mwm*frameBorderWidth:8
+!Mwm*resizeBorderWidth:8
+!Mwm*iconAutoPlace: True
+!Mwm*iconDecoration: image label
+!Mwm*iconImageMinimum: 50x50
+!Mwm*iconImageMaximum: 50x50
+!Mwm*maximumMaximumSize: 1584x868
+
+! Terminal emulation settings
+XTerm*font: XFTFONT
+
+!Default back/foreground
+*background: #282828
+*foreground: #ebdbb2
+
+!Black
+*color0: #282828
+*color8: #928374
+
+!Red
+*color1: #cc241d
+*color9: #fb4934
+
+!Green
+*color2: #98971a
+*color10: #b8bb26
+
+!Yellow
+*color3: #d79921
+*color11: #fabd2f
+
+!Blue
+*color4: #458588
+*color12: #83a598
+
+!Magenta
+*color5: #b16286
+*color13: #d3869b
+
+!Cyan
+*color6: #689d6a
+*color14: #8ec07c
+
+!White
+*color7: #a89984
+*color15: #ebdbb2

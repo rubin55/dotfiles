@@ -1,0 +1,50 @@
+#!/bin/sh
+
+source $(dirname $0)/panel_config
+
+show_volume_internal(){
+    VOLUME=$(amixer -c 0 get Master | grep 'Mono: Playback' | grep -o '...%' | sed 's/\[//' | sed 's/%//' | sed 's/ //')
+    STATE=$(amixer -c 0 get Master | grep 'Mono: Playback' | grep -o '\[on]')
+    if [ "$STATE" == "\[on\]" ]; then
+        echo "%{F$RED_COLOR A:amixer -c 0 set Master toggle:}$(printf '%b' "\ue04f") $VOLUME%%{A F-}"
+    else 
+	    echo "%{F$BLUE_COLOR A:amixer -c 0 set Master toggle:}$(printf '%b' "\ue05d")%{F-} $VOLUME%%{A}"
+    fi
+}
+
+show_volume_external(){
+    VOLUME=$(amixer -c 0 get Speaker | grep 'Front Left: Playback' | grep -o '...%' | sed 's/\[//' | sed 's/%//' | sed 's/ //')
+    STATE=$(amixer -c 0 get Speaker | grep 'Front Left: Playback' | grep -o '\[on]')
+    if [ "$STATE" == "\[on\]" ]; then
+        echo "%{F$RED_COLOR A:amixer -c 0 set Speaker toggle:}$(printf '%b' "\ue04f") $VOLUME%%{A F-}"
+    else 
+	    echo "%{F$BLUE_COLOR A:amixer -c 0 set Speaker toggle:}$(printf '%b' "\ue05d")%{F-} $VOLUME%%{A}"
+    fi
+}
+
+show_wireless(){
+    NAME=$(/sbin/iwconfig wlan0  2> /dev/null | grep 'ESSID:' | awk '{print $4}' | sed 's/ESSID://g' | sed 's/"//g')
+    if [ -z "$NAME" ]; then
+        echo ""
+    elif [ "$NAME" == "off/any" ]; then
+        echo "%{F$RED_COLOR}$(printf '%b' "\ue048")%{F-} no conn"
+    else
+        echo "%{F$WIFI_COLOR}$(printf '%b' "\ue048")%{F-} $NAME"
+    fi
+}
+
+show_battery() {
+    BATTERY=$(battery)
+    echo "%{F$BAT_COLOR}$(printf '%b' "\ue041")%{F-} $BATTERY"
+}
+
+show_load() {
+    AVGLOAD=$(cut -d " " -f 1-3 /proc/loadavg)
+    echo "%{F$BLUE_COLOR}$(printf '%b' "\ue021")%{F-} $AVGLOAD"
+}
+
+
+while :; do
+    echo "S%{r}$(show_battery) $SEP $(show_wireless) $SEP $(show_volume_internal)  %{F$YELLOW_COLOR}  %{F$WIFI_COLOR}$(printf '%b' "\ue01f") %{F$FOREGROUND_COLOR} $(date +'%A, %b %d')  %{B$BACKGROUND_COLOR} %{F$WIFI_COLOR} $(printf '%b' "\ue016") %{F$FOREGROUND_COLOR} $(date +'%H:%M')  %{B F-}"
+    sleep 3 
+done
