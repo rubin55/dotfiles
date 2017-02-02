@@ -36,21 +36,21 @@ servers = (
 chatnets = {
   Freenode = {
     type = "IRC";
-    autosendcmd = "/msg NickServ identify xqeqceDWogCC0C2m ; wait 2000";
+    autosendcmd = "/msg NickServ identify ichangedthesehaxxors ; wait 2000";
     max_kicks = "1";
     max_msgs = "4";
     max_whois = "1";
   };
   Mozilla = {
     type = "IRC";
-    autosendcmd = "/msg NickServ identify PsnduEeZbcnHOtef ; wait 2000";
+    autosendcmd = "/msg NickServ identify evilhaxxorsgoaway ; wait 2000";
     max_kicks = "1";
     max_msgs = "4";
     max_whois = "1";
   };
   OFTC = {
     type = "IRC";
-    autosendcmd = "/msg NickServ identify wCXxYuj3CVvoEOIn ; wait 2000";
+    autosendcmd = "/msg NickServ identify becausethesearenotmypasses ; wait 2000";
     max_kicks = "1";
     max_msgs = "4";
     max_whois = "1";
@@ -64,7 +64,7 @@ channels = (
     name = "&bitlbee";
     chatnet = "bitlbee";
     autojoin = "no";
-    autosendcmd = "/say identify 35L09B1s8Vmnt9Ne";
+    autosendcmd = "/say identify alsothisoneisnottheone";
   },
   { name = "#raaf"; chatnet = "Freenode"; autojoin = "Yes"; }
 );
@@ -322,7 +322,7 @@ statusbar = {
   };
 };
 settings = {
-  core = { 
+  core = {
     real_name = "Rubin Simons";
     user_name = "rubin";
     nick = "rann";
