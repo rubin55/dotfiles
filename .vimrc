@@ -3,7 +3,6 @@ set nocompatible
 
 " VimPlug section.
 call plug#begin('~/.vim/plugged')
-Plug 'morhetz/gruvbox'
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-fugitive'
@@ -20,7 +19,6 @@ syntax on
 filetype on
 filetype plugin on
 filetype indent on
-colorscheme gruvbox
 "scriptencoding utf-8
 
 " File encoding settings.

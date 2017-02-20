@@ -2,8 +2,7 @@
 set nocompatible
 
 " VimPlug section.
-call plug#begin('~/VimFiles/plugged')
-Plug 'morhetz/gruvbox'
+call plug#begin('~/.vim/plugged')
 Plug 'scrooloose/nerdtree'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'tpope/vim-fugitive'
@@ -12,6 +11,7 @@ Plug 'myint/syntastic-extras'
 Plug 'Valloric/YouCompleteMe'
 Plug 'vim-airline/vim-airline'
 Plug 'wkentaro/conque.vim'
+Plug 'tpope/vim-fireplace'
 call plug#end()
 
 " Main options.
@@ -19,7 +19,6 @@ syntax on
 filetype on
 filetype plugin on
 filetype indent on
-colorscheme gruvbox
 "scriptencoding utf-8
 
 " File encoding settings.
@@ -76,9 +75,9 @@ set background=dark
 if has("gui_running")
   set lines=40 columns=120
   if has("gui_gtk2")
-    set guifont=Cousine\ 11
+    set guifont=Powerline\ Consolas\ 11
   elseif has("gui_macvim")
-    set guifont=Monaco\ Regular:h13
+    set guifont=Powerline\ Monaco:h13
   elseif has("gui_win32")
     set guifont=Powerline\ Consolas:h10
   endif
@@ -86,6 +85,9 @@ endif
 
 " Go to last visited line on open.
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
+
+" Set certain file extensions to specific filetypes.
+au BufRead,BufNewFile *.pc set filetype=esqlc
 
 " Don't to spaces for tabs in makefiles.
 au FileType make set noexpandtab
@@ -117,14 +119,14 @@ noremap <silent> ,* :call CommentLinePincer('/* ', ' */')<CR>+
 noremap <silent> ,< :call CommentLinePincer('<!-- ', ' -->')<CR>+
 
 " Custom key mappings.
-nmap <silent> <C-v> :vsplit<CR>
-nmap <silent> <C-h> :split<CR>
-nmap <silent> <C-b> :BuffersToggle!<CR>
-nmap <silent> <C-p> :ProjectCD<CR>:cd<CR>
-nmap <silent> <C-l> :LocateFile<CR>
-nmap <silent> <C-r> :NERDTree<CR>
-nmap <silent> <C-n> :NERDTreeToggle<CR>
-nmap <silent> <C-t> :ConqueTerm cmd.exe<CR>
+map <silent> <M-v> :vsplit<CR>
+map <silent> <M-h> :split<CR>
+map <silent> <M-b> :BuffersToggle!<CR>
+map <silent> <M-p> :ProjectCD<CR>:cd<CR>
+map <silent> <M-l> :LocateFile<CR>
+map <silent> <M-r> :NERDTree<CR>
+map <silent> <M-n> :NERDTreeToggle<CR>
+map <silent> <M-t> :ConqueTerm cmd.exe<CR>
 
 " Settings for NERDTree.
 autocmd VimEnter * silent NERDTree | wincmd p
@@ -167,10 +169,10 @@ let g:airline_powerline_fonts = 1
 let g:ConqueTerm_StartMessages = 0
 
 " Fullscreen enablement for Windows gvim.
-map <C-f> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
+map <M-f> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
 
 " Toggle distraction free mode in gvim.
-map <C-d> <Esc>:call ToggleDistractionFree()<cr>
+map <M-d> <Esc>:call ToggleDistractionFree()<cr>
 function! ToggleDistractionFree()
     let l:menu_option = strridx(&guioptions, "m")
     let l:toolbar_option = strridx(&guioptions, "T")

@@ -2,14 +2,6 @@
 super + shift + r
 	pkill -USR1 -x sxhkd
 
-# Increase brightness.
-XF86MonBrightnessUp
-    xbacklight -inc 3
-
-# Decrease brightness.
-XF86MonBrightnessDown
-    xbacklight -dec 3
-
 # Increase volume.
 XF86AudioRaiseVolume
     amixer set Master 3+
@@ -20,7 +12,8 @@ XF86AudioLowerVolume
 
 # Start a terminal.
 super + Return
-	st -e bash -l
+	xterm -ls
+	#st -e bash -l
 
 # Start dmenu.
 super + m
@@ -46,13 +39,29 @@ super + q
 super + t
 	bspc desktop -l next
 
-# Balance size of curent windows.
+# Activate and deactivate borders.
 super + b
+    bspc config border_width {0,4}
+
+# Set normal border colors.
+super + shift + b
+    bspc config normal_border_color $(getcolor color{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15})
+
+# Set focused border colors.
+super + ctrl + b
+    bspc config focused_border_color $(getcolor color{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15})
+
+# Set active border colors.
+super + alt + b
+    bspc config active_border_color $(getcolor color{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15})
+
+# Center balance size  of curent windows.
+super + c
     bspc node @focused:/ -B
 
 # Set window to fullscreen.
 super + f
-    bspc config window_gap {0,30}
+    bspc config window_gap {0,90}
 	#bspc node -t ~fullscreen
 
 # Set window to floating.

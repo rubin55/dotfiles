@@ -37,17 +37,19 @@ platform=$(uname -o | tr '[:upper:]' '[:lower:]')
 case "$platform" in
     bsd|gnu/linux|linux|unix)
     # Some handy variables (*nix only).
-    export _JAVA_AWT_WM_NONREPARENTING=1
     #export SWT_GTK3=0
+    export _JAVA_AWT_WM_NONREPARENTING=1
+    #export QT_QPA_PLATFORMTHEME=qt5ct
+    #export QT_STYLE_OVERRIDE=''
+    #export XDG_CURRENT_DESKTOP=Unity
     export GDK_USE_XFT=1
     export QT_XFT=true
-    export QT_QPA_PLATFORMTHEME=qt5ct
     export GIT_SSH=/usr/bin/ssh
     export XDG_CONFIG_HOME="$HOME/.config"
     export GEM_HOME="$HOME/.gem/ruby/2.3.0"
-    export GOPATH="$HOME/.go"
     export SAL_USE_VCLPLUGIN=gtk
     export RUST_SRC_PATH="$HOME/.cargo/source/rustc-1.13.0/src"
+    export DROPBOX_USE_LIBAPPINDICATOR=1
 
     # Set up gpg-agent (notice: enable-ssh-support in gpg-agent.conf).
     GPG_TTY="$(tty)"
@@ -78,3 +80,14 @@ fi
 if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
+
+# Go environment setup using gvm.
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+gvm use go1.8 > /dev/null
+
+# Node environment setup using nvm.
+[[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
+nvm use stable > /dev/null
+
+# Rust environment setting (rustup).
+[[ -s "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
