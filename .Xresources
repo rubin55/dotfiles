@@ -1,15 +1,17 @@
 ! My preferred font - specified exactly, just to make sure
 #define FIXFONT -*-terminus-medium-r-*-*-32-*-*-*-*-*-*-*
-#define XFTFONT xft:Terminus:pixelSize=32:style=Regular
+!#define XFTFONT xft:Terminus:pixelSize=32:style=Regular
+#define XFTFONT xft:Powerline Consolas:size=11:style=Regular
 
-! Font rendering settings
-! Xft.dpi: 96
-! Xft.antialias: true
-! Xft.autohint: false
-! Xft.hinting: true
-! Xft.hintstyle: hintfull
-! Xft.lcdfilter: lcddefault
-! Xft.rgba: rgb
+! Font rendering settings.
+! Should match .config/fontconfig/fonts.conf
+Xft.antialias: true
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.lcdfilter: lcdlight
+Xft.dpi: 192
 
 ! Motif window manager settings
 !Mwm*fontList: FIXFONT
@@ -35,14 +37,16 @@
 !Mwm*iconImageMaximum: 50x50
 !Mwm*maximumMaximumSize: 1584x868
 
-! Mouse cursor settings
-Xcursor.theme: whiteglass
-Xcursor.size: 32
+! Explicit font settings for XTerm
+XTerm*faceName: Powerline Consolas
+XTerm*faceSize: 11
 
 ! Default font settings
-*font: FIXFONT
+*font: XFTFONT
 *allowBoldFonts: false
 
+! Set Xcursor theme explicitly
+Xcursor.theme: default
 
 ! Include color theme
 #include ".colorthemes/active.res"

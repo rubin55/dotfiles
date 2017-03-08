@@ -35,13 +35,18 @@ super + shift + q
 super + q
 	bspc node -c
 
+# Switch between half and full scale / resolution.
+super + shift + s
+    xrandr --output eDP-1 --mode {1600x900,3200x1800} --dpi {96,192}
+    #xrandr --output eDP-1 --scale {0.5x0.5,1x1}
+
 # Cycle between monocle/tiled presentation.
 super + t
 	bspc desktop -l next
 
 # Activate and deactivate borders.
 super + b
-    bspc config border_width {0,4}
+    bspc config border_width {0; bspc config window_gap 72,3; bspc config window_gap 68}
 
 # Set normal border colors.
 super + shift + b
@@ -51,9 +56,9 @@ super + shift + b
 super + ctrl + b
     bspc config focused_border_color $(getcolor color{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15})
 
-# Set active border colors.
+# Set background color.
 super + alt + b
-    bspc config active_border_color $(getcolor color{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15})
+    xsetroot -solid $(getcolor color{0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15})
 
 # Center balance size  of curent windows.
 super + c
@@ -61,7 +66,7 @@ super + c
 
 # Set window to fullscreen.
 super + f
-    bspc config window_gap {0,90}
+    bspc config window_gap {0,72}
 	#bspc node -t ~fullscreen
 
 # Set window to floating.

@@ -9,9 +9,11 @@ Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/syntastic'
 Plug 'myint/syntastic-extras'
 Plug 'Valloric/YouCompleteMe'
-Plug 'vim-airline/vim-airline'
 Plug 'wkentaro/conque.vim'
 Plug 'tpope/vim-fireplace'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'chriskempson/base16-vim'
 call plug#end()
 
 " Main options.
@@ -20,6 +22,11 @@ filetype on
 filetype plugin on
 filetype indent on
 "scriptencoding utf-8
+
+" Set color mode.
+set t_Co=256
+colorscheme base16-default-dark
+"let g:airline_theme='base16'
 
 " File encoding settings.
 set encoding=utf-8
@@ -126,7 +133,7 @@ map <silent> <M-p> :ProjectCD<CR>:cd<CR>
 map <silent> <M-l> :LocateFile<CR>
 map <silent> <M-r> :NERDTree<CR>
 map <silent> <M-n> :NERDTreeToggle<CR>
-map <silent> <M-t> :ConqueTerm cmd.exe<CR>
+map <silent> <M-t> :ConqueTerm bash -ls<CR>
 
 " Settings for NERDTree.
 autocmd VimEnter * silent NERDTree | wincmd p
