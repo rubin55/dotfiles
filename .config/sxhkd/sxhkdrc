@@ -37,7 +37,7 @@ super + q
 
 # Switch between half and full scale / resolution.
 super + shift + s
-    xrandr --output eDP-1 --mode {1600x900,3200x1800} --dpi {96,192}
+    xrandr --output eDP-1 --mode {1600x900 --dpi 96,3200x1800 --dpi 192}
     #xrandr --output eDP-1 --scale {0.5x0.5,1x1}
 
 # Cycle between monocle/tiled presentation.
