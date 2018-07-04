@@ -3,17 +3,18 @@ set nocompatible
 
 " VimPlug section.
 call plug#begin('~/.vim/plugged')
-Plug 'scrooloose/nerdtree'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'tpope/vim-fugitive'
-Plug 'scrooloose/syntastic'
+Plug 'morhetz/gruvbox'
 Plug 'myint/syntastic-extras'
-Plug 'Valloric/YouCompleteMe'
-Plug 'wkentaro/conque.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'sirver/UltiSnips'
 Plug 'tpope/vim-fireplace'
+Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'chriskempson/base16-vim'
+Plug 'wkentaro/conque.vim'
+Plug 'Shougo/unite.vim'
+Plug 'Valloric/YouCompleteMe'
+Plug 'Xuyuanp/nerdtree-git-plugin'
 call plug#end()
 
 " Main options.
@@ -21,12 +22,8 @@ syntax on
 filetype on
 filetype plugin on
 filetype indent on
+colorscheme gruvbox
 "scriptencoding utf-8
-
-" Set color mode.
-set t_Co=256
-colorscheme base16-default-dark
-"let g:airline_theme='base16'
 
 " File encoding settings.
 set encoding=utf-8
@@ -79,22 +76,19 @@ set nowritebackup
 set background=dark
 
 " Settings for gvim.
-if has("gui_running")
+if has('gui_running')
   set lines=40 columns=120
-  if has("gui_gtk2")
-    set guifont=Powerline\ Consolas\ 11
-  elseif has("gui_macvim")
-    set guifont=Powerline\ Monaco:h13
-  elseif has("gui_win32")
-    set guifont=Powerline\ Consolas:h10
+  if has('gui_gtk2')
+    set guifont=Hack\ 11
+  elseif has('gui_macvim')
+    set guifont=Hack:h13
+  elseif has('gui_win32')
+    set guifont=Hack:h10
   endif
 endif
 
 " Go to last visited line on open.
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
-
-" Set certain file extensions to specific filetypes.
-au BufRead,BufNewFile *.pc set filetype=esqlc
 
 " Don't to spaces for tabs in makefiles.
 au FileType make set noexpandtab
@@ -110,32 +104,46 @@ highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$\| \+\ze\t/
 
 " Extra indenting options for shell scripts.
-if !exists("b:sh_indent_options")
+if !exists('b:sh_indent_options')
   let b:sh_indent_options = {}
 endif
 let b:sh_indent_options['case-statements'] = 0
 let b:sh_indent_options['case-breaks'] = 0
 
 "Non-recursive visual mode key mappings for comments.
-noremap <silent> ,# :call CommentLineToEnd('# ')<CR>+
-noremap <silent> ,/ :call CommentLineToEnd('// ')<CR>+
-noremap <silent> ," :call CommentLineToEnd('" ')<CR>+
-noremap <silent> ,; :call CommentLineToEnd('; ')<CR>+
-noremap <silent> ,- :call CommentLineToEnd('-- ')<CR>+
-noremap <silent> ,* :call CommentLinePincer('/* ', ' */')<CR>+
-noremap <silent> ,< :call CommentLinePincer('<!-- ', ' -->')<CR>+
+noremap <silent> ,# :call CommentLineToEnd('# ')<Cr>+
+noremap <silent> ,/ :call CommentLineToEnd('// ')<Cr>+
+noremap <silent> ," :call CommentLineToEnd('" ')<Cr>+
+noremap <silent> ,; :call CommentLineToEnd('; ')<Cr>+
+noremap <silent> ,- :call CommentLineToEnd('-- ')<Cr>+
+noremap <silent> ,* :call CommentLinePincer('/* ', ' */')<Cr>+
+noremap <silent> ,< :call CommentLinePincer('<!-- ', ' -->')<Cr>+
 
-" Custom key mappings.
-map <silent> <M-v> :vsplit<CR>
-map <silent> <M-h> :split<CR>
-map <silent> <M-b> :BuffersToggle!<CR>
-map <silent> <M-p> :ProjectCD<CR>:cd<CR>
-map <silent> <M-l> :LocateFile<CR>
-map <silent> <M-r> :NERDTree<CR>
-map <silent> <M-n> :NERDTreeToggle<CR>
-map <silent> <M-t> :ConqueTerm bash -ls<CR>
+" Navigate windows using alt-arrow-keys.
+nmap <silent> <M-Up> :wincmd k<Cr>
+nmap <silent> <M-Down> :wincmd j<Cr>
+nmap <silent> <M-Left> :wincmd h<Cr>
+nmap <silent> <M-Right> :wincmd l<Cr>
+
+" Vertical and horizontal split window.
+map <silent> <M-v> :vsplit<Cr>
+map <silent> <M-h> :split<Cr>
+
+" Settings for Conque.
+map <silent> <M-c> :ConqueTerm cmd.exe<Cr>
+
+" Settings for Unite.
+map <silent> <M-f> :Unite -resume -no-split -buffer-name=files -start-insert file<cr>
+map <silent> <M-r> :Unite -resume -no-split -buffer-name=recursive -start-insert file_rec<cr>
+map <silent> <M-b> :Unite -resume -no-split -buffer-name=buffer buffer<Cr>
+call unite#filters#matcher_default#use(['matcher_fuzzy'])
+autocmd FileType unite call s:unite_keymaps()
+function! s:unite_keymaps()
+    map <buffer> <Esc>   <Plug>(unite_exit)
+endfunction`
 
 " Settings for NERDTree.
+map <silent> <M-n> :NERDTreeToggle<Cr>
 autocmd VimEnter * silent NERDTree | wincmd p
 autocmd VimEnter * NERDTreeToggle
 let g:NERDTreeQuitOnOpen = 1
@@ -147,27 +155,25 @@ let g:NERDTreeIgnore=['^NTUSER\.DAT.*$']
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 let g:NERDTreeIndicatorMapCustom = {
-    \ "Modified"  : "✹",
-    \ "Staged"    : "✚",
-    \ "Untracked" : "✭",
-    \ "Renamed"   : "➜",
-    \ "Unmerged"  : "═",
-    \ "Deleted"   : "✖",
-    \ "Dirty"     : "✗",
-    \ "Clean"     : "✓",
-    \ "Unknown"   : "?"
+    \ 'Modified'  : '✹',
+    \ 'Staged'    : '✚',
+    \ 'Untracked' : '✭',
+    \ 'Renamed'   : '➜',
+    \ 'Unmerged'  : '═',
+    \ 'Deleted'   : '✖',
+    \ 'Dirty'     : '✗',
+    \ 'Clean'     : '✓',
+    \ 'Unknown'   : '?'
     \ }
 
-" Settings for syntastic.
+" Settings for Syntastic.
+map <silent> <M-s> :SyntasticCheck<Cr> :SyntasticToggleMode<Cr>
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
-
-" Settings for Eclim.
-let g:EclimCompletionMethod = 'omnifunc'
-let g:EclimBuffersDefaultAction = 'edit'
-let g:EclimLocateFileDefaultAction = 'edit'
+let g:syntastic_java_checkers = []
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 
 " Settings for Airline.
 let g:airline_powerline_fonts = 1
@@ -175,16 +181,54 @@ let g:airline_powerline_fonts = 1
 " Settings for ConqueTerm.
 let g:ConqueTerm_StartMessages = 0
 
+" Settings for UltiSnips.
+nmap <silent> <M-u> :UltiSnipsEdit<Cr>
+let g:UltiSnipsUsePythonVersion = 3
+if has('unix')
+    let g:UltiSnipsSnippetsDir = '/home/rubin/.vim/snippets'
+    let g:UltiSnipsSnippetDirectories=['/home/rubin/VimFiles/snippets']
+elseif has('win32')
+    let g:UltiSnipsSnippetsDir = 'C:/Users/rubin/.vim/snippets'
+    let g:UltiSnipsSnippetDirectories=['C:/Users/rubin/VimFiles/snippets']
+endif
+let g:UltiSnipsEnableSnipMate = 0
+let g:UltiSnipsListSnippets = '<M-u>'
+let g:UltiSnipsEditSplit= 'vertical'
+
+" Settings for YouCompleteMe.
+let g:ycm_key_invoke_completion = '<C-Space>'
+let g:ycm_key_list_select_completion = ['<Down>']
+let g:ycm_key_list_previous_completion = ['Up']
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_filetype_blacklist = {
+      \ 'html' : 1,
+      \ 'infolog' : 1,
+      \ 'mail' : 1,
+      \ 'markdown' : 1,
+      \ 'notes' : 1,
+      \ 'pandoc' : 1,
+      \ 'pom' : 1,
+      \ 'qf' : 1,
+      \ 'tagbar' : 1,
+      \ 'text' : 1,
+      \ 'unite' : 1,
+      \ 'vimwiki' : 1,
+      \ 'xml' : 1
+      \}
+
+"this is a bar comment.
+
+
 " Fullscreen enablement for Windows gvim.
-map <M-f> <Esc>:call libcallnr("gvimfullscreen.dll", "ToggleFullScreen", 0)<CR>
+map <F11> <Esc>:call libcallnr('gvimfullscreen.dll', 'ToggleFullScreen', 0)<Cr>
 
 " Toggle distraction free mode in gvim.
 map <M-d> <Esc>:call ToggleDistractionFree()<cr>
 function! ToggleDistractionFree()
-    let l:menu_option = strridx(&guioptions, "m")
-    let l:toolbar_option = strridx(&guioptions, "T")
-    let l:scrollbar_left_option = strridx(&guioptions, "L")
-    let l:scrollbar_right_option = strridx(&guioptions, "r")
+    let l:menu_option = strridx(&guioptions, 'm')
+    let l:toolbar_option = strridx(&guioptions, 'T')
+    let l:scrollbar_left_option = strridx(&guioptions, 'L')
+    let l:scrollbar_right_option = strridx(&guioptions, 'r')
     if l:menu_option > 0
         set guioptions-=m
     else
@@ -207,3 +251,4 @@ function! ToggleDistractionFree()
     endif
 endfunction
 call ToggleDistractionFree()
+
