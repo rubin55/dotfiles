@@ -1,5 +1,11 @@
 # ~/.bash_profile: executed by bash(1) for login shells.
 
+# Set PKG_CONFIG_PATH.
+export PKG_CONFIG_PATH="/usr/lib/pkgconfig:/System/Library/Frameworks/Ruby.framework/Versions/2.3/usr/lib/pkgconfig:/System/Library/Frameworks/Python.framework/Versions/2.7/lib/pkgconfig:$HOME/Applications/GnuTLS/gnutls35/lib/pkgconfig:$HOME/Applications/Samba/samba44/lib/pkgconfig:$HOME/Applications/OpenSSL/openssl10/lib/pkgconfig:/Applications/PostgreSQL/lib/pkgconfig:/Applications/Xcode.app/Contents/Developer/usr/share/pkgconfig"
+
+# Expand PATH with some local things.
+export PATH="/Applications/CMake.app/Contents/bin:/Applications/Emacs.app/Contents/MacOS/bin:/Applications/MacVim.app/Contents/bin:/Applications/Postgres.app/Contents/Versions/latest/bin:/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$HOME/.gem/ruby/2.3/bin:$HOME/.local/bin:$HOME/Applications/Ant/ant110/bin:$HOME/Applications/Autotools/autoconf2/bin:$HOME/Applications/Autotools/automake1/bin:$HOME/Applications/Bluemix/bx05/bin:$HOME/Applications/Corkscrew/corkscrew2/bin:$HOME/Applications/Ctags/ctags58/bin:$HOME/Applications/Dos2unix/d2u73/bin:$HOME/Applications/Forth/pforth28/bin:$HOME/Applications/GetText/gt019/bin:$HOME/Applications/GnuPG/gnupg21/bin:$HOME/Applications/GnuTLS/gnutls35/bin:$HOME/Applications/GotYourBack/gyb11:$HOME/Applications/Gradle/gradle46/bin:$HOME/Applications/Htop/htop22/bin:$HOME/Applications/Jenkins/jenkins2/bin:$HOME/Applications/Maven/maven35/bin:$HOME/Applications/MinGW/mingw-w32/bin:$HOME/Applications/MinGW/mingw-w64/bin:$HOME/Applications/Mono/mono512/bin:$HOME/Applications/Nmap/nmap76/bin:$HOME/Applications/Node.js/nodejs8/bin:$HOME/Applications/OpenShift/os3/bin:$HOME/Applications/OpenSSL/openssl10/bin:$HOME/Applications/Oracle/instantclient122:$HOME/Applications/PkgConfig/pkgconfig029/bin:$HOME/Applications/Readline/rl7/bin:$HOME/Applications/Samba/samba44/bin:$HOME/Applications/Scheme/chez95/bin:$HOME/Applications/SCons/scons3/bin:$HOME/Library/Python/2.7/bin:$HOME/Syncthing/Source/RAAF/Scripts/python:$HOME/Syncthing/Source/RAAF/Scripts/shell:$PATH"
+
 # Get the aliases and functions
 if [ -f ~/.bashrc ]; then
 	. ~/.bashrc
@@ -7,49 +13,22 @@ fi
 
 alias error=">&2 echo"
 
-# Take out pound sign from color hex.
-get_color() {
-    getcolor $1 | sed 's|^\#||g'
-}
-
-if [ "$TERM" = "linux" ]; then
-    echo -en "\e]P$(get_color color0)" #black
-    echo -en "\e]P$(get_color color8)" #darkgrey
-    echo -en "\e]P$(get_color color1)" #darkred
-    echo -en "\e]P$(get_color color9)" #red
-    echo -en "\e]P$(get_color color2)" #darkgreen
-    echo -en "\e]P$(get_color color10)" #green
-    echo -en "\e]P$(get_color color3)" #brown
-    echo -en "\e]P$(get_color color11)" #yellow
-    echo -en "\e]P$(get_color color4)" #darkblue
-    echo -en "\e]P$(get_color color12)" #blue
-    echo -en "\e]P$(get_color color5)" #darkmagenta
-    echo -en "\e]P$(get_color color13)" #magenta
-    echo -en "\e]P$(get_color color6)" #darkcyan
-    echo -en "\e]P$(get_color color14)" #cyan
-    echo -en "\e]P$(get_color color7)" #lightgrey
-    echo -en "\e]P$(get_color color15)" #white
-    clear #for background artifacting
-fi
-
 # I have my preference for PS1.
 scm_ps1() {
     typeset s
     svn info > /dev/null 2>&1
     if [[ $? = 0 ]] ; then
-        source /usr/local/bin/svn-prompt
+        source $HOME/.local/bin/svn-prompt
         s="$(__svn_ps1 ' (%s)')"
     else
-        source /usr/local/bin/git-prompt
+        source $HOME/.local/bin/git-prompt
         s="$(__git_ps1 ' (%s)')"
     fi
 
     echo -n "$s"
 }
-PS1='[\u@\h \[\033[01;94m\]\W\[\033[00;31m\]$(scm_ps1)\[\033[0m\]]\$ '
 
-# Expand PATH with some local things.
-export PATH=$PATH:"$HOME/.local/bin"
+PS1='[\u@\h \[\033[01;94m\]\W\[\033[00;31m\]$(scm_ps1)\[\033[0m\]]\$ '
 
 # Set the terminal title.
 echo -ne "\033]0;Terminal\007"
