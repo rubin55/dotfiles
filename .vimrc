@@ -3,6 +3,7 @@ set nocompatible
 
 " VimPlug section.
 call plug#begin('~/.vim/plugged')
+Plug 'arcticicestudio/nord-vim'
 Plug 'morhetz/gruvbox'
 Plug 'myint/syntastic-extras'
 Plug 'scrooloose/nerdtree'
@@ -15,6 +16,7 @@ Plug 'wkentaro/conque.vim'
 Plug 'Shougo/unite.vim'
 Plug 'Valloric/YouCompleteMe'
 Plug 'Xuyuanp/nerdtree-git-plugin'
+Plug 'Fyrbll/intero-vim'
 call plug#end()
 
 " Main options.
@@ -81,7 +83,9 @@ if has('gui_running')
   if has('gui_gtk2')
     set guifont=Hack\ 11
   elseif has('gui_macvim')
-    set guifont=Hack:h13
+    set guifont=Hack:h14
+    set macmeta
+    set guioptions+=T
   elseif has('gui_win32')
     set guifont=Hack:h10
   endif
@@ -183,7 +187,7 @@ let g:ConqueTerm_StartMessages = 0
 
 " Settings for UltiSnips.
 nmap <silent> <M-u> :UltiSnipsEdit<Cr>
-let g:UltiSnipsUsePythonVersion = 3
+let g:UltiSnipsUsePythonVersion = 2
 if has('unix')
     let g:UltiSnipsSnippetsDir = '/home/rubin/.vim/snippets'
     let g:UltiSnipsSnippetDirectories=['/home/rubin/VimFiles/snippets']
@@ -216,11 +220,10 @@ let g:ycm_filetype_blacklist = {
       \ 'xml' : 1
       \}
 
-"this is a bar comment.
 
-
-" Fullscreen enablement for Windows gvim.
-map <F11> <Esc>:call libcallnr('gvimfullscreen.dll', 'ToggleFullScreen', 0)<Cr>
+" Fullscreen enablement for Windows or Mac gvim.
+"map <F11> <Esc>:call libcallnr('gvimfullscreen.dll', 'ToggleFullScreen', 0)<Cr>
+map <F11> :set invfu
 
 " Toggle distraction free mode in gvim.
 map <M-d> <Esc>:call ToggleDistractionFree()<cr>

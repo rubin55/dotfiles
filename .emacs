@@ -1,138 +1,117 @@
+;; Always enable server mode, for emacsclient sessions.
 (server-start)
-(global-unset-key (kbd "C-z"))
-(menu-bar-mode -1)
+
+;; Rebind middle-mouse-button.
+(define-key key-translation-map (kbd "<s-mouse-1>") (kbd "<mouse-2>"))
+
+;; Remember file positions.
+(save-place-mode 1)
+
+;; Configure tab behaviour.
+(setq-default tab-width 4 indent-tabs-mode nil)
+(setq-default c-basic-offset 4 c-default-style "bsd")
+
+;; Auto indent.
+(define-key global-map (kbd "RET") 'newline-and-indent)
+
+;; Configure package.el if emacs >= 24.
+(when (>= emacs-major-version 24)
+  (require 'package)
+  (setq package-enable-at-startup nil)
+  (add-to-list
+   'package-archives
+   '("melpa" . "http://melpa.org/packages/")t))
+  (package-initialize)
+
+;; Load color theme.
+(load-theme 'nord t)
+
+;; Set window size
+(when (display-graphic-p)
+  (add-to-list 'default-frame-alist (cons 'width 120))
+  (add-to-list 'default-frame-alist (cons 'height 40)))
+
+;; Scroll one line at a time (less "jumpy" than defaults).
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
+(setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
+(setq scroll-step 1) ;; keyboard scroll one line at a time
+(setq auto-window-vscroll nil) ;; extreme performance increase (10x)
+
+;; Disable backup and autosave files.
+(setq make-backup-files nil) ; stop creating backup~ files
+(setq auto-save-default nil) ; stop creating #autosave# files
+
+;; Disable the games menu.
 (define-key menu-bar-tools-menu [games] nil)
-(show-paren-mode 1)
-(require 'cl)
-(setq package-enable-at-startup nil)
-(package-initialize)
-(add-hook 'after-init-hook 'global-company-mode)
-(setq make-backup-files nil)
+
+;; Show help of item under cursor.
 (setq help-at-pt-display-when-idle t)
 (setq help-at-pt-timer-delay 0.1)
 (help-at-pt-set-timer)
-(require 'eclim)
-(global-eclim-mode)
-(require 'company)
-(require 'company-emacs-eclim)
-(company-emacs-eclim-setup)
-(global-company-mode t)
-(require 'yasnippet)
-(add-to-list 'yas-snippet-dirs "~/Dropbox/Source/Other/yasnippet-snippets")
-(yas-global-mode t)
+
+;; Enable evil mode
 (require 'evil)
 (evil-mode 1)
-(require 'package)
-(add-to-list 'package-archives
- '("melpa" . "https://melpa.org/packages/"))
-(add-to-list 'custom-theme-load-path "~/.emacs.d/themes")
-(load-theme 'gruvbox t)
+
+;; Make esc.. escape.
+(defun minibuffer-keyboard-quit ()
+  "Abort recursive edit.
+In Delete Selection mode, if the mark is active, just deactivate it;
+then it takes a second \\[keyboard-quit] to abort the minibuffer."
+  (interactive)
+  (if (and delete-selection-mode transient-mark-mode mark-active)
+      (setq deactivate-mark  t)
+    (when (get-buffer "*Completions*") (delete-windows-on "*Completions*"))
+    (abort-recursive-edit)))
+(define-key evil-normal-state-map [escape] 'keyboard-quit)
+(define-key evil-visual-state-map [escape] 'keyboard-quit)
+(define-key minibuffer-local-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-ns-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-completion-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-must-match-map [escape] 'minibuffer-keyboard-quit)
+(define-key minibuffer-local-isearch-map [escape] 'minibuffer-keyboard-quit)
+(global-set-key [escape] 'evil-exit-emacs-state)
+
+;; Enable powerline status bar.
 (require 'powerline)
-(powerline-default-theme)
+(setq powerline-image-apple-rgb t)
+(powerline-center-evil-theme)
+
+;; Enable paredit mode for various lisp and scheme modes.
+(autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
+  (add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
+  (add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
+  (add-hook 'ielm-mode-hook             #'enable-paredit-mode)
+  (add-hook 'lisp-mode-hook             #'enable-paredit-mode)
+  (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
+  (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+
+;; Enable Eclipse JDT Server mode
+(add-to-list 'load-path "/Users/rubin/Syncthing/Source/Other/lsp-mode")
+(add-to-list 'load-path "/Users/rubin/Syncthing/Source/Other/lsp-java")
+(require 'lsp-mode)
+(require 'lsp-java)
+(setq lsp-java-server-install-dir "/Users/rubin/.vscode/extensions/redhat.java-0.31.0/server")
+(add-hook 'java-mode-hook #'lsp-java-enable)
+
+;; Custom settings below this line.
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(ANSI-color-names-vector
-   ["#212526" "#ff4b4b" "#b4fa70" "#fce94f" "#729fcf" "#e090d7" "#8cc4ff" "#eeeeec"])
- '(custom-safe-themes
-   (quote
-    ("a27c00821ccfd5a78b01e4f35dc056706dd9ede09a8b90c6955ae6a390eb1c1e" default)))
- '(eclim-eclipse-dirs "/opt/eclipse/eclipse45")
- '(eclimd-executable "/opt/eclipse/eclipse45/eclimd")
  '(inhibit-startup-screen t)
- '(paradox-github-token t)
+ '(package-selected-packages
+   (quote
+    (geiser paredit nord-theme markdown-mode yasnippet tide rust-mode rich-minority powerline popup intero evil cl-generic cider)))
+ '(scroll-bar-mode nil)
  '(show-paren-mode t)
+ '(toggle-scroll-bar -1)
  '(tool-bar-mode nil))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Powerline Consolas" :foundry "unknown" :slant normal :weight normal :height 98 :width normal)))))
-
-(add-hook 'typescript-mode-hook
-          (lambda ()
-            (tide-setup)
-            (flycheck-mode +1)
-            (setq flycheck-check-syntax-automatically '(save mode-enabled))
-            (eldoc-mode +1)
-            ;; company is an optional dependency. You have to
-            ;; install it separately via package-install
-            (company-mode-on)))
-
-;; aligns annotation to the right hand side
-(setq company-tooltip-align-annotations t)
-
-(defun check-expansion ()
-  (save-excursion
-    (if (looking-at "\\_>") t
-      (backward-char 1)
-      (if (looking-at "\\.") t
-    (backward-char 1)
-    (if (looking-at "->") t nil)))))
-
-(defun do-yas-expand ()
-  (let ((yas/fallback-behavior 'return-nil))
-    (yas/expand)))
-
-(defun tab-indent-or-complete ()
-  (interactive)
-  (cond
-   ((minibufferp)
-    (minibuffer-complete))
-   (t
-    (indent-for-tab-command)
-    (if (or (not yas/minor-mode)
-        (null (do-yas-expand)))
-    (if (check-expansion)
-        (progn
-          (company-manual-begin)
-          (if (null company-candidates)
-          (progn
-            (company-abort)
-            (indent-for-tab-command)))))))))
-
-(defun tab-complete-or-next-field ()
-  (interactive)
-  (if (or (not yas/minor-mode)
-      (null (do-yas-expand)))
-      (if company-candidates
-      (company-complete-selection)
-    (if (check-expansion)
-      (progn
-        (company-manual-begin)
-        (if (null company-candidates)
-        (progn
-          (company-abort)
-          (yas-next-field))))
-      (yas-next-field)))))
-
-(defun expand-snippet-or-complete-selection ()
-  (interactive)
-  (if (or (not yas/minor-mode)
-      (null (do-yas-expand))
-      (company-abort))
-      (company-complete-selection)))
-
-(defun abort-company-or-yas ()
-  (interactive)
-  (if (null company-candidates)
-      (yas-abort-snippet)
-    (company-abort)))
-
-(global-set-key [tab] 'tab-indent-or-complete)
-(global-set-key (kbd "TAB") 'tab-indent-or-complete)
-(global-set-key [(control return)] 'company-complete-common)
-
-(define-key company-active-map [tab] 'expand-snippet-or-complete-selection)
-(define-key company-active-map (kbd "TAB") 'expand-snippet-or-complete-selection)
-
-(define-key yas-minor-mode-map [tab] nil)
-(define-key yas-minor-mode-map (kbd "TAB") nil)
-
-(define-key yas-keymap [tab] 'tab-complete-or-next-field)
-(define-key yas-keymap (kbd "TAB") 'tab-complete-or-next-field)
-(define-key yas-keymap [(control tab)] 'yas-next-field)
-(define-key yas-keymap (kbd "C-g") 'abort-company-or-yas)
+ '(default ((t (:family "Hack" :foundry "outline" :slant normal :weight normal :height 140 :width normal)))))
