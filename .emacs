@@ -73,9 +73,23 @@
 (setq help-at-pt-timer-delay 0.1)
 (help-at-pt-set-timer)
 
-;; Enable evil mode
+;; Enable evil mode.
 (require 'evil)
 (evil-mode 1)
+
+;; Turn off audible bell.
+(setq ring-bell-function 'ignore)
+
+;; Set alt/meta/option behaviour.
+(when (eq system-type 'darwin)
+  (setq mac-command-modifier 'super)
+  (setq mac-control-modifier 'control)
+  (setq mac-function-modifier 'hyper)
+  (setq mac-option-modifier 'meta)
+  (setq mac-right-command-modifier 'super)
+  (setq mac-right-control-modifier 'control)
+  (setq mac-right-option-modifier 'meta)
+  )
 
 ;; Make esc.. escape.
 (defun minibuffer-keyboard-quit ()
@@ -103,6 +117,8 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 
 ;; Enable paredit mode for various lisp and scheme modes.
 (autoload 'enable-paredit-mode "paredit" "Turn on pseudo-structural editing of Lisp code." t)
+  (add-hook 'cider-mode-hook            #'enable-paredit-mode)
+  (add-hook 'clojure-mode-hook          #'enable-paredit-mode)
   (add-hook 'emacs-lisp-mode-hook       #'enable-paredit-mode)
   (add-hook 'eval-expression-minibuffer-setup-hook #'enable-paredit-mode)
   (add-hook 'ielm-mode-hook             #'enable-paredit-mode)
@@ -110,13 +126,17 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
   (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
 
-;; Enable Eclipse JDT Server mode
+;; Enable Eclipse JDT Server mode.
 (add-to-list 'load-path "/Users/rubin/Syncthing/Source/Other/lsp-mode")
 (add-to-list 'load-path "/Users/rubin/Syncthing/Source/Other/lsp-java")
 (require 'lsp-mode)
 (require 'lsp-java)
 (setq lsp-java-server-install-dir "/Users/rubin/.vscode/extensions/redhat.java-0.31.0/server")
 (add-hook 'java-mode-hook #'lsp-java-enable)
+
+;; Settings for Cider.
+(setq cider-lein-command "lein.sh")
+(setq cider-repl-display-help-banner nil)
 
 ;; Custom settings below this line.
 (custom-set-variables
@@ -137,4 +157,4 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "Fira Code" :foundry "outline" :slant normal :weight normal :height 140 :width normal)))))
+ '(default ((t (:family "PragmataPro Mono Liga" :foundry "outline" :slant normal :weight normal :height 160 :width normal)))))

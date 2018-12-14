@@ -83,11 +83,12 @@ if has('gui_running')
   if has('gui_gtk2')
     set guifont=Hack\ 11
   elseif has('gui_macvim')
-    set guifont=Hack:h14
+    set guifont=PragmataPro\ Mono\ Liga:h16
+    " set macligatures
     set macmeta
     set guioptions+=T
   elseif has('gui_win32')
-    set guifont=Hack:h10
+    set guifont=Consolas:h10
   endif
 endif
 

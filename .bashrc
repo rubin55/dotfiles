@@ -48,13 +48,15 @@ case "$platform" in
     #export SAL_USE_VCLPLUGIN=gtk
     #export RUST_SRC_PATH="$HOME/.cargo/source/rustc-1.13.0/src"
     #export DROPBOX_USE_LIBAPPINDICATOR=1
+    export DOTNET_CLI_TELEMETRY_OPTOUT=1
     export GEM_HOME="$HOME/.gem/ruby/2.3"
     export GIT_SSH="/usr/bin/ssh"
-    export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
+    export JAVA_HOME="$(/usr/libexec/java_home -v 8)"
     export STACK_ROOT="$HOME/.stack/root"
     #export PGDATA=/Library/PostgreSQL/data
     export ORACLE_PATH=/Users/rubin/.oracle
     export TNS_ADMIN="$HOME/.oracle"
+    #export KUBECONFIG="$HOME/.bluemix/plugins/container-service/clusters/kubernetes-cluster/kube-config-mil01-kubernetes-cluster.yml"
 
     # Set up gpg-agent (notice: enable-ssh-support in gpg-agent.conf).
     GPG_TTY="$(tty)"
@@ -101,8 +103,8 @@ fi
 #gvm use go1.8 > /dev/null
 
 # Node environment setup using nvm.
-[[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh"
-nvm use node > /dev/null
+[[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh" 2> /dev/null
+nvm use --silent --delete-prefix node 2> /dev/null
 
 # Rust environment setting (rustup).
 [[ -s "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
