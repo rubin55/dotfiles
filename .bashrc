@@ -51,7 +51,7 @@ case "$platform" in
     export DOTNET_CLI_TELEMETRY_OPTOUT=1
     export GEM_HOME="$HOME/.gem/ruby/2.3"
     export GIT_SSH="/usr/bin/ssh"
-    export JAVA_HOME="$(/usr/libexec/java_home -v 8)"
+    export JAVA_HOME="$(/usr/libexec/java_home -v 1.8.0)"
     export STACK_ROOT="$HOME/.stack/root"
     #export PGDATA=/Library/PostgreSQL/data
     export ORACLE_PATH=/Users/rubin/.oracle

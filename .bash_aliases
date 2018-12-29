@@ -2,6 +2,7 @@
 
 alias em='em.sh'
 alias grep='grep --color=auto'
+alias java_home='/usr/libexec/java_home'
 alias lein='lein.sh'
 alias pforth='pforth -d $HOME/Applications/Forth/pforth28/bin/pforth.dic'
 alias pgctl='pgctl.sh'
