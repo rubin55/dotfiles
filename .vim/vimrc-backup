@@ -77,6 +77,9 @@ set nowritebackup
 " Assume a dark background.
 set background=dark
 
+" Enable line-numbers.
+set number
+
 " Settings for gvim.
 if has('gui_running')
   set lines=40 columns=120

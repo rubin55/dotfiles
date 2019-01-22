@@ -15,6 +15,31 @@
 ;; Remember file positions.
 (save-place-mode 1)
 
+;; Enable line number mode.
+(when (version<= "26.0.50" emacs-version )
+  (global-display-line-numbers-mode))
+
+;; Set word-wrap behaviour.
+(setq-default word-wrap t)
+(define-fringe-bitmap 'right-curly-arrow
+  [#b00000000
+   #b00000000
+   #b00000000
+   #b00000000
+   #b00000000
+   #b00000000
+   #b00000000
+   #b00000000])
+(define-fringe-bitmap 'left-curly-arrow
+  [#b00000000
+   #b00000000
+   #b00000000
+   #b00000000
+   #b00000000
+   #b00000000
+   #b00000000
+   #b00000000])
+
 ;; Configure tab behaviour.
 (setq-default tab-width 4 indent-tabs-mode nil)
 (setq-default c-basic-offset 4 c-default-style "bsd")
