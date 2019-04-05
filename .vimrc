@@ -4,6 +4,7 @@ set nocompatible
 " VimPlug section.
 call plug#begin('~/.vim/plugged')
 Plug 'arcticicestudio/nord-vim'
+Plug 'chriskempson/base16-vim'
 Plug 'morhetz/gruvbox'
 Plug 'myint/syntastic-extras'
 Plug 'scrooloose/nerdtree'
@@ -12,6 +13,7 @@ Plug 'sirver/UltiSnips'
 Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'wkentaro/conque.vim'
 Plug 'Shougo/unite.vim'
 Plug 'Valloric/YouCompleteMe'
@@ -24,7 +26,6 @@ syntax on
 filetype on
 filetype plugin on
 filetype indent on
-colorscheme gruvbox
 "scriptencoding utf-8
 
 " File encoding settings.
@@ -77,11 +78,15 @@ set nowritebackup
 " Assume a dark background.
 set background=dark
 
+" Set color scheme for terminal.
+colorscheme default
+
 " Enable line-numbers.
 set number
 
 " Settings for gvim.
 if has('gui_running')
+  colorscheme gruvbox
   set lines=40 columns=120
   if has('gui_gtk2')
     set guifont=Hack\ 11
@@ -184,6 +189,7 @@ let g:syntastic_java_checkers = []
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 
 " Settings for Airline.
+let g:airline_theme = 'base16color'
 let g:airline_powerline_fonts = 1
 
 " Settings for ConqueTerm.

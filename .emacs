@@ -102,6 +102,10 @@
 (require 'evil)
 (evil-mode 1)
 
+;; Set horizontal and vertical window split keyboard shortcuts.
+(define-key evil-normal-state-map (kbd "M-h") 'split-window-horizontally)
+(define-key evil-normal-state-map (kbd "M-v") 'split-window-vertically)
+
 ;; Turn off audible bell.
 (setq ring-bell-function 'ignore)
 
@@ -150,6 +154,15 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
   (add-hook 'lisp-mode-hook             #'enable-paredit-mode)
   (add-hook 'lisp-interaction-mode-hook #'enable-paredit-mode)
   (add-hook 'scheme-mode-hook           #'enable-paredit-mode)
+
+;; Unbind alt + cursor key binding from paredit.
+(eval-after-load "paredit"
+  '(progn
+     (define-key paredit-mode-map (kbd "M-<up>") nil)
+     (define-key paredit-mode-map (kbd "M-<down>") nil)))
+
+;; Move to windows using alt + cursor keys.
+(windmove-default-keybindings 'meta)
 
 ;; Enable Eclipse JDT Server mode.
 (add-to-list 'load-path "/Users/rubin/Syncthing/Source/Other/lsp-mode")
