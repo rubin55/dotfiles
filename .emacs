@@ -117,8 +117,7 @@
   (setq mac-option-modifier 'meta)
   (setq mac-right-command-modifier 'super)
   (setq mac-right-control-modifier 'control)
-  (setq mac-right-option-modifier 'meta)
-  )
+  (setq mac-right-option-modifier 'meta))
 
 ;; Make esc.. escape.
 (defun minibuffer-keyboard-quit ()

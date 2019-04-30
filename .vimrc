@@ -100,6 +100,10 @@ if has('gui_running')
   endif
 endif
 
+" Silence vim.
+set noerrorbells visualbell t_vb=
+autocmd GUIEnter * set visualbell t_vb=
+
 " Go to last visited line on open.
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
 
