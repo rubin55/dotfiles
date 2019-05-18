@@ -38,20 +38,21 @@ case "$platform" in
     bsd|darwin|gnu/linux|linux|unix)
     # Some handy variables (*nix only).
     #export SWT_GTK3=0
-    #export _JAVA_AWT_WM_NONREPARENTING=1
-    #export QT_QPA_PLATFORMTHEME=qt5ct
-    #export QT_STYLE_OVERRIDE=''
+    export _JAVA_AWT_WM_NONREPARENTING=1
+    export QT_QPA_PLATFORMTHEME=qt5ct
+    export QT_STYLE_OVERRIDE=''
     #export XDG_CURRENT_DESKTOP=Unity
-    #export GDK_USE_XFT=1
-    #export QT_XFT=true
-    #export XDG_CONFIG_HOME="$HOME/.config"
-    #export SAL_USE_VCLPLUGIN=gtk
+    export GDK_SCALE=1
+    export GDK_USE_XFT=1
+    export QT_XFT=true
+    export XDG_CONFIG_HOME="$HOME/.config"
+    export SAL_USE_VCLPLUGIN=gtk
     #export RUST_SRC_PATH="$HOME/.cargo/source/rustc-1.13.0/src"
     #export DROPBOX_USE_LIBAPPINDICATOR=1
     export DOTNET_CLI_TELEMETRY_OPTOUT=1
-    export GEM_HOME="$HOME/.gem/ruby/2.3"
+    export GEM_HOME="$HOME/.gem/ruby/2.4"
     export GIT_SSH="/usr/bin/ssh"
-    export JAVA_HOME="$(/usr/libexec/java_home -v 1.8.0)"
+    #export JAVA_HOME="$(/usr/libexec/java_home -v 1.8.0)"
     export STACK_ROOT="$HOME/.stack/root"
     #export PGDATA=/Library/PostgreSQL/data
     export ORACLE_PATH=/Users/rubin/.oracle
@@ -71,14 +72,14 @@ case "$platform" in
     fi
 
     # Set up proxy when connected to a certain wireless network.
-    SSID=$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | awk '/ SSID/ {print substr($0, index($0, $2))}')
-    if [ "$SSID" == "Corporate" ]; then
-        echo "Notice: connected to Corporate network, enabling proxy settings.."
-        proxy-mac.sh on > ~/.proxy.env
-    else
-        proxy-mac.sh off > ~/.proxy.env
-    fi
-    source ~/.proxy.env
+    #SSID=$(/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | awk '/ SSID/ {print substr($0, index($0, $2))}')
+    #if [ "$SSID" == "Corporate" ]; then
+    #    echo "Notice: connected to Corporate network, enabling proxy settings.."
+    #    proxy-mac.sh on > ~/.proxy.env
+    #else
+    #    proxy-mac.sh off > ~/.proxy.env
+    #fi
+    #source ~/.proxy.env
     ;;
     cygwin|msys)
     # Set up ssh-pageant bridge (notice: enable-putty-support in gpg-agent.conf).
@@ -98,14 +99,16 @@ if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
     . /etc/bash_completion
 fi
 
-# Go environment setup using gvm.
-#[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
-#gvm use go1.8 > /dev/null
+# Java environment setup using jabba.
+[[ -s "$HOME/.jabba/jabba.sh" ]] && source "$HOME/.jabba/jabba.sh"
 
 # Node environment setup using nvm.
 [[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh" 2> /dev/null
-nvm use --silent --delete-prefix node 2> /dev/null
 
-# Rust environment setting (rustup).
+# Rust environment setting (if using rustup).
 [[ -s "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"
+
+# Go environment setup using gvm.
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+gvm use go1.12 > /dev/null
 
