@@ -1,6 +1,9 @@
 " Turn off compatible mode.
 set nocompatible
 
+" Turn off modeline support.
+set nomodeline
+
 " VimPlug section.
 call plug#begin('~/.vim/plugged')
 Plug 'arcticicestudio/nord-vim'
@@ -79,7 +82,7 @@ set nowritebackup
 set background=dark
 
 " Set color scheme for terminal.
-colorscheme default
+" colorscheme default
 
 " Enable line-numbers.
 set number
@@ -92,7 +95,7 @@ if has('gui_running')
     set guifont=Hack\ 11
   elseif has('gui_macvim')
     set guifont=PragmataPro\ Mono\ Liga:h16
-    " set macligatures
+    set macligatures
     set macmeta
     set guioptions+=T
   elseif has('gui_win32')
@@ -193,7 +196,7 @@ let g:syntastic_java_checkers = []
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 
 " Settings for Airline.
-let g:airline_theme = 'base16color'
+let g:airline_theme = 'gruvbox'
 let g:airline_powerline_fonts = 1
 
 " Settings for ConqueTerm.
