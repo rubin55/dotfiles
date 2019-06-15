@@ -1,0 +1,3 @@
+%_topdir /home/rubin/Packages
+%_query_all_fmt %%{name}-%%{version}-%%{release}.%%{arch}
+%debug_package %{nil}
