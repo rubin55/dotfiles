@@ -39,36 +39,33 @@ case "$platform" in
     # Some handy variables (*nix only).
     #export SWT_GTK3=0
     export _JAVA_AWT_WM_NONREPARENTING=1
-    export QT_QPA_PLATFORMTHEME=qt5ct
-    export QT_STYLE_OVERRIDE=''
+    export QT_AUTO_SCREEN_SCALE_FACTOR=0
+    export QT_QPA_PLATFORMTHEME="qt5ct"
     #export XDG_CURRENT_DESKTOP=Unity
     export GDK_SCALE=1
     export GDK_USE_XFT=1
     export QT_XFT=true
     export XDG_CONFIG_HOME="$HOME/.config"
     export SAL_USE_VCLPLUGIN=gtk
-    #export RUST_SRC_PATH="$HOME/.cargo/source/rustc-1.13.0/src"
     #export DROPBOX_USE_LIBAPPINDICATOR=1
     export DOTNET_CLI_TELEMETRY_OPTOUT=1
-    export GEM_HOME="$HOME/.gem/ruby/2.4"
+    export GEM_HOME="$HOME/.gem/ruby/2.5"
     export GIT_SSH="/usr/bin/ssh"
     #export JAVA_HOME="$(/usr/libexec/java_home -v 1.8.0)"
     export STACK_ROOT="$HOME/.stack/root"
     #export PGDATA=/Library/PostgreSQL/data
-    export ORACLE_PATH=/Users/rubin/.oracle
+    export ORACLE_PATH="$HOME/.oracle"
     export TNS_ADMIN="$HOME/.oracle"
-    #export KUBECONFIG="$HOME/.bluemix/plugins/container-service/clusters/kubernetes-cluster/kube-config-mil01-kubernetes-cluster.yml"
 
     # Set up gpg-agent (notice: enable-ssh-support in gpg-agent.conf).
     GPG_TTY="$(tty)"
     export GPG_TTY
     GPG_AGENT_DETECTED="$(ps x | grep gpg-agent | grep -v grep)"
-    GPG_AGENT_SRCFILE="$HOME/.gnupg/gpg-agent.src"
     if [ -z "$GPG_AGENT_DETECTED" ]; then
-        gpg-agent --daemon > "$GPG_AGENT_SRCFILE"
-        source "$GPG_AGENT_SRCFILE"
+        gpg-agent --daemon
+        export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
     else
-        source "$GPG_AGENT_SRCFILE"
+        export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
     fi
 
     # Set up proxy when connected to a certain wireless network.
@@ -80,6 +77,18 @@ case "$platform" in
     #    proxy-mac.sh off > ~/.proxy.env
     #fi
     #source ~/.proxy.env
+
+    # Set up proxy when a certain SSH command is detected as running.
+    CHECK=$(ps ax | grep 'ssh -4 -L 10.10.10.1:49151:194.109.6.13:8080 -D 10.10.10.1:1080 -p 443 rubin@shell.xs4all.nl' | grep -v grep)
+    if [ ! -z "$CHECK" ]; then
+        echo "Notice: SSH with proxy tunneling detected, enabling proxy settings.."
+        http_proxy=http://10.10.10.1:49151
+        https_proxy=$http_proxy
+        HTTP_PROXY=$http_proxy
+        HTTPS_PROXY=$http_proxy
+        export http_proxy https_proxy HTTP_PROXY HTTPS_PROXY
+    fi
+
     ;;
     cygwin|msys)
     # Set up ssh-pageant bridge (notice: enable-putty-support in gpg-agent.conf).
@@ -104,6 +113,7 @@ fi
 
 # Node environment setup using nvm.
 [[ -s "$HOME/.nvm/nvm.sh" ]] && source "$HOME/.nvm/nvm.sh" 2> /dev/null
+nvm use v10.16.0 > /dev/null
 
 # Rust environment setting (if using rustup).
 [[ -s "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"

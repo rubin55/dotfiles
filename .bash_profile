@@ -30,4 +30,3 @@ PS1='[\u@\h \[\033[01;94m\]\W\[\033[00;31m\]$(scm_ps1)\[\033[0m\]]\$ '
 # Set the terminal title.
 echo -ne "\033]0;Terminal\007"
 
-[ -s "/home/rubin/.jabba/jabba.sh" ] && source "/home/rubin/.jabba/jabba.sh"
