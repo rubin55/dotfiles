@@ -117,7 +117,8 @@
   (setq mac-option-modifier 'meta)
   (setq mac-right-command-modifier 'super)
   (setq mac-right-control-modifier 'control)
-  (setq mac-right-option-modifier 'meta))
+  (setq mac-right-option-modifier 'meta)
+  )
 
 ;; Make esc.. escape.
 (defun minibuffer-keyboard-quit ()
@@ -164,12 +165,12 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
 (windmove-default-keybindings 'meta)
 
 ;; Enable Eclipse JDT Server mode.
-(add-to-list 'load-path "/Users/rubin/Syncthing/Source/Other/lsp-mode")
-(add-to-list 'load-path "/Users/rubin/Syncthing/Source/Other/lsp-java")
-(require 'lsp-mode)
-(require 'lsp-java)
-(setq lsp-java-server-install-dir "/Users/rubin/.vscode/extensions/redhat.java-0.31.0/server")
-(add-hook 'java-mode-hook #'lsp-java-enable)
+;(add-to-list 'load-path "/Users/rubin/Syncthing/Source/Other/lsp-mode")
+;(add-to-list 'load-path "/Users/rubin/Syncthing/Source/Other/lsp-java")
+;(require 'lsp-mode)
+;(require 'lsp-java)
+;(setq lsp-java-server-install-dir "/Users/rubin/.vscode/extensions/redhat.java-0.31.0/server")
+;(add-hook 'java-mode-hook #'lsp-java-enable)
 
 ;; Settings for Cider.
 (setq cider-lein-command "lein.sh")
@@ -184,7 +185,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
  '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
-    (forth-mode geiser paredit nord-theme markdown-mode yasnippet tide rust-mode rich-minority powerline popup intero evil cider)))
+    (yaml-mode dockerfile-mode forth-mode geiser paredit nord-theme markdown-mode yasnippet tide rust-mode rich-minority powerline popup intero evil cider)))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(toggle-scroll-bar -1)
