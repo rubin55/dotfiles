@@ -8,7 +8,7 @@ SET_ALIAS=true
 CFG_ALIAS="acrobat"
 CFG_EXEC_UNIX="/opt/acrobat/reader9/acroread"
 CFG_EXEC_MACOS="/Applications/Adobe Acrobat X Pro/Adobe Acrobat Pro.app/Contents/MacOS/AdobeAcrobat"
-CFG_EXEC_WINDOWS="/mnt/c/Program files (x86)/Adobe/Acrobat Reader DC/Reader/AcroRd32.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files (x86)/Adobe/Acrobat 10.0/Acrobat/AcroRd32.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

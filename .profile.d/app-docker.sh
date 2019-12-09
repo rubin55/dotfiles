@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # What to do.
-SET_PATH=true
-SET_ALIAS=false
+SET_PATH=false
+SET_ALIAS=true
 
 # Application locations, alias names, etc.
-CFG_ALIAS="java"
-CFG_EXEC_UNIX="/opt/java/default/bin/java"
-CFG_EXEC_MACOS="$(/usr/libexec/java_home -v 1.8.0 2> /dev/null)/bin/java"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Java/adopt-jdk8/bin/java.exe"
+CFG_ALIAS="docker"
+CFG_EXEC_UNIX="/opt/docker/docker1803/bin/docker"
+CFG_EXEC_MACOS="/usr/local/bin/docker"
+CFG_EXEC_WINDOWS="/mnt/c/Program files/Docker/Docker/Resources/bin/docker.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then
@@ -34,11 +34,5 @@ fi
 
 # If application was found and alias setting enabled, set some aliases.
 if [[ "$SET_ALIAS" == true && "$APP_BINARY" != "not-found" ]]; then
-    alias "$CFG_ALIAS"="$(echo $APP_BINARY | sed -e 's| |\\ |g' -e 's|(|\\(|g' -e 's|)|\\)|g')"
-fi
-
-# If application was found, set a few environment variables.
-if [[ "$APP_BINDIR" != "not-found" ]]; then
-    JAVA_HOME=$(dirname "$APP_BINDIR")
-    export JAVA_HOME
+    alias "$CFG_ALIAS"="sudo $(echo $APP_BINARY | sed -e 's| |\\ |g' -e 's|(|\\(|g' -e 's|)|\\)|g')"
 fi

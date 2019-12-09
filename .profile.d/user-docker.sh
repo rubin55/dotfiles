@@ -1,8 +1,11 @@
 #!/bin/bash
 
-# Set docker host to specific vm if up.
+#DOCKER_HOST="tcp://172.17.1.4:2375"
+DOCKER_HOST="tcp://172.17.1.16:2375"
+# Set docker host to specific machine if up.
 #ping -c1 -q -t1 -W100 10.10.11.3 > /dev/null 2>&1
-#if [ $? == 0 ]; then
-#    echo "Notice: host 10.10.11.3 is up, will use as Docker host.."
-#    export DOCKER_HOST=tcp://10.10.11.3:2375
-#fi
+ping -c 1 -W 1 $(echo $DOCKER_HOST | cut -d '/' -f 3 | cut -d ':' -f 1) > /dev/null
+if [ $? == 0 ]; then
+    echo "Notice: Docker remote host is up, setting DOCKER_HOST=$DOCKER_HOST"
+    export DOCKER_HOST
+fi
