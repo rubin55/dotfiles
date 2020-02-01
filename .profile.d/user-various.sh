@@ -42,17 +42,28 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# A few personal aliases.
+# Emacs and Vim.
 if [ "$(uname -s)" == "Darwin" ]; then
     alias em='em-mac.sh'
-else
-    alias em='em-linux.sh'
+    alias vim='vi.sh'
+    alias vi='vi.sh'
 fi
+if [ "$(uname -s)" == "Linux" ]; then
+    alias em='em-linux.sh'
+    alias vim='vi.sh'
+    alias vi='vi.sh'
+fi
+if [[ "$(uname -r)" =~ "Microsoft" ]]; then
+    alias em='em-windows.sh'
+    alias vim='vi.sh'
+    alias vi='vi.sh'
+fi
+
+# A few other aliases.
 alias open='opener.sh'
 alias session='$HOME/Syncthing/Source/RAAF/session/session.sh'
 alias tipi='tipi.sh'
-alias vim='vi.sh'
-alias vi='vi.sh'
+
 
 # Set the default editor.
 export EDITOR='vi.sh'
