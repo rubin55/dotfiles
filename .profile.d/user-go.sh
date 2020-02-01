@@ -5,8 +5,9 @@
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && gvm use go1.13 > /dev/null
 
 # A few helpful variables.
-[[ $(which go 2>/dev/null) ]] && GO_EXEC=$(which go 2>/dev/null)
-[[ $(which go.exe 2>/dev/null) ]] && GO_EXEC=$(which go.exe 2>/dev/null)
+[[ $(which go 2>/dev/null) ]] && GO_EXEC=$(which go 2>/dev/null) && alias go="$GO_EXEC"
+[[ $(which go.exe 2>/dev/null) ]] && GO_EXEC="go.exe" && alias go="$GO_EXEC"
+[[ $(which gofmt.exe 2>/dev/null) ]] && alias gofmt="gofmt.exe"
 GO_VERSION=$("$GO_EXEC" version | awk '{print $3}' | sed 's/^go//')
 GO_MAJOR=$(echo $GO_VERSION | cut -d. -f 1)
 GO_MINOR=$(echo $GO_VERSION | cut -d. -f 2)
