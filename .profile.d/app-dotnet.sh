@@ -6,8 +6,8 @@ SET_ALIAS=true
 
 # Application locations, alias names, etc.
 CFG_ALIAS="dotnet"
-CFG_EXEC_UNIX="/opt/dotnet/dotnet22/dotnet"
-CFG_EXEC_MACOS="$HOME/Applications/DotNet/dotnet22/dotnet"
+CFG_EXEC_UNIX="/opt/dotnet/dotnet31/dotnet"
+CFG_EXEC_MACOS="$HOME/Applications/DotNet/dotnet31/dotnet"
 CFG_EXEC_WINDOWS="/mnt/c/Program files/dotnet/dotnet.exe"
 
 # Determine application home.
