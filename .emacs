@@ -21,24 +21,25 @@
 
 ;; Set word-wrap behaviour.
 (setq-default word-wrap t)
-(define-fringe-bitmap 'right-curly-arrow
-  [#b00000000
-   #b00000000
-   #b00000000
-   #b00000000
-   #b00000000
-   #b00000000
-   #b00000000
-   #b00000000])
-(define-fringe-bitmap 'left-curly-arrow
-  [#b00000000
-   #b00000000
-   #b00000000
-   #b00000000
-   #b00000000
-   #b00000000
-   #b00000000
-   #b00000000])
+(when (display-graphic-p)
+  (define-fringe-bitmap 'right-curly-arrow
+    [#b00000000
+     #b00000000
+     #b00000000
+     #b00000000
+     #b00000000
+     #b00000000
+     #b00000000
+     #b00000000])
+  (define-fringe-bitmap 'left-curly-arrow
+    [#b00000000
+     #b00000000
+     #b00000000
+     #b00000000
+     #b00000000
+     #b00000000
+     #b00000000
+     #b00000000]))
 
 ;; Configure tab behaviour.
 (setq-default tab-width 4 indent-tabs-mode nil)
