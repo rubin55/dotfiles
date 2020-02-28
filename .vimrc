@@ -8,6 +8,7 @@ set nomodeline
 call plug#begin('~/.vim/plugged')
 Plug 'arcticicestudio/nord-vim'
 Plug 'chriskempson/base16-vim'
+Plug 'fatih/vim-go'
 Plug 'morhetz/gruvbox'
 Plug 'myint/syntastic-extras'
 Plug 'scrooloose/nerdtree'
@@ -17,8 +18,8 @@ Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'wkentaro/conque.vim'
 Plug 'ycm-core/YouCompleteMe'
+Plug 'Shougo/deol.nvim'
 Plug 'Shougo/unite.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'Fyrbll/intero-vim'
@@ -89,8 +90,8 @@ set number
 
 " Settings for gvim.
 if has('gui_running')
-  colorscheme gruvbox
-  set lines=40 columns=120
+  colorscheme nord
+  set lines=25 columns=80
   if has('gui_gtk2')
     set guifont=Hack\ 11
   elseif has('gui_macvim')
@@ -99,7 +100,7 @@ if has('gui_running')
     set macmeta
     set guioptions+=T
   elseif has('gui_win32')
-    set guifont=Consolas:h10
+    set guifont=PragmataPro\ Mono:h12
   endif
 endif
 
@@ -149,8 +150,9 @@ nmap <silent> <M-Right> :wincmd l<Cr>
 map <silent> <M-v> :vsplit<Cr>
 map <silent> <M-h> :split<Cr>
 
-" Settings for Conque.
-map <silent> <M-c> :ConqueTerm cmd.exe<Cr>
+" Deol.nvim terminal.
+tnoremap <ESC> <C-\><C-n>
+map <silent> <M-c> :Deol<Cr>
 
 " Settings for Unite.
 map <silent> <M-f> :Unite -resume -no-split -buffer-name=files -start-insert file<cr>
@@ -199,12 +201,9 @@ let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_
 let g:airline_theme = 'gruvbox'
 let g:airline_powerline_fonts = 1
 
-" Settings for ConqueTerm.
-let g:ConqueTerm_StartMessages = 0
-
 " Settings for UltiSnips.
 nmap <silent> <M-u> :UltiSnipsEdit<Cr>
-let g:UltiSnipsUsePythonVersion = 2
+let g:UltiSnipsUsePythonVersion = 3
 if has('unix')
     let g:UltiSnipsSnippetsDir = '/home/rubin/.vim/snippets'
     let g:UltiSnipsSnippetDirectories=['/home/rubin/VimFiles/snippets']
@@ -239,8 +238,8 @@ let g:ycm_filetype_blacklist = {
 
 
 " Fullscreen enablement for Windows or Mac gvim.
-"map <F11> <Esc>:call libcallnr('gvimfullscreen.dll', 'ToggleFullScreen', 0)<Cr>
-map <F11> :set invfu
+map <F11> <Esc>:call libcallnr('gvimfullscreen.dll', 'ToggleFullScreen', 0)<Cr>
+"map <F11> :set invfu
 
 " Toggle distraction free mode in gvim.
 map <M-d> <Esc>:call ToggleDistractionFree()<cr>
@@ -271,4 +270,7 @@ function! ToggleDistractionFree()
     endif
 endfunction
 call ToggleDistractionFree()
+
+" Enable the menu though.
+"set guioptions+=m
 
