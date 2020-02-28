@@ -106,8 +106,9 @@
 (evil-mode 1)
 
 ;; Set horizontal and vertical window split keyboard shortcuts.
-(define-key evil-normal-state-map (kbd "M-h") 'split-window-horizontally)
-(define-key evil-normal-state-map (kbd "M-v") 'split-window-vertically)
+;; Note that we reverse, so behaviour is like vim split/vsplit.
+(define-key evil-normal-state-map (kbd "M-v") 'split-window-horizontally)
+(define-key evil-normal-state-map (kbd "M-h") 'split-window-vertically)
 
 ;; Turn off audible bell.
 (setq ring-bell-function 'ignore)
