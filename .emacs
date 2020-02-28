@@ -76,8 +76,8 @@
 
 ;; Set window size
 (when (display-graphic-p)
-  (add-to-list 'default-frame-alist (cons 'width 120))
-  (add-to-list 'default-frame-alist (cons 'height 40)))
+  (add-to-list 'default-frame-alist (cons 'width 80))
+  (add-to-list 'default-frame-alist (cons 'height 25)))
 
 ;; Scroll one line at a time (less "jumpy" than defaults).
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
@@ -92,6 +92,9 @@
 
 ;; Disable the games menu.
 (define-key menu-bar-tools-menu [games] nil)
+
+;; Disable the menu bar.
+(menu-bar-mode 0)
 
 ;; Show help of item under cursor.
 (setq help-at-pt-display-when-idle t)
@@ -185,7 +188,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
  '(inhibit-startup-screen t)
  '(package-selected-packages
    (quote
-    (yaml-mode dockerfile-mode forth-mode geiser paredit nord-theme markdown-mode yasnippet tide rust-mode rich-minority powerline popup intero evil cider)))
+    (go-mode yaml-mode dockerfile-mode forth-mode geiser paredit nord-theme markdown-mode yasnippet tide rust-mode rich-minority powerline popup intero evil cider)))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(toggle-scroll-bar -1)
@@ -195,4 +198,4 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "PragmataPro Mono Liga" :foundry "outline" :slant normal :weight normal :height 160 :width normal)))))
+ '(default ((t (:family "PragmataPro Mono Liga" :foundry "outline" :slant normal :weight normal :height 120 :width normal)))))
