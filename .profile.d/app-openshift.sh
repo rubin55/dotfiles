@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="oc"
 CFG_EXEC_UNIX="/opt/openshift/os3/bin/oc"
 CFG_EXEC_MACOS="$HOME/Applications/OpenShift/os3/bin/oc"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/OpenShift/os3/bin/oc"
+CFG_EXEC_WINDOWS="/mnt/c/Program files/OpenShift/os3/bin/oc.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then
