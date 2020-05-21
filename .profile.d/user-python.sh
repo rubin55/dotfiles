@@ -30,6 +30,7 @@ if [ "$platform" == "darwin" ]; then
         PYTHON_VERSION=3.8
         PYTHON_HOME="/Library/Frameworks/Python.framework/Versions/$PYTHON_VERSION"
         alias pip="pip-mac3.sh"
+        alias venv="python3 -m venv"
     else
         PYTHON_VERSION=2.7
         PYTHON_HOME="/usr"
