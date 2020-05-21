@@ -5,10 +5,10 @@ SET_PATH=true
 SET_ALIAS=false
 
 # Application locations, alias names, etc.
-CFG_ALIAS="oc"
-CFG_EXEC_UNIX="/opt/openshift/os3/bin/oc"
-CFG_EXEC_MACOS="$HOME/Applications/OpenShift/os3/bin/oc"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/OpenShift/os3/oc.exe"
+CFG_ALIAS="kubectl"
+CFG_EXEC_UNIX="/opt/kubernetes/k8s1/bin/kubectl"
+CFG_EXEC_MACOS="$HOME/Applications/Kubernetes/k8s1/bin/kubectl"
+CFG_EXEC_WINDOWS="/mnt/c/Program files/Kubernetes/kubectl.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then
