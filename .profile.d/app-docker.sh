@@ -34,5 +34,5 @@ fi
 
 # If application was found and alias setting enabled, set some aliases.
 if [[ "$SET_ALIAS" == true && "$APP_BINARY" != "not-found" ]]; then
-    alias "$CFG_ALIAS"="sudo $(echo $APP_BINARY | sed -e 's| |\\ |g' -e 's|(|\\(|g' -e 's|)|\\)|g')"
+    alias "$CFG_ALIAS"="$(echo $APP_BINARY | sed -e 's| |\\ |g' -e 's|(|\\(|g' -e 's|)|\\)|g')"
 fi

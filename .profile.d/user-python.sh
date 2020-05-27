@@ -1,4 +1,4 @@
-#!/bin/bash
+/#!/bin/bash
 
 platform=$(uname -s | tr '[:upper:]' '[:lower:]')
 [[ "$(uname -r)" =~ "Microsoft" ]] && platform=windows
@@ -9,6 +9,7 @@ if [ "$platform" == "linux" ]; then
     if [ ! -z "$PYTHON_EXEC" ]; then
         alias python='python3'
         alias pip='pip-linux.sh'
+        alias venv="python3 -m venv"
 
         PYTHON_VERSION=$(python -V | awk '{print $2}')
 
@@ -61,6 +62,7 @@ if [ "$platform" == "windows" ]; then
     if [ ! -z "$PYTHON_EXEC" ]; then
         alias python='python.exe'
         alias pip='pip-linux.sh'
+        alias venv="python -m venv"
 
         PYTHON_VERSION=$(python -V | awk '{print $2}')
 
