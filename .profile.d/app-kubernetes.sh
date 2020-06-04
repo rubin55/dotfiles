@@ -32,6 +32,13 @@ if [[ "$SET_PATH" == true && "$APP_BINDIR" != "not-found" ]]; then
     fi
 fi
 
+# Also add krew if found.
+if [[ "$SET_PATH" == true && -x "$HOME/.krew/bin/kubectl-krew" ]]; then
+    if [[ ":$PATH:" != *":$HOME/.krew/bin:"* ]]; then
+        export PATH="${PATH:+"$PATH:"}$HOME/.krew/bin"
+    fi
+fi
+
 # If application was found and alias setting enabled, set some aliases.
 if [[ "$SET_ALIAS" == true && "$APP_BINARY" != "not-found" ]]; then
     alias "$CFG_ALIAS"="$(echo $APP_BINARY | sed -e 's| |\\ |g' -e 's|(|\\(|g' -e 's|)|\\)|g')"

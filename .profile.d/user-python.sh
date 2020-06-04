@@ -1,4 +1,4 @@
-/#!/bin/bash
+#!/bin/bash
 
 platform=$(uname -s | tr '[:upper:]' '[:lower:]')
 [[ "$(uname -r)" =~ "Microsoft" ]] && platform=windows

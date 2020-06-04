@@ -11,7 +11,7 @@ if [ -x "$TTY" -a -x "$GPG_AGENT" -a -x "$GPG_CONF" ]; then
 
     GPG_AGENT_DETECTED="$(ps x | grep gpg-agent | grep -v grep)"
     if [ -z "$GPG_AGENT_DETECTED" ]; then
-        gpg-agent --daemon
+        gpg-agent --daemon > /dev/null
         export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
     else
         export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
