@@ -5,10 +5,10 @@ SET_PATH=true
 SET_ALIAS=false
 
 # Application locations, alias names, etc.
-CFG_ALIAS="gpg"
-CFG_EXEC_UNIX="/opt/gnupg/gnupg22/bin/gpg"
-CFG_EXEC_MACOS="$HOME/Applications/GnuPG/gnupg22/bin/gpg"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/GnuPG/cmd/gpg.cmd"
+CFG_ALIAS="icuinfo"
+CFG_EXEC_UNIX="/opt/icu/icu67/bin/icoinfo"
+CFG_EXEC_MACOS="$HOME/Applications/ICU/icu67/bin/icuinfo"
+CFG_EXEC_WINDOWS="/mnt/c/Program files/ICU/bin/icuinfo.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then
