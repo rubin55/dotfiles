@@ -2,7 +2,7 @@
 
 # If we have gvm, set up go using gvm.
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && gvm use go1.13 > /dev/null
+[[ -s "$HOME/.gvm/scripts/gvm" ]] && gvm use go1.14 > /dev/null
 
 # A few helpful variables.
 [[ $(which go 2>/dev/null) ]] && GO_EXEC=$(which go 2>/dev/null) && alias go="$GO_EXEC"
