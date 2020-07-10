@@ -15,12 +15,12 @@ Plug 'morhetz/gruvbox'
 Plug 'myint/syntastic-extras'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
-Plug 'sirver/UltiSnips'
+Plug 'sirver/UltiSnips', { 'tag': '3.2' }
 Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ycm-core/YouCompleteMe'
+Plug 'ycm-core/YouCompleteMe', { 'branch': 'legacy-py2' }
 Plug 'Shougo/deol.nvim'
 Plug 'Shougo/unite.vim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
@@ -213,7 +213,7 @@ let g:airline_powerline_fonts = 1
 
 " Settings for UltiSnips.
 nmap <silent> <M-u> :UltiSnipsEdit<Cr>
-let g:UltiSnipsUsePythonVersion = 3
+let g:UltiSnipsUsePythonVersion = 2
 if has('unix')
     let g:UltiSnipsSnippetsDir = '/home/rubin/.vim/snippets'
     let g:UltiSnipsSnippetDirectories=['/home/rubin/VimFiles/snippets']
