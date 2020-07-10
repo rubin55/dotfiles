@@ -77,8 +77,8 @@
 
 ;; Set window size
 (when (display-graphic-p)
-  (add-to-list 'default-frame-alist (cons 'width 80))
-  (add-to-list 'default-frame-alist (cons 'height 25)))
+  (add-to-list 'default-frame-alist (cons 'width 120))
+  (add-to-list 'default-frame-alist (cons 'height 40)))
 
 ;; Scroll one line at a time (less "jumpy" than defaults).
 (setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
