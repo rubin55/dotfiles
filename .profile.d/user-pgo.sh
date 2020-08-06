@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Temporarily disable
+return
+
 # When this network is handled by any gateway that's not default, you know we're connected.
 CIDR='10.127.0.0/17'
 
