@@ -63,6 +63,8 @@ fi
 alias open='opener.sh'
 alias session='$HOME/Syncthing/Source/RAAF/session/session.sh'
 alias tipi='tipi.sh'
+alias pgctl='pgctl.sh'
+alias rmqctl='rmqctl.sh'
 
 
 # Set the default editor.
