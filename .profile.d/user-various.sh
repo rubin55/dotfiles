@@ -65,7 +65,7 @@ alias session='$HOME/Syncthing/Source/RAAF/session/session.sh'
 alias tipi='tipi.sh'
 alias pgctl='pgctl.sh'
 alias rmqctl='rmqctl.sh'
-alias pgo=`pgo-wrapper.sh`
+alias pgo='pgo-wrapper.sh'
 
 
 # Set the default editor.
