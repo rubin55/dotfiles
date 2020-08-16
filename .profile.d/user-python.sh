@@ -48,7 +48,7 @@ if [ "$platform" == "darwin" ]; then
         fi
 
         # Used by custom pip-mac.sh.
-        PYTHON_LOCAL_HOME="$HOME/Library/Python/$PYTHON_VERSION/bin"
+        PYTHON_LOCAL_HOME="$HOME/Library/Python/$PYTHON_VERSION"
 
         # Add PYTHON_LOCAL_HOME/bin to path if not in path already.
         if [[ ":$PATH:" != *":$PYTHON_LOCAL_HOME/bin:"* ]]; then
