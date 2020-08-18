@@ -30,21 +30,21 @@ if [ "$platform" == "darwin" ]; then
     if [ -x "/Library/Frameworks/Python.framework/Versions/3.8/bin/python3.8" ]; then
         PYTHON_VERSION=3.8
         PYTHON_HOME="/Library/Frameworks/Python.framework/Versions/$PYTHON_VERSION"
-        alias pip="pip-mac3.sh"
+        #alias pip="pip-mac3.sh"
         alias venv="python3 -m venv"
     else
         PYTHON_VERSION=2.7
         PYTHON_HOME="/usr"
-        alias pip="pip-mac2.sh"
+        #alias pip="pip-mac2.sh"
     fi
 
     PYTHON_EXEC="$PYTHON_HOME/bin/python$PYTHON_VERSION"
     if [ ! -z "$PYTHON_EXEC" ]; then
-        alias python="$PYTHON_EXEC"
+        #alias python="$PYTHON_EXEC"
 
         # Add PYTHON_HOME/bin to path if not in path already.
         if [[ ":$PATH:" != *":$PYTHON_HOME/bin:"* ]]; then
-            export PATH="${PATH:+"$PATH:"}$PYTHON_HOME/bin"
+            export PATH="$PYTHON_HOME/bin${PATH:+":$PATH"}"
         fi
 
         # Used by custom pip-mac.sh.
