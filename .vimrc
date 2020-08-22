@@ -186,7 +186,7 @@ let g:NERDTreeIgnore=['^NTUSER\.DAT.*$']
 "let g:NERDTreeDirArrowCollapsible = '↓'
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ 'Modified'  : '✹',
     \ 'Staged'    : '✚',
     \ 'Untracked' : '✭',
