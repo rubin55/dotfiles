@@ -9,11 +9,11 @@
 [[ $(which node.exe 2>/dev/null) ]] && NODE_EXEC=$(which node.exe 2>/dev/null) && alias node=$NODE_EXEC
 NODE_VERSION=$("$NODE_EXEC" --version | sed 's/^v//')
 
-[[ $(which npm 2>/dev/null) ]] && NPM_EXEC=$(which npm 2>/dev/null) && alias NPM=$NPM_EXEC
+[[ $(which npm 2>/dev/null) ]] && NPM_EXEC=$(which npm 2>/dev/null) && alias npm=$NPM_EXEC
 
 if [[ ! -z "$(which npm.cmd 2>/dev/null)" ]]; then
     NPM_EXEC="cmd.exe /c npm.cmd"
-    alias NPM=$NPM_EXEC
+    alias npm=$NPM_EXEC
 else
     NPM_CURRENT_PREFIX="$($NPM_EXEC config get prefix)"
     if [[ "$NPM_CURRENT_PREFIX" != *"$HOME"* ]]; then

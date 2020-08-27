@@ -53,7 +53,7 @@ if [ "$(uname -s)" == "Linux" ]; then
     alias vim='vi.sh'
     alias vi='vi.sh'
 fi
-if [[ "$(uname -r)" =~ "Microsoft" ]]; then
+if [[ "$(uname -r)" =~ "icrosoft" ]]; then
     alias em='em-windows.sh'
     alias vim='vi.sh'
     alias vi='vi.sh'

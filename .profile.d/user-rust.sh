@@ -2,7 +2,7 @@
 
 # What are we running on?
 platform=$(uname -s | tr '[:upper:]' '[:lower:]')
-[[ "$(uname -r)" =~ "Microsoft" ]] && platform=windows
+[[ "$(uname -r)" =~ "icrosoft" ]] && platform=windows
 
 # On mac or linux, simple cargo home.
 if [[ "$platform" == "darwin" || "$platform" == "linux" ]]; then

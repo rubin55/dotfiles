@@ -5,7 +5,7 @@
 
 # What are we running on?
 platform=$(uname -s | tr '[:upper:]' '[:lower:]')
-[[ "$(uname -r)" =~ "Microsoft" ]] && platform=windows
+[[ "$(uname -r)" =~ "icrosoft" ]] && platform=windows
 
 [[ "$(which ruby 2> /dev/null)" ]] && RUBY_EXEC=$(which ruby 2> /dev/null) && alias ruby="$RUBY_EXEC"
 [[ "$(which ruby.exe 2> /dev/null)" ]] && RUBY_EXEC=ruby.exe && alias ruby="$RUBY_EXEC"
