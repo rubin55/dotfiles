@@ -71,6 +71,13 @@ alias pgo='pgo-wrapper.sh'
 # Set the default editor.
 export EDITOR='vi.sh'
 
+# My title function.
+function title() {
+    [[ -z "$orig" ]] && orig=$PS1
+    local title="\[\e]2;$*\a\]"
+    PS1=${orig}${title};
+}
+
 # I have my preference for PS1.
 scm_ps1() {
     typeset git=$(which git 2> /dev/null)
@@ -92,5 +99,9 @@ scm_ps1() {
 
 PS1='[\u@\h \[\033[01;94m\]\W\[\033[00;31m\]$(scm_ps1)\[\033[0m\]]\$ '
 
-# Set the terminal title.
-echo -ne "\033]0;Terminal\007"
+# Set terminal title to title-cased hostname.
+title=$(hostname | tr '[:upper:]' '[:lower:]' | awk '{for(j=1;j<=NF;j++){ $j=toupper(substr($j,1,1)) substr ($j,2) }}1')
+title "$title"
+
+# Set my default umask.
+umask 0002
