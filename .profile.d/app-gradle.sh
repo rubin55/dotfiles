@@ -6,9 +6,9 @@ SET_ALIAS=false
 
 # Application locations, alias names, etc.
 CFG_ALIAS="gradle"
-CFG_EXEC_UNIX="/opt/gradle/gradle46/bin/gradle"
-CFG_EXEC_MACOS="$HOME/Applications/Gradle/gradle46/bin/gradle"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Gradle/gradle46/bin/gradle.bat"
+CFG_EXEC_UNIX="/opt/gradle/gradle6/bin/gradle"
+CFG_EXEC_MACOS="$HOME/Applications/Gradle/gradle6/bin/gradle"
+CFG_EXEC_WINDOWS="/mnt/c/Program files/Gradle/gradle6/bin/gradle.bat"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then
