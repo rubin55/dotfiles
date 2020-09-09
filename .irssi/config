@@ -1,73 +1,30 @@
 servers = (
   {
-    address = "chat.freenode.net";
+    address = "bnc.irccloud.com";
     chatnet = "Freenode";
-    port = "7070";
-    use_ssl = "yes";
-    ssl_verify = "yes";
-    autoconnect = "yes";
-  },
-  {
-    address = "irc.mozilla.org";
-    chatnet = "Mozilla";
     port = "6697";
-    use_ssl = "yes";
-    ssl_verify = "yes";
+    password = "goawayevilhaxxors";
+    use_tls = "yes";
+    tls_verify = "yes";
     autoconnect = "yes";
-  },
-  {
-    address = "irc.oftc.net";
-    chatnet = "OFTC";
-    port = "6697";
-    use_ssl = "yes";
-    ssl_verify = "yes";
-    autoconnect = "yes";
-  },
-  {
-    address = "localhost";
-    chatnet = "Bitlbee";
-    port = "6667";
-    use_ssl = "no";
-    ssl_verify = "no";
-    autoconnect = "no";
   }
 );
-
 chatnets = {
   Freenode = {
-    type = "IRC";
-    autosendcmd = "/msg NickServ identify ichangedthesehaxxors ; wait 2000";
+    ew = "type";
     max_kicks = "1";
     max_msgs = "4";
     max_whois = "1";
+    type = "IRC";
   };
   Mozilla = {
     type = "IRC";
-    autosendcmd = "/msg NickServ identify evilhaxxorsgoaway ; wait 2000";
     max_kicks = "1";
     max_msgs = "4";
     max_whois = "1";
   };
-  OFTC = {
-    type = "IRC";
-    autosendcmd = "/msg NickServ identify becausethesearenotmypasses ; wait 2000";
-    max_kicks = "1";
-    max_msgs = "4";
-    max_whois = "1";
-  };
-  Bitlbee = { type = "IRC"; };
+  OFTC = { type = "IRC"; max_kicks = "1"; max_msgs = "4"; max_whois = "1"; };
 };
-
-channels = (
-  { name = "#freenode"; chatnet = "Freenode"; autojoin = "No"; },
-  {
-    name = "&bitlbee";
-    chatnet = "bitlbee";
-    autojoin = "no";
-    autosendcmd = "/say identify alsothisoneisnottheone";
-  },
-  { name = "#raaf"; chatnet = "Freenode"; autojoin = "Yes"; }
-);
 
 aliases = {
   ATAG = "WINDOW SERVER";
@@ -269,7 +226,6 @@ statusbar = {
         window = { };
         window_empty = { };
         lag = { priority = "-1"; };
-        act = { priority = "10"; };
         more = { priority = "-1"; alignment = "right"; };
         barend = { priority = "100"; alignment = "right"; };
       };
@@ -326,6 +282,7 @@ settings = {
     real_name = "Rubin Simons";
     user_name = "rubin";
     nick = "rann";
+    timestamp_format = "%H:%M";
   };
   "fe-text" = { actlist_sort = "refnum"; };
   "fe-common/core" = {
@@ -333,5 +290,19 @@ settings = {
     autocreate_query_level = "MSGS";
     autocreate_own_query = "yes";
     window_auto_change = "yes";
+    autolog = "yes";
+    autolog_path = "~/.irssi/logs/$tag/$0.log";
+    autolog_colors = "yes";
+  };
+  "perl/core/scripts" = {
+    awl_shared_sbar = "OFF";
+    awl_viewer_launch = "yes";
+    awl_viewer = "yes";
+    awl_mouse = "yes";
+    nickcolor_colors = "3";
   };
 };
+logs = { };
+keyboard = (
+  { key = "meta-[M"; id = "command"; data = "mouse_xterm"; }
+);

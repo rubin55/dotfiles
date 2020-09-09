@@ -6,7 +6,7 @@ if [ "$(uname -s)" == "Linux" ]; then
     export SAL_USE_VCLPLUGIN=gtk
     export GDK_BACKEND=wayland
 
-    if [[ -x /usr/bin/gsettings ]]; then
+    #if [[ -x /usr/bin/gsettings ]]; then
         # To find all similar keys on schema type following command:
         #gsettings list-recursively org.gnome.desktop.interface
 
@@ -14,8 +14,8 @@ if [ "$(uname -s)" == "Linux" ]; then
         #gsettings reset-recursively org.gnome.desktop.interface
 
         # Make sure that Gnomish GTK3+ stuff uses a sane font config.
-        gsettings set org.gnome.desktop.interface document-font-name 'Serif 12'
-        gsettings set org.gnome.desktop.interface font-name 'Sans 12'
-        gsettings set org.gnome.desktop.interface monospace-font-name 'Monospace 13'
-    fi
+        #gsettings set org.gnome.desktop.interface document-font-name 'Serif 12'
+        #gsettings set org.gnome.desktop.interface font-name 'Sans 12'
+        #gsettings set org.gnome.desktop.interface monospace-font-name 'Monospace 13'
+    #fi
 fi

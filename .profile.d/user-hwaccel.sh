@@ -5,7 +5,9 @@ platform=$(uname -s | tr '[:upper:]' '[:lower:]')
 
 
 if [ "$platform" == "linux" ]; then
-    export VDPAU_DRIVER=r300
+    export LIBVA_DRIVER_NAME=radeonsi
+
+    export VDPAU_DRIVER=radeonsi
 fi
 
 if [ "$platform" == "darwin" ]; then

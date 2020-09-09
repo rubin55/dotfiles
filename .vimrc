@@ -208,7 +208,7 @@ let g:syntastic_java_checkers = []
 let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
 
 " Settings for Airline.
-let g:airline_theme = 'gruvbox'
+let g:airline_theme = 'alduin'
 let g:airline_powerline_fonts = 1
 
 " Settings for UltiSnips.
