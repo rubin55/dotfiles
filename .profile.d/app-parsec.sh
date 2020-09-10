@@ -5,10 +5,10 @@ SET_PATH=true
 SET_ALIAS=false
 
 # Application locations, alias names, etc.
-CFG_ALIAS="teams"
-CFG_EXEC_UNIX="/opt/teams/teams1/bin/teams"
-CFG_EXEC_MACOS="/Applications/Microsoft Teams.app/Contents/MacOS/Teams"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Teams/teams.exe"
+CFG_ALIAS="parsec"
+CFG_EXEC_UNIX="/opt/parsec/parsec0/bin/parsecd"
+CFG_EXEC_MACOS="/Applications/Parsec.app/Contents/MacOS/parsecd"
+CFG_EXEC_WINDOWS="/mnt/c/Program files/Parsec/bin/parsec.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

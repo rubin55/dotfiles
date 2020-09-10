@@ -5,10 +5,10 @@ SET_PATH=true
 SET_ALIAS=false
 
 # Application locations, alias names, etc.
-CFG_ALIAS="teams"
-CFG_EXEC_UNIX="/opt/teams/teams1/bin/teams"
-CFG_EXEC_MACOS="/Applications/Microsoft Teams.app/Contents/MacOS/Teams"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Teams/teams.exe"
+CFG_ALIAS="signal"
+CFG_EXEC_UNIX="/opt/signal/signal1/signal-desktop"
+CFG_EXEC_MACOS="/Applications/Signal.app/Contents/MacOS/signal-desktop"
+CFG_EXEC_WINDOWS="/mnt/c/Program files/Signal/bin/signal-desktop.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then
@@ -33,6 +33,7 @@ if [[ "$SET_PATH" == true && "$APP_BINDIR" != "not-found" ]]; then
 fi
 
 # If application was found and alias setting enabled, set some aliases.
+# Note: Workaround for broken Wayland integration, GDK_BACKEND=x1
 if [[ "$SET_ALIAS" == true && "$APP_BINARY" != "not-found" ]]; then
-    alias "$CFG_ALIAS"="$(echo $APP_BINARY | sed -e 's| |\\ |g' -e 's|(|\\(|g' -e 's|)|\\)|g')"
+    alias "$CFG_ALIAS"="GDK_BACKEND=x11 $(echo $APP_BINARY | sed -e 's| |\\ |g' -e 's|(|\\(|g' -e 's|)|\\)|g')"
 fi
