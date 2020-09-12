@@ -44,17 +44,17 @@ alias l='ls -CF'
 
 # Emacs and Vim.
 if [ "$(uname -s)" == "Darwin" ]; then
-    alias em='em-mac.sh'
+    alias emacs='em-mac.sh'
     alias vim='vi.sh'
     alias vi='vi.sh'
 fi
 if [ "$(uname -s)" == "Linux" ]; then
-    alias em='em-linux.sh'
-    alias vim='vi.sh'
-    alias vi='vi.sh'
+    alias emacs='GDK_BACKEND=x11 emacs'
+    alias gvim='GDK_BACKEND=x11 gvim'
 fi
 if [[ "$(uname -r)" =~ "icrosoft" ]]; then
-    alias em='em-windows.sh'
+    alias emacs='em-windows.sh'
+    alias gvim='vi.sh'
     alias vim='vi.sh'
     alias vi='vi.sh'
 fi
