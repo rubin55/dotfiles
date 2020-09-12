@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Add ~/.local/bin to path if not in path already
+# Prefix ~/.local/bin to path if not in path already
 if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
-    export PATH="${PATH:+"$PATH:"}$HOME/.local/bin"
+    export PATH="$HOME/.local/bin:$PATH"
 fi
 
 # Add scripts directories to path that make sense on unix-likes.
@@ -47,10 +47,6 @@ if [ "$(uname -s)" == "Darwin" ]; then
     alias emacs='em-mac.sh'
     alias vim='vi.sh'
     alias vi='vi.sh'
-fi
-if [ "$(uname -s)" == "Linux" ]; then
-    alias emacs='GDK_BACKEND=x11 emacs'
-    alias gvim='GDK_BACKEND=x11 gvim'
 fi
 if [[ "$(uname -r)" =~ "icrosoft" ]]; then
     alias emacs='em-windows.sh'

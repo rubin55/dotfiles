@@ -1,10 +1,11 @@
 #!/bin/bash
 
 if [ "$(uname -s)" == "Linux" ]; then
+    export GDK_BACKEND=wayland
     export GDK_SCALE=1
     export GDK_USE_XFT=1
+    export GTK_THEME=Adwaita:dark
     export SAL_USE_VCLPLUGIN=gtk
-    export GDK_BACKEND=wayland
 
     #if [[ -x /usr/bin/gsettings ]]; then
         # To find all similar keys on schema type following command:

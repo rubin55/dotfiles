@@ -33,7 +33,6 @@ if [[ "$SET_PATH" == true && "$APP_BINDIR" != "not-found" ]]; then
 fi
 
 # If application was found and alias setting enabled, set some aliases.
-# Note: Workaround for broken Wayland integration, GDK_BACKEND=x1
 if [[ "$SET_ALIAS" == true && "$APP_BINARY" != "not-found" ]]; then
-    alias "$CFG_ALIAS"="GDK_BACKEND=x11 $(echo $APP_BINARY | sed -e 's| |\\ |g' -e 's|(|\\(|g' -e 's|)|\\)|g')"
+    alias "$CFG_ALIAS"="$(echo $APP_BINARY | sed -e 's| |\\ |g' -e 's|(|\\(|g' -e 's|)|\\)|g')"
 fi
