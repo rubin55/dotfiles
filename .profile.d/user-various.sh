@@ -93,11 +93,19 @@ scm_ps1() {
     echo -n "$s"
 }
 
-PS1='[\u@\h \[\033[01;94m\]\W\[\033[00;31m\]$(scm_ps1)\[\033[0m\]]\$ '
+# Only do color and title setting if we're not on stupid terminals.
+stupid="dumb eterm eterm-color vt100"
+if [[ ! $stupid =~ $TERM ]]; then
+    # Set my own fancy prompt.
+    PS1='[\u@\h \[\033[01;94m\]\W\[\033[00;31m\]$(scm_ps1)\[\033[0m\]]\$ '
 
-# Set terminal title to title-cased hostname.
-title=$(hostname | cut -d '.' -f 1 | tr '[:upper:]' '[:lower:]' | awk '{for(j=1;j<=NF;j++){ $j=toupper(substr($j,1,1)) substr ($j,2) }}1')
-title "$title"
+    # Set terminal title to title-cased hostname.
+    title=$(hostname | cut -d '.' -f 1 | tr '[:upper:]' '[:lower:]' | awk '{for(j=1;j<=NF;j++){ $j=toupper(substr($j,1,1)) substr ($j,2) }}1')
+    title "$title"
+else
+    # Set my own fancy, colorless prompt.
+    PS1='[\u@\h \W$(scm_ps1)]\$ '
+fi
 
 # Set my default umask.
 umask 0002
