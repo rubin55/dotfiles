@@ -166,6 +166,13 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
      (define-key paredit-mode-map (kbd "M-<up>") nil)
      (define-key paredit-mode-map (kbd "M-<down>") nil)))
 
+;; Enable nov.el mode when opening .epubs.
+(add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
+(setq nov-variable-pitch nil)
+
+;; Adjust ansi colors (for example in (e)shell.
+(setq ansi-color-names-vector ["black" "red" "green" "yellow" "PaleBlue" "magenta" "cyan" "white"])
+
 ;; Move to windows using alt + cursor keys.
 (windmove-default-keybindings 'meta)
 
@@ -189,8 +196,7 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
  ;; If there is more than one, they won't work right.
  '(inhibit-startup-screen t)
  '(package-selected-packages
-   (quote
-    (go-mode yaml-mode dockerfile-mode forth-mode geiser paredit nord-theme markdown-mode yasnippet tide rust-mode rich-minority powerline popup intero evil cider)))
+   '(nov go-mode yaml-mode dockerfile-mode forth-mode geiser paredit nord-theme markdown-mode yasnippet tide rust-mode rich-minority powerline popup intero evil cider))
  '(scroll-bar-mode nil)
  '(show-paren-mode t)
  '(toggle-scroll-bar -1)
@@ -200,4 +206,4 @@ then it takes a second \\[keyboard-quit] to abort the minibuffer."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(default ((t (:family "PragmataPro Mono Liga" :foundry "outline" :slant normal :weight normal :height 120 :width normal)))))
+ '(default ((t (:family "PragmataPro Mono Liga" :foundry "outline" :slant normal :weight normal :height 130 :width normal)))))
