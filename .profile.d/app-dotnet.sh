@@ -1,8 +1,8 @@
 #!/bin/bash
 
 # What to do.
-SET_PATH=false
-SET_ALIAS=true
+SET_PATH=true
+SET_ALIAS=false
 
 # Application locations, alias names, etc.
 CFG_ALIAS="dotnet"

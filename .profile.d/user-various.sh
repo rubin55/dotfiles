@@ -101,3 +101,8 @@ title "$title"
 
 # Set my default umask.
 umask 0002
+
+# Invoke some conditional runners.
+# See user-syncthing.sh, user-sway.sh.
+runSyncthing
+runSway
