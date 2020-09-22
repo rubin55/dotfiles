@@ -63,6 +63,8 @@ alias pgctl='pgctl.sh'
 alias rmqctl='rmqctl.sh'
 alias pgo='pgo-wrapper.sh'
 
+# Set default SciPy image viewer.
+export SCIPY_PIL_IMAGE_VIEWER=display
 
 # Set the default editor.
 export EDITOR='vi.sh'

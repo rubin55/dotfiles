@@ -4,14 +4,14 @@ runSway() {
     local platform=$(uname -s | tr '[:upper:]' '[:lower:]')
 
     # But if it's WSL..
-    if [[ "$(uname -r)" =~ "Microsoft" ]]; then
+    if [[ "$(uname -r)" =~ "icrosoft" ]]; then
        local platform=windows
     fi
 
     local sway="$(which sway)"
     local running=$(pgrep -f sway)
 
-    if [[ $platform == linux && -z $running ]]; then
+    if [[ $platform == linux && $TERM == linux && -z $running ]]; then
         echo "Notice: Starting sway.."
         if test -z "${XDG_RUNTIME_DIR}"; then
             export XDG_RUNTIME_DIR=/tmp/${UID}-runtime-dir

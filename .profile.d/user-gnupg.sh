@@ -17,3 +17,6 @@ if [ -x "$TTY" -a -x "$GPG_AGENT" -a -x "$GPG_CONF" ]; then
         export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
     fi
 fi
+
+# Make sure the current tty can connect to the agent.
+gpg-connect-agent updatestartuptty /bye > /dev/null
