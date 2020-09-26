@@ -30,6 +30,11 @@ if [[ "$SET_PATH" == true && "$APP_BINDIR" != "not-found" ]]; then
     if [[ ":$PATH:" != *":$APP_BINDIR:"* ]]; then
         export PATH="${PATH:+"$PATH:"}$APP_BINDIR"
     fi
+
+    # Add man pages to manpath.
+    if [[ ":$MANPATH:" != *":${APP_BINDIR/bin/man}:"* ]]; then
+        export MANPATH="${MANPATH:+"$MANPATH:"}${APP_BINDIR/bin/man}"
+    fi
 fi
 
 # If application was found and alias setting enabled, set some aliases.
