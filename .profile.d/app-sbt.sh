@@ -6,9 +6,9 @@ SET_ALIAS=false
 
 # Application locations, alias names, etc.
 CFG_ALIAS="sbt"
-CFG_EXEC_UNIX="/opt/scala/scala2/bin/scala"
-CFG_EXEC_MACOS="$HOME/Applications/Scala/scala2/bin/scala"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Scala/scala2/bin/scala"
+CFG_EXEC_UNIX="/opt/sbt/sbt13/bin/sbt"
+CFG_EXEC_MACOS="$HOME/Applications/SBT/sbt13/bin/sbt"
+CFG_EXEC_WINDOWS="/mnt/c/Program files/SBT/bin/sbt"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then
