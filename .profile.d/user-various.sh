@@ -61,7 +61,8 @@ alias session='$HOME/Syncthing/Source/RAAF/session/session.sh'
 alias tipi='tipi.sh'
 alias pgctl='pgctl.sh'
 alias rmqctl='rmqctl.sh'
-alias pgo='pgo-wrapper.sh'
+alias pgo='$HOME/Syncthing/Source/ICTU/gs/ops/deployer/scripts/pgo-wrapper.sh'
+alias do-backup='$HOME/Syncthing/Source/ICTU/gs/ops/deployer/scripts/do-backup.sh'
 
 # Set default SciPy image viewer.
 export SCIPY_PIL_IMAGE_VIEWER=display
