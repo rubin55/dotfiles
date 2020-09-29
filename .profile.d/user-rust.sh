@@ -21,6 +21,11 @@ if [[ "$platform" == "darwin" || "$platform" == "linux" ]]; then
     fi
 fi
 
+RUST_SRC_PATH="/usr/lib64/rust-$(rustc --version | awk '{print $2}')/rustlib/src/rust/src"
+if [[ "$platform" == "linux" && -d "$RUST_SRC_PATH" ]]; then
+    export RUST_SRC_PATH
+fi
+
 # On WSL it's different.
 if [[ "$platform" == "windows" ]]; then
     CARGO_HOME="$(echo $HOME | sed 's|/home/|/mnt/c/Users/|g')/.cargo"
