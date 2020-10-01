@@ -18,12 +18,12 @@ if [[ "$platform" == "darwin" || "$platform" == "linux" ]]; then
         if [[ ":$PATH:" != *":$CARGO_HOME/bin:"* ]]; then
             export PATH="${PATH:+"$PATH:"}$CARGO_HOME/bin"
         fi
-    fi
-fi
 
-RUST_SRC_PATH="/usr/lib64/rust-$(rustc --version | awk '{print $2}')/rustlib/src/rust/src"
-if [[ "$platform" == "linux" && -d "$RUST_SRC_PATH" ]]; then
-    export RUST_SRC_PATH
+        RUST_SRC_PATH="/usr/lib64/rust-$(rustc --version | awk '{print $2}')/rustlib/src/rust/src"
+        if [[ "$platform" == "linux" && -d "$RUST_SRC_PATH" ]]; then
+            export RUST_SRC_PATH
+        fi
+    fi
 fi
 
 # On WSL it's different.
