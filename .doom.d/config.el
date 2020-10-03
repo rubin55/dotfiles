@@ -132,10 +132,7 @@
 ;; Configure lsp erlang mode.
 (use-package lsp-mode
   :hook ((erlang-mode . lsp)
-         (erlang-edoc-mode . lsp))
- :config
- (setq lsp-erlang-server-connection-type "stdio")
- (setq lsp-erlang-server-path "~/.emacs.d/.local/etc/lsp/erlang_ls/_build/default/bin/erlang_ls"))
+         (erlang-edoc-mode . lsp)))
 
 ;; Configure lsp elixir mode.
 (use-package lsp-mode
