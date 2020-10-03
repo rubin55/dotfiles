@@ -49,3 +49,4 @@
 ;(unpin! t)
 
 (package! lsp-pyright)
+(package! powershell)

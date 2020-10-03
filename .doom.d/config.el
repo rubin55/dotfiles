@@ -3,6 +3,9 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
+;; Be silent about cl package being deprecated.
+(setq byte-compile-warnings '(cl-functions))
+
 ;; Always enable server mode, for emacsclient sessions.
 (server-start)
 
@@ -81,24 +84,68 @@
   :hook ((groovy-mode . lsp)
          (groovy-electric-mode . lsp))
  :config
- (setq lsp-groovy-server-file "~/.emacs.d/.local/etc/lsp/groovy-language-server/build/libs/groovy-language-server-all.jar")
- ;; Comment/uncomment this line to see interactions between lsp client/server.
- ;;(setq lsp-log-io t)
-)
+ (setq lsp-groovy-server-file "~/.emacs.d/.local/etc/lsp/groovy-language-server/build/libs/groovy-language-server-all.jar"))
 
-;; Configure lsp groovy mode.
+;; Configure lsp lua mode.
 (use-package lsp-mode
   :hook ((lua-mode . lsp))
  :config
  (setq lsp-clients-lua-language-server-install-dir "~/.emacs.d/.local/etc/lsp/lua-language-server")
- (setq lsp-clients-lua-language-server-bin "~/.emacs.d/.local/etc/lsp/lua-language-server/bin/Linux/lua-language-server")
- ;; Comment/uncomment this line to see interactions between lsp client/server.
- ;;(setq lsp-log-io t)
-)
+ (setq lsp-clients-lua-language-server-bin "~/.emacs.d/.local/etc/lsp/lua-language-server/bin/Linux/lua-language-server"))
 
-;; Configure lsp docker mode.
+;; Configure lsp json mode.
 (use-package lsp-mode
   :hook ((json-mode . lsp)))
+
+;; Configure lsp powershell mode.
+(use-package lsp-mode
+  :hook ((powershell-mode . lsp))
+ :config
+ (setq lsp-pwsh-exe "/opt/powershell/ps7/pwsh"))
+
+;; Configure lsp html mode.
+(use-package lsp-mode
+  :hook ((html-mode . lsp)))
+
+;; Configure lsp yaml mode.
+(use-package lsp-mode
+  :hook ((yaml-mode . lsp)))
+
+;; Configure lsp xml mode.
+(use-package lsp-mode
+  :hook ((xml-mode . lsp)
+         (nxml-mode . lsp))
+ :config
+ (setq lsp-xml-server-command "xml-ls.sh")
+ (setq lsp-xml-server-vmargs "-noverify -Xmx64M -XX:+UseG1GC -XX:+UseStringDeduplication -jar")
+ (setq lsp-xml-jar-file "/home/rubin/.emacs.d/.local/etc/lsp/lemminx/org.eclipse.lemminx/target/org.eclipse.lemminx-uber.jar"))
+
+;; Configure lsp sql mode.
+(use-package lsp-mode
+  :hook ((sql-mode . lsp)))
+
+;; Configure lsp (la)tex mode.
+(use-package lsp-mode
+  :hook ((tex-mode . lsp)
+         (latex-mode . lsp)))
+
+;; Configure lsp erlang mode.
+(use-package lsp-mode
+  :hook ((erlang-mode . lsp)
+         (erlang-edoc-mode . lsp))
+ :config
+ (setq lsp-erlang-server-connection-type "stdio")
+ (setq lsp-erlang-server-path "~/.emacs.d/.local/etc/lsp/erlang_ls/_build/default/bin/erlang_ls"))
+
+;; Configure lsp elixir mode.
+(use-package lsp-mode
+  :hook ((elixir-mode . lsp)
+         (alchemist-mode . lsp))
+ :config
+ (setq lsp-clients-elixir-server-executable "~/.emacs.d/.local/etc/lsp/elixir-ls/_build/default/language_server.sh"))
+
+;; Enable lsp logging.
+(setq lsp-log-io t)
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
