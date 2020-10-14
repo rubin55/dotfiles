@@ -50,3 +50,4 @@
 
 (package! lsp-pyright)
 (package! powershell)
+(package! nov)

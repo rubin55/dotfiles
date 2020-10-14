@@ -3,8 +3,16 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
-;; Be silent about cl package being deprecated.
-(setq byte-compile-warnings '(cl-functions))
+;; Enable long line wrap by default.
+(global-visual-line-mode 1)
+(setq-default word-wrap t)
+
+;; Configure nov.el epub mode.
+(add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
+(setq nov-text-width t)
+(setq visual-fill-column-center-text t)
+(add-hook 'nov-mode-hook 'visual-line-mode)
+(add-hook 'nov-mode-hook 'visual-fill-column-mode)
 
 ;; Always enable server mode, for emacsclient sessions.
 (server-start)
@@ -144,6 +152,9 @@
 ;; Enable lsp logging.
 (setq lsp-log-io t)
 
+;; Configure flycheck markdown mode.
+(setq flycheck-markdown-markdownlint-cli-config "~/.markdownlintrc")
+
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
@@ -162,8 +173,19 @@
 ;; font string. You generally only need these two:
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
-(setq doom-font (font-spec :family "monospace" :size 17 :weight 'normal)
-      doom-variable-pitch-font (font-spec :family "sans" :size 13))
+
+;; I have different font settings on various hosts.
+(when (string= (system-name) "ADAM")
+  (setq doom-font (font-spec :family "PragmataPro Mono Liga" :size 32 :weight 'normal)
+      doom-variable-pitch-font (font-spec :family "sans" :size 30)))
+
+(when (string= (system-name) "THINK")
+  (setq doom-font (font-spec :family "monospace" :size 17 :weight 'normal)
+      doom-variable-pitch-font (font-spec :family "sans" :size 18)))
+
+(when (string= (system-name) "WILCO")
+  (setq doom-font (font-spec :family "monospace" :size 18 :weight 'normal)
+      doom-variable-pitch-font (font-spec :family "sans" :size 15)))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
