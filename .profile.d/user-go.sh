@@ -17,7 +17,7 @@ GO_PATCH=$(echo $GO_VERSION | cut -d. -f 3)
 [[ -z "$GOPATH" ]] && [[ ! -z "$GO_VERSION" ]] && export GOPATH=/home/rubin/.go/$GO_VERSION
 
 # If Go minor version is higher than 11, enable module mode.
-if [ $GO_MINOR -ge 11 ]; then
+if [[ ! -z "$GO_MINOR" && "$GO_MINOR" -ge 11 ]]; then
     export GO111MODULE=on
 fi
 
