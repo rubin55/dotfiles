@@ -8,10 +8,10 @@ runSyncthing() {
         local platform=windows
     fi
 
-    local syncthing="$(which syncthing)"
-    local running=$(pgrep -f syncthing)
+    local syncthing="$(which syncthing 2> /dev/null)"
+    local running=$(pgrep -f syncthing 2> /dev/null)
 
-    if [[ $platform == linux && $TERM == linux && -z $running ]]; then
+    if [[ ! -z $syncthing && $platform == linux && $TERM == linux && -z $running ]]; then
         echo "Notice: Starting syncthing.."
         "$syncthing" -no-browser > "$HOME/.config/syncthing/syncthing.log" 2>&1 &
     fi

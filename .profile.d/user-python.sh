@@ -9,9 +9,9 @@ if [ "$platform" == "linux" ]; then
     if [ ! -z "$PYTHON_EXEC" ]; then
         #alias python='python3'
         #alias pip='pip-linux.sh'
-        alias venv="python3 -m venv"
+        alias venv="$PYTHON_EXEC -m venv"
 
-        PYTHON_VERSION=$(python -V | awk '{print $2}')
+        PYTHON_VERSION=$("$PYTHON_EXEC" -V | awk '{print $2}')
 
         # Used by custom pip-linux.sh.
         export PYTHON_LOCAL_HOME=$HOME/.python/$PYTHON_VERSION

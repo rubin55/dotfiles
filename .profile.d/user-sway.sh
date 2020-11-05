@@ -8,10 +8,10 @@ runSway() {
        local platform=windows
     fi
 
-    local sway="$(which sway)"
-    local running=$(pgrep -f sway)
+    local sway="$(which sway 2> /dev/null)"
+    local running="$(pgrep -f sway 2> /dev/null)"
 
-    if [[ $platform == linux && $TERM == linux && -z $running ]]; then
+    if [[ ! -z $sway && $platform == linux && $TERM == linux && -z $running ]]; then
         echo "Notice: Starting sway.."
         if test -z "${XDG_RUNTIME_DIR}"; then
             export XDG_RUNTIME_DIR=/tmp/${UID}-runtime-dir
