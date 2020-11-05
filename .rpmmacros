@@ -1,3 +1,4 @@
-%_topdir /home/rubin/Packages
+%_topdir /home/rubin/Syncthing/Source/RAAF/config/redhat
 %_query_all_fmt %%{name}-%%{version}-%%{release}.%%{arch}
-%debug_package %{nil}
+%_gpg_name info@raaf.tech
+%dist .el8.raaf
