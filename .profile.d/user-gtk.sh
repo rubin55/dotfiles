@@ -1,7 +1,13 @@
 #!/bin/bash
 
 if [ "$(uname -s)" == "Linux" ]; then
-    export GDK_BACKEND=wayland
+    if [ ! -z "$XDG_SESSION_TYPE" ]; then
+        export GDK_BACKEND=$XDG_SESSION_TYPE
+    elif [ "$(hostname)" == "THINK" ]; then
+        export GDK_BACKEND=wayland
+    else
+        export GDK_BACKEND=x11
+    fi
     export GDK_SCALE=1
     export GDK_USE_XFT=1
     export GTK_THEME=Adwaita:dark

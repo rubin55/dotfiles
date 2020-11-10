@@ -6,7 +6,7 @@ SET_ALIAS=true
 
 # Application locations, alias names, etc.
 CFG_ALIAS="rider"
-CFG_EXEC_UNIX="/opt/rider/rd2019/bin/rider.sh"
+CFG_EXEC_UNIX="/opt/rider/rd2020/bin/rider.sh"
 CFG_EXEC_MACOS="/Applications/Rider.app/Contents/MacOS/rider"
 CFG_EXEC_WINDOWS="/mnt/c/Program files/Rider/bin/rider.exe"
 

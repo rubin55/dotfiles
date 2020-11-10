@@ -21,7 +21,19 @@ if [ ! -z "$RUBY_EXEC" ]; then
     fi
 
     if [ "$platform" == "linux" ]; then
-        export GEM_PATH=/usr/lib64/ruby/gems/2.6.0:$GEM_HOME
+        distro=$(lsb_release -i | cut -d: -f2 | sed 's/[[:blank:]]//g' | tr '[:upper:]' '[:lower:]')
+
+        case "$distro" in
+            gentoo*)
+                export GEM_PATH=/usr/lib64/ruby/gems/2.6.0:$GEM_HOME
+                ;;
+            redhat*)
+                export GEM_PATH=/usr/share/gems:$GEM_HOME
+                ;;
+            *)
+                echo "Warning: couldn't detect distro? Don't know how to set GEM_PATH."
+                ;;
+        esac
     fi
 
     if [ "$platform" == "darwin" ]; then

@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # What to do.
-SET_PATH=false
-SET_ALIAS=true
+SET_PATH=true
+SET_ALIAS=false
 
 # Application locations, alias names, etc.
-CFG_ALIAS="goland"
-CFG_EXEC_UNIX="/opt/goland/go2020/bin/goland.sh"
-CFG_EXEC_MACOS="/Applications/Goland.app/Contents/MacOS/goland"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Goland/bin/goland.exe"
+CFG_ALIAS="steam"
+CFG_EXEC_UNIX="$HOME/.local/share/Steam/steam.sh"
+CFG_EXEC_MACOS="/Applications/Steam.app/Contents/MacOS/Steam"
+CFG_EXEC_WINDOWS="/mnt/c/Steam/steam.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

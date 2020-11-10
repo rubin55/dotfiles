@@ -6,7 +6,7 @@ SET_ALIAS=true
 
 # Application locations, alias names, etc.
 CFG_ALIAS="rubymine"
-CFG_EXEC_UNIX="/opt/rubymine/rm2019/bin/rubymine.sh"
+CFG_EXEC_UNIX="/opt/rubymine/rm2020/bin/rubymine.sh"
 CFG_EXEC_MACOS="/Applications/RubyMine.app/Contents/MacOS/rubymine"
 CFG_EXEC_WINDOWS="/mnt/c/Program files/RubyMine/bin/rubymine.exe"
 

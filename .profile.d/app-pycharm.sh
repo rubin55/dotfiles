@@ -6,7 +6,7 @@ SET_ALIAS=true
 
 # Application locations, alias names, etc.
 CFG_ALIAS="pycharm"
-CFG_EXEC_UNIX="/opt/pycharm/pc2019/bin/pycharm.sh"
+CFG_EXEC_UNIX="/opt/pycharm/pc2020/bin/pycharm.sh"
 CFG_EXEC_MACOS="/Applications/PyCharm.app/Contents/MacOS/pycharm"
 CFG_EXEC_WINDOWS="/mnt/c/Program files/PyCharm/bin/pycharm.exe"
 

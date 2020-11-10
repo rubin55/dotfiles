@@ -6,7 +6,7 @@ SET_ALIAS=true
 
 # Application locations, alias names, etc.
 CFG_ALIAS="datagrip"
-CFG_EXEC_UNIX="/opt/datagrip/dg2019/bin/datagrip.sh"
+CFG_EXEC_UNIX="/opt/datagrip/dg2020/bin/datagrip.sh"
 CFG_EXEC_MACOS="/Applications/DataGrip.app/Contents/MacOS/datagrip"
 CFG_EXEC_WINDOWS="/mnt/c/Program files/DataGrip/bin/datagrip.exe"
 
