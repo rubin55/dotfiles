@@ -7,7 +7,7 @@ SET_ALIAS=false
 # Application locations, alias names, etc.
 CFG_ALIAS="java"
 CFG_EXEC_UNIX="/opt/java/default/bin/java"
-CFG_EXEC_MACOS="$(/usr/libexec/java_home -v 1.8.0 2> /dev/null)/bin/java"
+CFG_EXEC_MACOS="$(x=$(/usr/libexec/java_home -v 11 2>/dev/null); if [ -x "$x" ]; then echo $x/bin/java; fi)"
 CFG_EXEC_WINDOWS="/mnt/c/Program files/Java/adopt-jdk8/bin/java.exe"
 
 # Determine application home.

@@ -32,8 +32,8 @@ if [[ "$SET_PATH" == true && "$APP_BINDIR" != "not-found" ]]; then
     fi
 
     # Add man pages to manpath.
-    if [[ ":$MANPATH:" != *":${APP_BINDIR/sbin/share\/man}:"* ]]; then
-        export MANPATH="${MANPATH:+"$MANPATH:"}${APP_BINDIR/sbin/share\/man}"
+    if [[ ":$MANPATH:" != *":${APP_BINDIR/sbin/share/man}:"* ]]; then
+        export MANPATH="${MANPATH:+"$MANPATH:"}${APP_BINDIR/sbin/share/man}"
     fi
 fi
 
