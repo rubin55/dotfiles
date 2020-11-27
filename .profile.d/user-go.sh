@@ -14,7 +14,7 @@ GO_MINOR=$(echo $GO_VERSION | cut -d. -f 2)
 GO_PATCH=$(echo $GO_VERSION | cut -d. -f 3)
 
 # Set GOROOT.
-export GOROOT="$(cd $(dirname "$GO_EXEC")/.. && pwd)"
+#export GOROOT="$(cd $(dirname "$GO_EXEC")/.. && pwd)"
 
 # If GOPATH is unset, set it to something nice.
 [[ -z "$GOPATH" ]] && [[ ! -z "$GO_VERSION" ]] && export GOPATH=/home/rubin/.go/$GO_VERSION
