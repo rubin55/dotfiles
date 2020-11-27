@@ -6,7 +6,7 @@ SET_ALIAS=false
 
 # Application locations, alias names, etc.
 CFG_ALIAS="docker"
-CFG_EXEC_UNIX="/opt/docker/docker1803/bin/docker"
+CFG_EXEC_UNIX="/opt/docker/docker1903/bin/docker"
 CFG_EXEC_MACOS="/usr/local/bin/docker"
 CFG_EXEC_WINDOWS="/mnt/c/Program files/Docker/Docker/Resources/bin/docker.exe"
 
