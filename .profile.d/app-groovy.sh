@@ -6,9 +6,9 @@ SET_ALIAS=false
 
 # Application locations, alias names, etc.
 CFG_ALIAS="groovy"
-CFG_EXEC_UNIX="/opt/groovy/groovy24/bin/groovy"
-CFG_EXEC_MACOS="$HOME/Applications/Groovy/groovy24/bin/groovy"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Groovy/groovy24/bin/groovy.bat"
+CFG_EXEC_UNIX="/opt/groovy/groovy3/bin/groovy"
+CFG_EXEC_MACOS="$HOME/Applications/Groovy/groovy3/bin/groovy"
+CFG_EXEC_WINDOWS="/mnt/c/Program files/Groovy/groovy3/bin/groovy.bat"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then
