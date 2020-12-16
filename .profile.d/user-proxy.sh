@@ -11,7 +11,7 @@
 #source ~/.proxy.env
 
 # Set up proxy when a certain SSH command is detected as running.
-#CHECK=$(ps ax | grep 'ssh -4 -L 10.10.10.1:49151:194.109.6.13:8080 -D 10.10.10.1:1080 -p 443 rubin@shell.xs4all.nl' | grep -v grep)
+#CHECK=$(ps ax | grep 'ssh -4 -L 10.10.10.1:49151:194.109.6.13:8080 -D 10.10.10.1:1080 -p 443 shell.xs4all.nl' | grep -v grep)
 #if [ ! -z "$CHECK" ]; then
 #    echo "Notice: SSH with proxy tunneling detected, enabling proxy settings.."
 #    http_proxy=http://10.10.10.1:49151

@@ -2,7 +2,7 @@
 
 # What to do.
 SET_PATH=true
-SET_ALIAS=false
+SET_ALIAS=true
 
 # Application locations, alias names, etc.
 CFG_ALIAS="code"

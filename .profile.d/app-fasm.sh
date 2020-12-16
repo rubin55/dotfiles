@@ -7,7 +7,7 @@ SET_ALIAS=false
 # Application locations, alias names, etc.
 CFG_ALIAS="fasm"
 CFG_EXEC_UNIX="/opt/fasm/fasm1/fasm"
-CFG_EXEC_MACOS="/Users/rubin/Applications/FASM/fasm1/fasm"
+CFG_EXEC_MACOS="$HOME/Applications/FASM/fasm1/fasm"
 CFG_EXEC_WINDOWS=""
 
 # Determine application home.
