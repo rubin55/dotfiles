@@ -7,8 +7,8 @@ SET_ALIAS=false
 # Application locations, alias names, etc.
 CFG_ALIAS="pwsh"
 CFG_EXEC_UNIX="/opt/powershell/ps7/pwsh"
-CFG_EXEC_MACOS="$HOME/Applications/Powershell/ps7/pwsh"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Powershell/powershell.exe"
+CFG_EXEC_MACOS="$HOME/Applications/PowerShell/ps7/pwsh"
+CFG_EXEC_WINDOWS="/mnt/c/Program files/PowerShell/powershell.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

@@ -2,12 +2,12 @@
 
 # What to do.
 SET_PATH=true
-SET_ALIAS=true
+SET_ALIAS=false
 
 # Application locations, alias names, etc.
 CFG_ALIAS="code"
 CFG_EXEC_UNIX="/opt/vscode/vscode1/bin/code"
-CFG_EXEC_MACOS="/Applications/Visual Studio Code.app/Contents/MacOS/Electron"
+CFG_EXEC_MACOS="/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code"
 CFG_EXEC_WINDOWS="/mnt/c/Program files/Microsoft VS Code/code.exe"
 
 # Determine application home.

@@ -38,6 +38,9 @@ if [ "$platform" == "darwin" ]; then
         #alias pip="pip-mac2.sh"
     fi
 
+    # Make sure things like pip shut up about deprecation.
+    export PYTHONWARNINGS="ignore:DEPRECATION"
+
     PYTHON_EXEC="$PYTHON_HOME/bin/python$PYTHON_VERSION"
     if [ ! -z "$PYTHON_EXEC" ]; then
         #alias python="$PYTHON_EXEC"
