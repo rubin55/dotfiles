@@ -107,6 +107,9 @@ if [[ ! $stupid =~ $TERM ]]; then
     # Set terminal title to title-cased hostname.
     title=$(hostname | cut -d '.' -f 1 | tr '[:upper:]' '[:lower:]' | awk '{for(j=1;j<=NF;j++){ $j=toupper(substr($j,1,1)) substr ($j,2) }}1')
     title "$title"
+
+    # Prevent run-by-bash-apps to change title
+    PROMPT_COMMAND='echo -en "\033]0;\a"'
 else
     # Set my own fancy, colorless prompt.
     PS1='[\u@\h \W$(scm_ps1)]\$ '
