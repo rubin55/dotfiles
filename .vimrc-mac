@@ -10,19 +10,24 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'chriskempson/base16-vim'
 Plug 'fatih/vim-go'
 Plug 'jamessan/vim-gnupg'
+Plug 'lighttiger2505/deoplete-vim-lsp'
+Plug 'mattn/vim-lsp-settings'
 Plug 'mechatroner/rainbow_csv'
 Plug 'morhetz/gruvbox'
 Plug 'myint/syntastic-extras'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
-Plug 'sirver/UltiSnips', { 'tag': '3.2' }
+Plug 'sirver/UltiSnips'
 Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ycm-core/YouCompleteMe', { 'branch': 'legacy-py2' }
 Plug 'Shougo/deol.nvim'
 Plug 'Shougo/unite.vim'
+Plug 'Shougo/deoplete.nvim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'Fyrbll/intero-vim'
 call plug#end()
@@ -186,7 +191,7 @@ let g:NERDTreeIgnore=['^NTUSER\.DAT.*$']
 "let g:NERDTreeDirArrowCollapsible = '↓'
 let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
-let g:NERDTreeIndicatorMapCustom = {
+let g:NERDTreeGitStatusIndicatorMapCustom = {
     \ 'Modified'  : '✹',
     \ 'Staged'    : '✚',
     \ 'Untracked' : '✭',
@@ -213,7 +218,7 @@ let g:airline_powerline_fonts = 1
 
 " Settings for UltiSnips.
 nmap <silent> <M-u> :UltiSnipsEdit<Cr>
-let g:UltiSnipsUsePythonVersion = 2
+let g:UltiSnipsUsePythonVersion = 3
 if has('unix')
     let g:UltiSnipsSnippetsDir = '/home/rubin/.vim/snippets'
     let g:UltiSnipsSnippetDirectories=['/home/rubin/VimFiles/snippets']
@@ -225,34 +230,16 @@ let g:UltiSnipsEnableSnipMate = 0
 let g:UltiSnipsListSnippets = '<M-u>'
 let g:UltiSnipsEditSplit= 'vertical'
 
-" Settings for YouCompleteMe.
-let g:ycm_key_invoke_completion = '<C-Space>'
-let g:ycm_key_list_select_completion = ['<Down>']
-let g:ycm_key_list_previous_completion = ['Up']
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_filetype_blacklist = {
-      \ 'html' : 1,
-      \ 'infolog' : 1,
-      \ 'mail' : 1,
-      \ 'markdown' : 1,
-      \ 'notes' : 1,
-      \ 'pandoc' : 1,
-      \ 'pom' : 1,
-      \ 'qf' : 1,
-      \ 'tagbar' : 1,
-      \ 'text' : 1,
-      \ 'unite' : 1,
-      \ 'vimwiki' : 1,
-      \ 'xml' : 1
-      \}
+" Settings for deoplete.
+let g:deoplete#enable_at_startup = 1
 
 
 " Fullscreen enablement for Windows or Mac gvim.
-map <F11> <Esc>:call libcallnr('gvimfullscreen.dll', 'ToggleFullScreen', 0)<Cr>
-"map <F11> :set invfu
+"map <F11> <Esc>:call libcallnr('gvimfullscreen.dll', 'ToggleFullScreen', 0)<Cr>
+map <F11> :set invfu<cr>
 
 " Toggle distraction free mode in gvim.
-map <M-d> <Esc>:call ToggleDistractionFree()<cr>
+map <M-d> <Esc> :call ToggleDistractionFree()<cr>
 function! ToggleDistractionFree()
     let l:menu_option = strridx(&guioptions, 'm')
     let l:toolbar_option = strridx(&guioptions, 'T')
