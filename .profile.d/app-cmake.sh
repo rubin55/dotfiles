@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="cmake"
 CFG_EXEC_UNIX="/opt/cmake/cmake3/bin/cmake"
 CFG_EXEC_MACOS="/Applications/CMake.app/Contents/bin/cmake"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/CMake/bin/cmake.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/CMake/bin/cmake.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

@@ -8,7 +8,7 @@ SET_ALIAS=true
 CFG_ALIAS="jprofiler"
 CFG_EXEC_UNIX="/opt/jprofiler/jprofiler11/bin/jprofiler"
 CFG_EXEC_MACOS="/Applications/JProfiler.app/Contents/MacOS/JavaApplicationStub"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/JProfiler/bin/jprofiler.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/JProfiler/bin/jprofiler.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="docker"
 CFG_EXEC_UNIX="/opt/docker/docker1903/bin/docker"
 CFG_EXEC_MACOS="/usr/local/bin/docker"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Docker/Docker/Resources/bin/docker.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Docker/Docker/Resources/bin/docker.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

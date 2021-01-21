@@ -8,7 +8,7 @@ SET_ALIAS=true
 CFG_ALIAS="ares"
 CFG_EXEC_UNIX="/opt/ares/commander2019/Linux/ARES Commander 2019"
 CFG_EXEC_MACOS="/Applications/ARES Commander 2019.app/Contents/MacOS/ARES Commander 2019"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/ARES Commander 2019/ARES Commander 2019.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/ARES Commander 2019/ARES Commander 2019.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

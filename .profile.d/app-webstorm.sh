@@ -8,7 +8,7 @@ SET_ALIAS=true
 CFG_ALIAS="webstorm"
 CFG_EXEC_UNIX="/opt/webstorm/ws2020/bin/webstorm.sh"
 CFG_EXEC_MACOS="/Applications/WebStorm.app/Contents/MacOS/webstorm"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/WebStorm/bin/webstorm.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/WebStorm/bin/webstorm.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

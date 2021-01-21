@@ -8,7 +8,7 @@ SET_ALIAS=true
 CFG_ALIAS="irccloud"
 CFG_EXEC_UNIX="/opt/irccloud/irccloud010/irccloud-desktop"
 CFG_EXEC_MACOS="/Applications/IRCCloud.app/Contents/MacOS/IRCCloud"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/IRCCloud/irccloud.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/IRCCloud/irccloud.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

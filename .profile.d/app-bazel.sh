@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="bazel"
 CFG_EXEC_UNIX="/opt/bazel/bazel3/bin/bazel"
 CFG_EXEC_MACOS="$HOME/Applications/bazel/bazel3/bin/bazel"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Apache/bazel3/bin/bazel"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Apache/bazel3/bin/bazel"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

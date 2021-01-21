@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="htop"
 CFG_EXEC_UNIX="/opt/htop/htop22/bin/htop"
 CFG_EXEC_MACOS="$HOME/Applications/Htop/htop22/bin/htop"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Htop/bin/htop.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Htop/bin/htop.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

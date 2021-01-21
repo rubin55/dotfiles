@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="ctags"
 CFG_EXEC_UNIX="/opt/ctags/ctags58/bin/ctags"
 CFG_EXEC_MACOS="$HOME/Applications/Ctags/ctags58/bin/ctags"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Ctags/bin/ctags.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Ctags/bin/ctags.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

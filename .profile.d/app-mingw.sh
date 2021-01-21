@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="mingw"
 CFG_EXEC_UNIX="/opt/mingw/mingw-w64/bin/x86_64-w64-mingw32-gcc"
 CFG_EXEC_MACOS="$HOME/Applications/MinGW/mingw-w64/bin/x86_64-w64-mingw32-gcc"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/MinGW/mingw-w64/bin/x86_64-w64-mingw32-gcc.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/MinGW/mingw-w64/bin/x86_64-w64-mingw32-gcc.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

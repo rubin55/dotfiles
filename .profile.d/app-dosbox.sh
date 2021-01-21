@@ -8,7 +8,7 @@ SET_ALIAS=true
 CFG_ALIAS="dosbox"
 CFG_EXEC_UNIX="/opt/dosbox/dbx082/bin/dosbox"
 CFG_EXEC_MACOS="/Applications/DOSBox-X.app/Contents/MacOS/DosBox"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/DOSBox/dosbox.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/DOSBox/dosbox.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

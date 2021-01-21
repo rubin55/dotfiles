@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="sqlplus"
 CFG_EXEC_UNIX="/Applications/Oracle/instantclient122/sqlplus"
 CFG_EXEC_MACOS="$HOME/Applications/Oracle/instantclient122/sqlplus"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Oracle/instantclient122/sqlplus"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Oracle/instantclient122/sqlplus"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

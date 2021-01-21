@@ -8,7 +8,7 @@ SET_ALIAS=true
 CFG_ALIAS="eclipse"
 CFG_EXEC_UNIX="/opt/eclipse/eclipse4/eclipse"
 CFG_EXEC_MACOS="/Applications/Eclipse.app/Contents/MacOS/eclipse"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Eclipse/eclipse.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Eclipse/eclipse.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

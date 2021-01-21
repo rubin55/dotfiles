@@ -8,7 +8,7 @@ SET_ALIAS=true
 CFG_ALIAS="blender"
 CFG_EXEC_UNIX="/opt/blender/blender28/blender"
 CFG_EXEC_MACOS="/Applications/Blender.app/Contents/MacOS/Blender"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Blender/blender.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Blender/blender.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

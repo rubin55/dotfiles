@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="dos2unix"
 CFG_EXEC_UNIX="/opt/dos2unix/d2u73/bin/dos2unix"
 CFG_EXEC_MACOS="$HOME/Applications/Dos2unix/d2u73/bin/dos2unix"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/DOS2UNIX/bin/dos2unix.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/DOS2UNIX/bin/dos2unix.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

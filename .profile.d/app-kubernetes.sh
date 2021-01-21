@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="kubectl"
 CFG_EXEC_UNIX="/opt/kubernetes/k8s1/bin/kubectl"
 CFG_EXEC_MACOS="$HOME/Applications/Kubernetes/k8s1/bin/kubectl"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Kubernetes/kubectl.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Kubernetes/kubectl.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

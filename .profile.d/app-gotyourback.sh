@@ -8,7 +8,7 @@ SET_ALIAS=true
 CFG_ALIAS="gyb"
 CFG_EXEC_UNIX="/opt/gotyourback/gyb1/gyb"
 CFG_EXEC_MACOS="$HOME/Applications/GotYourBack/gyb1/gyb"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/GotYourBack/gyb"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/GotYourBack/gyb"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

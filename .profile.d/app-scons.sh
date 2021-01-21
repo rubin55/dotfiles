@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="scons"
 CFG_EXEC_UNIX="/opt/scons/scons3/bin/scons"
 CFG_EXEC_MACOS="$HOME/Applications/SCons/scons3/bin/scons"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/SCons/bin/scons.bat"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/SCons/bin/scons.bat"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

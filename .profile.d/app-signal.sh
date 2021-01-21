@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="signal"
 CFG_EXEC_UNIX="/opt/signal/signal1/signal-desktop"
 CFG_EXEC_MACOS="/Applications/Signal.app/Contents/MacOS/signal-desktop"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Signal/bin/signal-desktop.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Signal/bin/signal-desktop.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

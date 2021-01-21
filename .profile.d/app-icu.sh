@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="icuinfo"
 CFG_EXEC_UNIX="/opt/icu/icu67/bin/icoinfo"
 CFG_EXEC_MACOS="$HOME/Applications/ICU/icu67/bin/icuinfo"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/ICU/bin/icuinfo.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/ICU/bin/icuinfo.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

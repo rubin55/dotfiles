@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="bchunk"
 CFG_EXEC_UNIX="/opt/bchunk/bchunk12/bin/bchunk"
 CFG_EXEC_MACOS="$HOME/Applications/Bchunk/bchunk12/bin/bchunk"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Bchunk/bin/bchunk.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Bchunk/bin/bchunk.exe"
 
 
 # Determine application home.

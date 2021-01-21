@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="parsec"
 CFG_EXEC_UNIX="/opt/parsec/parsec0/bin/parsecd"
 CFG_EXEC_MACOS="/Applications/Parsec.app/Contents/MacOS/parsecd"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Parsec/bin/parsec.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Parsec/bin/parsec.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

@@ -8,7 +8,7 @@ SET_ALIAS=true
 CFG_ALIAS="pycharm"
 CFG_EXEC_UNIX="/opt/pycharm/pc2020/bin/pycharm.sh"
 CFG_EXEC_MACOS="/Applications/PyCharm.app/Contents/MacOS/pycharm"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/PyCharm/bin/pycharm.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/PyCharm/bin/pycharm.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

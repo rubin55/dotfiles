@@ -8,7 +8,7 @@ SET_ALIAS=true
 CFG_ALIAS="gremlin"
 CFG_EXEC_UNIX="/opt/tinkerpop/gremlin34/bin/gremlin"
 CFG_EXEC_MACOS="$HOME/Applications/TinkerPop/gremlin34/bin/gremlin"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/TinkerPop/gremlin34/bin/gremlin"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/TinkerPop/gremlin34/bin/gremlin"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

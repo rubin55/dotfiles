@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="openssl"
 CFG_EXEC_UNIX="/opt/openssl/openssl11/bin/openssl"
 CFG_EXEC_MACOS="$HOME/Applications/OpenSSL/openssl11/bin/openssl"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/OpenSSL/bin/openssl.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/OpenSSL/bin/openssl.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

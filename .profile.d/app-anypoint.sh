@@ -8,7 +8,7 @@ SET_ALIAS=true
 CFG_ALIAS="anypoint"
 CFG_EXEC_UNIX="/opt/anypoint/studio7/bin/AnypointStudio"
 CFG_EXEC_MACOS="/Applications/Anypoint Studio 7.app/Contents/MacOS/AnypointStudio"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Anypoint Studio/studio7/AnypointStudio.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Anypoint Studio/studio7/AnypointStudio.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

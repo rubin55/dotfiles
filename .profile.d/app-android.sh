@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="adb"
 CFG_EXEC_UNIX="/opt/android/platform-tools/adb"
 CFG_EXEC_MACOS="$HOME/Applications/Android/platform-tools/adb"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Android/platform-tools/adb.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Android/platform-tools/adb.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="pkg-config"
 CFG_EXEC_UNIX="/opt/pkgconfig/pkgconfig029/bin/pkg-config"
 CFG_EXEC_MACOS="$HOME/Applications/PkgConfig/pkgconfig029/bin/pkg-config"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/PkgConfig/bin/pkg-config.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/PkgConfig/bin/pkg-config.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

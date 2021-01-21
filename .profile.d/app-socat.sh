@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="socat"
 CFG_EXEC_UNIX="/opt/socat/socat17/bin/socat"
 CFG_EXEC_MACOS="$HOME/Applications/Socat/socat17/bin/socat"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Socat/bin/socat.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Socat/bin/socat.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

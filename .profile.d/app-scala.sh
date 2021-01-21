@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="sbt"
 CFG_EXEC_UNIX="/opt/scala/scala2/bin/scala"
 CFG_EXEC_MACOS="$HOME/Applications/Scala/scala2/bin/scala"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Scala/scala2/bin/scala"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Scala/scala2/bin/scala"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="nmap"
 CFG_EXEC_UNIX="/opt/nmap/nmap76/bin/nmap"
 CFG_EXEC_MACOS="$HOME/Applications/Nmap/nmap76/bin/nmap"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Nmap/bin/nmap.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Nmap/bin/nmap.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

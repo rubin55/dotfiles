@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="sbt"
 CFG_EXEC_UNIX="/opt/sbt/sbt13/bin/sbt"
 CFG_EXEC_MACOS="$HOME/Applications/SBT/sbt13/bin/sbt"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/SBT/bin/sbt"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/SBT/bin/sbt"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

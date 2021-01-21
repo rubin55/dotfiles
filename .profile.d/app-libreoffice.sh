@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="soffice"
 CFG_EXEC_UNIX="/opt/libreoffice/lo62/bin/soffice"
 CFG_EXEC_MACOS="/Applications/LibreOffice.app/Contents/MacOS/soffice"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/LibreOffice/soffice.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/LibreOffice/soffice.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

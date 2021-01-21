@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="teams"
 CFG_EXEC_UNIX="/opt/teams/teams1/bin/teams"
 CFG_EXEC_MACOS="/Applications/Microsoft Teams.app/Contents/MacOS/Teams"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Teams/teams.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Teams/teams.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

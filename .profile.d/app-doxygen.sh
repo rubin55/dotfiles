@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="ant"
 CFG_EXEC_UNIX="/opt/doxygen/doxygen18/bin/doxygen"
 CFG_EXEC_MACOS="/Applications/Doxygen.app/Contents/Resources/doxygen"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Doxygen/bin/doxygen.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Doxygen/bin/doxygen.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

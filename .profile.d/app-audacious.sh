@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="audacious"
 CFG_EXEC_UNIX="/opt/audacious/audacious3/bin/audacious"
 CFG_EXEC_MACOS=""
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Audacious/bin/audacious.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Audacious/bin/audacious.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

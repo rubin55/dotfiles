@@ -8,7 +8,7 @@ SET_ALIAS=true
 CFG_ALIAS="rider"
 CFG_EXEC_UNIX="/opt/rider/rd2020/bin/rider.sh"
 CFG_EXEC_MACOS="/Applications/Rider.app/Contents/MacOS/rider"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Rider/bin/rider.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Rider/bin/rider.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

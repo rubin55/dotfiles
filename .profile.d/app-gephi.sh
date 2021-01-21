@@ -8,7 +8,7 @@ SET_ALIAS=true
 CFG_ALIAS="gephi"
 CFG_EXEC_UNIX="/opt/gephi/gephi09/bin/gephi"
 CFG_EXEC_MACOS="/Application/Gephi.app/Contents/MacOS/gephi"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Gephi/gephi.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Gephi/gephi.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="pforth"
 CFG_EXEC_UNIX="/opt/forth/pforth28/bin/pforth"
 CFG_EXEC_MACOS="$HOME/Applications/Forth/pforth28/bin/pforth"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Pforth/bin/pforth.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Pforth/bin/pforth.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

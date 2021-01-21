@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="djpeg"
 CFG_EXEC_UNIX="/opt/jpeg/jpeg9d/bin/djpeg"
 CFG_EXEC_MACOS="$HOME/Applications/JPEG/jpeg9d/bin/djpeg"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/JPEG/bin/djpeg.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/JPEG/bin/djpeg.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

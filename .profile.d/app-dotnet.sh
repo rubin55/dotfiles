@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="dotnet"
 CFG_EXEC_UNIX="/opt/dotnet/dotnet5/dotnet"
 CFG_EXEC_MACOS="$HOME/Applications/DotNet/dotnet5/dotnet"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/dotnet/dotnet.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/dotnet/dotnet.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

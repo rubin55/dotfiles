@@ -8,7 +8,7 @@ SET_ALIAS=true
 CFG_ALIAS="gnutls"
 CFG_EXEC_UNIX="/opt/gnutls/gnutls36/bin/gnutls-cli"
 CFG_EXEC_MACOS="$HOME/Applications/GnuTLS/gnutls36/bin/gnutls-cli"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/GnuTLS/bin/gnutls-cli.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/GnuTLS/bin/gnutls-cli.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

@@ -8,7 +8,7 @@ SET_ALIAS=true
 CFG_ALIAS="goland"
 CFG_EXEC_UNIX="/opt/goland/go2020/bin/goland.sh"
 CFG_EXEC_MACOS="/Applications/Goland.app/Contents/MacOS/goland"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Goland/bin/goland.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Goland/bin/goland.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

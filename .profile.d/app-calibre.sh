@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="calibre"
 CFG_EXEC_UNIX="/opt/calibre/calibre3/bin/calibre"
 CFG_EXEC_MACOS="/Applications/calibre.app/Contents/MacOS/calibre"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Calibre/calibre.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Calibre/calibre.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

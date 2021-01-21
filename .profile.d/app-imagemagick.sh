@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="imagemagick"
 CFG_EXEC_UNIX="/opt/imagemagick/im7/bin/convert"
 CFG_EXEC_MACOS="$HOME/Applications/ImageMagick/im7/bin/convert"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/ImageMagick/bin/convert.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/ImageMagick/bin/convert.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

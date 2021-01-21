@@ -8,7 +8,7 @@ SET_ALIAS=true
 CFG_ALIAS="vasm"
 CFG_EXEC_UNIX="/opt/vasm/vasm18/bin/vasmm68k_mot"
 CFG_EXEC_MACOS="$HOME/Applications/VASM/vasm18/bin/vasmm68k_mot"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/VASM/bin/vasmm68k_mot.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/VASM/bin/vasmm68k_mot.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

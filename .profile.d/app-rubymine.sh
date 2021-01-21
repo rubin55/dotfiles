@@ -8,7 +8,7 @@ SET_ALIAS=true
 CFG_ALIAS="rubymine"
 CFG_EXEC_UNIX="/opt/rubymine/rm2020/bin/rubymine.sh"
 CFG_EXEC_MACOS="/Applications/RubyMine.app/Contents/MacOS/rubymine"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/RubyMine/bin/rubymine.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/RubyMine/bin/rubymine.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

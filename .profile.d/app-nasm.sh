@@ -8,7 +8,7 @@ SET_ALIAS=true
 CFG_ALIAS="nasm"
 CFG_EXEC_UNIX="/opt/nasm/nasm215/nasm"
 CFG_EXEC_MACOS="$HOME/Applications/NASM/nasm215/nasm"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/NASM/nasm.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/NASM/nasm.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

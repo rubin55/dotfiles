@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="netpbm-config"
 CFG_EXEC_UNIX="/opt/netpbm/netpbm10/bin/netpbm-config"
 CFG_EXEC_MACOS="$HOME/Applications/Netpbm/netpbm10/bin/netpbm-config"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Netpbm/bin/netpbm-config.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Netpbm/bin/netpbm-config.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="gawk"
 CFG_EXEC_UNIX="/opt/gawk/gawk51/bin/gawk"
 CFG_EXEC_MACOS="$HOME/Applications/Gawk/gawk51/bin/gawk"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Gawk/bin/gawk.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Gawk/bin/gawk.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

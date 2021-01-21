@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="corkscrew"
 CFG_EXEC_UNIX="/opt/corkscrew/corkscrew2/bin/corkscrew"
 CFG_EXEC_MACOS="$HOME/Applications/Corkscrew/corkscrew2/bin/corkscrew"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Corkscrew/bin/corkscrew.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Corkscrew/bin/corkscrew.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

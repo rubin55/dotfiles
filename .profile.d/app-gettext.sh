@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="gettext"
 CFG_EXEC_UNIX="/opt/gettext/gt019/bin/gettext"
 CFG_EXEC_MACOS="$HOME/Applications/GetText/gt019/bin/gettext"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/GetText/bin/gettext.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/GetText/bin/gettext.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

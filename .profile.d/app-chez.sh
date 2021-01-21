@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="scheme"
 CFG_EXEC_UNIX="/opt/scheme/chez95/bin/scheme"
 CFG_EXEC_MACOS="$HOME/Applications/Scheme/chez95/bin/scheme"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Chez95/bin/scheme.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Chez95/bin/scheme.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

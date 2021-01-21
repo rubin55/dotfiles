@@ -8,7 +8,7 @@ SET_ALIAS=true
 CFG_ALIAS="ums"
 CFG_EXEC_UNIX="/opt/ums/ums9/bin/ums"
 CFG_EXEC_MACOS="$HOME/Applications/UMS/ums9/bin/ums"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Universal Media Server/ums.bat"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Universal Media Server/ums.bat"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

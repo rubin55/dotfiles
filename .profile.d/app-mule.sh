@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="mule"
 CFG_EXEC_UNIX="/opt/mule/mule421/bin/mule"
 CFG_EXEC_MACOS="$HOME/Applications/Mule/mule421/bin/mule"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Mule/mule421/bin/mule"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Mule/mule421/bin/mule"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

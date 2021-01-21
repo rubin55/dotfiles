@@ -8,7 +8,7 @@ SET_ALIAS=true
 CFG_ALIAS="datagrip"
 CFG_EXEC_UNIX="/opt/datagrip/dg2020/bin/datagrip.sh"
 CFG_EXEC_MACOS="/Applications/DataGrip.app/Contents/MacOS/datagrip"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/DataGrip/bin/datagrip.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/DataGrip/bin/datagrip.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

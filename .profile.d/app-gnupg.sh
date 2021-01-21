@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="gpg"
 CFG_EXEC_UNIX="/opt/gnupg/gnupg22/bin/gpg"
 CFG_EXEC_MACOS="$HOME/Applications/GnuPG/gnupg22/bin/gpg"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/GnuPG/cmd/gpg.cmd"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/GnuPG/cmd/gpg.cmd"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

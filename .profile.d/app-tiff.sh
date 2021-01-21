@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="tiffinfo"
 CFG_EXEC_UNIX="/opt/tiff/tiff42/bin/tiffinfo"
 CFG_EXEC_MACOS="$HOME/Applications/TIFF/tiff42/bin/tiffinfo"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/TIFF/bin/tiffinfo.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/TIFF/bin/tiffinfo.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

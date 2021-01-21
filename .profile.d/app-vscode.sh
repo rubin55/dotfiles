@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="code"
 CFG_EXEC_UNIX="/opt/vscode/vscode1/bin/code"
 CFG_EXEC_MACOS="/Applications/Visual Studio Code.app/Contents/Resources/app/bin/code"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Microsoft VS Code/code.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Microsoft VS Code/code.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

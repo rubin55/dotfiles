@@ -8,7 +8,7 @@ SET_ALIAS=true
 CFG_ALIAS="clion"
 CFG_EXEC_UNIX="/opt/clion/cl2020/bin/clion.sh"
 CFG_EXEC_MACOS="/Applications/CLion.app/Contents/MacOS/clion"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/CLion/bin/clion.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/CLion/bin/clion.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

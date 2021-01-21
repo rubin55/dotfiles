@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="mvn"
 CFG_EXEC_UNIX="/opt/maven/maven36/bin/mvn"
 CFG_EXEC_MACOS="$HOME/Applications/Maven/maven36/bin/mvn"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Apache/maven36/bin/mvn"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Apache/maven36/bin/mvn"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

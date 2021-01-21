@@ -8,7 +8,7 @@ SET_ALIAS=true
 CFG_ALIAS="idea"
 CFG_EXEC_UNIX="/opt/idea/ij2020/bin/idea.sh"
 CFG_EXEC_MACOS="/Applications/IntelliJ IDEA.app/Contents/MacOS/idea"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/IDEA/bin/idea.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/IDEA/bin/idea.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

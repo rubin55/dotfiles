@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="syncthing"
 CFG_EXEC_UNIX="/opt/syncthing/syncthing1/syncthing"
 CFG_EXEC_MACOS="/Applications/Syncthing.app/Contents/MacOS/Syncthing"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Syncthing/syncthing.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Syncthing/syncthing.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="rlwrap"
 CFG_EXEC_UNIX="/opt/readline/rl7/bin/rlwrap"
 CFG_EXEC_MACOS="$HOME/Applications/Readline/rl7/bin/rlwrap"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Readline/bin/rlwrap.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Readline/bin/rlwrap.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

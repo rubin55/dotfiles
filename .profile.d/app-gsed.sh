@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="gsed"
 CFG_EXEC_UNIX="/opt/gsed/gsed48/bin/gsed"
 CFG_EXEC_MACOS="$HOME/Applications/Gsed/gsed48/bin/gsed"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/Gsed/bin/gsed.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Gsed/bin/gsed.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

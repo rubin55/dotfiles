@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="pngfix"
 CFG_EXEC_UNIX="/opt/png/png16/bin/pngfix"
 CFG_EXEC_MACOS="$HOME/Applications/PNG/png16/bin/pngfix"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/PNG/bin/pngfix.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/PNG/bin/pngfix.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

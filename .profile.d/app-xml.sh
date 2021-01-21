@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="xmllint"
 CFG_EXEC_UNIX="/opt/xml/xml29/bin/xmllint"
 CFG_EXEC_MACOS="$HOME/Applications/XML/xml29/bin/xmllint"
-CFG_EXEC_WINDOWS="/mnt/c/Program files/XML/bin/xmllint.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/XML/bin/xmllint.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then
