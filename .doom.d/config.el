@@ -3,6 +3,13 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
+;; Hide toolbar by default.
+(tool-bar-mode -1)
+
+;; Set initial window size.
+(setq default-frame-alist
+      '((width . 120) (height . 40)))
+
 ;; Enable long line wrap by default.
 (global-visual-line-mode 1)
 (setq-default word-wrap t)
@@ -156,7 +163,6 @@
 (setq flycheck-markdown-markdownlint-cli-config "~/.markdownlintrc")
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
-;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
 (setq user-full-name "Rubin Simons'"
       user-mail-address "rubin@xs4all.nl")
@@ -175,6 +181,10 @@
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 
 ;; I have different font settings on various hosts.
+(when (string= (system-name) "kuro.home.local")
+  (setq doom-font (font-spec :family "PragmataPro Mono Liga" :size 16 :weight 'normal)
+      doom-variable-pitch-font (font-spec :family "Helvetica Neue" :size 15)))
+
 (when (string= (system-name) "ADAM")
   (setq doom-font (font-spec :family "PragmataPro Mono Liga" :size 32 :weight 'normal)
       doom-variable-pitch-font (font-spec :family "Segoe UI" :size 28)))
