@@ -2,13 +2,13 @@
 
 # What to do.
 SET_PATH=true
-SET_ALIAS=false
+SET_ALIAS=true
 
 # Application locations, alias names, etc.
-CFG_ALIAS="blender"
-CFG_EXEC_UNIX="/opt/blender/blender29/blender"
-CFG_EXEC_MACOS="/Applications/Blender.app/Contents/MacOS/Blender"
-CFG_EXEC_WINDOWS="/mnt/c/Program Files/Blender/blender.exe"
+CFG_ALIAS="st"
+CFG_EXEC_UNIX="/opt/sublime/st3/sublime_text"
+CFG_EXEC_MACOS="/Applications/Sublime Text.app/Contents/Resources/app/bin/sublime_text"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Sublime Text/sublime_text.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then
