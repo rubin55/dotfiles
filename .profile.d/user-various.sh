@@ -64,7 +64,7 @@ alias tipi='tipi.sh'
 alias pgctl='pgctl.sh'
 alias rmqctl='rmqctl.sh'
 alias pgo='$HOME/Syncthing/Source/RAAF/scripts/shell/pgo-wrapper.sh'
-alias do-backup='$HOME/Syncthing/Source/ICTU/gs/ops/deployer/scripts/do-backup.sh'
+alias spotify='spotify --no-xshm --ignore-gpu-blacklist' 
 
 # Set default SciPy image viewer.
 export SCIPY_PIL_IMAGE_VIEWER=display

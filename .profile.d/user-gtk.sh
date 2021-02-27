@@ -1,9 +1,9 @@
 #!/bin/bash
 
 if [ "$(uname -s)" == "Linux" ]; then
-    if [ ! -z "$XDG_SESSION_TYPE" ]; then
-        export GDK_BACKEND=$XDG_SESSION_TYPE
-    elif [ "$(hostname)" == "THINK" ]; then
+    if [[ "$XDG_SESSION_TYPE"  == "tty" ||  "$XDG_SESSION_TYPE"  == "x11" ]]; then
+        export GDK_BACKEND=x11
+    elif [[  "$XDG_SESSION_TYPE"  == "wayland" ]]; then
         export GDK_BACKEND=wayland
     else
         export GDK_BACKEND=x11

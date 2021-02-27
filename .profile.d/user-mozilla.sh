@@ -5,7 +5,13 @@ platform=$(uname -s | tr '[:upper:]' '[:lower:]')
 
 
 if [ "$platform" == "linux" ]; then
-    export MOZ_ENABLE_WAYLAND=1
+    if [[ "$XDG_SESSION_TYPE"  == "tty" ||  "$XDG_SESSION_TYPE"  == "x11" ]]; then
+    	export MOZ_ENABLE_WAYLAND=0
+    elif [[  "$XDG_SESSION_TYPE"  == "wayland" ]]; then
+    	export MOZ_ENABLE_WAYLAND=1
+    else
+    	export MOZ_ENABLE_WAYLAND=0
+    fi
 fi
 
 if [ "$platform" == "darwin" ]; then
