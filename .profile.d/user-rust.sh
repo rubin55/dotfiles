@@ -29,13 +29,15 @@ fi
 # On WSL it's different.
 if [[ "$platform" == "windows" ]]; then
     CARGO_HOME="$(echo $HOME | sed 's|/home/|/mnt/c/Users/|g')/.cargo"
-
-    # Create aliases for all .exe in $CARGO_HOME
-    cd "$CARGO_HOME/bin"
-    for X in *.exe; do
-        alias $(echo $X | sed 's|\.exe||g')=$X
-    done
-    cd - > /dev/null
+    
+    if [[ -d "$CARGO_HOME/bin" ]]; then
+        # Create aliases for all .exe in $CARGO_HOME
+        cd "$CARGO_HOME/bin"
+        for X in *.exe; do
+            alias $(echo $X | sed 's|\.exe||g')=$X
+        done
+        cd - > /dev/null
+    fi
 fi
 
 

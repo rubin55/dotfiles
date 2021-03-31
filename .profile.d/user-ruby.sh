@@ -27,6 +27,8 @@ if [ ! -z "$RUBY_EXEC" ]; then
             gentoo*)
                 export GEM_PATH=/usr/lib64/ruby/gems/2.6.0:$GEM_HOME
                 ;;
+	    pop*)
+		;;
             redhat*)
                 export GEM_PATH=/usr/share/gems:$GEM_HOME
                 ;;
