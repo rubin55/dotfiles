@@ -18,8 +18,9 @@ GO_PATCH=$(echo $GO_VERSION | cut -d. -f 3)
 # Set GOROOT.
 #export GOROOT="$(cd $(dirname "$GO_EXEC")/.. && pwd)"
 
-# If GOPATH is unset, set it to something nice.
-[[ -z "$GOPATH" ]] && [[ ! -z "$GO_VERSION" ]] && export GOPATH="$HOME/.go/$GO_VERSION"
+# If GOPATH is unset, set it to something nice. I prefer my own.
+#[[ ! -z "$GOPATH" ]] && export GOPATH || export GOPATH="$HOME/.go"
+export GOPATH="$HOME/.go"
 
 # If Go minor version is higher than 11, enable module mode.
 if [[ ! -z "$GO_MINOR" && "$GO_MINOR" -ge 11 ]]; then
