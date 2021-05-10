@@ -64,7 +64,7 @@ alias tipi='tipi.sh'
 alias pgctl='pgctl.sh'
 alias rmqctl='rmqctl.sh'
 alias pgo='$HOME/Syncthing/Source/RAAF/scripts/shell/pgo-wrapper.sh'
-alias spotify='spotify --no-xshm --ignore-gpu-blacklist' 
+alias spotify='spotify --no-xshm --ignore-gpu-blacklist'
 
 # Set default SciPy image viewer.
 export SCIPY_PIL_IMAGE_VIEWER=display
@@ -116,7 +116,13 @@ else
 fi
 
 # Set my default umask.
-umask 0002
+currentUser="$(id -un)"
+currentGroup="$(id -gn)"
+if [[ $currentUser == $currentGroup ]]; then
+    umask 0002
+else
+    umask 0022
+fi
 
 # Invoke some conditional runners.
 # See user-syncthing.sh, user-sway.sh.
