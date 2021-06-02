@@ -97,7 +97,7 @@ set number
 
 " Settings for gvim.
 if has('gui_running')
-  colorscheme gruvbox
+  "colorscheme gruvbox
   set lines=40 columns=120
   if has('gui_gtk2')
     set guifont=Hack\ 11
