@@ -10,9 +10,14 @@ Plug 'arcticicestudio/nord-vim'
 Plug 'chriskempson/base16-vim'
 Plug 'fatih/vim-go'
 Plug 'jamessan/vim-gnupg'
+Plug 'lighttiger2505/deoplete-vim-lsp'
+Plug 'mattn/vim-lsp-settings'
 Plug 'mechatroner/rainbow_csv'
 Plug 'morhetz/gruvbox'
 Plug 'myint/syntastic-extras'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'roxma/nvim-yarp'
+Plug 'roxma/vim-hug-neovim-rpc'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
 Plug 'sirver/UltiSnips'
@@ -20,9 +25,9 @@ Plug 'tpope/vim-fireplace'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'ycm-core/YouCompleteMe'
 Plug 'Shougo/deol.nvim'
 Plug 'Shougo/unite.vim'
+Plug 'Shougo/deoplete.nvim'
 Plug 'Xuyuanp/nerdtree-git-plugin'
 Plug 'Fyrbll/intero-vim'
 call plug#end()
@@ -165,91 +170,103 @@ tnoremap <ESC> <C-\><C-n>
 map <silent> <M-c> :Deol<Cr>
 
 " Settings for Unite.
-map <silent> <M-f> :Unite -resume -no-split -buffer-name=files -start-insert file<cr>
-map <silent> <M-r> :Unite -resume -no-split -buffer-name=recursive -start-insert file_rec<cr>
-map <silent> <M-b> :Unite -resume -no-split -buffer-name=buffer buffer<Cr>
-call unite#filters#matcher_default#use(['matcher_fuzzy'])
-autocmd FileType unite call s:unite_keymaps()
-function! s:unite_keymaps()
-    map <buffer> <Esc>   <Plug>(unite_exit)
-endfunction`
+if exists(':unite_keymaps')
+    map <silent> <M-f> :Unite -resume -no-split -buffer-name=files -start-insert file<cr>
+    map <silent> <M-r> :Unite -resume -no-split -buffer-name=recursive -start-insert file_rec<cr>
+    map <silent> <M-b> :Unite -resume -no-split -buffer-name=buffer buffer<Cr>
+    call unite#filters#matcher_default#use(['matcher_fuzzy'])
+    autocmd FileType unite call s:unite_keymaps()
+    function! s:unite_keymaps()
+        map <buffer> <Esc>   <Plug>(unite_exit)
+    endfunction`
+endif
 
 " Settings for NERDTree.
-map <silent> <M-n> :NERDTreeToggle<Cr>
-autocmd VimEnter * silent NERDTree | wincmd p
-autocmd VimEnter * NERDTreeToggle
-let g:NERDTreeQuitOnOpen = 1
-let g:NERDTreeMinimalUI = 1
-let g:NERDTreeDirArrows = 1
-let g:NERDTreeIgnore=['^NTUSER\.DAT.*$']
-"let g:NERDTreeDirArrowExpandable = '→'
-"let g:NERDTreeDirArrowCollapsible = '↓'
-let g:NERDTreeDirArrowExpandable = '▸'
-let g:NERDTreeDirArrowCollapsible = '▾'
-let g:NERDTreeGitStatusIndicatorMapCustom = {
-    \ 'Modified'  : '✹',
-    \ 'Staged'    : '✚',
-    \ 'Untracked' : '✭',
-    \ 'Renamed'   : '➜',
-    \ 'Unmerged'  : '═',
-    \ 'Deleted'   : '✖',
-    \ 'Dirty'     : '✗',
-    \ 'Clean'     : '✓',
-    \ 'Unknown'   : '?'
-    \ }
+if exists(':NERDTreeToggle')
+    map <silent> <M-n> :NERDTreeToggle<Cr>
+    autocmd VimEnter * silent NERDTree | wincmd p
+    autocmd VimEnter * NERDTreeToggle
+    let g:NERDTreeQuitOnOpen = 1
+    let g:NERDTreeMinimalUI = 1
+    let g:NERDTreeDirArrows = 1
+    let g:NERDTreeIgnore=['^NTUSER\.DAT.*$']
+    "let g:NERDTreeDirArrowExpandable = '→'
+    "let g:NERDTreeDirArrowCollapsible = '↓'
+    let g:NERDTreeDirArrowExpandable = '▸'
+    let g:NERDTreeDirArrowCollapsible = '▾'
+    let g:NERDTreeGitStatusIndicatorMapCustom = {
+        \ 'Modified'  : '✹',
+        \ 'Staged'    : '✚',
+        \ 'Untracked' : '✭',
+        \ 'Renamed'   : '➜',
+        \ 'Unmerged'  : '═',
+        \ 'Deleted'   : '✖',
+        \ 'Dirty'     : '✗',
+        \ 'Clean'     : '✓',
+        \ 'Unknown'   : '?'
+        \ }
+endif
 
 " Settings for Syntastic.
-map <silent> <M-s> :SyntasticCheck<Cr> :SyntasticToggleMode<Cr>
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_java_checkers = []
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+if exists(':SyntasticCheck')
+    map <silent> <M-s> :SyntasticCheck<Cr> :SyntasticToggleMode<Cr>
+    let g:syntastic_always_populate_loc_list = 1
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_check_on_open = 1
+    let g:syntastic_check_on_wq = 0
+    let g:syntastic_java_checkers = []
+    let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
+endif
 
 " Settings for Airline.
-let g:airline_theme = 'alduin'
-let g:airline_powerline_fonts = 1
+if exists(':Airline')
+    let g:airline_theme = 'alduin'
+    let g:airline_powerline_fonts = 1
+endif
 
 " Settings for UltiSnips.
-nmap <silent> <M-u> :UltiSnipsEdit<Cr>
-let g:UltiSnipsUsePythonVersion = 3
-if has('unix')
-    let g:UltiSnipsSnippetsDir = '/home/rubin/.vim/snippets'
-    let g:UltiSnipsSnippetDirectories=['/home/rubin/VimFiles/snippets']
-elseif has('win32')
-    let g:UltiSnipsSnippetsDir = 'C:/Users/rubin/.vim/snippets'
-    let g:UltiSnipsSnippetDirectories=['C:/Users/rubin/VimFiles/snippets']
+if exists(':UltiSnipsEdit')
+    nmap <silent> <M-u> :UltiSnipsEdit<Cr>
+    let g:UltiSnipsUsePythonVersion = 3
+    if has('unix')
+        let g:UltiSnipsSnippetsDir = '/home/rubin/.vim/snippets'
+        let g:UltiSnipsSnippetDirectories=['/home/rubin/VimFiles/snippets']
+    elseif has('win32')
+        let g:UltiSnipsSnippetsDir = 'C:/Users/rubin/.vim/snippets'
+        let g:UltiSnipsSnippetDirectories=['C:/Users/rubin/VimFiles/snippets']
+    endif
+    let g:UltiSnipsEnableSnipMate = 0
+    let g:UltiSnipsListSnippets = '<M-u>'
+    let g:UltiSnipsEditSplit= 'vertical'
 endif
-let g:UltiSnipsEnableSnipMate = 0
-let g:UltiSnipsListSnippets = '<M-u>'
-let g:UltiSnipsEditSplit= 'vertical'
 
 " Settings for YouCompleteMe.
-let g:ycm_key_invoke_completion = '<C-Space>'
-let g:ycm_key_list_select_completion = ['<Down>']
-let g:ycm_key_list_previous_completion = ['Up']
-let g:ycm_autoclose_preview_window_after_completion = 1
-let g:ycm_filetype_blacklist = {
-      \ 'html' : 1,
-      \ 'infolog' : 1,
-      \ 'mail' : 1,
-      \ 'markdown' : 1,
-      \ 'notes' : 1,
-      \ 'pandoc' : 1,
-      \ 'pom' : 1,
-      \ 'qf' : 1,
-      \ 'tagbar' : 1,
-      \ 'text' : 1,
-      \ 'unite' : 1,
-      \ 'vimwiki' : 1,
-      \ 'xml' : 1
-      \}
+if exists(':YcmDebugInfo')
+    let g:ycm_key_invoke_completion = '<C-Space>'
+    let g:ycm_key_list_select_completion = ['<Down>']
+    let g:ycm_key_list_previous_completion = ['Up']
+    let g:ycm_autoclose_preview_window_after_completion = 1
+    let g:ycm_filetype_blacklist = {
+          \ 'html' : 1,
+          \ 'infolog' : 1,
+          \ 'mail' : 1,
+          \ 'markdown' : 1,
+          \ 'notes' : 1,
+          \ 'pandoc' : 1,
+          \ 'pom' : 1,
+          \ 'qf' : 1,
+          \ 'tagbar' : 1,
+          \ 'text' : 1,
+          \ 'unite' : 1,
+          \ 'vimwiki' : 1,
+          \ 'xml' : 1
+          \}
+endif
 
 
 " Fullscreen enablement for Windows or Mac gvim.
-map <F11> <Esc>:call libcallnr('gvimfullscreen.dll', 'ToggleFullScreen', 0)<Cr>
-"map <F11> :set invfu
+"map <F11> <Esc>:call libcallnr('gvimfullscreen.dll', 'ToggleFullScreen', 0)<Cr>
+map <F11> :set invfu
 
 " Toggle distraction free mode in gvim.
 map <M-d> <Esc>:call ToggleDistractionFree()<cr>

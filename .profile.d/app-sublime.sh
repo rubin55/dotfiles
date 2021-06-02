@@ -6,7 +6,7 @@ SET_ALIAS=true
 
 # Application locations, alias names, etc.
 CFG_ALIAS="st"
-CFG_EXEC_UNIX="/opt/sublime/st3/sublime_text"
+CFG_EXEC_UNIX="/opt/sublime/st4/sublime_text"
 CFG_EXEC_MACOS="/Applications/Sublime Text.app/Contents/Resources/app/bin/sublime_text"
 CFG_EXEC_WINDOWS="/mnt/c/Program Files/Sublime Text/sublime_text.exe"
 
