@@ -240,36 +240,17 @@ if exists(':UltiSnipsEdit')
     let g:UltiSnipsEditSplit= 'vertical'
 endif
 
-" Settings for YouCompleteMe.
-if exists(':YcmDebugInfo')
-    let g:ycm_key_invoke_completion = '<C-Space>'
-    let g:ycm_key_list_select_completion = ['<Down>']
-    let g:ycm_key_list_previous_completion = ['Up']
-    let g:ycm_autoclose_preview_window_after_completion = 1
-    let g:ycm_filetype_blacklist = {
-          \ 'html' : 1,
-          \ 'infolog' : 1,
-          \ 'mail' : 1,
-          \ 'markdown' : 1,
-          \ 'notes' : 1,
-          \ 'pandoc' : 1,
-          \ 'pom' : 1,
-          \ 'qf' : 1,
-          \ 'tagbar' : 1,
-          \ 'text' : 1,
-          \ 'unite' : 1,
-          \ 'vimwiki' : 1,
-          \ 'xml' : 1
-          \}
+" Settings for deoplete.
+if exists(':deoplete')
+    let g:deoplete#enable_at_startup = 1
 endif
-
 
 " Fullscreen enablement for Windows or Mac gvim.
 "map <F11> <Esc>:call libcallnr('gvimfullscreen.dll', 'ToggleFullScreen', 0)<Cr>
-map <F11> :set invfu
+map <F11> :set invfu<cr>
 
 " Toggle distraction free mode in gvim.
-map <M-d> <Esc>:call ToggleDistractionFree()<cr>
+map <M-d> <Esc> :call ToggleDistractionFree()<cr>
 function! ToggleDistractionFree()
     let l:menu_option = strridx(&guioptions, 'm')
     let l:toolbar_option = strridx(&guioptions, 'T')
