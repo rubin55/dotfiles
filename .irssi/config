@@ -1,29 +1,32 @@
 servers = (
   {
     address = "bnc.irccloud.com";
-    chatnet = "Freenode";
+    chatnet = "Libera";
     port = "6697";
-    password = "goawayevilhaxxors";
+    password = "bnc@irssi:0e71742795d5d4c74a9707ef5e033c3a";
+    use_tls = "yes";
+    tls_verify = "yes";
+    autoconnect = "yes";
+  },
+  {
+    address = "bnc.irccloud.com";
+    chatnet = "OFTC";
+    port = "6697";
+    password = "bnc@irssi:950e17d9dad7e800978f8635babc4495";
     use_tls = "yes";
     tls_verify = "yes";
     autoconnect = "yes";
   }
 );
 chatnets = {
-  Freenode = {
+  Libera = {
     ew = "type";
     max_kicks = "1";
     max_msgs = "4";
     max_whois = "1";
     type = "IRC";
   };
-  Mozilla = {
-    type = "IRC";
-    max_kicks = "1";
-    max_msgs = "4";
-    max_whois = "1";
-  };
-  OFTC = { type = "IRC"; max_kicks = "1"; max_msgs = "4"; max_whois = "1"; };
+  OFTC = { max_kicks = "1"; max_msgs = "4"; max_whois = "1"; type = "IRC"; };
 };
 
 aliases = {
@@ -295,10 +298,11 @@ settings = {
     autolog_colors = "yes";
   };
   "perl/core/scripts" = {
+    awl_maxcolumns = "20";
+    awl_mouse = "yes";
     awl_shared_sbar = "OFF";
     awl_viewer_launch = "yes";
     awl_viewer = "yes";
-    awl_mouse = "yes";
     nickcolor_colors = "3";
   };
 };
