@@ -7,11 +7,20 @@ fi
 
 # Add scripts directories to path that make sense on unix-likes.
 SCRIPTS_HOME="$HOME/Syncthing/Source/RAAF/scripts"
-for DIR in perl python ruby shell; do
+for DIR in perl power python ruby shell; do
     if [ -d "$SCRIPTS_HOME/$DIR" ] && [[ ":$PATH:" != *":$SCRIPTS_HOME/$DIR:"* ]]; then
         export PATH="${PATH:+"$PATH:"}$SCRIPTS_HOME/$DIR"
     fi
 done
+
+# Add extra script directories to path.
+SCRIPTS_EXTRAS="$HOME/Syncthing/Source/RAAF/session $HOME/Syncthing/Source/ICTU/helmster/bin"
+for EXTRA in $SCRIPTS_EXTRAS; do
+    if [ -d "$EXTRA" ] && [[ ":$PATH:" != *":$EXTRA:"* ]]; then
+        export PATH="${PATH:+"$PATH:"}$EXTRA"
+    fi
+done
+
 
 # Don't put duplicate lines or lines starting with space in the history.
 HISTCONTROL=ignoreboth
@@ -59,11 +68,13 @@ fi
 
 # A few other aliases.
 alias open='opener.sh'
-alias session='$HOME/Syncthing/Source/RAAF/session/session.sh'
+alias dbcluster='dbcluster.sh'
+alias helmster='helmster.sh'
+alias session='session.sh'
 alias tipi='tipi.sh'
 alias pgctl='pgctl.sh'
 alias rmqctl='rmqctl.sh'
-alias pgo='$HOME/Syncthing/Source/RAAF/scripts/shell/pgo-wrapper.sh'
+alias pgo='pgo-wrapper.sh'
 alias spotify='spotify --no-xshm --ignore-gpu-blacklist'
 
 # Set default SciPy image viewer.
