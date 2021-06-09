@@ -4,7 +4,7 @@
 ;; sync' after modifying this file!
 
 ;; Hide toolbar by default.
-(tool-bar-mode -1)
+;;(tool-bar-mode -1)
 
 ;; Set initial window size.
 (setq default-frame-alist
@@ -181,7 +181,7 @@
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 
 ;; I have different font settings on various hosts.
-(when (string= (system-name) "kuro.home.local")
+(when (string= (system-name) "KURO")
   (setq doom-font (font-spec :family "PragmataPro Mono Liga" :size 16 :weight 'normal)
       doom-variable-pitch-font (font-spec :family "Helvetica Neue" :size 15)))
 
@@ -189,13 +189,17 @@
   (setq doom-font (font-spec :family "PragmataPro Mono Liga" :size 32 :weight 'normal)
       doom-variable-pitch-font (font-spec :family "Segoe UI" :size 28)))
 
-(when (string= (system-name) "THINK")
-  (setq doom-font (font-spec :family "monospace" :size 17 :weight 'normal)
-      doom-variable-pitch-font (font-spec :family "sans" :size 18)))
+(when (string= (system-name) "ORION")
+  (setq doom-font (font-spec :family "PragmataPro Mono Liga" :size 14 :weight 'normal)
+      doom-variable-pitch-font (font-spec :family "Segoe UI" :size 12)))
 
-(when (string= (system-name) "WILCO")
-  (setq doom-font (font-spec :family "PragmataPro Mono Liga" :size 16 :weight 'normal)
-      doom-variable-pitch-font (font-spec :family "Segoe UI" :size 14)))
+(when (string= (system-name) "POWER")
+  (setq doom-font (font-spec :family "PragmataPro Mono Liga" :size 14 :weight 'normal)
+      doom-variable-pitch-font (font-spec :family "Segoe UI" :size 12)))
+
+(when (string= (system-name) "SURFACE")
+  (setq doom-font (font-spec :family "PragmataPro Mono Liga" :size 32 :weight 'normal)
+      doom-variable-pitch-font (font-spec :family "Segoe UI" :size 28)))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
