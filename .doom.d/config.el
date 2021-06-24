@@ -3,8 +3,11 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
-;; Hide toolbar by default.
-;;(tool-bar-mode -1)
+
+;; Hide menubar, toolbar and scrollbar by default.
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(toggle-scroll-bar -1)
 
 ;; Set initial window size.
 (setq default-frame-alist
@@ -194,8 +197,8 @@
       doom-variable-pitch-font (font-spec :family "Segoe UI" :size 12)))
 
 (when (string= (system-name) "POWER")
-  (setq doom-font (font-spec :family "PragmataPro Mono Liga" :size 14 :weight 'normal)
-      doom-variable-pitch-font (font-spec :family "Segoe UI" :size 12)))
+  (setq doom-font (font-spec :family "PragmataPro Mono Liga" :size 15 :weight 'normal)
+      doom-variable-pitch-font (font-spec :family "PragmataPro Liga" :size 15)))
 
 (when (string= (system-name) "SURFACE")
   (setq doom-font (font-spec :family "PragmataPro Mono Liga" :size 32 :weight 'normal)
@@ -205,6 +208,7 @@
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
 (setq doom-theme 'doom-one)
+(setq doom-themes-enable-bold nil)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!

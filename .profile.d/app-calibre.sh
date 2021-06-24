@@ -6,7 +6,7 @@ SET_ALIAS=false
 
 # Application locations, alias names, etc.
 CFG_ALIAS="calibre"
-CFG_EXEC_UNIX="/opt/calibre/calibre3/bin/calibre"
+CFG_EXEC_UNIX="/opt/calibre/calibre5/bin/calibre"
 CFG_EXEC_MACOS="/Applications/calibre.app/Contents/MacOS/calibre"
 CFG_EXEC_WINDOWS="/mnt/c/Program Files/Calibre/calibre.exe"
 
