@@ -66,6 +66,16 @@ if [[ "$(uname -s)" =~ "inux" ]]; then
     alias vi='vi.sh'
 fi
 
+which gpg > /dev/null 2>&1
+if [[ $? != 0 ]]; then
+    alias gpg=gpg2
+fi
+
+which code > /dev/null 2>&1
+if [[ $? != 0 ]]; then
+    alias code=code-oss
+fi
+
 # A few other aliases.
 alias open='opener.sh'
 alias dbcluster='dbcluster.sh'
