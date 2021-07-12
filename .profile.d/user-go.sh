@@ -10,7 +10,7 @@
 [[ $(which gofmt.exe 2>/dev/null | grep -v 'alias ') ]] && alias gofmt="gofmt.exe"
 
 if [[ -n "$GO_EXEC" ]]; then
-GO_VERSION=$("$GO_EXEC" version | awk '{print $3}' | sed 's/^go//')
+GO_VERSION=$("$GO_EXEC" version | awk '{print $3}' | sed 's/^go//' | sed 's/beta//')
 GO_MAJOR=$(echo $GO_VERSION | cut -d. -f 1)
 GO_MINOR=$(echo $GO_VERSION | cut -d. -f 2)
 GO_PATCH=$(echo $GO_VERSION | cut -d. -f 3)

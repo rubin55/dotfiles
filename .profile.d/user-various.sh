@@ -77,7 +77,7 @@ if [[ $? != 0 ]]; then
 fi
 
 # A few other aliases.
-alias k='kubectl'
+alias kc='kubectl'
 alias open='opener.sh'
 alias dbcluster='dbcluster.sh'
 alias helmster='helmster.sh'
