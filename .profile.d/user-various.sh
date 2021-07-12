@@ -55,28 +55,29 @@ alias l='ls -CF'
 if [[ "$(uname -s)" =~ "arwin" ]]; then
     alias em='em-mac.sh'
     alias vi='vi.sh'
-fi
-if [[ "$(uname -r)" =~ "icrosoft" ]]; then
+elif [[ "$(uname -r)" =~ "icrosoft" ]]; then
     alias em='em-windows.sh'
     alias vi='vi.sh'
-fi
-
-if [[ "$(uname -s)" =~ "inux" ]]; then
+    alias code='code.exe'
+elif [[ "$(uname -s)" =~ "inux" ]]; then
     alias em='em-linux.sh'
     alias vi='vi.sh'
+
+    # If no code, assume code-oss.
+    which code > /dev/null 2>&1
+    if [[ $? != 0 ]]; then
+        alias code='code-oss'
+    fi
 fi
 
+# If no gpg, assume gpg2.
 which gpg > /dev/null 2>&1
 if [[ $? != 0 ]]; then
-    alias gpg=gpg2
-fi
-
-which code > /dev/null 2>&1
-if [[ $? != 0 ]]; then
-    alias code=code-oss
+    alias gpg='gpg2'
 fi
 
 # A few other aliases.
+alias k='kubectl'
 alias open='opener.sh'
 alias dbcluster='dbcluster.sh'
 alias helmster='helmster.sh'
