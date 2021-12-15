@@ -1,0 +1,31 @@
+{
+	"default_line_ending": "unix",
+	"drag_text": false,
+	"draw_indent_guides": false,
+	"ensure_newline_at_eof_on_save": true,
+	"font_face": "Ubuntu Mono",
+	"font_size": 11,
+	"gruvbox_accent_blue": true,
+	"gruvbox_colored_tooltips": true,
+	"gruvbox_disable_greyscale": true,
+	"gruvbox_sidebar_compact": true,
+	"gruvbox_sidebar_font_size_13": true,
+	"gruvbox_tabs_autowidth": true,
+	"gruvbox_tabs_bold": true,
+	"gruvbox_tabs_font_size_11": true,
+	"gruvbox_tabs_xs": true,
+	"gutter": false,
+	"highlight_modified_tabs": true,
+	"hot_exit": false,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"indent_guide_options":
+	[
+		"draw_active"
+	],
+	"show_full_path": false,
+	"translate_tabs_to_spaces": true,
+	"trim_trailing_white_space_on_save": true
+}

@@ -1,0 +1,24 @@
+#!/bin/bash
+
+bspc config border_width            3
+bspc config window_gap              68
+
+bspc config normal_border_color     "$(getcolor background)"
+bspc config active_border_color     "$(getcolor color4)"
+bspc config focused_border_color    "$(getcolor color4)"
+
+bspc config split_ratio             0.5
+bspc config borderless_monocle      true
+bspc config gapless_monocle         true
+bspc config focus_follows_pointer   true
+
+bspc monitor eDP-1 -d 1 2 3 4 5
+bspc monitor DP-1 -d  6 7 8 9 0
+
+#"$HOME/.config/bspwm/panel" &
+
+bspc rule -a vncviewer follow=on state=floating center=off
+bspc rule -a fs-uae follow=off state=floating desktop=^5 center=on
+bspc rule -a gimp follow=on state=floating desktop=^5 center=off
+bspc rule -a Vlc follow=off state=floating desktop=^5 center=on
+

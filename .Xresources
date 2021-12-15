@@ -1,0 +1,52 @@
+! My preferred font - specified exactly, just to make sure
+#define FIXFONT -*-terminus-medium-r-*-*-32-*-*-*-*-*-*-*
+!#define XFTFONT xft:Terminus:pixelSize=32:style=Regular
+#define XFTFONT xft:Powerline Consolas:size=11:style=Regular
+
+! Font rendering settings.
+! Should match .config/fontconfig/fonts.conf
+Xft.antialias: true
+Xft.hinting: true
+Xft.hintstyle: hintslight
+Xft.rgba: rgb
+Xft.autohint: false
+Xft.lcdfilter: lcdlight
+Xft.dpi: 192
+
+! Motif window manager settings
+!Mwm*fontList: FIXFONT
+!Mwm*client*title*fontList: FIXFONT
+!Mwm*icon*fontList: FIXFONT
+!Mwm*defaultFontList: FIXFONT
+!Mwm*background:#E9E4DD
+!Mwm*foreground:#000000
+!Mwm*activeBackground:#4A708B
+!Mwm*activeForeground:#FFFFFF
+!Mwm*saveUnder:	true
+!Mwm*feedback*background: #E9E4DD
+!Mwm*feedback*foreground: #000000
+!Mwm*icon*background: #E9E4DD
+!Mwm*icon*foreground: #000000
+!Mwm*menu*background: #E9E4DD
+!Mwm*menu*foreground: #000000
+!Mwm*frameBorderWidth:8
+!Mwm*resizeBorderWidth:8
+!Mwm*iconAutoPlace: True
+!Mwm*iconDecoration: image label
+!Mwm*iconImageMinimum: 50x50
+!Mwm*iconImageMaximum: 50x50
+!Mwm*maximumMaximumSize: 1584x868
+
+! Explicit font settings for XTerm
+XTerm*faceName: Powerline Consolas
+XTerm*faceSize: 11
+
+! Default font settings
+*font: XFTFONT
+*allowBoldFonts: false
+
+! Set Xcursor theme explicitly
+Xcursor.theme: default
+
+! Include color theme
+#include ".colorthemes/active.res"

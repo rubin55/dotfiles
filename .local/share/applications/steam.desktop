@@ -1,0 +1,8 @@
+[Desktop Entry]
+Name=Steam
+Type=Application
+Comment=The Steam game platform
+Exec=steam %U
+TryExec=steam
+Icon=/home/rubin/Dropbox/Pictures/Custom Icons/Steam.png
+Categories=Network;WebBrowser;

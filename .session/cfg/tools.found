@@ -1,0 +1,5 @@
+tools_session_found='awk,cut,grep,host,lsof,nmap,sed,tr,ps'
+tools_execute_found='ssh,winexe'
+tools_agent_found='ssh-agent,ssh-add'
+tools_send_found='cp,scp,smbclient'
+tools_access_found='open,rdesktop,screen'

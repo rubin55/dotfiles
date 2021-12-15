@@ -1,0 +1,9 @@
+# This is Git's per-user configuration file.
+[alias]
+	lola = log --graph --decorate --pretty=oneline --abbrev-commit --all
+[credential]
+	helper = store
+[pull]
+	rebase = false
+[init]
+	defaultBranch = master

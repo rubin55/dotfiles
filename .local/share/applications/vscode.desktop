@@ -1,0 +1,10 @@
+[Desktop Entry]
+Encoding=UTF-8
+Type=Application
+Terminal=false
+Exec=/opt/vscode/vscode110/code %F
+Name=VSCode
+Comment=Cross-platform Editor from Microsoft
+Icon=/opt/vscode/vscode110/resources/app/resources/linux/code.png
+Categories=Development;
+

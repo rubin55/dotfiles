@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Eclipse
+GenericName=Integrated Development Environment
+Comment=Sophisticated text editor for code
+Exec=eclipse %F
+Terminal=false
+MimeType=text/plain;
+Icon=/home/rubin/Pictures/Various Icons/Eclipse-alt.png
+Categories=TextEditor;Development;
+StartupNotify=true
+StartupWMClass=eclipse
