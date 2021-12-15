@@ -7,13 +7,13 @@
 platform=$(uname -s | tr '[:upper:]' '[:lower:]')
 [[ "$(uname -r)" =~ "icrosoft" ]] && platform=windows
 
-# If we have jruby, prefer that and set aliases accordingly.
-[[ "$(which jruby 2> /dev/null)" && -z "$RUBY_EXEC" ]] && RUBY_EXEC=$(which jruby 2> /dev/null) && alias ruby="$RUBY_EXEC"
-[[ "$(which jgem 2> /dev/null)" && -z "$GEM_EXEC" ]] && GEM_EXEC=$(which jgem 2> /dev/null) && alias gem="$GEM_EXEC"
-
-# Else use regular plain old ruby and gem.
+# Use regular plain old ruby and gem if we have it.
 [[ "$(which ruby 2> /dev/null)" && -z "$RUBY_EXEC" ]] && RUBY_EXEC=$(which ruby 2> /dev/null) && alias ruby="$RUBY_EXEC"
 [[ "$(which gem 2> /dev/null)" && -z "$GEM_EXEC" ]] && GEM_EXEC=$(which gem 2> /dev/null) && alias gem="$GEM_EXEC"
+
+# Else, if we have jruby, use that and set aliases accordingly.
+[[ "$(which jruby 2> /dev/null)" && -z "$RUBY_EXEC" ]] && RUBY_EXEC=$(which jruby 2> /dev/null) && alias ruby="$RUBY_EXEC"
+[[ "$(which jgem 2> /dev/null)" && -z "$GEM_EXEC" ]] && GEM_EXEC=$(which jgem 2> /dev/null) && alias gem="$GEM_EXEC"
 
 
 if [ ! -z "$RUBY_EXEC" ]; then

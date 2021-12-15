@@ -5,10 +5,10 @@ SET_PATH=true
 SET_ALIAS=false
 
 # Application locations, alias names, etc.
-CFG_ALIAS="jruby"
-CFG_EXEC_UNIX="/opt/ruby/jruby93/bin/jruby"
-CFG_EXEC_MACOS="$HOME/Applications/Ruby/jruby93/bin/jruby"
-CFG_EXEC_WINDOWS="/mnt/c/Program Files/Ruby/jruby93/bin/jruby.bat"
+CFG_ALIAS="ruby"
+CFG_EXEC_UNIX="/opt/ruby/ruby26/bin/ruby"
+CFG_EXEC_MACOS="$HOME/Applications/Ruby/ruby26/bin/ruby"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Ruby/ruby26/bin/ruby.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then
