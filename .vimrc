@@ -1,3 +1,11 @@
+" Check if plugin is loaded function.
+function! PlugLoaded(name)
+    return (
+        \ has_key(g:plugs, a:name) &&
+        \ isdirectory(g:plugs[a:name].dir) &&
+        \ stridx(&rtp, g:plugs[a:name].dir) >= 0)
+endfunction
+
 " Turn off compatible mode.
 set nocompatible
 
@@ -6,30 +14,31 @@ set nomodeline
 
 " VimPlug section.
 call plug#begin('~/.vim/plugged')
-Plug 'arcticicestudio/nord-vim'
-Plug 'chriskempson/base16-vim'
-Plug 'fatih/vim-go'
-Plug 'jamessan/vim-gnupg'
-Plug 'lighttiger2505/deoplete-vim-lsp'
-Plug 'mattn/vim-lsp-settings'
+"Plug 'arcticicestudio/nord-vim'
+"Plug 'chriskempson/base16-vim'
+"Plug 'fatih/vim-go'
+Plug 'jamessan/vim-gnupg', { 'branch': 'main' }
+"Plug 'lighttiger2505/deoplete-vim-lsp'
+"Plug 'mattn/vim-lsp-settings'
 Plug 'mechatroner/rainbow_csv'
-Plug 'morhetz/gruvbox'
-Plug 'myint/syntastic-extras'
-Plug 'prabirshrestha/vim-lsp'
-Plug 'roxma/nvim-yarp'
-Plug 'roxma/vim-hug-neovim-rpc'
-Plug 'scrooloose/nerdtree'
-Plug 'scrooloose/syntastic'
-Plug 'sirver/UltiSnips'
-Plug 'tpope/vim-fireplace'
-Plug 'tpope/vim-fugitive'
+"Plug 'morhetz/gruvbox'
+"Plug 'myint/syntastic-extras'
+"Plug 'prabirshrestha/vim-lsp'
+"Plug 'roxma/nvim-yarp'
+"Plug 'roxma/vim-hug-neovim-rpc'
+"Plug 'scrooloose/nerdtree'
+"Plug 'scrooloose/syntastic'
+"Plug 'sirver/UltiSnips'
+"Plug 'tpope/vim-fireplace'
+"Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-Plug 'Shougo/deol.nvim'
-Plug 'Shougo/unite.vim'
-Plug 'Shougo/deoplete.nvim'
-Plug 'Xuyuanp/nerdtree-git-plugin'
-Plug 'Fyrbll/intero-vim'
+"Plug 'Shougo/deol.nvim'
+"Plug 'Shougo/unite.vim'
+"Plug 'Shougo/deoplete.nvim'
+"Plug 'Xuyuanp/nerdtree-git-plugin'
+"Plug 'Fyrbll/intero-vim'
+Plug 'sainnhe/everforest'
 call plug#end()
 
 " Main options.
@@ -97,8 +106,7 @@ set number
 
 " Settings for gvim.
 if has('gui_running')
-  colorscheme torte
-  "colorscheme zelner
+  colorscheme everforest
   set lines=40 columns=120
   if has('gui_gtk3')
     set guifont=PragmataPro\ Mono\ 14
@@ -167,11 +175,13 @@ map <silent> <M-v> :vsplit<Cr>
 map <silent> <M-h> :split<Cr>
 
 " Deol.nvim terminal.
-tnoremap <ESC> <C-\><C-n>
-map <silent> <M-c> :Deol<Cr>
+if PlugLoaded('deol.nvim')
+    tnoremap <ESC> <C-\><C-n>
+    map <silent> <M-c> :Deol<Cr>
+endif
 
 " Settings for Unite.
-if exists(':unite_keymaps')
+if PlugLoaded('unite.vim')
     map <silent> <M-f> :Unite -resume -no-split -buffer-name=files -start-insert file<cr>
     map <silent> <M-r> :Unite -resume -no-split -buffer-name=recursive -start-insert file_rec<cr>
     map <silent> <M-b> :Unite -resume -no-split -buffer-name=buffer buffer<Cr>
@@ -183,7 +193,7 @@ if exists(':unite_keymaps')
 endif
 
 " Settings for NERDTree.
-if exists(':NERDTreeToggle')
+if PlugLoaded('nerdtree')
     map <silent> <M-n> :NERDTreeToggle<Cr>
     autocmd VimEnter * silent NERDTree | wincmd p
     autocmd VimEnter * NERDTreeToggle
@@ -209,7 +219,7 @@ if exists(':NERDTreeToggle')
 endif
 
 " Settings for Syntastic.
-if exists(':SyntasticCheck')
+if PlugLoaded('syntastic')
     map <silent> <M-s> :SyntasticCheck<Cr> :SyntasticToggleMode<Cr>
     let g:syntastic_always_populate_loc_list = 1
     let g:syntastic_auto_loc_list = 1
@@ -220,13 +230,32 @@ if exists(':SyntasticCheck')
 endif
 
 " Settings for Airline.
-if exists(':Airline')
-    let g:airline_theme = 'alduin'
+if PlugLoaded('vim-airline')
+    if has('gui_running')
+        let g:airline_theme = 'everforest'
+    else
+        let g:airline_theme = 'base16_oceanicnext'
+    endif
     let g:airline_powerline_fonts = 1
+
+    if !exists('g:airline_symbols')
+        let g:airline_symbols = {}
+    endif
+
+    " Airline symbols.
+    let g:airline_left_sep = ''
+    let g:airline_left_alt_sep = ''
+    let g:airline_right_sep = ''
+    let g:airline_right_alt_sep = ''
+    let g:airline_symbols.branch = ''
+    let g:airline_symbols.readonly = ''
+    let g:airline_symbols.colnr = ' c'
+    let g:airline_symbols.linenr = ' l'
+    let g:airline_symbols.maxlinenr = ' '
 endif
 
 " Settings for UltiSnips.
-if exists(':UltiSnipsEdit')
+if PlugLoaded('UltiSnips')
     nmap <silent> <M-u> :UltiSnipsEdit<Cr>
     let g:UltiSnipsUsePythonVersion = 3
     if has('unix')
@@ -242,7 +271,7 @@ if exists(':UltiSnipsEdit')
 endif
 
 " Settings for deoplete.
-if exists(':deoplete')
+if PlugLoaded('deoplete.nvim')
     let g:deoplete#enable_at_startup = 1
 endif
 
