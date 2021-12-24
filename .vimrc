@@ -6,31 +6,17 @@ set nomodeline
 
 " VimPlug section.
 call plug#begin('~/.vim/plugged')
-"Plug 'arcticicestudio/nord-vim'
-"Plug 'chriskempson/base16-vim'
-"Plug 'fatih/vim-go'
 Plug 'jamessan/vim-gnupg', { 'branch': 'main' }
-"Plug 'lighttiger2505/deoplete-vim-lsp'
-"Plug 'mattn/vim-lsp-settings'
+Plug 'mattn/vim-lsp-settings'
 Plug 'mechatroner/rainbow_csv'
-"Plug 'morhetz/gruvbox'
-"Plug 'myint/syntastic-extras'
-"Plug 'prabirshrestha/vim-lsp'
-"Plug 'roxma/nvim-yarp'
-"Plug 'roxma/vim-hug-neovim-rpc'
-"Plug 'scrooloose/nerdtree'
-"Plug 'scrooloose/syntastic'
-"Plug 'sirver/UltiSnips'
-"Plug 'tpope/vim-fireplace'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'sainnhe/everforest'
+Plug 'Shougo/deol.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
-"Plug 'Shougo/deol.nvim'
-"Plug 'Shougo/unite.vim'
-"Plug 'Shougo/deoplete.nvim'
-"Plug 'Xuyuanp/nerdtree-git-plugin'
-"Plug 'Fyrbll/intero-vim'
-Plug 'sainnhe/everforest'
 call plug#end()
 
 " Main options.
@@ -54,6 +40,9 @@ set hlsearch
 " Only do soft-wraps.
 set linebreak
 set wrap
+
+" Allow modified buffers.
+set hidden
 
 " Setup backspace and tab settings.
 set backspace=indent,eol,start
@@ -96,9 +85,6 @@ set background=dark
 " Enable line-numbers.
 set number
 
-" Enable cursor-line.
-set cursorline
-
 " Set netrw modes.
 let g:netrw_browse_split = 4
 let g:netrw_liststyle = 3
@@ -107,6 +93,7 @@ let g:netrw_winsize = 20
 " Settings for gvim.
 if has('gui_running')
   colorscheme everforest
+  set cursorline
   set lines=40 columns=120
   "set guioptions+=m
   if has('gui_gtk3')
@@ -211,4 +198,3 @@ endfunction
 
 " Enable distraction-free mode by default.
 call ToggleDistractionFree()
-
