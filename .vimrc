@@ -1,11 +1,3 @@
-" Check if plugin is loaded function.
-function! PlugLoaded(name)
-    return (
-        \ has_key(g:plugs, a:name) &&
-        \ isdirectory(g:plugs[a:name].dir) &&
-        \ stridx(&rtp, g:plugs[a:name].dir) >= 0)
-endfunction
-
 " Turn off compatible mode.
 set nocompatible
 
@@ -104,10 +96,19 @@ set background=dark
 " Enable line-numbers.
 set number
 
+" Enable cursor-line.
+set cursorline
+
+" Set netrw modes.
+let g:netrw_browse_split = 4
+let g:netrw_liststyle = 3
+let g:netrw_winsize = 20
+
 " Settings for gvim.
 if has('gui_running')
   colorscheme everforest
   set lines=40 columns=120
+  "set guioptions+=m
   if has('gui_gtk3')
     set guifont=PragmataPro\ Mono\ 14
   elseif has('gui_macvim')
@@ -174,107 +175,6 @@ nmap <silent> <M-Right> :wincmd l<Cr>
 map <silent> <M-v> :vsplit<Cr>
 map <silent> <M-h> :split<Cr>
 
-" Deol.nvim terminal.
-if PlugLoaded('deol.nvim')
-    tnoremap <ESC> <C-\><C-n>
-    map <silent> <M-c> :Deol<Cr>
-endif
-
-" Settings for Unite.
-if PlugLoaded('unite.vim')
-    map <silent> <M-f> :Unite -resume -no-split -buffer-name=files -start-insert file<cr>
-    map <silent> <M-r> :Unite -resume -no-split -buffer-name=recursive -start-insert file_rec<cr>
-    map <silent> <M-b> :Unite -resume -no-split -buffer-name=buffer buffer<Cr>
-    call unite#filters#matcher_default#use(['matcher_fuzzy'])
-    autocmd FileType unite call s:unite_keymaps()
-    function! s:unite_keymaps()
-        map <buffer> <Esc>   <Plug>(unite_exit)
-    endfunction`
-endif
-
-" Settings for NERDTree.
-if PlugLoaded('nerdtree')
-    map <silent> <M-n> :NERDTreeToggle<Cr>
-    autocmd VimEnter * silent NERDTree | wincmd p
-    autocmd VimEnter * NERDTreeToggle
-    let g:NERDTreeQuitOnOpen = 1
-    let g:NERDTreeMinimalUI = 1
-    let g:NERDTreeDirArrows = 1
-    let g:NERDTreeIgnore=['^NTUSER\.DAT.*$']
-    "let g:NERDTreeDirArrowExpandable = '→'
-    "let g:NERDTreeDirArrowCollapsible = '↓'
-    let g:NERDTreeDirArrowExpandable = '▸'
-    let g:NERDTreeDirArrowCollapsible = '▾'
-    let g:NERDTreeGitStatusIndicatorMapCustom = {
-        \ 'Modified'  : '✹',
-        \ 'Staged'    : '✚',
-        \ 'Untracked' : '✭',
-        \ 'Renamed'   : '➜',
-        \ 'Unmerged'  : '═',
-        \ 'Deleted'   : '✖',
-        \ 'Dirty'     : '✗',
-        \ 'Clean'     : '✓',
-        \ 'Unknown'   : '?'
-        \ }
-endif
-
-" Settings for Syntastic.
-if PlugLoaded('syntastic')
-    map <silent> <M-s> :SyntasticCheck<Cr> :SyntasticToggleMode<Cr>
-    let g:syntastic_always_populate_loc_list = 1
-    let g:syntastic_auto_loc_list = 1
-    let g:syntastic_check_on_open = 1
-    let g:syntastic_check_on_wq = 0
-    let g:syntastic_java_checkers = []
-    let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': [],'passive_filetypes': [] }
-endif
-
-" Settings for Airline.
-if PlugLoaded('vim-airline')
-    if has('gui_running')
-        let g:airline_theme = 'everforest'
-    else
-        let g:airline_theme = 'base16_oceanicnext'
-    endif
-    let g:airline_powerline_fonts = 1
-
-    if !exists('g:airline_symbols')
-        let g:airline_symbols = {}
-    endif
-
-    " Airline symbols.
-    let g:airline_left_sep = ''
-    let g:airline_left_alt_sep = ''
-    let g:airline_right_sep = ''
-    let g:airline_right_alt_sep = ''
-    let g:airline_symbols.branch = ''
-    let g:airline_symbols.readonly = ''
-    let g:airline_symbols.colnr = ' c'
-    let g:airline_symbols.linenr = ' l'
-    let g:airline_symbols.maxlinenr = ' '
-endif
-
-" Settings for UltiSnips.
-if PlugLoaded('UltiSnips')
-    nmap <silent> <M-u> :UltiSnipsEdit<Cr>
-    let g:UltiSnipsUsePythonVersion = 3
-    if has('unix')
-        let g:UltiSnipsSnippetsDir = '/home/rubin/.vim/snippets'
-        let g:UltiSnipsSnippetDirectories=['/home/rubin/VimFiles/snippets']
-    elseif has('win32')
-        let g:UltiSnipsSnippetsDir = 'C:/Users/rubin/.vim/snippets'
-        let g:UltiSnipsSnippetDirectories=['C:/Users/rubin/VimFiles/snippets']
-    endif
-    let g:UltiSnipsEnableSnipMate = 0
-    let g:UltiSnipsListSnippets = '<M-u>'
-    let g:UltiSnipsEditSplit= 'vertical'
-endif
-
-" Settings for deoplete.
-if PlugLoaded('deoplete.nvim')
-    let g:deoplete#enable_at_startup = 1
-endif
-
 " Fullscreen enablement for Windows, Mac or Linux gvim.
 "map <F11> <Esc>:call libcallnr('gvimfullscreen.dll', 'ToggleFullScreen', 0)<Cr>
 "map <F11> :set invfu<Cr>
@@ -308,8 +208,7 @@ function! ToggleDistractionFree()
         set guioptions+=r
     endif
 endfunction
-call ToggleDistractionFree()
 
-" Enable the menu though.
-"set guioptions+=m
+" Enable distraction-free mode by default.
+call ToggleDistractionFree()
 
