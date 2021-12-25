@@ -91,6 +91,9 @@ let g:netrw_browse_split = 4
 let g:netrw_liststyle = 3
 let g:netrw_winsize = 20
 
+" Don't use a different background color for signs column.
+highlight clear SignColumn
+
 " Settings for gvim.
 if has('gui_running')
   colorscheme everforest
