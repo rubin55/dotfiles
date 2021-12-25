@@ -17,6 +17,7 @@ Plug 'Shougo/deol.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
+Plug 'ziglang/zig.vim'
 call plug#end()
 
 " Main options.
