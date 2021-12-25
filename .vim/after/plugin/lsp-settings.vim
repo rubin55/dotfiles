@@ -6,3 +6,6 @@ if (executable('haskell-language-server-wrapper'))
       \ 'whitelist': ['haskell'],
       \ })
 endif
+
+let g:lsp_signs_error = {'text': '✗'}
+let g:lsp_signs_warning = {'text': '‼'}
