@@ -7,7 +7,7 @@ MANPATH_CANDIDATES="/usr/man:/usr/share/man:/usr/local/man:/usr/local/share/man:
 OLD_IFS=$IFS ; IFS=:
 for MANPATH_ELEMENT in $MANPATH_CANDIDATES; do
     if [ -d "$MANPATH_ELEMENT" ]; then
-        MANPATH+="$MANPATH_ELEMENT:"
+        MANPATH_NEW+="$MANPATH_ELEMENT:"
     fi
 done
 IFS=$OLD_IFS
@@ -16,10 +16,10 @@ IFS=$OLD_IFS
 NVM_DEFAULT_ALIAS="$HOME/.nvm/alias/default"
 if [ -e "$NVM_DEFAULT_ALIAS" ]; then
     NVM_DEFAULT_VERSION=$(cat $NVM_DEFAULT_ALIAS)
-    MANPATH+="$HOME/.nvm/versions/node/$NVM_DEFAULT_VERSION/share/man:"
+    MANPATH_NEW+="$HOME/.nvm/versions/node/$NVM_DEFAULT_VERSION/share/man:"
 fi
 
 # Extra manpath elements for programs in /opt.
-MANPATH+="$(find /opt -maxdepth 5 -type d -name man | tr '\n' ':')"
+MANPATH_NEW+="$(find /opt -maxdepth 5 -type d -name man | tr '\n' ':')"
 
-export MANPATH
+export MANPATH=$MANPATH_NEW
