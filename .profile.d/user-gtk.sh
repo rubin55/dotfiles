@@ -4,7 +4,7 @@ if [ "$(uname -s)" == "Linux" ]; then
     if [[ "$XDG_SESSION_TYPE"  == "tty" ||  "$XDG_SESSION_TYPE"  == "x11" ]]; then
         export GDK_BACKEND=x11
     elif [[  "$XDG_SESSION_TYPE"  == "wayland" ]]; then
-        export GDK_BACKEND=wayland
+        export GDK_BACKEND=wayland,x11
     else
         export GDK_BACKEND=x11
     fi
