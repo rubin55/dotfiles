@@ -1,9 +1,5 @@
 #!/bin/bash
 
-# What are we running on?
-platform=$(uname -s | tr '[:upper:]' '[:lower:]')
-[[ "$(uname -r)" =~ "icrosoft" ]] && platform=windows
-
 # Default manpath candidates.
 MANPATH_CANDIDATES="/usr/man:/usr/share/man:/usr/local/man:/usr/local/share/man:/snap/man:$HOME/.ghcup/share/man:$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/man"
 
