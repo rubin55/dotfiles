@@ -3,7 +3,7 @@
 # A Docker host I'm known to run from time to time.
 #DOCKER_HOST="tcp://172.17.1.4:2375"
 #DOCKER_HOST="tcp://172.17.1.4:2376"
-DOCKER_HOST="ssh://root@172.17.1.20"
+#DOCKER_HOST="ssh://root@172.17.1.20"
 
 
 # Check if minikube is available and if it's running first.

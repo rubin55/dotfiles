@@ -17,7 +17,6 @@ if [[ -n "$NODE_EXEC" ]]; then
         NPM_EXEC="cmd.exe /c npm.cmd"
         alias npm=$NPM_EXEC
     elif [[ ! -z "$NPM_EXEC" ]]; then
-        # npm config set prefix '~/.node/npm
         NPM_CURRENT_PREFIX="$($NPM_EXEC config get prefix)"
         if [[ "$NPM_CURRENT_PREFIX" != *"$HOME"* ]]; then
             "$NPM_EXEC" config set prefix $HOME/.node/$NODE_VERSION
