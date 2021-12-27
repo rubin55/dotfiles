@@ -3,7 +3,6 @@
 # If we have nvm, set up node using nvm, else do some manual magic.
 if [ -s "$HOME/.nvm/nvm.sh" ]; then
     source "$HOME/.nvm/nvm.sh"
-    nvm use default > /dev/null
 else
     # A few helpful variables.
     [[ $(which node 2>/dev/null) ]] && NODE_EXEC=$(which node 2>/dev/null) && alias node="$(echo $NODE_EXEC | sed -e 's| |\\ |g' -e 's|(|\\(|g' -e 's|)|\\)|g')"
