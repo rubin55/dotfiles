@@ -6,9 +6,9 @@ SET_ALIAS=false
 
 # Application locations, alias names, etc.
 CFG_ALIAS="mono"
-CFG_EXEC_UNIX="/opt/mono/mono520/bin/mono"
+CFG_EXEC_UNIX="/opt/mono/mono6/bin/mono"
 CFG_EXEC_MACOS="/Library/Frameworks/Mono.framework/Versions/Current/Commands/mono"
-CFG_EXEC_WINDOWS="/mnt/c/Program Files/Mono/mono520/bin/mono"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Mono/mono6/bin/mono"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then
