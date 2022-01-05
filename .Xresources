@@ -1,5 +1,5 @@
 ! My preferred font - specified exactly, just to make sure
-#define FONT -*-helvetica-bold-r-*-*-34-*-*-*-*-*-*-*
+#define FONT -*-helvetica-bold-r-*-*-34-*-*-*-*-*-iso8859-15
 
 ! Font rendering settings.
 ! Should match .config/fontconfig/fonts.conf
@@ -20,7 +20,9 @@ XTerm*faceSize: 13
 *allowBoldFonts: false
 
 ! Set Xcursor theme explicitly
-Xcursor.theme: default
+! Note that theme "default" almost never works.
+Xcursor.theme: Adwaita
+Xcursor.size: 48
 
 ! Motif window manager settings
 !Mwm*fontList: FONT
