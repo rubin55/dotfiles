@@ -2,13 +2,13 @@
 
 # What to do.
 SET_PATH=true
-SET_ALIAS=true
+SET_ALIAS=false
 
 # Application locations, alias names, etc.
-CFG_ALIAS="vasm"
-CFG_EXEC_UNIX="/opt/vasm/vasm18/bin/vasmm68k_mot"
-CFG_EXEC_MACOS="$HOME/Applications/VASM/vasm18/bin/vasmm68k_mot"
-CFG_EXEC_WINDOWS="/mnt/c/Program Files/VASM/bin/vasmm68k_mot.exe"
+CFG_ALIAS="vc"
+CFG_EXEC_UNIX="/opt/volker/vbcc0/bin/vc"
+CFG_EXEC_MACOS="$HOME/Applications/Volker/vbcc0/bin/vc"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/VBCC/bin/vc.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then
