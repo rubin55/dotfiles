@@ -136,7 +136,7 @@
  :config
  (setq lsp-xml-server-command "xml-ls.sh")
  (setq lsp-xml-server-vmargs "-noverify -Xmx64M -XX:+UseG1GC -XX:+UseStringDeduplication -jar")
- (setq lsp-xml-jar-file "/home/rubin/.emacs.d/.local/etc/lsp/lemminx/org.eclipse.lemminx/target/org.eclipse.lemminx-uber.jar"))
+ (setq lsp-xml-jar-file "$HOME/.emacs.d/.local/etc/lsp/lemminx/org.eclipse.lemminx/target/org.eclipse.lemminx-uber.jar"))
 
 ;; Configure lsp sql mode.
 (use-package lsp-mode
@@ -168,7 +168,7 @@
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
 (setq user-full-name "Rubin Simons'"
-      user-mail-address "rubin@xs4all.nl")
+      user-mail-address "me@rubin55.org")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:

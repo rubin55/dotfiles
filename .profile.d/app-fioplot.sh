@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="fio_plot"
 CFG_EXEC_UNIX="/$HOME/Syncthing/Source/Other/fio-plot/fio_plot/fio_plot"
 CFG_EXEC_MACOS="/$HOME/Syncthing/Source/Other/fio-plot/fio_plot/fio_plot"
-CFG_EXEC_WINDOWS="/mnt/c/Users/rubin/Syncthing/Other/fio-plot/fio_plot/fio_plot.py"
+CFG_EXEC_WINDOWS="/mnt/c/Users/$USERNAME/Syncthing/Other/fio-plot/fio_plot/fio_plot.py"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then
@@ -41,7 +41,7 @@ fi
 CFG_ALIAS="bench_fio"
 CFG_EXEC_UNIX="/$HOME/Syncthing/Source/Other/fio-plot/benchmark_script/bench_fio"
 CFG_EXEC_MACOS="/$HOME/Syncthing/Source/Other/fio-plot/benchmark_script/bench_fio"
-CFG_EXEC_WINDOWS="/mnt/c/Users/rubin/Syncthing/Other/fio-plot/benchmark_script/bench_fio.py"
+CFG_EXEC_WINDOWS="/mnt/c/Users/$USERNAME/Syncthing/Other/fio-plot/benchmark_script/bench_fio.py"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

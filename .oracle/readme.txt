@@ -9,8 +9,8 @@ Note that if you're using sqlplus as it comes with either instantclient or oracl
 
 To use this directory with SQLPlus on Unix or Linux or MacOS, set the following environment variables:
 
-export TNS_ADMIN=/Users/rubin/.oracle
-export ORACLE_PATH=/Users/rubin/.oracle
-export SQLPATH=/Users/rubin/.oracle
+export TNS_ADMIN=$HOME/.oracle
+export ORACLE_PATH=$HOME/.oracle
+export SQLPATH=$HOME/.oracle
 
 Additionally, it is recommended to install rlwrap and alias rlsqlplus='rlwrap sqlplus' which will give you command history.
