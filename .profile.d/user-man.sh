@@ -20,6 +20,6 @@ if [ -e "$NVM_DEFAULT_ALIAS" ]; then
 fi
 
 # Extra manpath elements for programs in /opt.
-MANPATH_NEW+="$(find /opt -maxdepth 5 -type d -name man | tr '\n' ':')"
+MANPATH_NEW+="$(find /opt -maxdepth 5 -type d -name man 2>/dev/null| tr '\n' ':')"
 
 export MANPATH=$MANPATH_NEW
