@@ -5,13 +5,23 @@ if [[ ":$PATH:" != *":$HOME/.local/bin:"* ]]; then
     export PATH="$HOME/.local/bin:$PATH"
 fi
 
-# Add scripts directories to path that make sense on unix-likes.
-SCRIPTS_HOME="$HOME/Syncthing/Source/RAAF/scripts"
-for DIR in perl power python ruby shell; do
-    if [ -d "$SCRIPTS_HOME/$DIR" ] && [[ ":$PATH:" != *":$SCRIPTS_HOME/$DIR:"* ]]; then
-        export PATH="${PATH:+"$PATH:"}$SCRIPTS_HOME/$DIR"
+# Determine SCRIPTS_HOME.
+SCRIPTS_HOMES="$HOME/Syncthing/Source/Rubin/scripts $HOME/Source/scripts"
+for POSSIBLE_SCRIPTS_HOME in $SCRIPTS_HOMES; do
+    if [ -d "$POSSIBLE_SCRIPTS_HOME" ]; then
+        SCRIPTS_HOME="$POSSIBLE_SCRIPTS_HOME"
+        break
     fi
 done
+
+# Add scripts directories to path that make sense on unix-likes.
+if [ -n "$SCRIPTS_HOME" ]; then
+    for DIR in perl power python ruby shell; do
+        if [ -d "$SCRIPTS_HOME/$DIR" ] && [[ ":$PATH:" != *":$SCRIPTS_HOME/$DIR:"* ]]; then
+            export PATH="${PATH:+"$PATH:"}$SCRIPTS_HOME/$DIR"
+        fi
+    done
+fi
 
 # Add extra script directories to path.
 SCRIPTS_EXTRAS="$HOME/Syncthing/Source/RAAF/session $HOME/Syncthing/Source/ICTU/various/helmster/bin"
@@ -20,7 +30,6 @@ for EXTRA in $SCRIPTS_EXTRAS; do
         export PATH="${PATH:+"$PATH:"}$EXTRA"
     fi
 done
-
 
 # Don't put duplicate lines or lines starting with space in the history.
 HISTCONTROL=ignoreboth
