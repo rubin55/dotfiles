@@ -51,7 +51,7 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 
-# Emacs and Vim.
+# Code, Emacs and Vim.
 if [[ "$(uname -s)" =~ "arwin" ]]; then
     alias em='em-mac.sh'
     alias vi='vi.sh'
@@ -106,15 +106,17 @@ function title() {
 # I have my preference for PS1.
 scm_ps1() {
     typeset git=$(which git 2> /dev/null)
+    typeset git_prompt=$(which git-prompt.sh 2> /dev/null)
     typeset svn=$(which svn 2>/dev/null)
+    typeset svn_prompt=$(which svn-prompt.sh 2> /dev/null)
     typeset s
-    if [ ! -z "$git" ]; then
-        source $(which git-prompt.sh 2>/dev/null)
+    if [[ -n "$git" && -n "$git_prompt" ]]; then
+        source "$git_prompt"
         s="$(__git_ps1 ' (%s)')"
-    elif [ ! -z "$svn" ]; then
+    elif [[ -n "$svn" && -n "$svn_prompt" ]]; then
         svn info > /dev/null 2>&1
         if [[ $? = 0 ]] ; then
-            source $(which svn-prompt.sh 2>/dev/null)
+            source "$svn_prompt"
             s="$(__svn_ps1 ' (%s)')"
         fi
     fi
