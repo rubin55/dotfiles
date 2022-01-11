@@ -6,6 +6,7 @@ set nomodeline
 
 " VimPlug section.
 call plug#begin('~/.vim/plugged')
+Plug 'elixir-editors/vim-elixir'
 Plug 'jamessan/vim-gnupg', { 'branch': 'main' }
 Plug 'mattn/vim-lsp-settings'
 Plug 'mechatroner/rainbow_csv'
@@ -92,6 +93,7 @@ let g:netrw_liststyle = 3
 let g:netrw_winsize = 20
 
 " Don't use a different background color for signs column.
+" Used by at least vim-fugitive and vim-lsp.
 highlight clear SignColumn
 
 " Settings for gvim.
@@ -165,6 +167,9 @@ nmap <silent> <M-Right> :wincmd l<Cr>
 " Vertical and horizontal split window.
 map <silent> <M-v> :vsplit<Cr>
 map <silent> <M-h> :split<Cr>
+
+" Map netrw to a keyboard shortcut.
+map <silent> <M-f> :Lexplore<Cr>
 
 " Fullscreen enablement for Windows, Mac or Linux gvim.
 "map <F11> <Esc>:call libcallnr('gvimfullscreen.dll', 'ToggleFullScreen', 0)<Cr>
