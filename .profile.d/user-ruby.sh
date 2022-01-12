@@ -44,12 +44,10 @@ if [ ! -z "$RUBY_EXEC" ]; then
                 gentoo*)
                     export GEM_PATH=/usr/lib64/ruby/gems/$RUBY_VERSION.0:$GEM_HOME
                     ;;
-                pop*)
-                    ;;
                 redhat*)
                     export GEM_PATH=/usr/share/gems:$GEM_HOME
                     ;;
-                voidlinux*)
+                pop*|ubuntu*|voidlinux*)
                     ;;
                 *)
                     echo "Warning: couldn't detect distro? Don't know how to set GEM_PATH."
