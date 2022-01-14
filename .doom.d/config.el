@@ -193,12 +193,12 @@
       doom-variable-pitch-font (font-spec :family "Segoe UI" :size 28)))
 
 (when (string= (system-name) "THINK")
-  (setq doom-font (font-spec :family "monospace" :size 36 :weight 'normal)
-      doom-variable-pitch-font (font-spec :family "sans" :size 36)))
+  (setq doom-font (font-spec :family "monospace" :size 38 :weight 'normal)
+      doom-variable-pitch-font (font-spec :family "sans" :size 38)))
 
 (when (string= (system-name) "ORION")
-  (setq doom-font (font-spec :family "PragmataPro Mono Liga" :size 14 :weight 'normal)
-      doom-variable-pitch-font (font-spec :family "Segoe UI" :size 12)))
+  (setq doom-font (font-spec :family "monospace" :size 15 :weight 'normal)
+      doom-variable-pitch-font (font-spec :family "sans" :size 13)))
 
 (when (string= (system-name) "POWER")
   (setq doom-font (font-spec :family "PragmataPro Mono Liga" :size 15 :weight 'normal)
