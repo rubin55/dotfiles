@@ -6,8 +6,8 @@ SET_ALIAS=false
 
 # Application locations, alias names, etc, for fio_plot.
 CFG_ALIAS="fio_plot"
-CFG_EXEC_UNIX="/$HOME/Syncthing/Source/Other/fio-plot/fio_plot/fio_plot"
-CFG_EXEC_MACOS="/$HOME/Syncthing/Source/Other/fio-plot/fio_plot/fio_plot"
+CFG_EXEC_UNIX="$HOME/Syncthing/Source/Other/fio-plot/fio_plot/fio_plot"
+CFG_EXEC_MACOS="$HOME/Syncthing/Source/Other/fio-plot/fio_plot/fio_plot"
 CFG_EXEC_WINDOWS="/mnt/c/Users/$USERNAME/Syncthing/Other/fio-plot/fio_plot/fio_plot.py"
 
 # Determine application home.
