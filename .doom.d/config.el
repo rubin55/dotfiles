@@ -223,6 +223,10 @@
 (setq display-line-numbers-type t)
 
 
+;; Disable insane 'jk' to-command-mode sequence.
+(after! evil-escape
+  (setq evil-escape-key-sequence nil))
+
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
 ;; - `load!' for loading external *.el files relative to this one
