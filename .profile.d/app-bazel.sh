@@ -6,9 +6,9 @@ SET_ALIAS=false
 
 # Application locations, alias names, etc.
 CFG_ALIAS="bazel"
-CFG_EXEC_UNIX="/opt/bazel/bazel4/bin/bazel"
-CFG_EXEC_MACOS="$HOME/Applications/bazel/bazel4/bin/bazel"
-CFG_EXEC_WINDOWS="/mnt/c/Program Files/Apache/bazel4/bin/bazel"
+CFG_EXEC_UNIX="/opt/bazel/bazel5/bin/bazel"
+CFG_EXEC_MACOS="$HOME/Applications/bazel/bazel5/bin/bazel"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Apache/bazel5/bin/bazel"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then

@@ -5,10 +5,10 @@ SET_PATH=true
 SET_ALIAS=false
 
 # Application locations, alias names, etc.
-CFG_ALIAS="sbt"
-CFG_EXEC_UNIX="/opt/sbt/sbt16/bin/sbt"
-CFG_EXEC_MACOS="$HOME/Applications/SBT/sbt16/bin/sbt"
-CFG_EXEC_WINDOWS="/mnt/c/Program Files/SBT/sbt16/bin/sbt"
+CFG_ALIAS="wireshark"
+CFG_EXEC_UNIX="/opt/wireshark/ws3/wireshark"
+CFG_EXEC_MACOS="/Applications/Wireshark.app/Contents/MacOS/wireshark"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Wireshark/wireshark.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then
