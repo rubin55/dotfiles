@@ -48,6 +48,7 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
 
+(package! visual-fill-column)
 (package! lsp-pyright)
 (package! powershell)
 (package! nov)

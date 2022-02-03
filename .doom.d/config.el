@@ -155,9 +155,9 @@
 ;; Configure lsp elixir mode.
 (use-package lsp-mode
   :hook ((elixir-mode . lsp)
-         (alchemist-mode . lsp))
- :config
- (setq lsp-clients-elixir-server-executable "~/.emacs.d/.local/etc/lsp/elixir-ls/_build/default/language_server.sh"))
+         (alchemist-mode . lsp)))
+ ;;:config
+ ;; (setq lsp-clients-elixir-server-executable "~/.emacs.d/.local/etc/lsp/elixir-ls/_build/default/language_server.sh"))
 
 ;; Enable lsp logging.
 (setq lsp-log-io t)
