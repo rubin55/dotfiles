@@ -8,6 +8,7 @@ if [ "$(uname -s)" == "Linux" ]; then
     if [[ "$XDG_SESSION_TYPE"  == "tty" ||  "$XDG_SESSION_TYPE"  == "x11" ]]; then
         export SDL_VIDEODRIVER=x11
     elif [[  "$XDG_SESSION_TYPE"  == "wayland" ]]; then
-        export SDL_VIDEODRIVER=wayland
+        # export SDL_VIDEODRIVER=wayland # only works with SDL2
+        export SDL_VIDEODRIVER=x11
     fi
 fi
