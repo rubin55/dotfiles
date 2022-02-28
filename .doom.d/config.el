@@ -183,30 +183,40 @@
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 
-;; I have different font settings on various hosts.
-(when (string= (system-name) "kuro.home.local")
-  (setq doom-font (font-spec :family "PragmataPro Mono Liga" :size 16 :weight 'normal)
-      doom-variable-pitch-font (font-spec :family "Helvetica Neue" :size 14)))
-
+;; Font settings for Adam, my Windows AMD64 desktop at home.
 (when (string= (system-name) "ADAM")
   (setq doom-font (font-spec :family "PragmataPro Mono Liga" :size 32 :weight 'normal)
       doom-variable-pitch-font (font-spec :family "Segoe UI" :size 28)))
 
-(when (string= (system-name) "THINK")
-  (setq doom-font (font-spec :family "monospace" :size 38 :weight 'normal)
-      doom-variable-pitch-font (font-spec :family "sans" :size 38)))
-
+;; Font settings for Orion, my Linux AMD64 desktop at work.
 (when (string= (system-name) "ORION")
-  (setq doom-font (font-spec :family "monospace" :size 15 :weight 'normal)
-      doom-variable-pitch-font (font-spec :family "sans" :size 13)))
+  (setq doom-font (font-spec :family "Monospace" :size 15 :weight 'normal)
+      doom-variable-pitch-font (font-spec :family "Sans" :size 13)))
 
+;; Font settings for Power, my Linux PowerPC desktop at work.
 (when (string= (system-name) "POWER")
-  (setq doom-font (font-spec :family "PragmataPro Mono Liga" :size 15 :weight 'normal)
-      doom-variable-pitch-font (font-spec :family "PragmataPro Liga" :size 15)))
+  (setq doom-font (font-spec :family "Monospace" :size 15 :weight 'normal)
+      doom-variable-pitch-font (font-spec :family "Sans" :size 15)))
 
+;; Font settings for Think, my Linux AMD64 laptop.
+(when (string= (system-name) "THINK")
+  (setq doom-font (font-spec :family "Monospace" :size 38 :weight 'normal)
+      doom-variable-pitch-font (font-spec :family "Sans" :size 38)))
+
+;; Font settings for Surface, my Windows ARM64 laptop.
 (when (string= (system-name) "SURFACE")
   (setq doom-font (font-spec :family "PragmataPro Mono Liga" :size 32 :weight 'normal)
       doom-variable-pitch-font (font-spec :family "Segoe UI" :size 28)))
+
+;; Font settings for Kuro, my macOS AMD64 laptop.
+(when (string= (system-name) "kuro.home.local")
+  (setq doom-font (font-spec :family "PragmataPro Mono Liga" :size 16 :weight 'normal)
+      doom-variable-pitch-font (font-spec :family "Helvetica Neue" :size 14)))
+
+;; Font settings for Gs-2-l-h-004, my Linux AMD64 vdi at work.
+(when (string= (system-name) "GS-2-L-H-004")
+  (setq doom-font (font-spec :family "Monospace" :size 38 :weight 'normal)
+      doom-variable-pitch-font (font-spec :family "Sans" :size 38)))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
