@@ -9,9 +9,9 @@ if [[ "$platform" == "linux" && ! -z "$(which get-resolution.py 2> /dev/null)" ]
     )
 
     # Current desktop resolution.
-    currentResolution="$(get-resolution.py)"
+    currentResolution="$(get-resolution.py 2> /dev/null)"
 
-    if [[ -n "${settings[$currentResolution]}" ]]; then
+    if [[ -n "$currentResolution" && -n "${settings[$currentResolution]}" ]]; then
 
         # Current and wanted Visual Studio Code settings.
         codeConfig="$HOME/.config/Code/User/settings.json"
@@ -147,6 +147,8 @@ if [[ "$platform" == "linux" && ! -z "$(which get-resolution.py 2> /dev/null)" ]
                 sed -i "s|$currentVimMonoFontString|$wantedVimMonoFontString|g" "$vimConfig"
             fi
         fi
+    elif [[ -z "$currentResolution" ]]; then
+        echo "Notice: Could not obtain current resolution, probably non-graphical session.."
     else
         echo "Notice: Current resolution of $currentResolution is unknown.."
     fi
