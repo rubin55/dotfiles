@@ -41,7 +41,7 @@ if [[ "$platform" == "linux" && ! -z "$(which get-resolution.py 2> /dev/null)" ]
         fi
 
         # Current and wanted Emacs settings.
-        emacsHostIdentifier="$(hostname -s)"
+        emacsHostIdentifier="$(hostname | cut -d. -f1)"
         emacsConfig="$HOME/.doom.d/config.el"
         if [[ -e "$emacsConfig" ]]; then
             currentEmacsMonospaceFontName="$(grep -A1 "(when (string= (system-name) \"$emacsHostIdentifier\")" "$emacsConfig" | tail -n1 | awk -F ':' '{print $2}' \
@@ -90,7 +90,7 @@ if [[ "$platform" == "linux" && ! -z "$(which get-resolution.py 2> /dev/null)" ]
             wantedGnomeTitleFontSize="$wantedGnomeInterfaceFontSize"
 
             # Update Gnome system monospace font if different.
-            if [[ "$currentGnomeMonoFontSize" != "$wantedGnomeMonoFontSize" ]]; then
+            if [[ "$currentGnomeMonospaceFontSize" != "$wantedGnomeMonospaceFontSize" ]]; then
                 echo "Notice: Resolution is $currentResolution, setting Gnome monospace font to \"$currentGnomeMonospaceFontName $wantedGnomeMonospaceFontSize\".."
                 gsettings set org.gnome.desktop.interface monospace-font-name "$currentGnomeMonospaceFontName $wantedGnomeMonospaceFontSize"
             fi
