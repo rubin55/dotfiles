@@ -136,7 +136,7 @@ if [[ "$platform" == "linux" && ! -z "$(which get-resolution.py 2> /dev/null)" ]
         vimConfig="$HOME/.vimrc"
         if [[ -e "$vimConfig" ]]; then
             currentVimMonoFontName="$(grep -A1 "if has('gui_gtk3')" "$vimConfig" | tail -n1 | cut -d= -f2 | sed -e 's|\\||g' -e 's|[0-9]||g' -e 's|[[:space:]]*$||g')"
-            currentVimMonoFontSize="$(grep -A1 "if has('gui_gtk3')" "$vimConfig" | tail -n1 | cut -d= -f2 | awk -F '\\ ' '{print $NF}')"
+            currentVimMonoFontSize="$(grep -A1 "if has('gui_gtk3')" "$vimConfig" | tail -n1 | cut -d= -f2 | awk -F '\\\\ ' '{print $NF}')"
             wantedVimMonoFontSize="$(echo "${settings[$currentResolution]}" | awk -F 'vimMono=' '{print $NF}' | cut -d, -f1)"
 
             # Update Vim config if different.
