@@ -3,7 +3,7 @@ platform=$(uname -s | tr '[:upper:]' '[:lower:]')
 if [[ "$platform" == "linux" && ! -z "$(which get-resolution.py 2> /dev/null)" ]]; then
     # Array of known desktop resolutions and related preferred font-sizes.
     declare -A settings=(
-     [1920x1200]="codeMono=15,emacsMono=15,emacsSans=15,vimMono=11,gnomeMono=11,gnomeSans=10,gnomeSerif=10"
+     [3840x1200]="codeMono=15,emacsMono=15,emacsSans=15,vimMono=11,gnomeMono=11,gnomeSans=10,gnomeSerif=10"
      [2560x1600]="codeMono=13,emacsMono=24,emacsSans=24,vimMono=13,gnomeMono=13,gnomeSans=11,gnomeSerif=11"
      [3840x2160]="codeMono=14,emacsMono=38,emacsSans=38,vimMono=14,gnomeMono=14,gnomeSans=13,gnomeSerif=13"
     )
@@ -92,26 +92,26 @@ if [[ "$platform" == "linux" && ! -z "$(which get-resolution.py 2> /dev/null)" ]
             # Update Gnome system monospace font if different.
             if [[ "$currentGnomeMonospaceFontSize" != "$wantedGnomeMonospaceFontSize" ]]; then
                 echo "Notice: Resolution is $currentResolution, setting Gnome monospace font to \"$currentGnomeMonospaceFontName $wantedGnomeMonospaceFontSize\".."
-                gsettings set org.gnome.desktop.interface monospace-font-name "$currentGnomeMonospaceFontName $wantedGnomeMonospaceFontSize"
+                gsettings set org.gnome.desktop.interface monospace-font-name "$currentGnomeMonospaceFontName $wantedGnomeMonospaceFontSize" 2> /dev/null
             fi
 
             # Update Gnome system interface font if different.
             if [[ "$currentGnomeInterfaceFontSize" != "$wantedGnomeInterfaceFontSize" ]]; then
                 echo "Notice: Resolution is $currentResolution, setting Gnome interface font to \"$currentGnomeInterfaceFontName $wantedGnomeInterfaceFontSize\".."
-                gsettings set org.gnome.desktop.interface font-name "$currentGnomeInterfaceFontName $wantedGnomeInterfaceFontSize"
+                gsettings set org.gnome.desktop.interface font-name "$currentGnomeInterfaceFontName $wantedGnomeInterfaceFontSize" 2> /dev/null
             fi
 
             # Update Gnome system document font if different.
             if [[ "$currentGnomeDocumentFontSize" != "$wantedGnomeDocumentFontSize" ]]; then
                 echo "Notice: Resolution is $currentResolution, setting Gnome document font to \"$currentGnomeDocumentFontName $wantedGnomeDocumentFontSize\".."
-                gsettings set org.gnome.desktop.interface document-font-name "$currentGnomeDocumentFontName $wantedGnomeDocumentFontSize"
+                gsettings set org.gnome.desktop.interface document-font-name "$currentGnomeDocumentFontName $wantedGnomeDocumentFontSize" 2> /dev/null
             fi
 
             # Update Gnome system title font if different.
             if [[ "$currentGnomeTitleFontSize" != "$wantedGnomeTitleFontSize" ]]; then
                 echo "$currentGnomeTitleFontSize and $wantedGnomeTitleFontSize"
                 echo "Notice: Resolution is $currentResolution, setting Gnome title font to \"$currentGnomeTitleFontName $wantedGnomeTitleFontSize\".."
-                gsettings set org.gnome.desktop.wm.preferences titlebar-font "$currentGnomeTitleFontName $wantedGnomeTitleFontSize"
+                gsettings set org.gnome.desktop.wm.preferences titlebar-font "$currentGnomeTitleFontName $wantedGnomeTitleFontSize" 2> /dev/null
             fi
         fi
 
@@ -128,7 +128,7 @@ if [[ "$platform" == "linux" && ! -z "$(which get-resolution.py 2> /dev/null)" ]
                 currentGnomeThemeFontString="font-size: $currentGnomeThemeFontSize;"
                 wantedGnomeThemeFontString="font-size: $wantedGnomeThemeFontSize;"
                 sed -i "s|$currentGnomeThemeFontString|$wantedGnomeThemeFontString|g" "$themeConfig"
-                gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell --method org.gnome.Shell.Eval 'Main.loadTheme();'
+                gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell --method org.gnome.Shell.Eval 'Main.loadTheme();' 2> /dev/null
             fi
         fi
 
