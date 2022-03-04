@@ -169,6 +169,7 @@ if [[ "$(uname -r)" =~ "icrosoft" && "$hostName" =~ "surface" ]]; then
 fi
 
 # Invoke some conditional runners.
-# See user-syncthing.sh, user-sway.sh.
+# See user-syncthing.sh, user-sway.sh, user-scaling.sh.
 runSyncthing
 runSway
+runScaling

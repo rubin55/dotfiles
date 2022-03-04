@@ -1,3 +1,5 @@
+#!/bin/bash
+
 PATH=$PATH:$HOME/.local/bin
 check="$(which rabtap 2> /dev/null)"
 if [ -n "$check" ]; then
