@@ -95,26 +95,26 @@ runScaling() {
                 # Update Gnome system monospace font if different.
                 if [[ "$currentGnomeMonospaceFontSize" != "$wantedGnomeMonospaceFontSize" ]]; then
                     echo "Notice: Resolution is $currentResolution, setting Gnome monospace font to \"$currentGnomeMonospaceFontName $wantedGnomeMonospaceFontSize\".."
-                    gsettings set org.gnome.desktop.interface monospace-font-name "$currentGnomeMonospaceFontName $wantedGnomeMonospaceFontSize" 2> /dev/null
+                    gsettings set org.gnome.desktop.interface monospace-font-name "$currentGnomeMonospaceFontName $wantedGnomeMonospaceFontSize" > /dev/null 2>&1
                 fi
 
                 # Update Gnome system interface font if different.
                 if [[ "$currentGnomeInterfaceFontSize" != "$wantedGnomeInterfaceFontSize" ]]; then
                     echo "Notice: Resolution is $currentResolution, setting Gnome interface font to \"$currentGnomeInterfaceFontName $wantedGnomeInterfaceFontSize\".."
-                    gsettings set org.gnome.desktop.interface font-name "$currentGnomeInterfaceFontName $wantedGnomeInterfaceFontSize" 2> /dev/null
+                    gsettings set org.gnome.desktop.interface font-name "$currentGnomeInterfaceFontName $wantedGnomeInterfaceFontSize" > /dev/null 2>&1
                 fi
 
                 # Update Gnome system document font if different.
                 if [[ "$currentGnomeDocumentFontSize" != "$wantedGnomeDocumentFontSize" ]]; then
                     echo "Notice: Resolution is $currentResolution, setting Gnome document font to \"$currentGnomeDocumentFontName $wantedGnomeDocumentFontSize\".."
-                    gsettings set org.gnome.desktop.interface document-font-name "$currentGnomeDocumentFontName $wantedGnomeDocumentFontSize" 2> /dev/null
+                    gsettings set org.gnome.desktop.interface document-font-name "$currentGnomeDocumentFontName $wantedGnomeDocumentFontSize" > /dev/null 2>&1
                 fi
 
                 # Update Gnome system title font if different.
                 if [[ "$currentGnomeTitleFontSize" != "$wantedGnomeTitleFontSize" ]]; then
                     echo "$currentGnomeTitleFontSize and $wantedGnomeTitleFontSize"
                     echo "Notice: Resolution is $currentResolution, setting Gnome title font to \"$currentGnomeTitleFontName $wantedGnomeTitleFontSize\".."
-                    gsettings set org.gnome.desktop.wm.preferences titlebar-font "$currentGnomeTitleFontName $wantedGnomeTitleFontSize" 2> /dev/null
+                    gsettings set org.gnome.desktop.wm.preferences titlebar-font "$currentGnomeTitleFontName $wantedGnomeTitleFontSize" > /dev/null 2>&1
                 fi
             fi
 
@@ -131,7 +131,7 @@ runScaling() {
                     currentGnomeThemeFontString="font-size: $currentGnomeThemeFontSize;"
                     wantedGnomeThemeFontString="font-size: $wantedGnomeThemeFontSize;"
                     sed -i "s|$currentGnomeThemeFontString|$wantedGnomeThemeFontString|g" "$themeConfig"
-                    gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell --method org.gnome.Shell.Eval 'Main.loadTheme();' 2> /dev/null
+                    gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell --method org.gnome.Shell.Eval 'Main.loadTheme();' > /dev/null 2>&1
                 fi
             fi
 
