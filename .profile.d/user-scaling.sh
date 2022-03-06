@@ -16,6 +16,9 @@ runScaling() {
 
         if [[ -n "$currentResolution" && -n "${settings[$currentResolution]}" ]]; then
 
+            # Tell us about the currently detected (and known!) resolution.
+            echo "Notice: Current resolution is $currentResolution.."
+
             # Current and wanted Visual Studio Code settings.
             codeConfig="$HOME/.config/Code/User/settings.json"
             if [[ -e "$codeConfig" ]]; then
@@ -28,7 +31,7 @@ runScaling() {
 
                 # Update Visual Studio Code editor font if different.
                 if [[ "$currentCodeEditorFontSize" != "$wantedCodeEditorFontSize" ]]; then
-                    echo "Notice: Resolution is $currentResolution, setting Code editor font to \"$currentCodeEditorFontName $wantedCodeEditorFontSize\".."
+                    echo "Notice: Setting Code editor font to \"$currentCodeEditorFontName $wantedCodeEditorFontSize\".."
                     currentCodeEditorFontString="\"editor.fontSize\": $currentCodeEditorFontSize,"
                     wantedCodeEditorFontString="\"editor.fontSize\": $wantedCodeEditorFontSize,"
                     sed -i "s|$currentCodeEditorFontString|$wantedCodeEditorFontString|g" "$codeConfig"
@@ -36,7 +39,7 @@ runScaling() {
 
                 # Update Visual Studio Code terminal font if different.
                 if [[ "$currentCodeTerminalFontSize" != "$wantedCodeTerminalFontSize" ]]; then
-                    echo "Notice: Resolution is $currentResolution, setting Code terminal font to \"$currentCodeTerminalFontName $wantedCodeTerminalFontSize\".."
+                    echo "Notice: Setting Code terminal font to \"$currentCodeTerminalFontName $wantedCodeTerminalFontSize\".."
                     currentCodeTerminalFontString="\"terminal.integrated.fontSize\": $currentCodeTerminalFontSize,"
                     wantedCodeTerminalFontString="\"terminal.integrated.fontSize\": $wantedCodeTerminalFontSize,"
                     sed -i "s|$currentCodeTerminalFontString|$wantedCodeTerminalFontString|g" "$codeConfig"
@@ -60,7 +63,7 @@ runScaling() {
 
                 # Update Emacs monospace font if different.
                 if [[ "$currentEmacsMonospaceFontSize" != "$wantedEmacsMonospaceFontSize" ]]; then
-                    echo "Notice: Resolution is $currentResolution, setting Emacs monospace font to \"$currentEmacsMonospaceFontName $wantedEmacsMonospaceFontSize\".."
+                    echo "Notice: Setting Emacs monospace font to \"$currentEmacsMonospaceFontName $wantedEmacsMonospaceFontSize\".."
                     currentEmacsMonospaceFontString="$(grep -A1 "(when (string= (system-name) \"$emacsHostIdentifier\")" "$emacsConfig" | tail -n1)"
                     currentEmacsMonospaceFontLineNumber="$(grep -n -A1 "(when (string= (system-name) \"$emacsHostIdentifier\")" "$emacsConfig" | tail -n1 | cut -d- -f1)"
                     wantedEmacsMonospaceFontString="$(echo "$currentEmacsMonospaceFontString" | sed "s|:size $currentEmacsMonospaceFontSize|:size $wantedEmacsMonospaceFontSize|")"
@@ -69,7 +72,7 @@ runScaling() {
 
                 # Update Emacs variable-width font if different.
                 if [[ "$currentEmacsVariablewidthFontSize" != "$wantedEmacsVariablewidthFontSize" ]]; then
-                    echo "Notice: Resolution is $currentResolution, setting Emacs variable-width font to \"$currentEmacsVariablewidthFontName $wantedEmacsVariablewidthFontSize\".."
+                    echo "Notice: Setting Emacs variable-width font to \"$currentEmacsVariablewidthFontName $wantedEmacsVariablewidthFontSize\".."
                     currentEmacsVariablewidthFontString="$(grep -A2 "(when (string= (system-name) \"$emacsHostIdentifier\")" "$emacsConfig" | tail -n1)"
                     currentEmacsVariablewidthFontLineNumber="$(grep -n -A2 "(when (string= (system-name) \"$emacsHostIdentifier\")" "$emacsConfig" | tail -n1 | cut -d- -f1)"
                     wantedEmacsVariablewidthFontString="$(echo "$currentEmacsVariablewidthFontString" | sed "s|:size $currentEmacsVariablewidthFontSize|:size $wantedEmacsVariablewidthFontSize|")"
@@ -94,25 +97,25 @@ runScaling() {
 
                 # Update Gnome system monospace font if different.
                 if [[ "$currentGnomeMonospaceFontSize" != "$wantedGnomeMonospaceFontSize" ]]; then
-                    echo "Notice: Resolution is $currentResolution, setting Gnome monospace font to \"$currentGnomeMonospaceFontName $wantedGnomeMonospaceFontSize\".."
+                    echo "Notice: Setting Gnome monospace font to \"$currentGnomeMonospaceFontName $wantedGnomeMonospaceFontSize\".."
                     gsettings set org.gnome.desktop.interface monospace-font-name "$currentGnomeMonospaceFontName $wantedGnomeMonospaceFontSize" > /dev/null 2>&1
                 fi
 
                 # Update Gnome system interface font if different.
                 if [[ "$currentGnomeInterfaceFontSize" != "$wantedGnomeInterfaceFontSize" ]]; then
-                    echo "Notice: Resolution is $currentResolution, setting Gnome interface font to \"$currentGnomeInterfaceFontName $wantedGnomeInterfaceFontSize\".."
+                    echo "Notice: Setting Gnome interface font to \"$currentGnomeInterfaceFontName $wantedGnomeInterfaceFontSize\".."
                     gsettings set org.gnome.desktop.interface font-name "$currentGnomeInterfaceFontName $wantedGnomeInterfaceFontSize" > /dev/null 2>&1
                 fi
 
                 # Update Gnome system document font if different.
                 if [[ "$currentGnomeDocumentFontSize" != "$wantedGnomeDocumentFontSize" ]]; then
-                    echo "Notice: Resolution is $currentResolution, setting Gnome document font to \"$currentGnomeDocumentFontName $wantedGnomeDocumentFontSize\".."
+                    echo "Notice: Setting Gnome document font to \"$currentGnomeDocumentFontName $wantedGnomeDocumentFontSize\".."
                     gsettings set org.gnome.desktop.interface document-font-name "$currentGnomeDocumentFontName $wantedGnomeDocumentFontSize" > /dev/null 2>&1
                 fi
 
                 # Update Gnome system title font if different.
                 if [[ "$currentGnomeTitleFontSize" != "$wantedGnomeTitleFontSize" ]]; then
-                    echo "Notice: Resolution is $currentResolution, setting Gnome title font to \"$currentGnomeTitleFontName $wantedGnomeTitleFontSize\".."
+                    echo "Notice: Setting Gnome title font to \"$currentGnomeTitleFontName $wantedGnomeTitleFontSize\".."
                     gsettings set org.gnome.desktop.wm.preferences titlebar-font "$currentGnomeTitleFontName $wantedGnomeTitleFontSize" > /dev/null 2>&1
                 fi
             fi
@@ -126,7 +129,7 @@ runScaling() {
 
                 # Update Gnome theme config if different.
                 if [[ "$currentGnomeThemeFontSize" != "$wantedGnomeThemeFontSize" ]]; then
-                    echo "Notice: Resolution is $currentResolution, setting Gnome theme font to \"$currentGnomeThemeFontName $wantedGnomeThemeFontSize\".."
+                    echo "Notice: Setting Gnome theme font to \"$currentGnomeThemeFontName $wantedGnomeThemeFontSize\".."
                     currentGnomeThemeFontString="font-size: $currentGnomeThemeFontSize;"
                     wantedGnomeThemeFontString="font-size: $wantedGnomeThemeFontSize;"
                     sed -i "s|$currentGnomeThemeFontString|$wantedGnomeThemeFontString|g" "$themeConfig"
@@ -143,7 +146,7 @@ runScaling() {
 
                 # Update Vim config if different.
                 if [[ "$currentVimMonoFontSize" != "$wantedVimMonoFontSize" ]]; then
-                    echo "Notice: Resolution is $currentResolution, setting Vim monospace font to \"$currentVimMonoFontName $wantedVimMonoFontSize\".."
+                    echo "Notice: Setting Vim monospace font to \"$currentVimMonoFontName $wantedVimMonoFontSize\".."
                     currentVimMonoFontString="set guifont=$(echo "$currentVimMonoFontName $currentVimMonoFontSize" | sed 's| |\\\\ |g')"
                     wantedVimMonoFontString="set guifont=$(echo "$currentVimMonoFontName $wantedVimMonoFontSize" | sed 's| |\\\\ |g')"
                     sed -i "s|$currentVimMonoFontString|$wantedVimMonoFontString|g" "$vimConfig"
