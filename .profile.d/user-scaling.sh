@@ -17,7 +17,7 @@ runScaling() {
         if [[ -n "$currentResolution" && -n "${settings[$currentResolution]}" ]]; then
 
             # Tell us about the currently detected (and known!) resolution.
-            echo "Notice: Current resolution is $currentResolution.."
+            echo "Notice: Current cumulative display resolution is $currentResolution.."
 
             # Current and wanted Visual Studio Code settings.
             codeConfig="$HOME/.config/Code/User/settings.json"
