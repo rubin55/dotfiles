@@ -112,7 +112,6 @@ runScaling() {
 
                 # Update Gnome system title font if different.
                 if [[ "$currentGnomeTitleFontSize" != "$wantedGnomeTitleFontSize" ]]; then
-                    echo "$currentGnomeTitleFontSize and $wantedGnomeTitleFontSize"
                     echo "Notice: Resolution is $currentResolution, setting Gnome title font to \"$currentGnomeTitleFontName $wantedGnomeTitleFontSize\".."
                     gsettings set org.gnome.desktop.wm.preferences titlebar-font "$currentGnomeTitleFontName $wantedGnomeTitleFontSize" > /dev/null 2>&1
                 fi
