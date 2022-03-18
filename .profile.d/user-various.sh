@@ -24,7 +24,7 @@ if [ -n "$SCRIPTS_HOME" ]; then
 fi
 
 # Add extra script directories to path.
-SCRIPTS_EXTRAS="/opt/jetbrains/scripts $HOME/Syncthing/Source/RAAF/session $HOME/Syncthing/Source/ICTU/various/gitlab-getenv/bin $HOME/Syncthing/Source/gitlab-getenv/bin $HOME/Syncthing/Source/ICTU/various/helmster/bin $HOME/Syncthing/Source/helmster/bin"
+SCRIPTS_EXTRAS="/opt/jetbrains/scripts $HOME/Syncthing/Source/RAAF/session $HOME/Syncthing/Source/ICTU/various/gitlab-getenv/bin $HOME/Source/gitlab-getenv/bin $HOME/Syncthing/Source/ICTU/various/helmster/bin $HOME/Source/helmster/bin"
 for EXTRA in $SCRIPTS_EXTRAS; do
     if [ -d "$EXTRA" ] && [[ ":$PATH:" != *":$EXTRA:"* ]]; then
         export PATH="${PATH:+"$PATH:"}$EXTRA"
