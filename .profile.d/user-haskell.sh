@@ -5,7 +5,7 @@ if [ -f "$HOME/.ghcup/env" ]; then
     source "$HOME/.ghcup/env"
 
     # Add manpath for ghc too.
-    GHC_MANPATH="$( echo "$(ghcup -o whereis --directory ghc)" | sed 's|/bin|/share/man|g')"
+    GHC_MANPATH="$(echo "$(ghcup -o whereis --directory ghc)" | sed 's|/bin|/share/man|g')"
     if [[ -d "$GHC_MANPATH" && ":$MANPATH:" != *":$GHC_MANPATH:"* ]]; then
         MANPATH="${MANPATH:+"$MANPATH:"}$GHC_MANPATH"
     fi

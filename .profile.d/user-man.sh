@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Default manpath candidates.
-MANPATH_CANDIDATES="/usr/man:/usr/share/man:/usr/local/man:/usr/local/share/man:/snap/man:$HOME/.ghcup/share/man:$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/man"
+MANPATH_CANDIDATES="$MANPATH:/usr/man:/usr/share/man:/usr/local/man:/usr/local/share/man:/snap/man:$HOME/.ghcup/share/man:$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/man"
 
 # Check if candidates exist, only add those.
 OLD_IFS=$IFS ; IFS=:
