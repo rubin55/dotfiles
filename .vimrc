@@ -124,9 +124,11 @@ au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'
 " Don't do spaces for tabs in makefiles, tab-separated files.
 au FileType make set noexpandtab
 au FileType tsv set noexpandtab
+au FileType conf set noexpandtab
 
 " Set a wider tabstop for tab-separated files.
 au FileType tsv set tabstop=24
+au FileType conf set tabstop=24
 
 " Disable wordwrap for certain file types.
 au FileType csv set nowrap
