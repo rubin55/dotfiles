@@ -6,9 +6,9 @@ SET_ALIAS=false
 
 # Application locations, alias names, etc.
 CFG_ALIAS="erlc"
-CFG_EXEC_UNIX="/opt/erlang/otp24/bin/erlc"
-CFG_EXEC_MACOS="$HOME/Applications/Erlang/otp24/bin/erlc"
-CFG_EXEC_WINDOWS="/mnt/c/Program Files/Erlang/OTP24/bin/erlc.exe"
+CFG_EXEC_UNIX="/opt/erlang/otp25/bin/erlc"
+CFG_EXEC_MACOS="$HOME/Applications/Erlang/otp25/bin/erlc"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Erlang/otp25/bin/erlc.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then
