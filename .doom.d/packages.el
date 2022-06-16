@@ -52,3 +52,4 @@
 (package! lsp-pyright)
 (package! powershell)
 (package! nov)
+(package! vterm-toggle)

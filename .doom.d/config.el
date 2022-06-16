@@ -232,6 +232,19 @@
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type t)
 
+;; Don't auto-close vterms when they're not visible, and always open a vterm
+;; buffer in the current window.
+(after! vterm
+  (setq vterm-toggle-reset-window-configration-after-exit 'kill-window-only)
+  (setq vterm-toggle-hide-method nil)
+  (setq vterm-toggle-fullscreen-p nil)
+  (add-to-list 'display-buffer-alist
+    '((lambda (buffer-or-name _)
+      (let ((buffer (get-buffer buffer-or-name)))
+        (with-current-buffer buffer
+          (or (equal major-mode 'vterm-mode)
+            (string-prefix-p vterm-buffer-name (buffer-name buffer))))))
+      (display-buffer-reuse-window display-buffer-same-window))))
 
 ;; Disable insane 'jk' to-command-mode sequence.
 (after! evil-escape
