@@ -24,6 +24,9 @@
 (add-hook 'nov-mode-hook 'visual-line-mode)
 (add-hook 'nov-mode-hook 'visual-fill-column-mode)
 
+;; Configure pdf-tools mode.
+(add-hook 'pdf-misc-minor-mode-hook 'pdf-view-midnight-minor-mode)
+
 ;; Always enable server mode, for emacsclient sessions.
 (server-start)
 
