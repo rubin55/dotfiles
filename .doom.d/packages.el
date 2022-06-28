@@ -49,6 +49,7 @@
 ;(unpin! t)
 
 (package! earthfile-mode)
+(package! cue-mode)
 (package! lsp-pyright)
 (package! nov)
 (package! powershell)
