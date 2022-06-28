@@ -9,6 +9,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'earthly/earthly.vim', { 'branch': 'main' }
 Plug 'elixir-editors/vim-elixir'
 Plug 'jamessan/vim-gnupg', { 'branch': 'main' }
+Plug 'jjo/vim-cue'
 Plug 'mattn/vim-lsp-settings'
 Plug 'mechatroner/rainbow_csv'
 Plug 'prabirshrestha/asyncomplete.vim'
