@@ -4,7 +4,7 @@
 #DOCKER_HOST="tcp://172.17.1.4:2375"
 #DOCKER_HOST="tcp://172.17.1.4:2376"
 #DOCKER_HOST="ssh://$USER@172.17.1.20"
-#DOCKER_HOST=ssh://$USER@172.17.2.11
+#DOCKER_HOST="ssh://$USER@172.17.2.11"
 
 # Check if minikube is available and if it's running first.
 which minikube > /dev/null 2>&1
