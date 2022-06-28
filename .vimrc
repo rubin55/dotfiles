@@ -104,7 +104,7 @@ if has('gui_running')
   set lines=40 columns=120
   "set guioptions+=m
   if has('gui_gtk3')
-    set guifont=Monospace\ 11
+    set guifont=PragmataPro\ Mono\ 14
   elseif has('gui_macvim')
     set guifont=PragmataPro\ Mono:h16
     set macligatures
@@ -125,9 +125,11 @@ au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'
 " Don't do spaces for tabs in makefiles, tab-separated files.
 au FileType make set noexpandtab
 au FileType tsv set noexpandtab
+au FileType conf set noexpandtab
 
 " Set a wider tabstop for tab-separated files.
 au FileType tsv set tabstop=24
+au FileType conf set tabstop=24
 
 " Disable wordwrap for certain file types.
 au FileType csv set nowrap
