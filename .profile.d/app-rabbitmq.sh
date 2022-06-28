@@ -6,9 +6,9 @@ SET_ALIAS=false
 
 # Application locations, alias names, etc.
 CFG_ALIAS="rabbitmqctl"
-CFG_EXEC_UNIX="/opt/rabbitmq/rmq39/sbin/rabbitmqctl"
-CFG_EXEC_MACOS="$HOME/Applications/RabbitMQ/rmq39/sbin/rabbitmqctl"
-CFG_EXEC_WINDOWS="/mnt/c/Program Files/RabbitMQ/rmq39/sbin/rabbitmqctl.exe"
+CFG_EXEC_UNIX="/opt/rabbitmq/rmq3/sbin/rabbitmqctl"
+CFG_EXEC_MACOS="$HOME/Applications/RabbitMQ/rmq3/sbin/rabbitmqctl"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/RabbitMQ/rmq3/sbin/rabbitmqctl.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then
