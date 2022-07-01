@@ -16,7 +16,7 @@ runScaling() {
         # Check if $FONT_SIZE_PREFERENCES_FILE was set
         # else set a it to ~/.fontsizes by default.
         if [[ -n "$FONT_SIZE_PREFERENCES_FILE" && -e "$FONT_SIZE_PREFERENCES_FILE" ]]; then
-            echo "Notice: using custom font size preferences from \"$FONT_SIZE_PREFERENCES_FILE\".."
+            echo "Notice: Configuring font size preferences from \"$FONT_SIZE_PREFERENCES_FILE\".."
         else
             # Just use the default and don't tell us about it.
             FONT_SIZE_PREFERENCES_FILE="$HOME/.fontsizes"
@@ -43,7 +43,7 @@ runScaling() {
 
         # Current and wanted Visual Studio Code settings.
         codeConfig="$HOME/.config/Code/User/settings.json"
-        if [[ -e "$codeConfig" ]]; then
+        if [[ -e "$codeConfig" && -n "$codeMono" ]]; then
             currentCodeEditorFontName="$(grep "editor.fontFamily" "$codeConfig" | cut -d: -f2 | sed -e 's|"||g' -e 's|,||g' -e 's|^[[:space:]]*||g' -e 's|[[:space:]]*$||g')"
             currentCodeEditorFontSize="$(grep "editor.fontSize" "$codeConfig" | cut -d: -f2 | sed -e 's|"||g' -e 's|,||g' -e 's|^[[:space:]]*||g' -e 's|[[:space:]]*$||g')"
             currentCodeTerminalFontName="$(grep "terminal.integrated.fontFamily" "$codeConfig" | cut -d: -f2 | sed -e 's|"||g' -e 's|,||g' -e 's|^[[:space:]]*||g' -e 's|[[:space:]]*$||g')"
@@ -71,7 +71,7 @@ runScaling() {
         # Current and wanted Emacs settings.
         emacsHostIdentifier="$(hostname | cut -d. -f1)"
         emacsConfig="$HOME/.doom.d/config.el"
-        if [[ -e "$emacsConfig" ]]; then
+        if [[ -e "$emacsConfig" && -n "$emacsMono" && -n "$emacsSans" ]]; then
             currentEmacsMonospaceFontName="$(grep -A1 "(when (string= (system-name) \"$emacsHostIdentifier\")" "$emacsConfig" | tail -n1 | awk -F ':' '{print $2}' \
                                     | cut -d' ' -f2 | sed -e "s|'||g" -e 's|"||g' -e "s|'||g" -e 's|"||g' -e 's|)||g')"
             currentEmacsMonospaceFontSize="$(grep -A1 "(when (string= (system-name) \"$emacsHostIdentifier\")" "$emacsConfig" | tail -n1 | awk -F ':' '{print $3}' \
@@ -103,7 +103,7 @@ runScaling() {
         fi
 
         # Current and wanted Gnome system settings.
-        if [[ ! -z "$(which gsettings 2> /dev/null)" ]]; then
+        if [[ ! -z "$(which gsettings 2> /dev/null)" && -n "$gnomeMono" && -n "$gnomeSans" && -n "$gnomeSerif" ]]; then
             currentGnomeMonospaceFontName="$(gsettings get org.gnome.desktop.interface monospace-font-name | sed -e "s|'||g" -e 's|[0-9]||g' -e 's|[[:space:]]*$||g')"
             currentGnomeMonospaceFontSize="$(gsettings get org.gnome.desktop.interface monospace-font-name | sed -e "s|'||g" | awk -F ' ' '{print $NF}')"
             currentGnomeInterfaceFontName="$(gsettings get org.gnome.desktop.interface font-name | sed -e "s|'||g" -e 's|[0-9]||g' -e 's|[[:space:]]*$||g')"
@@ -161,7 +161,7 @@ runScaling() {
 
         # Current and wanted Vim settings.
         vimConfig="$HOME/.vimrc"
-        if [[ -e "$vimConfig" ]]; then
+        if [[ -e "$vimConfig" && -n "$vimMono" ]]; then
             currentVimMonoFontName="$(grep -A1 "if has('gui_gtk3')" "$vimConfig" | tail -n1 | cut -d= -f2 | sed -e 's|\\||g' -e 's|[0-9]||g' -e 's|[[:space:]]*$||g')"
             currentVimMonoFontSize="$(grep -A1 "if has('gui_gtk3')" "$vimConfig" | tail -n1 | cut -d= -f2 | awk -F '\\\\ ' '{print $NF}')"
             wantedVimMonoFontSize="$vimMono"
