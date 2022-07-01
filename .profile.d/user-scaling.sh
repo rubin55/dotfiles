@@ -5,7 +5,7 @@ runScaling() {
     if [[ "$platform" == "linux" && ! -z "$(which get-resolution.py 2> /dev/null)" ]]; then
         # Array of known desktop resolutions and related preferred font-sizes.
         declare -A settings=(
-        [1916x1932]="codeMono=15,emacsMono=15,emacsSans=15,vimMono=11,gnomeMono=11,gnomeSans=10,gnomeSerif=10"
+        [1980x1080]="codeMono=15,emacsMono=15,emacsSans=15,vimMono=11,gnomeMono=11,gnomeSans=10,gnomeSerif=10"
         [1920x1200]="codeMono=15,emacsMono=15,emacsSans=15,vimMono=11,gnomeMono=11,gnomeSans=10,gnomeSerif=10"
         [3840x1200]="codeMono=15,emacsMono=15,emacsSans=15,vimMono=11,gnomeMono=11,gnomeSans=10,gnomeSerif=10"
         [2560x1600]="codeMono=13,emacsMono=24,emacsSans=24,vimMono=13,gnomeMono=13,gnomeSans=11,gnomeSerif=11"
