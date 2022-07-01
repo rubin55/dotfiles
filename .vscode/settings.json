@@ -9,7 +9,6 @@
   "editor.largeFileOptimizations": false,
   "editor.lineHeight": 17,
   "editor.minimap.enabled": true,
-  "editor.renderIndentGuides": false,
   "editor.renderWhitespace": "none",
   "editor.rulers": [120, 80],
   "editor.suggestSelection": "first",
@@ -127,5 +126,6 @@
   },
   "workbench.editor.untitled.hint": "hidden",
   "redhat.telemetry.enabled": false,
-  "security.workspace.trust.enabled": false
+  "security.workspace.trust.enabled": false,
+  "editor.guides.indentation": false
 }
