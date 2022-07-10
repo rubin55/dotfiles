@@ -1,10 +1,9 @@
 #!/bin/bash
 
-# A Docker host I'm known to run from time to time.
-#DOCKER_HOST="tcp://172.17.1.4:2375"
-#DOCKER_HOST="tcp://172.17.1.4:2376"
-#DOCKER_HOST="ssh://$USER@172.17.1.20"
-#DOCKER_HOST="ssh://$USER@172.17.2.11"
+# Check for a docker host string on this host.
+if [ -e "$HOME/.docker/host.string" ]; then
+    DOCKER_HOST="$(cat "$HOME/.docker/host.string")"
+fi
 
 # Check if minikube is available and if it's running first.
 which minikube > /dev/null 2>&1
