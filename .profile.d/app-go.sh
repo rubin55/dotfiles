@@ -6,9 +6,9 @@ SET_ALIAS=false
 
 # Application locations, alias names, etc.
 CFG_ALIAS="go"
-CFG_EXEC_UNIX="/opt/go/go117/bin/go"
-CFG_EXEC_MACOS="/$HOME/Applications/Go/go117/bin/go"
-CFG_EXEC_WINDOWS="/mnt/c/Program Files/Go/go117/bin/go"
+CFG_EXEC_UNIX="/opt/go/go118/bin/go"
+CFG_EXEC_MACOS="/$HOME/Applications/Go/go118/bin/go"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Go/go118/bin/go"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then
