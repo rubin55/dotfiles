@@ -6,8 +6,8 @@ SET_ALIAS=false
 
 # Application locations, alias names, etc.
 CFG_ALIAS="elixir"
-CFG_EXEC_UNIX="/opt/elixir/elx113/bin/elixir"
-CFG_EXEC_MACOS="$HOME/Applications/Elixir/elx113/bin/elixir"
+CFG_EXEC_UNIX="/opt/elixir/elx114/bin/elixir"
+CFG_EXEC_MACOS="$HOME/Applications/Elixir/elx114/bin/elixir"
 CFG_EXEC_WINDOWS="/mnt/c/Program Files/Elixir/bin/elixir.exe"
 
 # Determine application home.
