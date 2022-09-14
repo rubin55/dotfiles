@@ -58,8 +58,3 @@ else
     fi
 fi
 
-# Disable TLS_VERIFICATION in certain conditions.
-if [[ "$SESSION_MANAGER" =~ "picard" ]]; then
-    echo "Notice: Running on Picard, disabling TLS verification for Node.."
-    export NODE_TLS_REJECT_UNAUTHORIZED=0
-fi
