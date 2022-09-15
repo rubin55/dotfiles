@@ -155,8 +155,10 @@ runScaling() {
             if [[ -e "$jetbrainsConfig" && -n "$jetbrainsMono" ]]; then
             currentJetbrainsMonoFontName="$(xmllint --xpath '//application/component/option[@name="FONT_FAMILY"][@value]/@value' "$jetbrainsConfig" 2> /dev/null | awk -F'[="]' '!/>/{print $(NF-1)}')"
             currentJetbrainsMonoFontSize="$(xmllint --xpath '//application/component/option[@name="FONT_SIZE"][@value]/@value' "$jetbrainsConfig" 2> /dev/null | awk -F'[="]' '!/>/{print $(NF-1)}')"
-            wantedJetbrainsMonoFontName="PragmataPro Mono"
+            currentJetbrainsMonoFontSize2d="$(xmllint --xpath '//application/component/option[@name="FONT_SIZE_2D"][@value]/@value' "$jetbrainsConfig" 2> /dev/null | awk -F'[="]' '!/>/{print $(NF-1)}')"
+            wantedJetbrainsMonoFontName="$currentJetbrainsMonoFontName"
             wantedJetbrainsMonoFontSize="$jetbrainsMono"
+            wantedJetbrainsMonoFontSize2d="$jetbrainsMono"
 
             # Update JetBrains config if different.
             if [[ "$currentJetbrainsMonoFontSize" && "$currentJetbrainsMonoFontSize" != "$wantedJetbrainsMonoFontSize" ]]; then
@@ -165,8 +167,11 @@ runScaling() {
                 wantedJetbrainsMonoFontNameString="name=\"FONT_FAMILY\" value=\"$wantedJetbrainsMonoFontName\""
                 currentJetbrainsMonoFontSizeString="name=\"FONT_SIZE\" value=\"$currentJetbrainsMonoFontSize\""
                 wantedJetbrainsMonoFontSizeString="name=\"FONT_SIZE\" value=\"$wantedJetbrainsMonoFontSize\""
+                currentJetbrainsMonoFontSize2dString="name=\"FONT_SIZE_2D\" value=\"$currentJetbrainsMonoFontSize2d\""
+                wantedJetbrainsMonoFontSize2dString="name=\"FONT_SIZE_2D\" value=\"$wantedJetbrainsMonoFontSize2d\""
                 sed -i "s|$currentJetbrainsMonoFontNameString|$wantedJetbrainsMonoFontNameString|g" "$jetbrainsConfig"
                 sed -i "s|$currentJetbrainsMonoFontSizeString|$wantedJetbrainsMonoFontSizeString|g" "$jetbrainsConfig"
+                sed -i "s|$currentJetbrainsMonoFontSize2dString|$wantedJetbrainsMonoFontSize2dString|g" "$jetbrainsConfig"
             fi
         fi
         done
