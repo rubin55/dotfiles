@@ -189,4 +189,3 @@ runScaling() {
     fi
 }
 
-runScaling
