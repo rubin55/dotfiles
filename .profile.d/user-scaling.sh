@@ -8,10 +8,11 @@ runScaling() {
         # codeMono=15
         # emacsMono=15
         # emacsSans=15
-        # vimMono=11
         # gnomeMono=11
         # gnomeSans=10
         # gnomeSerif=10
+        # jetbrainsMono=14
+        # vimMono=11
 
         # Check if $FONT_SIZE_PREFERENCES_FILE was set
         # else set a it to ~/.fontsizes by default.
@@ -29,17 +30,6 @@ runScaling() {
         else
             return
         fi
-
-        # Array of known desktop resolutions and related preferred font-sizes.
-        declare -A settings=(
-        [1920x1080]="codeMono=15,emacsMono=15,emacsSans=15,vimMono=11,gnomeMono=11,gnomeSans=10,gnomeSerif=10"
-        [1920x1200]="codeMono=15,emacsMono=15,emacsSans=15,vimMono=11,gnomeMono=11,gnomeSans=10,gnomeSerif=10"
-        [3840x1080]="codeMono=15,emacsMono=15,emacsSans=15,vimMono=11,gnomeMono=11,gnomeSans=10,gnomeSerif=10"
-        [3840x1200]="codeMono=15,emacsMono=15,emacsSans=15,vimMono=11,gnomeMono=11,gnomeSans=10,gnomeSerif=10"
-        [2560x1600]="codeMono=13,emacsMono=24,emacsSans=24,vimMono=13,gnomeMono=13,gnomeSans=11,gnomeSerif=11"
-        [3840x2160]="codeMono=14,emacsMono=38,emacsSans=38,vimMono=14,gnomeMono=14,gnomeSans=13,gnomeSerif=13"
-        [3840x2400]="codeMono=14,emacsMono=38,emacsSans=38,vimMono=14,gnomeMono=14,gnomeSans=13,gnomeSerif=13"
-        )
 
         # Current and wanted Visual Studio Code settings.
         codeConfig="$HOME/.config/Code/User/settings.json"
@@ -159,6 +149,28 @@ runScaling() {
             fi
         fi
 
+        # Current and wanted JetBrains IDE settings.
+        jetbrainsConfigs="$(find "$HOME/.config/JetBrains" -type f -name editor-font.xml 2> /dev/null)"
+        for jetbrainsConfig in $jetbrainsConfigs; do
+            if [[ -e "$jetbrainsConfig" && -n "$jetbrainsMono" ]]; then
+            currentJetbrainsMonoFontName="$(xmllint --xpath '//application/component/option[@name="FONT_FAMILY"][@value]/@value' "$jetbrainsConfig" 2> /dev/null | awk -F'[="]' '!/>/{print $(NF-1)}')"
+            currentJetbrainsMonoFontSize="$(xmllint --xpath '//application/component/option[@name="FONT_SIZE"][@value]/@value' "$jetbrainsConfig" 2> /dev/null | awk -F'[="]' '!/>/{print $(NF-1)}')"
+            wantedJetbrainsMonoFontName="PragmataPro Mono"
+            wantedJetbrainsMonoFontSize="$jetbrainsMono"
+
+            # Update JetBrains config if different.
+            if [[ "$currentJetbrainsMonoFontSize" && "$currentJetbrainsMonoFontSize" != "$wantedJetbrainsMonoFontSize" ]]; then
+                echo "Notice: Setting $(echo $jetbrainsConfig | cut -d/ -f6) monospace font to \"$currentJetbrainsMonoFontName $wantedJetbrainsMonoFontSize\".."
+                currentJetbrainsMonoFontNameString="name=\"FONT_FAMILY\" value=\"$currentJetbrainsMonoFontName\""
+                wantedJetbrainsMonoFontNameString="name=\"FONT_FAMILY\" value=\"$wantedJetbrainsMonoFontName\""
+                currentJetbrainsMonoFontSizeString="name=\"FONT_SIZE\" value=\"$currentJetbrainsMonoFontSize\""
+                wantedJetbrainsMonoFontSizeString="name=\"FONT_SIZE\" value=\"$wantedJetbrainsMonoFontSize\""
+                sed -i "s|$currentJetbrainsMonoFontNameString|$wantedJetbrainsMonoFontNameString|g" "$jetbrainsConfig"
+                sed -i "s|$currentJetbrainsMonoFontSizeString|$wantedJetbrainsMonoFontSizeString|g" "$jetbrainsConfig"
+            fi
+        fi
+        done
+
         # Current and wanted Vim settings.
         vimConfig="$HOME/.vimrc"
         if [[ -e "$vimConfig" && -n "$vimMono" ]]; then
@@ -177,3 +189,4 @@ runScaling() {
     fi
 }
 
+runScaling
