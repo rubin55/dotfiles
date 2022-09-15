@@ -158,7 +158,7 @@ runScaling() {
             currentJetbrainsMonoFontSize2d="$(xmllint --xpath '//application/component/option[@name="FONT_SIZE_2D"][@value]/@value' "$jetbrainsConfig" 2> /dev/null | awk -F'[="]' '!/>/{print $(NF-1)}')"
             wantedJetbrainsMonoFontName="$currentJetbrainsMonoFontName"
             wantedJetbrainsMonoFontSize="$jetbrainsMono"
-            wantedJetbrainsMonoFontSize2d="$jetbrainsMono"
+            wantedJetbrainsMonoFontSize2d="$jetbrainsMono.0"
 
             # Update JetBrains config if different.
             if [[ "$currentJetbrainsMonoFontSize" && "$currentJetbrainsMonoFontSize" != "$wantedJetbrainsMonoFontSize" ]]; then
