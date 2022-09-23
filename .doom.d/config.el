@@ -3,6 +3,11 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
+;; Make magit find my git repositories.
+(setq magit-repository-directories '(("~/Source" . 2) ("~/Syncthing/Source" . 2)))
+
+;; Make projectile find my projects.
+(setq projectile-project-search-path '(("~/Source" . 2) ("~/Syncthing/Source" . 2) ("~/Syncthing/Documents/Rubin/Courses/Exercism" . 2)))
 
 ;; Hide menubar, toolbar and scrollbar by default.
 (menu-bar-mode -1)
