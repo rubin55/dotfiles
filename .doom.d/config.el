@@ -28,6 +28,7 @@
 (setq visual-fill-column-center-text t)
 (add-hook 'nov-mode-hook 'visual-line-mode)
 (add-hook 'nov-mode-hook 'visual-fill-column-mode)
+(add-hook 'nov-mode-hook 'adaptive-wrap-prefix-mode)
 
 ;; Configure pdf-tools mode.
 (add-hook 'pdf-misc-minor-mode-hook 'pdf-view-midnight-minor-mode)

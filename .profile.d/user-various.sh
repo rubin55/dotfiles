@@ -99,6 +99,7 @@ alias pgctl='pgctl.sh'
 alias rmqctl='rmqctl.sh'
 alias pgo='pgo-wrapper.sh'
 alias spotify='spotify --no-xshm --ignore-gpu-blacklist'
+alias tracker='tracker3'
 
 # Set default SciPy image viewer.
 export SCIPY_PIL_IMAGE_VIEWER=display
