@@ -8,7 +8,7 @@ if [ "$(uname -s)" == "Linux" ]; then
     else
         export GDK_BACKEND=x11
     fi
-    export GDK_SCALE=1
+    #export GDK_SCALE=1
     export GDK_USE_XFT=1
     export GTK_THEME=Adwaita:dark
     export SAL_USE_VCLPLUGIN=gtk
