@@ -166,6 +166,7 @@
        ;;terra             ; Earth and Moon in alignment for performance.
        (web +lsp)               ; the tubes
        (yaml +lsp)              ; JSON, but readable
+       (zig +lsp)               ; C, but simpler
 
        :email
        ;;(mu4e +gmail)
@@ -180,4 +181,5 @@
 
        :config
        ;;literate
-       (default +bindings +smartparens))
+       (default +bindings +smartparens)
+)
