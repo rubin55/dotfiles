@@ -107,6 +107,9 @@ export SCIPY_PIL_IMAGE_VIEWER=display
 # Set the default editor.
 export EDITOR='vi.sh'
 
+# Set the default pager.
+export PAGER='most'
+
 # My title function.
 function title() {
     [[ -z "$orig" ]] && orig=$PS1
