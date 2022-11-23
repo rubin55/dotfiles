@@ -1,13 +1,7 @@
 #!/bin/bash
 
 function addManPaths() {
-    NVM_DEFAULT_ALIAS="$HOME/.nvm/alias/default"
-    if [ -e "$NVM_DEFAULT_ALIAS" ]; then
-        NODE_VERSION=$(cat "$NVM_DEFAULT_ALIAS")
-    else
-        NODE_VERSION=$(node --version)
-    fi
-
+    NODE_VERSION=$(node --version)
     MANPATH_CANDIDATES="$HOME/.nvm/versions/node/$NODE_VERSION/share/man:$HOME/.nvm/versions/node/$NODE_VERSION/lib/node_modules/npm/man"
 
     # Check if candidates exist, only add those.
