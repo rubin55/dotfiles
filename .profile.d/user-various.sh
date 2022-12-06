@@ -62,17 +62,24 @@ alias l='ls -CF'
 
 # Code, Emacs and Vim.
 if [[ "$(uname -s)" =~ "arwin" ]]; then
-    alias em='em-mac.sh'
-    alias vi='vi.sh'
+    alias emacs='emacs.sh'
+    alias em='emacs.sh'
+    alias gvim='gvim.sh'
+    alias vim='vim.sh'
+    alias vi='gvim.sh'
 elif [[ "$(uname -r)" =~ "icrosoft" ]]; then
-    alias em='em-windows.sh'
-    alias vi='vi.sh'
+    alias emacs='emacs.sh'
+    alias em='emacs.sh'
+    alias gvim='gvim.sh'
+    alias vim='vim.sh'
+    alias vi='gvim.sh'
     alias code='code.exe'
 elif [[ "$(uname -s)" =~ "inux" ]]; then
-    alias emacs='GDK_BACKEND=x11 emacs'
-    alias gvim='GDK_BACKEND=x11 gvim'
-    alias em='em-linux.sh'
-    alias vi='vi.sh'
+    alias emacs='emacs.sh'
+    alias em='emacs.sh'
+    alias gvim='gvim.sh'
+    alias vim='vim.sh'
+    alias vi='gvim.sh'
 
     # If no code, assume code-oss.
     which code > /dev/null 2>&1
@@ -106,7 +113,7 @@ alias pygmentize='pygmentize -f terminal'
 export SCIPY_PIL_IMAGE_VIEWER=display
 
 # Set the default editor.
-export EDITOR='vi.sh'
+export EDITOR='gvim.sh'
 
 # Set up less to use lessfilter (pygments).
 export PAGER='less'
