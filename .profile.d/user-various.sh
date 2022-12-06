@@ -100,6 +100,7 @@ alias rmqctl='rmqctl.sh'
 alias pgo='pgo-wrapper.sh'
 alias spotify='spotify --no-xshm --ignore-gpu-blacklist'
 alias tracker='tracker3'
+alias pygmentize='pygmentize -f terminal'
 
 # Set default SciPy image viewer.
 export SCIPY_PIL_IMAGE_VIEWER=display
@@ -107,8 +108,11 @@ export SCIPY_PIL_IMAGE_VIEWER=display
 # Set the default editor.
 export EDITOR='vi.sh'
 
-# Set the default pager.
-export PAGER='most'
+# Set up less to use lessfilter (pygments).
+export PAGER='less'
+export LESS='-R'
+export LESSOPEN='|~/.lessfilter %s'
+
 
 # My title function.
 function title() {
