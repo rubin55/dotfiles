@@ -18,3 +18,13 @@ MANPATH_NEW+=":$(find /opt -maxdepth 5 -type d -name man 2>/dev/null| tr '\n' ':
 # Make sure we don't have empty entries.
 export MANPATH=$(echo "$MANPATH_NEW" | sed "s|::|:|g")
 
+# Override man to make LESS use colors instead of actual bold/underline/standout.
+function man() {
+    LESS_TERMCAP_md=$'\e[01;31m' \
+    LESS_TERMCAP_me=$'\e[0m' \
+    LESS_TERMCAP_us=$'\e[01;32m' \
+    LESS_TERMCAP_ue=$'\e[0m' \
+    LESS_TERMCAP_so=$'\e[45;93m' \
+    LESS_TERMCAP_se=$'\e[0m' \
+    command man "$@"
+}
