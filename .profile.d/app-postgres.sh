@@ -6,9 +6,9 @@ SET_ALIAS=false
 
 # Application locations, alias names, etc.
 CFG_ALIAS="psql"
-CFG_EXEC_UNIX="/opt/postgres/pgsql14/bin/psql"
+CFG_EXEC_UNIX="/opt/postgres/pgsql15/bin/psql"
 CFG_EXEC_MACOS="/Applications/Postgres.app/Contents/Versions/latest/bin/psql"
-CFG_EXEC_WINDOWS="/mnt/c/Program Files/Postgres/pgsql14/bin/psql.exe"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Postgres/pgsql15/bin/psql.exe"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then
