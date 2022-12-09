@@ -6,9 +6,9 @@ SET_ALIAS=false
 
 # Application locations, alias names, etc.
 CFG_ALIAS="sbt"
-CFG_EXEC_UNIX="/opt/sbt/sbt17/bin/sbt"
-CFG_EXEC_MACOS="$HOME/Applications/SBT/sbt17/bin/sbt"
-CFG_EXEC_WINDOWS="/mnt/c/Program Files/SBT/sbt17/bin/sbt"
+CFG_EXEC_UNIX="/opt/sbt/sbt18/bin/sbt"
+CFG_EXEC_MACOS="$HOME/Applications/SBT/sbt18/bin/sbt"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/SBT/sbt18/bin/sbt"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then
