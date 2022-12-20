@@ -97,12 +97,12 @@ fi
 # A few other aliases.
 alias kc='kubectl'
 alias open='opener.sh'
-alias dbcluster='dbcluster.sh'
 alias gitlab-getenv='gitlab-getenv.sh'
 alias helmster='helmster.sh'
 alias session='session.sh'
 alias tipi='tipi.py'
 alias pgctl='pgctl.sh'
+alias amqctl='amqctl.sh'
 alias rmqctl='rmqctl.sh'
 alias pgo='pgo-wrapper.sh'
 alias spotify='spotify --no-xshm --ignore-gpu-blacklist'
