@@ -1,7 +1,8 @@
-codeMono=14
-emacsMono=38
+codeMono=13
+emacsMono=40
 emacsSans=38
-vimMono=14
-gnomeMono=14
-gnomeSans=13
-gnomeSerif=13
+gnomeMono=13
+gnomeSans=12
+gnomeSerif=12
+jetbrainsMono=13
+vimMono=13
