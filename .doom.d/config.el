@@ -214,8 +214,8 @@
 
 ;; Font settings for Surface, my Windows ARM64 laptop.
 (when (string= (system-name) "SURFACE")
-  (setq doom-font (font-spec :family "PragmataPro Mono Liga" :size 44 :weight 'normal)
-      doom-variable-pitch-font (font-spec :family "Segoe UI" :size 44)))
+  (setq doom-font (font-spec :family "PragmataPro Mono Liga" :size 40 :weight 'normal)
+      doom-variable-pitch-font (font-spec :family "Segoe UI" :size 38)))
 
 ;; Font settings for Kuro, my macOS AMD64 laptop.
 (when (string= (system-name) "kuro.home.local")
