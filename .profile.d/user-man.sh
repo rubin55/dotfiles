@@ -15,6 +15,18 @@ IFS=$OLD_IFS
 # Extra manpath elements for programs in /opt.
 MANPATH_NEW+=":$(find /opt -maxdepth 5 -type d -name man 2>/dev/null| tr '\n' ':')"
 
+# Extra strange manpath for Mathematica.
+MATHEMATICA_MANPAGES="/opt/wolfram/mathematica13/SystemFiles/SystemDocumentation/Unix"
+if [ -d "$MATHEMATICA_MANPAGES" ]; then
+    if [ ! -L "$MATHEMATICA_MANPAGES/man1" ]; then
+        echo fo
+        cd "$MATHEMATICA_MANPAGES"
+        ln -s . man1
+        cd - > /dev/null 2>&1
+    fi
+    MANPATH_NEW+=":$MATHEMATICA_MANPAGES"
+fi
+
 # Make sure we don't have empty entries.
 export MANPATH=$(echo "$MANPATH_NEW" | sed "s|::|:|g")
 
