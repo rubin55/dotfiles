@@ -6,8 +6,8 @@ SET_ALIAS=false
 
 # Application locations, alias names, etc.
 CFG_ALIAS="fop"
-CFG_EXEC_UNIX="/opt/fop/fop26/fop"
-CFG_EXEC_MACOS="$HOME/Applications/FOP/fop26/fop"
+CFG_EXEC_UNIX="/opt/fop/fop2/fop"
+CFG_EXEC_MACOS="$HOME/Applications/FOP/fop2/fop"
 CFG_EXEC_WINDOWS="/mnt/c/Program Files/FOP/fop"
 
 # Determine application home.
