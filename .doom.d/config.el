@@ -199,8 +199,8 @@
 
 ;; Font settings for Orion, my Linux AMD64 desktop at work.
 (when (string= (system-name) "ORION")
-  (setq doom-font (font-spec :family "Monospace" :size 15 :weight 'normal)
-      doom-variable-pitch-font (font-spec :family "Sans" :size 15)))
+  (setq doom-font (font-spec :family "Monospace" :size 38 :weight 'normal)
+      doom-variable-pitch-font (font-spec :family "Sans" :size 38)))
 
 ;; Font settings for Power, my Linux PowerPC desktop at work.
 (when (string= (system-name) "POWER")
@@ -260,7 +260,7 @@
   (setq evil-escape-key-sequence nil))
 
 ;; Show emacs version after startup.
-(add-hook 'window-setup-hook (lambda () (run-with-timer 0.5 nil #'call-interactively 'version)))
+(add-hook 'window-setup-hook (lambda () (run-with-timer 1 nil #'call-interactively 'version)))
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
