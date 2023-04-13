@@ -194,8 +194,8 @@
 
 ;; Font settings for Adam, my Windows AMD64 desktop at home.
 (when (string= (system-name) "ADAM")
-  (setq doom-font (font-spec :family "PragmataPro Mono Liga" :size 28 :weight 'normal)
-      doom-variable-pitch-font (font-spec :family "Segoe UI" :size 28)))
+  (setq doom-font (font-spec :family "PragmataPro Mono Liga" :size 42 :weight 'normal)
+      doom-variable-pitch-font (font-spec :family "Segoe UI" :size 36)))
 
 ;; Font settings for Orion, my Linux AMD64 desktop at work.
 (when (string= (system-name) "ORION")
