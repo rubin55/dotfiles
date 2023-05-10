@@ -8,7 +8,7 @@ SET_ALIAS=false
 CFG_ALIAS="ant"
 CFG_EXEC_UNIX="/opt/ant/ant110/bin/ant"
 CFG_EXEC_MACOS="$HOME/Applications/Ant/ant110/bin/ant"
-CFG_EXEC_WINDOWS="/mnt/c/Program Files/Apache/ant110/bin/ant"
+CFG_EXEC_WINDOWS="/mnt/c/Program Files/Ant/ant110/bin/ant"
 
 # Determine application home.
 if [ -x "$CFG_EXEC_UNIX" ]; then
