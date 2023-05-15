@@ -16,7 +16,7 @@
 
 ;; Set initial window size.
 (setq default-frame-alist
-      '((width . 120) (height . 40)))
+      '((width . 132) (height . 43)))
 
 ;; Enable long line wrap by default.
 (global-visual-line-mode 1)
@@ -199,8 +199,8 @@
 
 ;; Font settings for Orion, my Linux AMD64 desktop at work.
 (when (string= (system-name) "ORION")
-  (setq doom-font (font-spec :family "Monospace" :size 38 :weight 'normal)
-      doom-variable-pitch-font (font-spec :family "Sans" :size 38)))
+  (setq doom-font (font-spec :family "Monospace" :size 33 :weight 'normal)
+      doom-variable-pitch-font (font-spec :family "Sans" :size 33)))
 
 ;; Font settings for Power, my Linux PowerPC desktop at work.
 (when (string= (system-name) "POWER")
