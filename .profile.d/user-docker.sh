@@ -9,8 +9,8 @@ OLD_PATH="$PATH"
 PATH="/bin:/usr/bin:/usr/local/bin:$HOME/.docker/cli-plugins:/usr/local/lib/docker/cli-plugins:/usr/local/libexec/docker/cli-plugins:/usr/lib/docker/cli-plugins:/usr/libexec/docker/cli-plugins"
 which docker-buildx > /dev/null 2>&1
 if [ $? -eq 0 ]; then
-    echo "Notice: Docker buildx plugin found, setting DOCKER_BUILDX=1"
-    export DOCKER_BUILDX=1
+    echo "Notice: Docker buildx plugin found, setting DOCKER_BUILDKIT=1"
+    export DOCKER_BUILDKIT=1
 fi
 PATH="$OLD_PATH"
 
