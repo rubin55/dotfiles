@@ -6,8 +6,8 @@ SET_ALIAS=false
 
 # Application locations, alias names, etc.
 CFG_ALIAS="rcu"
-CFG_EXEC_UNIX="/opt/remarkable/rcu2021/rcu"
-CFG_EXEC_MACOS="$HOME/Applications/Remarkable/rcu2021/rcu"
+CFG_EXEC_UNIX="/opt/remarkable/rcu2023/rcu"
+CFG_EXEC_MACOS="$HOME/Applications/Remarkable/rcu2023/rcu"
 CFG_EXEC_WINDOWS="/mnt/c/Program Files/RCU/rcu.exe"
 
 # Determine application home.
