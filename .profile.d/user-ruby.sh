@@ -47,10 +47,10 @@ if [ ! -z "$RUBY_EXEC" ]; then
                 redhat*)
                     export GEM_PATH=/usr/share/gems:$GEM_HOME
                     ;;
-                pop*|ubuntu*|voidlinux*)
+                arch*|pop*|ubuntu*|voidlinux*)
                     ;;
                 *)
-                    echo "Warning: couldn't detect distro? Don't know how to set GEM_PATH."
+                    echo "Warning: Don't know distro: $distro; d    on't know how to set GEM_PATH."
                     ;;
             esac
         fi

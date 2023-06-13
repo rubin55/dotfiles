@@ -212,6 +212,11 @@
   (setq doom-font (font-spec :family "Monospace" :size 38 :weight 'normal)
       doom-variable-pitch-font (font-spec :family "Sans" :size 38)))
 
+;; Font settings for Argon, my Linux AMD64 virtual-machine.
+(when (string= (system-name) "ARGON")
+  (setq doom-font (font-spec :family "Monospace" :size 38 :weight 'normal)
+      doom-variable-pitch-font (font-spec :family "Sans" :size 38)))
+
 ;; Font settings for Surface, my Windows ARM64 laptop.
 (when (string= (system-name) "SURFACE")
   (setq doom-font (font-spec :family "PragmataPro Mono Liga" :size 40 :weight 'normal)
