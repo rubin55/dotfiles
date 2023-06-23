@@ -7,7 +7,7 @@ if [ "$(uname -s)" == "Linux" ]; then
         export QT_QPA_PLATFORM=wayland
     fi
     export QT_AUTO_SCREEN_SCALE_FACTOR=1
-    export QT_QPA_PLATFORMTHEME=qt5ct
+    export QT_QPA_PLATFORMTHEME=qt6ct
     #export QT_STYLE_OVERRIDE=''
     export QT_XFT=true
     export QT_ACCESSIBILITY=0
