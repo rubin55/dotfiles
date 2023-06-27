@@ -51,7 +51,7 @@ function path.which() {
 }
 
 function path.sanitize() {
-  local path="$(echo "$1" | sed -e 's#[^:]*:##; s#//*#/#g; s#::*#:#g; s#/\(:\|$\)#\1#g')"
+  local path="$(echo "$1" | sed -e 's#^:##; s#//*#/#g; s#::*#:#g; s#/\(:\|$\)#\1#g')"
   printf -- "%s\n" "${path}"
 }
 
