@@ -76,7 +76,7 @@
   "terminal.integrated.shell.windows": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
   "window.openFilesInNewWindow": "off",
   "window.titleBarStyle": "custom",
-  "window.zoomLevel": 0,
+  "window.zoomLevel": 1,
   "workbench.colorCustomizations": {
     "editorRuler.foreground": "#232323"
   },
