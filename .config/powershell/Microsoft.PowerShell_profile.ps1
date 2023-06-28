@@ -123,5 +123,5 @@ New-Alias which Get-CustomCommand
 # Set an alias for PGO.
 New-Alias pgo pgo-wrapper.bat
 
-# Enable the Rubin's Java version manager.
+# Enable Java version manager.
 . $home\Syncthing\Source\RAAF\scripts\power\jdkctl.ps1
