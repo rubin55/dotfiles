@@ -4,10 +4,11 @@
 old_IFS=$IFS
 IFS=:
 
-# Strange manpaths for Mathematica.
+# Determine Mathematica home and add to path and manpath.
 MATHEMATICA_HOMES=("/opt/Mathematica:/opt/wolfram/mathematica13")
 for MATHEMATICA_HOME in $MATHEMATICA_HOMES; do
   if [ -d "$MATHEMATICA_HOME" ]; then
+     PATH_NEW="$MATHEMATICA_HOME/Executables"
      MANPATH_NEW="$MATHEMATICA_HOME/SystemFiles/SystemDocumentation/Unix"
      if [ ! -L "$MANPATH_NEW/man1" ]; then
        cd "$MANPATH_NEW"
@@ -21,5 +22,6 @@ done
 # Reset IFS.
 IFS=$old_UFS
 
-# Add MANPATH.
+# Add PATH, MANPATH.
+export PATH=":$(path.append "$PATH_NEW" "$PATH")"
 export MANPATH=":$(path.append "$MANPATH_NEW" "$MANPATH")"
