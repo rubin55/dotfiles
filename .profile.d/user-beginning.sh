@@ -12,7 +12,7 @@ if [ -e "$known_executables" ]; then
 fi
 
 # Add detected directories to the PATH.
-PATH="$(path.append "$PATH_NEW" "$PATH")"
+export PATH="$(path.append "$PATH_NEW" "$PATH")"
 
 # Check existence of list of known manpaths. If exists,
 # eventually add the directory to the manpath.
@@ -25,6 +25,5 @@ if [ -e "$known_manpaths" ]; then
   done < "$known_manpaths"
 fi
 
-# Add detected directories to the MANPATH.
-# Note: prefixed ':' is intentional (man manpath).
-MANPATH=":$(path.append "$MANPATH_NEW" "$MANPATH")"
+# Add manpath (prefixed ':' is intentional, see man manpath).
+export MANPATH=":$(path.append "$MANPATH_NEW" "$MANPATH")"

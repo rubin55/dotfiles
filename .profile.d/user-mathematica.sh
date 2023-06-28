@@ -22,6 +22,6 @@ done
 # Reset IFS.
 IFS=$old_UFS
 
-# Add PATH, MANPATH.
-export PATH=":$(path.append "$PATH_NEW" "$PATH")"
+# Add path, manpath (prefixed ':' is intentional, see man manpath).
+export PATH="$(path.append "$PATH_NEW" "$PATH")"
 export MANPATH=":$(path.append "$MANPATH_NEW" "$MANPATH")"

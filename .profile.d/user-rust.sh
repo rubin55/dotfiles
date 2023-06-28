@@ -12,5 +12,6 @@ if path.which cargo,rustc; then
   fi
 
   MANPATH_NEW=$HOME/.rustup/toolchains/stable-x86_64-unknown-linux-gnu/share/man
+  # Add manpath (prefixed ':' is intentional, see man manpath).
   export MANPATH=":$(path.append "$MANPATH_NEW" "$MANPATH")"
 fi

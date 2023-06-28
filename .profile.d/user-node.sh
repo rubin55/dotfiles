@@ -4,7 +4,7 @@
 if [ -s "$HOME/.nvm/nvm.sh" ]; then
   source "$HOME/.nvm/nvm.sh"
 
-  # Add manpath too.
+  # Figure out manpath location.
   if path.which node; then
     NODE_VERSION=$(node --version)
     MANPATH_NEW="$HOME/.nvm/versions/node/$NODE_VERSION/share/man:$HOME/.nvm/versions/node/$NODE_VERSION/lib/node_modules/npm/man"

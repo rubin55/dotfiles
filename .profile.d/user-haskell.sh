@@ -4,7 +4,7 @@
 if [ -f "$HOME/.ghcup/env" ]; then
   source "$HOME/.ghcup/env"
 
-  # Add manpath too.
+  # Figure out manpath location.
   if path.which ghc; then
     GHC_VERSION="$(ghc --version | awk 'NF>1{print $NF}')"
     MANPATH_NEW="$HOME/.ghcup/ghc/$GHC_VERSION/share/doc/ghc-$GHC_VERSION/users_guide/build-man"
@@ -16,6 +16,7 @@ if [ -f "$HOME/.ghcup/env" ]; then
       fi
     fi
 
+    # Add manpath (prefixed ':' is intentional, see man manpath).
     export MANPATH=":$(path.append "$MANPATH_NEW" "$MANPATH")"
   fi
 fi
