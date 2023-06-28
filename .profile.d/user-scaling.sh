@@ -15,7 +15,7 @@ if [[ "$(os.platform)" == "linux" ]]; then
   # Check if $FONT_SIZE_PREFERENCES_FILE was set
   # else set a it to ~/.fontsizes by default.
   if [[ -n "$FONT_SIZE_PREFERENCES_FILE" && -e "$FONT_SIZE_PREFERENCES_FILE" ]]; then
-    log.info "Configuring font size preferences from: $FONT_SIZE_PREFERENCES_FILE"
+    log.info "Configuring font size preferences from: \"$FONT_SIZE_PREFERENCES_FILE\""
   else
     # Just use the default and don't tell us about it.
     FONT_SIZE_PREFERENCES_FILE="$HOME/.fontsizes"
@@ -41,7 +41,7 @@ if [[ "$(os.platform)" == "linux" ]]; then
 
     # Update Visual Studio Code editor font if different.
     if [[ "$currentCodeEditorFontSize" != "$wantedCodeEditorFontSize" ]]; then
-      log.info "Setting Code editor font to \"$currentCodeEditorFontName $wantedCodeEditorFontSize\".."
+      log.info "Setting Code editor font to: \"$currentCodeEditorFontName $wantedCodeEditorFontSize\""
       currentCodeEditorFontString="\"editor.fontSize\": $currentCodeEditorFontSize,"
       wantedCodeEditorFontString="\"editor.fontSize\": $wantedCodeEditorFontSize,"
       sed -i "s|$currentCodeEditorFontString|$wantedCodeEditorFontString|g" "$codeConfig"
@@ -49,7 +49,7 @@ if [[ "$(os.platform)" == "linux" ]]; then
 
     # Update Visual Studio Code terminal font if different.
     if [[ "$currentCodeTerminalFontSize" != "$wantedCodeTerminalFontSize" ]]; then
-      log.info "Setting Code terminal font to \"$currentCodeTerminalFontName $wantedCodeTerminalFontSize\".."
+      log.info "Setting Code terminal font to: \"$currentCodeTerminalFontName $wantedCodeTerminalFontSize\""
       currentCodeTerminalFontString="\"terminal.integrated.fontSize\": $currentCodeTerminalFontSize,"
       wantedCodeTerminalFontString="\"terminal.integrated.fontSize\": $wantedCodeTerminalFontSize,"
       sed -i "s|$currentCodeTerminalFontString|$wantedCodeTerminalFontString|g" "$codeConfig"
@@ -73,7 +73,7 @@ if [[ "$(os.platform)" == "linux" ]]; then
 
     # Update Emacs monospace font if different.
     if [[ "$currentEmacsMonospaceFontSize" != "$wantedEmacsMonospaceFontSize" ]]; then
-      log.info "Setting Emacs monospace font to \"$currentEmacsMonospaceFontName $wantedEmacsMonospaceFontSize\".."
+      log.info "Setting Emacs monospace font to: \"$currentEmacsMonospaceFontName $wantedEmacsMonospaceFontSize\""
       currentEmacsMonospaceFontString="$(grep -A1 "(when (string= (system-name) \"$emacsHostIdentifier\")" "$emacsConfig" | tail -n1)"
       currentEmacsMonospaceFontLineNumber="$(grep -n -A1 "(when (string= (system-name) \"$emacsHostIdentifier\")" "$emacsConfig" | tail -n1 | cut -d- -f1)"
       wantedEmacsMonospaceFontString="$(echo "$currentEmacsMonospaceFontString" | sed "s|:size $currentEmacsMonospaceFontSize|:size $wantedEmacsMonospaceFontSize|")"
@@ -82,7 +82,7 @@ if [[ "$(os.platform)" == "linux" ]]; then
 
     # Update Emacs variable-width font if different.
     if [[ "$currentEmacsVariablewidthFontSize" != "$wantedEmacsVariablewidthFontSize" ]]; then
-      log.info "Setting Emacs variable-width font to \"$currentEmacsVariablewidthFontName $wantedEmacsVariablewidthFontSize\".."
+      log.info "Setting Emacs variable-width font to: \"$currentEmacsVariablewidthFontName $wantedEmacsVariablewidthFontSize\""
       currentEmacsVariablewidthFontString="$(grep -A2 "(when (string= (system-name) \"$emacsHostIdentifier\")" "$emacsConfig" | tail -n1)"
       currentEmacsVariablewidthFontLineNumber="$(grep -n -A2 "(when (string= (system-name) \"$emacsHostIdentifier\")" "$emacsConfig" | tail -n1 | cut -d- -f1)"
       wantedEmacsVariablewidthFontString="$(echo "$currentEmacsVariablewidthFontString" | sed "s|:size $currentEmacsVariablewidthFontSize|:size $wantedEmacsVariablewidthFontSize|")"
@@ -107,25 +107,25 @@ if [[ "$(os.platform)" == "linux" ]]; then
 
     # Update Gnome system monospace font if different.
     if [[ "$currentGnomeMonospaceFontSize" != "$wantedGnomeMonospaceFontSize" ]]; then
-      log.info "Setting Gnome monospace font to \"$currentGnomeMonospaceFontName $wantedGnomeMonospaceFontSize\".."
+      log.info "Setting Gnome monospace font to: \"$currentGnomeMonospaceFontName $wantedGnomeMonospaceFontSize\""
       gsettings set org.gnome.desktop.interface monospace-font-name "$currentGnomeMonospaceFontName $wantedGnomeMonospaceFontSize" > /dev/null 2>&1
     fi
 
     # Update Gnome system interface font if different.
     if [[ "$currentGnomeInterfaceFontSize" != "$wantedGnomeInterfaceFontSize" ]]; then
-      log.info "Setting Gnome interface font to \"$currentGnomeInterfaceFontName $wantedGnomeInterfaceFontSize\".."
+      log.info "Setting Gnome interface font to: \"$currentGnomeInterfaceFontName $wantedGnomeInterfaceFontSize\""
       gsettings set org.gnome.desktop.interface font-name "$currentGnomeInterfaceFontName $wantedGnomeInterfaceFontSize" > /dev/null 2>&1
     fi
 
     # Update Gnome system document font if different.
     if [[ "$currentGnomeDocumentFontSize" != "$wantedGnomeDocumentFontSize" ]]; then
-      log.info "Setting Gnome document font to \"$currentGnomeDocumentFontName $wantedGnomeDocumentFontSize\".."
+      log.info "Setting Gnome document font to: \"$currentGnomeDocumentFontName $wantedGnomeDocumentFontSize\""
       gsettings set org.gnome.desktop.interface document-font-name "$currentGnomeDocumentFontName $wantedGnomeDocumentFontSize" > /dev/null 2>&1
     fi
 
     # Update Gnome system title font if different.
     if [[ "$currentGnomeTitleFontSize" != "$wantedGnomeTitleFontSize" ]]; then
-      log.info "Setting Gnome title font to \"$currentGnomeTitleFontName $wantedGnomeTitleFontSize\".."
+      log.info "Setting Gnome title font to: \"$currentGnomeTitleFontName $wantedGnomeTitleFontSize\""
       gsettings set org.gnome.desktop.wm.preferences titlebar-font "$currentGnomeTitleFontName $wantedGnomeTitleFontSize" > /dev/null 2>&1
     fi
   fi
@@ -139,7 +139,7 @@ if [[ "$(os.platform)" == "linux" ]]; then
 
     # Update Gnome theme config if different.
     if [[ "$currentGnomeThemeFontSize" != "$wantedGnomeThemeFontSize" ]]; then
-      log.info "Setting Gnome theme font to \"$currentGnomeThemeFontName $wantedGnomeThemeFontSize\".."
+      log.info "Setting Gnome theme font to: \"$currentGnomeThemeFontName $wantedGnomeThemeFontSize\""
       currentGnomeThemeFontString="font-size: $currentGnomeThemeFontSize;"
       wantedGnomeThemeFontString="font-size: $wantedGnomeThemeFontSize;"
       sed -i "s|$currentGnomeThemeFontString|$wantedGnomeThemeFontString|g" "$themeConfig"
@@ -160,7 +160,7 @@ if [[ "$(os.platform)" == "linux" ]]; then
 
     # Update JetBrains config if different.
     if [[ "$currentJetbrainsMonoFontSize" && "$currentJetbrainsMonoFontSize" != "$wantedJetbrainsMonoFontSize" ]]; then
-      log.info "Setting $(echo "$jetbrainsConfig" | cut -d/ -f6) monospace font to \"$currentJetbrainsMonoFontName $wantedJetbrainsMonoFontSize\".."
+      log.info "Setting $(echo "$jetbrainsConfig" | cut -d/ -f6) monospace font to: \"$currentJetbrainsMonoFontName $wantedJetbrainsMonoFontSize\""
       currentJetbrainsMonoFontNameString="name=\"FONT_FAMILY\" value=\"$currentJetbrainsMonoFontName\""
       wantedJetbrainsMonoFontNameString="name=\"FONT_FAMILY\" value=\"$wantedJetbrainsMonoFontName\""
       currentJetbrainsMonoFontSizeString="name=\"FONT_SIZE\" value=\"$currentJetbrainsMonoFontSize\""
@@ -183,7 +183,7 @@ if [[ "$(os.platform)" == "linux" ]]; then
 
     # Update Vim config if different.
     if [[ "$currentVimMonoFontSize" != "$wantedVimMonoFontSize" ]]; then
-      log.info "Setting Vim monospace font to \"$currentVimMonoFontName $wantedVimMonoFontSize\".."
+      log.info "Setting Vim monospace font to: \"$currentVimMonoFontName $wantedVimMonoFontSize\""
       currentVimMonoFontString="set guifont=$(echo "$currentVimMonoFontName $currentVimMonoFontSize" | sed 's| |\\\\ |g')"
       wantedVimMonoFontString="set guifont=$(echo "$currentVimMonoFontName $wantedVimMonoFontSize" | sed 's| |\\\\ |g')"
       sed -i "s|$currentVimMonoFontString|$wantedVimMonoFontString|g" "$vimConfig"
