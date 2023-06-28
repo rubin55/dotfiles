@@ -15,7 +15,7 @@ if [[ "$(os.platform)" == "linux" ]]; then
   # Check if $FONT_SIZE_PREFERENCES_FILE was set
   # else set a it to ~/.fontsizes by default.
   if [[ -n "$FONT_SIZE_PREFERENCES_FILE" && -e "$FONT_SIZE_PREFERENCES_FILE" ]]; then
-    log.info "Configuring font size preferences from \"$FONT_SIZE_PREFERENCES_FILE\".."
+    log.info "Configuring font size preferences from: $FONT_SIZE_PREFERENCES_FILE"
   else
     # Just use the default and don't tell us about it.
     FONT_SIZE_PREFERENCES_FILE="$HOME/.fontsizes"
