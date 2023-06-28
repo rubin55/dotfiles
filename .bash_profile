@@ -2,6 +2,9 @@
 
 [ -z "$PS1" ] && return
 
+# Set default log level.
+BASH_LOG_LEVEL=INFO
+
 # Custom alias definitions.
 if [ -f ~/.bash_aliases ]; then
   . ~/.bash_aliases
@@ -15,6 +18,7 @@ fi
 # Source scripts in ~/.profile.d if exists.
 if [ -d ~/.profile.d -o -h ~/.profile.d ]; then
   for s in ~/.profile.d/*.sh; do
+    log.debug "Loading $s"
     source $s
   done
 fi
