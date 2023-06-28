@@ -51,8 +51,7 @@ function path.which() {
 }
 
 function path.sanitize() {
-  local path="$(echo "$1" | sed -e 's#^:##; s#//*#/#g; s#::*#:#g; s#/\(:\|$\)#\1#g')"
-  printf -- "%s\n" "${path}"
+  echo "$*" | sed -e 's#^:##; s#//*#/#g; s#::*#:#g; s#/\(:\|$\)#\1#g'
 }
 
 function path.append() {
@@ -61,13 +60,13 @@ function path.append() {
   local target_path=($(path.sanitize "$2"))
   local bad_elements=()
 
-  [[ -z $source_path ]] && log.error "Please specify a path to append" && return 1
+  [[ -z $target_path ]] && log.warn "Target path empty, function will return source path"
 
   for element in "${source_path[@]}"; do
-  	if [[ $element && -d $element ]]; then
-	  target_path+=($element)
+		if [[ $element && -d $element ]]; then
+		target_path+=($element)
 	else
-	  bad_elements+=($element)
+		bad_elements+=($element)
 	fi
   done
 
