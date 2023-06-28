@@ -1,38 +1,32 @@
 # ~/.bash_functions: a convenient library of bash functions.
 
 function log() {
+  #echo "f: ${FUNCNAME[@]}"
+  #echo "b: ${BASH_SOURCE[@]}"
   [[ -z $BASH_LOG_LEVEL ]] && active_log_level=INFO || active_log_level=$BASH_LOG_LEVEL
   declare -A levels=([DEBUG]=0 [INFO]=1 [WARN]=2 [ERROR]=3)
   local level="$1"
-  local name="$2"
+  [[ "${FUNCNAME[2]}" == 'source' ]] && local name="$(basename ${BASH_SOURCE[2]})" || local name="$(basename ${BASH_SOURCE[3]})"
   [[ ${levels[$level]} ]] || return 1
   (( ${levels[$level]} < ${levels[$active_log_level]} )) && return 2
-  shift 2
+  shift 1
   echo "[${level}] ${name}: ${*}" >&2
 }
 
 function log.info() {
-  local name="${FUNCNAME[1]}"
-  [[ $name == 'source' ]] && name="$(basename ${BASH_SOURCE[1]})"
-  log INFO "$name" "$*"
+  log INFO "$*"
 }
 
 function log.warn() {
-  local name="${FUNCNAME[1]}"
-  [[ $name == 'source' ]] && name="$(basename ${BASH_SOURCE[1]})"
-  log WARN "$name" "$*"
+  log WARN "$*"
 }
 
 function log.error() {
-  local name="${FUNCNAME[1]}"
-  [[ $name == 'source' ]] && name="$(basename ${BASH_SOURCE[1]})"
-  log ERROR "$name" "$*"
+  log ERROR "$*"
 }
 
 function log.debug() {
-  local name="${FUNCNAME[1]}"
-  [[ $name == 'source' ]] && name="$(basename ${BASH_SOURCE[1]})"
-  log DEBUG "$name" "$*"
+  log DEBUG "$*"
 }
 
 function array.join() {
@@ -60,14 +54,14 @@ function path.append() {
   local target_path=($(path.sanitize "$2"))
   local bad_elements=()
 
-  [[ -z $target_path ]] && log.warn "Target path empty, function will return source path"
+  [[ -z $target_path ]] && log.debug "Target path empty, function will return source path: ${source_path[*]}"
 
   for element in "${source_path[@]}"; do
-		if [[ $element && -d $element ]]; then
-		target_path+=($element)
-	else
-		bad_elements+=($element)
-	fi
+  if [[ $element && -d $element ]]; then
+    target_path+=($element)
+  else
+    bad_elements+=($element)
+  fi
   done
 
   if [[ -n $bad_elements ]]; then
