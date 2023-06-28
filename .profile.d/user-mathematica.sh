@@ -20,7 +20,7 @@ for MATHEMATICA_HOME in $MATHEMATICA_HOMES; do
 done
 
 # Reset IFS.
-IFS=$old_UFS
+IFS=$old_IFS
 
 # Add path, manpath (prefixed ':' is intentional, see man manpath).
 export PATH="$(path.append "$PATH_NEW" "$PATH")"

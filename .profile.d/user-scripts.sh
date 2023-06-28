@@ -36,7 +36,7 @@ fi
 PATH_NEW+="/opt/jetbrains/scripts:$SOURCE_HOME/RAAF/session:$SOURCE_HOME/session:$SOURCE_HOME/ICTU/various/gitlab-getenv/bin:$SOURCE_HOME/gitlab-getenv/bin:$SOURCE_HOME/ICTU/various/helmster/bin:$SOURCE_HOME/helmster/bin"
 
 # Reset IFS.
-IFS=$old_UFS
+IFS=$old_IFS
 
 # Do the path addition.
 export PATH=$(path.append "$PATH_NEW" "$PATH")
