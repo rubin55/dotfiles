@@ -1,6 +1,9 @@
 #!/bin/bash
 
-if [ "$(os.platform)" == "darwin" ]; then
+# Check if functions are loaded.
+type -p os.platform path.append path.which || return
+
+if [[ "$(os.platform)" == "darwin" ]]; then
   # Prefer Python 3.x if it's installed, else fall back
   # on the ancient system-provided 2.7 version.
   PYTHON_HOME="/Library/Frameworks/Python.framework/Versions/Current"

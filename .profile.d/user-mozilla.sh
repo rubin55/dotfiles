@@ -1,5 +1,8 @@
 #!/bin/bash
 
-if path.which firefox && [ "$XDG_SESSION_TYPE" == "wayland" ]; then
-  export MOZ_ENABLE_WAYLAND=1
-fi
+# Check if functions are loaded and if required executables are available.
+type -p path.which || return
+path.which firefox || return
+
+[[ "$XDG_SESSION_TYPE" == "wayland" ]] && export MOZ_ENABLE_WAYLAND=1
+

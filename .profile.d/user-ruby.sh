@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Check if functions are loaded and if required executables are available.
+type -p os.platform path.append path.which || return
+path.which lsb_release || return
+
 # Note: on macOS 10.14, do: sudo xcode-select --switch /Library/Developer/CommandLineTools
 # See: https://stackoverflow.com/questions/20559255/error-while-installing-json-gem-mkmf-rb-cant-find-header-files-for-ruby
 
@@ -11,7 +15,7 @@
 [[ "$(which jruby 2> /dev/null)" && -z "$RUBY_EXEC" ]] && RUBY_EXEC=$(which jruby 2> /dev/null) && alias ruby="$RUBY_EXEC"
 [[ "$(which jgem 2> /dev/null)" && -z "$GEM_EXEC" ]] && GEM_EXEC=$(which jgem 2> /dev/null) && alias gem="$GEM_EXEC"
 
-if [ -n "$RUBY_EXEC" ]; then
+if [[ -n "$RUBY_EXEC" ]]; then
 
   # If we're using jruby, enable dev mode by default.
   if [[ "$RUBY_EXEC" =~ 'jruby' ]]; then
@@ -22,7 +26,7 @@ if [ -n "$RUBY_EXEC" ]; then
   RUBY_VERSION=$("$RUBY_EXEC" -e 'major, minor, patch = RUBY_VERSION.split("."); puts "%s.%s" % [major, minor]' 2> /dev/null)
 
   # If we actually received a version string, continue.
-  if [ -n "$RUBY_VERSION" ]; then
+  if [[ -n "$RUBY_VERSION" ]]; then
 
     # Note: use Gem.user_dir for setting GEM_HOME, avoid weirdness.
     export GEM_HOME=$("$RUBY_EXEC" -r rubygems -e 'puts Gem.user_dir')
@@ -30,7 +34,7 @@ if [ -n "$RUBY_EXEC" ]; then
     # Add GEM_HOME/bin to path if not in path already.
     export PATH=$(path.append "$GEM_HOME/bin" "$PATH")
 
-    if [ "$(os.platform)" == "linux" ]; then
+    if [[ "$(os.platform)" == "linux" ]]; then
       distro=$(lsb_release -i | cut -d: -f2 | sed 's/[[:blank:]]//g' | tr '[:upper:]' '[:lower:]')
 
       case "$distro" in

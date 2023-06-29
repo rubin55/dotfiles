@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Check if functions are loaded and if required executables are available.
+type -p log.info os.platform path.which || return
+path.which awk,cut,find,gdbus,grep,gsettings,hostname,sed,xmllint || return
+
 if [[ "$(os.platform)" == "linux" ]]; then
 
   # Example ~/.fontsizes:

@@ -7,9 +7,9 @@ path.which gpg-agent,gpg-connect-agent,gpgconf,grep,ps,tty || return
 # Set up gpg-agent (note: enable-ssh-support in gpg-agent.conf).
 export GPG_TTY="$(tty)"
 
-if [ -z "$SSH_CLIENT" ]; then
+if [[ -z "$SSH_CLIENT" ]]; then
   GPG_AGENT_DETECTED="$(ps x | grep gpg-agent | grep -v grep)"
-  if [ -z "$GPG_AGENT_DETECTED" ]; then
+  if [[ -z "$GPG_AGENT_DETECTED" ]]; then
     gpg-agent --daemon > /dev/null
     export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
   else

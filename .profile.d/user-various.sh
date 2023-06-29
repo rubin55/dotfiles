@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Check if functions are loaded and if required executables are available.
+type -p os.platform path.which title || return
+path.which awk,cut,grep,hostname,tr || return
+
 # Don't put duplicate lines or lines starting with space in the history.
 HISTCONTROL=ignoreboth
 
@@ -19,7 +23,7 @@ if path.which dircolors; then
 fi
 
 # Set default editor.
-export EDITOR='gvim.sh'
+path.which gvim.sh && export EDITOR='gvim.sh'
 
 # Set up less to use lessfilter (pygments).
 export PAGER='less'

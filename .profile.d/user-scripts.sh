@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Check if functions are loaded.
+type -p path.append || return
+
 # Set IFS.
 old_IFS=$IFS
 IFS=:
@@ -10,7 +13,7 @@ PATH_NEW="$HOME/.local/bin:"
 # Determine SOURCE_HOME.
 SOURCE_HOMES="$HOME/Syncthing/Source:$HOME/Source"
 for POSSIBLE_SOURCE_HOME in $SOURCE_HOMES; do
-    if [ -d "$POSSIBLE_SOURCE_HOME" ]; then
+    if [[ -d "$POSSIBLE_SOURCE_HOME" ]]; then
         SOURCE_HOME="$POSSIBLE_SOURCE_HOME"
         break
     fi
@@ -19,14 +22,14 @@ done
 # Determine SCRIPTS_HOME.
 SCRIPTS_HOMES="$SOURCE_HOME/${USER^}/scripts:$SOURCE_HOME/scripts"
 for POSSIBLE_SCRIPTS_HOME in $SCRIPTS_HOMES; do
-    if [ -d "$POSSIBLE_SCRIPTS_HOME" ]; then
+    if [[ -d "$POSSIBLE_SCRIPTS_HOME" ]]; then
         SCRIPTS_HOME="$POSSIBLE_SCRIPTS_HOME"
         break
     fi
 done
 
 # Some subdirectories I have in my SCRIPTS_HOME.
-if [ -n "$SCRIPTS_HOME" ]; then
+if [[ -n "$SCRIPTS_HOME" ]]; then
     for DIR in perl power python ruby shell; do
       PATH_NEW+="$SCRIPTS_HOME/$DIR:"
     done

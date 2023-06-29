@@ -12,7 +12,7 @@ if path.which docker-buildx $DOCKER_CLI_PLUGINS_PATH; then
 fi
 
 # Check for a docker host string on this host.
-if [ -e "$HOME/.docker/host.string" ]; then
+if [[ -e "$HOME/.docker/host.string" ]]; then
   DOCKER_HOST="$(cat "$HOME/.docker/host.string")"
 fi
 
@@ -20,14 +20,14 @@ fi
 if path.which minikube && minikube status | grep -qw 'apiserver: Running'; then
   eval $(minikube docker-env) && \
   log.info "Minikube is running, setting DOCKER_HOST=$DOCKER_HOST"
-elif [ -n "$DOCKER_HOST" ]; then
+elif [[ -n "$DOCKER_HOST" ]]; then
   DOCKER_TYPE=$(echo "$DOCKER_HOST" | cut -d: -f1)
   DOCKER_ADDR=$(echo "$DOCKER_HOST" | cut -d: -f2 | sed 's|^.*//||g; s|^.*@||g')
   DOCKER_PORT=$(echo "$DOCKER_HOST" | cut -d: -f3)
 
   # If DOCKER_PORT is empty, get port number from DOCKER_TYPE.
   declare -A DOCKER_NAMED_PORTS=([ssh]=22 [tcp]=2375 [tcps]=2376)
-  if [ -z "$DOCKER_PORT" ]; then
+  if [[ -z "$DOCKER_PORT" ]]; then
     DOCKER_PORT=${DOCKER_NAMED_PORTS[$DOCKER_TYPE]}
   fi
 

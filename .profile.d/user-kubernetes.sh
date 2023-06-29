@@ -1,11 +1,11 @@
 #!/bin/bash
 
 # Check if functions are loaded and if required executables are available.
-type -p path.which path.append || return
+type -p path.append path.which || return
 path.which find,sort || return
 
 # Construct KUBECONFIG_NEW.
-if [ -d "$HOME/.kube/config.d" ]; then
+if [[ -d "$HOME/.kube/config.d" ]]; then
   for config in $(find "$HOME/.kube/config.d" -type f | sort); do
     KUBECONFIG_NEW+="$config:"
   done

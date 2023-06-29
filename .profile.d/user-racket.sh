@@ -1,7 +1,7 @@
 #!/bin/bash
 
-if path.which racket; then
-  export PLT_DISPLAY_BACKING_SCALE=1
-fi
+# Check if functions are loaded and if required executables are available.
+type -p path.which || return
+path.which racket || return
 
-
+export PLT_DISPLAY_BACKING_SCALE=1

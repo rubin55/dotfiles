@@ -1,7 +1,11 @@
 #!/bin/bash
 
+# Check if functions are loaded and if required executables are available.
+type -p path.append path.which || return
+path.which mkdir || return
+
 # If we have nvm.sh, set up node  using ghcup.
-if [ -s "$HOME/.nvm/nvm.sh" ]; then
+if [[ -s "$HOME/.nvm/nvm.sh" ]]; then
   source "$HOME/.nvm/nvm.sh"
 
   # Figure out manpath location.
