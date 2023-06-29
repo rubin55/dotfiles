@@ -54,18 +54,20 @@ function path.append() {
   local target_path=($(path.sanitize "$2"))
   local bad_elements=()
 
-  [[ -z $target_path ]] && log.debug "Target path empty, function will return source path: ${source_path[*]}"
+  if [[ -z $target_path ]]; then
+    log.debug "Target path empty, function will return source path: ${source_path[*]}"
+  fi
 
   for element in "${source_path[@]}"; do
-  if [[ $element && -d $element ]]; then
-    target_path+=($element)
-  else
-    bad_elements+=($element)
-  fi
+    if [[ $element && -e $element ]]; then
+      target_path+=($element)
+    else
+      bad_elements+=($element)
+    fi
   done
 
   if [[ -n $bad_elements ]]; then
-    log.debug "Ignoring non-(existing)-directory elements: $(array.join , "${bad_elements[@]}")"
+    log.debug "Ignoring non-existing elements: $(array.join , "${bad_elements[@]}")"
   fi
 
   echo "${target_path[*]}"
