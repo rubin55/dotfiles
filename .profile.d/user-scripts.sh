@@ -43,3 +43,6 @@ IFS=$old_IFS
 
 # Do the path addition.
 export PATH=$(path.append "$PATH_NEW" "$PATH")
+
+# Unset temporary variables.
+unset PATH_NEW POSSIBLE_SCRIPTS_HOME POSSIBLE_SOURCE_HOME SCRIPTS_HOMES SCRIPTS_HOME SOURCE_HOMES SOURCE_HOME DIR old_IFS

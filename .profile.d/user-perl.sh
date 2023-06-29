@@ -3,5 +3,5 @@
 # Check if functions are loaded.
 type -p path.append path.which || return
 
-PERL_VIRTUALENV_DIR="$HOME/Syncthing/Source/Other/perl-virtualenv"
-export PATH=$(path.append "$PERL_VIRTUALENV_DIR" "$PATH")
+# Add perl-virtualenv git repository to path.
+export PATH=$(path.append "$HOME/Syncthing/Source/Other/perl-virtualenv" "$PATH")

@@ -57,3 +57,6 @@ if [[ -n "$RUBY_EXEC" ]]; then
     fi
   fi
 fi
+
+# Unset temporary variables.
+unset GEM_EXEC RUBY_EXEC RUBY_VERSION distro

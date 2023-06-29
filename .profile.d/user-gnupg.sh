@@ -20,3 +20,5 @@ fi
 # Make sure the current tty can connect to the agent.
 gpg-connect-agent updatestartuptty /bye > /dev/null
 
+# Unset temporary variables.
+unset GPG_AGENT_DETECTED

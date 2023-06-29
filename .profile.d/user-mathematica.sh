@@ -29,3 +29,6 @@ IFS=$old_IFS
 # Add path, manpath (prefixed ':' is intentional, see man manpath).
 export PATH="$(path.append "$PATH_NEW" "$PATH")"
 export MANPATH=":$(path.append "$MANPATH_NEW" "$MANPATH")"
+
+# Unset temporary variables.
+unset MATHEMATICA_HOMES MATHEMATICA_HOME PATH_NEW MANPATH_NEW old_IFS

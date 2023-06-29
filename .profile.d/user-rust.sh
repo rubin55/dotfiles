@@ -14,3 +14,6 @@ if path.which rustc; then
   # Add manpath (prefixed ':' is intentional, see man manpath).
   export MANPATH=":$(path.append "$MANPATH_NEW" "$MANPATH")"
 fi
+
+# Unset temporary variables.
+unset MANPATH_NEW

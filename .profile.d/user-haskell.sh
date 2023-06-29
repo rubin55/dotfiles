@@ -24,3 +24,6 @@ if [[ -f "$HOME/.ghcup/env" ]]; then
     export MANPATH=":$(path.append "$MANPATH_NEW" "$MANPATH")"
   fi
 fi
+
+# Unset temporary variables.
+unset GHC_VERSION MANPATH_NEW

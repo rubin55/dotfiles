@@ -43,3 +43,6 @@ elif [[ -n "$DOCKER_HOST" ]]; then
     fi
   fi
 fi
+
+# Unset temporary variables.
+unset DOCKER_CLI_PLUGINS_PATH DOCKER_TYPE DOCKER_ADDR DOCKER_PORT

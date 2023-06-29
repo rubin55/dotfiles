@@ -31,3 +31,6 @@ fi
 
 # Add manpath (prefixed ':' is intentional, see man manpath).
 export MANPATH=":$(path.append "$MANPATH_NEW" "$MANPATH")"
+
+# Unset temporary variables.
+unset MANPATH_NEW known_manpaths PATH_NEW known_executables

@@ -7,8 +7,6 @@ path.which sqlplus || return
 export ORACLE_PATH="$HOME/.oracle"
 export TNS_ADMIN="$HOME/.oracle"
 
-RLWRAP_EXEC=$(which rlwrap 2>/dev/null)
-if [[ -n "$RLWRAP_EXEC" ]]; then
+if path.which rlwrap; then
   alias rlsqlplus='rlwrap sqlplus'
 fi
-

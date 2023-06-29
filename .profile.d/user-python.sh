@@ -22,3 +22,6 @@ if [[ "$(os.platform)" == "darwin" ]]; then
   # Add local Python home to path if not in path already.
   export PATH=$(path.append "$HOME/Library/Python/$PYTHON_VERSION/bin" "$PATH")
 fi
+
+# Unset temporary variables.
+unset PYTHON_HOME PYTHON_EXEC PYTHON_VERSION

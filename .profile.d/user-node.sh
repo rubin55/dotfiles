@@ -28,3 +28,6 @@ if path.which node,npm; then
   # Add NPM_CURRENT_PREFIX/bin to path if not in path already.
   export PATH=$(path.append "$HOME/.node/$NODE_VERSION/bin" "$PATH")
 fi
+
+# Unset temporary variables.
+unset NODE_VERSION NPM_CURRENT_PREFIX MANPATH_NEW

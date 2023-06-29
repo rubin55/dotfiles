@@ -37,8 +37,7 @@ if [[ ! $stupid =~ $TERM ]]; then
     PS1='[\u@\h \[\033[01;94m\]\W\[\033[00;31m\]$(prompt)\[\033[0m\]]\$ '
 
     # Set terminal title to title-cased hostname.
-    title=$(hostname | cut -d '.' -f 1 | tr '[:upper:]' '[:lower:]' | awk '{for(j=1;j<=NF;j++){ $j=toupper(substr($j,1,1)) substr ($j,2) }}1')
-    title "$title"
+    title $(hostname | cut -d '.' -f 1 | tr '[:upper:]' '[:lower:]' | awk '{for(j=1;j<=NF;j++){ $j=toupper(substr($j,1,1)) substr ($j,2) }}1')
 
     # Prevent run-by-bash-apps to change title
     PROMPT_COMMAND='echo -en "\033]0;\a"'
@@ -57,10 +56,12 @@ else
 fi
 
 # If on Windows, on a specific host, maximize the screen.
-hostname="$(hostname | tr [:upper:] [:lower:])"
-if [[ "$(os.platform)" == "windows" && "$hostname" =~ "surface" ]]; then
+if [[ "$(os.platform)" == "windows" && "$(hostname | tr [:upper:] [:lower:])" =~ "surface" ]]; then
     winPids="$(tasklist.exe | grep debian.exe | awk '{print $2}')"
     for winPid in $winPids; do
         window-mode.exe -pid "$winPid" -mode maximized > /dev/null 2>&1
     done
 fi
+
+# Unset temporary variables.
+unset current_group current_user stupid winPids winPid

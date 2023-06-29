@@ -13,3 +13,6 @@ fi
 
 # Add detected kube config files to KUBECONFIG.
 export KUBECONFIG="$(path.append "$KUBECONFIG_NEW" "$KUBECONFIG")"
+
+# Unset temporary variables.
+unset KUBECONFIG_NEW config
