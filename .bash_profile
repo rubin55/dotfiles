@@ -15,6 +15,9 @@ if [ -f ~/.bash_functions ]; then
   . ~/.bash_functions
 fi
 
+# Check if a few crucial functions are loaded.
+type -p log.debug os.platform path.which path.append || return
+
 # Source scripts in ~/.profile.d if exists.
 if [ -d ~/.profile.d -o -h ~/.profile.d ]; then
   for s in ~/.profile.d/*.sh; do
