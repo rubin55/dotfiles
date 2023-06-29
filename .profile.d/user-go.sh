@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Check if functions are loaded.
+type -p path.which path.append || return
+
 # If we have gvm, set up go using gvm.
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 [[ -s "$HOME/.gvm/scripts/gvm" ]] && gvm use go1.20 > /dev/null

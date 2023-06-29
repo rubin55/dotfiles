@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Check if functions are loaded and if required executables are available.
+type -p path.which path.append || return
+path.which awk ln || return
+
 # If we have ghcpup, set up haskell using ghcup.
 if [ -f "$HOME/.ghcup/env" ]; then
   source "$HOME/.ghcup/env"

@@ -78,7 +78,8 @@ function os.platform() {
 function net.port-open() {
   local host="$1"
   local port="$2"
-  nmap --max-retries 0 --host-timeout 100ms "$host" -p "$port" -T5 -oG - | grep -q "Host: $host\|Ports: $port/open"
+  [[ "$(os.platform)" == "windows" ]] && local nmap=nmap.exe || local nmap=nmap
+  "$nmap" --max-retries 0 --host-timeout 100ms "$host" -p "$port" -T5 -oG - | grep -q "Host: $host\|Ports: $port/open"
 }
 
 function title() {

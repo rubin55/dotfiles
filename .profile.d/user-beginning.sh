@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Check if functions are loaded and if required executables are available.
+type -p path.append || return
+path.which dirname || return
+
 # Check existence of list of known executables. If exists,
 # eventually add the parent directory to the path.
 known_executables="$HOME/.known-executables"

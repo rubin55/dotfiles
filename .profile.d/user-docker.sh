@@ -1,7 +1,8 @@
 #!/bin/bash
 
-# Check if docker is on the path first.
-path.which docker || return
+# Check if functions are loaded and if required executables are available.
+type -p log.info net.port-open path.which || return
+path.which cat,cut,docker,sed || return
 
 # Check if we have the buildx plugin, use buildx if yes.
 DOCKER_CLI_PLUGINS_PATH="$HOME/.docker/cli-plugins:/usr/local/lib/docker/cli-plugins:/usr/local/libexec/docker/cli-plugins:/usr/lib/docker/cli-plugins:/usr/libexec/docker/cli-plugins"

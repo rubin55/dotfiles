@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Check if functions are loaded and if required executables are available.
+type -p path.which path.append || return
+path.which ln || return
+
 # Set IFS.
 old_IFS=$IFS
 IFS=:
