@@ -1,5 +1,5 @@
 ! My preferred font - specified exactly, just to make sure
-#define FONT -*-helvetica-bold-r-*-*-34-*-*-*-*-*-iso8859-15
+#define FONT -*-helvetica-bold-r-*-*-25-*-*-*-*-*-iso8859-15
 
 ! Font rendering settings.
 ! Should match .config/fontconfig/fonts.conf
@@ -13,7 +13,7 @@ Xft.dpi: 192
 
 ! Explicit font settings for XTerm
 XTerm*faceName: PragmataPro Mono
-XTerm*faceSize: 13
+XTerm*faceSize: 9
 
 ! Default font settings
 *font: FONT
