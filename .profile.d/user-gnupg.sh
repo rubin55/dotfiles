@@ -10,7 +10,7 @@ export GPG_TTY="$(tty)"
 if [[ -z "$SSH_CLIENT" ]]; then
   GPG_AGENT_DETECTED="$(ps x | grep gpg-agent | grep -v grep)"
   if [[ -z "$GPG_AGENT_DETECTED" ]]; then
-    gpg-agent --daemon > /dev/null
+    gpg-agent --daemon > /dev/null 2>&1
     export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
   else
     export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
