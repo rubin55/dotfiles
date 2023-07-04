@@ -194,7 +194,7 @@
 
 ;; Font settings for Adam, my Windows AMD64 desktop at home.
 (when (string= (system-name) "ADAM")
-  (setq doom-font (font-spec :family "PragmataPro Mono Liga" :size 42 :weight 'normal)
+  (setq doom-font (font-spec :family "PragmataPro Mono" :size 42 :weight 'normal)
       doom-variable-pitch-font (font-spec :family "Segoe UI" :size 36)))
 
 ;; Font settings for Orion, my Linux AMD64 desktop at work.
@@ -217,15 +217,10 @@
   (setq doom-font (font-spec :family "Monospace" :size 38 :weight 'normal)
       doom-variable-pitch-font (font-spec :family "Sans" :size 38)))
 
-;; Font settings for Surface, my Windows ARM64 laptop.
-(when (string= (system-name) "SURFACE")
-  (setq doom-font (font-spec :family "PragmataPro Mono Liga" :size 40 :weight 'normal)
-      doom-variable-pitch-font (font-spec :family "Segoe UI" :size 38)))
-
-;; Font settings for Kuro, my macOS AMD64 laptop.
-(when (string= (system-name) "kuro.home.local")
-  (setq doom-font (font-spec :family "PragmataPro Mono Liga" :size 16 :weight 'normal)
-      doom-variable-pitch-font (font-spec :family "Helvetica Neue" :size 14)))
+;; Font settings for Frame, my Linux AMD64 laptop.
+(when (string= (system-name) "FRAME")
+  (setq doom-font (font-spec :family "Monospace" :size 24 :weight 'normal)
+      doom-variable-pitch-font (font-spec :family "Sans" :size 24)))
 
 ;; Font settings for Gs-2-l-h-004, my Linux AMD64 vdi at work.
 (when (string= (system-name) "GS-2-L-H-004")
