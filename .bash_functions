@@ -45,13 +45,28 @@ function path.which() {
 }
 
 function path.sanitize() {
-  echo "$*" | sed -e 's#^:##; s#//*#/#g; s#::*#:#g; s#/\(:\|$\)#\1#g'
+  local IFS=:
+  local filtered=$(echo "$*" | sed -e 's#^:##; s#//*#/#g; s#::*#:#g; s#/\(:\|$\)#\1#g')
+  local memory=()
+  read -r -a array <<< "$filtered"
+
+  for element in "${array[@]}"; do
+    if [[ ! " ${memory[@]} " =~ " ${element} " ]]; then
+      log.debug "I have no memory of '$element', adding to memory: ${memory[*]}"
+      memory+=($element)
+    else
+      log.debug "I do have memory of '$element', not adding to memory: ${memory[*]}"
+    fi
+  done
+
+  echo "${memory[*]}"
 }
 
 function path.append() {
   local IFS=:
   local source_path=($(path.sanitize "$1"))
   local target_path=($(path.sanitize "$2"))
+  local no_check="$3"
   local bad_elements=()
 
   if [[ -z $target_path ]]; then
@@ -59,10 +74,18 @@ function path.append() {
   fi
 
   for element in "${source_path[@]}"; do
-    if [[ $element && -e $element ]]; then
-      target_path+=($element)
+    if [[ ! " ${target_path[@]} " =~ " ${element} " ]]; then
+      if [[ $no_check ]]; then
+        log.debug "I don't have '$element' yet, adding to target: ${target_path[*]}"
+        target_path+=($element)
+      elif [[ $element && -e $element ]]; then
+        log.debug "I don't have '$element' yet, adding to target: ${target_path[*]}"
+        target_path+=($element)
+      else
+        bad_elements+=($element)
+      fi
     else
-      bad_elements+=($element)
+      log.debug "I have '$element' already, not adding to target: ${target_path[*]}"
     fi
   done
 
