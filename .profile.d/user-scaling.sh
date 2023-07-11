@@ -5,7 +5,7 @@ type -p log.info os.platform path.which || return
 path.which awk,cut,find,gdbus,grep,gsettings,hostname,sed,xmllint || return
 
 # Check if we have a timer file that's at least a day old.
-if [[ ! -z "$(find /tmp/user-scaling.timer -mtime +1 -print)" ]]; then
+if [[ ! -z "$(find /tmp/user-scaling.timer -mtime +1 -print 2> /dev/null)" ]]; then
   log.debug "Removing expired timer file: /tmp/user-scaling.timer"
   rm -f /tmp/user-scaling.timer
 fi
