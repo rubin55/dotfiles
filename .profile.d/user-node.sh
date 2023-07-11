@@ -19,10 +19,14 @@ fi
 # Configure NPM prefix.
 if path.which node,npm; then
   NODE_VERSION="$(node --version)"
-  NPM_CURRENT_PREFIX="$(npm config get prefix)"
-  if [[ "$NPM_CURRENT_PREFIX" != *"$HOME"* ]]; then
-    npm config set prefix $HOME/.node/$NODE_VERSION
-    mkdir -p "$HOME/.node/$NODE_VERSION/bin"
+
+  # The npm command is slow, only do this if we have no .npmrc.
+  if [[ ! -e "$HOME/.npmrc" ]]; then
+    NPM_CURRENT_PREFIX="$(npm config get prefix)"
+    if [[ "$NPM_CURRENT_PREFIX" != *"$HOME"* ]]; then
+      npm config set prefix $HOME/.node/$NODE_VERSION
+      mkdir -p "$HOME/.node/$NODE_VERSION/bin"
+    fi
   fi
 
   # Add NPM_CURRENT_PREFIX/bin to path if not in path already.

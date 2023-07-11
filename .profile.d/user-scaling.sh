@@ -4,7 +4,14 @@
 type -p log.info os.platform path.which || return
 path.which awk,cut,find,gdbus,grep,gsettings,hostname,sed,xmllint || return
 
-if [[ "$(os.platform)" == "linux" ]]; then
+# Check if we have a timer file that's at least a day old.
+if [[ ! -z "$(find /tmp/user-scaling.timer -mtime +1 -print)" ]]; then
+  log.debug "Removing expired timer file: /tmp/user-scaling.timer"
+  rm -f /tmp/user-scaling.timer
+fi
+
+# Run the scaling routines if we're on linux and don't have a timer file.
+if [[ "$(os.platform)" == "linux"&& ! -e /tmp/user-scaling.timer ]]; then
 
   # Example ~/.fontsizes:
   # codeMono=15
@@ -195,6 +202,9 @@ if [[ "$(os.platform)" == "linux" ]]; then
       sed -i "s|$currentVimMonoFontString|$wantedVimMonoFontString|g" "$vimConfig"
     fi
   fi
+
+  # Write a timer file so we don't keep doing this for every shell invocation.
+  echo "user-scaling.sh ran at $(date)" > /tmp/user-scaling.timer
 fi
 
 # Unset temporary variables.
