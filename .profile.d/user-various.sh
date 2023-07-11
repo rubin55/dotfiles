@@ -30,6 +30,15 @@ export PAGER='less'
 export LESS='-R'
 export LESSOPEN='|~/.lessfilter %s'
 
+# Tell less to colorize certain things a certain way (works for man, etc).
+export GROFF_NO_SGR=1
+export LESS_TERMCAP_md=$'\e[01;31m'
+export LESS_TERMCAP_me=$'\e[0m'
+export LESS_TERMCAP_us=$'\e[01;34m'
+export LESS_TERMCAP_ue=$'\e[0m'
+export LESS_TERMCAP_so=$'\e[01;90m'
+export LESS_TERMCAP_se=$'\e[0m'
+
 # Only do color and title setting if we're not on stupid terminals.
 stupid="dumb eterm eterm-color vt100"
 if [[ ! $stupid =~ $TERM ]]; then
