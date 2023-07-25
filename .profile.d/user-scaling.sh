@@ -11,7 +11,7 @@ if [[ ! -z "$(find /tmp/user-scaling.timer -mtime +1 -print 2> /dev/null)" ]]; t
 fi
 
 # Run the scaling routines if we're on linux and don't have a timer file.
-if [[ "$(os.platform)" == "linux"&& ! -e /tmp/user-scaling.timer ]]; then
+if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
 
   # Example ~/.fontsizes:
   # codeMono=15
