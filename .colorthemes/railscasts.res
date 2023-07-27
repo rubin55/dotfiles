@@ -2,7 +2,7 @@
 ! Scheme: Ryan Bates (http://railscasts.com)
 
 #define base00 #2b2b2b
-#define base01 #272935
+#define base01 #505db5
 #define base02 #3a4055
 #define base03 #5a647e
 #define base04 #d4cfc9
