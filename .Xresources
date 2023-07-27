@@ -1,5 +1,5 @@
 ! My preferred font - specified exactly, just to make sure
-#define FONT -*-helvetica-bold-r-*-*-25-*-*-*-*-*-iso8859-15
+#define FONT -*-helvetica-bold-r-*-*-20-*-*-*-*-*-iso8859-15
 
 ! Font rendering settings.
 ! Should match .config/fontconfig/fonts.conf
@@ -9,11 +9,13 @@ Xft.hintstyle: hintslight
 Xft.rgba: rgb
 Xft.autohint: false
 Xft.lcdfilter: lcdlight
-Xft.dpi: 192
+Xft.dpi: 96
 
-! Explicit font settings for XTerm
+! Explicit font settings for (U)XTerm.
+UXTerm*faceName: PragmataPro Mono
+UXTerm*faceSize: 14
 XTerm*faceName: PragmataPro Mono
-XTerm*faceSize: 9
+XTerm*faceSize: 14
 
 ! Default font settings
 *font: FONT
@@ -21,8 +23,8 @@ XTerm*faceSize: 9
 
 ! Set Xcursor theme explicitly
 ! Note that theme "default" almost never works.
-Xcursor.theme: Adwaita
-Xcursor.size: 48
+!Xcursor.theme: Adwaita
+!Xcursor.size: 24
 
 ! Motif window manager settings
 !Mwm*fontList: FONT
@@ -49,4 +51,4 @@ Xcursor.size: 48
 !Mwm*maximumMaximumSize: 1584x868
 
 ! Include color theme
-!#include ".colorthemes/active.res"
+#include ".colorthemes/active.res"
