@@ -22,6 +22,7 @@ alias pgctl='pgctl.sh'
 alias pygmentize='pygmentize -f terminal'
 alias rmqctl='rmqctl.sh'
 alias session='session.sh'
+alias st='subl'
 alias tipi='tipi.py'
 alias tracker='tracker3'
 alias venv="python3 -m venv"
