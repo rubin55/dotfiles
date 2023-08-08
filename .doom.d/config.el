@@ -3,6 +3,9 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
+;; Be able to switch buffers by clicking on their tab.
+(setq mouse-1-click-follows-link -450)
+
 ;; Make magit find my git repositories.
 (setq magit-repository-directories '(("~/Source" . 2) ("~/Syncthing/Source" . 2)))
 
