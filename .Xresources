@@ -13,9 +13,25 @@ Xft.dpi: 96
 
 ! Explicit font settings for (U)XTerm.
 UXTerm*faceName: PragmataPro Mono
-UXTerm*faceSize: 14
 XTerm*faceName: PragmataPro Mono
+UXTerm*faceSize: 14
 XTerm*faceSize: 14
+UTerm.vt100.locale: false
+XTerm.vt100.locale: false
+UTerm.vt100.utf8: true
+XTerm.vt100.utf8: true
+UTerm.vt100.metaSendsEscape: true
+XTerm.vt100.metaSendsEscape: true
+UTerm.vt100.backarrowKey: false
+XTerm.vt100.backarrowKey: false
+UTerm.vt100.cursorBlink: true
+XTerm.vt100.cursorBlink: true
+UTerm.ttyModes: erase ^?
+XTerm.ttyModes: erase ^?
+UTerm.vt100.saveLines: 16384
+XTerm.vt100.saveLines: 16384
+UTerm*selectToClipboard: true
+XTerm*selectToClipboard: true
 
 ! Default font settings
 *font: FONT
