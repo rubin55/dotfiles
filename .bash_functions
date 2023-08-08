@@ -107,28 +107,17 @@ function net.port-open() {
   "$nmap" --max-retries 0 --host-timeout 100ms "$host" -p "$port" -T5 -oG - | grep -q "Host: $host\|Ports: $port/open"
 }
 
-function title() {
+function title.set() {
   [[ -z "$orig" ]] && orig="$PS1"
   local title="\[\e]2;$*\a\]"
   PS1="${orig}${title}";
 }
 
-function prompt() {
-  local git=$(which git 2> /dev/null)
-  local git_prompt=$(which git-prompt.sh 2> /dev/null)
-  local svn=$(which svn 2>/dev/null)
-  local svn_prompt=$(which svn-prompt.sh 2> /dev/null)
-  local s
-  if [[ -n "$git" && -n "$git_prompt" ]]; then
-    source "$git_prompt"
-    s="$(__git_ps1 ' (%s)')"
-  elif [[ -n "$svn" && -n "$svn_prompt" ]]; then
-    svn info > /dev/null 2>&1
-    if [[ $? = 0 ]] ; then
-      source "$svn_prompt"
-      s="$(__svn_ps1 ' (%s)')"
-    fi
-  fi
-
-  echo -n "$s"
+function title.case() {
+  echo "$1" | tr '[:upper:]' '[:lower:]' | awk '{for(j=1;j<=NF;j++){ $j=toupper(substr($j,1,1)) substr ($j,2) }}1'
 }
+
+function host.short-name() {
+  hostname | cut -d '.' -f 1
+}
+

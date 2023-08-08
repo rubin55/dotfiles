@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check if functions are loaded and if required executables are available.
-type -p os.platform path.which title || return
+type -p os.platform path.which title.set title.case host.short-name log.info || return
 path.which awk,cut,grep,hostname,tr || return
 
 # Don't put duplicate lines or lines starting with space in the history.
@@ -39,23 +39,31 @@ export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_so=$'\e[01;90m'
 export LESS_TERMCAP_se=$'\e[0m'
 
-# Only do color and title setting if we're not on stupid terminals.
+# If we have git and git-prompt.sh somewhere, source git-prompt.sh.
+if path.which git,git-prompt.sh; then
+  source "$(which git-prompt.sh)"
+else
+  # Set up dummy __git_ps1 function since git-prompt.sh was not found.
+  __git_ps1() { true; }
+fi
+
+# Only do color if we're not on stupid terminals.
 stupid="dumb eterm eterm-color vt100"
 if [[ ! $stupid =~ $TERM ]]; then
     # Set my own fancy prompt.
-    PS1='[\u@\h \[\033[01;94m\]\W\[\033[00;31m\]$(prompt)\[\033[0m\]]\$ '
-
-    # Set terminal title to title-cased hostname.
-    title $(hostname | cut -d '.' -f 1 | tr '[:upper:]' '[:lower:]' | awk '{for(j=1;j<=NF;j++){ $j=toupper(substr($j,1,1)) substr ($j,2) }}1')
-
-    # Prevent run-by-bash-apps to change title
-    PROMPT_COMMAND='echo -en "\033]0;\a"'
+    PS1='[\u@\h \[\033[01;94m\]\W\[\033[00;31m\]$(__git_ps1 " (%s)")\[\033[0m\]]\$ '
 else
     # Set my own fancy, colorless prompt.
-    PS1='[\u@\h \W$(prompt)]\$ '
+    PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 fi
 
-# Set my default umask.
+# Set terminal title to title-cased hostname.
+title.set $(title.case $(host.short-name))
+
+# Prevent run-by-bash-apps to change title
+PROMPT_COMMAND='echo -en "\033]0;\a"'
+
+# Set default umask.
 current_user="$(id -un)"
 current_group="$(id -gn)"
 if [[ $current_user == $current_group ]]; then
