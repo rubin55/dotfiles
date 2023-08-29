@@ -202,8 +202,8 @@
 
 ;; Font settings for Orion, my Linux AMD64 desktop at work.
 (when (string= (system-name) "ORION")
-  (setq doom-font (font-spec :family "Monospace" :size 33 :weight 'normal)
-      doom-variable-pitch-font (font-spec :family "Sans" :size 33)))
+  (setq doom-font (font-spec :family "Monospace" :size 14 :weight 'normal)
+      doom-variable-pitch-font (font-spec :family "Sans" :size 15)))
 
 ;; Font settings for Power, my Linux PowerPC desktop at work.
 (when (string= (system-name) "POWER")
