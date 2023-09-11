@@ -1,0 +1,18 @@
+[__config__]
+oldver = "old_ver.json"
+newver = "new_ver.json"
+
+[openshift-developer-bin]
+source = "regex"
+regex = "v\\d+\\.\\d+\\.\\d+"
+url = "https://mirror.openshift.com/pub/openshift-v4/clients/odo/"
+
+[openshift-pipelines-bin]
+source = "regex"
+regex = "\\d+\\.\\d+\\.\\d+"
+url = "https://mirror.openshift.com/pub/openshift-v4/clients/pipelines/"
+
+[rcu-bin]
+source = "regex"
+regex = "d\\d{4}\\.\\d{3}\\([a-z]\\)"
+url = "https://files.davisr.me/projects/rcu/download-59ck3sdT/"
