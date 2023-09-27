@@ -2,6 +2,11 @@
 oldver = "old_ver.json"
 newver = "new_ver.json"
 
+[openshift-codeready-bin]
+source = "regex"
+regex = "\\d+\\.\\d+\\.\\d+"
+url = "https://mirror.openshift.com/pub/openshift-v4/clients/crc/"
+
 [openshift-developer-bin]
 source = "regex"
 regex = "v\\d+\\.\\d+\\.\\d+"
