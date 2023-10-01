@@ -2,6 +2,11 @@
 oldver = "old_ver.json"
 newver = "new_ver.json"
 
+[elixir]
+source = "github"
+github = "elixir-lang/elixir"
+use_latest_release = "true"
+
 [openshift-codeready-bin]
 source = "regex"
 regex = "\\d+\\.\\d+\\.\\d+"
