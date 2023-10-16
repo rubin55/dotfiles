@@ -1,0 +1,11 @@
+[Unit]
+Description=Universal Media Server
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/opt/ums
+ExecStart=/opt/ums/UMS.sh headless
+
+[Install]
+WantedBy=default.target
