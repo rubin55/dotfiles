@@ -1,11 +1,11 @@
 [Unit]
 Description=Steam
-After=network.target
+After=org.gnome.SettingsDaemon.XSettings.target
 
 [Service]
 Type=simple
 WorkingDirectory=%h/.local/share/Steam
-ExecStart=/usr/bin/steam
+ExecStart=/usr/bin/steam -pipewire-dmabuf
 
 [Install]
 WantedBy=default.target
