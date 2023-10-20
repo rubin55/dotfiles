@@ -222,7 +222,7 @@
 
 ;; Font settings for Frame, my Linux AMD64 laptop.
 (when (string= (system-name) "FRAME")
-  (setq doom-font (font-spec :family "Monospace" :size 19 :weight 'normal)
+  (setq doom-font (font-spec :family "Monospace" :size 18 :weight 'normal)
       doom-variable-pitch-font (font-spec :family "Sans" :size 18)))
 
 ;; Font settings for Gs-2-l-h-004, my Linux AMD64 vdi at work.
