@@ -1,5 +1,5 @@
 [Unit]
-Description=Universal Media Server
+Description=Sunshine
 StartLimitIntervalSec=500
 StartLimitBurst=5
 PartOf=graphical-session.target
@@ -7,8 +7,8 @@ After=gnome-session-x11.target
 
 [Service]
 Type=simple
-WorkingDirectory=/opt/ums
-ExecStart=/opt/ums/UMS.sh headless
+WorkingDirectory=%h/.config/sunshine
+ExecStart=/usr/bin/sunshine
 Restart=on-failure
 RestartSec=5s
 
