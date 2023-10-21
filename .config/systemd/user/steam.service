@@ -2,8 +2,6 @@
 Description=Steam
 StartLimitIntervalSec=500
 StartLimitBurst=5
-PartOf=graphical-session.target
-After=gnome-session-x11.target
 
 [Service]
 Type=simple

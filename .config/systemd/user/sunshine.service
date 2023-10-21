@@ -2,14 +2,12 @@
 Description=Sunshine
 StartLimitIntervalSec=500
 StartLimitBurst=5
-PartOf=graphical-session.target
-After=gnome-session-x11.target
 
 [Service]
 Type=simple
 WorkingDirectory=%h/.config/sunshine
 ExecStart=/usr/bin/sunshine
-Restart=on-failure
+Restart=always
 RestartSec=5s
 
 [Install]
