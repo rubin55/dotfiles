@@ -35,6 +35,6 @@ alias venv="python3 -m venv"
 # need to fix emacs.sh to work with wayland mode emacs.
 #alias em='emacs.sh'
 #alias emacs='emacs.sh'
-alias vi='gvim.sh'
+alias vi='vim.sh'
 alias vim='vim.sh'
 alias gvim='gvim.sh'
