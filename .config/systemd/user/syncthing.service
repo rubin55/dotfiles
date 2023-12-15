@@ -21,4 +21,4 @@ NoNewPrivileges=true
 #AmbientCapabilities=CAP_CHOWN CAP_FOWNER
 
 [Install]
-WantedBy=default.target
+WantedBy=graphical-session.target
