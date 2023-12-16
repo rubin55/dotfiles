@@ -39,6 +39,9 @@ export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_so=$'\e[01;90m'
 export LESS_TERMCAP_se=$'\e[0m'
 
+# Make xz use multiple threads by default.
+export XZ_DEFAULTS="-T 0"
+
 # If we have git and git-prompt.sh somewhere, source git-prompt.sh.
 if path.which git,git-prompt.sh; then
   source "$(which git-prompt.sh)"
