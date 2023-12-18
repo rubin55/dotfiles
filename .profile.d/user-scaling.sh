@@ -2,7 +2,7 @@
 
 # Check if functions are loaded and if required executables are available.
 type -p log.info os.platform path.which || return
-path.which awk,cut,find,gdbus,grep,gsettings,hostname,sed,xmllint || return
+path.which awk,cut,find,grep,gsettings,hostname,sed,xmllint || return
 
 # Check if we have a timer file that's at least a day old.
 if [[ ! -z "$(find /tmp/user-scaling.timer -mtime +1 -print 2> /dev/null)" ]]; then
@@ -156,7 +156,7 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
       currentGnomeThemeFontString="font-size: $currentGnomeThemeFontSize;"
       wantedGnomeThemeFontString="font-size: $wantedGnomeThemeFontSize;"
       sed -i "s|$currentGnomeThemeFontString|$wantedGnomeThemeFontString|g" "$themeConfig"
-      gdbus call --session --dest org.gnome.Shell --object-path /org/gnome/Shell --method org.gnome.Shell.Eval 'Main.loadTheme();' > /dev/null 2>&1
+      gsettings set org.gnome.shell.extensions.user-theme name Custom
     fi
   fi
 
