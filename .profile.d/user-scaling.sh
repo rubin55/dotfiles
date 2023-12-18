@@ -144,6 +144,16 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
   fi
 
   # Current and wanted Gnome theme settings.
+  #
+  # Example theme file:
+  #
+  # @import url("resource:///org/gnome/theme/gnome-shell.css");
+  #
+  # stage {
+  #   font-family: Sans Bold;
+  #   font-size: 10pt;
+  # }
+  #
   themeConfig="$HOME/.local/share/themes/Custom/gnome-shell/gnome-shell.css"
   if [[ -e "$themeConfig" ]]; then
     currentGnomeThemeFontName="$(grep 'font-family:' "$themeConfig" | cut -d: -f2 | sed -e 's|;||' -e 's|^[[:space:]]*||g' -e 's|[[:space:]]*$||g')"
