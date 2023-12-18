@@ -144,7 +144,7 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
   fi
 
   # Current and wanted Gnome theme settings.
-  themeConfig="$HOME/.local/share/themes/${USER^}/gnome-shell/gnome-shell.css"
+  themeConfig="$HOME/.local/share/themes/Custom/gnome-shell/gnome-shell.css"
   if [[ -e "$themeConfig" ]]; then
     currentGnomeThemeFontName="$(grep 'font-family:' "$themeConfig" | cut -d: -f2 | sed -e 's|;||' -e 's|^[[:space:]]*||g' -e 's|[[:space:]]*$||g')"
     currentGnomeThemeFontSize="$(grep 'font-size:' "$themeConfig" | cut -d: -f2 | sed -e 's|;||' -e 's|^[[:space:]]*||g' -e 's|[[:space:]]*$||g')"
