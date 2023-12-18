@@ -105,14 +105,14 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
 
   # Current and wanted Gnome system settings.
   if [[ ! -z "$(which gsettings 2> /dev/null)" && -n "$gnomeMono" && -n "$gnomeSans" && -n "$gnomeSerif" ]]; then
-    currentGnomeMonospaceFontName="$(gsettings get org.gnome.desktop.interface monospace-font-name | sed -e "s|'||g" -e 's|\.||g' -e 's|[0-9]||g' -e 's|[[:space:]]*$||g')"
-    currentGnomeMonospaceFontSize="$(gsettings get org.gnome.desktop.interface monospace-font-name | sed -e "s|'||g" -e 's|\.||g' | awk -F ' ' '{print $NF}')"
-    currentGnomeInterfaceFontName="$(gsettings get org.gnome.desktop.interface font-name           | sed -e "s|'||g" -e 's|\.||g' -e 's|[0-9]||g' -e 's|[[:space:]]*$||g')"
-    currentGnomeInterfaceFontSize="$(gsettings get org.gnome.desktop.interface font-name           | sed -e "s|'||g" -e 's|\.||g' | awk -F ' ' '{print $NF}')"
-    currentGnomeDocumentFontName="$(gsettings get org.gnome.desktop.interface document-font-name   | sed -e "s|'||g" -e 's|\.||g' -e 's|[0-9]||g' -e 's|[[:space:]]*$||g')"
-    currentGnomeDocumentFontSize="$(gsettings get org.gnome.desktop.interface document-font-name   | sed -e "s|'||g" -e 's|\.||g' | awk -F ' ' '{print $NF}')"
-    currentGnomeTitleFontName="$(gsettings get org.gnome.desktop.wm.preferences titlebar-font      | sed -e "s|'||g" -e 's|\.||g' -e 's|[0-9]||g' -e 's|[[:space:]]*$||g')"
-    currentGnomeTitleFontSize="$(gsettings get org.gnome.desktop.wm.preferences titlebar-font      | sed -e "s|'||g" -e 's|\.||g' | awk -F ' ' '{print $NF}')"
+    currentGnomeMonospaceFontName="$(gsettings get org.gnome.desktop.interface monospace-font-name | sed -e "s|'||g" -e 's|\s[^\s]*$||' -e 's|\s*$||g')"
+    currentGnomeMonospaceFontSize="$(gsettings get org.gnome.desktop.interface monospace-font-name | sed -e "s|'||g" -e 's/.*\s\([^ ]*\)$/\1/')"
+    currentGnomeInterfaceFontName="$(gsettings get org.gnome.desktop.interface font-name           | sed -e "s|'||g" -e 's|\s[^\s]*$||' -e 's|\s*$||g')"
+    currentGnomeInterfaceFontSize="$(gsettings get org.gnome.desktop.interface font-name           | sed -e "s|'||g" -e 's/.*\s\([^ ]*\)$/\1/')"
+    currentGnomeDocumentFontName="$(gsettings get org.gnome.desktop.interface document-font-name   | sed -e "s|'||g" -e 's|\s[^\s]*$||' -e 's|\s*$||g')"
+    currentGnomeDocumentFontSize="$(gsettings get org.gnome.desktop.interface document-font-name   | sed -e "s|'||g" -e 's/.*\s\([^ ]*\)$/\1/')"
+    currentGnomeTitleFontName="$(gsettings get org.gnome.desktop.wm.preferences titlebar-font      | sed -e "s|'||g" -e 's|\s[^\s]*$||' -e 's|\s*$||g')"
+    currentGnomeTitleFontSize="$(gsettings get org.gnome.desktop.wm.preferences titlebar-font      | sed -e "s|'||g" -e 's/.*\s\([^ ]*\)$/\1/')"
     wantedGnomeMonospaceFontSize="$gnomeMono"
     wantedGnomeInterfaceFontSize="$gnomeSans"
     wantedGnomeDocumentFontSize="$gnomeSerif"
