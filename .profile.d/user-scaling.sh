@@ -156,8 +156,8 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
   #
   themeConfig="$HOME/.local/share/themes/Custom/gnome-shell/gnome-shell.css"
   if [[ -e "$themeConfig" ]]; then
-    currentGnomeThemeFontName="$(grep 'font-family:' "$themeConfig" | cut -d: -f2 | sed -e 's|;||' -e 's|^[[:space:]]*||g' -e 's|[[:space:]]*$||g')"
-    currentGnomeThemeFontSize="$(grep 'font-size:' "$themeConfig" | cut -d: -f2 | sed -e 's|;||' -e 's|^[[:space:]]*||g' -e 's|[[:space:]]*$||g')"
+    currentGnomeThemeFontName="$(grep 'font-family:' "$themeConfig" | cut -d: -f2 | sed -e 's|;||' -e 's|^[[:space:]]*||g' -e 's|[[:space:]]*$||g' | head -n1)"
+    currentGnomeThemeFontSize="$(grep 'font-size:' "$themeConfig" | cut -d: -f2 | sed -e 's|;||' -e 's|^[[:space:]]*||g' -e 's|[[:space:]]*$||g' | head -n1)"
     wantedGnomeThemeFontSize="${wantedGnomeInterfaceFontSize}pt"
 
     # Update Gnome theme config if different.
@@ -166,6 +166,7 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
       currentGnomeThemeFontString="font-size: $currentGnomeThemeFontSize;"
       wantedGnomeThemeFontString="font-size: $wantedGnomeThemeFontSize;"
       sed -i "s|$currentGnomeThemeFontString|$wantedGnomeThemeFontString|g" "$themeConfig"
+      gsettings set org.gnome.shell.extensions.user-theme name Default
       gsettings set org.gnome.shell.extensions.user-theme name Custom
     fi
   fi
