@@ -39,11 +39,12 @@
 ;; Always enable server mode, for emacsclient sessions.
 (server-start)
 
-;; Configure lsp python mode.
-(use-package lsp-pyright
-  :hook (python-mode . (lambda ()
-                          (require 'lsp-pyright)
-                          (lsp))))
+;; Configure lsp python mode explicitly.
+;; Not required for python-language-server.
+;(use-package lsp-pyright
+;  :hook (python-mode . (lambda ()
+;                          (require 'lsp-pyright)
+;                          (lsp))))
 
 ;; Configure lsp c mode.
 (use-package ccls
