@@ -29,12 +29,12 @@ alias sc='systemctl'
 alias st='subl -w'
 alias tipi='tipi.py'
 alias tracker='tracker3'
-alias venv="python3 -m venv"
+alias venv='python3 -m venv'
 
 # Editor helpers.
 # need to fix emacs.sh to work with wayland mode emacs.
-#alias em='emacs.sh'
-#alias emacs='emacs.sh'
+alias em='emacs -nw'
+alias hx='helix'
 alias vi='vim.sh'
 alias vim='vim.sh'
 alias gvim='gvim.sh'
