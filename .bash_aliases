@@ -31,6 +31,12 @@ alias tipi='tipi.py'
 alias tracker='tracker3'
 alias venv='python3 -m venv'
 
+# Some aliases for fsharp.
+alias fsc='fsc.sh'
+alias fsharpc='fsc.sh'
+alias fsi='dotnet fsi'
+alias fsharpi='dotnet fsi'
+
 # Editor helpers.
 # need to fix emacs.sh to work with wayland mode emacs.
 alias em='emacs -nw'
