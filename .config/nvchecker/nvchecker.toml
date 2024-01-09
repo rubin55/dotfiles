@@ -7,6 +7,16 @@ source = "github"
 github = "elixir-lang/elixir"
 use_latest_release = "true"
 
+[intel-gmmlib]
+source = "pacman"
+pacman = "intel-gmmlib"
+strip_release = "true"
+
+[intel-media-driver]
+source = "pacman"
+pacman = "intel-media-driver"
+strip_release = "true"
+
 [openshift-codeready-bin]
 source = "regex"
 regex = "\\d+\\.\\d+\\.\\d+"
