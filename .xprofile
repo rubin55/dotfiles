@@ -1,0 +1,3 @@
+# ~/.xprofile: executed by login screens like XDM and GDM.
+
+[[ -f "~/.Xresources" ]] && xrdb -merge "~/.Xresources"
