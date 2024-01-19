@@ -1,5 +1,5 @@
 ! My preferred font - specified exactly, just to make sure
-#define FONT -*-helvetica-bold-r-*-*-20-*-*-*-*-*-iso8859-15
+#define FONT -*-helvetica-bold-r-*-*-25-*-*-*-*-*-iso8859-15
 
 ! Font rendering settings.
 ! Should match .config/fontconfig/fonts.conf
@@ -14,8 +14,8 @@ Xft.dpi: 96
 ! Explicit font settings for (U)XTerm.
 UXTerm*faceName: PragmataPro Mono
 XTerm*faceName: PragmataPro Mono
-UXTerm*faceSize: 14
-XTerm*faceSize: 14
+UXTerm*faceSize: 18
+XTerm*faceSize: 18
 UTerm.vt100.locale: false
 XTerm.vt100.locale: false
 UTerm.vt100.utf8: true
@@ -33,6 +33,9 @@ XTerm.vt100.saveLines: 16384
 UTerm*selectToClipboard: true
 XTerm*selectToClipboard: true
 
+! Explicit font settings for Emacs.
+Emacs.font: PragmataPro Mono-10
+
 ! Default font settings
 *font: FONT
 *allowBoldFonts: false
@@ -40,7 +43,7 @@ XTerm*selectToClipboard: true
 ! Set Xcursor theme explicitly
 ! Note that theme "default" almost never works.
 !Xcursor.theme: Adwaita
-!Xcursor.size: 24
+!Xcursor.size: 48
 
 ! Motif window manager settings
 !Mwm*fontList: FONT
