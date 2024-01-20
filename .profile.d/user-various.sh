@@ -30,6 +30,9 @@ export PAGER='less'
 export LESS='-R'
 export LESSOPEN='|~/.lessfilter %s'
 
+# Assume a true-color-capable terminal.
+export COLORTERM=truecolor
+
 # Tell less to colorize certain things a certain way (works for man, etc).
 export GROFF_NO_SGR=1
 export LESS_TERMCAP_md=$'\e[01;31m'
