@@ -14,6 +14,7 @@ alias grep='grep --color=auto'
 
 # Various commonly used commands.
 alias amqctl='amqctl.sh'
+alias dstat='dool'
 alias helmster='helmster.sh'
 alias jc='journalctl'
 alias kc='kubectl'
