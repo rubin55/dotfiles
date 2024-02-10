@@ -81,14 +81,22 @@ set noswapfile
 set nobackup
 set nowritebackup
 
+" Enable line-numbers.
+set number
+
+" Enable cursor-line
+set cursorline
+
 " Assume a dark background.
 set background=dark
 
-" Set color scheme for terminal.
-" colorscheme default
+" Enable termguicolors if we have it.
+if has('termguicolors')
+  set termguicolors
+endif
 
-" Enable line-numbers.
-set number
+" Set color scheme for terminal.
+colorscheme everforest
 
 " Set netrw modes.
 let g:netrw_browse_split = 4
@@ -101,9 +109,7 @@ highlight clear SignColumn
 
 " Settings for gvim.
 if has('gui_running')
-  colorscheme everforest
-  set cursorline
-  set lines=40 columns=120
+  set lines=43 columns=132
   "set guioptions+=m
   if has('gui_gtk3')
     set guifont=PragmataPro\ Mono\ 14
