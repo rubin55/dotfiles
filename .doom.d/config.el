@@ -147,9 +147,7 @@
   :hook ((xml-mode . lsp)
          (nxml-mode . lsp))
  :config
- (setq lsp-xml-server-command "xml-ls.sh")
- (setq lsp-xml-server-vmargs "-noverify -Xmx64M -XX:+UseG1GC -XX:+UseStringDeduplication -jar")
- (setq lsp-xml-jar-file "$HOME/.emacs.d/.local/etc/lsp/lemminx/org.eclipse.lemminx/target/org.eclipse.lemminx-uber.jar"))
+ (setq lsp-xml-server-command "lemminx"))
 
 ;; Configure lsp sql mode.
 (use-package lsp-mode
