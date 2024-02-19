@@ -22,6 +22,10 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
   # gnomeSerif=10
   # jetbrainsMono=14
   # vimMono=11
+  # qt5Mono=11
+  # qt5Sans=10
+  # qt6Mono=11
+  # qt6Sans=10
 
   # Check if $FONT_SIZE_PREFERENCES_FILE was set
   # else set a it to ~/.fontsizes by default.
@@ -155,7 +159,7 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
   # }
   #
   themeConfig="$HOME/.local/share/themes/Custom/gnome-shell/gnome-shell.css"
-  if [[ -e "$themeConfig" ]]; then
+  if [[ -e "$themeConfig" && -n "$wantedGnomeInterfaceFontSize" ]]; then
     currentGnomeThemeFontName="$(grep 'font-family:' "$themeConfig" | cut -d: -f2 | sed -e 's|;||' -e 's|^[[:space:]]*||g' -e 's|[[:space:]]*$||g' | head -n1)"
     currentGnomeThemeFontSize="$(grep 'font-size:' "$themeConfig" | cut -d: -f2 | sed -e 's|;||' -e 's|^[[:space:]]*||g' -e 's|[[:space:]]*$||g' | head -n1)"
     wantedGnomeThemeFontSize="${wantedGnomeInterfaceFontSize}pt"
@@ -168,6 +172,64 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
       sed -i "s|$currentGnomeThemeFontString|$wantedGnomeThemeFontString|g" "$themeConfig"
       gsettings set org.gnome.shell.extensions.user-theme name Default
       gsettings set org.gnome.shell.extensions.user-theme name Custom
+    fi
+  fi
+
+  # Current and wanted QT5 settings.
+  qt5Config="$HOME/.config/qt5ct/qt5ct.conf"
+  if [[ -e "$qt5Config" && -n "$qt5Mono" && "$qt5Sans" ]]; then
+    currentQt5MonoFontName="$(grep 'fixed='   "$qt5Config" | cut -d \" -f 2 | cut -d , -f 1)"
+    currentQt5MonoFontSize="$(grep 'fixed='   "$qt5Config" | cut -d \" -f 2 | cut -d , -f 2)"
+    currentQt5SansFontName="$(grep 'general=' "$qt5Config" | cut -d \" -f 2 | cut -d , -f 1)"
+    currentQt5SansFontSize="$(grep 'general=' "$qt5Config" | cut -d \" -f 2 | cut -d , -f 2)"
+    wantedQt5MonoFontName="$currentQt5MonoFontName"
+    wantedQt5MonoFontSize="$qt5Mono"
+    wantedQt5SansFontName="$currentQt5SansFontName"
+    wantedQt5SansFontSize="$qt5Sans"
+
+    # Update QT5 general font settings if different.
+    if [[ "$currentQt5SansFontSize" != "$wantedQt5SansFontSize" ]]; then
+      log.info "Setting QT5 general font to: \"$wantedQt5SansFontName $wantedQt5SansFontSize\""
+      currentQt5SansFontString="general=\"$currentQt5SansFontName,$currentQt5SansFontSize,"
+      wantedQt5SansFontString="general=\"$wantedQt5SansFontName,$wantedQt5SansFontSize,"
+      sed -i "s|$currentQt5SansFontString|$wantedQt5SansFontString|g" "$qt5Config"
+    fi
+
+    # Update QT5 fixed font settings if different.
+    if [[ "$currentQt5MonoFontSize" != "$wantedQt5MonoFontSize" ]]; then
+      log.info "Setting QT5 fixed font to: \"$wantedQt5MonoFontName $wantedQt5MonoFontSize\""
+      currentQt5MonoFontString="fixed=\"$currentQt5MonoFontName,$currentQt5MonoFontSize,"
+      wantedQt5MonoFontString="fixed=\"$wantedQt5MonoFontName,$wantedQt5MonoFontSize,"
+      sed -i "s|$currentQt5MonoFontString|$wantedQt5MonoFontString|g" "$qt5Config"
+    fi
+  fi
+
+  # Current and wanted QT6 settings.
+  qt6Config="$HOME/.config/qt6ct/qt6ct.conf"
+  if [[ -e "$qt6Config" && -n "$qt6Mono" && "$qt6Sans" ]]; then
+    currentQt6MonoFontName="$(grep 'fixed='   "$qt6Config" | cut -d \" -f 2 | cut -d , -f 1)"
+    currentQt6MonoFontSize="$(grep 'fixed='   "$qt6Config" | cut -d \" -f 2 | cut -d , -f 2)"
+    currentQt6SansFontName="$(grep 'general=' "$qt6Config" | cut -d \" -f 2 | cut -d , -f 1)"
+    currentQt6SansFontSize="$(grep 'general=' "$qt6Config" | cut -d \" -f 2 | cut -d , -f 2)"
+    wantedQt6MonoFontName="$currentQt6MonoFontName"
+    wantedQt6MonoFontSize="$qt6Mono"
+    wantedQt6SansFontName="$currentQt6SansFontName"
+    wantedQt6SansFontSize="$qt6Sans"
+
+    # Update QT6 general font settings if different.
+    if [[ "$currentQt6SansFontSize" != "$wantedQt6SansFontSize" ]]; then
+      log.info "Setting QT6 general font to: \"$wantedQt6SansFontName $wantedQt6SansFontSize\""
+      currentQt6SansFontString="general=\"$currentQt6SansFontName,$currentQt6SansFontSize,"
+      wantedQt6SansFontString="general=\"$wantedQt6SansFontName,$wantedQt6SansFontSize,"
+      sed -i "s|$currentQt6SansFontString|$wantedQt6SansFontString|g" "$qt6Config"
+    fi
+
+    # Update QT6 fixed font settings if different.
+    if [[ "$currentQt6MonoFontSize" != "$wantedQt6MonoFontSize" ]]; then
+      log.info "Setting QT6 fixed font to: \"$wantedQt6MonoFontName $wantedQt6MonoFontSize\""
+      currentQt6MonoFontString="fixed=\"$currentQt6MonoFontName,$currentQt6MonoFontSize,"
+      wantedQt6MonoFontString="fixed=\"$wantedQt6MonoFontName,$wantedQt6MonoFontSize,"
+      sed -i "s|$currentQt6MonoFontString|$wantedQt6MonoFontString|g" "$qt6Config"
     fi
   fi
 
