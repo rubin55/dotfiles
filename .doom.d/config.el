@@ -115,14 +115,14 @@
   :hook ((groovy-mode . lsp)
          (groovy-electric-mode . lsp))
  :config
- (setq lsp-groovy-server-file "~/.emacs.d/.local/etc/lsp/groovy-language-server/build/libs/groovy-language-server-all.jar"))
+ (setq lsp-groovy-server-file "/usr/share/java/groovy-language-server/groovy-language-server-all.jar"))
 
 ;; Configure lsp lua mode.
 (use-package lsp-mode
   :hook ((lua-mode . lsp))
  :config
- (setq lsp-clients-lua-language-server-install-dir "~/.emacs.d/.local/etc/lsp/lua-language-server")
- (setq lsp-clients-lua-language-server-bin "~/.emacs.d/.local/etc/lsp/lua-language-server/bin/Linux/lua-language-server"))
+ (setq lsp-clients-lua-language-server-install-dir "/usr/lib/lua-language-server/")
+ (setq lsp-clients-lua-language-server-bin "/usr/lib/lua-language-server/bin/lua-language-server"))
 
 ;; Configure lsp json mode.
 (use-package lsp-mode
@@ -132,7 +132,7 @@
 (use-package lsp-mode
   :hook ((powershell-mode . lsp))
  :config
- (setq lsp-pwsh-exe "/opt/powershell/ps7/pwsh"))
+ (setq lsp-pwsh-exe "/usr/bin/pwsh"))
 
 ;; Configure lsp html mode.
 (use-package lsp-mode
@@ -147,7 +147,7 @@
   :hook ((xml-mode . lsp)
          (nxml-mode . lsp))
  :config
- (setq lsp-xml-server-command "lemminx"))
+ (setq lsp-xml-server-command "/usr/bin/lemminx"))
 
 ;; Configure lsp sql mode.
 (use-package lsp-mode
