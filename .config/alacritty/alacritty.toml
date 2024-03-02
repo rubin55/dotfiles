@@ -1,3 +1,7 @@
+import = [
+    "~/.config/alacritty/themes/themes/falcon.toml"
+]
+
 [cursor]
 style = { shape = "Block", blinking = "On" }
 
