@@ -1,0 +1,24 @@
+[cursor]
+style = { shape = "Block", blinking = "On" }
+
+[font]
+size = 10.0
+
+[font.bold]
+family = "monospace"
+style = "Regular"
+
+[font.bold_italic]
+family = "monospace"
+style = "Italic"
+
+[font.italic]
+family = "monospace"
+style = "Italic"
+
+[font.normal]
+family = "monospace"
+style = "Regular"
+
+[window]
+dimensions = { columns = 132, lines = 43 }
