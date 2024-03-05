@@ -276,6 +276,19 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
     fi
   fi
 
+  # Current and wanted X11 settings.
+  # Xcursor.size: 64, Xft.dpi: 192, *faceSize: 10, Emacs.font: PragmataPro Mono-10,
+  # *font: -*-helvetica-bold-r-*-*-25-*-*-*-*-*-iso8859-15
+  #
+  # TODO: ~/.Xresources
+
+  # Current and wanted Alacritty settings.
+  # size = 10
+  #
+  # TODO: ~/.config/alacritty/alacritty.toml
+
+
+
   # Write a timer file so we don't keep doing this for every shell invocation.
   echo "user-scaling.sh ran at $(date)" > /tmp/user-scaling.timer
 fi
