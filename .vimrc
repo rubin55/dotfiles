@@ -96,7 +96,7 @@ if has('termguicolors')
 endif
 
 " Set color scheme for terminal.
-colorscheme everforest
+colorscheme shine
 
 " Set netrw modes.
 let g:netrw_browse_split = 4

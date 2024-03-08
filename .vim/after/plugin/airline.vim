@@ -1,10 +1,6 @@
 " Settings for Airline.
 if exists('g:loaded_airline')
-    if has('gui_running')
-        let g:airline_theme = 'everforest'
-    else
-        let g:airline_theme = 'base16_oceanicnext'
-    endif
+    let g:airline_theme = 'cobalt2'
     let g:airline_powerline_fonts = 1
 
     if !exists('g:airline_symbols')
