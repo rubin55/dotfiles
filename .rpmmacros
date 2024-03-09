@@ -1,4 +1,4 @@
-%_topdir %home/Syncthing/Source/RAAF/config/redhat
+%_topdir %home/Packaging/RHEL/9
 %_query_all_fmt %%{name}-%%{version}-%%{release}.%%{arch}
-%_gpg_name info@raaf.tech
-%dist .el8.raaf
+%_gpg_name me@rubin55.org
+%dist .el9.custom

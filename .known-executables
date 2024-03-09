@@ -1,7 +1,7 @@
 $HOME/.emacs.d/bin/doom
 $HOME/.local/share/Steam/steam.sh
-$HOME/Syncthing/Source/Other/fio-plot/fio_plot/fio_plot
-/$HOME/Syncthing/Source/Other/fio-plot/benchmark_script/bench_fio
+$HOME/Source/Other/fio-plot/fio_plot/fio_plot
+$HOME/Source/Other/fio-plot/benchmark_script/bench_fio
 /opt/oracle/instantclient122/sqlplus
 /opt/acrobat/reader9/acroread
 /opt/activemq/artemis2/bin/artemis
