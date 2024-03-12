@@ -276,22 +276,97 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
     fi
   fi
 
-  # Current and wanted X11 settings.
-  # Xcursor.size: 64, Xft.dpi: 192, *faceSize: 10, Emacs.font: PragmataPro Mono-10,
-  # *font: -*-helvetica-bold-r-*-*-25-*-*-*-*-*-iso8859-15
-  #
-  # TODO: ~/.Xresources
+  # X11 config file.
+  x11Config="$HOME/.Xresources"
 
-  # Current and wanted Alacritty settings.
-  # size = 10
-  #
-  # TODO: ~/.config/alacritty/alacritty.toml
+  # Current and wanted X11 dpi.
+  if [[ -e "$x11Config" && -n "$x11Dpi" ]]; then
+    currentX11DpiValue="$(grep 'Xft.dpi:' "$x11Config" | awk '{ print $2 }')"
+    wantedX11DpiValue="$x11Dpi"
+
+    if [[ "$currentX11DpiValue" != "$wantedX11DpiValue" ]]; then
+      log.info "Setting X11 dpi value to: \"$wantedX11DpiValue\""
+      currentX11DpiString="Xft.dpi: $currentX11DpiValue"
+      wantedX11DpiString="Xft.dpi: $wantedX11DpiValue"
+
+      sed -i "s|$currentX11DpiString|$wantedX11DpiString|g" "$x11Config"
+    fi
+  fi
+
+  # Current and wanted X11 default font.
+  if [[ -e "$x11Config" && -n "$x11Sans" ]]; then
+    # assuming *font: string matching something like
+    # -*-helvetica-bold-r-*-*-17-*-*-*-*-*-iso8859-15
+    # The '17' above is the font size (eighth position).
+    currentX11SansFontSize="$(grep '^\*font:' "$x11Config" | cut -d- -f8)"
+    wantedX11SansFontSize="$x11Sans"
+
+    if [[ "$currentX11SansFontSize" != "$wantedX11SansFontSize" ]]; then
+      log.info "Setting X11 default font size to: \"$wantedX11SansFontSize\""
+      currentX11SansFontString="$(grep '^\*font:' "$x11Config")"
+      wantedX11SansFontString="$(echo "$currentX11SansFontString" | sed "s|-$currentX11SansFontSize-|-$wantedX11SansFontSize-|g")"
+
+      sed -i "s|$currentX11SansFontString|$wantedX11SansFontString|g" "$x11Config"
+    fi
+  fi
+
+  # Current and wanted X11 uxterm and xterm font sizes.
+  if [[ -e "$x11Config" && -n "$x11Mono" ]]; then
+    currentX11UxtermFontSize="$(grep '^UXTerm\*faceSize' "$x11Config" | awk '{ print $2 }')"
+    wantedX11UxtermFontSize="$x11Mono"
+    currentX11XtermFontSize="$(grep '^XTerm\*faceSize' "$x11Config" | awk '{ print $2 }')"
+    wantedX11XtermFontSize="$x11Mono"
+
+    if [[ "$currentX11UxtermFontSize" != "$wantedX11UxtermFontSize" ]]; then
+      log.info "Setting X11 uxterm font size to: \"$wantedX11UxtermFontSize\""
+      currentX11UxtermFontString="UXTerm*faceSize: $currentX11UxtermFontSize"
+      wantedX11UxtermFontString="UXTerm*faceSize: $wantedX11UxtermFontSize"
+
+      sed -i "s|$currentX11UxtermFontString|$wantedX11UxtermFontString|g" "$x11Config"
+    fi
+
+    if [[ "$currentX11XtermFontSize" != "$wantedX11XtermFontSize" ]]; then
+      log.info "Setting X11 xterm font size to: \"$wantedX11XtermFontSize\""
+      currentX11XtermFontString="XTerm*faceSize: $currentX11XtermFontSize"
+      wantedX11XtermFontString="XTerm*faceSize: $wantedX11XtermFontSize"
+
+      sed -i "s|$currentX11XtermFontString|$wantedX11XtermFontString|g" "$x11Config"
+    fi
+  fi
+
+  # Current and wanted X11 cursor size.
+  if [[ -e "$x11Config" && -n "$x11Cursor" ]]; then
+    currentX11CursorSize="$(grep 'Xcursor.size:' "$x11Config" | awk '{ print $2 }')"
+    wantedX11CursorSize="$x11Cursor"
+
+    if [[ "$currentX11CursorSize" != "$wantedX11CursorSize" ]]; then
+      log.info "Setting X11 cursor size to: \"$wantedX11CursorSize\""
+      currentX11CursorString="Xcursor.size: $currentX11CursorSize"
+      wantedX11CursorString="Xcursor.size: $wantedX11CursorSize"
+
+      sed -i "s|$currentX11CursorString|$wantedX11CursorString|g" "$x11Config"
+    fi
+  fi
 
 
+  # Current and wanted Alacritty font size.
+  alacrittyConfig="$HOME/.config/alacritty/alacritty.toml"
+  if [[ -e "$alacrittyConfig" && -n "$alacrittyMono" ]]; then
+    currentAlacrittyMonoFontSize="$(grep '^size = ' "$alacrittyConfig" | awk '{ print $3 }')"
+    wantedAlacrittyMonoFontSize="$alacrittyMono"
+
+    if [[ "$currentAlacrittyMonoFontSize" != "$wantedAlacrittyMonoFontSize" ]]; then
+      log.info "Setting Alacritty font size to: \"$wantedAlacrittyMonoFontSize\""
+      currentAlacrittyMonoFontString="$(echo "size = $currentAlacrittyMonoFontSize" | sed 's|\.|\\\.|g')"
+      wantedAlacrittyMonoFontString="$(echo "size = $wantedAlacrittyMonoFontSize" | sed 's|\.|\\\.|g')"
+
+      sed -i "s|$currentAlacrittyMonoFontString|$wantedAlacrittyMonoFontString|g" "$alacrittyConfig"
+    fi
+  fi
 
   # Write a timer file so we don't keep doing this for every shell invocation.
   echo "user-scaling.sh ran at $(date)" > /tmp/user-scaling.timer
 fi
 
 # Unset temporary variables.
-unset FONT_SIZE_PREFERENCES_FILE codeConfig emacsHostIdentifier emacsConfig jetbrainsConfigs jetbrainsConfig vimConfig codeMono emacsMono emacsSans gnomeMono gnomeSans gnomeSerif jetbrainsMono vimMono currentCodeEditorFontName currentCodeEditorFontSize currentCodeTerminalFontName currentCodeTerminalFontSize currentEmacsMonospaceFontName currentEmacsMonospaceFontSize currentEmacsVariablewidthFontName currentEmacsVariablewidthFontSize currentGnomeDocumentFontName currentGnomeDocumentFontSize currentGnomeInterfaceFontName currentGnomeInterfaceFontSize currentGnomeMonospaceFontName currentGnomeMonospaceFontSize currentGnomeThemeFontName currentGnomeThemeFontSize currentGnomeTitleFontName currentGnomeTitleFontSize currentJetbrainsMonoFontName currentJetbrainsMonoFontSize currentJetbrainsMonoFontSize2d currentVimMonoFontName currentVimMonoFontSize wantedCodeEditorFontSize wantedCodeTerminalFontSize wantedEmacsMonospaceFontSize wantedEmacsVariablewidthFontSize wantedGnomeDocumentFontSize wantedGnomeInterfaceFontSize wantedGnomeMonospaceFontSize wantedGnomeThemeFontSize wantedGnomeTitleFontSize wantedJetbrainsMonoFontName wantedJetbrainsMonoFontSize wantedJetbrainsMonoFontSize2d wantedVimMonoFontSize currentQt5MonoFontName currentQt5MonoFontSize currentQt5SansFontName currentQt5SansFontSize currentQt6MonoFontName currentQt6MonoFontSize currentQt6SansFontName currentQt6SansFontSize wantedQt5MonoFontName wantedQt5MonoFontSize wantedQt5SansFontName wantedQt5SansFontSize wantedQt6MonoFontName wantedQt6MonoFontSize wantedQt6SansFontName wantedQt6SansFontSize emacsHostIdentifierInConfigMonospace emacsHostIdentifierInConfigVariablewidth qt5Config qt5Mono qt5Sans qt6Config qt6Mono qt6Sans themeConfig
+unset FONT_SIZE_PREFERENCES_FILE codeConfig emacsHostIdentifier emacsConfig jetbrainsConfigs jetbrainsConfig vimConfig codeMono emacsMono emacsSans gnomeMono gnomeSans gnomeSerif jetbrainsMono vimMono currentCodeEditorFontName currentCodeEditorFontSize currentCodeTerminalFontName currentCodeTerminalFontSize currentEmacsMonospaceFontName currentEmacsMonospaceFontSize currentEmacsVariablewidthFontName currentEmacsVariablewidthFontSize currentGnomeDocumentFontName currentGnomeDocumentFontSize currentGnomeInterfaceFontName currentGnomeInterfaceFontSize currentGnomeMonospaceFontName currentGnomeMonospaceFontSize currentGnomeThemeFontName currentGnomeThemeFontSize currentGnomeTitleFontName currentGnomeTitleFontSize currentJetbrainsMonoFontName currentJetbrainsMonoFontSize currentJetbrainsMonoFontSize2d currentVimMonoFontName currentVimMonoFontSize wantedCodeEditorFontSize wantedCodeTerminalFontSize wantedEmacsMonospaceFontSize wantedEmacsVariablewidthFontSize wantedGnomeDocumentFontSize wantedGnomeInterfaceFontSize wantedGnomeMonospaceFontSize wantedGnomeThemeFontSize wantedGnomeTitleFontSize wantedJetbrainsMonoFontName wantedJetbrainsMonoFontSize wantedJetbrainsMonoFontSize2d wantedVimMonoFontSize currentQt5MonoFontName currentQt5MonoFontSize currentQt5SansFontName currentQt5SansFontSize currentQt6MonoFontName currentQt6MonoFontSize currentQt6SansFontName currentQt6SansFontSize wantedQt5MonoFontName wantedQt5MonoFontSize wantedQt5SansFontName wantedQt5SansFontSize wantedQt6MonoFontName wantedQt6MonoFontSize wantedQt6SansFontName wantedQt6SansFontSize emacsHostIdentifierInConfigMonospace emacsHostIdentifierInConfigVariablewidth qt5Config qt5Mono qt5Sans qt6Config qt6Mono qt6Sans themeConfig wantedAlacrittyMonoFontSize wantedX11CursorSize wantedX11SansFontSize wantedX11UxtermFontSize wantedX11XtermFontSize x11Config x11Cursor x11Mono x11Sans alacrittyConfig alacrittyMono currentAlacrittyMonoFontSize currentX11CursorSize currentX11SansFontSize currentX11UxtermFontSize currentX11XtermFontSize
