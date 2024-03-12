@@ -10,9 +10,7 @@ case "$XDG_SESSION_TYPE" in
   export QT_QPA_PLATFORM=xcb
   ;;
   wayland)
-  # Wayland under QT is still too buggy as of 2023-07-19.
-  #export QT_QPA_PLATFORM=wayland
-  export QT_QPA_PLATFORM=xcb
+  export QT_QPA_PLATFORM=wayland
   ;;
   *)
   export QT_QPA_PLATFORM=xcb
