@@ -288,7 +288,6 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
       log.info "Setting X11 dpi value to: \"$wantedX11DpiValue\""
       currentX11DpiString="Xft.dpi: $currentX11DpiValue"
       wantedX11DpiString="Xft.dpi: $wantedX11DpiValue"
-
       sed -i "s|$currentX11DpiString|$wantedX11DpiString|g" "$x11Config"
     fi
   fi
@@ -305,7 +304,6 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
       log.info "Setting X11 default font size to: \"$wantedX11SansFontSize\""
       currentX11SansFontString="$(grep '^\*font:' "$x11Config")"
       wantedX11SansFontString="$(echo "$currentX11SansFontString" | sed "s|-$currentX11SansFontSize-|-$wantedX11SansFontSize-|g")"
-
       sed -i "s|$currentX11SansFontString|$wantedX11SansFontString|g" "$x11Config"
     fi
   fi
@@ -321,7 +319,6 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
       log.info "Setting X11 uxterm font size to: \"$wantedX11UxtermFontSize\""
       currentX11UxtermFontString="UXTerm*faceSize: $currentX11UxtermFontSize"
       wantedX11UxtermFontString="UXTerm*faceSize: $wantedX11UxtermFontSize"
-
       sed -i "s|$currentX11UxtermFontString|$wantedX11UxtermFontString|g" "$x11Config"
     fi
 
@@ -329,7 +326,6 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
       log.info "Setting X11 xterm font size to: \"$wantedX11XtermFontSize\""
       currentX11XtermFontString="XTerm*faceSize: $currentX11XtermFontSize"
       wantedX11XtermFontString="XTerm*faceSize: $wantedX11XtermFontSize"
-
       sed -i "s|$currentX11XtermFontString|$wantedX11XtermFontString|g" "$x11Config"
     fi
   fi
@@ -343,11 +339,9 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
       log.info "Setting X11 cursor size to: \"$wantedX11CursorSize\""
       currentX11CursorString="Xcursor.size: $currentX11CursorSize"
       wantedX11CursorString="Xcursor.size: $wantedX11CursorSize"
-
       sed -i "s|$currentX11CursorString|$wantedX11CursorString|g" "$x11Config"
     fi
   fi
-
 
   # Current and wanted Alacritty font size.
   alacrittyConfig="$HOME/.config/alacritty/alacritty.toml"
@@ -359,7 +353,6 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
       log.info "Setting Alacritty font size to: \"$wantedAlacrittyMonoFontSize\""
       currentAlacrittyMonoFontString="$(echo "size = $currentAlacrittyMonoFontSize" | sed 's|\.|\\\.|g')"
       wantedAlacrittyMonoFontString="$(echo "size = $wantedAlacrittyMonoFontSize" | sed 's|\.|\\\.|g')"
-
       sed -i "s|$currentAlacrittyMonoFontString|$wantedAlacrittyMonoFontString|g" "$alacrittyConfig"
     fi
   fi
