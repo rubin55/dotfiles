@@ -1,3 +1,4 @@
+alacrittyMono=13
 codeMono=14
 emacsMono=18
 emacsSans=18
@@ -5,8 +6,11 @@ gnomeMono=14
 gnomeSans=13
 gnomeSerif=13
 jetbrainsMono=18
-vimMono=14
 qt5Mono=14
 qt5Sans=13
 qt6Mono=14
 qt6Sans=13
+vimMono=14
+x11Cursor=32
+x11Mono=13
+x11Sans=17
