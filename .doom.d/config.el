@@ -7,10 +7,10 @@
 (setq mouse-1-click-follows-link -450)
 
 ;; Make magit find my git repositories.
-(setq magit-repository-directories '(("~/Source" . 2) ("~/Syncthing/Source" . 2)))
+(setq magit-repository-directories '(("~/Source" . 2) ("~/Source" . 2)))
 
 ;; Make projectile find my projects.
-(setq projectile-project-search-path '(("~/Source" . 2) ("~/Syncthing/Source" . 2) ("~/Syncthing/Documents/Rubin/Courses/Exercism" . 2)))
+(setq projectile-project-search-path '(("~/Source" . 2) ("~/Source" . 2) ("~/Documents/Rubin/Courses/Exercism" . 2)))
 
 ;; Hide menubar, toolbar and scrollbar by default.
 (menu-bar-mode -1)
