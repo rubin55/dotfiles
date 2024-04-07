@@ -3,6 +3,9 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
+;; Make treemacs not use variable width fonts.
+(setq doom-themes-treemacs-enable-variable-pitch nil)
+
 ;; Try to avoid emacs window chaos. If this is a step too far, then replace
 ;; display-buffer-same-window with display-buffer-pop-up-window.
 (customize-set-variable 'display-buffer-base-action
@@ -10,6 +13,12 @@
     (reusable-frames . t)))
 
 (customize-set-variable 'even-window-sizes nil)
+
+;; Active tab should show a line at the top.
+(setq centaur-tabs-set-bar 'over)
+
+;; Group tabs by (projectile) project.
+(setq centaur-tabs-group-by-projectile-project t)
 
 ;; Be able to switch buffers by clicking on their tab.
 (setq mouse-1-click-follows-link -450)
@@ -201,38 +210,18 @@
 ;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
 ;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 
-;; Font settings for Adam, my Windows AMD64 desktop at home.
-(when (string= (system-name) "ADAM")
-  (setq doom-font (font-spec :family "Monospace" :size 12 :weight 'normal)
-      doom-variable-pitch-font (font-spec :family "Sans" :size 15)))
-
-;; Font settings for Orion, my Linux AMD64 desktop at work.
-(when (string= (system-name) "ORION")
-  (setq doom-font (font-spec :family "Monospace" :size 13 :weight 'normal)
-      doom-variable-pitch-font (font-spec :family "Sans" :size 15)))
-
-;; Font settings for Power, my Linux PowerPC desktop at work.
-(when (string= (system-name) "POWER")
-  (setq doom-font (font-spec :family "Monospace" :size 15 :weight 'normal)
-      doom-variable-pitch-font (font-spec :family "Sans" :size 15)))
-
-;; Font settings for Think, my Linux AMD64 laptop.
-(when (string= (system-name) "THINK")
-  (setq doom-font (font-spec :family "Monospace" :size 38 :weight 'normal)
-      doom-variable-pitch-font (font-spec :family "Sans" :size 38)))
-
-;; Font settings for Argon, my Linux AMD64 virtual-machine.
-(when (string= (system-name) "ARGON")
-  (setq doom-font (font-spec :family "Monospace" :size 38 :weight 'normal)
-      doom-variable-pitch-font (font-spec :family "Sans" :size 38)))
-
-;; Font settings for Frame, my Linux AMD64 laptop.
+;; Font settings for FRAME, my Linux laptop.
 (when (string= (system-name) "FRAME")
   (setq doom-font (font-spec :family "Monospace" :size 18 :weight 'normal)
-      doom-variable-pitch-font (font-spec :family "Sans" :size 18)))
+      doom-variable-pitch-font (font-spec :family "Sans" :size 15)))
 
-;; Font settings for Gs-2-l-h-004, my Linux AMD64 vdi at work.
-(when (string= (system-name) "GS-2-L-H-004")
+;; Font settings for GEMINI, my Linux desktop at work.
+(when (string= (system-name) "GEMINI")
+  (setq doom-font (font-spec :family "Monospace" :size 38 :weight 'normal)
+      doom-variable-pitch-font (font-spec :family "Sans" :size 38)))
+
+;; Font settings for TAURUS, my Linux desktop at home.
+(when (string= (system-name) "TAURUS")
   (setq doom-font (font-spec :family "Monospace" :size 38 :weight 'normal)
       doom-variable-pitch-font (font-spec :family "Sans" :size 38)))
 
