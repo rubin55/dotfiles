@@ -3,14 +3,22 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
+;; Try to avoid emacs window chaos. If this is a step too far, then replace
+;; display-buffer-same-window with display-buffer-pop-up-window.
+(customize-set-variable 'display-buffer-base-action
+  '((display-buffer-reuse-window display-buffer-same-window)
+    (reusable-frames . t)))
+
+(customize-set-variable 'even-window-sizes nil)
+
 ;; Be able to switch buffers by clicking on their tab.
 (setq mouse-1-click-follows-link -450)
 
 ;; Make magit find my git repositories.
-(setq magit-repository-directories '(("~/Source" . 2) ("~/Source" . 2)))
+(setq magit-repository-directories '(("~/Source" . 3)))
 
 ;; Make projectile find my projects.
-(setq projectile-project-search-path '(("~/Source" . 2) ("~/Source" . 2) ("~/Documents/Rubin/Courses/Exercism" . 2)))
+(setq projectile-project-search-path '(("~/Source" . 3) ("~/Documents/Rubin/Courses/Exercism" . 2)))
 
 ;; Hide menubar, toolbar and scrollbar by default.
 (menu-bar-mode -1)
@@ -231,7 +239,7 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-one)
+(setq doom-theme 'doom-tomorrow-day)
 (setq doom-themes-enable-bold nil)
 
 ;; If you use `org' and don't want your org files in the default location below,
