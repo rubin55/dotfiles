@@ -3,6 +3,10 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
+;; Configure disaply of line length rulers.
+(setq-default display-fill-column-indicator-column 119)
+(global-display-fill-column-indicator-mode)
+
 ;; Make treemacs not use variable width fonts.
 (setq doom-themes-treemacs-enable-variable-pitch nil)
 
@@ -217,18 +221,19 @@
 
 ;; Font settings for GEMINI, my Linux desktop at work.
 (when (string= (system-name) "GEMINI")
-  (setq doom-font (font-spec :family "Monospace" :size 38 :weight 'normal)
-      doom-variable-pitch-font (font-spec :family "Sans" :size 38)))
+  (setq doom-font (font-spec :family "Monospace" :size 13 :weight 'normal)
+      doom-variable-pitch-font (font-spec :family "Sans" :size 15)))
 
 ;; Font settings for TAURUS, my Linux desktop at home.
 (when (string= (system-name) "TAURUS")
-  (setq doom-font (font-spec :family "Monospace" :size 38 :weight 'normal)
-      doom-variable-pitch-font (font-spec :family "Sans" :size 38)))
+  (setq doom-font (font-spec :family "Monospace" :size 13 :weight 'normal)
+      doom-variable-pitch-font (font-spec :family "Sans" :size 15)))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'doom-tomorrow-day)
+;;(setq doom-theme 'doom-tomorrow-day)
+(setq doom-theme 'doom-laserwave)
 (setq doom-themes-enable-bold nil)
 
 ;; If you use `org' and don't want your org files in the default location below,

@@ -6,7 +6,7 @@ import = [
 style = { shape = "Block", blinking = "On" }
 
 [font]
-size = 13.0
+size = 13
 
 [font.bold]
 family = "monospace"
@@ -26,7 +26,8 @@ style = "Regular"
 
 [keyboard]
 bindings = [
-   { key = "Return", mods = "Control|Shift", action = "SpawnNewInstance" }
+  { key = "F11", action = "ToggleFullscreen" },
+  { key = "Return", mods = "Control|Shift", action = "SpawnNewInstance" }
 ]
 
 [window]
