@@ -1,6 +1,15 @@
 servers = (
   {
     address = "bnc.irccloud.com";
+    chatnet = "EFNet";
+    port = "6697";
+    password = "bnc@irssi:some_string_here";
+    use_tls = "yes";
+    tls_verify = "yes";
+    autoconnect = "yes";
+  },
+  {
+    address = "bnc.irccloud.com";
     chatnet = "Libera";
     port = "6697";
     password = "bnc@irssi:some_string_here";
@@ -19,6 +28,12 @@ servers = (
   }
 );
 chatnets = {
+  EFNet = {
+    max_kicks = "1";
+    max_msgs = "4";
+    max_whois = "1";
+    type = "IRC";
+  };
   Libera = {
     ew = "type";
     max_kicks = "1";
