@@ -17,7 +17,7 @@ if [[ -e "$HOME/.docker/host.string" ]]; then
 fi
 
 # Check if minikube is available and if it's running first.
-if path.which minikube && minikube status 2>/dev/null| grep -qw 'apiserver: Running'; then
+if path.which minikube && test -e "$HOME/.minikube/config/config.json" && minikube status 2>/dev/null| grep -qw 'apiserver: Running'; then
   #eval $(minikube docker-env)
   #log.info "Minikube is running, setting DOCKER_HOST=$DOCKER_HOST"
   log.info "Minikube is running, you could do: eval \$(minikube docker-env)"
