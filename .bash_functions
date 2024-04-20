@@ -125,3 +125,15 @@ function host.short-name() {
   hostname | cut -d '.' -f 1
 }
 
+function openvpn.connect() {
+  local conf="$1"
+  local user="$2"
+  if path.which sudo,openvpn && [[ -e "$conf" && -n "$user" ]]; then
+    log.info "Setting up OpenVPN connection using: $conf, connecting as: $user"
+    sudo -E -- sh -c "openvpn --config '$conf' --auth-user-pass <(echo '$user')"
+  else
+    log.error "Something went wrong: conf=$conf user=$user"
+    return 1
+  fi
+}
+
