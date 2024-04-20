@@ -108,9 +108,13 @@ function net.port-open() {
 }
 
 function title.set() {
-  [[ -z "$orig" ]] && orig="$PS1"
-  local title="\[\e]2;$*\a\]"
-  PS1="${orig}${title}";
+  if [[ -z "$TMUX" ]]; then
+    [[ -z "$orig" ]] && orig="$PS1"
+    local title="\[\e]2;$*\a\]"
+    PS1="${orig}${title}";
+  else
+    tmux rename-window "$*"
+  fi
 }
 
 function title.case() {
