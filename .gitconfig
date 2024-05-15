@@ -7,3 +7,5 @@
 	rebase = false
 [init]
 	defaultBranch = master
+[core]
+	pager = less -F -X

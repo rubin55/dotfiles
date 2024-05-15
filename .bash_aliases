@@ -1,5 +1,8 @@
 # ~/.bash_aliases: various aliases for commonly used things.
 
+# Alias for sudo to work with aliases.
+alias sudo='sudo '
+
 # Some common ls/dir aliases.
 alias dir='dir --color=auto'
 alias l='ls -CF'

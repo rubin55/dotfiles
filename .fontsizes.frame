@@ -1,5 +1,5 @@
 alacrittyMono=13
-codeMono=14
+codeMono=13
 emacsMono=18
 emacsSans=18
 gnomeMono=14
@@ -10,7 +10,7 @@ qt5Mono=14
 qt5Sans=13
 qt6Mono=14
 qt6Sans=13
-vimMono=14
+vimMono=12.5
 x11Dpi=96
 x11Cursor=32
 x11Mono=13
