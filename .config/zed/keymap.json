@@ -1,0 +1,8 @@
+[
+  {
+    "context": "Pane",
+    "bindings": {
+      "ctrl-shift-t": "project_symbols::Toggle"
+    }
+  }
+]

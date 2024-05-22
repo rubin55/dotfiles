@@ -1,0 +1,39 @@
+// Zed settings
+//
+// For information on how to configure Zed, see the Zed
+// documentation: https://zed.dev/docs/configuring-zed
+//
+// To see all of Zed's default settings without changing your
+// custom settings, run the `open default settings` command
+// from the command palette or from `Zed` application menu.
+{
+  "features": {
+    "copilot": false,
+    "inline_completion_provider": "none"
+  },
+  "assistant": {
+    "enabled": false,
+    "button": false
+  },
+  "assistant_v2": {
+    "enabled": false,
+    "button": false
+  },
+  "chat_panel": {
+    "button": false
+  },
+  "collaboration_panel": {
+    "button": false
+  },
+  "auto_update": false,
+  "theme": "Rosé Pine Dawn",
+  "vim_mode": false,
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+  "ui_font_family": "B612",
+  "ui_font_size": 15,
+  "buffer_font_family": "PragmataPro Mono",
+  "buffer_font_size": 13.3
+}
