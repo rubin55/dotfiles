@@ -6,7 +6,7 @@ set nomodeline
 
 " VimPlug section.
 call plug#begin('~/.vim/plugged')
-Plug 'cormacrelf/vim-colors-github'
+Plug 'rubin55/vim-colors-github'
 Plug 'earthly/earthly.vim', { 'branch': 'main' }
 Plug 'elixir-editors/vim-elixir'
 Plug 'jamessan/vim-gnupg', { 'branch': 'main' }
@@ -84,9 +84,6 @@ set nowritebackup
 " Enable line-numbers.
 set number
 
-" Set line-length indicators.
-set colorcolumn=80,120
-
 " Set mouse mode.
 set mouse=a
 
@@ -133,6 +130,15 @@ if has('gui_running')
     set guifont=PragmataPro\ Mono:h11
   endif
 endif
+
+" Work around Alt key not working in terminal.
+let c='a'
+while c <= 'z'
+    exec "set <A-".c.">=\e".c
+    exec "imap \e".c." <A-".c.">"
+    let c = nr2char(1+char2nr(c))
+endw
+set ttimeout ttimeoutlen=50
 
 " Silence vim.
 set noerrorbells visualbell t_vb=
@@ -207,6 +213,16 @@ nnoremap <C-g> :Ag<Cr>
 "map <F11> <Esc>:call libcallnr('gvimfullscreen.dll', 'ToggleFullScreen', 0)<Cr>
 "map <F11> :set invfu<Cr>
 map <F11> <Esc>:call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<Cr><Cr>
+
+" Toggle line-ending markers.
+map <M-l> <Esc>:call ToggleLineEndingMarkers()<cr>
+function ToggleLineEndingMarkers()
+    if &colorcolumn == ""
+        set colorcolumn=80,120
+    else
+        set colorcolumn=
+    endif
+endfunction
 
 " Toggle distraction free mode in gvim.
 map <M-d> <Esc> :call ToggleDistractionFree()<cr>
