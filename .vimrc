@@ -18,7 +18,6 @@ Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'sainnhe/everforest'
-Plug 'Shougo/deol.nvim'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
@@ -99,7 +98,7 @@ if has('termguicolors')
   set termguicolors
 endif
 
-" Set color scheme for terminal.
+" Set color scheme.
 colorscheme github
 
 " Cursor settings.
