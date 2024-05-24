@@ -171,7 +171,10 @@ endif
 let b:sh_indent_options['case-statements'] = 0
 let b:sh_indent_options['case-breaks'] = 0
 
-"Non-recursive visual mode key mappings for comments.
+" Make embedded terminal use Esc to switch to normal mode.
+tnoremap <Esc> <C-\><C-n>
+
+" Non-recursive visual mode key mappings for comments.
 noremap <silent> ,# :call CommentLineToEnd('# ')<Cr>+
 noremap <silent> ,/ :call CommentLineToEnd('// ')<Cr>+
 noremap <silent> ," :call CommentLineToEnd('" ')<Cr>+
