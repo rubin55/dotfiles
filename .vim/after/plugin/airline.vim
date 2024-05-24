@@ -1,6 +1,6 @@
 " Settings for Airline.
 if exists('g:loaded_airline')
-    let g:airline_theme = 'apprentice'
+    let g:airline_theme = 'github'
     let g:airline_powerline_fonts = 1
 
     if !exists('g:airline_symbols')
