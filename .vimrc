@@ -88,6 +88,9 @@ set number
 " Set line-length indicators.
 set colorcolumn=80,120
 
+" Set mouse mode.
+set mouse=a
+
 " Set background to light or dark.
 set background=light
 
@@ -184,7 +187,9 @@ nmap <silent> <M-Down> :wincmd j<Cr>
 nmap <silent> <M-Left> :wincmd h<Cr>
 nmap <silent> <M-Right> :wincmd l<Cr>
 
-" Vertical and horizontal split window.
+" Vertical and horizontal split key-bindings and settings.
+set nosplitbelow
+set splitright
 map <silent> <M-v> :vsplit<Cr>
 map <silent> <M-h> :split<Cr>
 
