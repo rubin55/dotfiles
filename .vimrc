@@ -6,6 +6,7 @@ set nomodeline
 
 " VimPlug section.
 call plug#begin('~/.vim/plugged')
+Plug 'cormacrelf/vim-colors-github'
 Plug 'earthly/earthly.vim', { 'branch': 'main' }
 Plug 'elixir-editors/vim-elixir'
 Plug 'jamessan/vim-gnupg', { 'branch': 'main' }
@@ -84,11 +85,11 @@ set nowritebackup
 " Enable line-numbers.
 set number
 
-" Enable cursor-line
-set cursorline
+" Set line-length indicators.
+set colorcolumn=80,120
 
-" Assume a dark background.
-set background=dark
+" Set background to light or dark.
+set background=light
 
 " Enable termguicolors if we have it.
 if has('termguicolors')
@@ -96,11 +97,19 @@ if has('termguicolors')
 endif
 
 " Set color scheme for terminal.
-colorscheme habamax
+colorscheme github
+
+" Cursor settings.
+set cursorline
+set guicursor=n-v-c-i:block-Cursor
+highlight Cursor guifg=lightgrey guibg=grey
+highlight iCursor guifg=lightgrey guibg=grey
 
 " Set netrw modes.
-let g:netrw_browse_split = 4
+let g:netrw_banner = 0
 let g:netrw_liststyle = 3
+let g:netrw_browse_split = 4
+let g:netrw_altv = 1
 let g:netrw_winsize = 20
 
 " Don't use a different background color for signs column.
@@ -112,7 +121,7 @@ if has('gui_running')
   set lines=43 columns=132
   "set guioptions+=m
   if has('gui_gtk3')
-    set guifont=PragmataPro\ Mono\ 14
+    set guifont=PragmataPro\ Mono\ 10
   elseif has('gui_macvim')
     set guifont=PragmataPro\ Mono:h16
     set macligatures
@@ -181,6 +190,11 @@ map <silent> <M-h> :split<Cr>
 
 " Map netrw to a keyboard shortcut.
 map <silent> <M-f> :Lexplore<Cr>
+
+" Various settings and key-bindings for fzf.
+nnoremap <C-b> :Buffers<Cr>
+nnoremap <C-p> :GFiles<Cr>
+nnoremap <C-g> :Ag<Cr>
 
 " Fullscreen enablement for Windows, Mac or Linux gvim.
 "map <F11> <Esc>:call libcallnr('gvimfullscreen.dll', 'ToggleFullScreen', 0)<Cr>
