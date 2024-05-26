@@ -6,22 +6,19 @@ set nomodeline
 
 " VimPlug section.
 call plug#begin('~/.vim/plugged')
-Plug 'rubin55/vim-colors-github'
-Plug 'earthly/earthly.vim', { 'branch': 'main' }
-Plug 'elixir-editors/vim-elixir'
 Plug 'jamessan/vim-gnupg', { 'branch': 'main' }
-Plug 'jjo/vim-cue'
 Plug 'junegunn/fzf.vim'
 Plug 'mattn/vim-lsp-settings'
 Plug 'mechatroner/rainbow_csv'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/vim-lsp'
+Plug 'preservim/nerdtree'
+Plug 'ryanoasis/vim-devicons'
+Plug 'rubin55/vim-colors-github'
 Plug 'sainnhe/everforest'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'ziglang/zig.vim'
 call plug#end()
 
 " Main options.
@@ -200,9 +197,6 @@ set nosplitbelow
 set splitright
 map <silent> <M-v> :vsplit<Cr>
 map <silent> <M-h> :split<Cr>
-
-" Map netrw to a keyboard shortcut.
-map <silent> <M-f> :Lexplore<Cr>
 
 " Various settings and key-bindings for fzf.
 nnoremap <C-b> :Buffers<Cr>
