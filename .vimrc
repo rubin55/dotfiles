@@ -175,7 +175,7 @@ let b:sh_indent_options['case-statements'] = 0
 let b:sh_indent_options['case-breaks'] = 0
 
 " Make embedded terminal use Esc to switch to normal mode.
-autocmd TerminalOpen * tnoremap <Esc> <C-\><C-n>
+autocmd! TerminalOpen * execute 'tnoremap <Esc> <C-\><C-n>' | setlocal nonumber | setfiletype terminal
 
 " Non-recursive visual mode key mappings for comments.
 vnoremap <silent> ,# :call CommentLineToEnd('# ')<Cr>+
