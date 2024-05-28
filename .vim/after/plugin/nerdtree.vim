@@ -16,9 +16,15 @@ endfunction
 autocmd BufRead * call SyncTree()
 
 " Map NERDTree to a couple of keyboard shortcuts.
-nnoremap <silent> <M-n> :bnext<CR>:call SyncTree()<CR>
-nnoremap <silent> <M-p> :bprev<CR>:call SyncTree()<CR>
-nnoremap <silent> <M-f> :NERDTreeToggle<cr><c-w>l:call SyncTree()<cr><c-w>h
+nnoremap <silent> <M-n> :bnext<Cr>:call SyncTree()<Cr>
+nnoremap <silent> <M-p> :bprev<Cr>:call SyncTree()<Cr>
+nnoremap <silent> <M-f> :NERDTreeToggle<Cr><C-W>l:call SyncTree()<Cr><C-w>h
+
+" Also call SyncTree when alt-moving.
+nnoremap <silent> <M-Up> :wincmd k<Cr>:call SyncTree()<Cr>
+nnoremap <silent> <M-Down> :wincmd j<Cr>:call SyncTree()<Cr>
+nnoremap <silent> <M-Left> :wincmd h<Cr>:call SyncTree()<Cr>
+nnoremap <silent> <M-Right> :wincmd l<Cr>:call SyncTree()<Cr>
 
 " Common settings for NERDTree.
 let NERDTreeCaseSensitiveSort = 1
@@ -33,9 +39,10 @@ let NERDTreeWinSize=30
 "let g:NERDTreeDirArrowCollapsible = ' '
 
 " If another buffer tries to replace NERDTree, put it in the other window, and bring back NERDTree.
-autocmd BufEnter * if winnr() == winnr('h') && bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 |
-    \ let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
+autocmd BufEnter * if winnr() == winnr('h') && bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 | let buf=bufnr() | buffer# | execute "normal! \<C-W>w" | execute 'buffer'.buf | endif
 
 " Open the existing NERDTree on each new tab.
 autocmd BufWinEnter * if &buftype != 'quickfix' && getcmdwintype() == '' | silent NERDTreeMirror | endif
 
+" Call synctree after exiting buffers.
+autocmd BufLeave * call SyncTree()

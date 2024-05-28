@@ -85,7 +85,7 @@ set number
 set mouse=a
 
 " Set background to light or dark.
-set background=light
+set background=dark
 
 " Enable termguicolors if we have it.
 if has('termguicolors')
@@ -93,7 +93,7 @@ if has('termguicolors')
 endif
 
 " Set color scheme.
-colorscheme github
+colorscheme everforest
 
 " Cursor settings.
 set cursorline
@@ -117,7 +117,7 @@ if has('gui_running')
   set lines=43 columns=132
   "set guioptions+=m
   if has('gui_gtk3')
-    set guifont=PragmataPro\ Mono\ 10
+    set guifont=PragmataPro\ Mono\ 12.5
   elseif has('gui_macvim')
     set guifont=PragmataPro\ Mono:h16
     set macligatures
@@ -175,41 +175,36 @@ let b:sh_indent_options['case-statements'] = 0
 let b:sh_indent_options['case-breaks'] = 0
 
 " Make embedded terminal use Esc to switch to normal mode.
-tnoremap <Esc> <C-\><C-n>
+autocmd TerminalOpen * tnoremap <Esc> <C-\><C-n>
 
 " Non-recursive visual mode key mappings for comments.
-noremap <silent> ,# :call CommentLineToEnd('# ')<Cr>+
-noremap <silent> ,/ :call CommentLineToEnd('// ')<Cr>+
-noremap <silent> ," :call CommentLineToEnd('" ')<Cr>+
-noremap <silent> ,; :call CommentLineToEnd('; ')<Cr>+
-noremap <silent> ,- :call CommentLineToEnd('-- ')<Cr>+
-noremap <silent> ,* :call CommentLinePincer('/* ', ' */')<Cr>+
-noremap <silent> ,< :call CommentLinePincer('<!-- ', ' -->')<Cr>+
+vnoremap <silent> ,# :call CommentLineToEnd('# ')<Cr>+
+vnoremap <silent> ,/ :call CommentLineToEnd('// ')<Cr>+
+vnoremap <silent> ," :call CommentLineToEnd('" ')<Cr>+
+vnoremap <silent> ,; :call CommentLineToEnd('; ')<Cr>+
+vnoremap <silent> ,- :call CommentLineToEnd('-- ')<Cr>+
+vnoremap <silent> ,* :call CommentLinePincer('/* ', ' */')<Cr>+
+vnoremap <silent> ,< :call CommentLinePincer('<!-- ', ' -->')<Cr>+
 
 " Navigate windows using alt-arrow-keys.
-nmap <silent> <M-Up> :wincmd k<Cr>
-nmap <silent> <M-Down> :wincmd j<Cr>
-nmap <silent> <M-Left> :wincmd h<Cr>
-nmap <silent> <M-Right> :wincmd l<Cr>
+nnoremap <silent> <M-Up> :wincmd k<Cr>
+nnoremap <silent> <M-Down> :wincmd j<Cr>
+nnoremap <silent> <M-Left> :wincmd h<Cr>
+nnoremap <silent> <M-Right> :wincmd l<Cr>
 
 " Vertical and horizontal split key-bindings and settings.
 set nosplitbelow
 set splitright
-map <silent> <M-v> :vsplit<Cr>
-map <silent> <M-h> :split<Cr>
-
-" Various settings and key-bindings for fzf.
-nnoremap <C-b> :Buffers<Cr>
-nnoremap <C-p> :GFiles<Cr>
-nnoremap <C-g> :Ag<Cr>
+nnoremap <silent> <M-v> :vsplit<Cr>
+nnoremap <silent> <M-h> :split<Cr>
 
 " Fullscreen enablement for Windows, Mac or Linux gvim.
 "map <F11> <Esc>:call libcallnr('gvimfullscreen.dll', 'ToggleFullScreen', 0)<Cr>
 "map <F11> :set invfu<Cr>
-map <F11> <Esc>:call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<Cr><Cr>
+noremap <F11> <Esc>:call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<Cr><Cr>
 
 " Toggle line-ending markers.
-map <M-l> <Esc>:call ToggleLineEndingMarkers()<cr>
+nnoremap <M-l> <Esc>:call ToggleLineEndingMarkers()<cr>
 function ToggleLineEndingMarkers()
     if &colorcolumn == ""
         set colorcolumn=80,120
@@ -219,7 +214,7 @@ function ToggleLineEndingMarkers()
 endfunction
 
 " Toggle distraction free mode in gvim.
-map <M-d> <Esc> :call ToggleDistractionFree()<cr>
+nnoremap <M-d> <Esc> :call ToggleDistractionFree()<cr>
 function! ToggleDistractionFree()
     let l:menu_option = strridx(&guioptions, 'm')
     let l:toolbar_option = strridx(&guioptions, 'T')
