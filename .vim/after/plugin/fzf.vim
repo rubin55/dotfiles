@@ -24,5 +24,5 @@ nnoremap <C-p> :GFiles<Cr>
 nnoremap <C-g> :Ag<Cr>
 
 " Make sure Esc to exit works and hide statusline.
-autocmd! FileType fzf execute 'tunmap <Esc>' | set laststatus=0 noshowmode noruler | autocmd BufLeave <buffer> set laststatus=2 showmode ruler
+autocmd FileType fzf execute 'tunmap <Esc>' | set laststatus=0 noshowmode noruler | autocmd BufLeave <buffer> set laststatus=2 showmode ruler
 

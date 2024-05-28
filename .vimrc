@@ -139,7 +139,7 @@ set ttimeout ttimeoutlen=50
 
 " Silence vim.
 set noerrorbells visualbell t_vb=
-autocmd GUIEnter * set visualbell t_vb=
+autocmd! GUIEnter * set visualbell t_vb=
 
 " Go to last visited line on open.
 au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal g'\"" | endif
@@ -161,7 +161,7 @@ au FileType tsv set nowrap
 au FileType crontab set nobackup
 
 " Remove unnecessary white space on save.
-autocmd BufWritePre * %s/\s\+$//e
+autocmd! BufWritePre * %s/\s\+$//e
 
 " Highlight unnecessary white space.
 highlight ExtraWhitespace ctermbg=red guibg=red
