@@ -27,7 +27,7 @@ path.which gvim.sh && export EDITOR='gvim.sh'
 
 # Set up less to use lessfilter (pygments).
 export PAGER='less'
-export LESS='-R'
+export LESS='-R --mouse --wheel-lines=2'
 export LESSOPEN='|~/.lessfilter %s'
 
 # Assume a true-color-capable terminal.
