@@ -1,3 +1,5 @@
+" Settings for vim-lsp-settings.
+
 " Currently, vim-lsp-settings won't detect hls automatically.
 if (executable('haskell-language-server-wrapper'))
   au User lsp_setup call lsp#register_server({

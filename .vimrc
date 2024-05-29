@@ -81,11 +81,14 @@ set nowritebackup
 " Enable line-numbers.
 set number
 
-" Set mouse mode.
-set mouse=a
+" Set mouse to work in normal mode.
+set mouse=n
+
+" Make clipboard work sanely.
+set clipboard=unnamedplus
 
 " Set background to light or dark.
-set background=dark
+set background=light
 
 " Enable termguicolors if we have it.
 if has('termguicolors')
@@ -93,7 +96,7 @@ if has('termguicolors')
 endif
 
 " Set color scheme.
-colorscheme everforest
+colorscheme github
 
 " Cursor settings.
 set cursorline
@@ -117,7 +120,7 @@ if has('gui_running')
   set lines=43 columns=132
   "set guioptions+=m
   if has('gui_gtk3')
-    set guifont=PragmataPro\ Mono\ 12.5
+    set guifont=PragmataPro\ Mono\ 10
   elseif has('gui_macvim')
     set guifont=PragmataPro\ Mono:h16
     set macligatures
@@ -204,7 +207,7 @@ nnoremap <silent> <M-h> :split<Cr>
 noremap <F11> <Esc>:call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<Cr><Cr>
 
 " Toggle line-ending markers.
-nnoremap <M-l> <Esc>:call ToggleLineEndingMarkers()<cr>
+nnoremap <M-l> <Esc>:call ToggleLineEndingMarkers()<Cr>
 function ToggleLineEndingMarkers()
     if &colorcolumn == ""
         set colorcolumn=80,120
@@ -214,7 +217,7 @@ function ToggleLineEndingMarkers()
 endfunction
 
 " Toggle distraction free mode in gvim.
-nnoremap <M-d> <Esc> :call ToggleDistractionFree()<cr>
+nnoremap <M-d> <Esc> :call ToggleDistractionFree()<Cr>
 function! ToggleDistractionFree()
     let l:menu_option = strridx(&guioptions, 'm')
     let l:toolbar_option = strridx(&guioptions, 'T')
