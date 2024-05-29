@@ -82,10 +82,10 @@ set nowritebackup
 set number
 
 " Set mouse to work in normal mode.
-set mouse=n
+set mouse=nvi
 
 " Make clipboard work sanely.
-set clipboard=unnamedplus
+set clipboard=unnamed,unnamedplus
 
 " Set background to light or dark.
 set background=light
