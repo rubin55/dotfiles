@@ -21,8 +21,9 @@ let g:fzf_colors =
 
 " Various settings and key-bindings for fzf.
 nnoremap <C-b> :Buffers<Cr>
-nnoremap <C-p> :GFiles<Cr>
 nnoremap <C-g> :Ag<Cr>
+nnoremap <C-p> :GFiles<Cr>
+nnoremap <C-t> :Tags<Cr>
 
 " Make sure Esc to exit works and hide statusline.
 autocmd FileType fzf execute 'tunmap <Esc>' | set laststatus=0 noshowmode noruler | autocmd BufLeave <buffer> set laststatus=2 showmode ruler
