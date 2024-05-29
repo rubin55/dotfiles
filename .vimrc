@@ -8,6 +8,7 @@ set nomodeline
 call plug#begin('~/.vim/plugged')
 Plug 'jamessan/vim-gnupg', { 'branch': 'main' }
 Plug 'junegunn/fzf.vim'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'mattn/vim-lsp-settings'
 Plug 'mechatroner/rainbow_csv'
 Plug 'prabirshrestha/asyncomplete.vim'
@@ -80,6 +81,9 @@ set nowritebackup
 
 " Enable line-numbers.
 set number
+
+" Use hidden file for tags.
+set tags=.tags
 
 " Set mouse to work in normal mode.
 set mouse=nvi
