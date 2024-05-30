@@ -121,10 +121,10 @@ highlight clear SignColumn
 
 " Settings for gvim.
 if has('gui_running')
-  set lines=43 columns=132
+  set lines=44 columns=132
   "set guioptions+=m
   if has('gui_gtk3')
-    set guifont=PragmataPro\ Mono\ 10
+    set guifont=PragmataPro\ Mono\ 9.7
   elseif has('gui_macvim')
     set guifont=PragmataPro\ Mono:h16
     set macligatures
