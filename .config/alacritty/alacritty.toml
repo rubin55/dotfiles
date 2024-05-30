@@ -6,7 +6,8 @@ import = [
 style = { shape = "Block", blinking = "Always" }
 
 [font]
-size = 10
+size = 9.7
+offset.y = 1
 
 [font.bold]
 family = "monospace"
