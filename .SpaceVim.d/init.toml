@@ -1,0 +1,60 @@
+[options]
+  bootstrap_before = 'custom#before'
+  bootstrap_after = 'custom#after'
+  buffer_index_type = 4
+  colorscheme = "onedark"
+  colorscheme_bg = "dark"
+  enable_filetree_gitstatus = true
+  enable_guicolors = true
+  enable_statusline_mode = false
+  enable_tabline_filetype_icon = true
+  escape_key_binding = ""
+  filetree_direction = "left"
+  guifont = "PragmataPro Mono 12.5"
+  linespace = 1
+  project_rooter_patterns = [ ".exercism", ".git" ]
+  statusline_iseparator = "slant"
+  statusline_separator = "slant"
+
+[[layers]]
+  name = "autocomplete"
+  auto_completion_return_key_behavior = "complete"
+  auto_completion_tab_key_behavior = "smart"
+
+[[layers]]
+  name = "shell"
+  default_position = "top"
+  default_height = 30
+
+[[layers]]
+  name = "colorscheme"
+
+[[layers]]
+  name = "fzf"
+
+[[layers]]
+  name = "git"
+  git_plugin = "fugitive"
+
+[[layers]]
+  name = "lsp"
+  filetypes = [ "rust" ]
+  [layers.override_cmd]
+    rust = [ "rust-analyzer" ]
+
+[[layers]]
+  name = "test"
+
+[[layers]]
+  name = "tmux"
+
+[[layers]]
+  name = "tools#zeal"
+
+[[layers]]
+  name = "lang#rust"
+  format_on_save =  true
+
+[[custom_plugins]]
+  repo = "rubin55/vim-colors-github"
+  merged = 0
