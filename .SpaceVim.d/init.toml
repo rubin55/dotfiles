@@ -1,6 +1,6 @@
 [options]
-  bootstrap_before = 'custom#before'
-  bootstrap_after = 'custom#after'
+  bootstrap_before = "custom#before"
+  bootstrap_after = "custom#after"
   buffer_index_type = 4
   colorscheme = "onedark"
   colorscheme_bg = "dark"
@@ -38,7 +38,23 @@
 
 [[layers]]
   name = "lsp"
-  filetypes = [ "rust" ]
+  filetypes = [
+    "c",
+    "cpp",
+    "css",
+    "dart",
+    "go",
+    "haskell",
+    "html",
+    "javascript",
+    "python",
+    "ruby",
+    "rust",
+    "sh",
+    "typescript",
+    "vim",
+    "vue"
+  ]
   [layers.override_cmd]
     rust = [ "rust-analyzer" ]
 
@@ -52,8 +68,135 @@
   name = "tools#zeal"
 
 [[layers]]
+  name = "lang#assembly"
+
+[[layers]]
+  name = "lang#batch"
+
+[[layers]]
+  name = "lang#c"
+  format_on_save = true
+  [layers.clang_std]
+    c = "c17"
+    cpp = "c++17"
+    objc = "c11"
+    objcpp = "c++1z"
+
+[[layers]]
+  name = "lang#clojure"
+
+[[layers]]
+  name = "lang#cmake"
+
+[[layers]]
+  name = "lang#csharp"
+  highlight_types = 0
+
+[[layers]]
+  name = "lang#dart"
+  dart_sdk_path = "/home/rubin/.local/share/flutterup/bin/cache/dart-sdk"
+
+[[layers]]
+  name = "lang#dockerfile"
+
+[[layers]]
+  name = "lang#elixir"
+
+[[layers]]
+  name = "lang#erlang"
+
+[[layers]]
+  name = "lang#fsharp"
+
+[[layers]]
+  name = "lang#go"
+  format_on_save = true
+
+[[layers]]
+  name = "lang#groovy"
+
+[[layers]]
+  name = "lang#haskell"
+
+[[layers]]
+  name = "lang#html"
+
+[[layers]]
+  name = "lang#java"
+  format_on_save = true
+
+[[layers]]
+  name = "lang#javascript"
+  enable_flow_syntax = true
+  format_on_save = true
+
+[[layers]]
+  name = "lang#json"
+
+[[layers]]
+  name = "lang#latex"
+
+[[layers]]
+  name = "lang#lua"
+
+[[layers]]
+  name = "lang#markdown"
+
+[[layers]]
+  name = "lang#perl"
+
+[[layers]]
+  name = "lang#powershell"
+
+[[layers]]
+  name = "lang#python"
+  enabled_linters = ["python", "pylint"]
+  enable_typeinfo = true
+  format_on_save = true
+
+[[layers]]
+  name = "lang#racket"
+
+[[layers]]
+  name = "lang#ruby"
+  enabled_linters = ["rubylint", "rubocop"]
+  format_on_save = true
+
+[[layers]]
   name = "lang#rust"
   format_on_save =  true
+
+[[layers]]
+  name = "lang#scala"
+
+[[layers]]
+  name = "lang#scheme"
+  scheme_dialect = "chez-scheme"
+  scheme_interpreter = "chez"
+
+[[layers]]
+  name = "lang#sh"
+
+[[layers]]
+  name = "lang#toml"
+
+[[layers]]
+  name = "lang#typescript"
+
+[[layers]]
+  name = "lang#vim"
+
+[[layers]]
+  name = "lang#vue"
+
+[[layers]]
+  name = "lang#wolfram"
+
+[[layers]]
+  name = "lang#xml"
+
+[[layers]]
+  name = "lang#zig"
 
 [[custom_plugins]]
   repo = "rubin55/vim-colors-github"
