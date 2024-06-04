@@ -1,3 +1,4 @@
 *.swp
 .colorthemes/active.res
+.doom.d/snippets
 .profile.d/local-*
