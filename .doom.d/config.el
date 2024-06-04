@@ -276,7 +276,7 @@
   (setq evil-escape-key-sequence nil))
 
 ;; Show emacs version after startup.
-(add-hook 'window-setup-hook (lambda () (run-with-timer 1.1 nil #'call-interactively 'version)))
+(add-hook 'window-setup-hook (lambda () (run-with-timer 1.2 nil #'call-interactively 'version)))
 
 ;; Here are some additional functions/macros that could help you configure Doom:
 ;;
