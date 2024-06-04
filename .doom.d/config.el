@@ -3,7 +3,7 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
-;; Configure disaply of line length rulers.
+;; Configure display of line length rulers.
 (setq-default display-fill-column-indicator-column 119)
 (global-display-fill-column-indicator-mode)
 
@@ -39,8 +39,11 @@
 (toggle-scroll-bar -1)
 
 ;; Set initial window size.
-(setq default-frame-alist
-      '((width . 132) (height . 43)))
+;; (when window-system (set-frame-size (selected-frame) 132 48))
+(setq default-frame-alist '((width . 132) (height . 48)))
+
+;; Set line spacing.
+(setq-default line-spacing 2)
 
 ;; Enable long line wrap by default.
 (global-visual-line-mode 1)
@@ -216,8 +219,8 @@
 
 ;; Font settings for FRAME, my Linux laptop.
 (when (string= (system-name) "FRAME")
-  (setq doom-font (font-spec :family "Monospace" :size 18 :weight 'normal)
-      doom-variable-pitch-font (font-spec :family "Sans" :size 18)))
+  (setq doom-font (font-spec :family "Monospace" :size 16 :weight 'normal)
+      doom-variable-pitch-font (font-spec :family "Sans" :size 17)))
 
 ;; Font settings for GEMINI, my Linux desktop at work.
 (when (string= (system-name) "GEMINI")
