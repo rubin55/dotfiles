@@ -178,6 +178,9 @@
   name = "lang#sh"
 
 [[layers]]
+  name = "lang#sql"
+
+[[layers]]
   name = "lang#toml"
 
 [[layers]]
