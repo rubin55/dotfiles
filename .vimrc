@@ -121,6 +121,7 @@ highlight clear SignColumn
 
 " Settings for gvim.
 if has('gui_running')
+  set linespace=1
   set lines=44 columns=132
   "set guioptions+=m
   if has('gui_gtk3')
