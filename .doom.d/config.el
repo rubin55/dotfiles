@@ -3,6 +3,9 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
+;; Default indent length.
+(setq standard-indent 2)
+
 ;; Configure display of line length rulers.
 (setq-default display-fill-column-indicator-column 119)
 (global-display-fill-column-indicator-mode)
@@ -10,19 +13,26 @@
 ;; Make treemacs not use variable width fonts.
 (setq doom-themes-treemacs-enable-variable-pitch nil)
 
+;; Scale treemacs icons to something that looks appealing.
+(treemacs-resize-icons 16)
+
+;; Make treemacs not use png icons in gui mode.
+;;(setq treemacs-no-png-images t)
+
+
 ;; Try to avoid emacs window chaos. If this is a step too far, then replace
 ;; display-buffer-same-window with display-buffer-pop-up-window.
 (customize-set-variable 'display-buffer-base-action
-  '((display-buffer-reuse-window display-buffer-same-window)
-    (reusable-frames . t)))
+                        '((display-buffer-reuse-window display-buffer-same-window)
+                          (reusable-frames . t)))
 
 (customize-set-variable 'even-window-sizes nil)
 
-;; Active tab should show a line at the top.
-(setq centaur-tabs-set-bar 'over)
-
-;; Group tabs by (projectile) project.
-(setq centaur-tabs-group-by-projectile-project t)
+;; Group tabs by (projectile) project, and active tab
+;; is shown with a colored line on top.
+(with-eval-after-load 'centaur-tabs
+  (centaur-tabs-group-by-projectile-project)
+  (setq centaur-tabs-set-bar 'over))
 
 ;; Be able to switch buffers by clicking on their tab.
 (setq mouse-1-click-follows-link -450)
@@ -65,10 +75,10 @@
 
 ;; Configure lsp python mode explicitly.
 ;; Not required for python-language-server.
-;(use-package lsp-pyright
-;  :hook (python-mode . (lambda ()
-;                          (require 'lsp-pyright)
-;                          (lsp))))
+;; (use-package lsp-pyright
+;;   :hook (python-mode . (lambda ()
+;;                          (require 'lsp-pyright)
+;;                          (lsp))))
 
 ;; Configure lsp c mode.
 (use-package ccls
@@ -97,11 +107,11 @@
 ;; Configure lsp haskell mode.
 (use-package lsp-haskell
   :hook ((haskell-mode . lsp))
- :config
- (setq lsp-haskell-process-path-hie "haskell-language-server")
- ;; Comment/uncomment this line to see interactions between lsp client/server.
- ;;(setq lsp-log-io t)
-)
+  :config
+  (setq lsp-haskell-process-path-hie "haskell-language-server")
+  ;; Comment/uncomment this line to see interactions between lsp client/server.
+  ;;(setq lsp-log-io t)
+  )
 
 ;; Configure lsp ruby mode.
 (use-package lsp-mode
@@ -138,15 +148,15 @@
 (use-package lsp-mode
   :hook ((groovy-mode . lsp)
          (groovy-electric-mode . lsp))
- :config
- (setq lsp-groovy-server-file "/usr/share/java/groovy-language-server/groovy-language-server-all.jar"))
+  :config
+  (setq lsp-groovy-server-file "/usr/share/java/groovy-language-server/groovy-language-server-all.jar"))
 
 ;; Configure lsp lua mode.
 (use-package lsp-mode
   :hook ((lua-mode . lsp))
- :config
- (setq lsp-clients-lua-language-server-install-dir "/usr/lib/lua-language-server/")
- (setq lsp-clients-lua-language-server-bin "/usr/lib/lua-language-server/bin/lua-language-server"))
+  :config
+  (setq lsp-clients-lua-language-server-install-dir "/usr/lib/lua-language-server/")
+  (setq lsp-clients-lua-language-server-bin "/usr/lib/lua-language-server/bin/lua-language-server"))
 
 ;; Configure lsp json mode.
 (use-package lsp-mode
@@ -155,8 +165,8 @@
 ;; Configure lsp powershell mode.
 (use-package lsp-mode
   :hook ((powershell-mode . lsp))
- :config
- (setq lsp-pwsh-exe "/usr/bin/pwsh"))
+  :config
+  (setq lsp-pwsh-exe "/usr/bin/pwsh"))
 
 ;; Configure lsp html mode.
 (use-package lsp-mode
@@ -170,8 +180,8 @@
 (use-package lsp-mode
   :hook ((xml-mode . lsp)
          (nxml-mode . lsp))
- :config
- (setq lsp-xml-server-command "/usr/bin/lemminx"))
+  :config
+  (setq lsp-xml-server-command "/usr/bin/lemminx"))
 
 ;; Configure lsp sql mode.
 (use-package lsp-mode
@@ -220,17 +230,17 @@
 ;; Font settings for FRAME, my Linux laptop.
 (when (string= (system-name) "FRAME")
   (setq doom-font (font-spec :family "Monospace" :size 16 :weight 'normal)
-      doom-variable-pitch-font (font-spec :family "Sans" :size 17)))
+        doom-variable-pitch-font (font-spec :family "Sans" :size 17)))
 
 ;; Font settings for GEMINI, my Linux desktop at work.
 (when (string= (system-name) "GEMINI")
   (setq doom-font (font-spec :family "Monospace" :size 13 :weight 'normal)
-      doom-variable-pitch-font (font-spec :family "Sans" :size 15)))
+        doom-variable-pitch-font (font-spec :family "Sans" :size 15)))
 
 ;; Font settings for TAURUS, my Linux desktop at home.
 (when (string= (system-name) "TAURUS")
   (setq doom-font (font-spec :family "Monospace" :size 13 :weight 'normal)
-      doom-variable-pitch-font (font-spec :family "Sans" :size 15)))
+        doom-variable-pitch-font (font-spec :family "Sans" :size 15)))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -254,12 +264,12 @@
   (setq vterm-toggle-hide-method nil)
   (setq vterm-toggle-fullscreen-p nil)
   (add-to-list 'display-buffer-alist
-    '((lambda (buffer-or-name _)
-      (let ((buffer (get-buffer buffer-or-name)))
-        (with-current-buffer buffer
-          (or (equal major-mode 'vterm-mode)
-            (string-prefix-p vterm-buffer-name (buffer-name buffer))))))
-      (display-buffer-reuse-window display-buffer-same-window))))
+               '((lambda (buffer-or-name _)
+                   (let ((buffer (get-buffer buffer-or-name)))
+                     (with-current-buffer buffer
+                       (or (equal major-mode 'vterm-mode)
+                           (string-prefix-p vterm-buffer-name (buffer-name buffer))))))
+                 (display-buffer-reuse-window display-buffer-same-window))))
 
 ;; Disable insane 'jk' to-command-mode sequence.
 (after! evil-escape
