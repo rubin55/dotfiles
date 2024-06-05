@@ -7,7 +7,7 @@ endfunction
 
 " Call NERDTreeFind if NERDTree is active, current window contains a modifiable
 " file, and we're not in vimdiff.
-function! SyncTree()
+function! SyncNERDTree()
   if &modifiable && IsNERDTreeOpen() && strlen(expand('%')) > 0 && !&diff
     NERDTreeFind
     wincmd p
@@ -15,18 +15,18 @@ function! SyncTree()
 endfunction
 
 " Highlight currently open buffer in NERDTree
-autocmd BufRead * call SyncTree()
+autocmd BufRead * silent call SyncNERDTree()
 
 " Map NERDTree to a couple of keyboard shortcuts.
-nnoremap <silent> <M-n> :bnext<Cr>:call SyncTree()<Cr>
-nnoremap <silent> <M-p> :bprev<Cr>:call SyncTree()<Cr>
-nnoremap <silent> <M-f> :NERDTreeToggle<Cr><C-W>l:call SyncTree()<Cr><C-w>h
+nnoremap <silent> <M-n> :bnext<Cr>:call SyncNERDTree()<Cr>
+nnoremap <silent> <M-p> :bprev<Cr>:call SyncNERDTree()<Cr>
+nnoremap <silent> <M-f> :NERDTreeToggle<Cr><C-W>l:call SyncNERDTree()<Cr><C-w>h
 
-" Also call SyncTree when alt-moving.
-nnoremap <silent> <M-Up> :wincmd k<Cr>:call SyncTree()<Cr>
-nnoremap <silent> <M-Down> :wincmd j<Cr>:call SyncTree()<Cr>
-nnoremap <silent> <M-Left> :wincmd h<Cr>:call SyncTree()<Cr>
-nnoremap <silent> <M-Right> :wincmd l<Cr>:call SyncTree()<Cr>
+" Also call SyncNERDTree when alt-moving.
+nnoremap <silent> <M-Up> :wincmd k<Cr>:call SyncNERDTree()<Cr>
+nnoremap <silent> <M-Down> :wincmd j<Cr>:call SyncNERDTree()<Cr>
+nnoremap <silent> <M-Left> :wincmd h<Cr>:call SyncNERDTree()<Cr>
+nnoremap <silent> <M-Right> :wincmd l<Cr>:call SyncNERDTree()<Cr>
 
 " Common settings for NERDTree.
 let NERDTreeCaseSensitiveSort = 1
@@ -47,10 +47,10 @@ autocmd BufWinEnter * if &buftype != 'quickfix' && getcmdwintype() == '' | silen
 autocmd BufEnter * if winnr() == winnr('h') && bufname('#') =~ 'NERD_tree_\d\+' && bufname('%') !~ 'NERD_tree_\d\+' && winnr('$') > 1 | let buf=bufnr() | buffer# | execute "normal! \<C-w>w" | execute 'buffer'.buf | endif
 
 " Exit Vim if NERDTree is the only window remaining in the only tab.
-autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<Cr>:\<Bs>") | endif
+autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | silent call feedkeys(":quit\<Cr>:\<Bs>") | endif
 
 " Close the tab if NERDTree is the only window remaining in it.
-autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | call feedkeys(":quit\<Cr>:\<Bs>") | endif
+autocmd BufEnter * if winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() | silent call feedkeys(":quit\<Cr>:\<Bs>") | endif
 
 " Call synctree after exiting buffers.
-autocmd BufLeave * call SyncTree()
+autocmd BufLeave * silent call SyncNERDTree()

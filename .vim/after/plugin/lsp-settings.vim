@@ -18,9 +18,6 @@ nnoremap gr :LspReferences<Cr>
 nnoremap gR :LspRename<Cr>
 nnoremap <expr> <C-k> popup_list()->empty() ? ":LspHover\<Cr>" : ":call popup_clear()\<Cr>"
 inoremap <expr> <C-k> popup_list()->empty() ? "<C-o>:LspHover\<Cr>" : "<C-o>:call popup_clear()\<Cr>"
-"nnoremap <C-k> :LspHover<Cr>
-"inoremap <C-k> <C-o>:LspHover<Cr>
-
 
 " Some common settings.
 let g:lsp_preview_float = 1

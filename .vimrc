@@ -9,6 +9,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'jamessan/vim-gnupg'
 Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
+Plug 'lukelbd/vim-tabline'
 Plug 'mattn/vim-lsp-settings'
 Plug 'mechatroner/rainbow_csv'
 Plug 'prabirshrestha/asyncomplete.vim'
@@ -28,6 +29,9 @@ filetype on
 filetype plugin on
 filetype indent on
 "scriptencoding utf-8
+
+" Auto-reload file when changed on-disk.
+set autoread
 
 " File encoding settings.
 set encoding=utf-8
@@ -145,7 +149,6 @@ while c <= 'z'
     exec "imap \e".c." <A-".c.">"
     let c = nr2char(1+char2nr(c))
 endw
-"set ttimeout ttimeoutlen=50
 
 " Silence vim.
 set noerrorbells visualbell t_vb=
@@ -209,12 +212,12 @@ nnoremap <silent> <M-v> :vsplit<Cr>
 nnoremap <silent> <M-h> :split<Cr>
 
 " Fullscreen enablement for Windows, Mac or Linux gvim.
-"map <F11> <Esc>:call libcallnr('gvimfullscreen.dll', 'ToggleFullScreen', 0)<Cr>
-"map <F11> :set invfu<Cr>
-noremap <F11> <Esc>:call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<Cr><Cr>
+"map <silent> <F11> <Esc>:call libcallnr('gvimfullscreen.dll', 'ToggleFullScreen', 0)<Cr>
+"map <silent> <F11> :set invfu<Cr>
+noremap <silent> <F11> <Esc>:call system("wmctrl -ir " . v:windowid . " -b toggle,fullscreen")<Cr><Cr>
 
 " Toggle line-ending markers.
-nnoremap <M-l> <Esc>:call ToggleLineEndingMarkers()<Cr>
+nnoremap <silent> <C-l> <Esc>:call ToggleLineEndingMarkers()<Cr>
 function ToggleLineEndingMarkers()
     if &colorcolumn == ""
         set colorcolumn=80,120
@@ -224,7 +227,7 @@ function ToggleLineEndingMarkers()
 endfunction
 
 " Toggle distraction free mode in gvim.
-nnoremap <M-d> <Esc> :call ToggleDistractionFree()<Cr>
+nnoremap <silent> <C-d> <Esc> :call ToggleDistractionFree()<Cr>
 function! ToggleDistractionFree()
     let l:menu_option = strridx(&guioptions, 'm')
     let l:toolbar_option = strridx(&guioptions, 'T')

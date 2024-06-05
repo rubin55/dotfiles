@@ -7,6 +7,10 @@ if exists('g:loaded_airline')
         let g:airline_symbols = {}
     endif
 
+    " Extensions.
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline#extensions#tabline#formatter = 'unique_tail'
+
     " Airline symbols.
     let g:airline_left_sep = ''
     let g:airline_left_alt_sep = ''
