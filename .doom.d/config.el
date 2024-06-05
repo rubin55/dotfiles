@@ -53,7 +53,8 @@
 (setq default-frame-alist '((width . 132) (height . 48)))
 
 ;; Set line spacing.
-(setq-default line-spacing 2)
+(when (string= (system-name) "FRAME")
+  (setq-default line-spacing 2))
 
 ;; Enable long line wrap by default.
 (global-visual-line-mode 1)
@@ -234,8 +235,8 @@
 
 ;; Font settings for GEMINI, my Linux desktop at work.
 (when (string= (system-name) "GEMINI")
-  (setq doom-font (font-spec :family "Monospace" :size 13 :weight 'normal)
-        doom-variable-pitch-font (font-spec :family "Sans" :size 15)))
+  (setq doom-font (font-spec :family "Monospace" :size 23 :weight 'normal)
+        doom-variable-pitch-font (font-spec :family "Sans" :size 25)))
 
 ;; Font settings for TAURUS, my Linux desktop at home.
 (when (string= (system-name) "TAURUS")
