@@ -1,11 +1,11 @@
 alacrittyMono=9.7
-codeMono=12
-emacsMono=13
-emacsSans=15
+codeMono=13
+emacsMono=23
+emacsSans=25
 gnomeMono=9.7
 gnomeSans=10
 gnomeSerif=10
-jetbrainsMono=12
+jetbrainsMono=13
 qt5Mono=10
 qt5Sans=10
 qt6Mono=10
