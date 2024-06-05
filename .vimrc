@@ -6,7 +6,7 @@ set nomodeline
 
 " VimPlug section.
 call plug#begin('~/.vim/plugged')
-Plug 'jamessan/vim-gnupg', { 'branch': 'main' }
+Plug 'jamessan/vim-gnupg'
 Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
 Plug 'mattn/vim-lsp-settings'
@@ -121,7 +121,9 @@ highlight clear SignColumn
 
 " Settings for gvim.
 if has('gui_running')
-  set linespace=1
+  if match(system("hostname"), "FRAME") >= 0
+    set linespace=1
+  endif
   set lines=44 columns=132
   "set guioptions+=m
   if has('gui_gtk3')
@@ -143,7 +145,7 @@ while c <= 'z'
     exec "imap \e".c." <A-".c.">"
     let c = nr2char(1+char2nr(c))
 endw
-set ttimeout ttimeoutlen=50
+"set ttimeout ttimeoutlen=50
 
 " Silence vim.
 set noerrorbells visualbell t_vb=
