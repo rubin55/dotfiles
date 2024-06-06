@@ -6,6 +6,7 @@ set nomodeline
 
 " VimPlug section.
 call plug#begin('~/.vim/plugged')
+Plug 'hardhackerlabs/theme-vim', { 'as': 'hardhacker' }
 Plug 'jamessan/vim-gnupg'
 Plug 'junegunn/fzf.vim'
 Plug 'ludovicchabant/vim-gutentags'
@@ -21,6 +22,7 @@ Plug 'rubin55/vim-colors-github'
 Plug 'sainnhe/everforest'
 Plug 'tpope/vim-fugitive'
 Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 call plug#end()
 
 " Main options.
@@ -96,7 +98,7 @@ set mouse=nvi
 set clipboard=unnamed,unnamedplus
 
 " Set background to light or dark.
-set background=light
+set background=dark
 
 " Enable termguicolors if we have it.
 if has('termguicolors')
@@ -104,13 +106,13 @@ if has('termguicolors')
 endif
 
 " Set color scheme.
-colorscheme github
+colorscheme hardhacker
 
 " Cursor settings.
 set cursorline
 set guicursor=n-v-c-i:block-Cursor
-highlight Cursor guifg=lightgrey guibg=grey
-highlight iCursor guifg=lightgrey guibg=grey
+"highlight Cursor guifg=lightgrey guibg=grey
+"highlight iCursor guifg=lightgrey guibg=grey
 
 " Set netrw modes.
 let g:netrw_banner = 0
@@ -131,7 +133,7 @@ if has('gui_running')
   set lines=44 columns=132
   "set guioptions+=m
   if has('gui_gtk3')
-    set guifont=PragmataPro\ Mono\ 9.7
+    set guifont=PragmataPro\ Mono\ 12.5
   elseif has('gui_macvim')
     set guifont=PragmataPro\ Mono:h16
     set macligatures
