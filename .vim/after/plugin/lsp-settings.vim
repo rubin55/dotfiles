@@ -16,8 +16,8 @@ let g:lsp_use_native_client = 1
 nnoremap gd :LspDefinition<Cr>
 nnoremap gr :LspReferences<Cr>
 nnoremap gR :LspRename<Cr>
-nnoremap <expr> <C-k> popup_list()->empty() ? ":LspHover\<Cr>" : ":call popup_clear()\<Cr>"
-inoremap <expr> <C-k> popup_list()->empty() ? "<C-o>:LspHover\<Cr>" : "<C-o>:call popup_clear()\<Cr>"
+nnoremap <silent> <expr> <C-k> popup_list()->empty() ? ":LspHover\<Cr>" : ":call popup_clear()\<Cr>"
+inoremap <silent> <expr> <C-k> popup_list()->empty() ? "<C-o>:LspHover\<Cr>" : "<C-o>:call popup_clear()\<Cr>"
 
 " Some common settings.
 let g:lsp_preview_float = 1
