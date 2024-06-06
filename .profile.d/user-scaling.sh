@@ -263,7 +263,7 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
   # Current and wanted Vim settings.
   vimConfig="$HOME/.vimrc"
   if [[ -e "$vimConfig" && -n "$vimMono" ]]; then
-    currentVimMonoFontName="$(grep -A1 "if has('gui_gtk3')" "$vimConfig" | tail -n1 | cut -d= -f2 | sed -e 's|\\||g' -e 's|[0-9]||g' -e 's|[[:space:]]*$||g')"
+    currentVimMonoFontName="$(grep -A1 "if has('gui_gtk3')" "$vimConfig" | tail -n1 | cut -d= -f2 | sed -e 's|\\||g' -e 's|[0-9\.]||g' -e 's|[[:space:]]*$||g')"
     currentVimMonoFontSize="$(grep -A1 "if has('gui_gtk3')" "$vimConfig" | tail -n1 | cut -d= -f2 | awk -F '\\\\ ' '{print $NF}')"
     wantedVimMonoFontSize="$vimMono"
 
