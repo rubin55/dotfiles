@@ -3,6 +3,9 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
+;; Make yank go to clipboard primary.
+(setq select-enable-primary t)
+
 ;; Default indent length.
 (setq standard-indent 2)
 
@@ -36,6 +39,14 @@
 
 ;; Be able to switch buffers by clicking on their tab.
 (setq mouse-1-click-follows-link -450)
+
+;; Configure mouse scrolling to be nicer.
+(setq pixel-scroll-precision-mode t)
+(setq pixel-scroll-precision-large-scroll-height 40.0)
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
+(setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
+(setq scroll-step 1) ;; keyboard scroll one line at a time
 
 ;; Make magit find my git repositories.
 (setq magit-repository-directories '(("~/Source" . 3)))
@@ -240,8 +251,8 @@
 
 ;; Font settings for TAURUS, my Linux desktop at home.
 (when (string= (system-name) "TAURUS")
-  (setq doom-font (font-spec :family "Monospace" :size 16 :weight 'normal)
-        doom-variable-pitch-font (font-spec :family "Sans" :size 17)))
+  (setq doom-font (font-spec :family "Monospace" :size 23 :weight 'normal)
+        doom-variable-pitch-font (font-spec :family "Sans" :size 25)))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
