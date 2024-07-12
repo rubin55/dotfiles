@@ -14,18 +14,23 @@ fi
 if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
 
   # Example ~/.fontsizes:
-  # codeMono=15
-  # emacsMono=15
-  # emacsSans=15
+  # alacrittyMono=11
+  # codeMono=14
+  # emacsMono=14
+  # emacsSans=13
   # gnomeMono=11
   # gnomeSans=10
   # gnomeSerif=10
-  # jetbrainsMono=14
-  # vimMono=11
+  # jetbrainsMono=13
   # qt5Mono=11
   # qt5Sans=10
   # qt6Mono=11
   # qt6Sans=10
+  # vimMono=11
+  # x11Dpi=192
+  # x11Cursor=48
+  # x11Mono=11
+  # x11Sans=25
 
   # Check if $FONT_SIZE_PREFERENCES_FILE was set
   # else set a it to ~/.fontsizes by default.
