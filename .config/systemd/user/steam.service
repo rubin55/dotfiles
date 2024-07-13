@@ -6,8 +6,7 @@ StartLimitBurst=5
 [Service]
 Type=simple
 WorkingDirectory=%h/.local/share/Steam
-#ExecStart=/usr/bin/steam -pipewire-dmabuf
-ExecStart=/usr/bin/steam -silent
+ExecStart=/usr/bin/steam -forcedesktopscaling 2 -pipewire-dmabuf -silent
 Restart=always
 RestartSec=10s
 

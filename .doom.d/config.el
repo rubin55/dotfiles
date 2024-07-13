@@ -256,8 +256,8 @@
 
 ;; Font settings for TAURUS, my Linux desktop at home.
 (when (string= (system-name) "TAURUS")
-  (setq doom-font (font-spec :family "Monospace" :size 23 :weight 'normal)
-        doom-variable-pitch-font (font-spec :family "Sans" :size 25)))
+  (setq doom-font (font-spec :family "Monospace" :size 12 :weight 'normal)
+        doom-variable-pitch-font (font-spec :family "Sans" :size 12)))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
