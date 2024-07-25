@@ -22,6 +22,16 @@ source = "pacman"
 pacman = "intel-media-driver"
 strip_release = "true"
 
+[postman2openapi]
+source = "github"
+github = "kevinswiber/postman2openapi"
+use_latest_release = "true"
+
+[pupdate]
+source = "github"
+github = "mattpannella/pupdate"
+use_latest_release = "true"
+
 [openshift-codeready-bin]
 source = "regex"
 regex = "\\d+\\.\\d+\\.\\d+"
