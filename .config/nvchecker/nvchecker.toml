@@ -12,6 +12,11 @@ source = "github"
 github = "moonlight-stream/moonlight-qt"
 use_latest_release = "true"
 
+[jdk21-openj9-bin]
+source = "github"
+github = "ibmruntimes/semeru21-binaries"
+use_latest_release = "true"
+
 [intel-gmmlib]
 source = "pacman"
 pacman = "intel-gmmlib"
