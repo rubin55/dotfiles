@@ -27,14 +27,19 @@ source = "pacman"
 pacman = "intel-media-driver"
 strip_release = "true"
 
-[postman2openapi]
+[postman2openapi-bin]
 source = "github"
 github = "kevinswiber/postman2openapi"
 use_latest_release = "true"
 
-[pupdate]
+[pupdate-bin]
 source = "github"
 github = "mattpannella/pupdate"
+use_latest_release = "true"
+
+[rusty-psn-bin]
+source = "github"
+github = "RainbowCookie32/rusty-psn"
 use_latest_release = "true"
 
 [openshift-codeready-bin]
