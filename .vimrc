@@ -17,6 +17,7 @@ Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'prabirshrestha/vim-lsp'
 Plug 'preservim/nerdtree'
+Plug 'rose-pine/vim'
 Plug 'ryanoasis/vim-devicons'
 Plug 'rubin55/vim-colors-github'
 Plug 'sainnhe/everforest'
@@ -98,7 +99,7 @@ set mouse=nvi
 set clipboard=unnamed,unnamedplus
 
 " Set background to light or dark.
-set background=dark
+set background=light
 
 " Enable termguicolors if we have it.
 if has('termguicolors')
@@ -106,10 +107,10 @@ if has('termguicolors')
 endif
 
 " Set color scheme.
-colorscheme hardhacker
+colorscheme rosepine_dawn
 
 " Cursor settings.
-set cursorline
+"set cursorline
 set guicursor=n-v-c-i:block-Cursor
 "highlight Cursor guifg=lightgrey guibg=grey
 "highlight iCursor guifg=lightgrey guibg=grey
@@ -128,12 +129,12 @@ highlight clear SignColumn
 " Settings for gvim.
 if has('gui_running')
   if match(system("hostname"), "FRAME") >= 0
-    set linespace=1
+    set linespace=2
   endif
   set lines=44 columns=132
   "set guioptions+=m
   if has('gui_gtk3')
-    set guifont=PragmataPro\ Mono\ 12.5
+    set guifont=PragmataPro\ Mono\ 13
   elseif has('gui_macvim')
     set guifont=PragmataPro\ Mono:h16
     set macligatures
