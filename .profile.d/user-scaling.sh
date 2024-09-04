@@ -114,13 +114,13 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
 
   # Current and wanted Gnome system settings.
   if [[ ! -z "$(which gsettings 2> /dev/null)" && -n "$gnomeMono" && -n "$gnomeSans" && -n "$gnomeSerif" ]]; then
-    currentGnomeMonospaceFontName="$(gsettings get org.gnome.desktop.interface monospace-font-name | sed -e "s|'||g" -e 's|\s[^\s]*$||' -e 's|\s*$||g')"
+    currentGnomeMonospaceFontName="$(gsettings get org.gnome.desktop.interface monospace-font-name | sed -e "s|'||g" -e 's|\s[^[:space:]]*$||' -e 's|\s*$||g')"
     currentGnomeMonospaceFontSize="$(gsettings get org.gnome.desktop.interface monospace-font-name | sed -e "s|'||g" -e 's/.*\s\([^ ]*\)$/\1/')"
-    currentGnomeInterfaceFontName="$(gsettings get org.gnome.desktop.interface font-name           | sed -e "s|'||g" -e 's|\s[^\s]*$||' -e 's|\s*$||g')"
+    currentGnomeInterfaceFontName="$(gsettings get org.gnome.desktop.interface font-name           | sed -e "s|'||g" -e 's|\s[^[:space:]]*$||' -e 's|\s*$||g')"
     currentGnomeInterfaceFontSize="$(gsettings get org.gnome.desktop.interface font-name           | sed -e "s|'||g" -e 's/.*\s\([^ ]*\)$/\1/')"
-    currentGnomeDocumentFontName="$(gsettings get org.gnome.desktop.interface document-font-name   | sed -e "s|'||g" -e 's|\s[^\s]*$||' -e 's|\s*$||g')"
+    currentGnomeDocumentFontName="$(gsettings get org.gnome.desktop.interface document-font-name   | sed -e "s|'||g" -e 's|\s[^[:space:]]*$||' -e 's|\s*$||g')"
     currentGnomeDocumentFontSize="$(gsettings get org.gnome.desktop.interface document-font-name   | sed -e "s|'||g" -e 's/.*\s\([^ ]*\)$/\1/')"
-    currentGnomeTitleFontName="$(gsettings get org.gnome.desktop.wm.preferences titlebar-font      | sed -e "s|'||g" -e 's|\s[^\s]*$||' -e 's|\s*$||g')"
+    currentGnomeTitleFontName="$(gsettings get org.gnome.desktop.wm.preferences titlebar-font      | sed -e "s|'||g" -e 's|\s[^[:space:]]*$||' -e 's|\s*$||g')"
     currentGnomeTitleFontSize="$(gsettings get org.gnome.desktop.wm.preferences titlebar-font      | sed -e "s|'||g" -e 's/.*\s\([^ ]*\)$/\1/')"
     wantedGnomeMonospaceFontSize="$gnomeMono"
     wantedGnomeInterfaceFontSize="$gnomeSans"
