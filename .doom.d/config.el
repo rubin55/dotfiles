@@ -241,8 +241,8 @@
 
 ;; Font settings for FRAME, my Linux laptop.
 (when (string= (system-name) "FRAME")
-  (setq doom-font (font-spec :family "Monospace" :size 23 :weight 'normal)
-        doom-variable-pitch-font (font-spec :family "Sans" :size 23)))
+  (setq doom-font (font-spec :family "Monospace" :size 12 :weight 'normal)
+        doom-variable-pitch-font (font-spec :family "Sans" :size 12)))
 
 ;; Font settings for THINK, my other Linux laptop.
 (when (string= (system-name) "THINK")
@@ -251,8 +251,8 @@
 
 ;; Font settings for GEMINI, my Linux desktop at work.
 (when (string= (system-name) "GEMINI")
-  (setq doom-font (font-spec :family "Monospace" :size 12 :weight 'normal)
-        doom-variable-pitch-font (font-spec :family "Sans" :size 12)))
+  (setq doom-font (font-spec :family "Monospace" :size 18 :weight 'normal)
+        doom-variable-pitch-font (font-spec :family "Sans" :size 18)))
 
 ;; Font settings for TAURUS, my Linux desktop at home.
 (when (string= (system-name) "TAURUS")
