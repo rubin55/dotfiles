@@ -1,5 +1,5 @@
-function ToggleColorColumn()
-  local columns = { "", "80", "120", "132" }
+function cycle_colorcolumn()
+  local columns = { "", "80", "120" }
   local current = vim.wo.colorcolumn
   local index = 1
 

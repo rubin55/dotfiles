@@ -59,6 +59,11 @@ lspconfig.lua_ls.setup {
     end
 
     client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+      diagnostics = {
+        -- Disable lowercase-global diagnostic
+        disable = { "lowercase-global" }
+      },
+
       runtime = {
         -- Tell the language server which version of Lua you're using
         -- (most likely LuaJIT in the case of Neovim)

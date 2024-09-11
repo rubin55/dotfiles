@@ -4,4 +4,4 @@ require "nvchad.mappings"
 
 local map = vim.keymap.set
 map("n", ";", ":", { desc = "CMD enter command mode" })
-map("n", "<leader>cc", ":lua ToggleColorColumn()<CR>", { desc = "CMD toggle colorcolumn" })
+map("n", "<leader>cc", ":lua cycle_colorcolumn()<CR>", { desc = "CMD toggle colorcolumn" })
