@@ -1,5 +1,5 @@
 function cycle_colorcolumn()
-  local columns = { "", "80", "120" }
+  local columns = { "", "72", "80", "120" }
   local current = vim.wo.colorcolumn
   local index = 1
 
