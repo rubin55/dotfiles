@@ -1,13 +1,13 @@
 alacrittyMono=13
 
 gnomeMono=13
-gnomeSans=14
-gnomeSerif=14
+gnomeSans=13
+gnomeSerif=13
 
 qt5Mono=13
-qt5Sans=14
+qt5Sans=13
 qt6Mono=13
-qt6Sans=14
+qt6Sans=13
 
 vimMono=13
 emacsMono=18
