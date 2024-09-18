@@ -8,7 +8,7 @@ path.which awk,ln || return
 # Also try to add manpath. Note, not all ghc from ghcup
 # have man pages.
 if path.which ghc "$HOME/.ghcup/bin"; then
-  export PATH="$(path.append "$HOME/.ghcup/bin" "$PATH")"
+  export PATH="$(path.append "$HOME/.ghcup/bin:$HOME/.cabal/bin" "$PATH")"
   GHC_VERSION="$(ghc --version | awk 'NF>1{print $NF}')"
   MANPATH_NEW="$HOME/.ghcup/ghc/$GHC_VERSION/share/doc/ghc-$GHC_VERSION/users_guide/build-man"
   if [[ -d "$MANPATH_NEW" ]]; then
