@@ -16,6 +16,9 @@ function cycle_colorcolumn()
 
   -- let user know which column size is active
   local message = columns[index] == "" and "ColorColumn disabled" or "ColorColumn set to " .. columns[index]
-  vim.api.nvim_echo({{message, "None"}}, false, {})
+  vim.api.nvim_echo({ { message, "None" } }, false, {})
 end
 
+function toggle_fullscreen()
+  vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen
+end
