@@ -33,7 +33,7 @@ alias sc='systemctl'
 alias scu='systemctl --user'
 alias st='subl -w'
 alias tipi='tipi.py'
-alias tracker='tracker3'
+alias tracker='localsearch'
 alias venv='python3 -m venv'
 
 # Some aliases for fsharp.
