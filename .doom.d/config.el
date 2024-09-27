@@ -241,8 +241,8 @@
 
 ;; Font settings for FRAME, my Linux laptop.
 (when (string= (system-name) "FRAME")
-  (setq doom-font (font-spec :family "Monospace" :size 12 :weight 'normal)
-        doom-variable-pitch-font (font-spec :family "Sans" :size 12)))
+  (setq doom-font (font-spec :family "Monospace" :size 16 :weight 'normal)
+        doom-variable-pitch-font (font-spec :family "Sans" :size 16)))
 
 ;; Font settings for THINK, my other Linux laptop.
 (when (string= (system-name) "THINK")

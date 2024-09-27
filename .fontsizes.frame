@@ -1,21 +1,21 @@
-alacrittyMono=9.2
-gnomeMono=9.2
-gnomeSans=10
-gnomeSerif=10
+alacrittyMono=12
+gnomeMono=12
+gnomeSans=12
+gnomeSerif=12
 
-qt5Mono=9
-qt5Sans=10
-qt6Mono=9
-qt6Sans=10
+qt5Mono=12
+qt5Sans=12
+qt6Mono=12
+qt6Sans=12
 
-vimMono=9
-emacsMono=12
-emacsSans=12
-codeMono=12
-jetbrainsSans=13
+vimMono=12
+emacsMono=16
+emacsSans=16
+codeMono=13.2
+jetbrainsSans=12
 jetbrainsMono=12
 
 x11Dpi=96
 x11Cursor=48
-x11Mono=9
-x11Sans=25
+x11Mono=24
+x11Sans=34
