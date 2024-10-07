@@ -3,21 +3,30 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
+;; Disable bold fonts.
+(defun remap-faces-default-attributes ()
+  (let ((family (face-attribute 'default :family))
+        (height (face-attribute 'default :height)))
+    (mapcar (lambda (face)
+              (face-remap-add-relative
+               face :family family :weight 'normal :height height))
+            (face-list))))
+
+(when (display-graphic-p)
+  (add-hook 'minibuffer-setup-hook 'remap-faces-default-attributes)
+  (add-hook 'change-major-mode-after-body-hook 'remap-faces-default-attributes))
+
 ;; Make yank go to clipboard primary.
 (setq select-enable-primary t)
 
 ;; Default indent length.
 (setq standard-indent 2)
 
-;; Configure display of line length rulers.
-(setq-default display-fill-column-indicator-column 119)
-(global-display-fill-column-indicator-mode)
-
 ;; Make treemacs not use variable width fonts.
 (setq doom-themes-treemacs-enable-variable-pitch nil)
 
 ;; Scale treemacs icons to something that looks appealing.
-(treemacs-resize-icons 16)
+;;(treemacs-resize-icons 16)
 
 ;; Make treemacs not use png icons in gui mode.
 ;;(setq treemacs-no-png-images t)
@@ -264,8 +273,13 @@
 ;; `load-theme' function. This is the default:
 ;;(setq doom-theme 'doom-tomorrow-day)
 ;;(setq doom-theme 'doom-laserwave)
-(setq doom-theme 'doom-rose-pine-dawn)
-(setq doom-themes-enable-bold nil)
+;;(setq doom-theme 'doom-rose-pine)
+(setq doom-theme 'doom-wilmersdorf)
+
+;; Disable bold, enable italic.
+(after! doom-themes
+  (setq doom-themes-enable-bold nil
+        doom-themes-enable-italic t))
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
