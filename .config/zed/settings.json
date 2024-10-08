@@ -12,6 +12,11 @@
     "inline_completion_provider": "none"
   },
   "assistant": {
+    "default_model": {
+      "provider": "openai",
+      "model": "gpt-4o"
+    },
+    "version": "2",
     "enabled": false,
     "button": false
   },
@@ -26,14 +31,19 @@
     "button": false
   },
   "auto_update": false,
-  "theme": "Rosé Pine Dawn",
+  "theme": "One Dark",
   "vim_mode": false,
+  "wrap_guides": [80, 120],
   "telemetry": {
     "diagnostics": false,
     "metrics": false
   },
-  "ui_font_family": "B612",
-  "ui_font_size": 15,
+  "terminal": {
+    "line_height": "standard"
+  },
+  "ui_font_family": "Ubuntu",
+  "ui_font_size": 18.5,
   "buffer_font_family": "PragmataPro Mono",
-  "buffer_font_size": 13.3
+  "buffer_font_size": 17,
+  "buffer_line_height": "standard"
 }
