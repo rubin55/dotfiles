@@ -7,10 +7,16 @@
 // custom settings, run the `open default settings` command
 // from the command palette or from `Zed` application menu.
 {
-  "features": {
-    "copilot": false,
-    "inline_completion_provider": "none"
-  },
+  "auto_update": false,
+  "buffer_font_family": "PragmataPro Mono",
+  "buffer_font_size": 17,
+  "buffer_line_height": "standard",
+  "cursor_shape": "block",
+  "vim_mode": false,
+  "ui_font_family": "Ubuntu",
+  "ui_font_size": 18.5,
+  "wrap_guides": [80, 120],
+
   "assistant": {
     "default_model": {
       "provider": "openai",
@@ -20,30 +26,91 @@
     "enabled": false,
     "button": false
   },
+
   "assistant_v2": {
     "enabled": false,
     "button": false
   },
+
   "chat_panel": {
     "button": false
   },
+
   "collaboration_panel": {
     "button": false
   },
-  "auto_update": false,
-  "theme": "One Dark",
-  "vim_mode": false,
-  "wrap_guides": [80, 120],
+
+  "features": {
+    "copilot": false,
+    "inline_completion_provider": "none"
+  },
+
+  "git": {
+    "inline_blame": {
+      "enabled": true,
+      "delay_ms": 1000
+    }
+  },
+
+  "indent_guides": {
+    "enabled": false,
+    "coloring": "indent_aware",
+    "background_coloring": "disabled"
+  },
+
+  "journal": {
+    "path": "~",
+    "hour_format": "hour24"
+  },
+
+  "project_panel": {
+    "scrollbar": {
+      "show": "never"
+    }
+  },
+
+  "tabs": {
+    "file_icons": true
+  },
+
   "telemetry": {
     "diagnostics": false,
     "metrics": false
   },
+
   "terminal": {
-    "line_height": "standard"
+    "alternate_scroll": "on",
+    "blinking": "on",
+    "line_height": "standard",
+    "toolbar": {
+      "title": true
+    }
   },
-  "ui_font_family": "Ubuntu",
-  "ui_font_size": 18.5,
-  "buffer_font_family": "PragmataPro Mono",
-  "buffer_font_size": 17,
-  "buffer_line_height": "standard"
+
+  "theme": {
+    "mode": "system",
+    "dark": "One Dark",
+    "light": "One Light"
+  },
+
+  "experimental.theme_overrides": {
+    "syntax": {
+      "comment": {
+        "font_style": "italic"
+      }
+    }
+  },
+
+  "lsp": {
+    "rust-analyzer": {
+      "binary": {
+        "path_lookup": true
+      },
+      "initialization_options": {
+        "check": {
+          "command": "clippy"
+        }
+      }
+    }
+  }
 }
