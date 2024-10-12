@@ -25,6 +25,9 @@ require("lazy").setup({
   { import = "plugins" },
 }, lazy_config)
 
+-- set title
+-- vim.opt.title = true
+
 -- load theme
 dofile(vim.g.base46_cache .. "defaults")
 dofile(vim.g.base46_cache .. "statusline")
