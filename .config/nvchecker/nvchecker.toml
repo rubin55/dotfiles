@@ -7,14 +7,9 @@ source = "github"
 github = "elixir-lang/elixir"
 use_latest_release = "true"
 
-[moonlight-qt]
+[infer-bin]
 source = "github"
-github = "moonlight-stream/moonlight-qt"
-use_latest_release = "true"
-
-[jdk21-openj9-bin]
-source = "github"
-github = "ibmruntimes/semeru21-binaries"
+github = "facebook/infer"
 use_latest_release = "true"
 
 [intel-gmmlib]
@@ -26,6 +21,31 @@ strip_release = "true"
 source = "pacman"
 pacman = "intel-media-driver"
 strip_release = "true"
+
+[jdk17-graalvm-bin]
+source = "regex"
+regex = "17\\.\\d+\\.\\d+"
+url = "https://www.oracle.com/java/technologies/javase/graalvm-jdk17-archive-downloads.html"
+
+[jdk21-graalvm-bin]
+source = "regex"
+regex = "21\\.\\d+\\.\\d+"
+url = "https://www.oracle.com/java/technologies/javase/graalvm-jdk21-archive-downloads.html"
+
+[jdk17-openj9-bin]
+source = "github"
+github = "ibmruntimes/semeru17-binaries"
+use_latest_release = "true"
+
+[jdk21-openj9-bin]
+source = "github"
+github = "ibmruntimes/semeru21-binaries"
+use_latest_release = "true"
+
+[moonlight-qt]
+source = "github"
+github = "moonlight-stream/moonlight-qt"
+use_latest_release = "true"
 
 [postman2openapi-bin]
 source = "github"

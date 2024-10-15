@@ -1,0 +1,72 @@
+{
+  "version": 2,
+  "data": {
+    "elixir": {
+      "version": "v1.17.3",
+      "gitref": "refs/tags/v1.17.3",
+      "url": "https://github.com/elixir-lang/elixir/releases/tag/v1.17.3"
+    },
+    "infer-bin": {
+      "version": "v1.2.0",
+      "gitref": "refs/tags/v1.2.0",
+      "url": "https://github.com/facebook/infer/releases/tag/v1.2.0"
+    },
+    "intel-gmmlib": {
+      "version": "22.5.2"
+    },
+    "intel-media-driver": {
+      "version": "24.3.3"
+    },
+    "jdk17-graalvm-bin": {
+      "version": "17.0.12"
+    },
+    "jdk17-openj9-bin": {
+      "version": "jdk-17.0.12+7_openj9-0.46.1",
+      "gitref": "refs/tags/jdk-17.0.12+7_openj9-0.46.1",
+      "url": "https://github.com/ibmruntimes/semeru17-binaries/releases/tag/jdk-17.0.12%2B7_openj9-0.46.1"
+    },
+    "jdk21-graalvm-bin": {
+      "version": "21.0.4"
+    },
+    "jdk21-openj9-bin": {
+      "version": "jdk-21.0.4+7_openj9-0.46.1",
+      "gitref": "refs/tags/jdk-21.0.4+7_openj9-0.46.1",
+      "url": "https://github.com/ibmruntimes/semeru21-binaries/releases/tag/jdk-21.0.4%2B7_openj9-0.46.1"
+    },
+    "moonlight-qt": {
+      "version": "v6.1.0",
+      "gitref": "refs/tags/v6.1.0",
+      "url": "https://github.com/moonlight-stream/moonlight-qt/releases/tag/v6.1.0"
+    },
+    "openshift-codeready-bin": {
+      "version": "2.42.0"
+    },
+    "openshift-developer-bin": {
+      "version": "v3.16.1"
+    },
+    "openshift-pipelines-bin": {
+      "version": "1.16.0"
+    },
+    "postman2openapi-bin": {
+      "version": "1.2.1",
+      "gitref": "refs/tags/1.2.1",
+      "url": "https://github.com/kevinswiber/postman2openapi/releases/tag/1.2.1"
+    },
+    "pragmatapro-fonts": {
+      "version": "0.830"
+    },
+    "pupdate-bin": {
+      "version": "3.19.0",
+      "gitref": "refs/tags/3.19.0",
+      "url": "https://github.com/mattpannella/pupdate/releases/tag/3.19.0"
+    },
+    "rcu-bin": {
+      "version": "d2024.001(q)"
+    },
+    "rusty-psn-bin": {
+      "version": "v0.5.1",
+      "gitref": "refs/tags/v0.5.1",
+      "url": "https://github.com/RainbowCookie32/rusty-psn/releases/tag/v0.5.1"
+    }
+  }
+}
