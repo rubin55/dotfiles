@@ -78,37 +78,39 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
 
   # Current and wanted Emacs settings.
   emacsConfig="$HOME/.doom.d/config.el"
-  emacsHostIdentifier="$(hostname | cut -d. -f1)"
-  emacsHostIdentifierInConfigMonospace="$(grep -A1 "(when (string= (system-name) \"$emacsHostIdentifier\")" "$emacsConfig" | tail -n1)"
-  emacsHostIdentifierInConfigVariablewidth="$(grep -A2 "(when (string= (system-name) \"$emacsHostIdentifier\")" "$emacsConfig" | tail -n1)"
-  if [[ -e "$emacsConfig" && -n "$emacsHostIdentifier" && -n "$emacsHostIdentifierInConfigMonospace" && -n "$emacsHostIdentifierInConfigVariablewidth" && -n "$emacsMono" && -n "$emacsSans" ]]; then
-    currentEmacsMonospaceFontName="$(echo "$emacsHostIdentifierInConfigMonospace" | awk -F ':' '{print $2}' \
-                | cut -d' ' -f2 | sed -e "s|'||g" -e 's|"||g' -e 's|)||g')"
-    currentEmacsMonospaceFontSize="$(echo "$emacsHostIdentifierInConfigMonospace" | awk -F ':' '{print $3}' \
-                | cut -d' ' -f2 | sed -e "s|'||g" -e 's|"||g' -e 's|)||g')"
-    currentEmacsVariablewidthFontName="$(echo "$emacsHostIdentifierInConfigVariablewidth" | awk -F ':' '{print $2}' \
-                | cut -d' ' -f2 | sed -e "s|'||g" -e 's|"||g' -e 's|)||g')"
-    currentEmacsVariablewidthFontSize="$(echo "$emacsHostIdentifierInConfigVariablewidth" | awk -F ':' '{print $3}' \
-                | cut -d' ' -f2 | sed -e "s|'||g" -e 's|"||g' -e 's|)||g')"
-    wantedEmacsMonospaceFontSize="$emacsMono"
-    wantedEmacsVariablewidthFontSize="$emacsSans"
+  if [[ -e "$emacsConfig" && -n "$emacsMono" && -n "$emacsSans" ]]; then
+    emacsHostIdentifier="$(hostname | cut -d. -f1)"
+    emacsHostIdentifierInConfigMonospace="$(grep -A1 "(when (string= (system-name) \"$emacsHostIdentifier\")" "$emacsConfig" | tail -n1)"
+    emacsHostIdentifierInConfigVariablewidth="$(grep -A2 "(when (string= (system-name) \"$emacsHostIdentifier\")" "$emacsConfig" | tail -n1)"
+    if [[ -e "$emacsConfig" && -n "$emacsHostIdentifier" && -n "$emacsHostIdentifierInConfigMonospace" && -n "$emacsHostIdentifierInConfigVariablewidth" && -n "$emacsMono" && -n "$emacsSans" ]]; then
+        currentEmacsMonospaceFontName="$(echo "$emacsHostIdentifierInConfigMonospace" | awk -F ':' '{print $2}' \
+                    | cut -d' ' -f2 | sed -e "s|'||g" -e 's|"||g' -e 's|)||g')"
+        currentEmacsMonospaceFontSize="$(echo "$emacsHostIdentifierInConfigMonospace" | awk -F ':' '{print $3}' \
+                    | cut -d' ' -f2 | sed -e "s|'||g" -e 's|"||g' -e 's|)||g')"
+        currentEmacsVariablewidthFontName="$(echo "$emacsHostIdentifierInConfigVariablewidth" | awk -F ':' '{print $2}' \
+                    | cut -d' ' -f2 | sed -e "s|'||g" -e 's|"||g' -e 's|)||g')"
+        currentEmacsVariablewidthFontSize="$(echo "$emacsHostIdentifierInConfigVariablewidth" | awk -F ':' '{print $3}' \
+                    | cut -d' ' -f2 | sed -e "s|'||g" -e 's|"||g' -e 's|)||g')"
+        wantedEmacsMonospaceFontSize="$emacsMono"
+        wantedEmacsVariablewidthFontSize="$emacsSans"
 
-    # Update Emacs monospace font if different.
-    if [[ "$currentEmacsMonospaceFontSize" != "$wantedEmacsMonospaceFontSize" ]]; then
-      log.info "Setting Emacs monospace font to: \"$currentEmacsMonospaceFontName $wantedEmacsMonospaceFontSize\""
-      currentEmacsMonospaceFontString="$(grep -A1 "(when (string= (system-name) \"$emacsHostIdentifier\")" "$emacsConfig" | tail -n1)"
-      currentEmacsMonospaceFontLineNumber="$(grep -n -A1 "(when (string= (system-name) \"$emacsHostIdentifier\")" "$emacsConfig" | tail -n1 | cut -d- -f1)"
-      wantedEmacsMonospaceFontString="$(echo "$currentEmacsMonospaceFontString" | sed "s|:size $currentEmacsMonospaceFontSize|:size $wantedEmacsMonospaceFontSize|")"
-      sed -i "${currentEmacsMonospaceFontLineNumber}s|$currentEmacsMonospaceFontString|$wantedEmacsMonospaceFontString|" "$emacsConfig"
-    fi
+        # Update Emacs monospace font if different.
+        if [[ "$currentEmacsMonospaceFontSize" != "$wantedEmacsMonospaceFontSize" ]]; then
+        log.info "Setting Emacs monospace font to: \"$currentEmacsMonospaceFontName $wantedEmacsMonospaceFontSize\""
+        currentEmacsMonospaceFontString="$(grep -A1 "(when (string= (system-name) \"$emacsHostIdentifier\")" "$emacsConfig" | tail -n1)"
+        currentEmacsMonospaceFontLineNumber="$(grep -n -A1 "(when (string= (system-name) \"$emacsHostIdentifier\")" "$emacsConfig" | tail -n1 | cut -d- -f1)"
+        wantedEmacsMonospaceFontString="$(echo "$currentEmacsMonospaceFontString" | sed "s|:size $currentEmacsMonospaceFontSize|:size $wantedEmacsMonospaceFontSize|")"
+        sed -i "${currentEmacsMonospaceFontLineNumber}s|$currentEmacsMonospaceFontString|$wantedEmacsMonospaceFontString|" "$emacsConfig"
+        fi
 
-    # Update Emacs variable-width font if different.
-    if [[ "$currentEmacsVariablewidthFontSize" != "$wantedEmacsVariablewidthFontSize" ]]; then
-      log.info "Setting Emacs variable-width font to: \"$currentEmacsVariablewidthFontName $wantedEmacsVariablewidthFontSize\""
-      currentEmacsVariablewidthFontString="$(grep -A2 "(when (string= (system-name) \"$emacsHostIdentifier\")" "$emacsConfig" | tail -n1)"
-      currentEmacsVariablewidthFontLineNumber="$(grep -n -A2 "(when (string= (system-name) \"$emacsHostIdentifier\")" "$emacsConfig" | tail -n1 | cut -d- -f1)"
-      wantedEmacsVariablewidthFontString="$(echo "$currentEmacsVariablewidthFontString" | sed "s|:size $currentEmacsVariablewidthFontSize|:size $wantedEmacsVariablewidthFontSize|")"
-      sed -i "${currentEmacsVariablewidthFontLineNumber}s|$currentEmacsVariablewidthFontString|$wantedEmacsVariablewidthFontString|" "$emacsConfig"
+        # Update Emacs variable-width font if different.
+        if [[ "$currentEmacsVariablewidthFontSize" != "$wantedEmacsVariablewidthFontSize" ]]; then
+        log.info "Setting Emacs variable-width font to: \"$currentEmacsVariablewidthFontName $wantedEmacsVariablewidthFontSize\""
+        currentEmacsVariablewidthFontString="$(grep -A2 "(when (string= (system-name) \"$emacsHostIdentifier\")" "$emacsConfig" | tail -n1)"
+        currentEmacsVariablewidthFontLineNumber="$(grep -n -A2 "(when (string= (system-name) \"$emacsHostIdentifier\")" "$emacsConfig" | tail -n1 | cut -d- -f1)"
+        wantedEmacsVariablewidthFontString="$(echo "$currentEmacsVariablewidthFontString" | sed "s|:size $currentEmacsVariablewidthFontSize|:size $wantedEmacsVariablewidthFontSize|")"
+        sed -i "${currentEmacsVariablewidthFontLineNumber}s|$currentEmacsVariablewidthFontString|$wantedEmacsVariablewidthFontString|" "$emacsConfig"
+        fi
     fi
   fi
 
