@@ -1,5 +1,6 @@
+[general]
 import = [
-    "~/.config/alacritty/themes/themes/rose-pine-dawn.toml"
+    "~/.config/alacritty/themes/themes/hatsunemiku.toml"
 ]
 
 [cursor]
@@ -33,3 +34,4 @@ bindings = [
 
 [window]
 dimensions = { columns = 80, lines = 25 }
+

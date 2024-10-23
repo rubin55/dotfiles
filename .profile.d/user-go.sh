@@ -10,7 +10,7 @@ type -p path.append path.which || return
 # If we have go, do some stuff.
 if path.which go; then
   # Set GOPATH to something better than $HOME/go.
-  export GOPATH="$HOME/.go"
+  [[ -z "$GOPATH" ]] && export GOPATH="$HOME/.go"
 
   # Add GOPATH/bin to path if not in path already.
   export PATH=$(path.append "$GOPATH/bin" "$PATH")
