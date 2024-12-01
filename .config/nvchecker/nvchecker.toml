@@ -22,16 +22,6 @@ source = "pacman"
 pacman = "intel-media-driver"
 strip_release = "true"
 
-[jdk17-graalvm-bin]
-source = "regex"
-regex = "17\\.\\d+\\.\\d+"
-url = "https://www.oracle.com/java/technologies/javase/graalvm-jdk17-archive-downloads.html"
-
-[jdk21-graalvm-bin]
-source = "regex"
-regex = "21\\.\\d+\\.\\d+"
-url = "https://www.oracle.com/java/technologies/javase/graalvm-jdk21-archive-downloads.html"
-
 [jdk17-openj9-bin]
 source = "github"
 github = "ibmruntimes/semeru17-binaries"
