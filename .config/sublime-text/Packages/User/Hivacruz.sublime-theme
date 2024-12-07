@@ -1,0 +1,24 @@
+// Documentation at https://www.sublimetext.com/docs/themes.html
+{
+	"variables": {
+		"font_size_lg": 14,
+	},
+
+	"rules": [
+	  { "class": "sidebar_heading",
+	    "font.size": 14
+	  },
+
+	  { "class": "sidebar_label",
+	    "font.size": 14
+	  },
+	    
+	  { "class": "tabset_control",
+	    "tab_height": 30
+	  },
+	    
+	  { "class": "tab_label",
+	    "font.size": 14
+      }
+	]
+}

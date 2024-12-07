@@ -1,0 +1,14 @@
+{
+	"hardware_acceleration": "opengl",
+	"color_scheme": "Rosé Pine Dawn.sublime-color-scheme",
+	"theme": "Rosé Pine Dawn.sublime-theme",
+	"font_size": 11,
+	"rulers": [80, 120],
+	"index_files": true,
+	"block_caret": true,
+    "caret_style": "blink",
+	"ignored_packages":
+	[
+		"Vintage",
+	],
+}
