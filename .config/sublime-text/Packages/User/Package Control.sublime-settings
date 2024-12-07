@@ -8,9 +8,8 @@
 		"A File Icon",
 		"EditorConfig",
 		"LSP",
-		"LSP-clangd",
 		"Package Control",
 		"Theme - Rose Pine",
-		"Toggle Dark Mode",
-	],
+		"Toggle Dark Mode"
+	]
 }
