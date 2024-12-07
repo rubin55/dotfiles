@@ -2,6 +2,7 @@
 {
 	"variables": {
 		"font_size_lg": 14,
+	    "font_size_sm": 11.67
 	},
 
 	"rules": [
@@ -15,10 +16,6 @@
 	    
 	  { "class": "tabset_control",
 	    "tab_height": 30
-	  },
-	    
-	  { "class": "tab_label",
-	    "font.size": 11.67
-      }
+	  }
 	]
 }
