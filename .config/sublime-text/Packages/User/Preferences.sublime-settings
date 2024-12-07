@@ -16,7 +16,7 @@
 	"index_files": true,
 
 	"block_caret": true,
-    "caret_style": "blink",
+	"caret_style": "blink",
     
 	"ignored_packages":
 	[
