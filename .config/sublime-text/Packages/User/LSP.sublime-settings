@@ -7,6 +7,16 @@
       "enabled": false,
       "command": ["ansible-language-server", "--stdio"],
       "selector": "source.yaml"
+    },
+    "lemminx": {
+      "enabled": false,
+      "command": ["lemminx"],
+      "selector": "text.xml"
+    },
+    "marksman": {
+      "enabled": false,
+      "command": ["marksman", "server"],
+      "selector": "text.html.markdown"
     }
   }	
 }
