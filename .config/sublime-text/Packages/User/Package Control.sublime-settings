@@ -9,7 +9,8 @@
 		"EditorConfig",
 		"LSP",
 		"Package Control",
+		"Terminus",
 		"Theme - Rose Pine",
-		"Toggle Dark Mode"
+		"Toggle Dark Mode",
 	],
 }

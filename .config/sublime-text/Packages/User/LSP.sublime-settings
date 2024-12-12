@@ -17,6 +17,11 @@
       "enabled": false,
       "command": ["marksman", "server"],
       "selector": "text.html.markdown"
+    },
+    "rust-analyzer": {
+      "enabled": false,
+      "command": ["rust-analyzer"],
+      "selector": "source.rust"
     }
   }	
 }
