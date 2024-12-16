@@ -13,6 +13,11 @@
       "command": ["lemminx"],
       "selector": "text.xml"
     },
+    "lexical": {
+      "enabled": false,
+      "command": ["lexical"],
+      "selector": "source.elixir"
+    },
     "marksman": {
       "enabled": false,
       "command": ["marksman", "server"],
