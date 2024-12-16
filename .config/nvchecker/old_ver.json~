@@ -17,20 +17,21 @@
     "intel-media-driver": {
       "version": "24.4.4"
     },
+    "jdk17-graalvm-bin": {
+      "version": "17.0.12"
+    },
     "jdk17-openj9-bin": {
       "version": "jdk-17.0.13+11_openj9-0.48.0",
       "gitref": "refs/tags/jdk-17.0.13+11_openj9-0.48.0",
       "url": "https://github.com/ibmruntimes/semeru17-binaries/releases/tag/jdk-17.0.13%2B11_openj9-0.48.0"
     },
+    "jdk21-graalvm-bin": {
+      "version": "21.0.4"
+    },
     "jdk21-openj9-bin": {
       "version": "jdk-21.0.5+11_openj9-0.48.0",
       "gitref": "refs/tags/jdk-21.0.5+11_openj9-0.48.0",
       "url": "https://github.com/ibmruntimes/semeru21-binaries/releases/tag/jdk-21.0.5%2B11_openj9-0.48.0"
-    },
-    "lexical-bin": {
-      "version": "v0.7.1",
-      "gitref": "refs/tags/v0.7.1",
-      "url": "https://github.com/lexical-lsp/lexical/releases/tag/v0.7.1"
     },
     "moonlight-qt": {
       "version": "v6.1.0",

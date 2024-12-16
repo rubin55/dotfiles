@@ -12,10 +12,10 @@
       "url": "https://github.com/facebook/infer/releases/tag/v1.2.0"
     },
     "intel-gmmlib": {
-      "version": "22.5.2"
+      "version": "22.5.4"
     },
     "intel-media-driver": {
-      "version": "24.4.3"
+      "version": "24.4.4"
     },
     "jdk17-graalvm-bin": {
       "version": "17.0.12"
@@ -33,19 +33,24 @@
       "gitref": "refs/tags/jdk-21.0.5+11_openj9-0.48.0",
       "url": "https://github.com/ibmruntimes/semeru21-binaries/releases/tag/jdk-21.0.5%2B11_openj9-0.48.0"
     },
+    "lexical-bin": {
+      "version": "v0.7.1",
+      "gitref": "refs/tags/v0.7.1",
+      "url": "https://github.com/lexical-lsp/lexical/releases/tag/v0.7.1"
+    },
     "moonlight-qt": {
       "version": "v6.1.0",
       "gitref": "refs/tags/v6.1.0",
       "url": "https://github.com/moonlight-stream/moonlight-qt/releases/tag/v6.1.0"
     },
     "openshift-codeready-bin": {
-      "version": "2.44.0"
+      "version": "2.45.0"
     },
     "openshift-developer-bin": {
       "version": "v3.16.1"
     },
     "openshift-pipelines-bin": {
-      "version": "1.16.0"
+      "version": "1.17.0"
     },
     "postman2openapi-bin": {
       "version": "1.2.1",
@@ -56,9 +61,9 @@
       "version": "0.830"
     },
     "pupdate-bin": {
-      "version": "3.20.0",
-      "gitref": "refs/tags/3.20.0",
-      "url": "https://github.com/mattpannella/pupdate/releases/tag/3.20.0"
+      "version": "4.1.4",
+      "gitref": "refs/tags/4.1.4",
+      "url": "https://github.com/mattpannella/pupdate/releases/tag/4.1.4"
     },
     "rcu-bin": {
       "version": "d2024.001(q)"

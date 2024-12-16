@@ -32,6 +32,11 @@ source = "github"
 github = "ibmruntimes/semeru21-binaries"
 use_latest_release = "true"
 
+[lexical-bin]
+source = "github"
+github = "lexical-lsp/lexical"
+use_latest_release = "true"
+
 [moonlight-qt]
 source = "github"
 github = "moonlight-stream/moonlight-qt"
