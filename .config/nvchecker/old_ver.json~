@@ -2,9 +2,9 @@
   "version": 2,
   "data": {
     "elixir": {
-      "version": "v1.17.3",
-      "gitref": "refs/tags/v1.17.3",
-      "url": "https://github.com/elixir-lang/elixir/releases/tag/v1.17.3"
+      "version": "v1.18.0",
+      "gitref": "refs/tags/v1.18.0",
+      "url": "https://github.com/elixir-lang/elixir/releases/tag/v1.18.0"
     },
     "infer-bin": {
       "version": "v1.2.0",
@@ -32,6 +32,11 @@
       "version": "jdk-21.0.5+11_openj9-0.48.0",
       "gitref": "refs/tags/jdk-21.0.5+11_openj9-0.48.0",
       "url": "https://github.com/ibmruntimes/semeru21-binaries/releases/tag/jdk-21.0.5%2B11_openj9-0.48.0"
+    },
+    "lexical-bin": {
+      "version": "v0.7.1",
+      "gitref": "refs/tags/v0.7.1",
+      "url": "https://github.com/lexical-lsp/lexical/releases/tag/v0.7.1"
     },
     "moonlight-qt": {
       "version": "v6.1.0",
