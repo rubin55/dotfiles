@@ -2,9 +2,9 @@
   "version": 2,
   "data": {
     "elixir": {
-      "version": "v1.18.0",
-      "gitref": "refs/tags/v1.18.0",
-      "url": "https://github.com/elixir-lang/elixir/releases/tag/v1.18.0"
+      "version": "v1.18.1",
+      "gitref": "refs/tags/v1.18.1",
+      "url": "https://github.com/elixir-lang/elixir/releases/tag/v1.18.1"
     },
     "infer-bin": {
       "version": "v1.2.0",
