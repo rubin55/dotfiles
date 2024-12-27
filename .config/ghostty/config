@@ -6,3 +6,4 @@ mouse-scroll-multiplier = 0.5
 shell-integration-features = "no-cursor, no-title"
 window-height = 28
 window-width = 80
+theme = "light:rose-pine-dawn,dark:rose-pine"
