@@ -23,6 +23,11 @@
       "command": ["marksman", "server"],
       "selector": "text.html.markdown"
     },
+    "pylsp": {
+      "enabled": false,
+      "command": ["pylsp"],
+      "selector": "source.python"
+    },
     "rust-analyzer": {
       "enabled": false,
       "command": ["rust-analyzer"],
