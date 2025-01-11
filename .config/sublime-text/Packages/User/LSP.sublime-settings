@@ -3,35 +3,60 @@
 
   // Language server configurations
   "clients": {
-    "ansible-language-server": {
+    "ansible": {
       "enabled": false,
       "command": ["ansible-language-server", "--stdio"],
       "selector": "source.yaml"
     },
-    "lemminx": {
+    "bash": {
       "enabled": false,
-      "command": ["lemminx"],
-      "selector": "text.xml"
+      "command": ["bash-language-server", "start"],
+      "selector": "source.shell.bash"
     },
-    "lexical": {
+    "c/c++": {
+      "enabled": false,
+      "command": ["clangd"],
+      "selector": "source.c"
+    },
+    "docker": {
+      "enabled": false,
+      "command": ["docker-langserver", "--stdio"],
+      "selector": "source.dockerfile"
+    },
+    "elixir": {
       "enabled": false,
       "command": ["lexical"],
       "selector": "source.elixir"
     },
-    "marksman": {
+    "json": {
+      "enabled": false,
+      "command": ["/usr/bin/vscode-json-language-server", "--stdio"],
+      "selector": "source.json"
+    },
+    "markdown": {
       "enabled": false,
       "command": ["marksman", "server"],
       "selector": "text.html.markdown"
     },
-    "pylsp": {
+    "python": {
       "enabled": false,
       "command": ["pylsp"],
       "selector": "source.python"
     },
-    "rust-analyzer": {
+    "rust": {
       "enabled": false,
       "command": ["rust-analyzer"],
       "selector": "source.rust"
-    }
+    },
+    "xml": {
+      "enabled": false,
+      "command": ["lemminx"],
+      "selector": "text.xml"
+    },   
+    "yaml": {
+      "enabled": false,
+      "command": ["yaml-language-server", "--stdio"],
+      "selector": "source.yaml"
+    },
   }	
 }
