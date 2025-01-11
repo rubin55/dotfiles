@@ -23,7 +23,7 @@ if path.which dircolors; then
 fi
 
 # Set default editor.
-path.which subl && export EDITOR='subl -w'
+path.which code && export EDITOR='code -w'
 
 # Set up less to use lessfilter (pygments).
 export PAGER='less'
