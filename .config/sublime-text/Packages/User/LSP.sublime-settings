@@ -33,6 +33,11 @@
       "command": ["/usr/bin/vscode-json-language-server", "--stdio"],
       "selector": "source.json"
     },
+    "kotlin": {
+      "enabled": false,
+      "command": ["kotlin-language-server"],
+      "selector": "source.Kotlin"
+    },
     "markdown": {
       "enabled": false,
       "command": ["marksman", "server"],

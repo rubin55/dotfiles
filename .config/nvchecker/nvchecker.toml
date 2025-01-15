@@ -42,21 +42,6 @@ source = "github"
 github = "moonlight-stream/moonlight-qt"
 use_latest_release = "true"
 
-[postman2openapi-bin]
-source = "github"
-github = "kevinswiber/postman2openapi"
-use_latest_release = "true"
-
-[pupdate-bin]
-source = "github"
-github = "mattpannella/pupdate"
-use_latest_release = "true"
-
-[rusty-psn-bin]
-source = "github"
-github = "RainbowCookie32/rusty-psn"
-use_latest_release = "true"
-
 [openshift-codeready-bin]
 source = "regex"
 regex = "\\d+\\.\\d+\\.\\d+"
@@ -72,12 +57,32 @@ source = "regex"
 regex = "\\d+\\.\\d+\\.\\d+"
 url = "https://mirror.openshift.com/pub/openshift-v4/clients/pipelines/"
 
+[postman2openapi-bin]
+source = "github"
+github = "kevinswiber/postman2openapi"
+use_latest_release = "true"
+
 [pragmatapro-fonts]
 source = "regex"
 regex = "The actual version is (\\d{1}\\.\\d{3})"
 url = "https://fsd.it/shop/fonts/pragmatapro/"
 
+[pupdate-bin]
+source = "github"
+github = "mattpannella/pupdate"
+use_latest_release = "true"
+
 [rcu-bin]
 source = "regex"
 regex = "d\\d{4}\\.\\d{3}\\([a-z]\\)"
 url = "https://files.davisr.me/projects/rcu/download-59ck3sdT/"
+
+[rusty-psn-bin]
+source = "github"
+github = "RainbowCookie32/rusty-psn"
+use_latest_release = "true"
+
+[tidal-dl-ng]
+source = "github"
+github = "exislow/tidal-dl-ng"
+use_latest_release = "true"
