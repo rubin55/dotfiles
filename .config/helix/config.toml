@@ -1,1 +1,15 @@
-theme = "zed_onelight"
+theme = "nightfox"
+
+[editor]
+color-modes = true
+scroll-lines = 1
+
+[editor.soft-wrap]
+enable = true
+
+[editor.statusline]
+left = ["mode", "file-name", "read-only-indicator", "file-modification-indicator"]
+right = ["version-control", "diagnostics", "file-type", "selections", "position", "spinner"]
+mode.normal = "NORMAL"
+mode.insert = "INSERT"
+mode.select = "SELECT"

@@ -1,1 +1,12 @@
 use-grammars = { except = ["gemini"] }
+
+[language-server.lexical]
+command = "lexical"
+
+[[language]]
+name = "elixir"
+language-servers = ["lexical"]
+
+[[language]]
+name = "heex"
+language-servers = ["lexical"]
