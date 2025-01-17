@@ -11,19 +11,19 @@ size = 13
 offset.y = 1
 
 [font.bold]
-family = "monospace"
+family = "Monospace"
 style = "Regular"
 
 [font.bold_italic]
-family = "monospace"
+family = "Monospace"
 style = "Italic"
 
 [font.italic]
-family = "monospace"
+family = "Monospace"
 style = "Italic"
 
 [font.normal]
-family = "monospace"
+family = "Monospace"
 style = "Regular"
 
 [keyboard]
@@ -33,5 +33,6 @@ bindings = [
 ]
 
 [window]
+decorations = "none"
 dimensions = { columns = 80, lines = 25 }
-
+opacity = 0.0

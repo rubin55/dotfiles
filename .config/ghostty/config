@@ -1,9 +1,10 @@
 cursor-style = "block"
-cursor-opacity = 0.5
+cursor-opacity = 0.9
 font-family = "PragmataPro Mono"
 font-size = 11
 mouse-scroll-multiplier = 0.5
 shell-integration-features = "no-cursor, no-title"
 window-height = 28
 window-width = 80
-theme = "light:rose-pine-dawn,dark:rose-pine"
+theme = "light:Tomorrow,dark:Tomorrow Night"
+keybind = f11=toggle_fullscreen
