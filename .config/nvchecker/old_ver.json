@@ -74,9 +74,9 @@
       "url": "https://github.com/RainbowCookie32/rusty-psn/releases/tag/v0.5.6"
     },
     "tidal-dl-ng": {
-      "version": "v0.24.4",
-      "gitref": "refs/tags/v0.24.4",
-      "url": "https://github.com/exislow/tidal-dl-ng/releases/tag/v0.24.4"
+      "version": "v0.24.6",
+      "gitref": "refs/tags/v0.24.6",
+      "url": "https://github.com/exislow/tidal-dl-ng/releases/tag/v0.24.6"
     }
   }
 }
