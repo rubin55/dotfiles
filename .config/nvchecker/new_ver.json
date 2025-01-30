@@ -2,9 +2,9 @@
   "version": 2,
   "data": {
     "elixir": {
-      "version": "v1.18.1",
-      "gitref": "refs/tags/v1.18.1",
-      "url": "https://github.com/elixir-lang/elixir/releases/tag/v1.18.1"
+      "version": "v1.18.2",
+      "gitref": "refs/tags/v1.18.2",
+      "url": "https://github.com/elixir-lang/elixir/releases/tag/v1.18.2"
     },
     "infer-bin": {
       "version": "v1.2.0",
@@ -38,7 +38,7 @@
       "url": "https://github.com/moonlight-stream/moonlight-qt/releases/tag/v6.1.0"
     },
     "openshift-codeready-bin": {
-      "version": "2.45.0"
+      "version": "2.46.0"
     },
     "openshift-developer-bin": {
       "version": "v3.16.1"
@@ -55,9 +55,9 @@
       "version": "0.830"
     },
     "pupdate-bin": {
-      "version": "4.1.4",
-      "gitref": "refs/tags/4.1.4",
-      "url": "https://github.com/mattpannella/pupdate/releases/tag/4.1.4"
+      "version": "4.2.1",
+      "gitref": "refs/tags/4.2.1",
+      "url": "https://github.com/mattpannella/pupdate/releases/tag/4.2.1"
     },
     "rcu-bin": {
       "version": "d2024.001(q)"
