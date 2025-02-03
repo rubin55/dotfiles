@@ -144,7 +144,9 @@
 
 ;; Configure lsp java mode.
 (use-package lsp-mode
-  :hook ((java-mode . lsp)))
+  :hook ((java-mode . lsp))
+  :config
+  (setq lsp-java-server-install-dir "/usr/share/java/jdtls"))
 
 ;; Configure lsp csharp mode.
 (use-package lsp-mode
@@ -306,6 +308,10 @@
 ;; Disable insane 'jk' to-command-mode sequence.
 (after! evil-escape
   (setq evil-escape-key-sequence nil))
+
+;; Enable lsp-ui-doc.
+(after! lsp-ui
+  (setq lsp-ui-doc-enable t))
 
 ;; Show emacs version after startup.
 (add-hook 'window-setup-hook (lambda () (run-with-timer 1.2 nil #'call-interactively 'version)))
