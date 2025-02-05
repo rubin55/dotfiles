@@ -50,7 +50,7 @@
       "version": "v3.16.1"
     },
     "openshift-pipelines-bin": {
-      "version": "1.17.0"
+      "version": "1.17.1"
     },
     "postman2openapi-bin": {
       "version": "1.2.1",
