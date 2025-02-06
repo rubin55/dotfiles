@@ -270,13 +270,12 @@
   (setq doom-font (font-spec :family "Monospace" :size 16 :weight 'normal)
         doom-variable-pitch-font (font-spec :family "Sans" :size 16)))
 
-;; There are two ways to load a theme. Both assume the theme is installed and
-;; available. You can either set `doom-theme' or manually load a theme with the
-;; `load-theme' function. This is the default:
-;;(setq doom-theme 'doom-tomorrow-day)
-;;(setq doom-theme 'doom-laserwave)
-;;(setq doom-theme 'doom-rose-pine)
-(setq doom-theme 'doom-wilmersdorf)
+;; Configure doom theme through auto-dark.
+(use-package! auto-dark
+  :hook (doom-init-ui . auto-dark-mode)
+  :config
+  (setq custom-safe-themes t)
+  (setq auto-dark-themes '((doom-tomorrow-night) (doom-tomorrow-day))))
 
 ;; Disable bold, enable italic.
 (after! doom-themes

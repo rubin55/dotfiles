@@ -48,6 +48,7 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;;(unpin! t)
 
+(package! auto-dark)
 (package! cue-mode)
 (package! earthfile-mode)
 (package! lsp-pyright)
