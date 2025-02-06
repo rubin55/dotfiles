@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# Disable this configurator due to GEM_HOME setting leading to unforeseen issues
+# when packaging on Arch Linux (overrides gem install location system-wide).
+return
+
 # Check if functions are loaded and if required executables are available.
 type -p os.platform path.append path.which || return
 path.which lsb_release || return
