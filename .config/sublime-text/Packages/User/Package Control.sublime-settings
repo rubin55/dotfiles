@@ -6,11 +6,11 @@
 	"installed_packages":
 	[
 		"A File Icon",
+		"AutoDarkLinux",
 		"EditorConfig",
 		"LSP",
 		"Package Control",
 		"Terminus",
 		"Theme - Rose Pine",
-		"Toggle Dark Mode",
 	],
 }

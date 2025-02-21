@@ -1,8 +1,8 @@
 {
 	"hardware_acceleration": "opengl",
 
-	"color_scheme": "auto",
-	"theme": "auto",
+	"color_scheme": "Rosé Pine Moon.sublime-color-scheme",
+	"theme": "Rosé Pine Moon.sublime-theme",
 	"theme_font_options": ["no_bold", "gray_antialias"],
 	"dark_theme": "Rosé Pine Moon.sublime-theme",
 	"light_theme": "Rosé Pine Dawn.sublime-theme",
