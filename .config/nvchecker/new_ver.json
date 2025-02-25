@@ -4,6 +4,11 @@
     "cypher-shell": {
       "version": "2025.01.0"
     },
+    "husky": {
+      "version": "v9.1.7",
+      "gitref": "refs/tags/v9.1.7",
+      "url": "https://github.com/typicode/husky/releases/tag/v9.1.7"
+    },
     "infer-bin": {
       "version": "v1.2.0",
       "gitref": "refs/tags/v1.2.0",
@@ -39,11 +44,6 @@
       "version": "v6.1.0",
       "gitref": "refs/tags/v6.1.0",
       "url": "https://github.com/moonlight-stream/moonlight-qt/releases/tag/v6.1.0"
-    },
-    "nodejs-husky": {
-      "version": "v9.1.7",
-      "gitref": "refs/tags/v9.1.7",
-      "url": "https://github.com/typicode/husky/releases/tag/v9.1.7"
     },
     "openshift-codeready-bin": {
       "version": "2.47.0"
