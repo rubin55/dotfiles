@@ -51,6 +51,7 @@
 (package! auto-dark)
 (package! cue-mode)
 (package! earthfile-mode)
+(package! flycheck-kotlin)
 (package! lsp-pyright)
 (package! nov)
 (package! powershell)

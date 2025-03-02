@@ -267,8 +267,8 @@
 
 ;; Font settings for TAURUS, my Linux desktop at home.
 (when (string= (system-name) "TAURUS")
-  (setq doom-font (font-spec :family "Monospace" :size 16 :weight 'normal)
-        doom-variable-pitch-font (font-spec :family "Sans" :size 16)))
+  (setq doom-font (font-spec :family "Monospace" :size 18 :weight 'normal)
+        doom-variable-pitch-font (font-spec :family "Sans" :size 18)))
 
 ;; Configure doom theme through auto-dark.
 (use-package! auto-dark
