@@ -15,10 +15,10 @@
       "url": "https://github.com/facebook/infer/releases/tag/v1.2.0"
     },
     "intel-gmmlib": {
-      "version": "22.5.5"
+      "version": "22.6.0"
     },
     "intel-media-driver": {
-      "version": "24.4.4"
+      "version": "25.1.2"
     },
     "jdk17-openj9-bin": {
       "version": "jdk-17.0.14+7_openj9-0.49.0",
@@ -46,7 +46,7 @@
       "url": "https://github.com/moonlight-stream/moonlight-qt/releases/tag/v6.1.0"
     },
     "openshift-codeready-bin": {
-      "version": "2.47.0"
+      "version": "2.48.0"
     },
     "openshift-developer-bin": {
       "version": "v3.16.1"
@@ -71,7 +71,7 @@
       "url": "https://github.com/mattpannella/pupdate/releases/tag/4.3.1"
     },
     "rcu-bin": {
-      "version": "d2025.001(r)"
+      "version": "d2025.001(s)"
     },
     "rusty-psn-bin": {
       "version": "v0.5.6",
@@ -89,9 +89,9 @@
       "url": "https://github.com/exislow/tidal-dl-ng/releases/tag/v0.24.6"
     },
     "yaml-language-server": {
-      "version": "1.16.0",
-      "gitref": "refs/tags/1.16.0",
-      "revision": "dd1c3a38ec2d34ccd09b8dc854b7178a989a25a0"
+      "version": "1.17.0",
+      "gitref": "refs/tags/1.17.0",
+      "revision": "8d95fb4fea3c767705ed784b413d51a8fdaa495d"
     }
   }
 }
