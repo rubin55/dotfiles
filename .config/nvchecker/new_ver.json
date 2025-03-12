@@ -52,7 +52,7 @@
       "version": "v3.16.1"
     },
     "openshift-pipelines-bin": {
-      "version": "1.17.1"
+      "version": "1.18.0"
     },
     "passmark-performancetest-bin": {
       "version": "v11.0 Build 1002"
