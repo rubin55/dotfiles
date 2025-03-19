@@ -18,7 +18,7 @@
       "version": "22.6.0"
     },
     "intel-media-driver": {
-      "version": "25.1.2"
+      "version": "25.1.3"
     },
     "jdk17-openj9-bin": {
       "version": "jdk-17.0.14+7_openj9-0.49.0",
@@ -52,7 +52,7 @@
       "version": "v3.16.1"
     },
     "openshift-pipelines-bin": {
-      "version": "1.17.1"
+      "version": "1.18.0"
     },
     "passmark-performancetest-bin": {
       "version": "v11.0 Build 1002"
