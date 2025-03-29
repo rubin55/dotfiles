@@ -18,7 +18,7 @@
       "version": "22.6.0"
     },
     "intel-media-driver": {
-      "version": "25.1.3"
+      "version": "25.1.4"
     },
     "jdk17-openj9-bin": {
       "version": "jdk-17.0.14+7_openj9-0.49.0",
@@ -66,9 +66,9 @@
       "version": "0.830"
     },
     "pupdate-bin": {
-      "version": "4.3.1",
-      "gitref": "refs/tags/4.3.1",
-      "url": "https://github.com/mattpannella/pupdate/releases/tag/4.3.1"
+      "version": "4.4.0",
+      "gitref": "refs/tags/4.4.0",
+      "url": "https://github.com/mattpannella/pupdate/releases/tag/4.4.0"
     },
     "rcu-bin": {
       "version": "d2025.001(s)"
