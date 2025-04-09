@@ -2,7 +2,7 @@
   "version": 2,
   "data": {
     "cypher-shell": {
-      "version": "2025.02.0"
+      "version": "2025.03.0"
     },
     "husky": {
       "version": "v9.1.7",
@@ -46,7 +46,7 @@
       "url": "https://github.com/moonlight-stream/moonlight-qt/releases/tag/v6.1.0"
     },
     "openshift-codeready-bin": {
-      "version": "2.48.0"
+      "version": "2.49.0"
     },
     "openshift-developer-bin": {
       "version": "v3.16.1"
@@ -66,9 +66,9 @@
       "version": "0.830"
     },
     "pupdate-bin": {
-      "version": "4.4.0",
-      "gitref": "refs/tags/4.4.0",
-      "url": "https://github.com/mattpannella/pupdate/releases/tag/4.4.0"
+      "version": "4.4.1",
+      "gitref": "refs/tags/4.4.1",
+      "url": "https://github.com/mattpannella/pupdate/releases/tag/4.4.1"
     },
     "rcu-bin": {
       "version": "d2025.001(s)"
@@ -84,9 +84,9 @@
       "url": "https://github.com/microsoft/sbom-tool/releases/tag/v3.1.0"
     },
     "tidal-dl-ng": {
-      "version": "v0.24.6",
-      "gitref": "refs/tags/v0.24.6",
-      "url": "https://github.com/exislow/tidal-dl-ng/releases/tag/v0.24.6"
+      "version": "v0.25.6",
+      "gitref": "refs/tags/v0.25.6",
+      "url": "https://github.com/exislow/tidal-dl-ng/releases/tag/v0.25.6"
     },
     "yaml-language-server": {
       "version": "1.17.0",
