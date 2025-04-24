@@ -15,10 +15,10 @@
       "url": "https://github.com/facebook/infer/releases/tag/v1.2.0"
     },
     "intel-gmmlib": {
-      "version": "22.6.0"
+      "version": "22.7.1"
     },
     "intel-media-driver": {
-      "version": "25.1.4"
+      "version": "25.2.0"
     },
     "jdk17-openj9-bin": {
       "version": "jdk-17.0.14+7_openj9-0.49.0",
@@ -71,7 +71,7 @@
       "url": "https://github.com/mattpannella/pupdate/releases/tag/4.4.1"
     },
     "rcu-bin": {
-      "version": "d2025.001(s)"
+      "version": "v4.0.23"
     },
     "rusty-psn-bin": {
       "version": "v0.5.7",

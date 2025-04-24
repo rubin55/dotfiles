@@ -77,10 +77,10 @@ source = "github"
 github = "kevinswiber/postman2openapi"
 use_latest_release = "true"
 
-[pragmatapro-fonts]
-source = "regex"
-regex = "The actual version is (\\d{1}\\.\\d{3})"
-url = "https://fsd.it/shop/fonts/pragmatapro/"
+#[pragmatapro-fonts]
+#source = "regex"
+#regex = "The actual version is (\\d{1}\\.\\d{3})"
+#url = "https://fsd.it/shop/fonts/pragmatapro/"
 
 [pupdate-bin]
 source = "github"
@@ -89,7 +89,7 @@ use_latest_release = "true"
 
 [rcu-bin]
 source = "regex"
-regex = "d\\d{4}\\.\\d{3}\\([a-z]\\)"
+regex = "v\\d+\\.\\d+\\.\\d+"
 url = "https://files.davisr.me/projects/rcu/download-59ck3sdT/"
 
 [rusty-psn-bin]
