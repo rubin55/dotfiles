@@ -22,3 +22,8 @@ end
 function toggle_fullscreen()
   vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen
 end
+
+function toggle_gutter()
+  vim.o.signcolumn = vim.o.signcolumn == "yes" and "no" or "yes"
+  vim.o.number = not vim.o.number
+end
