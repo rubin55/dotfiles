@@ -1,29 +1,28 @@
 [general]
 import = [
-    "~/.config/alacritty/themes/themes/hatsunemiku.toml"
+    "~/.config/alacritty/themes/themes/ayu_dark.toml"
 ]
 
 [cursor]
 style = { shape = "Block", blinking = "Always" }
 
 [font]
-size = 13
-offset.y = 1
+size = 11
 
 [font.bold]
-family = "Monospace"
+family = "PragmataPro"
 style = "Regular"
 
 [font.bold_italic]
-family = "Monospace"
+family = "PragmataPro"
 style = "Italic"
 
 [font.italic]
-family = "Monospace"
+family = "PragmataPro"
 style = "Italic"
 
 [font.normal]
-family = "Monospace"
+family = "PragmataPro"
 style = "Regular"
 
 [keyboard]

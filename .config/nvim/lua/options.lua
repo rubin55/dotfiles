@@ -5,7 +5,8 @@ local g = vim.g
 local o = vim.o
 
 -- enable cursorline
-o.cursorlineopt ='both'
+o.cursorlineopt = 'both'
+o.cmdheight = 0
 
 -- neovide settings
 if vim.g.neovide then

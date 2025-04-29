@@ -71,7 +71,7 @@
       "url": "https://github.com/mattpannella/pupdate/releases/tag/4.4.1"
     },
     "rcu-bin": {
-      "version": "d2025.001(s)"
+      "version": "v4.0.23"
     },
     "rusty-psn-bin": {
       "version": "v0.5.7",
