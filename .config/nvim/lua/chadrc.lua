@@ -49,6 +49,23 @@ M.ui = {
 
         return left_sep .. "%#St_pos_text#" .. chad .. text .. " "
       end,
+      mode = function()
+        local utils = require 'nvchad.stl.utils'
+        local sep_r = "█"
+
+        if not utils.is_activewin() then
+          return ""
+        end
+
+        local modes = utils.modes
+        local mode = vim.api.nvim_get_mode().mode
+
+        -- removed the icon here
+        local current_mode = "%#St_" .. modes[mode][2] .. "Mode# " .. modes[mode][1]
+        local mode_sep1 = "%#St_" .. modes[mode][2] .. "ModeSep#" .. sep_r
+
+        return current_mode .. mode_sep1 .. "%#ST_EmptySpace#" .. sep_r
+end,
     }
   }
 }
