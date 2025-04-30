@@ -16,6 +16,10 @@ M.base46 = {
 }
 
 M.ui = {
+  tabufline = {
+    enabled = false,
+  },
+
   statusline = {
     -- default/vscode/vscode_colored/minimal
     theme = "default",
@@ -46,11 +50,50 @@ M.ui = {
         return left_sep .. "%#St_pos_text#" .. chad .. text .. " "
       end,
     }
+  }
+}
+
+
+M.nvdash = {
+  load_on_startup = true,
+
+  header = {
+    "           ▄ ▄                   ",
+    "       ▄   ▄▄▄     ▄ ▄▄▄ ▄ ▄     ",
+    "       █ ▄ █▄█ ▄▄▄ █ █▄█ █ █     ",
+    "    ▄▄ █▄█▄▄▄█ █▄█▄█▄▄█▄▄█ █     ",
+    "  ▄ █▄▄█ ▄ ▄▄ ▄█ ▄▄▄▄▄▄▄▄▄▄▄▄▄▄  ",
+    "  █▄▄▄▄ ▄▄▄ █ ▄ ▄▄▄ ▄ ▄▄▄ ▄ ▄ █ ▄",
+    "▄ █ █▄█ █▄█ █ █ █▄█ █ █▄█ ▄▄▄ █ █",
+    "█▄█ ▄ █▄▄█▄▄█ █ ▄▄█ █ ▄ █ █▄█▄█ █",
+    "    █▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄█ █▄█▄▄▄█    ",
+    "                                 ",
+    "       Powered By  eovim       ",
+    "                                 ",
   },
 
-  nvdash = {
-      load_on_startup = true,
-  },
+   buttons = {
+     { txt = "  Find File", keys = "ff", cmd = "Telescope find_files", no_gap = true },
+     { txt = "  Recent Files", keys = "fo", cmd = "Telescope oldfiles", no_gap = true },
+     { txt = "󰈭  Find Word", keys = "fw", cmd = "Telescope live_grep", no_gap = true},
+     { txt = "  Bookmarks", keys = "ma", cmd = "Telescope marks", no_gap = true},
+     { txt = "󱥚  Themes", keys = "th", cmd = ":lua require('nvchad.themes').open()", no_gap = true },
+     { txt = "  Mappings", keys = "ch", cmd = "NvCheatsheet", no_gap = true },
+
+     { txt = "─", hl = "NvDashFooter", no_gap = true, rep = true },
+
+     {
+       txt = function()
+         local stats = require("lazy").stats()
+         local ms = math.floor(stats.startuptime) .. " ms"
+         return "  Loaded " .. stats.loaded .. "/" .. stats.count .. " plugins in " .. ms
+       end,
+       hl = "NvDashFooter",
+       no_gap = true,
+     },
+
+     { txt = "─", hl = "NvDashFooter", no_gap = true, rep = true },
+   },
 }
 
 M.mason = {
