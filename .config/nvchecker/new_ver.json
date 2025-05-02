@@ -2,7 +2,7 @@
   "version": 2,
   "data": {
     "cypher-shell": {
-      "version": "2025.03.0"
+      "version": "2025.04.0"
     },
     "husky": {
       "version": "v9.1.7",
@@ -86,9 +86,9 @@
       "url": "https://github.com/exislow/tidal-dl-ng/releases/tag/v0.25.6"
     },
     "yaml-language-server": {
-      "version": "1.17.0",
-      "gitref": "refs/tags/1.17.0",
-      "revision": "8d95fb4fea3c767705ed784b413d51a8fdaa495d"
+      "version": "1.18.0",
+      "gitref": "refs/tags/1.18.0",
+      "revision": "2a2e614ef2ba2ab358c49444a2219f07d61318e0"
     }
   }
 }
