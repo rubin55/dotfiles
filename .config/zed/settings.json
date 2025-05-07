@@ -8,32 +8,36 @@
 // from the command palette or from `Zed` application menu.
 {
   "auto_update": false,
-  "buffer_font_family": "PragmataPro Mono",
-  "buffer_font_size": 17,
+  "buffer_font_family": "PragmataPro",
+  "buffer_font_size": 16,
+  "buffer_font_weight": 500,
   "buffer_line_height": "standard",
   "cursor_shape": "block",
-  "vim_mode": false,
+  "hard_tabs": false,
+  "soft_wrap": "editor_width",
   "ui_font_family": "Ubuntu",
-  "ui_font_size": 18.5,
+  "ui_font_size": 19,
+  "ui_font_weight": 400,
+  "vim_mode": false,
   "wrap_guides": [80, 120],
 
-  "assistant": {
+  "agent": {
     "default_model": {
-      "provider": "openai",
-      "model": "gpt-4o"
+      "provider": "copilot_chat",
+      "model": "gemini-2.5-pro"
     },
     "version": "2",
-    "enabled": false,
-    "button": false
+    "enabled": true,
+    "button": true
   },
 
   "assistant_v2": {
-    "enabled": false,
-    "button": false
+    "enabled": true,
+    "button": true
   },
 
   "chat_panel": {
-    "button": false
+    "button": "never"
   },
 
   "collaboration_panel": {
@@ -42,7 +46,7 @@
 
   "features": {
     "copilot": false,
-    "inline_completion_provider": "none"
+    "edit_prediction_provider": "none"
   },
 
   "git": {
@@ -89,8 +93,8 @@
 
   "theme": {
     "mode": "system",
-    "dark": "One Dark",
-    "light": "One Light"
+    "dark": "Github Dark",
+    "light": "Github Light"
   },
 
   "experimental.theme_overrides": {
@@ -109,6 +113,13 @@
       "initialization_options": {
         "check": {
           "command": "clippy"
+        }
+      }
+    },
+    "yaml-language-server": {
+      "settings": {
+        "yaml": {
+          "customTags": ["!reference sequence"]
         }
       }
     }
