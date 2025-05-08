@@ -82,12 +82,19 @@
     "metrics": false
   },
 
+  "languages": {
+    "Python": {
+      "language_servers": ["pylsp"]
+    }
+  },
+
   "terminal": {
     "alternate_scroll": "on",
     "blinking": "on",
     "line_height": "standard",
     "toolbar": {
-      "title": true
+      "breadcrumbs": false,
+      "title": false
     }
   },
 
