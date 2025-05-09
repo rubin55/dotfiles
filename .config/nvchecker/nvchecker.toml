@@ -1,4 +1,5 @@
 [__config__]
+keyfile = "keys.toml"
 oldver = "old_ver.json"
 newver = "new_ver.json"
 
@@ -91,6 +92,16 @@ use_latest_release = "true"
 source = "regex"
 regex = "v\\d+\\.\\d+\\.\\d+"
 url = "https://files.davisr.me/projects/rcu/download-59ck3sdT/"
+
+[ruby-yard-solargraph]
+source = "github"
+github = "castwide/yard-solargraph"
+use_latest_tag = "true"
+
+[ruby-solargraph]
+source = "github"
+github = "castwide/solargraph"
+use_latest_tag = "true"
 
 [rusty-psn-bin]
 source = "github"

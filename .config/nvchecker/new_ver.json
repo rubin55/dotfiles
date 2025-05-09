@@ -70,6 +70,18 @@
     "rcu-bin": {
       "version": "v4.0.23"
     },
+    "ruby-solargraph": {
+      "version": "v0.54.2",
+      "gitref": "refs/tags/v0.54.2",
+      "revision": "a8a13cc74521f9f8522a2a9fbdf5645b9848782f",
+      "url": "https://github.com/castwide/solargraph/releases/tag/v0.54.2"
+    },
+    "ruby-yard-solargraph": {
+      "version": "v0.1.0",
+      "gitref": "refs/tags/v0.1.0",
+      "revision": "04394d0486490eb9289fc1ce8e9d420471ca103a",
+      "url": "https://github.com/castwide/yard-solargraph/releases/tag/v0.1.0"
+    },
     "rusty-psn-bin": {
       "version": "v0.5.7",
       "gitref": "refs/tags/v0.5.7",
