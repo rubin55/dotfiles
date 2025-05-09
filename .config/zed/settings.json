@@ -23,8 +23,8 @@
 
   "agent": {
     "default_model": {
-      "provider": "copilot_chat",
-      "model": "gemini-2.5-pro"
+      "provider": "google",
+      "model": "gemini-2.0-flash"
     },
     "version": "2",
     "enabled": true,
@@ -47,6 +47,11 @@
   "features": {
     "copilot": false,
     "edit_prediction_provider": "none"
+  },
+
+  "file_types": {
+    "Dockerfile": ["Dockerfile", "Dockerfile.*", "*.Dockerfile"],
+    "Groovy": ["*.groovy"]
   },
 
   "git": {
@@ -73,46 +78,36 @@
     }
   },
 
-  "tabs": {
-    "file_icons": true
-  },
-
-  "telemetry": {
-    "diagnostics": false,
-    "metrics": false
-  },
-
   "languages": {
+    "Dockerfile": {
+      "language_servers": ["dockerfile-language-server"]
+    },
+    "Elixir": {
+      "language_servers": ["lexical", "!elixir-ls", "!next-ls"]
+    },
+    "Groovy": {
+      "language_servers": ["groovy-language-server"]
+    },
     "Python": {
-      "language_servers": ["pylsp"]
-    }
-  },
-
-  "terminal": {
-    "alternate_scroll": "on",
-    "blinking": "on",
-    "line_height": "standard",
-    "toolbar": {
-      "breadcrumbs": false,
-      "title": false
-    }
-  },
-
-  "theme": {
-    "mode": "system",
-    "dark": "Github Dark Dimmed",
-    "light": "Github Light"
-  },
-
-  "experimental.theme_overrides": {
-    "syntax": {
-      "comment": {
-        "font_style": "italic"
-      }
+      "language_servers": ["pylsp", "!pyright"]
+    },
+    "Svelte": {
+      "language_servers": ["svelte-language-server"]
     }
   },
 
   "lsp": {
+    "dockerfile-language-server": {
+      "binary": {
+        "path": "/usr/bin/docker-langserver",
+        "arguments": ["--stdio"]
+      }
+    },
+    "groovy-language-server": {
+      "binary": {
+        "path": "/usr/bin/groovy-language-server"
+      }
+    },
     "metals": {
       "initialization_options": {
         "isHttpEnabled": true
@@ -147,11 +142,50 @@
         }
       }
     },
+    "svelte-language-server": {
+      "binary": {
+        "path": "/usr/bin/svelteserver",
+        "arguments": ["--stdio"]
+      }
+    },
     "yaml-language-server": {
       "settings": {
         "yaml": {
           "customTags": ["!reference sequence"]
         }
+      }
+    }
+  },
+
+  "tabs": {
+    "file_icons": true
+  },
+
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+
+  "terminal": {
+    "alternate_scroll": "on",
+    "blinking": "on",
+    "line_height": "standard",
+    "toolbar": {
+      "breadcrumbs": false,
+      "title": false
+    }
+  },
+
+  "theme": {
+    "mode": "system",
+    "dark": "Github Dark Dimmed",
+    "light": "Github Light"
+  },
+
+  "experimental.theme_overrides": {
+    "syntax": {
+      "comment": {
+        "font_style": "italic"
       }
     }
   }
