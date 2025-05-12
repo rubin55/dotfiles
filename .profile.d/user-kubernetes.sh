@@ -11,8 +11,10 @@ if [[ -d "$HOME/.kube/config.d" ]]; then
   done
 fi
 
-# Add detected kube config files to KUBECONFIG.
-export KUBECONFIG="$(path.append "$KUBECONFIG_NEW" "$KUBECONFIG")"
+# Add detected kube config files (if any) to KUBECONFIG.
+if [[ -n "$KUBECONFIG_NEW" ]]; then
+  export KUBECONFIG="$(path.append "$KUBECONFIG_NEW" "$KUBECONFIG")"
+fi
 
 # Unset temporary variables.
 unset KUBECONFIG_NEW config
