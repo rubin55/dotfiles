@@ -88,9 +88,9 @@
       "url": "https://github.com/RainbowCookie32/rusty-psn/releases/tag/v0.5.8"
     },
     "sbom-tool-bin": {
-      "version": "v3.1.0",
-      "gitref": "refs/tags/v3.1.0",
-      "url": "https://github.com/microsoft/sbom-tool/releases/tag/v3.1.0"
+      "version": "v4.0.2",
+      "gitref": "refs/tags/v4.0.2",
+      "url": "https://github.com/microsoft/sbom-tool/releases/tag/v4.0.2"
     },
     "tidal-dl-ng": {
       "version": "v0.25.6",
