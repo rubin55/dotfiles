@@ -23,8 +23,8 @@
 
   "agent": {
     "default_model": {
-      "provider": "google",
-      "model": "gemini-2.0-flash"
+      "provider": "ollama",
+      "model": "deepcoder:latest"
     },
     "version": "2",
     "enabled": true,
@@ -50,7 +50,15 @@
   },
 
   "file_types": {
-    "Dockerfile": ["Dockerfile", "Dockerfile.*", "*.Dockerfile"]
+    "Dockerfile": ["Dockerfile", "Dockerfile.*", "*.Dockerfile"],
+    "Groovy": ["*.groovy"],
+    "Helm": [
+      "**/templates/**/*.tpl",
+      "**/templates/**/*.yaml",
+      "**/templates/**/*.yml",
+      "**/helmfile.d/**/*.yaml",
+      "**/helmfile.d/**/*.yml"
+    ]
   },
 
   "git": {
@@ -85,7 +93,10 @@
       "language_servers": ["lexical", "!elixir-ls", "!next-ls"]
     },
     "Groovy": {
-      "language_servers": ["groovy-language-server"]
+      "language_servers": ["groovy"]
+    },
+    "Helm": {
+      "language_servers": ["helm"]
     },
     "Kotlin": {
       "language_servers": ["kotlin-language-server"]
@@ -105,9 +116,15 @@
         "arguments": ["--stdio"]
       }
     },
-    "groovy-language-server": {
+    "groovy": {
       "binary": {
         "path": "/usr/bin/groovy-language-server"
+      }
+    },
+    "helm": {
+      "binary": {
+        "path": "/usr/bin/helm_ls",
+        "arguments": ["serve"]
       }
     },
     "kotlin-language-server": {
