@@ -71,10 +71,10 @@
       "version": "v4.0.23"
     },
     "ruby-solargraph": {
-      "version": "v0.54.3",
-      "gitref": "refs/tags/v0.54.3",
-      "revision": "e9efb7776aaf830e4be570875f2837e048ae6ca6",
-      "url": "https://github.com/castwide/solargraph/releases/tag/v0.54.3"
+      "version": "v0.54.4",
+      "gitref": "refs/tags/v0.54.4",
+      "revision": "dc41c514471b4491ceda7c92132a5226af668cb7",
+      "url": "https://github.com/castwide/solargraph/releases/tag/v0.54.4"
     },
     "ruby-yard-solargraph": {
       "version": "v0.1.0",
@@ -88,9 +88,9 @@
       "url": "https://github.com/RainbowCookie32/rusty-psn/releases/tag/v0.5.8"
     },
     "sbom-tool-bin": {
-      "version": "v4.0.2",
-      "gitref": "refs/tags/v4.0.2",
-      "url": "https://github.com/microsoft/sbom-tool/releases/tag/v4.0.2"
+      "version": "v4.0.3",
+      "gitref": "refs/tags/v4.0.3",
+      "url": "https://github.com/microsoft/sbom-tool/releases/tag/v4.0.3"
     },
     "tidal-dl-ng": {
       "version": "v0.25.6",
