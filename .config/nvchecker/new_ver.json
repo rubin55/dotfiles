@@ -71,10 +71,10 @@
       "version": "v4.0.23"
     },
     "ruby-solargraph": {
-      "version": "v0.54.4",
-      "gitref": "refs/tags/v0.54.4",
-      "revision": "dc41c514471b4491ceda7c92132a5226af668cb7",
-      "url": "https://github.com/castwide/solargraph/releases/tag/v0.54.4"
+      "version": "v0.54.5",
+      "gitref": "refs/tags/v0.54.5",
+      "revision": "9fc66c8cd749136af386cfdd155fb1dc294d170e",
+      "url": "https://github.com/castwide/solargraph/releases/tag/v0.54.5"
     },
     "ruby-yard-solargraph": {
       "version": "v0.1.0",
