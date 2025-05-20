@@ -19,6 +19,7 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
   # emacsMono=14
   # emacsSans=13
   # gnomeMono=11
+  # ghosttyMono=11
   # gnomeSans=10
   # gnomeSerif=10
   # jetbrainsMono=13
@@ -27,10 +28,12 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
   # qt6Mono=11
   # qt6Sans=10
   # vimMono=11
-  # x11Dpi=192
   # x11Cursor=48
+  # x11Dpi=192
   # x11Mono=11
   # x11Sans=25
+  # zedMono=15
+  # zedSans=17
 
   # Check if $FONT_SIZE_PREFERENCES_FILE was set
   # else set a it to ~/.fontsizes by default.
@@ -47,6 +50,33 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
     source "$FONT_SIZE_PREFERENCES_FILE"
   else
     return
+  fi
+
+  # Current and wanted Zed settings.
+  zedConfig="$HOME/.config/zed/settings.json"
+  if [[ -e "$zedConfig" && -n "$zedMono" ]]; then
+    currentZedBufferFontName="$(grep "buffer_font_family" "$zedConfig" | cut -d: -f2 | sed -e 's|"||g' -e 's|,||g' -e 's|^[[:space:]]*||g' -e 's|[[:space:]]*$||g')"
+    currentZedBufferFontSize="$(grep "buffer_font_size" "$zedConfig" | cut -d: -f2 | sed -e 's|"||g' -e 's|,||g' -e 's|^[[:space:]]*||g' -e 's|[[:space:]]*$||g')"
+    currentZedUiFontName="$(grep "ui_font_family" "$zedConfig" | cut -d: -f2 | sed -e 's|"||g' -e 's|,||g' -e 's|^[[:space:]]*||g' -e 's|[[:space:]]*$||g')"
+    currentZedUiFontSize="$(grep "ui_font_size" "$zedConfig" | cut -d: -f2 | sed -e 's|"||g' -e 's|,||g' -e 's|^[[:space:]]*||g' -e 's|[[:space:]]*$||g')"
+    wantedZedBufferFontSize="$zedMono"
+    wantedZedUiFontSize="$zedSans"
+
+    # Update Zed buffer font if different.
+    if [[ "$currentZedBufferFontSize" != "$wantedZedBufferFontSize" ]]; then
+      log.info "Setting Zed buffer font to: \"$currentZedBufferFontName $wantedZedBufferFontSize\""
+      currentZedBufferFontString="\"buffer_font_size\": $currentZedBufferFontSize,"
+      wantedZedBufferFontString="\"buffer_font_size\": $wantedZedBufferFontSize,"
+      sed -i "s|$currentZedBufferFontString|$wantedZedBufferFontString|g" "$zedConfig"
+    fi
+
+    # Update Zed ui font if different.
+    if [[ "$currentZedUiFontSize" != "$wantedZedUiFontSize" ]]; then
+      log.info "Setting Zed ui font to: \"$currentZedUiFontName $wantedZedUiFontSize\""
+      currentZedUiFontString="\"ui_font_size\": $currentZedUiFontSize,"
+      wantedZedUiFontString="\"ui_font_size\": $wantedZedUiFontSize,"
+      sed -i "s|$currentZedUiFontString|$wantedZedUiFontString|g" "$zedConfig"
+    fi
   fi
 
   # Current and wanted Visual Studio Code settings.
@@ -361,6 +391,21 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
       currentAlacrittyMonoFontString="$(echo "size = $currentAlacrittyMonoFontSize" | sed 's|\.|\\\.|g')"
       wantedAlacrittyMonoFontString="$(echo "size = $wantedAlacrittyMonoFontSize" | sed 's|\.|\\\.|g')"
       sed -i "s|$currentAlacrittyMonoFontString|$wantedAlacrittyMonoFontString|g" "$alacrittyConfig"
+    fi
+  fi
+
+
+  # Current and wanted GhosTTY font size.
+  ghosttyConfig="$HOME/.config/ghostty/config"
+  if [[ -e "$ghosttyConfig" && -n "$ghosttyMono" ]]; then
+    currentGhosTTYMonoFontSize="$(grep '^font-size = ' "$ghosttyConfig" | awk '{ print $3 }')"
+    wantedGhosTTYMonoFontSize="$ghosttyMono"
+
+    if [[ "$currentGhosTTYMonoFontSize" != "$wantedGhosTTYMonoFontSize" ]]; then
+      log.info "Setting GhosTTY font size to: \"$wantedGhosTTYMonoFontSize\""
+      currentGhosTTYMonoFontString="$(echo "size = $currentGhosTTYMonoFontSize" | sed 's|\.|\\\.|g')"
+      wantedGhosTTYMonoFontString="$(echo "size = $wantedGhosTTYMonoFontSize" | sed 's|\.|\\\.|g')"
+      sed -i "s|$currentGhosTTYMonoFontString|$wantedGhosTTYMonoFontString|g" "$ghosttyConfig"
     fi
   fi
 
