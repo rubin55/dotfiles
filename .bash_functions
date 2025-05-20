@@ -1,12 +1,12 @@
 # ~/.bash_functions: a convenient library of bash functions.
 
 function log() {
-  #echo "f: ${FUNCNAME[@]}"
-  #echo "b: ${BASH_SOURCE[@]}"
+  #echo "f: ${FUNCNAME[@]}" >> /tmp/f.log
+  #echo "b: ${BASH_SOURCE[@]}" >> /tmp/b.log
   [[ -z $BASH_LOG_LEVEL ]] && active_log_level=INFO || active_log_level=$BASH_LOG_LEVEL
   declare -A levels=([DEBUG]=0 [INFO]=1 [WARN]=2 [ERROR]=3)
   local level="$1"
-  [[ "${FUNCNAME[2]}" == 'source' ]] && local name="$(basename ${BASH_SOURCE[2]})" || local name="$(basename ${BASH_SOURCE[3]})"
+  [[ "${FUNCNAME[2]}" == 'source' ]] && local name="$(basename ${BASH_SOURCE[2]})" || [[ "${BASH_SOURCE[3]}" ]] && local name="$(basename ${BASH_SOURCE[3]})" || local name=${FUNCNAME[-1]}
   [[ ${levels[$level]} ]] || return 1
   (( ${levels[$level]} < ${levels[$active_log_level]} )) && return 2
   shift 1
@@ -136,4 +136,3 @@ function openvpn.connect() {
     return 1
   fi
 }
-
