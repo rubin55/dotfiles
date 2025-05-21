@@ -8,8 +8,7 @@ k9s:
   noExitOnCtrlC: false
   portForwardAddress: localhost
   ui:
-    skin: kiss
-    #skin: black-and-wtf
+    skin: transparent
     enableMouse: false
     headless: false
     logoless: false
