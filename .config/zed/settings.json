@@ -230,8 +230,8 @@
 
   "theme": {
     "mode": "system",
-    "dark": "Github Dark Dimmed",
-    "light": "Github Light"
+    "dark": "Everforest Dark",
+    "light": "Github Light Tritanopia"
   },
 
   "experimental.theme_overrides": {
