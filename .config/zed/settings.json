@@ -16,7 +16,7 @@
   "hard_tabs": false,
   "soft_wrap": "editor_width",
   "ui_font_family": "Ubuntu",
-  "ui_font_size": 17,
+  "ui_font_size": 16,
   "ui_font_weight": 400,
   "vim_mode": false,
   "wrap_guides": [80, 120],
@@ -50,6 +50,24 @@
   },
 
   "file_types": {
+    "Ansible": [
+      "**.ansible.yml",
+      "**.ansible.yaml",
+      "**/defaults/*.yml",
+      "**/defaults/*.yaml",
+      "**/meta/*.yml",
+      "**/meta/*.yaml",
+      "**/tasks/*.yml",
+      "**/tasks/*.yaml",
+      "**/handlers/*.yml",
+      "**/handlers/*.yaml",
+      "**/group_vars/*.yml",
+      "**/group_vars/*.yaml",
+      "**/playbooks/*.yaml",
+      "**/playbooks/*.yml",
+      "**playbook*.yaml",
+      "**playbook*.yml"
+    ],
     "Dockerfile": ["Dockerfile", "Dockerfile.*", "*.Dockerfile"],
     "Groovy": ["*.groovy"],
     "Helm": [
@@ -58,7 +76,8 @@
       "**/templates/**/*.yml",
       "**/helmfile.d/**/*.yaml",
       "**/helmfile.d/**/*.yml"
-    ]
+    ],
+    "Shell Script": [".bash_functions"]
   },
 
   "git": {
@@ -86,6 +105,9 @@
   },
 
   "languages": {
+    "Ansible": {
+      "language_servers": ["ansible"]
+    },
     "Dockerfile": {
       "language_servers": ["dockerfile-language-server"]
     },
@@ -110,6 +132,12 @@
   },
 
   "lsp": {
+    "ansible": {
+      "binary": {
+        "path": "/usr/bin/ansible-language-server",
+        "arguments": ["--stdio"]
+      }
+    },
     "dockerfile-language-server": {
       "binary": {
         "path": "/usr/bin/docker-langserver",
