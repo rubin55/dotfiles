@@ -1,22 +1,14 @@
-// Zed settings
-//
-// For information on how to configure Zed, see the Zed
-// documentation: https://zed.dev/docs/configuring-zed
-//
-// To see all of Zed's default settings without changing your
-// custom settings, run the `open default settings` command
-// from the command palette or from `Zed` application menu.
 {
   "auto_update": false,
   "buffer_font_family": "PragmataPro",
-  "buffer_font_size": 15,
+  "buffer_font_size": 16,
   "buffer_font_weight": 500,
   "buffer_line_height": "standard",
   "cursor_shape": "block",
   "hard_tabs": false,
   "soft_wrap": "editor_width",
   "ui_font_family": "Ubuntu",
-  "ui_font_size": 16,
+  "ui_font_size": 19,
   "ui_font_weight": 400,
   "vim_mode": false,
   "wrap_guides": [80, 120],
@@ -24,7 +16,7 @@
   "agent": {
     "default_model": {
       "provider": "ollama",
-      "model": "deepcoder:latest"
+      "model": "devstral:latest"
     },
     "version": "2",
     "enabled": true,
@@ -34,6 +26,40 @@
   "assistant_v2": {
     "enabled": true,
     "button": true
+  },
+
+  "auto_install_extensions": {
+    "ansible": true,
+    "astro": true,
+    "clojure": true,
+    "csharp": true,
+    "cue": true,
+    "cypher": true,
+    "dart": true,
+    "dockerfile": true,
+    "elixir": true,
+    "erlang": true,
+    "everforest": true,
+    "fsharp": true,
+    "github-theme": true,
+    "groovy": true,
+    "haskell": true,
+    "helm": true,
+    "html": true,
+    "java": true,
+    "kotlin": true,
+    "lua": true,
+    "make": true,
+    "perl": true,
+    "ruby": true,
+    "scala": true,
+    "scheme": true,
+    "sql": true,
+    "svelte": true,
+    "swift": true,
+    "toml": true,
+    "xml": true,
+    "zig": true
   },
 
   "chat_panel": {
