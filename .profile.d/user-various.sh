@@ -23,7 +23,7 @@ if path.which dircolors; then
 fi
 
 # Set default editor.
-path.which code && export EDITOR='code -w'
+path.which zeditor && export EDITOR='zeditor -w'
 
 # Set up less to use lessfilter (pygments).
 export PAGER='less'
