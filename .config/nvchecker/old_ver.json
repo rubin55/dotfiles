@@ -15,10 +15,10 @@
       "url": "https://github.com/facebook/infer/releases/tag/v1.2.0"
     },
     "intel-gmmlib": {
-      "version": "22.7.1"
+      "version": "22.7.2"
     },
     "intel-media-driver": {
-      "version": "25.2.1"
+      "version": "25.2.3"
     },
     "jdk17-openj9-bin": {
       "version": "jdk-17.0.15+6_openj9-0.51.0",
@@ -46,7 +46,7 @@
       "url": "https://github.com/moonlight-stream/moonlight-qt/releases/tag/v6.1.0"
     },
     "openshift-codeready-bin": {
-      "version": "2.49.0"
+      "version": "2.51.0"
     },
     "openshift-developer-bin": {
       "version": "v3.16.1"
