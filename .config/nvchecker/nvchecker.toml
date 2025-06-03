@@ -5,8 +5,8 @@ newver = "new_ver.json"
 
 [cypher-shell]
 source = "regex"
-regex = "(\\d+\\.\\d+\\.\\d+) for Developers"
-url = "https://neo4j.com/download/"
+regex = "Neo4j (\\d+\\.\\d+\\.\\d+)"
+url = "https://neo4j.com/deployment-center/"
 
 [infer-bin]
 source = "github"

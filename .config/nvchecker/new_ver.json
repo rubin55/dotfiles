@@ -2,7 +2,7 @@
   "version": 2,
   "data": {
     "cypher-shell": {
-      "version": "2025.04.0"
+      "version": "2025.05.0"
     },
     "husky": {
       "version": "v9.1.7",
@@ -71,10 +71,10 @@
       "version": "v4.0.24"
     },
     "ruby-solargraph": {
-      "version": "v0.54.5",
-      "gitref": "refs/tags/v0.54.5",
-      "revision": "9fc66c8cd749136af386cfdd155fb1dc294d170e",
-      "url": "https://github.com/castwide/solargraph/releases/tag/v0.54.5"
+      "version": "v0.55.0",
+      "gitref": "refs/tags/v0.55.0",
+      "revision": "a8497595c608c9e4c2a3c24085e9c097f06d76ac",
+      "url": "https://github.com/castwide/solargraph/releases/tag/v0.55.0"
     },
     "ruby-yard-solargraph": {
       "version": "v0.1.0",
