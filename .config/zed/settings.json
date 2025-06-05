@@ -1,22 +1,24 @@
 {
   "auto_update": false,
   "buffer_font_family": "PragmataPro",
-  "buffer_font_size": 16,
+  "buffer_font_size": 15,
   "buffer_font_weight": 500,
   "buffer_line_height": "standard",
   "cursor_shape": "block",
   "hard_tabs": false,
+  "middle_click_paste": true,
   "soft_wrap": "editor_width",
   "ui_font_family": "Ubuntu",
-  "ui_font_size": 19,
+  "ui_font_size": 16,
   "ui_font_weight": 400,
   "vim_mode": false,
   "wrap_guides": [80, 120],
 
   "agent": {
+    "default_profile": "ask",
     "default_model": {
-      "provider": "ollama",
-      "model": "devstral:latest"
+      "provider": "google",
+      "model": "gemini-2.5-flash-preview-04-17"
     },
     "version": "2",
     "enabled": true,
@@ -152,6 +154,9 @@
     "Python": {
       "language_servers": ["pylsp", "!pyright"]
     },
+    "Ruby": {
+      "language_servers": ["solargraph", "rubocop", "!ruby-lsp"]
+    },
     "Svelte": {
       "language_servers": ["svelte-language-server"]
     }
@@ -218,6 +223,15 @@
         "check": {
           "command": "clippy"
         }
+      }
+    },
+    "solargraph": {
+      "initialization_options": {
+        "diagnostics": false,
+        "formatting": true
+      },
+      "settings": {
+        "use_bundler": false
       }
     },
     "svelte-language-server": {
