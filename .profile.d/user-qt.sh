@@ -21,5 +21,6 @@ esac
 export QT_ACCESSIBILITY=0
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 export QT_LINUX_ACCESSIBILITY_ALWAYS_ON=0
-export QT_QPA_PLATFORMTHEME=qt6ct
+# Setting QT_QPA_PLATFORMTHEME interferes with system dark/light setting.
+#export QT_QPA_PLATFORMTHEME=qt6ct
 export QT_XFT=true
