@@ -7,6 +7,7 @@
   "cursor_shape": "block",
   "hard_tabs": false,
   "middle_click_paste": true,
+  "show_wrap_guides": false,
   "soft_wrap": "editor_width",
   "ui_font_family": "Ubuntu",
   "ui_font_size": 16,
@@ -53,6 +54,7 @@
     "lua": true,
     "make": true,
     "perl": true,
+    "rose-pine-theme": true,
     "ruby": true,
     "scala": true,
     "scheme": true,
@@ -105,6 +107,7 @@
       "**/helmfile.d/**/*.yaml",
       "**/helmfile.d/**/*.yml"
     ],
+    "Markdown": ["**/Projects/*"],
     "Shell Script": [".bash_functions"]
   },
 
@@ -270,8 +273,8 @@
 
   "theme": {
     "mode": "system",
-    "dark": "Everforest Dark",
-    "light": "Github Light Tritanopia"
+    "dark": "Rosé Pine Moon",
+    "light": "Rosé Pine Dawn"
   },
 
   "experimental.theme_overrides": {
