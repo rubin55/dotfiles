@@ -16,11 +16,12 @@
   "wrap_guides": [80, 120],
 
   "agent": {
-    "default_profile": "ask",
     "default_model": {
-      "provider": "google",
-      "model": "gemini-2.5-flash-preview-04-17"
+      "provider": "zed.dev",
+      "model": "claude-sonnet-4"
     },
+    "default_profile": "ask",
+    "default_view": "text_thread",
     "version": "2",
     "enabled": true,
     "button": true
@@ -225,6 +226,18 @@
       "initialization_options": {
         "check": {
           "command": "clippy"
+        },
+        "completion": {
+          "fullFunctionSignatures": {
+            "enable": true
+          }
+        },
+        "hover": {
+          "maxSubstitutionLength": null,
+          "show": {
+            "enumVariants": 100,
+            "fields": 100
+          }
         }
       }
     },
