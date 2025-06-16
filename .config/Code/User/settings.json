@@ -1,0 +1,192 @@
+{
+  "[csv]": {
+    "editor.insertSpaces": false,
+    "editor.tabSize": 24
+  },
+  "[rust]": {
+    "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    "editor.formatOnSave": true
+  },
+  "[tsv]": {
+    "editor.insertSpaces": false,
+    "editor.tabSize": 24
+  },
+  "accessibility.verbosity.inlineChat": false,
+  "accessibility.verbosity.panelChat": false,
+  "breadcrumbs.enabled": false,
+  "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 2, ColumnLimit: 0}",
+  "chat.agent.enabled": false,
+  "chat.commandCenter.enabled": false,
+  "chat.detectParticipant.enabled": false,
+  "chat.extensionTools.enabled": false,
+  "dart.flutterSdkPath": "/home/rubin/.local/share/flutterup",
+  "debug.allowBreakpointsEverywhere": true,
+  "editor.accessibilitySupport": "off",
+  "editor.cursorStyle": "block",
+  "editor.detectIndentation": false,
+  "editor.dragAndDrop": false,
+  "editor.fontFamily": "PragmataPro Mono",
+  "editor.fontLigatures": false,
+  "editor.fontSize": 13.3,
+  "editor.guides.indentation": false,
+  "editor.inlayHints.enabled": "offUnlessPressed",
+  "editor.inlineSuggest.enabled": false,
+  "editor.insertSpaces": true,
+  "editor.largeFileOptimizations": false,
+  "editor.lineHeight": 16,
+  "editor.minimap.enabled": false,
+  "editor.quickSuggestions": {
+    "comments": "off",
+    "other": "off",
+    "strings": "off"
+  },
+  "editor.renderWhitespace": "none",
+  "editor.rulers": [
+    120,
+    80
+  ],
+  "editor.stickyScroll.enabled": false,
+  "editor.suggestSelection": "first",
+  "editor.tabSize": 2,
+  "editor.tokenColorCustomizations": {
+    "textMateRules": [
+      {
+        "scope": [
+          "entity.name.function",
+          "entity.name.type",
+          "entity.other.inherited-class",
+          "storage"
+        ],
+        "settings": {
+          "fontStyle": ""
+        }
+      },
+      {
+        "scope": [ "comment" ],
+        "settings": {
+          "fontStyle": "italic"
+        }
+      }
+    ]
+  },
+  "editor.wordWrap": "on",
+  "extensions.ignoreRecommendations": true,
+  "files.associations": {
+    "*.ASM*": "hlasm",
+    "*.ASSEMBLE*": "hlasm",
+    "*.COB*": "cobol",
+    "*.COBCOPY*": "cobol",
+    "*.COBOL*": "cobol",
+    "*.COPY*": "cobol",
+    "*.COPYBOOK*": "cobol",
+    "*.HLA*": "hlasm",
+    "*.HLASM*": "hlasm",
+    "*.INC*": "pl1",
+    "*.INCLUDE*": "pl1",
+    "*.JCL*": "jcl",
+    "*.pc": "c",
+    "*.PL1*": "pl1",
+    "*.PLI*": "pl1",
+    "*.sql": "sqltools",
+    "*.tpl": "mustache"
+  },
+  "files.eol": "\n",
+  "files.exclude": {
+    "**/.classpath": true,
+    "**/.factorypath": true,
+    "**/.idea": true,
+    "**/.project": true,
+    "**/.settings": true
+  },
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.trimTrailingWhitespace": true,
+  "files.watcherExclude": {
+    "**/.bloop": true,
+    "**/.metals": true
+  },
+  "git.openRepositoryInParentFolders": "never",
+  "gitlens.codeLens.authors.enabled": false,
+  "gitlens.codeLens.recentChange.enabled": false,
+  "gitlens.currentLine.enabled": false,
+  "gitlens.launchpad.indicator.enabled": false,
+  "java.import.gradle.enabled": false,
+  "java.import.projectSelection": "manual",
+  "java.project.importOnFirstTimeStartup": "interactive",
+  "lldb.launch.expressions": "native",
+  "lldb.library": "/usr/lib/swift/lib/liblldb.so",
+  "makefile.configureOnOpen": true,
+  "notebook.experimental.generate": false,
+  "redhat.telemetry.enabled": false,
+  "rust-analyzer.check.command": "clippy",
+  "rust-analyzer.completion.fullFunctionSignatures.enable": true,
+  "rust-analyzer.hover.maxSubstitutionLength": null,
+  "rust-analyzer.hover.show.enumVariants": 100,
+  "rust-analyzer.hover.show.fields": 100,
+  "rust-analyzer.hover.show.traitAssocItems": 100,
+  "rust-analyzer.lens.enable": true,
+  "security.workspace.trust.enabled": false,
+  "telemetry.feedback.enabled": false,
+  "telemetry.telemetryLevel": "off",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.fontFamily": "PragmataPro Mono",
+  "terminal.integrated.fontSize": 13.3,
+  "terminal.integrated.fontWeight": "normal",
+  "terminal.integrated.fontWeightBold": "normal",
+  "terminal.integrated.scrollback": 10000,
+  "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^)\\s*($TAGS)",
+  "todo-tree.tree.tagsOnly": true,
+  "window.autoDetectColorScheme": true,
+  "window.commandCenter": false,
+  "window.openFilesInNewWindow": "off",
+  "window.titleBarStyle": "custom",
+  "window.zoomLevel": 1,
+  "window.zoomPerWindow": false,
+  "workbench.colorCustomizations": {
+    "[*Dark*][GitHub]": {
+      "editorLineNumber.foreground": "#43494e",
+      "editorRuler.foreground": "#252c32"
+    },
+    "[*Light*][GitHub]": {
+      "editorLineNumber.foreground": "#DDDDDD",
+      "editorRuler.foreground": "#F9F9F9"
+    },
+    "[Poimandres]": {
+      "editorLineNumber.foreground": "#6e6a86",
+      "editorRuler.foreground": "#1e1c2e"
+    },
+    "[Rose Pine Dawn]": {
+      "editorLineNumber.foreground": "#ADADA9",
+      "editorRuler.foreground": "#EEEEEE"
+    },
+    "[Tomorrow Night Blue]": {
+      "editorLineNumber.foreground": "#7f8e9f",
+      "editorRuler.foreground": "#002350"
+    }
+  },
+  "workbench.editor.empty.hint": "hidden",
+  "workbench.editor.wrapTabs": true,
+  "workbench.editorAssociations": {
+    "{hexdiff}:/**/*.*": "hexEditor.hexedit",
+    "*.DAS": "hexEditor.hexedit"
+  },
+  "workbench.iconTheme": "vs-minimal",
+  "workbench.layoutControl.enabled": false,
+  "workbench.panel.defaultLocation": "right",
+  "workbench.preferredDarkColorTheme": "GitHub Dark",
+  "workbench.preferredLightColorTheme": "GitHub Light",
+  "workbench.sideBar.location": "left",
+  "workbench.startupEditor": "none",
+  "containers.containers.label": "ContainerName",
+  "ansible.executionEnvironment.containerEngine": "docker",
+  "ansible.lightspeed.enabled": false,
+  "ansible.lightspeed.suggestions.enabled": false,
+  "haskell.manageHLS": "GHCup",
+  "yaml.schemas": {
+    "/home/rubin/.vscode/extensions/continue.continue-1.0.13-linux-x64/config-yaml-schema.json": [
+      ".continue/**/*.yaml"
+    ]
+  },
+  "calva.enableClojureLspOnStart": "when-workspace-opened-use-workspace-root",
+  "calva.enableInspectorRainbow": true
+}
