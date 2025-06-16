@@ -9,6 +9,7 @@
   },
   "accessibility.verbosity.inlineChat": false,
   "accessibility.verbosity.panelChat": false,
+  "ansible.ansible.reuseTerminal": true,
   "ansible.executionEnvironment.containerEngine": "docker",
   "ansible.lightspeed.enabled": false,
   "ansible.lightspeed.suggestions.enabled": false,
@@ -22,6 +23,7 @@
   "chat.extensionTools.enabled": false,
   "containers.containers.label": "ContainerName",
   "dart.flutterSdkPath": "/home/rubin/.local/share/flutterup",
+  "dart.sdkPath": "/home/rubin/.local/share/flutterup/bin/cache/dart-sdk",
   "debug.allowBreakpointsEverywhere": true,
   "editor.accessibilitySupport": "off",
   "editor.cursorStyle": "block",
@@ -77,7 +79,7 @@
   "explorer.enableDragAndDrop": false,
   "extensions.ignoreRecommendations": true,
   "files.associations": {
-   "**/Projects/*": "markdown"
+    "**/Projects/*": "markdown"
   },
   "files.eol": "\n",
   "files.exclude": {
@@ -134,23 +136,23 @@
   "window.zoomPerWindow": false,
   "workbench.colorCustomizations": {
     "[*Dark*][GitHub]": {
-      "editorLineNumber.foreground": "#43494e",
-      "editorRuler.foreground": "#252c32"
+      "editorLineNumber.foreground": "#43494E",
+      "editorRuler.foreground": "#262D33"
     },
     "[*Light*][GitHub]": {
       "editorLineNumber.foreground": "#DDDDDD",
       "editorRuler.foreground": "#F6F6F6"
     },
     "[Poimandres]": {
-      "editorLineNumber.foreground": "#6e6a86",
-      "editorRuler.foreground": "#1e1c2e"
+      "editorLineNumber.foreground": "#6E6A86",
+      "editorRuler.foreground": "#1E1C2E"
     },
     "[Rose Pine Dawn]": {
       "editorLineNumber.foreground": "#ADADA9",
       "editorRuler.foreground": "#EEEEEE"
     },
     "[Tomorrow Night Blue]": {
-      "editorLineNumber.foreground": "#7f8e9f",
+      "editorLineNumber.foreground": "#7F8E9F",
       "editorRuler.foreground": "#002350"
     }
   },
