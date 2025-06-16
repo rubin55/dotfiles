@@ -124,7 +124,7 @@
   "rust-analyzer.hover.show.enumVariants": 100,
   "rust-analyzer.hover.show.fields": 100,
   "rust-analyzer.hover.show.traitAssocItems": 100,
-  "rust-analyzer.lens.enable": true,
+  "rust-analyzer.lens.enable": false,
   "security.workspace.trust.enabled": false,
   "telemetry.feedback.enabled": false,
   "telemetry.telemetryLevel": "off",
