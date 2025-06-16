@@ -1,5 +1,5 @@
 {
-  "[csv]": {
+  "[csv][tsv]": {
     "editor.insertSpaces": false,
     "editor.tabSize": 24
   },
@@ -7,18 +7,20 @@
     "editor.defaultFormatter": "rust-lang.rust-analyzer",
     "editor.formatOnSave": true
   },
-  "[tsv]": {
-    "editor.insertSpaces": false,
-    "editor.tabSize": 24
-  },
   "accessibility.verbosity.inlineChat": false,
   "accessibility.verbosity.panelChat": false,
+  "ansible.executionEnvironment.containerEngine": "docker",
+  "ansible.lightspeed.enabled": false,
+  "ansible.lightspeed.suggestions.enabled": false,
   "breadcrumbs.enabled": false,
   "C_Cpp.clang_format_fallbackStyle": "{ BasedOnStyle: Google, IndentWidth: 2, ColumnLimit: 0}",
+  "calva.enableClojureLspOnStart": "when-workspace-opened-use-workspace-root",
+  "calva.enableInspectorRainbow": true,
   "chat.agent.enabled": false,
   "chat.commandCenter.enabled": false,
   "chat.detectParticipant.enabled": false,
   "chat.extensionTools.enabled": false,
+  "containers.containers.label": "ContainerName",
   "dart.flutterSdkPath": "/home/rubin/.local/share/flutterup",
   "debug.allowBreakpointsEverywhere": true,
   "editor.accessibilitySupport": "off",
@@ -62,7 +64,9 @@
         }
       },
       {
-        "scope": [ "comment" ],
+        "scope": [
+          "comment"
+        ],
         "settings": {
           "fontStyle": "italic"
         }
@@ -70,6 +74,7 @@
     ]
   },
   "editor.wordWrap": "on",
+  "explorer.enableDragAndDrop": false,
   "extensions.ignoreRecommendations": true,
   "files.associations": {
     "*.ASM*": "hlasm",
@@ -110,6 +115,7 @@
   "gitlens.codeLens.recentChange.enabled": false,
   "gitlens.currentLine.enabled": false,
   "gitlens.launchpad.indicator.enabled": false,
+  "haskell.manageHLS": "GHCup",
   "java.import.gradle.enabled": false,
   "java.import.projectSelection": "manual",
   "java.project.importOnFirstTimeStartup": "interactive",
@@ -166,27 +172,12 @@
   },
   "workbench.editor.empty.hint": "hidden",
   "workbench.editor.wrapTabs": true,
-  "workbench.editorAssociations": {
-    "{hexdiff}:/**/*.*": "hexEditor.hexedit",
-    "*.DAS": "hexEditor.hexedit"
-  },
   "workbench.iconTheme": "vs-minimal",
   "workbench.layoutControl.enabled": false,
-  "workbench.panel.defaultLocation": "right",
+  "workbench.panel.defaultLocation": "bottom",
   "workbench.preferredDarkColorTheme": "GitHub Dark",
   "workbench.preferredLightColorTheme": "GitHub Light",
   "workbench.sideBar.location": "left",
   "workbench.startupEditor": "none",
-  "containers.containers.label": "ContainerName",
-  "ansible.executionEnvironment.containerEngine": "docker",
-  "ansible.lightspeed.enabled": false,
-  "ansible.lightspeed.suggestions.enabled": false,
-  "haskell.manageHLS": "GHCup",
-  "yaml.schemas": {
-    "/home/rubin/.vscode/extensions/continue.continue-1.0.13-linux-x64/config-yaml-schema.json": [
-      ".continue/**/*.yaml"
-    ]
-  },
-  "calva.enableClojureLspOnStart": "when-workspace-opened-use-workspace-root",
-  "calva.enableInspectorRainbow": true
+  "workbench.tree.enableStickyScroll": false
 }
