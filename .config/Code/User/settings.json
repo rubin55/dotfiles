@@ -107,6 +107,13 @@
   "java.project.importOnFirstTimeStartup": "interactive",
   "lldb.launch.expressions": "native",
   "lldb.library": "/usr/lib/swift/lib/liblldb.so",
+  "Lua.workspace.ignoreDir": [
+    ".venv",
+    ".vscode",
+    "build",
+    "target",
+    "node_modules"
+  ],
   "makefile.configureOnOpen": true,
   "notebook.experimental.generate": false,
   "redhat.telemetry.enabled": false,
