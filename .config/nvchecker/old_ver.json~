@@ -18,7 +18,7 @@
       "version": "22.7.2"
     },
     "intel-media-driver": {
-      "version": "25.2.3"
+      "version": "25.2.5"
     },
     "jdk17-openj9-bin": {
       "version": "jdk-17.0.15+6_openj9-0.51.0",
@@ -46,7 +46,7 @@
       "url": "https://github.com/moonlight-stream/moonlight-qt/releases/tag/v6.1.0"
     },
     "openshift-codeready-bin": {
-      "version": "2.51.0"
+      "version": "2.52.0"
     },
     "openshift-developer-bin": {
       "version": "v3.16.1"
@@ -74,10 +74,10 @@
       "version": "v4.0.24"
     },
     "ruby-solargraph": {
-      "version": "v0.55.0",
-      "gitref": "refs/tags/v0.55.0",
-      "revision": "a8497595c608c9e4c2a3c24085e9c097f06d76ac",
-      "url": "https://github.com/castwide/solargraph/releases/tag/v0.55.0"
+      "version": "v0.55.4",
+      "gitref": "refs/tags/v0.55.4",
+      "revision": "2a6025e343ef81b8c454ba1faaea597dcb4dfa36",
+      "url": "https://github.com/castwide/solargraph/releases/tag/v0.55.4"
     },
     "ruby-yard-solargraph": {
       "version": "v0.1.0",
@@ -96,9 +96,9 @@
       "url": "https://github.com/microsoft/sbom-tool/releases/tag/v4.0.3"
     },
     "tidal-dl-ng": {
-      "version": "v0.25.6",
-      "gitref": "refs/tags/v0.25.6",
-      "url": "https://github.com/exislow/tidal-dl-ng/releases/tag/v0.25.6"
+      "version": "v0.25.10",
+      "gitref": "refs/tags/v0.25.10",
+      "url": "https://github.com/exislow/tidal-dl-ng/releases/tag/v0.25.10"
     },
     "yaml-language-server": {
       "version": "1.18.0",
