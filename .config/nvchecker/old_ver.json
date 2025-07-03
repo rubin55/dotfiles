@@ -2,7 +2,7 @@
   "version": 2,
   "data": {
     "cypher-shell": {
-      "version": "2025.05.0"
+      "version": "2025.06.0"
     },
     "husky": {
       "version": "v9.1.7",
@@ -66,18 +66,18 @@
       "version": "0.830"
     },
     "pupdate-bin": {
-      "version": "4.4.1",
-      "gitref": "refs/tags/4.4.1",
-      "url": "https://github.com/mattpannella/pupdate/releases/tag/4.4.1"
+      "version": "4.5.0",
+      "gitref": "refs/tags/4.5.0",
+      "url": "https://github.com/mattpannella/pupdate/releases/tag/4.5.0"
     },
     "rcu-bin": {
       "version": "v4.0.24"
     },
     "ruby-solargraph": {
-      "version": "v0.55.4",
-      "gitref": "refs/tags/v0.55.4",
-      "revision": "2a6025e343ef81b8c454ba1faaea597dcb4dfa36",
-      "url": "https://github.com/castwide/solargraph/releases/tag/v0.55.4"
+      "version": "v0.56.0",
+      "gitref": "refs/tags/v0.56.0",
+      "revision": "a730eaf8a4281e79d14e0247ebc98df66ef753b0",
+      "url": "https://github.com/castwide/solargraph/releases/tag/v0.56.0"
     },
     "ruby-yard-solargraph": {
       "version": "v0.1.0",
@@ -96,9 +96,9 @@
       "url": "https://github.com/microsoft/sbom-tool/releases/tag/v4.0.3"
     },
     "tidal-dl-ng": {
-      "version": "v0.25.10",
-      "gitref": "refs/tags/v0.25.10",
-      "url": "https://github.com/exislow/tidal-dl-ng/releases/tag/v0.25.10"
+      "version": "v0.26.2",
+      "gitref": "refs/tags/v0.26.2",
+      "url": "https://github.com/exislow/tidal-dl-ng/releases/tag/v0.26.2"
     },
     "yaml-language-server": {
       "version": "1.18.0",
