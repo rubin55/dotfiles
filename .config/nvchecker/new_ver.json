@@ -2,7 +2,7 @@
   "version": 2,
   "data": {
     "cypher-shell": {
-      "version": "2025.06.0"
+      "version": "2025.06.2"
     },
     "husky": {
       "version": "v9.1.7",
@@ -52,7 +52,7 @@
       "version": "v3.16.1"
     },
     "openshift-pipelines-bin": {
-      "version": "1.18.0"
+      "version": "1.19.0"
     },
     "passmark-performancetest-bin": {
       "version": "v11.0 Build 1002"
@@ -71,10 +71,10 @@
       "version": "v4.0.24"
     },
     "ruby-solargraph": {
-      "version": "v0.56.0",
-      "gitref": "refs/tags/v0.56.0",
-      "revision": "a730eaf8a4281e79d14e0247ebc98df66ef753b0",
-      "url": "https://github.com/castwide/solargraph/releases/tag/v0.56.0"
+      "version": "v0.56.1",
+      "gitref": "refs/tags/v0.56.1",
+      "revision": "4450b01712c73af6862a32ce3d0721e97b193921",
+      "url": "https://github.com/castwide/solargraph/releases/tag/v0.56.1"
     },
     "ruby-yard-solargraph": {
       "version": "v0.1.0",
@@ -98,9 +98,9 @@
       "url": "https://github.com/exislow/tidal-dl-ng/releases/tag/v0.26.2"
     },
     "yaml-language-server": {
-      "version": "1.18.0",
-      "gitref": "refs/tags/1.18.0",
-      "revision": "2a2e614ef2ba2ab358c49444a2219f07d61318e0"
+      "version": "1.19.0",
+      "gitref": "refs/tags/1.19.0",
+      "revision": "27a12309b9fe84c5e124b04dbc306c53268f3db7"
     }
   }
 }
