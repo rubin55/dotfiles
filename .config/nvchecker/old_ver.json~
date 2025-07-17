@@ -2,7 +2,7 @@
   "version": 2,
   "data": {
     "cypher-shell": {
-      "version": "2025.06.0"
+      "version": "2025.06.2"
     },
     "husky": {
       "version": "v9.1.7",

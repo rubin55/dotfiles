@@ -98,9 +98,9 @@
       "url": "https://github.com/exislow/tidal-dl-ng/releases/tag/v0.26.2"
     },
     "yaml-language-server": {
-      "version": "1.19.0",
-      "gitref": "refs/tags/1.19.0",
-      "revision": "27a12309b9fe84c5e124b04dbc306c53268f3db7"
+      "version": "1.18.0",
+      "gitref": "refs/tags/1.18.0",
+      "revision": "2a2e614ef2ba2ab358c49444a2219f07d61318e0"
     }
   }
 }
