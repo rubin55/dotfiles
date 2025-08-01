@@ -21,14 +21,14 @@
       "version": "25.2.5"
     },
     "jdk17-openj9-bin": {
-      "version": "jdk-17.0.15+6_openj9-0.51.0",
-      "gitref": "refs/tags/jdk-17.0.15+6_openj9-0.51.0",
-      "url": "https://github.com/ibmruntimes/semeru17-binaries/releases/tag/jdk-17.0.15%2B6_openj9-0.51.0"
+      "version": "jdk-17.0.16+8_openj9-0.53.0",
+      "gitref": "refs/tags/jdk-17.0.16+8_openj9-0.53.0",
+      "url": "https://github.com/ibmruntimes/semeru17-binaries/releases/tag/jdk-17.0.16%2B8_openj9-0.53.0"
     },
     "jdk21-openj9-bin": {
-      "version": "jdk-21.0.7+6_openj9-0.51.0",
-      "gitref": "refs/tags/jdk-21.0.7+6_openj9-0.51.0",
-      "url": "https://github.com/ibmruntimes/semeru21-binaries/releases/tag/jdk-21.0.7%2B6_openj9-0.51.0"
+      "version": "jdk-21.0.8+9_openj9-0.53.0",
+      "gitref": "refs/tags/jdk-21.0.8+9_openj9-0.53.0",
+      "url": "https://github.com/ibmruntimes/semeru21-binaries/releases/tag/jdk-21.0.8%2B9_openj9-0.53.0"
     },
     "kotlin-language-server-bin": {
       "version": "1.3.13",
@@ -46,7 +46,7 @@
       "url": "https://github.com/moonlight-stream/moonlight-qt/releases/tag/v6.1.0"
     },
     "openshift-codeready-bin": {
-      "version": "2.52.0"
+      "version": "2.53.0"
     },
     "openshift-developer-bin": {
       "version": "v3.16.1"
@@ -74,10 +74,10 @@
       "version": "v4.0.24"
     },
     "ruby-solargraph": {
-      "version": "v0.56.1",
-      "gitref": "refs/tags/v0.56.1",
-      "revision": "4450b01712c73af6862a32ce3d0721e97b193921",
-      "url": "https://github.com/castwide/solargraph/releases/tag/v0.56.1"
+      "version": "v0.56.2",
+      "gitref": "refs/tags/v0.56.2",
+      "revision": "60d7ce6416cf7f3a808c1f346d2bd6c4d3cbcb42",
+      "url": "https://github.com/castwide/solargraph/releases/tag/v0.56.2"
     },
     "ruby-yard-solargraph": {
       "version": "v0.1.0",
@@ -91,9 +91,9 @@
       "url": "https://github.com/RainbowCookie32/rusty-psn/releases/tag/v0.5.8"
     },
     "sbom-tool-bin": {
-      "version": "v4.0.3",
-      "gitref": "refs/tags/v4.0.3",
-      "url": "https://github.com/microsoft/sbom-tool/releases/tag/v4.0.3"
+      "version": "v4.1.0",
+      "gitref": "refs/tags/v4.1.0",
+      "url": "https://github.com/microsoft/sbom-tool/releases/tag/v4.1.0"
     },
     "tidal-dl-ng": {
       "version": "v0.26.2",
@@ -101,9 +101,9 @@
       "url": "https://github.com/exislow/tidal-dl-ng/releases/tag/v0.26.2"
     },
     "yaml-language-server": {
-      "version": "1.19.0",
-      "gitref": "refs/tags/1.19.0",
-      "revision": "27a12309b9fe84c5e124b04dbc306c53268f3db7"
+      "version": "1.18.0",
+      "gitref": "refs/tags/1.18.0",
+      "revision": "2a2e614ef2ba2ab358c49444a2219f07d61318e0"
     }
   }
 }
