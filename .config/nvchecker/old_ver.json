@@ -2,7 +2,7 @@
   "version": 2,
   "data": {
     "cypher-shell": {
-      "version": "2025.07.0"
+      "version": "2025.07.1"
     },
     "husky": {
       "version": "v9.1.7",
@@ -86,9 +86,9 @@
       "url": "https://github.com/castwide/yard-solargraph/releases/tag/v0.1.0"
     },
     "rusty-psn-bin": {
-      "version": "v0.5.8",
-      "gitref": "refs/tags/v0.5.8",
-      "url": "https://github.com/RainbowCookie32/rusty-psn/releases/tag/v0.5.8"
+      "version": "v0.5.9",
+      "gitref": "refs/tags/v0.5.9",
+      "url": "https://github.com/RainbowCookie32/rusty-psn/releases/tag/v0.5.9"
     },
     "sbom-tool-bin": {
       "version": "v4.1.0",
