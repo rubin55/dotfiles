@@ -1,0 +1,5 @@
+AURDEST=/home/rubin/Packaging/Build/Others
+AUR_PAGER=ranger
+AUR_REPO=custom
+GNUPGHOME=/home/rubin/.gnupg
+GPGKEY=14B189C4E877C9CAEA7F99C7ED3BDDB83BDD2604
