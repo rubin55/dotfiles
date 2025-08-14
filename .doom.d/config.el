@@ -61,7 +61,7 @@
 (setq magit-repository-directories '(("~/Source" . 3)))
 
 ;; Make projectile find my projects.
-(setq projectile-project-search-path '(("~/Source" . 3) ("~/Documents/Rubin/Courses/exercism" . 2)))
+(setq projectile-project-search-path '(("~/Source" . 3) ("~/Documents/Rubin/Exercism" . 2) ("~/Documents/Rubin/Courses" . 1)))
 
 ;; Hide menubar, toolbar and scrollbar by default.
 (menu-bar-mode -1)
@@ -267,8 +267,8 @@
 
 ;; Font settings for TAURUS, my Linux desktop at home.
 (when (string= (system-name) "TAURUS")
-  (setq doom-font (font-spec :family "PragmataPro" :size 14 :weight 'normal)
-        doom-variable-pitch-font (font-spec :family "Sans" :size 14)))
+  (setq doom-font (font-spec :family "PragmataPro" :size 18 :weight 'normal)
+        doom-variable-pitch-font (font-spec :family "Sans" :size 18)))
 
 ;; Configure doom theme through auto-dark.
 (use-package! auto-dark
