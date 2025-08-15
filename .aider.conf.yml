@@ -1,5 +1,13 @@
+# Git behavior.
 auto-commits: false
 dirty-commits: false
 attribute-author: false
 attribute-committer: false
 attribute-co-authored-by: false
+
+# Custom colors.
+assistant-output-color: '448c27'
+tool-error-color: 'aa3731'
+tool-output-color: '7a3e9d'
+tool-warning-color: 'cb9000'
+user-input-color: '325cc0'
