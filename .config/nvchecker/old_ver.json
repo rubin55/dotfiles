@@ -15,10 +15,10 @@
       "url": "https://github.com/facebook/infer/releases/tag/v1.2.0"
     },
     "intel-gmmlib": {
-      "version": "22.7.2"
+      "version": "22.8.1"
     },
     "intel-media-driver": {
-      "version": "25.2.5"
+      "version": "25.2.6"
     },
     "jdk17-openj9-bin": {
       "version": "jdk-17.0.16+8_openj9-0.53.0",
@@ -71,7 +71,7 @@
       "url": "https://github.com/mattpannella/pupdate/releases/tag/4.5.0"
     },
     "rcu-bin": {
-      "version": "v4.0.24"
+      "version": "v4.0.25"
     },
     "ruby-solargraph": {
       "version": "v0.56.2",
@@ -91,9 +91,9 @@
       "url": "https://github.com/RainbowCookie32/rusty-psn/releases/tag/v0.5.9"
     },
     "sbom-tool-bin": {
-      "version": "v4.1.0",
-      "gitref": "refs/tags/v4.1.0",
-      "url": "https://github.com/microsoft/sbom-tool/releases/tag/v4.1.0"
+      "version": "v4.1.1",
+      "gitref": "refs/tags/v4.1.1",
+      "url": "https://github.com/microsoft/sbom-tool/releases/tag/v4.1.1"
     },
     "tidal-dl-ng": {
       "version": "v0.26.5",
