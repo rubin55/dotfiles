@@ -2,7 +2,7 @@
   "version": 2,
   "data": {
     "cypher-shell": {
-      "version": "2025.07.1"
+      "version": "2025.08.0"
     },
     "husky": {
       "version": "v9.1.7",
@@ -68,7 +68,7 @@
       "url": "https://github.com/mattpannella/pupdate/releases/tag/4.5.0"
     },
     "rcu-bin": {
-      "version": "v4.0.26"
+      "version": "v4.0.29"
     },
     "ruby-solargraph": {
       "version": "v0.56.2",
