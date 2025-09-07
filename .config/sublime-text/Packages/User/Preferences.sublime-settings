@@ -1,15 +1,15 @@
 {
 	"hardware_acceleration": "opengl",
 
-	"color_scheme": "Rosé Pine Moon.sublime-color-scheme",
-	"theme": "Rosé Pine Moon.sublime-theme",
+	"color_scheme": "Rosé Pine Dawn.sublime-color-scheme",
+	"theme": "Rosé Pine Dawn.sublime-theme",
 	"theme_font_options": ["no_bold", "gray_antialias"],
 	"dark_theme": "Rosé Pine Moon.sublime-theme",
 	"light_theme": "Rosé Pine Dawn.sublime-theme",
 	"dark_color_scheme": "Rosé Pine Moon.sublime-color-scheme",
 	"light_color_scheme": "Rosé Pine Dawn.sublime-color-scheme",
 
-	"font_size": 11,
+	"font_size": 12,
 	"font_options": ["no_bold", "gray_antialias"],
 	
 	"rulers": [80, 120],
