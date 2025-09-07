@@ -1,33 +1,26 @@
 {
   "auto_update": false,
   "buffer_font_family": "PragmataPro",
-  "buffer_font_size": 15,
+  "buffer_font_size": 16,
   "buffer_font_weight": 500,
   "buffer_line_height": "standard",
   "cursor_shape": "block",
   "hard_tabs": false,
   "middle_click_paste": true,
-  "show_wrap_guides": false,
+  "show_wrap_guides": true,
   "soft_wrap": "editor_width",
   "ui_font_family": "Ubuntu",
-  "ui_font_size": 16,
+  "ui_font_size": 19,
   "ui_font_weight": 400,
   "vim_mode": false,
   "wrap_guides": [80, 120],
 
   "agent": {
-    "default_model": {
-      "provider": "zed.dev",
-      "model": "claude-sonnet-4"
-    },
     "default_profile": "ask",
-    "default_view": "text_thread",
-    "version": "2",
-    "enabled": true,
-    "button": true
-  },
-
-  "assistant_v2": {
+    "default_model": {
+      "provider": "mistral",
+      "model": "codestral-latest"
+    },
     "enabled": true,
     "button": true
   },
@@ -43,9 +36,7 @@
     "dockerfile": true,
     "elixir": true,
     "erlang": true,
-    "everforest": true,
     "fsharp": true,
-    "github-theme": true,
     "groovy": true,
     "haskell": true,
     "helm": true,
@@ -55,7 +46,6 @@
     "lua": true,
     "make": true,
     "perl": true,
-    "rose-pine-theme": true,
     "ruby": true,
     "scala": true,
     "scheme": true,
@@ -76,7 +66,6 @@
   },
 
   "features": {
-    "copilot": false,
     "edit_prediction_provider": "none"
   },
 
@@ -108,7 +97,7 @@
       "**/helmfile.d/**/*.yaml",
       "**/helmfile.d/**/*.yml"
     ],
-    "Markdown": ["**/Projects/*"],
+    "Markdown": ["**/Project Notes/*"],
     "Shell Script": [".bash_functions"]
   },
 
@@ -221,7 +210,7 @@
     },
     "rust-analyzer": {
       "binary": {
-        "path_lookup": true
+        "path": "/usr/bin/rust-analyzer"
       },
       "initialization_options": {
         "check": {
@@ -279,15 +268,14 @@
     "blinking": "on",
     "line_height": "standard",
     "toolbar": {
-      "breadcrumbs": false,
-      "title": false
+      "breadcrumbs": false
     }
   },
 
   "theme": {
     "mode": "system",
-    "dark": "Rosé Pine Moon",
-    "light": "Rosé Pine Dawn"
+    "dark": "One Dark",
+    "light": "One Light"
   },
 
   "experimental.theme_overrides": {
