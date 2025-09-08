@@ -51,7 +51,24 @@
     "rust": {
       "enabled": false,
       "command": ["rust-analyzer"],
-      "selector": "source.rust"
+      "selector": "source.rust",
+      "initializationOptions": {
+        "check": {
+          "command": "clippy"
+        },
+        "completion": {
+          "fullFunctionSignatures": {
+            "enable": true
+          }
+        },
+        "hover": {
+          "maxSubstitutionLength": null,
+          "show": {
+            "enumVariants": 100,
+            "fields": 100
+          }
+        }
+      }
     },
     "xml": {
       "enabled": false,
