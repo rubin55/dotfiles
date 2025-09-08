@@ -1,8 +1,8 @@
 // Documentation at https://www.sublimetext.com/docs/themes.html
 {
 	"variables": {
-		"font_size_lg": 14,
-		"font_size_sm": 14
+		"font_size_lg": 15,
+		"font_size_sm": 15
 	},
 
 	"rules": [
@@ -11,7 +11,7 @@
 	  },
 
 	  { "class": "sidebar_label",
-	    "font.size": 14
+	    "font.size": 15
 	  },
 	    
 	  { "class": "tabset_control",
