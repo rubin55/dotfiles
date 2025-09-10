@@ -48,6 +48,14 @@
       "command": ["pylsp"],
       "selector": "source.python"
     },
+    "ruby": {
+      "enabled": false,
+      "command": ["solargraph", "stdio"],
+      "selector": "source.ruby | text.html.ruby",
+      "initializationOptions": {
+        "diagnostics": true
+      }
+    },
     "rust": {
       "enabled": false,
       "command": ["rust-analyzer"],
