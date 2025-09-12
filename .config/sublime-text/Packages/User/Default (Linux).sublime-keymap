@@ -1,10 +1,17 @@
 [
-	{ "keys": ["ctrl+shift+t"],
-		"command": "toggle_terminus_panel"
-	},
-	{ "keys": ["ctrl+alt+t"],
-		"command": "terminus_open", "args": {
-			"cmd": ["tmux", "new-session", "-A", "-s", "0"],
+  {
+    "keys": ["ctrl+shift+t"],
+    "command": "toggle_terminus_panel",
+    "args": {
+      "cmd": ["tmux", "new-session", "-A", "-s", "0"],
+      "cwd": "${home}"
+    }
+  },
+  {
+    "keys": ["ctrl+alt+t"],
+    "command": "terminus_open",
+    "args": {
+      "cmd": ["tmux", "new-session", "-A", "-s", "0"],
       "cwd": "${home}"
     }
   }
