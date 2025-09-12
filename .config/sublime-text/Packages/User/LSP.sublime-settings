@@ -28,6 +28,11 @@
       "command": ["lexical"],
       "selector": "source.elixir"
     },
+    "javascript": {
+      "enabled": false,
+      "command": ["flow", "lsp"],
+      "selector": "source.js | source.jsx | source.js.react"
+    },
     "json": {
       "enabled": false,
       "command": ["/usr/bin/vscode-json-language-server", "--stdio"],
@@ -77,6 +82,11 @@
           }
         }
       }
+    },
+    "typescript": {
+      "enabled": false,
+      "command": ["flow", "lsp"],
+      "selector": "source.ts | source.tsx | source.ts.react"
     },
     "xml": {
       "enabled": false,
