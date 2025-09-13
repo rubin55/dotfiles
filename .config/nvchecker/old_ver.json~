@@ -96,9 +96,9 @@
       "url": "https://github.com/microsoft/sbom-tool/releases/tag/v4.1.1"
     },
     "tidal-dl-ng": {
-      "version": "v0.26.5",
-      "gitref": "refs/tags/v0.26.5",
-      "url": "https://github.com/exislow/tidal-dl-ng/releases/tag/v0.26.5"
+      "version": "v0.26.6",
+      "gitref": "refs/tags/v0.26.6",
+      "url": "https://github.com/exislow/tidal-dl-ng/releases/tag/v0.26.6"
     },
     "yaml-language-server": {
       "version": "1.18.0",
