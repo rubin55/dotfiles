@@ -1,2 +1,2 @@
 # ~/.shellcheckrc
-disable=SC2155
+disable=SC2034,SC2155
