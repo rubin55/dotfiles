@@ -23,15 +23,10 @@ source = "pacman"
 pacman = "intel-media-driver"
 strip_release = "true"
 
-[jdk17-openj9-bin]
+[jdk25-openj9-bin]
 source = "github"
-github = "ibmruntimes/semeru17-binaries"
-use_latest_release = "true"
-
-[jdk21-openj9-bin]
-source = "github"
-github = "ibmruntimes/semeru21-binaries"
-use_latest_release = "true"
+github = "ibmruntimes/semeru25-binaries"
+use_latest_tag = "true"
 
 [kotlin-language-server-bin]
 source = "github"
