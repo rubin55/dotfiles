@@ -26,7 +26,7 @@
     "elixir": {
       "enabled": false,
       "command": ["elixir-ls"],
-      "selector": "source.elixir"
+      "selector": "source.elixir | text.elixir"
     },
     "javascript": {
       "enabled": false,
