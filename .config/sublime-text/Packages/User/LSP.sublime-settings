@@ -25,7 +25,7 @@
     },
     "elixir": {
       "enabled": false,
-      "command": ["lexical"],
+      "command": ["elixir-ls"],
       "selector": "source.elixir"
     },
     "javascript": {

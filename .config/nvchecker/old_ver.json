@@ -21,10 +21,10 @@
       "version": "25.2.6"
     },
     "jdk25-openj9-bin": {
-      "version": "jdk-25+36_openj9-0.55.0-m1",
-      "gitref": "refs/tags/jdk-25+36_openj9-0.55.0-m1",
+      "version": "jdk-25+36_openj9-0.55.0-m2",
+      "gitref": "refs/tags/jdk-25+36_openj9-0.55.0-m2",
       "revision": "0eaf909966e57752f2c2f5834c872195b99b8fa1",
-      "url": "https://github.com/ibmruntimes/semeru25-binaries/releases/tag/jdk-25+36_openj9-0.55.0-m1"
+      "url": "https://github.com/ibmruntimes/semeru25-binaries/releases/tag/jdk-25+36_openj9-0.55.0-m2"
     },
     "kotlin-language-server-bin": {
       "version": "1.3.13",

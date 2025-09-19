@@ -2,7 +2,6 @@ cursor-style = "block"
 cursor-opacity = 0.9
 font-family = "Monospace"
 font-size = 12
-gtk-adwaita = true
 gtk-tabs-location = hidden
 gtk-titlebar-hide-when-maximized = true
 gtk-wide-tabs = false

@@ -1,7 +1,7 @@
 {
   "auto_update": false,
   "buffer_font_family": "PragmataPro",
-  "buffer_font_size": 16,
+  "buffer_font_size": 15,
   "buffer_font_weight": 500,
   "buffer_line_height": "standard",
   "cursor_shape": "block",
@@ -10,7 +10,7 @@
   "show_wrap_guides": true,
   "soft_wrap": "editor_width",
   "ui_font_family": "Ubuntu",
-  "ui_font_size": 19,
+  "ui_font_size": 16,
   "ui_font_weight": 400,
   "vim_mode": false,
   "wrap_guides": [80, 120],
@@ -133,7 +133,7 @@
       "language_servers": ["dockerfile-language-server"]
     },
     "Elixir": {
-      "language_servers": ["lexical", "!elixir-ls", "!next-ls"]
+      "language_servers": ["elixir-ls", "!lexical", "!next-ls"]
     },
     "Groovy": {
       "language_servers": ["groovy"]
