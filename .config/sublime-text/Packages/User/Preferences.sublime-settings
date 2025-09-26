@@ -9,6 +9,8 @@
 	"dark_color_scheme": "Rosé Pine Moon.sublime-color-scheme",
 	"light_color_scheme": "Rosé Pine Dawn.sublime-color-scheme",
 
+	"drag_text": false,
+
 	"font_size": 12,
 	"font_options": ["no_bold", "gray_antialias"],
 	

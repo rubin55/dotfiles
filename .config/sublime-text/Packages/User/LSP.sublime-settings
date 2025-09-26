@@ -96,7 +96,10 @@
     "yaml": {
       "enabled": false,
       "command": ["yaml-language-server", "--stdio"],
-      "selector": "source.yaml"
+      "selector": "source.yaml",
+      "settings": {
+        "yaml.customTags": ["!reference sequence"]
+      }
     },
   }	
 }
