@@ -1,9 +1,6 @@
 -- load defaults i.e lua_lsp
 require("nvchad.configs.lspconfig").defaults()
 
-local lspconfig = require "lspconfig"
-
--- EXAMPLE
 local servers = {
   "ansiblels",
   "bashls",
@@ -43,15 +40,15 @@ local nvlsp = require "nvchad.configs.lspconfig"
 
 -- lsps with default config
 for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
+  vim.lsp.config(lsp, {
     on_attach = nvlsp.on_attach,
     on_init = nvlsp.on_init,
     capabilities = nvlsp.capabilities,
-  }
+  })
 end
 
 -- configuring single server: lua_ls
-lspconfig.lua_ls.setup {
+vim.lsp.config('lua_ls', {
   on_init = function(client)
     local path = client.workspace_folders[1].name
     if vim.loop.fs_stat(path..'/.luarc.json') or vim.loop.fs_stat(path..'/.luarc.jsonc') then
@@ -79,8 +76,4 @@ lspconfig.lua_ls.setup {
   settings = {
     Lua = {}
   }
-}
-
-
-
-
+})
