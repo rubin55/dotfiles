@@ -34,6 +34,7 @@ alias scu='systemctl --user'
 alias sig='sig.sh'
 alias st='subl -w'
 alias tipi='tipi.py'
+alias theme='alacritty-theme.sh'
 alias tracker='localsearch'
 alias venv='python3 -m venv'
 

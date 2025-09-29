@@ -1,6 +1,6 @@
 [general]
 import = [
-    "~/.config/alacritty/themes/themes/ayu_dark.toml"
+    "~/.config/alacritty/dark_theme.toml"
 ]
 
 [cursor]
@@ -32,6 +32,7 @@ bindings = [
 ]
 
 [window]
-decorations = "none"
-dimensions = { columns = 80, lines = 25 }
-opacity = 0.0
+decorations = "Full"
+decorations_theme_variant = "Dark"
+dimensions = { columns = 132, lines = 43 }
+opacity = 1.0
