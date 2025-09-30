@@ -1,0 +1,23 @@
+// Documentation at https://www.sublimetext.com/docs/themes.html
+{
+	"variables": {
+		"font_face": "Ubuntu",
+		"font_size": 14,
+		"font_size_sm": 11,
+		"font_size_lg": 15
+	},
+
+	"rules": [
+	  { "class": "sidebar_heading",
+	    "font.size": 14
+	  },
+
+	  { "class": "sidebar_label",
+	    "font.size": 15
+	  },
+	    
+	  { "class": "tabset_control",
+	    "tab_height": 30
+	  }
+	]
+}

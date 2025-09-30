@@ -1,0 +1,13 @@
+{
+	"block_caret": true,
+	"caret_style": "blink",
+	"drag_text": false,
+	"font_options": ["no_bold", "gray_antialias"],
+	"font_size": 11,
+	"hardware_acceleration": "opengl",
+	"rulers": [50, 72],
+	"tab_size": 2,
+	"theme": "Merge Dark.sublime-theme",
+	"theme_font_options": ["no_bold", "gray_antialias"],
+	"time_format": "24h",
+}
