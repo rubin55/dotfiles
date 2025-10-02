@@ -39,3 +39,4 @@ opacity = 1.0
 
 [terminal]
 shell = "/home/rubin/Source/Rubin/scripts/shell/tmux-or-bash.sh"
+
