@@ -118,9 +118,8 @@ function title.set() {
     [[ -z "$orig" ]] && orig="$PS1"
     local code="\e]2;$*\a"
     local string="\[$code\]"
-    printf "${code}";
+    echo -e "${code}";
     PS1="${orig}${string}";
-
   else
     tmux rename-window "$*"
   fi
