@@ -36,3 +36,6 @@ decorations = "Full"
 decorations_theme_variant = "Dark"
 dimensions = { columns = 132, lines = 43 }
 opacity = 1.0
+
+[terminal]
+shell = "/home/rubin/Source/Rubin/scripts/shell/tmux-or-bash.sh"
