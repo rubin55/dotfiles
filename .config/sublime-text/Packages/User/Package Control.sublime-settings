@@ -10,6 +10,7 @@
 		"Dockerfile Syntax Highlighting",
 		"EditorConfig",
 		"ElixirSyntax",
+		"JsPrettier",
 		"LSP",
 		"Package Control",
 		"Terminus",

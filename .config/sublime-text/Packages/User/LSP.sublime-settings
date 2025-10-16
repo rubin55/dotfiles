@@ -16,7 +16,7 @@
     "c/c++": {
       "enabled": false,
       "command": ["clangd"],
-      "selector": "source.c"
+      "selector": "source.c | source.c++"
     },
     "docker": {
       "enabled": false,
