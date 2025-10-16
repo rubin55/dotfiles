@@ -21,10 +21,10 @@
       "version": "25.3.4"
     },
     "jdk25-openj9-bin": {
-      "version": "jdk-25+36_openj9-0.55.0",
-      "gitref": "refs/tags/jdk-25+36_openj9-0.55.0",
+      "version": "jdk-25+36_openj9-0.56.0-m2",
+      "gitref": "refs/tags/jdk-25+36_openj9-0.56.0-m2",
       "revision": "0eaf909966e57752f2c2f5834c872195b99b8fa1",
-      "url": "https://github.com/ibmruntimes/semeru25-binaries/releases/tag/jdk-25+36_openj9-0.55.0"
+      "url": "https://github.com/ibmruntimes/semeru25-binaries/releases/tag/jdk-25+36_openj9-0.56.0-m2"
     },
     "kotlin-language-server-bin": {
       "version": "1.3.13",
@@ -42,7 +42,7 @@
       "url": "https://github.com/moonlight-stream/moonlight-qt/releases/tag/v6.1.0"
     },
     "openshift-codeready-bin": {
-      "version": "2.54.0"
+      "version": "2.55.0"
     },
     "openshift-developer-bin": {
       "version": "v3.16.1"
@@ -89,14 +89,14 @@
       "url": "https://github.com/microsoft/sbom-tool/releases/tag/v4.1.2"
     },
     "tidal-dl-ng": {
-      "version": "v0.26.7",
-      "gitref": "refs/tags/v0.26.7",
-      "url": "https://github.com/exislow/tidal-dl-ng/releases/tag/v0.26.7"
+      "version": "v0.28.0",
+      "gitref": "refs/tags/v0.28.0",
+      "url": "https://github.com/exislow/tidal-dl-ng/releases/tag/v0.28.0"
     },
     "yaml-language-server": {
-      "version": "1.19.1",
-      "gitref": "refs/tags/1.19.1",
-      "revision": "a72ccb639353f253f3d6de6637fec7e746b8fea0"
+      "version": "1.19.2",
+      "gitref": "refs/tags/1.19.2",
+      "revision": "f879f340ab4ee694a54bc2143e1858037b4aa589"
     }
   }
 }
