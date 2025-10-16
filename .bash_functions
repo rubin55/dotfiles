@@ -144,3 +144,12 @@ function openvpn.connect() {
     return 1
   fi
 }
+
+function count.down() {
+  local seconds=$1
+  while [ $seconds -gt 0 ]; do
+    echo -ne "$seconds\033[0K\r"
+    sleep 1
+    : $((seconds--))
+  done
+}
