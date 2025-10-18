@@ -1,7 +1,7 @@
 {
 	"hardware_acceleration": "opengl",
 
-	"color_scheme": "Catppuccin Latte.sublime-color-scheme",
+	"color_scheme": "Catppuccin Frappe.sublime-color-scheme",
 	"theme": "Adaptive.sublime-theme",
 	"theme_font_options": ["no_bold", "gray_antialias"],
 
