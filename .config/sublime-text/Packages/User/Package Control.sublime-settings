@@ -6,7 +6,7 @@
 	"installed_packages":
 	[
 		"A File Icon",
-		"AutoDarkLinux",
+		"Catppuccin color schemes",
 		"Dockerfile Syntax Highlighting",
 		"EditorConfig",
 		"ElixirSyntax",
@@ -14,6 +14,5 @@
 		"LSP",
 		"Package Control",
 		"Terminus",
-		"Theme - Rose Pine",
 	],
 }
