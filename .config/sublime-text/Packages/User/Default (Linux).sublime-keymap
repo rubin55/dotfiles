@@ -14,5 +14,14 @@
       "cmd": ["tmux", "new-session", "-A", "-s", "0"],
       "cwd": "${home}"
     }
-  }
+  },
+  {
+    "keys": ["ctrl+shift+r"],
+    "command": "toggler",
+    "args": {
+        "setting": "rulers",
+        "on": [80, 120],
+        "off": []
+    }
+}
 ]
