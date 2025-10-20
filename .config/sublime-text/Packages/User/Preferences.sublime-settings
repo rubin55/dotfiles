@@ -15,7 +15,7 @@
 		120,
 	],
 	"index_files": true,
-
+	"highlight_line": true,
 	"block_caret": true,
 	"caret_style": "blink",
     
