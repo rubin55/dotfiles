@@ -8,6 +8,9 @@ local o = vim.o
 o.cursorlineopt = 'both'
 o.cmdheight = 0
 
+-- don't wrap cursor movement to next line
+o.whichwrap = "b,s"
+
 -- neovide settings
 if vim.g.neovide then
   g.neovide_cursor_animation_length = 0
