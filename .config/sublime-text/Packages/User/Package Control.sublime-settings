@@ -6,13 +6,21 @@
 	"installed_packages":
 	[
 		"A File Icon",
+		"Astro",
 		"Catppuccin color schemes",
+		"Dartlight",
+		"Decent Swift Syntax",
 		"Dockerfile Syntax Highlighting",
 		"EditorConfig",
 		"ElixirSyntax",
+		"F#",
 		"JsPrettier",
 		"LSP",
 		"Package Control",
+		"PowerShell",
+		"Scheme",
+		"Svelte",
 		"Terminus",
+		"ZigUnofficial",
 	],
 }

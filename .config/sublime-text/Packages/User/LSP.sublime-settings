@@ -1,65 +1,200 @@
 // Settings in here override those in "LSP/LSP.sublime-settings"
 {
-
   // Language server configurations
   "clients": {
     "ansible": {
       "enabled": false,
       "command": ["ansible-language-server", "--stdio"],
-      "selector": "source.yaml"
+      "selector": "source.yaml",
+    },
+    "astro": {
+      "enabled": false,
+      "command": ["astro-ls", "--stdio"],
+      "selector": "source.astro | text.html.astro",
+      "schemes": ["file", "buffer"],
+      "initializationOptions": {
+        "diagnosticModel": 2,
+        "typescript.tsdk": "",
+      },
+      "settings": {
+        "astro.typescript.enabled": true,
+        "astro.typescript.allowArbitraryAttributes": false,
+        "astro.typescript.diagnostics.enabled": true,
+        "astro.typescript.hover.enabled": true,
+        "astro.typescript.documentSymbols.enabled": true,
+        "astro.typescript.completions.enabled": true,
+        "astro.typescript.definitions.enabled": true,
+        "astro.typescript.codeActions.enabled": true,
+        "astro.typescript.signatureHelp.enabled": true,
+        "astro.typescript.rename.enabled": true,
+        "astro.typescript.semanticTokens.enabled": true,
+        "astro.html.enabled": true,
+        "astro.html.hover.enabled": true,
+        "astro.html.completions.enabled": true,
+        "astro.html.completions.emmet": true,
+        "astro.html.tagComplete.enabled": true,
+        "astro.html.documentSymbols.enabled": true,
+        "astro.css.enabled": true,
+        "astro.css.hover.enabled": true,
+        "astro.css.completions.enabled": true,
+        "astro.css.completions.emmet": true,
+        "astro.css.documentColors.enabled": true,
+        "astro.css.documentSymbols.enabled": true,
+        "astro.format.indentFrontmatter": false,
+        "astro.format.newLineAfterFrontmatter": true,
+      },
     },
     "bash": {
       "enabled": false,
       "command": ["bash-language-server", "start"],
-      "selector": "source.shell.bash"
+      "selector": "source.shell.bash",
     },
     "c/c++": {
       "enabled": false,
       "command": ["clangd"],
-      "selector": "source.c | source.c++"
+      "selector": "source.c | source.c++",
+    },
+    "clojure": {
+      "enabled": false,
+      "command": ["clojure-lsp"],
+      "selector": "source.clojure",
+    },
+    "csharp": {
+      "enabled": false,
+      "command": ["omnisharp", "--languageserver", "--encoding", "utf-8"],
+      "selector": "source.cs",
+    },
+    "css": {
+      "enabled": false,
+      "command": ["vscode-css-languageserver", "--stdio"],
+      "selector": "source.css",
+    },
+    "dart": {
+      "enabled": false,
+      "command": ["dart", "language-server", "--protocol", "lsp"],
+      "selector": "source.dart",
     },
     "docker": {
       "enabled": false,
       "command": ["docker-langserver", "--stdio"],
-      "selector": "source.dockerfile"
+      "selector": "source.dockerfile",
     },
     "elixir": {
       "enabled": false,
       "command": ["elixir-ls"],
-      "selector": "source.elixir | text.elixir"
+      "selector": "source.elixir | text.elixir",
+    },
+    "erlang": {
+      "enabled": false,
+      "command": ["erlang_ls", "--transport", "stdio"],
+      "selector": "source.erlang",
+    },
+    "fsharp": {
+      "enabled": false,
+      "command": ["fsautocomplete"],
+      "selector": "source.fsharp",
+      "initializationOptions": {
+        "AutomaticWorkspaceInit": true,
+      },
+    },
+    "go": {
+      "enabled": false,
+      "command": ["gopls"],
+      "selector": "source.go",
+    },
+    "groovy": {
+      "enabled": false,
+      "command": ["groovy-language-server"],
+      "selector": "source.groovy",
+    },
+    "haskell": {
+      "enabled": false,
+      "command": ["haskell-language-server-wrapper", "--lsp"],
+      "selector": "source.haskell",
+    },
+    "helm": {
+      "enabled": false,
+      "command": ["helm_ls", "serve"],
+      "selector": "source.yaml.go", // Requires ST 4181+. Use `source.yaml` otherwise.
+    },
+    "html": {
+      "enabled": false,
+      "command": ["vscode-html-languageserver", "--stdio"],
+      "selector": "source.html",
+    },
+    "java": {
+      "enabled": false,
+      "command": ["jdtls"],
+      "selector": "source.java",
     },
     "javascript": {
       "enabled": false,
-      "command": ["flow", "lsp"],
-      "selector": "source.js | source.jsx | source.js.react"
+      "command": ["biome", "lsp-proxy"],
+      "selector": "source.js | source.jsx | source.js.react",
     },
     "json": {
       "enabled": false,
-      "command": ["/usr/bin/vscode-json-language-server", "--stdio"],
-      "selector": "source.json"
+      "command": ["vscode-json-languageserver", "--stdio"],
+      "selector": "source.json",
     },
     "kotlin": {
       "enabled": false,
-      "command": ["kotlin-language-server"],
-      "selector": "source.Kotlin"
+      "command": ["kotlin-lsp", "--stdio"],
+      "selector": "source.Kotlin",
+    },
+    "lua": {
+      "enabled": false,
+      "command": ["lua-language-server"],
+      "selector": "source.lua",
     },
     "markdown": {
       "enabled": false,
       "command": ["marksman", "server"],
-      "selector": "text.html.markdown"
+      "selector": "text.html.markdown",
+    },
+    "perl": {
+      "enabled": false,
+      "command": ["perlnavigator", "--stdio"],
+      "selector": "source.perl",
+      "settings": {
+        "perlnavigator.includePaths": [],
+        "perlnavigator.perlParams": [],
+      },
+    },
+    "powershell": {
+      "enabled": false,
+      "command": [
+        "pwsh",
+        "-NoLogo",
+        "-NoProfile",
+        "-File",
+        "/opt/powershell-editor-services/PowerShellEditorServices/Start-EditorServices.ps1",
+        "-BundledModulesPath",
+        "/opt/powershell-editor-services",
+        "-HostProfileId",
+        "SublimeText",
+        "-Stdio",
+        "-LogLevel",
+        "Error",
+        "-LogPath",
+        "/tmp",
+        "-SessionDetailsPath",
+        "/tmp/PowerShellEditorServices.json",
+      ],
+      "selector": "source.powershell",
     },
     "python": {
       "enabled": false,
       "command": ["pylsp"],
-      "selector": "source.python"
+      "selector": "source.python",
     },
     "ruby": {
       "enabled": false,
       "command": ["solargraph", "stdio"],
       "selector": "source.ruby | text.html.ruby",
       "initializationOptions": {
-        "diagnostics": true
-      }
+        "diagnostics": true,
+      },
     },
     "rust": {
       "enabled": false,
@@ -67,39 +202,420 @@
       "selector": "source.rust",
       "initializationOptions": {
         "check": {
-          "command": "clippy"
+          "command": "clippy",
         },
         "completion": {
           "fullFunctionSignatures": {
-            "enable": true
-          }
+            "enable": true,
+          },
         },
         "hover": {
           "maxSubstitutionLength": null,
           "show": {
             "enumVariants": 100,
-            "fields": 100
-          }
-        }
-      }
+            "fields": 100,
+          },
+        },
+      },
+    },
+    "scala": {
+      "enabled": false,
+      "command": ["metals-sublime"],
+      "selector": "source.scala",
+    },
+    "scheme": {
+      "enabled": false,
+      "command": ["scheme-langserver"],
+      "selector": "source.scheme",
+    },
+    "shell": {
+      "enabled": false,
+      "command": ["diagnostic-languageserver", "--stdio"],
+      "selector": "source.shell.bash",
+      "initializationOptions": {
+        "linters": {
+          "shellcheck": {
+            "command": "shellcheck",
+            "args": ["--format=json", "-"],
+            "debounce": 100,
+            "formatLines": 1,
+            "offsetLine": 0,
+            "offsetColumn": 0,
+            "sourceName": "shellcheck",
+            "parseJson": {
+              "line": "line",
+              "column": "column",
+              "endLine": "endLine",
+              "endColumn": "endColumn",
+              "security": "level",
+              "message": "\\${message} [\\${code}]",
+            },
+            "securities": {
+              "error": "error",
+              "warning": "warning",
+              "note": "info",
+            },
+          },
+        },
+        "formatters": {},
+        "filetypes": {
+          "shellscript": "shellcheck",
+        },
+      },
+    },
+    "svelte": {
+      "enabled": false,
+      "command": ["svelteserver", "--stdio"],
+      "selector": "source.svelte | text.html.svelte",
+      "settings": {
+        "javascript.inlayHints.enumMemberValues.enabled": false,
+        "javascript.inlayHints.functionLikeReturnTypes.enabled": false,
+        "javascript.inlayHints.parameterNames.enabled": "none",
+        "javascript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": true,
+        "javascript.inlayHints.parameterTypes.enabled": false,
+        "javascript.inlayHints.propertyDeclarationTypes.enabled": false,
+        "javascript.inlayHints.variableTypes.enabled": false,
+        "javascript.inlayHints.variableTypes.suppressWhenTypeMatchesName.enabled": true,
+
+        "typescript.inlayHints.enumMemberValues.enabled": false,
+        "typescript.inlayHints.functionLikeReturnTypes.enabled": false,
+        "typescript.inlayHints.parameterNames.enabled": "none",
+        "typescript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": true,
+        "typescript.inlayHints.parameterTypes.enabled": false,
+        "typescript.inlayHints.propertyDeclarationTypes.enabled": false,
+        "typescript.inlayHints.variableTypes.enabled": false,
+        "typescript.inlayHints.variableTypes.suppressWhenTypeMatchesName.enabled": true,
+      },
+      "initializationOptions": {
+        "configuration": {
+          "svelte": {
+            "plugin": {
+              "css": {
+                "enable": true,
+                "globals": "",
+                "colorPresentations": {
+                  "enable": true,
+                },
+                "completions": {
+                  "enable": true,
+                  "emmet": true,
+                },
+                "diagnostics": {
+                  "enable": true,
+                },
+                "documentColors": {
+                  "enable": true,
+                },
+                "documentSymbols": {
+                  "enable": true,
+                },
+                "hover": {
+                  "enable": true,
+                },
+                "selectionRange": {
+                  "enable": true,
+                },
+              },
+              "html": {
+                "enable": true,
+                "completions": {
+                  "enable": true,
+                  "emmet": true,
+                },
+                "documentSymbols": {
+                  "enable": true,
+                },
+                "hover": {
+                  "enable": true,
+                },
+                "linkedEditing": {
+                  "enable": true,
+                },
+                "renameTags": {
+                  "enable": true,
+                },
+                "tagComplete": {
+                  "enable": true,
+                },
+              },
+              "svelte": {
+                "enable": true,
+                "codeActions": {
+                  "enable": true,
+                },
+                "compilerWarnings": {},
+                "completions": {
+                  "enable": true,
+                },
+                "useNewTransformation": false,
+                "diagnostics": {
+                  "enable": true,
+                },
+                "format": {
+                  "enable": true,
+                },
+                "hover": {
+                  "enable": true,
+                },
+                "rename": {
+                  "enable": true,
+                },
+                "selectionRange": {
+                  "enable": true,
+                },
+              },
+              "typescript": {
+                "enable": true,
+                "codeActions": {
+                  "enable": true,
+                },
+                "completions": {
+                  "enable": true,
+                },
+                "definitions": {
+                  "enable": true,
+                },
+                "diagnostics": {
+                  "enable": true,
+                },
+                "documentSymbols": {
+                  "enable": true,
+                },
+                "findReferences": {
+                  "enable": true,
+                },
+                "hover": {
+                  "enable": true,
+                },
+                "rename": {
+                  "enable": true,
+                },
+                "selectionRange": {
+                  "enable": true,
+                },
+                "semanticTokens": {
+                  "enable": true,
+                },
+                "signatureHelp": {
+                  "enable": true,
+                },
+              },
+            },
+          },
+        },
+      },
+    },
+    "swift": {
+      "command": ["sourcekit-lsp"],
+      "enabled": false,
+      "selector": "source.objc | source.objc++ | source.swift",
+    },
+    "twcss": {
+      "enabled": false,
+      "command": ["tailwindcss-language-server"],
+      "selector": "embedding.php | source.astro | source.css | source.js | source.js.react | source.jsx | source.less | source.postcss | source.scss | source.ts | source.tsx | text.blade | text.django | text.haml | text.html.basic | text.html.blade | text.html.elixir | text.html.erb | text.html.jinja | text.html.ngx | text.html.rails | text.html.svelte | text.html.twig | text.html.vue | text.jinja | text.pug | text.slim",
+      "settings": {
+        "tailwindCSS.colorDecorators": true,
+        "tailwindCSS.emmetCompletions": false,
+        "tailwindCSS.includeLanguages": {},
+        "tailwindCSS.files.exclude": [
+          "**/.git/**",
+          "**/node_modules/**",
+          "**/.hg/**",
+        ],
+        "tailwindCSS.classAttributes": ["class", "className", "ngClass"],
+        "tailwindCSS.rootFontSize": 16,
+        "tailwindCSS.showPixelEquivalents": true,
+        "tailwindCSS.validate": true,
+        "tailwindCSS.lint.cssConflict": "warning",
+        "tailwindCSS.lint.invalidApply": "error",
+        "tailwindCSS.lint.invalidConfigPath": "error",
+        "tailwindCSS.lint.invalidScreen": "error",
+        "tailwindCSS.lint.invalidTailwindDirective": "error",
+        "tailwindCSS.lint.invalidVariant": "error",
+        "tailwindCSS.lint.recommendedVariantOrder": "warning",
+        "tailwindCSS.experimental.classRegex": [],
+      },
     },
     "typescript": {
       "enabled": false,
-      "command": ["flow", "lsp"],
-      "selector": "source.ts | source.tsx | source.ts.react"
+      "command": ["biome", "lsp-proxy"],
+      "selector": "source.ts | source.tsx | source.ts.react",
+    },
+    "vala": {
+      "enabled": false,
+      "command": ["vala-language-server"],
+      "selector": "source.vala | source.genie",
+    },
+    "vue": {
+      "enabled": false,
+      "command": ["vue-language-server", "--stdio"],
+      "env": {
+        "NODE_ENV": "production",
+      },
+      "selector": "text.html.vue",
+      "priority_selector": "text.html.vue source.js, text.html.vue source.ts",
+      "disabled_capabilities": {
+        "definitionProvider": true,
+        "referencesProvider": true,
+        "typeDefinitionProvider": true,
+      },
+      "semantic_tokens": {
+        "component": "entity.name.tag.vue",
+        "markdown": "entity.name.tag.vue",
+        "html": "entity.name.tag.vue",
+      },
+      "settings": {
+        "vue.format.script.initialIndent": false,
+        "vue.format.style.initialIndent": false,
+        "vue.format.template.initialIndent": true,
+        "vue.format.wrapAttributes": "auto",
+        "vue.inlayHints.destructuredProps": false,
+        "vue.inlayHints.inlineHandlerLeading": false,
+        "vue.inlayHints.missingProps": false,
+        "vue.inlayHints.optionsWrapper": false,
+        "vue.inlayHints.vBindShorthand": false,
+        "vue.suggest.componentNameCasing": "preferPascalCase",
+        "vue.suggest.defineAssignment": true,
+        "vue.suggest.propNameCasing": "preferKebabCase",
+
+        "javascript.inlayHints.enumMemberValues.enabled": false,
+        "javascript.inlayHints.functionLikeReturnTypes.enabled": false,
+        "javascript.inlayHints.parameterNames.enabled": "none",
+        "javascript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": true,
+        "javascript.inlayHints.parameterTypes.enabled": false,
+        "javascript.inlayHints.propertyDeclarationTypes.enabled": false,
+        "javascript.inlayHints.variableTypes.enabled": false,
+        "javascript.inlayHints.variableTypes.suppressWhenTypeMatchesName.enabled": true,
+
+        "typescript.inlayHints.enumMemberValues.enabled": false,
+        "typescript.inlayHints.functionLikeReturnTypes.enabled": false,
+        "typescript.inlayHints.parameterNames.enabled": "none",
+        "typescript.inlayHints.parameterNames.suppressWhenArgumentMatchesName": true,
+        "typescript.inlayHints.parameterTypes.enabled": false,
+        "typescript.inlayHints.propertyDeclarationTypes.enabled": false,
+        "typescript.inlayHints.variableTypes.enabled": false,
+        "typescript.inlayHints.variableTypes.suppressWhenTypeMatchesName.enabled": true,
+
+        "javascript.suggest.autoImports": false, // Disabled by default due to UI freezes that large completion responses cause.
+        "javascript.suggest.classMemberSnippets.enabled": true,
+        "javascript.suggest.completeFunctionCalls": false,
+        "javascript.suggest.includeAutomaticOptionalChainCompletions": true,
+        "javascript.suggest.includeCompletionsForImportStatements": true,
+        "javascript.suggest.includeCompletionsWithSnippetText": true,
+        "javascript.suggest.jsdoc.generateReturns": true,
+        "javascript.suggest.objectLiteralMethodSnippets.enabled": true,
+
+        "typescript.suggest.autoImports": false, // Disabled by default due to UI freezes that large completion responses cause.
+        "typescript.suggest.classMemberSnippets.enabled": true,
+        "typescript.suggest.completeFunctionCalls": false,
+        "typescript.suggest.includeAutomaticOptionalChainCompletions": true,
+        "typescript.suggest.includeCompletionsForImportStatements": true,
+        "typescript.suggest.includeCompletionsWithSnippetText": true,
+        "typescript.suggest.jsdoc.generateReturns": true,
+        "typescript.suggest.objectLiteralMethodSnippets.enabled": true,
+
+        "javascript.preferences.quoteStyle": "auto",
+        "javascript.preferences.importModuleSpecifier": "shortest",
+        "javascript.preferences.importModuleSpecifierEnding": "auto",
+        "javascript.preferences.jsxAttributeCompletionStyle": "auto",
+        "javascript.preferences.autoImportFileExcludePatterns": [],
+
+        "typescript.preferences.quoteStyle": "auto",
+        "typescript.preferences.importModuleSpecifier": "shortest",
+        "typescript.preferences.importModuleSpecifierEnding": "auto",
+        "typescript.preferences.jsxAttributeCompletionStyle": "auto",
+        "typescript.preferences.autoImportFileExcludePatterns": [],
+
+        "emmet.excludeLanguages": ["markdown"],
+        "emmet.preferences": {},
+        "emmet.showAbbreviationSuggestions": true,
+        "emmet.showExpandedAbbreviation": "always",
+        "emmet.showSuggestionsAsSnippets": false,
+        "emmet.syntaxProfiles": {},
+        "emmet.variables": {},
+
+        "css.completion.completePropertyWithSemicolon": true,
+        "css.completion.triggerPropertyValueCompletion": true,
+        "css.customData": [],
+        "css.format.braceStyle": "collapse",
+        "css.format.enable": true,
+        "css.format.maxPreserveNewLines": null,
+        "css.format.newlineBetweenRules": true,
+        "css.format.newlineBetweenSelectors": true,
+        "css.format.preserveNewLines": true,
+        "css.format.spaceAroundSelectorSeparator": false,
+        "css.hover.documentation": true,
+        "css.hover.references": true,
+
+        "less.completion.completePropertyWithSemicolon": true,
+        "less.completion.triggerPropertyValueCompletion": true,
+
+        "less.format.braceStyle": "collapse",
+        "less.format.enable": true,
+        "less.format.maxPreserveNewLines": null,
+        "less.format.newlineBetweenRules": true,
+        "less.format.newlineBetweenSelectors": true,
+        "less.format.preserveNewLines": true,
+        "less.format.spaceAroundSelectorSeparator": false,
+        "less.hover.documentation": true,
+        "less.hover.references": true,
+
+        "scss.completion.completePropertyWithSemicolon": true,
+        "scss.completion.triggerPropertyValueCompletion": true,
+        "scss.format.braceStyle": "collapse",
+        "scss.format.enable": true,
+        "scss.format.maxPreserveNewLines": null,
+        "scss.format.newlineBetweenRules": true,
+        "scss.format.newlineBetweenSelectors": true,
+        "scss.format.preserveNewLines": true,
+        "scss.format.spaceAroundSelectorSeparator": false,
+        "scss.hover.documentation": true,
+        "scss.hover.references": true,
+
+        "html.autoClosingTags": true,
+        "html.autoCreateQuotes": true,
+        "html.completion.attributeDefaultValue": "doublequotes",
+        "html.customData": [],
+        "html.format.contentUnformatted": "pre,code,textarea",
+        "html.format.enable": true,
+        "html.format.extraLiners": "head, body, /html",
+        "html.format.indentHandlebars": false,
+        "html.format.indentInnerHtml": false,
+        "html.format.maxPreserveNewLines": null,
+        "html.format.preserveNewLines": true,
+        "html.format.templating": false,
+        "html.format.unformatted": "wbr",
+        "html.format.unformattedContentDelimiter": "",
+        "html.format.wrapAttributes": "auto",
+        "html.format.wrapAttributesIndentSize": null,
+        "html.format.wrapLineLength": 120,
+        "html.hover.documentation": true,
+        "html.hover.references": true,
+      },
     },
     "xml": {
       "enabled": false,
       "command": ["lemminx"],
-      "selector": "text.xml"
-    },   
+      "selector": "text.xml",
+    },
     "yaml": {
       "enabled": false,
       "command": ["yaml-language-server", "--stdio"],
       "selector": "source.yaml",
       "settings": {
-        "yaml.customTags": ["!reference sequence"]
-      }
+        "yaml.customTags": ["!reference sequence"],
+      },
     },
-  }	
+    "zig": {
+      "enabled": false,
+      "command": ["zls"],
+      "selector": "source.zig",
+      "settings": {
+        "zls": {
+          "enable_build_on_save": true,
+        },
+      },
+    },
+  },
 }
