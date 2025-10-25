@@ -8,6 +8,16 @@ source = "regex"
 regex = "Neo4j (\\d+\\.\\d+\\.\\d+)"
 url = "https://neo4j.com/deployment-center/"
 
+[devproxy-bin]
+source = "github"
+github = "dotnet/dev-proxy"
+use_latest_release = "true"
+
+[gnome-shell-extension-tiling-shell]
+source = "github"
+github = "domferr/tilingshell"
+use_latest_release = "true"
+
 [infer-bin]
 source = "github"
 github = "facebook/infer"
@@ -28,24 +38,19 @@ source = "github"
 github = "ibmruntimes/semeru25-binaries"
 use_latest_tag = "true"
 
-[kotlin-language-server-bin]
+[marksman]
 source = "github"
-github = "fwcd/kotlin-language-server"
-use_latest_release = "true"
+github = "artempyanykh/marksman"
+use_latest_tag = "true"
 
-[lexical-bin]
+[marsdev]
 source = "github"
-github = "lexical-lsp/lexical"
-use_latest_release = "true"
+github = "andwn/marsdev"
+use_latest_tag = "true"
 
 [moonlight-qt]
 source = "github"
 github = "moonlight-stream/moonlight-qt"
-use_latest_release = "true"
-
-[husky]
-source = "github"
-github = "typicode/husky"
 use_latest_release = "true"
 
 [openshift-codeready-bin]
@@ -68,11 +73,6 @@ source = "regex"
 regex = ", (v\\d+\\.\\d+ Build \\d+), "
 url = "https://www.passmark.com/products/pt_linux/download.php"
 
-[postman2openapi-bin]
-source = "github"
-github = "kevinswiber/postman2openapi"
-use_latest_release = "true"
-
 #[pragmatapro-fonts]
 #source = "regex"
 #regex = "The actual version is (\\d{1}\\.\\d{3})"
@@ -83,10 +83,20 @@ source = "github"
 github = "mattpannella/pupdate"
 use_latest_release = "true"
 
+[pvsneslib]
+source = "github"
+github = "alekmaul/pvsneslib"
+use_latest_tag = "true"
+
 [rcu-bin]
 source = "regex"
 regex = "v\\d+\\.\\d+\\.\\d+"
 url = "https://files.davisr.me/projects/rcu/download-59ck3sdT/"
+
+[ruby-yard-activesupport-concern]
+source = "github"
+github = "digitalcuisine/yard-activesupport-concern"
+use_latest_tag = "true"
 
 [ruby-yard-solargraph]
 source = "github"
@@ -107,6 +117,16 @@ use_latest_release = "true"
 source = "github"
 github = "microsoft/sbom-tool"
 use_latest_release = "true"
+
+[scheme-langserver-bin]
+source = "github"
+github = "ufo5260987423/scheme-langserver"
+use_latest_release = "true"
+
+[svelte-language-server]
+source = "github"
+github = "sveltejs/language-tools"
+use_latest_tag = "true"
 
 [tidal-dl-ng]
 source = "github"

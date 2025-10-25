@@ -4,6 +4,16 @@
     "cypher-shell": {
       "version": "2025.09.0"
     },
+    "devproxy-bin": {
+      "version": "v1.2.1",
+      "gitref": "refs/tags/v1.2.1",
+      "url": "https://github.com/dotnet/dev-proxy/releases/tag/v1.2.1"
+    },
+    "gnome-shell-extension-tiling-shell": {
+      "version": "17.0",
+      "gitref": "refs/tags/17.0",
+      "url": "https://github.com/domferr/tilingshell/releases/tag/17.0"
+    },
     "husky": {
       "version": "v9.1.7",
       "gitref": "refs/tags/v9.1.7",
@@ -36,6 +46,18 @@
       "gitref": "refs/tags/v0.7.3",
       "url": "https://github.com/lexical-lsp/lexical/releases/tag/v0.7.3"
     },
+    "marksman": {
+      "version": "2024-12-18",
+      "gitref": "refs/tags/2024-12-18",
+      "revision": "8299f11dfad36a9162e010245b380ba25001b15c",
+      "url": "https://github.com/artempyanykh/marksman/releases/tag/2024-12-18"
+    },
+    "marsdev": {
+      "version": "v1.0.0-rc1",
+      "gitref": "refs/tags/v1.0.0-rc1",
+      "revision": "9de7602716e320d3d653712ec60d7b0e1ec22f4e",
+      "url": "https://github.com/andwn/marsdev/releases/tag/v1.0.0-rc1"
+    },
     "moonlight-qt": {
       "version": "v6.1.0",
       "gitref": "refs/tags/v6.1.0",
@@ -63,6 +85,12 @@
       "gitref": "refs/tags/4.5.0",
       "url": "https://github.com/mattpannella/pupdate/releases/tag/4.5.0"
     },
+    "pvsneslib": {
+      "version": "4.4.0",
+      "gitref": "refs/tags/4.4.0",
+      "revision": "a3b165d75df3280f44de9ee85a75cd02c6b62595",
+      "url": "https://github.com/alekmaul/pvsneslib/releases/tag/4.4.0"
+    },
     "rcu-bin": {
       "version": "v4.0.29"
     },
@@ -71,6 +99,12 @@
       "gitref": "refs/tags/v0.57.0",
       "revision": "d625efde311411fc89ea1d719fefde2fcca23925",
       "url": "https://github.com/castwide/solargraph/releases/tag/v0.57.0"
+    },
+    "ruby-yard-activesupport-concern": {
+      "version": "v0.0.1",
+      "gitref": "refs/tags/v0.0.1",
+      "revision": "04882660ca1dc8bf6d062ad2d63f43c87164ff1f",
+      "url": "https://github.com/digitalcuisine/yard-activesupport-concern/releases/tag/v0.0.1"
     },
     "ruby-yard-solargraph": {
       "version": "v0.1.0",
@@ -87,6 +121,17 @@
       "version": "v4.1.2",
       "gitref": "refs/tags/v4.1.2",
       "url": "https://github.com/microsoft/sbom-tool/releases/tag/v4.1.2"
+    },
+    "scheme-langserver-bin": {
+      "version": "2.0.2",
+      "gitref": "refs/tags/2.0.2",
+      "url": "https://github.com/ufo5260987423/scheme-langserver/releases/tag/2.0.2"
+    },
+    "svelte-language-server": {
+      "version": "svelte-language-server@0.17.21",
+      "gitref": "refs/tags/svelte-language-server@0.17.21",
+      "revision": "75ca021ce8803c9ae1979c1bc802f528d0cf2059",
+      "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.17.21"
     },
     "tidal-dl-ng": {
       "version": "v0.30.0",
