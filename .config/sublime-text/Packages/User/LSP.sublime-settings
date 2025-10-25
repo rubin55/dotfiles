@@ -7,6 +7,11 @@
       "command": ["ansible-language-server", "--stdio"],
       "selector": "source.yaml",
     },
+    "assembly": {
+      "enabled": false,
+      "command": ["asm-lsp"],
+      "selector": "source.asm | source.assembly"
+    },
     "astro": {
       "enabled": false,
       "command": ["astro-ls", "--stdio"],
