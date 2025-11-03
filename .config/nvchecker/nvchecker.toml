@@ -8,7 +8,7 @@ source = "regex"
 regex = "Neo4j (\\d+\\.\\d+\\.\\d+)"
 url = "https://neo4j.com/deployment-center/"
 
-[devproxy-bin]
+[dev-proxy-bin]
 source = "github"
 github = "dotnet/dev-proxy"
 use_latest_release = "true"

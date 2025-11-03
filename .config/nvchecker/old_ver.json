@@ -2,7 +2,12 @@
   "version": 2,
   "data": {
     "cypher-shell": {
-      "version": "2025.09.0"
+      "version": "2025.10.1"
+    },
+    "dev-proxy-bin": {
+      "version": "v1.3.0",
+      "gitref": "refs/tags/v1.3.0",
+      "url": "https://github.com/dotnet/dev-proxy/releases/tag/v1.3.0"
     },
     "devproxy-bin": {
       "version": "v1.2.1",
@@ -25,7 +30,7 @@
       "url": "https://github.com/facebook/infer/releases/tag/v1.2.0"
     },
     "intel-gmmlib": {
-      "version": "22.8.1"
+      "version": "22.8.2"
     },
     "intel-media-driver": {
       "version": "25.3.4"
@@ -92,7 +97,7 @@
       "url": "https://github.com/alekmaul/pvsneslib/releases/tag/4.4.0"
     },
     "rcu-bin": {
-      "version": "v4.0.29"
+      "version": "v4.0.30"
     },
     "ruby-solargraph": {
       "version": "v0.57.0",
@@ -134,9 +139,9 @@
       "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.17.21"
     },
     "tidal-dl-ng": {
-      "version": "v0.30.0",
-      "gitref": "refs/tags/v0.30.0",
-      "url": "https://github.com/exislow/tidal-dl-ng/releases/tag/v0.30.0"
+      "version": "v0.31.3",
+      "gitref": "refs/tags/v0.31.3",
+      "url": "https://github.com/exislow/tidal-dl-ng/releases/tag/v0.31.3"
     },
     "yaml-language-server": {
       "version": "1.19.2",
