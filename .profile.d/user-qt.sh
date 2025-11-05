@@ -4,23 +4,12 @@
 type -p path.which || return
 path.which qt6ct || return
 
-# Set QT_QPA_PLATFORM.
-case "$XDG_SESSION_TYPE" in
-  tty|x11)
-  export QT_QPA_PLATFORM=xcb
-  ;;
-  wayland)
-  export QT_QPA_PLATFORM=wayland
-  ;;
-  *)
-  export QT_QPA_PLATFORM=xcb
-  ;;
-esac
+# Try wayland first, fallback to X11
+export QT_QPA_PLATFORM="wayland;xcb"
 
 # Set various other QT environment variables.
 export QT_ACCESSIBILITY=0
 export QT_AUTO_SCREEN_SCALE_FACTOR=1
 export QT_LINUX_ACCESSIBILITY_ALWAYS_ON=0
-# Setting QT_QPA_PLATFORMTHEME interferes with system dark/light setting.
-#export QT_QPA_PLATFORMTHEME=qt6ct
+export QT_QPA_PLATFORMTHEME=qt6ct
 export QT_XFT=true
