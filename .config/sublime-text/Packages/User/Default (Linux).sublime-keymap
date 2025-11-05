@@ -16,7 +16,7 @@
     }
   },
   {
-    "keys": ["ctrl+shift+r"],
+    "keys": ["ctrl+alt+r"],
     "command": "toggler",
     "args": {
         "setting": "rulers",

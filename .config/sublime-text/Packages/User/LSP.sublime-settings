@@ -78,6 +78,23 @@
       "enabled": false,
       "command": ["dart", "language-server", "--protocol", "lsp"],
       "selector": "source.dart",
+      "env": {
+        "DART_SDK": "/home/rubin/.local/share/flutterup/bin/cache/dart-sdk",
+        "FLUTTER_ROOT": "/home/rubin/.local/share/flutterup",
+      },
+      "initializationOptions": {
+        "onlyAnalyzeProjectsWithOpenFiles": true,
+        "suggestFromUnimportedLibraries": false,
+        "closingLabels": false,
+        "flutterOutline": false,
+        "outline": false
+      },
+      "settings": {
+        "dart.enableSdkFormatter": true,
+        "dart.lineLength": 120,
+        "dart.completeFunctionCalls": true,
+        "dart.showTodos": false
+      }
     },
     "docker": {
       "enabled": false,
