@@ -137,7 +137,7 @@
     "helm": {
       "enabled": false,
       "command": ["helm_ls", "serve"],
-      "selector": "source.yaml.go", // Requires ST 4181+. Use `source.yaml` otherwise.
+      "selector": "source.yaml.helm | source.yaml.go",
     },
     "html": {
       "enabled": false,
@@ -624,9 +624,23 @@
     "yaml": {
       "enabled": false,
       "command": ["yaml-language-server", "--stdio"],
-      "selector": "source.yaml",
+      "schemes": ["file", "buffer", "res", "json-schema"],
+      "selector": "(source.yml | source.yaml) - source.yaml.go - source.yaml.helm",
       "settings": {
+        "yaml.completion": true,
         "yaml.customTags": ["!reference sequence"],
+        "yaml.maxItemsComputed": 5000,
+        "yaml.editor.tabSize": 2,
+        "yaml.format.enable": true,
+        "yaml.format.singleQuote": false,
+        "yaml.format.bracketSpacing": true,
+        "yaml.format.proseWrap": "preserve",
+        "yaml.format.printWidth": 120,
+        "yaml.hover": true,
+        "yaml.schemas": {},
+        "yaml.schemaStore.enable": true,
+        "yaml.validate": true,
+        "yaml.disableAdditionalProperties": false,
       },
     },
     "zig": {
