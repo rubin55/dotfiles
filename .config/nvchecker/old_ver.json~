@@ -15,9 +15,9 @@
       "url": "https://github.com/dotnet/dev-proxy/releases/tag/v1.2.1"
     },
     "gnome-shell-extension-tiling-shell": {
-      "version": "17.0",
-      "gitref": "refs/tags/17.0",
-      "url": "https://github.com/domferr/tilingshell/releases/tag/17.0"
+      "version": "17.1",
+      "gitref": "refs/tags/17.1",
+      "url": "https://github.com/domferr/tilingshell/releases/tag/17.1"
     },
     "husky": {
       "version": "v9.1.7",
@@ -133,10 +133,10 @@
       "url": "https://github.com/ufo5260987423/scheme-langserver/releases/tag/2.0.2"
     },
     "svelte-language-server": {
-      "version": "svelte-language-server@0.17.21",
-      "gitref": "refs/tags/svelte-language-server@0.17.21",
-      "revision": "75ca021ce8803c9ae1979c1bc802f528d0cf2059",
-      "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.17.21"
+      "version": "svelte-language-server@0.17.22",
+      "gitref": "refs/tags/svelte-language-server@0.17.22",
+      "revision": "99dec6f036ccb501cf721c6b425550ea24a1527d",
+      "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.17.22"
     },
     "tidal-dl-ng": {
       "version": "v0.31.3",
