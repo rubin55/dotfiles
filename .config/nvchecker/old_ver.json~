@@ -78,7 +78,7 @@
       "version": "1.20.0"
     },
     "passmark-performancetest-bin": {
-      "version": "v11.0 Build 1002"
+      "version": "v11.0 Build 1004"
     },
     "postman2openapi-bin": {
       "version": "1.2.1",
@@ -139,9 +139,9 @@
       "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.17.22"
     },
     "tidal-dl-ng": {
-      "version": "v0.31.3",
-      "gitref": "refs/tags/v0.31.3",
-      "url": "https://github.com/exislow/tidal-dl-ng/releases/tag/v0.31.3"
+      "version": "v0.31.4",
+      "gitref": "refs/tags/v0.31.4",
+      "url": "https://github.com/exislow/tidal-dl-ng/releases/tag/v0.31.4"
     },
     "yaml-language-server": {
       "version": "1.19.2",
