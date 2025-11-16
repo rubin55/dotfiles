@@ -1,5 +1,9 @@
 [
   {
+    "keys": ["ctrl+shift+l"],
+    "command": "lsp_toggle_server_panel"
+  },
+  {
     "keys": ["ctrl+shift+t"],
     "command": "toggle_terminus_panel",
     "args": {
@@ -23,5 +27,5 @@
         "on": [80, 120],
         "off": []
     }
-}
+  }
 ]
