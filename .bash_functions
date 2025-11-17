@@ -117,7 +117,7 @@ function title.set() {
   [[ -z "$orig" ]] && orig="$PS1"
   local code="\e]2;$*\a"
   local string="\[$code\]"
-  echo -e "${code}";
+  echo -ne "${code}";
   PS1="${orig}${string}";
 }
 

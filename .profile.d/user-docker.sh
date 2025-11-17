@@ -7,7 +7,7 @@ path.which cat,cut,docker,sed || return
 # Check if we have the buildx plugin, use buildx if yes.
 DOCKER_CLI_PLUGINS_PATH="$HOME/.docker/cli-plugins:/usr/local/lib/docker/cli-plugins:/usr/local/libexec/docker/cli-plugins:/usr/lib/docker/cli-plugins:/usr/libexec/docker/cli-plugins"
 if path.which docker-buildx $DOCKER_CLI_PLUGINS_PATH; then
-  log.info "Buildx plugin found, setting DOCKER_BUILDKIT=1"
+  log.debug "Buildx plugin found, setting DOCKER_BUILDKIT=1"
   export DOCKER_BUILDKIT=1
 fi
 
