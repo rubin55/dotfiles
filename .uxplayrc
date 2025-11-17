@@ -1,0 +1,4 @@
+n MYHOST
+nh
+as pipewiresink
+vs waylandsink
