@@ -69,7 +69,7 @@
       "url": "https://github.com/moonlight-stream/moonlight-qt/releases/tag/v6.1.0"
     },
     "openshift-codeready-bin": {
-      "version": "2.55.1"
+      "version": "2.56.0"
     },
     "openshift-developer-bin": {
       "version": "v3.16.1"
