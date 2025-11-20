@@ -14,7 +14,7 @@ fi
 # Disable checking for host string and/or minikube. Remove the return and
 # unset here to re-enable the running the rest of this script again.
 unset DOCKER_CLI_PLUGINS_PATH
-return
+
 
 # Check for a docker host string on this host.
 if [[ -e "$HOME/.docker/host.string" ]]; then
