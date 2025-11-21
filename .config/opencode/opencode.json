@@ -1,0 +1,12 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "lsp": {
+    "yaml-ls": {
+      "disabled": true
+    },
+    "helm": {
+      "command": ["helm_ls", "serve"],
+      "extensions": [".yaml"]
+    }
+  }
+}
