@@ -13,6 +13,11 @@ source = "github"
 github = "dotnet/dev-proxy"
 use_latest_release = "true"
 
+[fsautocomplete-bin]
+source = "github"
+github = "ionide/FsAutoComplete"
+use_latest_release = "true"
+
 [gnome-shell-extension-tiling-shell]
 source = "github"
 github = "domferr/tilingshell"
@@ -51,6 +56,11 @@ use_latest_tag = "true"
 [moonlight-qt]
 source = "github"
 github = "moonlight-stream/moonlight-qt"
+use_latest_release = "true"
+
+[netcoredbg]
+source = "github"
+github = "Samsung/netcoredbg"
 use_latest_release = "true"
 
 [openshift-codeready-bin]
