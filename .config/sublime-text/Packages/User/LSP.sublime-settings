@@ -10,7 +10,7 @@
     "assembly": {
       "enabled": false,
       "command": ["asm-lsp"],
-      "selector": "source.asm | source.assembly"
+      "selector": "source.asm | source.asm.x86_64 | source.assembly"
     },
     "astro": {
       "enabled": false,
