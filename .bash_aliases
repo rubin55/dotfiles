@@ -49,7 +49,6 @@ alias fsi='dotnet fsi'
 alias fsharpi='dotnet fsi'
 
 # Editor helpers.
-# need to fix emacs.sh to work with wayland mode emacs.
 alias em='emacs -nw'
 alias hx='helix'
 alias nv='nvim'
