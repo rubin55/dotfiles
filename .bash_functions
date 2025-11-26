@@ -149,3 +149,13 @@ function count.down() {
     : $((seconds--))
   done
 }
+
+function count.up() {
+    SECONDS=0
+    printf '%d\r' "$SECONDS"
+    until read -n 1 -t 1 -s; do
+        printf '%d\r' "$SECONDS"
+    done
+    printf '\n'
+}
+
