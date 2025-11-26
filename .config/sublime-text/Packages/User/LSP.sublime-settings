@@ -15,11 +15,11 @@
     "astro": {
       "enabled": false,
       "command": ["astro-ls", "--stdio"],
-      "selector": "source.astro | text.html.astro",
+      "selector": "source.astro | source.js.astro | text.html.astro",
       "schemes": ["file", "buffer"],
       "initializationOptions": {
         "diagnosticModel": 2,
-        "typescript.tsdk": "",
+        "typescript.tsdk": "/usr/lib/node_modules/typescript/lib",
       },
       "settings": {
         "astro.typescript.enabled": true,
