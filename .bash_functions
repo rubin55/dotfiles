@@ -143,19 +143,25 @@ function openvpn.connect() {
 
 function count.down() {
   local seconds=$1
+  trap 'echo; trap - SIGINT; return' SIGINT
   while [ $seconds -gt 0 ]; do
     echo -ne "$seconds\033[0K\r"
     sleep 1
     : $((seconds--))
   done
+  echo 
+  trap - SIGINT
 }
 
 function count.up() {
-    SECONDS=0
-    printf '%d\r' "$SECONDS"
-    until read -n 1 -t 1 -s; do
-        printf '%d\r' "$SECONDS"
-    done
-    printf '\n'
+  local limit=$1
+  local seconds=1
+  trap 'echo; trap - SIGINT; return' SIGINT
+  while [[ -z "$limit" || "$seconds" -le "$limit" ]]; do
+    echo -ne "$seconds\033[0K\r"
+    sleep 1
+    : $((seconds++))
+  done
+  echo 
+  trap - SIGINT
 }
-
