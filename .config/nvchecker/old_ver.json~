@@ -57,10 +57,10 @@
       "url": "https://github.com/lexical-lsp/lexical/releases/tag/v0.7.3"
     },
     "marksman": {
-      "version": "2024-12-18",
-      "gitref": "refs/tags/2024-12-18",
-      "revision": "8299f11dfad36a9162e010245b380ba25001b15c",
-      "url": "https://github.com/artempyanykh/marksman/releases/tag/2024-12-18"
+      "version": "2025-11-25",
+      "gitref": "refs/tags/2025-11-25",
+      "revision": "1928e10a69986785022b3c4a98f33611964d99fc",
+      "url": "https://github.com/artempyanykh/marksman/releases/tag/2025-11-25"
     },
     "marsdev": {
       "version": "v1.0.0-rc1",

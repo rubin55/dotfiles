@@ -138,6 +138,11 @@ source = "github"
 github = "sveltejs/language-tools"
 use_latest_tag = "true"
 
+[talanoa-bin]
+source = "github"
+github = "talanoa-email/desktop-releases"
+use_latest_release = "true"
+
 [tidal-dl-ng]
 source = "github"
 github = "exislow/tidal-dl-ng"

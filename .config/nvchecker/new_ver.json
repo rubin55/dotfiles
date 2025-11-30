@@ -123,6 +123,11 @@
       "revision": "99dec6f036ccb501cf721c6b425550ea24a1527d",
       "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.17.22"
     },
+    "talanoa-bin": {
+      "version": "v0.5.24",
+      "gitref": "refs/tags/v0.5.24",
+      "url": "https://github.com/talanoa-email/desktop-releases/releases/tag/v0.5.24"
+    },
     "tidal-dl-ng": {
       "version": "v0.31.4",
       "gitref": "refs/tags/v0.31.4",
