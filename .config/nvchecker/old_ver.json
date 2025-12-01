@@ -57,10 +57,10 @@
       "url": "https://github.com/lexical-lsp/lexical/releases/tag/v0.7.3"
     },
     "marksman": {
-      "version": "2025-11-25",
-      "gitref": "refs/tags/2025-11-25",
-      "revision": "1928e10a69986785022b3c4a98f33611964d99fc",
-      "url": "https://github.com/artempyanykh/marksman/releases/tag/2025-11-25"
+      "version": "2025-11-30",
+      "gitref": "refs/tags/2025-11-30",
+      "revision": "5cd96dbc6b158608fe540b63560ee9dd90e010b2",
+      "url": "https://github.com/artempyanykh/marksman/releases/tag/2025-11-30"
     },
     "marsdev": {
       "version": "v1.0.0-rc1",
@@ -149,9 +149,9 @@
       "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.17.22"
     },
     "talanoa-bin": {
-      "version": "v0.5.24",
-      "gitref": "refs/tags/v0.5.24",
-      "url": "https://github.com/talanoa-email/desktop-releases/releases/tag/v0.5.24"
+      "version": "v0.6.0",
+      "gitref": "refs/tags/v0.6.0",
+      "url": "https://github.com/talanoa-email/desktop-releases/releases/tag/v0.6.0"
     },
     "tidal-dl-ng": {
       "version": "v0.31.4",
