@@ -53,6 +53,11 @@ source = "github"
 github = "andwn/marsdev"
 use_latest_tag = "true"
 
+[mistral-vibe]
+source = "github"
+github = "mistralai/mistral-vibe"
+use_latest_tag = "true"
+
 [moonlight-qt]
 source = "github"
 github = "moonlight-stream/moonlight-qt"
@@ -87,6 +92,11 @@ url = "https://www.passmark.com/products/pt_linux/download.php"
 #source = "regex"
 #regex = "The actual version is (\\d{1}\\.\\d{3})"
 #url = "https://fsd.it/shop/fonts/pragmatapro/"
+
+[python-agent-client-protocol]
+source = "github"
+github = "agentclientprotocol/python-sdk"
+use_latest_tag = "true"
 
 [pupdate-bin]
 source = "github"

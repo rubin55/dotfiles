@@ -68,6 +68,12 @@
       "revision": "9de7602716e320d3d653712ec60d7b0e1ec22f4e",
       "url": "https://github.com/andwn/marsdev/releases/tag/v1.0.0-rc1"
     },
+    "mistral-vibe": {
+      "version": "v1.0.4",
+      "gitref": "refs/tags/v1.0.4",
+      "revision": "72bf84d8fa5b5ca35a71dff1e89378c8c49f6513",
+      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v1.0.4"
+    },
     "moonlight-qt": {
       "version": "v6.1.0",
       "gitref": "refs/tags/v6.1.0",
@@ -105,6 +111,12 @@
       "gitref": "refs/tags/4.4.0",
       "revision": "a3b165d75df3280f44de9ee85a75cd02c6b62595",
       "url": "https://github.com/alekmaul/pvsneslib/releases/tag/4.4.0"
+    },
+    "python-agent-client-protocol": {
+      "version": "0.7.0",
+      "gitref": "refs/tags/0.7.0",
+      "revision": "a09e090cf3db70491abacb126d016187552796e1",
+      "url": "https://github.com/agentclientprotocol/python-sdk/releases/tag/0.7.0"
     },
     "rcu-bin": {
       "version": "v4.0.30"
@@ -149,9 +161,9 @@
       "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.17.22"
     },
     "talanoa-bin": {
-      "version": "v0.6.3",
-      "gitref": "refs/tags/v0.6.3",
-      "url": "https://github.com/talanoa-email/desktop-releases/releases/tag/v0.6.3"
+      "version": "v0.6.4",
+      "gitref": "refs/tags/v0.6.4",
+      "url": "https://github.com/talanoa-email/desktop-releases/releases/tag/v0.6.4"
     },
     "tidal-dl-ng": {
       "version": "v0.32.0",
