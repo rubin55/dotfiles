@@ -49,10 +49,10 @@
       "url": "https://github.com/andwn/marsdev/releases/tag/v1.0.0-rc1"
     },
     "mistral-vibe": {
-      "version": "v1.2.1",
-      "gitref": "refs/tags/v1.2.1",
-      "revision": "402e898f391f65c447cfe061a5fee47a0b50cce7",
-      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v1.2.1"
+      "version": "v1.2.2",
+      "gitref": "refs/tags/v1.2.2",
+      "revision": "2e1e15120d88a7321df41b6498704037a3847116",
+      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v1.2.2"
     },
     "moonlight-qt": {
       "version": "v6.1.0",
