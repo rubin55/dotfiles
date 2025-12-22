@@ -155,10 +155,10 @@
       "url": "https://github.com/ufo5260987423/scheme-langserver/releases/tag/2.0.3"
     },
     "svelte-language-server": {
-      "version": "svelte-language-server@0.17.22",
-      "gitref": "refs/tags/svelte-language-server@0.17.22",
-      "revision": "99dec6f036ccb501cf721c6b425550ea24a1527d",
-      "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.17.22"
+      "version": "svelte-language-server@0.17.23",
+      "gitref": "refs/tags/svelte-language-server@0.17.23",
+      "revision": "708f63616978f3c720a8ece08536955608a8857c",
+      "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.17.23"
     },
     "talanoa-bin": {
       "version": "v0.6.10",
