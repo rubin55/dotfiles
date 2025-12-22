@@ -28,6 +28,7 @@ style = "Regular"
 [keyboard]
 bindings = [
   { key = "F11", action = "ToggleFullscreen" },
+  { key = "Return", mods = "Shift", chars = "\n" },
   { key = "Return", mods = "Control|Shift", action = "SpawnNewInstance" }
 ]
 
