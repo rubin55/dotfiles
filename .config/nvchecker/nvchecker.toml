@@ -153,10 +153,10 @@ source = "github"
 github = "talanoa-email/desktop-releases"
 use_latest_release = "true"
 
-[tidal-dl-ng]
-source = "github"
-github = "exislow/tidal-dl-ng"
-use_latest_release = "true"
+#[tidal-dl-ng]
+#source = "github"
+#github = "exislow/tidal-dl-ng"
+#use_latest_release = "true"
 
 [yaml-language-server]
 source = "git"

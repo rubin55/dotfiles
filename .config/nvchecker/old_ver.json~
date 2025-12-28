@@ -69,10 +69,10 @@
       "url": "https://github.com/andwn/marsdev/releases/tag/v1.0.0-rc1"
     },
     "mistral-vibe": {
-      "version": "v1.2.1",
-      "gitref": "refs/tags/v1.2.1",
-      "revision": "402e898f391f65c447cfe061a5fee47a0b50cce7",
-      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v1.2.1"
+      "version": "v1.3.3",
+      "gitref": "refs/tags/v1.3.3",
+      "revision": "4d449be27693aa6b08e86aa2757b0b108b2890dd",
+      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v1.3.3"
     },
     "moonlight-qt": {
       "version": "v6.1.0",
@@ -119,7 +119,7 @@
       "url": "https://github.com/agentclientprotocol/python-sdk/releases/tag/0.7.0"
     },
     "rcu-bin": {
-      "version": "v4.0.31"
+      "version": "v4.0.32"
     },
     "ruby-solargraph": {
       "version": "v0.57.0",

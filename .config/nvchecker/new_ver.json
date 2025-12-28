@@ -49,10 +49,10 @@
       "url": "https://github.com/andwn/marsdev/releases/tag/v1.0.0-rc1"
     },
     "mistral-vibe": {
-      "version": "v1.2.2",
-      "gitref": "refs/tags/v1.2.2",
-      "revision": "2e1e15120d88a7321df41b6498704037a3847116",
-      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v1.2.2"
+      "version": "v1.3.3",
+      "gitref": "refs/tags/v1.3.3",
+      "revision": "4d449be27693aa6b08e86aa2757b0b108b2890dd",
+      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v1.3.3"
     },
     "moonlight-qt": {
       "version": "v6.1.0",
@@ -82,10 +82,10 @@
       "url": "https://github.com/mattpannella/pupdate/releases/tag/4.5.0"
     },
     "pvsneslib": {
-      "version": "4.4.0",
-      "gitref": "refs/tags/4.4.0",
-      "revision": "a3b165d75df3280f44de9ee85a75cd02c6b62595",
-      "url": "https://github.com/alekmaul/pvsneslib/releases/tag/4.4.0"
+      "version": "4.5.0",
+      "gitref": "refs/tags/4.5.0",
+      "revision": "fa758c9b2a0b850764f6ebc0fa00c05fe3af9e27",
+      "url": "https://github.com/alekmaul/pvsneslib/releases/tag/4.5.0"
     },
     "python-agent-client-protocol": {
       "version": "0.7.0",
@@ -94,7 +94,7 @@
       "url": "https://github.com/agentclientprotocol/python-sdk/releases/tag/0.7.0"
     },
     "rcu-bin": {
-      "version": "v4.0.31"
+      "version": "v4.0.32"
     },
     "ruby-solargraph": {
       "version": "v0.57.0",
@@ -139,11 +139,6 @@
       "version": "v0.6.10",
       "gitref": "refs/tags/v0.6.10",
       "url": "https://github.com/talanoa-email/desktop-releases/releases/tag/v0.6.10"
-    },
-    "tidal-dl-ng": {
-      "version": "v0.33.0",
-      "gitref": "refs/tags/v0.33.0",
-      "url": "https://github.com/exislow/tidal-dl-ng/releases/tag/v0.33.0"
     },
     "yaml-language-server": {
       "version": "1.19.2",
