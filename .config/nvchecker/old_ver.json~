@@ -107,16 +107,16 @@
       "url": "https://github.com/mattpannella/pupdate/releases/tag/4.5.0"
     },
     "pvsneslib": {
-      "version": "4.4.0",
-      "gitref": "refs/tags/4.4.0",
-      "revision": "a3b165d75df3280f44de9ee85a75cd02c6b62595",
-      "url": "https://github.com/alekmaul/pvsneslib/releases/tag/4.4.0"
+      "version": "4.5.0",
+      "gitref": "refs/tags/4.5.0",
+      "revision": "fa758c9b2a0b850764f6ebc0fa00c05fe3af9e27",
+      "url": "https://github.com/alekmaul/pvsneslib/releases/tag/4.5.0"
     },
     "python-agent-client-protocol": {
-      "version": "0.7.0",
-      "gitref": "refs/tags/0.7.0",
-      "revision": "a09e090cf3db70491abacb126d016187552796e1",
-      "url": "https://github.com/agentclientprotocol/python-sdk/releases/tag/0.7.0"
+      "version": "0.7.1",
+      "gitref": "refs/tags/0.7.1",
+      "revision": "6f8c9dfd8db4b903ec7b38e0e0e3ddef388b2496",
+      "url": "https://github.com/agentclientprotocol/python-sdk/releases/tag/0.7.1"
     },
     "rcu-bin": {
       "version": "v4.0.32"

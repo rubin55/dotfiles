@@ -1,6 +1,11 @@
 {
   "version": 2,
   "data": {
+    "cdesktopenv": {
+      "version": "2.5.3",
+      "gitref": "refs/tags/2.5.3",
+      "revision": "b3956bda93ff3d45b644c7bc6d55e0e01c9b9a74"
+    },
     "cypher-shell": {
       "version": "2025.11.2"
     },
@@ -113,10 +118,10 @@
       "url": "https://github.com/alekmaul/pvsneslib/releases/tag/4.5.0"
     },
     "python-agent-client-protocol": {
-      "version": "0.7.0",
-      "gitref": "refs/tags/0.7.0",
-      "revision": "a09e090cf3db70491abacb126d016187552796e1",
-      "url": "https://github.com/agentclientprotocol/python-sdk/releases/tag/0.7.0"
+      "version": "0.7.1",
+      "gitref": "refs/tags/0.7.1",
+      "revision": "6f8c9dfd8db4b903ec7b38e0e0e3ddef388b2496",
+      "url": "https://github.com/agentclientprotocol/python-sdk/releases/tag/0.7.1"
     },
     "rcu-bin": {
       "version": "v4.0.32"
