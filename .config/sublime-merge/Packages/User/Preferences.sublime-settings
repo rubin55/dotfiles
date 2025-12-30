@@ -10,4 +10,5 @@
 	"theme": "Merge Dark.sublime-theme",
 	"theme_font_options": ["no_bold", "gray_antialias"],
 	"time_format": "24h",
+	"side_bar_layout": "tabs",
 }
