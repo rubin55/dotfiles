@@ -1,6 +1,11 @@
 {
   "version": 2,
   "data": {
+    "cdesktopenv": {
+      "version": "2.5.3",
+      "gitref": "refs/tags/2.5.3",
+      "revision": "b3956bda93ff3d45b644c7bc6d55e0e01c9b9a74"
+    },
     "cypher-shell": {
       "version": "2025.11.2"
     },
@@ -50,6 +55,11 @@
       "version": "1.3.13",
       "gitref": "refs/tags/1.3.13",
       "url": "https://github.com/fwcd/kotlin-language-server/releases/tag/1.3.13"
+    },
+    "leanux": {
+      "version": "2.0.1",
+      "gitref": "refs/tags/2.0.1",
+      "url": "https://github.com/jmspit/leanux/releases/tag/2.0.1"
     },
     "lexical-bin": {
       "version": "v0.7.3",
@@ -122,10 +132,10 @@
       "version": "v4.0.32"
     },
     "ruby-solargraph": {
-      "version": "v0.57.0",
-      "gitref": "refs/tags/v0.57.0",
-      "revision": "d625efde311411fc89ea1d719fefde2fcca23925",
-      "url": "https://github.com/castwide/solargraph/releases/tag/v0.57.0"
+      "version": "v0.58.0",
+      "gitref": "refs/tags/v0.58.0",
+      "revision": "16e4bc98b17264423e9687fac5be927f06946758",
+      "url": "https://github.com/castwide/solargraph/releases/tag/v0.58.0"
     },
     "ruby-yard-activesupport-concern": {
       "version": "v0.0.1",
@@ -161,9 +171,9 @@
       "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.17.23"
     },
     "talanoa-bin": {
-      "version": "v0.6.10",
-      "gitref": "refs/tags/v0.6.10",
-      "url": "https://github.com/talanoa-email/desktop-releases/releases/tag/v0.6.10"
+      "version": "v0.7.0",
+      "gitref": "refs/tags/v0.7.0",
+      "url": "https://github.com/talanoa-email/desktop-releases/releases/tag/v0.7.0"
     },
     "tidal-dl-ng": {
       "version": "v0.33.0",

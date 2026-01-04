@@ -49,6 +49,11 @@ source = "github"
 github = "ibmruntimes/semeru25-binaries"
 use_latest_tag = "true"
 
+[leanux]
+source = "github"
+github = "jmspit/leanux"
+use_latest_release = "true"
+
 [marksman]
 source = "github"
 github = "artempyanykh/marksman"
