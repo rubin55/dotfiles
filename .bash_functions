@@ -113,6 +113,11 @@ function net.port-open() {
   "$nmap" --max-retries 0 --host-timeout 100ms "$host" -p "$port" -T5 -oG - | grep -q "Host: $host\|Ports: $port/open"
 }
 
+function vm.running() {
+  local name="$1"
+  virsh -c "qemu:///system" domstate "$name" | grep -q "running"
+}
+
 function title.set() {
   [[ -z "$orig" ]] && orig="$PS1"
   local code="\e]2;$*\a"

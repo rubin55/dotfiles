@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check if functions are loaded and if required executables are available.
-type -p log.info net.port-open path.which || return
+type -p log.info net.port-open path.which vm.running || return
 path.which cat,cut,docker,sed || return
 
 # Check if we have the buildx plugin, use buildx if yes.
@@ -37,8 +37,17 @@ elif [[ -n "$DOCKER_HOST" ]]; then
     DOCKER_PORT=${DOCKER_NAMED_PORTS[$DOCKER_TYPE]}
   fi
 
-  # Check if port is open and set DOCKER_HOST.
-  if net.port-open $DOCKER_ADDR $DOCKER_PORT; then
+  # You can also check for port open, for example if
+  # your docker host is running on another system in
+  # the network. For example:
+  #if net.port-open $DOCKER_ADDR $DOCKER_PORT; then
+
+  # I usually run my docker hosts as a virtual machine.
+  # Checking for running vm is much faster than a check
+  # for an open tcp port. Note that this assumes that
+  # DOCKER_ADDR is a hostname and that it is equal to 
+  # the virtual machine name.
+  if vm.running $DOCKER_ADDR; then
     export DOCKER_HOST
     log.info "Remote host running, setting DOCKER_HOST=$DOCKER_HOST"
 
