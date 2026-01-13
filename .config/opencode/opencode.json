@@ -8,5 +8,15 @@
       "command": ["helm_ls", "serve"],
       "extensions": [".yaml"]
     }
+  },
+  "permission": {
+    "*": "ask",
+    "read": "allow",
+    "glob": "allow",
+    "grep": "allow",
+    "list": "allow",
+    "lsp": "allow",
+    "todoread": "allow"
   }
 }
+
