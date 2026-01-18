@@ -7,7 +7,7 @@
       "revision": "b3956bda93ff3d45b644c7bc6d55e0e01c9b9a74"
     },
     "cypher-shell": {
-      "version": "2025.11.2"
+      "version": "2025.12.1"
     },
     "dev-proxy-bin": {
       "version": "v2.0.0",
@@ -79,10 +79,10 @@
       "url": "https://github.com/andwn/marsdev/releases/tag/v1.0.0-rc1"
     },
     "mistral-vibe": {
-      "version": "v1.3.4",
-      "gitref": "refs/tags/v1.3.4",
-      "revision": "add3ab52456a4b0a6ea91c9ed2a755f0e3412c0d",
-      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v1.3.4"
+      "version": "v1.3.5",
+      "gitref": "refs/tags/v1.3.5",
+      "revision": "79f215d91cf8ca7c8970d9d81470b76199fecc43",
+      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v1.3.5"
     },
     "moonlight-qt": {
       "version": "v6.1.0",
@@ -129,7 +129,7 @@
       "url": "https://github.com/agentclientprotocol/python-sdk/releases/tag/0.7.1"
     },
     "rcu-bin": {
-      "version": "v4.0.32"
+      "version": "v4.0.33"
     },
     "ruby-solargraph": {
       "version": "v0.58.0",

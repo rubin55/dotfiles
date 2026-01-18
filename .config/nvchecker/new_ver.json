@@ -7,7 +7,7 @@
       "revision": "b3956bda93ff3d45b644c7bc6d55e0e01c9b9a74"
     },
     "cypher-shell": {
-      "version": "2025.11.2"
+      "version": "2025.12.1"
     },
     "dev-proxy-bin": {
       "version": "v2.0.0",
@@ -104,7 +104,7 @@
       "url": "https://github.com/agentclientprotocol/python-sdk/releases/tag/0.7.1"
     },
     "rcu-bin": {
-      "version": "v4.0.32"
+      "version": "v4.0.33"
     },
     "ruby-solargraph": {
       "version": "v0.58.0",
@@ -146,9 +146,9 @@
       "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.17.23"
     },
     "talanoa-bin": {
-      "version": "v0.7.4",
-      "gitref": "refs/tags/v0.7.4",
-      "url": "https://github.com/talanoa-email/desktop-releases/releases/tag/v0.7.4"
+      "version": "v0.7.5",
+      "gitref": "refs/tags/v0.7.5",
+      "url": "https://github.com/talanoa-email/desktop-releases/releases/tag/v0.7.5"
     },
     "yaml-language-server": {
       "version": "1.19.2",
