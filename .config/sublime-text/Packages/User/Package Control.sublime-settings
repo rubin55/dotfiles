@@ -16,6 +16,7 @@
 		"EditorConfig",
 		"ElixirSyntax",
 		"F#",
+		"INI",
 		"JsPrettier",
 		"LSP",
 		"Package Control",
