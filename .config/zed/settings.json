@@ -2,7 +2,7 @@
   "auto_update": false,
   "buffer_font_family": "PragmataPro",
   "buffer_font_size": 15,
-  "buffer_font_weight": 500,
+  "buffer_font_weight": 100,
   "buffer_line_height": "standard",
   "cursor_shape": "block",
   "hard_tabs": false,
@@ -18,11 +18,11 @@
   "agent": {
     "default_profile": "ask",
     "default_model": {
-      "provider": "mistral",
-      "model": "codestral-latest"
+      "provider": "anthropic",
+      "model": "claude-sonnet-4-5-latest",
     },
     "enabled": true,
-    "button": true
+    "button": true,
   },
 
   "auto_install_extensions": {
@@ -54,19 +54,15 @@
     "swift": true,
     "toml": true,
     "xml": true,
-    "zig": true
-  },
-
-  "chat_panel": {
-    "button": "never"
+    "zig": true,
   },
 
   "collaboration_panel": {
-    "button": false
+    "button": false,
   },
 
   "features": {
-    "edit_prediction_provider": "none"
+    "edit_prediction_provider": "none",
   },
 
   "file_types": {
@@ -86,7 +82,7 @@
       "**/playbooks/*.yaml",
       "**/playbooks/*.yml",
       "**playbook*.yaml",
-      "**playbook*.yml"
+      "**playbook*.yml",
     ],
     "Dockerfile": ["Dockerfile", "Dockerfile.*", "*.Dockerfile"],
     "Groovy": ["*.groovy"],
@@ -95,172 +91,172 @@
       "**/templates/**/*.yaml",
       "**/templates/**/*.yml",
       "**/helmfile.d/**/*.yaml",
-      "**/helmfile.d/**/*.yml"
+      "**/helmfile.d/**/*.yml",
     ],
     "Markdown": ["**/Project Notes/*"],
-    "Shell Script": [".bash_functions"]
+    "Shell Script": [".bash_functions"],
   },
 
   "git": {
     "inline_blame": {
       "enabled": true,
-      "delay_ms": 1000
-    }
+      "delay_ms": 1000,
+    },
   },
 
   "indent_guides": {
     "enabled": false,
     "coloring": "indent_aware",
-    "background_coloring": "disabled"
+    "background_coloring": "disabled",
   },
 
   "journal": {
     "path": "~",
-    "hour_format": "hour24"
+    "hour_format": "hour24",
   },
 
   "project_panel": {
     "scrollbar": {
-      "show": "never"
-    }
+      "show": "never",
+    },
   },
 
   "languages": {
     "Ansible": {
-      "language_servers": ["ansible"]
+      "language_servers": ["ansible"],
     },
     "Dockerfile": {
-      "language_servers": ["dockerfile-language-server"]
+      "language_servers": ["dockerfile-language-server"],
     },
     "Elixir": {
-      "language_servers": ["elixir-ls", "!lexical", "!next-ls"]
+      "language_servers": ["elixir-ls", "!lexical", "!next-ls"],
     },
     "Groovy": {
-      "language_servers": ["groovy"]
+      "language_servers": ["groovy"],
     },
     "Helm": {
-      "language_servers": ["helm"]
+      "language_servers": ["helm"],
     },
     "Kotlin": {
-      "language_servers": ["kotlin-language-server"]
+      "language_servers": ["kotlin-language-server"],
     },
     "Python": {
-      "language_servers": ["pylsp", "!pyright"]
+      "language_servers": ["pylsp", "!pyright"],
     },
     "Ruby": {
-      "language_servers": ["solargraph", "rubocop", "!ruby-lsp"]
+      "language_servers": ["solargraph", "rubocop", "!ruby-lsp"],
     },
     "Svelte": {
-      "language_servers": ["svelte-language-server"]
-    }
+      "language_servers": ["svelte-language-server"],
+    },
   },
 
   "lsp": {
     "ansible": {
       "binary": {
         "path": "/usr/bin/ansible-language-server",
-        "arguments": ["--stdio"]
-      }
+        "arguments": ["--stdio"],
+      },
     },
     "dockerfile-language-server": {
       "binary": {
         "path": "/usr/bin/docker-langserver",
-        "arguments": ["--stdio"]
-      }
+        "arguments": ["--stdio"],
+      },
     },
     "groovy": {
       "binary": {
-        "path": "/usr/bin/groovy-language-server"
-      }
+        "path": "/usr/bin/groovy-language-server",
+      },
     },
     "helm": {
       "binary": {
         "path": "/usr/bin/helm_ls",
-        "arguments": ["serve"]
-      }
+        "arguments": ["serve"],
+      },
     },
     "kotlin-language-server": {
       "binary": {
-        "path": "/usr/bin/kotlin-language-server"
-      }
+        "path": "/usr/bin/kotlin-language-server",
+      },
     },
     "metals": {
       "initialization_options": {
-        "isHttpEnabled": true
+        "isHttpEnabled": true,
       },
       "settings": {
         "inlayHints": {
           "inferredTypes": {
-            "enable": true
+            "enable": true,
           },
           "implicitArguments": {
-            "enable": true
+            "enable": true,
           },
           "implicitConversions": {
-            "enable": true
+            "enable": true,
           },
           "typeParameters": {
-            "enable": true
+            "enable": true,
           },
           "hintsInPatternMatch": {
-            "enable": true
-          }
-        }
-      }
+            "enable": true,
+          },
+        },
+      },
     },
     "rust-analyzer": {
       "binary": {
-        "path": "/usr/bin/rust-analyzer"
+        "path": "/usr/bin/rust-analyzer",
       },
       "initialization_options": {
         "check": {
-          "command": "clippy"
+          "command": "clippy",
         },
         "completion": {
           "fullFunctionSignatures": {
-            "enable": true
-          }
+            "enable": true,
+          },
         },
         "hover": {
           "maxSubstitutionLength": null,
           "show": {
             "enumVariants": 100,
-            "fields": 100
-          }
-        }
-      }
+            "fields": 100,
+          },
+        },
+      },
     },
     "solargraph": {
       "initialization_options": {
         "diagnostics": false,
-        "formatting": true
+        "formatting": true,
       },
       "settings": {
-        "use_bundler": false
-      }
+        "use_bundler": false,
+      },
     },
     "svelte-language-server": {
       "binary": {
         "path": "/usr/bin/svelteserver",
-        "arguments": ["--stdio"]
-      }
+        "arguments": ["--stdio"],
+      },
     },
     "yaml-language-server": {
       "settings": {
         "yaml": {
-          "customTags": ["!reference sequence"]
-        }
-      }
-    }
+          "customTags": ["!reference sequence"],
+        },
+      },
+    },
   },
 
   "tabs": {
-    "file_icons": true
+    "file_icons": true,
   },
 
   "telemetry": {
     "diagnostics": false,
-    "metrics": false
+    "metrics": false,
   },
 
   "terminal": {
@@ -270,25 +266,23 @@
     "shell": {
       "with_arguments": {
         "program": "tmux",
-        "args": ["new-session", "-A", "-s", "0"]
-      }
+        "args": ["new-session", "-A", "-s", "0"],
+      },
     },
     "toolbar": {
-      "breadcrumbs": false
-    }
+      "breadcrumbs": false,
+    },
   },
 
   "theme": {
     "mode": "system",
-    "dark": "One Dark",
-    "light": "One Light"
+    "dark": "Catppuccin Frappé",
+    "light": "Catppuccin Latte",
   },
 
-  "experimental.theme_overrides": {
-    "syntax": {
-      "comment": {
-        "font_style": "italic"
-      }
-    }
-  }
+  "theme_overrides": {
+    "Catppuccin Frappé": {
+      "editor.wrap_guide": "#c8ccd40d",
+    },
+  },
 }
