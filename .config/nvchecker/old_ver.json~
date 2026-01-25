@@ -132,10 +132,10 @@
       "version": "v4.0.33"
     },
     "ruby-solargraph": {
-      "version": "v0.58.0",
-      "gitref": "refs/tags/v0.58.0",
-      "revision": "16e4bc98b17264423e9687fac5be927f06946758",
-      "url": "https://github.com/castwide/solargraph/releases/tag/v0.58.0"
+      "version": "v0.58.2",
+      "gitref": "refs/tags/v0.58.2",
+      "revision": "c87b6f14a66e7cd44178ad9bf17935a3990117b1",
+      "url": "https://github.com/castwide/solargraph/releases/tag/v0.58.2"
     },
     "ruby-yard-activesupport-concern": {
       "version": "v0.0.1",
@@ -171,9 +171,9 @@
       "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.17.23"
     },
     "talanoa-bin": {
-      "version": "v0.7.5",
-      "gitref": "refs/tags/v0.7.5",
-      "url": "https://github.com/talanoa-email/desktop-releases/releases/tag/v0.7.5"
+      "version": "v0.7.6",
+      "gitref": "refs/tags/v0.7.6",
+      "url": "https://github.com/talanoa-email/desktop-releases/releases/tag/v0.7.6"
     },
     "tidal-dl-ng": {
       "version": "v0.33.0",
