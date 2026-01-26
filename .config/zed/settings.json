@@ -1,7 +1,7 @@
 {
   "auto_update": false,
   "buffer_font_family": "PragmataPro",
-  "buffer_font_size": 15,
+  "buffer_font_size": 16,
   "buffer_font_weight": 100,
   "buffer_line_height": "standard",
   "cursor_shape": "block",
@@ -10,12 +10,13 @@
   "show_wrap_guides": true,
   "soft_wrap": "editor_width",
   "ui_font_family": "Ubuntu",
-  "ui_font_size": 16,
+  "ui_font_size": 19,
   "ui_font_weight": 400,
   "vim_mode": false,
   "wrap_guides": [80, 120],
 
   "agent": {
+    "default_view": "text_thread",
     "default_profile": "ask",
     "default_model": {
       "provider": "anthropic",
@@ -28,6 +29,7 @@
   "auto_install_extensions": {
     "ansible": true,
     "astro": true,
+    "catppuccin": true,
     "clojure": true,
     "csharp": true,
     "cue": true,
@@ -263,12 +265,6 @@
     "alternate_scroll": "on",
     "blinking": "on",
     "line_height": "standard",
-    "shell": {
-      "with_arguments": {
-        "program": "tmux",
-        "args": ["new-session", "-A", "-s", "0"],
-      },
-    },
     "toolbar": {
       "breadcrumbs": false,
     },
