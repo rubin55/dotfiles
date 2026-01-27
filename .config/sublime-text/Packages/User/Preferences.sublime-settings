@@ -10,7 +10,8 @@
 	"font_size": 12,
 	"font_options": ["no_bold", "gray_antialias"],
 	
-	"rulers": [],
+	"rulers": [
+	],
 	"index_files": true,
 	"highlight_line": true,
 	"block_caret": true,
