@@ -10,9 +10,9 @@
       "version": "2025.12.1"
     },
     "dev-proxy-bin": {
-      "version": "v2.0.0",
-      "gitref": "refs/tags/v2.0.0",
-      "url": "https://github.com/dotnet/dev-proxy/releases/tag/v2.0.0"
+      "version": "v2.1.0",
+      "gitref": "refs/tags/v2.1.0",
+      "url": "https://github.com/dotnet/dev-proxy/releases/tag/v2.1.0"
     },
     "fsautocomplete-bin": {
       "version": "v0.82.0",
@@ -59,10 +59,10 @@
       "url": "https://github.com/andwn/marsdev/releases/tag/v1.0.0-rc1"
     },
     "mistral-vibe": {
-      "version": "v2.0.0",
-      "gitref": "refs/tags/v2.0.0",
-      "revision": "d33db9fff8876b2653ab160e265cbb4388964975",
-      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.0.0"
+      "version": "v2.0.1",
+      "gitref": "refs/tags/v2.0.1",
+      "revision": "bd3497b1c0168db45537f6a8e2c8945e89a52120",
+      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.0.1"
     },
     "moonlight-qt": {
       "version": "v6.1.0",
