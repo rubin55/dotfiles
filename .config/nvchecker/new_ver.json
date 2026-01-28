@@ -59,10 +59,10 @@
       "url": "https://github.com/andwn/marsdev/releases/tag/v1.0.0-rc1"
     },
     "mistral-vibe": {
-      "version": "v1.3.5",
-      "gitref": "refs/tags/v1.3.5",
-      "revision": "79f215d91cf8ca7c8970d9d81470b76199fecc43",
-      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v1.3.5"
+      "version": "v2.0.0",
+      "gitref": "refs/tags/v2.0.0",
+      "revision": "d33db9fff8876b2653ab160e265cbb4388964975",
+      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.0.0"
     },
     "moonlight-qt": {
       "version": "v6.1.0",
@@ -146,9 +146,9 @@
       "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.17.23"
     },
     "talanoa-bin": {
-      "version": "v0.7.7",
-      "gitref": "refs/tags/v0.7.7",
-      "url": "https://github.com/talanoa-email/desktop-releases/releases/tag/v0.7.7"
+      "version": "v0.7.9",
+      "gitref": "refs/tags/v0.7.9",
+      "url": "https://github.com/talanoa-email/desktop-releases/releases/tag/v0.7.9"
     },
     "yaml-language-server": {
       "version": "1.19.2",
