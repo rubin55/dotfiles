@@ -47,10 +47,10 @@
       "url": "https://github.com/jmspit/leanux/releases/tag/2.0.1"
     },
     "marksman": {
-      "version": "2025-12-13",
-      "gitref": "refs/tags/2025-12-13",
-      "revision": "eb43ccdf20a6a6b4501c36a7181e751a17651b5c",
-      "url": "https://github.com/artempyanykh/marksman/releases/tag/2025-12-13"
+      "version": "2026-01-28",
+      "gitref": "refs/tags/2026-01-28",
+      "revision": "8249efa8ec7469db9dd9330ee5671de9ab03a981",
+      "url": "https://github.com/artempyanykh/marksman/releases/tag/2026-01-28"
     },
     "marsdev": {
       "version": "v1.0.0-rc1",
