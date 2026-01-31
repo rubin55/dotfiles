@@ -67,10 +67,10 @@
       "url": "https://github.com/lexical-lsp/lexical/releases/tag/v0.7.3"
     },
     "marksman": {
-      "version": "2025-12-13",
-      "gitref": "refs/tags/2025-12-13",
-      "revision": "eb43ccdf20a6a6b4501c36a7181e751a17651b5c",
-      "url": "https://github.com/artempyanykh/marksman/releases/tag/2025-12-13"
+      "version": "2026-01-28",
+      "gitref": "refs/tags/2026-01-28",
+      "revision": "8249efa8ec7469db9dd9330ee5671de9ab03a981",
+      "url": "https://github.com/artempyanykh/marksman/releases/tag/2026-01-28"
     },
     "marsdev": {
       "version": "v1.0.0-rc1",
@@ -79,10 +79,10 @@
       "url": "https://github.com/andwn/marsdev/releases/tag/v1.0.0-rc1"
     },
     "mistral-vibe": {
-      "version": "v2.0.1",
-      "gitref": "refs/tags/v2.0.1",
-      "revision": "bd3497b1c0168db45537f6a8e2c8945e89a52120",
-      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.0.1"
+      "version": "v2.0.2",
+      "gitref": "refs/tags/v2.0.2",
+      "revision": "9809cfc8315049b6f02b1865306903d92428919f",
+      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.0.2"
     },
     "moonlight-qt": {
       "version": "v6.1.0",
@@ -165,10 +165,10 @@
       "url": "https://github.com/ufo5260987423/scheme-langserver/releases/tag/2.0.3"
     },
     "svelte-language-server": {
-      "version": "svelte-language-server@0.17.23",
-      "gitref": "refs/tags/svelte-language-server@0.17.23",
-      "revision": "708f63616978f3c720a8ece08536955608a8857c",
-      "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.17.23"
+      "version": "svelte-language-server@0.17.24",
+      "gitref": "refs/tags/svelte-language-server@0.17.24",
+      "revision": "59df733bc47246d6369f1260b5a50cb6c853b135",
+      "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.17.24"
     },
     "talanoa-bin": {
       "version": "v0.7.9",
