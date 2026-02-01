@@ -207,7 +207,12 @@
   :hook ((xml-mode . lsp)
          (nxml-mode . lsp))
   :config
-  (setq lsp-xml-bin-file "/usr/bin/lemminx"))
+  (setq lsp-xml-bin-file "/usr/bin/lemminx")
+  (setq lsp-xml-jar-file "/usr/share/java/lemminx/lemminx-0.31.0.jar")
+  (setq lsp-xml-server-work-dir "~/.lemminx")
+  (setq lsp-xml-file-associations
+        '(((:systemId . "https://maven.apache.org/xsd/maven-4.0.0.xsd")
+           (:pattern . "**/*.pom")))))
 
 ;; Configure lsp sql mode.
 (use-package lsp-mode
