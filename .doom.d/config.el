@@ -94,6 +94,9 @@
 ;; Always enable server mode, for emacsclient sessions.
 (server-start)
 
+;; Disable some lsp servers.
+(setq lsp-disabled-clients '(semgrep-ls))
+
 ;; Configure lsp python mode explicitly.
 ;; Not required for python-language-server.
 ;; (use-package lsp-pyright
@@ -204,7 +207,7 @@
   :hook ((xml-mode . lsp)
          (nxml-mode . lsp))
   :config
-  (setq lsp-xml-server-command "/usr/bin/lemminx"))
+  (setq lsp-xml-bin-file "/usr/bin/lemminx"))
 
 ;; Configure lsp sql mode.
 (use-package lsp-mode
