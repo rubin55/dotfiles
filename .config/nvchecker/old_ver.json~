@@ -25,9 +25,9 @@
       "url": "https://github.com/ionide/FsAutoComplete/releases/tag/v0.82.0"
     },
     "gnome-shell-extension-tiling-shell": {
-      "version": "17.2",
-      "gitref": "refs/tags/17.2",
-      "url": "https://github.com/domferr/tilingshell/releases/tag/17.2"
+      "version": "17.3",
+      "gitref": "refs/tags/17.3",
+      "url": "https://github.com/domferr/tilingshell/releases/tag/17.3"
     },
     "husky": {
       "version": "v9.1.7",
