@@ -20,6 +20,7 @@
   "chat.agent.enabled": false,
   "chat.disableAIFeatures": true,
   "chat.sendElementsToChat.enabled": false,
+  "chat.todoListTool.descriptionField": false,
   "chat.tools.terminal.autoApproveWorkspaceNpmScripts": false,
   "chat.tools.terminal.enableAutoApprove": false,
   "chat.commandCenter.enabled": false,
@@ -80,7 +81,9 @@
       }
     ]
   },
+
   "editor.wordWrap": "on",
+  "editorconfig.showMenuEntry": false,
   "explorer.enableDragAndDrop": false,
   "extensions.ignoreRecommendations": true,
   "files.associations": {
@@ -104,6 +107,7 @@
   },
   "git.openRepositoryInParentFolders": "never",
   "haskell.manageHLS": "GHCup",
+  "java.maven.downloadSources": true,
   "java.import.gradle.enabled": false,
   "java.import.projectSelection": "manual",
   "java.project.importOnFirstTimeStartup": "interactive",
@@ -123,6 +127,7 @@
     "node_modules"
   ],
   "makefile.configureOnOpen": true,
+  "maven.showInExplorerContextMenu": false,
   "notebook.experimental.generate": false,
   "openapi.codeLens": false,
   "rainbow_csv.enable_auto_csv_lint": false,
@@ -135,6 +140,7 @@
   "rust-analyzer.hover.show.traitAssocItems": 100,
   "rust-analyzer.lens.enable": false,
   "security.workspace.trust.enabled": false,
+  "svelte.ui.svelteKitFilesContextMenu.enable": "never",
   "telemetry.feedback.enabled": false,
   "telemetry.telemetryLevel": "off",
   "terminal.integrated.cursorBlinking": true,
@@ -209,5 +215,7 @@
   "workbench.startupEditor": "none",
   "workbench.tree.enableStickyScroll": false,
   "workbench.tree.indent": 20,
-  "yaml.customTags": [ "!reference sequence" ]
+  "yaml.customTags": [
+    "!reference sequence"
+  ]
 }
