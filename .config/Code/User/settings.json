@@ -18,6 +18,10 @@
   "calva.enableClojureLspOnStart": "when-workspace-opened-use-workspace-root",
   "calva.enableInspectorRainbow": true,
   "chat.agent.enabled": false,
+  "chat.disableAIFeatures": true,
+  "chat.sendElementsToChat.enabled": false,
+  "chat.tools.terminal.autoApproveWorkspaceNpmScripts": false,
+  "chat.tools.terminal.enableAutoApprove": false,
   "chat.commandCenter.enabled": false,
   "chat.detectParticipant.enabled": false,
   "chat.extensionTools.enabled": false,
@@ -32,6 +36,7 @@
   "editor.fontFamily": "PragmataPro Mono",
   "editor.fontLigatures": false,
   "editor.fontSize": 13.3,
+  "editor.fontWeight": "normal",
   "editor.guides.indentation": false,
   "editor.inlayHints.enabled": "offUnlessPressed",
   "editor.inlineSuggest.enabled": false,
@@ -90,6 +95,7 @@
     "**/.settings": true
   },
   "files.insertFinalNewline": true,
+  "files.participants.timeout": 1000,
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
   "files.watcherExclude": {
@@ -97,14 +103,16 @@
     "**/.metals": true
   },
   "git.openRepositoryInParentFolders": "never",
-  "gitlens.codeLens.authors.enabled": false,
-  "gitlens.codeLens.recentChange.enabled": false,
-  "gitlens.currentLine.enabled": false,
-  "gitlens.launchpad.indicator.enabled": false,
   "haskell.manageHLS": "GHCup",
   "java.import.gradle.enabled": false,
   "java.import.projectSelection": "manual",
   "java.project.importOnFirstTimeStartup": "interactive",
+  "java.project.resourceFilters": [
+    "node_modules",
+    "\\.git",
+    "\\.venv"
+  ],
+  "python.defaultInterpreterPath": "/home/rubin/Source/ICTU/wallet/wallet_docs/.venv",
   "lldb.launch.expressions": "native",
   "lldb.library": "/usr/lib/swift/lib/liblldb.so",
   "Lua.workspace.ignoreDir": [
@@ -116,6 +124,8 @@
   ],
   "makefile.configureOnOpen": true,
   "notebook.experimental.generate": false,
+  "openapi.codeLens": false,
+  "rainbow_csv.enable_auto_csv_lint": false,
   "redhat.telemetry.enabled": false,
   "rust-analyzer.check.command": "clippy",
   "rust-analyzer.completion.fullFunctionSignatures.enable": true,
@@ -128,18 +138,34 @@
   "telemetry.feedback.enabled": false,
   "telemetry.telemetryLevel": "off",
   "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.defaultProfile.linux": "tmux",
   "terminal.integrated.fontFamily": "PragmataPro Mono",
   "terminal.integrated.fontSize": 13.3,
   "terminal.integrated.fontWeight": "normal",
   "terminal.integrated.fontWeightBold": "normal",
+  "terminal.integrated.profiles.linux": {
+    "tmux": {
+      "path": "tmux",
+      "icon": "terminal-tmux",
+      "args": ["new-session", "-A", "-s", "0"]
+    }
+  },
   "terminal.integrated.scrollback": 10000,
+  "todo-tree.filtering.excludeGlobs": [
+    "**/node_modules/*/**",
+    "**/build/*/**",
+    "**/target/*/**",
+    "**/venv/*/**",
+    "**/.*/*/**",
+    "**/_*/*/**"
+  ],
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^)\\s*($TAGS)",
   "todo-tree.tree.tagsOnly": true,
   "window.autoDetectColorScheme": true,
   "window.commandCenter": false,
   "window.openFilesInNewWindow": "off",
   "window.titleBarStyle": "custom",
-  "window.zoomLevel": 1,
+  "window.zoomLevel": 0.66,
   "window.zoomPerWindow": false,
   "workbench.colorCustomizations": {
     "[*Dark*][GitHub]": {
@@ -161,16 +187,27 @@
     "[Tomorrow Night Blue]": {
       "editorLineNumber.foreground": "#7F8E9F",
       "editorRuler.foreground": "#002350"
+    },
+    "[Catppuccin Frappé]": {
+      "editorLineNumber.foreground": "#828aa7",
+      "editorRuler.foreground": "#323649"
+    },
+    "[Catppuccin Latte]": {
+      "editorLineNumber.foreground": "#acaebd",
+      "editorRuler.foreground": "#ecedef"
     }
   },
+  "workbench.commandPalette.showAskInChat": false,
   "workbench.editor.empty.hint": "hidden",
   "workbench.editor.wrapTabs": true,
-  "workbench.iconTheme": "vs-minimal",
+  "workbench.iconTheme": "catppuccin-latte",
   "workbench.layoutControl.enabled": false,
   "workbench.panel.defaultLocation": "bottom",
-  "workbench.preferredDarkColorTheme": "GitHub Dark",
-  "workbench.preferredLightColorTheme": "GitHub Light",
+  "workbench.preferredDarkColorTheme": "Catppuccin Frappé",
+  "workbench.preferredLightColorTheme": "Catppuccin Latte",
   "workbench.sideBar.location": "left",
   "workbench.startupEditor": "none",
-  "workbench.tree.enableStickyScroll": false
+  "workbench.tree.enableStickyScroll": false,
+  "workbench.tree.indent": 20,
+  "yaml.customTags": [ "!reference sequence" ]
 }
