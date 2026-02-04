@@ -7,7 +7,7 @@
       "revision": "b3956bda93ff3d45b644c7bc6d55e0e01c9b9a74"
     },
     "cypher-shell": {
-      "version": "2025.12.1"
+      "version": "2026.01.3"
     },
     "dev-proxy-bin": {
       "version": "v2.1.0",
@@ -15,9 +15,9 @@
       "url": "https://github.com/dotnet/dev-proxy/releases/tag/v2.1.0"
     },
     "fsautocomplete-bin": {
-      "version": "v0.82.0",
-      "gitref": "refs/tags/v0.82.0",
-      "url": "https://github.com/ionide/FsAutoComplete/releases/tag/v0.82.0"
+      "version": "v0.83.0",
+      "gitref": "refs/tags/v0.83.0",
+      "url": "https://github.com/ionide/FsAutoComplete/releases/tag/v0.83.0"
     },
     "gnome-shell-extension-tiling-shell": {
       "version": "17.3",
@@ -146,9 +146,9 @@
       "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.17.25"
     },
     "talanoa-bin": {
-      "version": "v0.7.9",
-      "gitref": "refs/tags/v0.7.9",
-      "url": "https://github.com/talanoa-email/desktop-releases/releases/tag/v0.7.9"
+      "version": "v0.7.10",
+      "gitref": "refs/tags/v0.7.10",
+      "url": "https://github.com/talanoa-email/desktop-releases/releases/tag/v0.7.10"
     },
     "yaml-language-server": {
       "version": "1.19.2",
