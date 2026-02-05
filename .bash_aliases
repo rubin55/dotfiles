@@ -54,3 +54,7 @@ alias hx='helix'
 alias nv='nvim'
 alias vi='nvim'
 alias zed='zeditor'
+
+# Completions.
+complete -F __start_kubectl kc
+
