@@ -7,7 +7,7 @@
     "keys": ["ctrl+shift+t"],
     "command": "toggle_terminus_panel",
     "args": {
-      "cmd": ["bash"],
+      "cmd": ["/usr/bin/bash"],
       "cwd": "${home}"
     }
   },
@@ -15,7 +15,7 @@
     "keys": ["ctrl+alt+t"],
     "command": "terminus_open",
     "args": {
-      "cmd": ["bash"],
+      "cmd": ["/usr/bin/bash"],
       "cwd": "${home}"
     }
   },
