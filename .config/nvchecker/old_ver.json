@@ -123,10 +123,10 @@
       "url": "https://github.com/alekmaul/pvsneslib/releases/tag/4.5.0"
     },
     "python-agent-client-protocol": {
-      "version": "0.7.1",
-      "gitref": "refs/tags/0.7.1",
-      "revision": "6f8c9dfd8db4b903ec7b38e0e0e3ddef388b2496",
-      "url": "https://github.com/agentclientprotocol/python-sdk/releases/tag/0.7.1"
+      "version": "0.8.0",
+      "gitref": "refs/tags/0.8.0",
+      "revision": "a1d2ae8e9070763f575dc9a628ea76ecf49cef2e",
+      "url": "https://github.com/agentclientprotocol/python-sdk/releases/tag/0.8.0"
     },
     "rcu-bin": {
       "version": "v4.0.33"
