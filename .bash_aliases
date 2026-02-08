@@ -25,7 +25,6 @@ alias gnome-update-backgrounds='gnome-update-backgrounds.sh'
 alias helmster='helmster.sh'
 alias jc='journalctl'
 alias jcu='journalctl --user'
-alias kc='kubectl'
 alias open='opener.sh'
 alias papirus-color='papirus-color.sh'
 alias pgctl='pgctl.sh'
@@ -54,7 +53,4 @@ alias hx='helix'
 alias nv='nvim'
 alias vi='nvim'
 alias zed='zeditor'
-
-# Completions.
-complete -F __start_kubectl kc
 
