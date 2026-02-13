@@ -7,7 +7,7 @@
       "revision": "b3956bda93ff3d45b644c7bc6d55e0e01c9b9a74"
     },
     "cypher-shell": {
-      "version": "2026.01.3"
+      "version": "2026.01.4"
     },
     "dev-proxy-bin": {
       "version": "v2.1.0",
@@ -67,10 +67,10 @@
       "url": "https://github.com/lexical-lsp/lexical/releases/tag/v0.7.3"
     },
     "marksman": {
-      "version": "2026-01-28",
-      "gitref": "refs/tags/2026-01-28",
-      "revision": "8249efa8ec7469db9dd9330ee5671de9ab03a981",
-      "url": "https://github.com/artempyanykh/marksman/releases/tag/2026-01-28"
+      "version": "2026-02-08",
+      "gitref": "refs/tags/2026-02-08",
+      "revision": "4340227338f8d2b369bf38d19f029f1effb532f6",
+      "url": "https://github.com/artempyanykh/marksman/releases/tag/2026-02-08"
     },
     "marsdev": {
       "version": "v1.0.0-rc1",
@@ -79,10 +79,10 @@
       "url": "https://github.com/andwn/marsdev/releases/tag/v1.0.0-rc1"
     },
     "mistral-vibe": {
-      "version": "v2.0.2",
-      "gitref": "refs/tags/v2.0.2",
-      "revision": "9809cfc8315049b6f02b1865306903d92428919f",
-      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.0.2"
+      "version": "v2.1.0",
+      "gitref": "refs/tags/v2.1.0",
+      "revision": "51fecc67d945510b8f1ff4b1cf41170c84a0b2a7",
+      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.1.0"
     },
     "moonlight-qt": {
       "version": "v6.1.0",
@@ -95,7 +95,7 @@
       "url": "https://github.com/Samsung/netcoredbg/releases/tag/3.1.3-1062"
     },
     "openshift-codeready-bin": {
-      "version": "2.57.0"
+      "version": "2.58.0"
     },
     "openshift-developer-bin": {
       "version": "v3.16.1"
@@ -112,9 +112,9 @@
       "url": "https://github.com/kevinswiber/postman2openapi/releases/tag/1.2.1"
     },
     "pupdate-bin": {
-      "version": "4.6.1",
-      "gitref": "refs/tags/4.6.1",
-      "url": "https://github.com/mattpannella/pupdate/releases/tag/4.6.1"
+      "version": "4.6.2",
+      "gitref": "refs/tags/4.6.2",
+      "url": "https://github.com/mattpannella/pupdate/releases/tag/4.6.2"
     },
     "pvsneslib": {
       "version": "4.5.0",
@@ -171,9 +171,9 @@
       "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.17.25"
     },
     "talanoa-bin": {
-      "version": "v0.7.10",
-      "gitref": "refs/tags/v0.7.10",
-      "url": "https://github.com/talanoa-email/desktop-releases/releases/tag/v0.7.10"
+      "version": "v0.7.11",
+      "gitref": "refs/tags/v0.7.11",
+      "url": "https://github.com/talanoa-email/desktop-releases/releases/tag/v0.7.11"
     },
     "tidal-dl-ng": {
       "version": "v0.33.0",

@@ -9,11 +9,6 @@ git = "https://git.code.sf.net/p/cdesktopenv/code"
 include_regex = '^[0-9]+\.[0-9]+\.[0-9]+$'
 use_max_tag = true
 
-[cypher-shell]
-source = "regex"
-regex = "Neo4j (\\d+\\.\\d+\\.\\d+)"
-url = "https://neo4j.com/deployment-center/"
-
 [dev-proxy-bin]
 source = "github"
 github = "dotnet/dev-proxy"
