@@ -79,10 +79,10 @@
       "url": "https://github.com/andwn/marsdev/releases/tag/v1.0.0-rc1"
     },
     "mistral-vibe": {
-      "version": "v2.0.2",
-      "gitref": "refs/tags/v2.0.2",
-      "revision": "9809cfc8315049b6f02b1865306903d92428919f",
-      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.0.2"
+      "version": "v2.1.0",
+      "gitref": "refs/tags/v2.1.0",
+      "revision": "51fecc67d945510b8f1ff4b1cf41170c84a0b2a7",
+      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.1.0"
     },
     "moonlight-qt": {
       "version": "v6.1.0",
@@ -123,10 +123,10 @@
       "url": "https://github.com/alekmaul/pvsneslib/releases/tag/4.5.0"
     },
     "python-agent-client-protocol": {
-      "version": "0.8.0",
-      "gitref": "refs/tags/0.8.0",
-      "revision": "a1d2ae8e9070763f575dc9a628ea76ecf49cef2e",
-      "url": "https://github.com/agentclientprotocol/python-sdk/releases/tag/0.8.0"
+      "version": "0.8.1",
+      "gitref": "refs/tags/0.8.1",
+      "revision": "0133bc49aaad9990e242b9b0f583ea9f492552a6",
+      "url": "https://github.com/agentclientprotocol/python-sdk/releases/tag/0.8.1"
     },
     "rcu-bin": {
       "version": "v4.0.33"
@@ -165,10 +165,10 @@
       "url": "https://github.com/ufo5260987423/scheme-langserver/releases/tag/2.0.3"
     },
     "svelte-language-server": {
-      "version": "svelte-language-server@0.17.25",
-      "gitref": "refs/tags/svelte-language-server@0.17.25",
-      "revision": "cf0dfd446d378b1b0b3ffecc738a129ccdd0d2d2",
-      "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.17.25"
+      "version": "svelte-language-server@0.17.26",
+      "gitref": "refs/tags/svelte-language-server@0.17.26",
+      "revision": "692798519b57ccd5ada4485c0da563c71ca11c8d",
+      "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.17.26"
     },
     "talanoa-bin": {
       "version": "v0.7.11",
