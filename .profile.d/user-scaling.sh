@@ -18,8 +18,8 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
   # codeMono=14
   # emacsMono=14
   # emacsSans=13
-  # gnomeMono=11
   # ghosttyMono=11
+  # gnomeMono=11
   # gnomeSans=10
   # gnomeSerif=10
   # jetbrainsMono=13
@@ -27,6 +27,7 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
   # qt5Sans=10
   # qt6Mono=11
   # qt6Sans=10
+  # sublimeMono=11
   # vimMono=11
   # x11Cursor=48
   # x11Dpi=192
@@ -354,15 +355,15 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
 
     if [[ "$currentX11UxtermFontSize" != "$wantedX11UxtermFontSize" ]]; then
       log.info "Setting X11 uxterm font size to: \"$wantedX11UxtermFontSize\""
-      currentX11UxtermFontString="UXTerm*faceSize: $currentX11UxtermFontSize"
-      wantedX11UxtermFontString="UXTerm*faceSize: $wantedX11UxtermFontSize"
+      currentX11UxtermFontString="UXTerm\*faceSize: $currentX11UxtermFontSize"
+      wantedX11UxtermFontString="UXTerm\*faceSize: $wantedX11UxtermFontSize"
       sed -i "s|$currentX11UxtermFontString|$wantedX11UxtermFontString|g" "$x11Config"
     fi
 
     if [[ "$currentX11XtermFontSize" != "$wantedX11XtermFontSize" ]]; then
       log.info "Setting X11 xterm font size to: \"$wantedX11XtermFontSize\""
-      currentX11XtermFontString="XTerm*faceSize: $currentX11XtermFontSize"
-      wantedX11XtermFontString="XTerm*faceSize: $wantedX11XtermFontSize"
+      currentX11XtermFontString="XTerm\*faceSize: $currentX11XtermFontSize"
+      wantedX11XtermFontString="XTerm\*faceSize: $wantedX11XtermFontSize"
       sed -i "s|$currentX11XtermFontString|$wantedX11XtermFontString|g" "$x11Config"
     fi
   fi
@@ -409,6 +410,22 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
     fi
   fi
 
+  # Current and wanted SublimeText and SublimeMerge font sizes.
+  sublimeConfigs=("$HOME/.config/sublime-text/Packages/User/Preferences.sublime-settings" "$HOME/.config/sublime-merge/Packages/User/Preferences.sublime-settings")
+  for sublimeConfig in "${sublimeConfigs[@]}"; do
+    sublimeProgramName=$(echo "$sublimeConfig" | awk -F'/' '{print $(NF-3)}' | sed 's/\b\(.\)/\u\1/g')
+    if [[ -e "$sublimeConfig" && -n "$sublimeMono" ]]; then
+      currentSublimeMonoFontSize="$(grep '"font_size": ' "$sublimeConfig" | awk '{ print $2 }' | tr -cd '0-9')"
+      wantedSublimeMonoFontSize="$sublimeMono"
+
+      if [[ "$currentSublimeMonoFontSize" != "$wantedSublimeMonoFontSize" ]]; then
+        log.info "Setting $sublimeProgramName font size to: \"$wantedSublimeMonoFontSize\""
+        currentSublimeMonoFontString="$(echo "\"font_size\": $currentSublimeMonoFontSize" | sed 's|\.|\\\.|g')"
+        wantedSublimeMonoFontString="$(echo "\"font_size\": $wantedSublimeMonoFontSize" | sed 's|\.|\\\.|g')"
+        sed -i "s|$currentSublimeMonoFontString|$wantedSublimeMonoFontString|g" "$sublimeConfig"
+      fi
+    fi
+  done
   # Write a timer file so we don't keep doing this for every shell invocation.
   echo "user-scaling.sh ran at $(date)" > /tmp/user-scaling.timer
 fi
