@@ -4,3 +4,4 @@
 .doom.d/snippets
 .profile.d/local-*
 .config/nvchecker/keys.toml
+*.sublime-*
