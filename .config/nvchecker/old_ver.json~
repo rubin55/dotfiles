@@ -79,10 +79,10 @@
       "url": "https://github.com/andwn/marsdev/releases/tag/v1.0.0-rc1"
     },
     "mistral-vibe": {
-      "version": "v2.2.0",
-      "gitref": "refs/tags/v2.2.0",
-      "revision": "ec7f3b25eaf47c447f4005561ae2ff32545d3dff",
-      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.2.0"
+      "version": "v2.2.1",
+      "gitref": "refs/tags/v2.2.1",
+      "revision": "a560a47ce89753cb30583113e9ad364d86777c5c",
+      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.2.1"
     },
     "moonlight-qt": {
       "version": "v6.1.0",
@@ -165,10 +165,10 @@
       "url": "https://github.com/ufo5260987423/scheme-langserver/releases/tag/2.0.3"
     },
     "svelte-language-server": {
-      "version": "svelte-language-server@0.17.28",
-      "gitref": "refs/tags/svelte-language-server@0.17.28",
-      "revision": "28fbea1c0a6ab6ae82adcbcec7e23d08753deea1",
-      "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.17.28"
+      "version": "extensions-109.14.1",
+      "gitref": "refs/tags/extensions-109.14.1",
+      "revision": "86253432cc99c0dba6c4469cf3873b11296c8fc0",
+      "url": "https://github.com/sveltejs/language-tools/releases/tag/extensions-109.14.1"
     },
     "talanoa-bin": {
       "version": "v0.7.12",
