@@ -2,6 +2,7 @@
 Description=Steam
 StartLimitIntervalSec=500
 StartLimitBurst=5
+After=graphical-session.target
 
 [Service]
 Type=simple
@@ -11,4 +12,4 @@ Restart=always
 RestartSec=10s
 
 [Install]
-WantedBy=graphical-session.target
+WantedBy=default.target

@@ -1,0 +1,27 @@
+[Unit]
+Description=ProtonMail Bridge - ProtonMail IMAP and SMTP Bridge
+After=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/protonmail-bridge --no-window
+Restart=always
+KillMode=process
+
+# Hardening
+PrivateTmp=true
+# ProtectHome=true
+ProtectSystem=full
+NoNewPrivileges=true
+ProtectControlGroups=true
+ProtectKernelTunables=true
+# RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+RestrictNamespaces=true
+RestrictRealtime=true
+SystemCallArchitectures=native
+# Breaks the service when running linux-hardened:
+# ProtectKernelModules=true
+# PrivateDevices=true
+
+[Install]
+WantedBy=default.target
