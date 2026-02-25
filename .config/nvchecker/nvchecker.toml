@@ -42,7 +42,7 @@ strip_release = "true"
 [jdk25-openj9-bin]
 source = "github"
 github = "ibmruntimes/semeru25-binaries"
-use_latest_tag = "true"
+use_latest_release = "true"
 
 [leanux]
 source = "github"

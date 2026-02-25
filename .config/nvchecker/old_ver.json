@@ -46,10 +46,9 @@
       "version": "25.3.4"
     },
     "jdk25-openj9-bin": {
-      "version": "jdk-25+36_openj9-0.56.0-m2",
-      "gitref": "refs/tags/jdk-25+36_openj9-0.56.0-m2",
-      "revision": "0eaf909966e57752f2c2f5834c872195b99b8fa1",
-      "url": "https://github.com/ibmruntimes/semeru25-binaries/releases/tag/jdk-25+36_openj9-0.56.0-m2"
+      "version": "jdk-25.0.2+10_openj9-0.57.0",
+      "gitref": "refs/tags/jdk-25.0.2+10_openj9-0.57.0",
+      "url": "https://github.com/ibmruntimes/semeru25-binaries/releases/tag/jdk-25.0.2%2B10_openj9-0.57.0"
     },
     "kotlin-language-server-bin": {
       "version": "1.3.13",
@@ -112,9 +111,9 @@
       "url": "https://github.com/kevinswiber/postman2openapi/releases/tag/1.2.1"
     },
     "pupdate-bin": {
-      "version": "4.6.2",
-      "gitref": "refs/tags/4.6.2",
-      "url": "https://github.com/mattpannella/pupdate/releases/tag/4.6.2"
+      "version": "4.7.0",
+      "gitref": "refs/tags/4.7.0",
+      "url": "https://github.com/mattpannella/pupdate/releases/tag/4.7.0"
     },
     "pvsneslib": {
       "version": "4.5.0",
