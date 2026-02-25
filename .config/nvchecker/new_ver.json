@@ -33,9 +33,9 @@
       "version": "25.3.4"
     },
     "jdk25-openj9-bin": {
-      "version": "jdk-25.0.2+10_openj9-0.57.0",
-      "gitref": "refs/tags/jdk-25.0.2+10_openj9-0.57.0",
-      "url": "https://github.com/ibmruntimes/semeru25-binaries/releases/tag/jdk-25.0.2%2B10_openj9-0.57.0"
+      "version": "jdk-25.0.2+10.1_openj9-0.57.0",
+      "gitref": "refs/tags/jdk-25.0.2+10.1_openj9-0.57.0",
+      "url": "https://github.com/ibmruntimes/semeru25-binaries/releases/tag/jdk-25.0.2%2B10.1_openj9-0.57.0"
     },
     "leanux": {
       "version": "2.0.1",
@@ -140,11 +140,6 @@
       "gitref": "refs/tags/svelte-check@4.4.3",
       "revision": "d0c333f6d521b2bf6c3a9428b2068f3cf2ef7d89",
       "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-check@4.4.3"
-    },
-    "talanoa-bin": {
-      "version": "v0.7.12",
-      "gitref": "refs/tags/v0.7.12",
-      "url": "https://github.com/talanoa-email/desktop-releases/releases/tag/v0.7.12"
     },
     "yaml-language-server": {
       "version": "1.20.0",
