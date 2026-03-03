@@ -30,7 +30,7 @@
       "version": "22.9.0"
     },
     "intel-media-driver": {
-      "version": "25.3.4"
+      "version": "25.4.6"
     },
     "jdk25-openj9-bin": {
       "version": "jdk-25.0.2+10.1_openj9-0.57.0",
@@ -55,10 +55,10 @@
       "url": "https://github.com/andwn/marsdev/releases/tag/v1.0.0-rc1"
     },
     "mistral-vibe": {
-      "version": "v2.2.1",
-      "gitref": "refs/tags/v2.2.1",
-      "revision": "a560a47ce89753cb30583113e9ad364d86777c5c",
-      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.2.1"
+      "version": "v2.3.0",
+      "gitref": "refs/tags/v2.3.0",
+      "revision": "5d2e01a6d7a6e6ea713c38bc5b713e35933eb8f0",
+      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.3.0"
     },
     "moonlight-qt": {
       "version": "v6.1.0",
@@ -136,15 +136,15 @@
       "url": "https://github.com/ufo5260987423/scheme-langserver/releases/tag/2.0.3"
     },
     "svelte-language-server": {
-      "version": "svelte-check@4.4.3",
-      "gitref": "refs/tags/svelte-check@4.4.3",
-      "revision": "d0c333f6d521b2bf6c3a9428b2068f3cf2ef7d89",
-      "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-check@4.4.3"
+      "version": "svelte-language-server@0.17.29",
+      "gitref": "refs/tags/svelte-language-server@0.17.29",
+      "revision": "a41b527c95222a14064eb3feeab4f2df8f02024c",
+      "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.17.29"
     },
     "yaml-language-server": {
-      "version": "1.20.0",
-      "gitref": "refs/tags/1.20.0",
-      "revision": "177756e646f103d6f5f0c23ff8c6df1b1572718e"
+      "version": "1.21.0",
+      "gitref": "refs/tags/1.21.0",
+      "revision": "abce2da9dc60901a8f0157c95320136dc0e50113"
     }
   }
 }
