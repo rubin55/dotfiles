@@ -1,0 +1,15 @@
+[templates]
+default = "{album.artist}/{album.title}/{item.number:02d} {item.title}"
+
+[download]
+track_quality = "max"
+
+[metadata]
+cover = true
+
+[cover]
+save = true
+allowed = ["album"]
+
+[cover.templates]
+album = "{album.artist}/{album.title}"
