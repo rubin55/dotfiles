@@ -7,9 +7,9 @@
       "revision": "b3956bda93ff3d45b644c7bc6d55e0e01c9b9a74"
     },
     "dev-proxy-bin": {
-      "version": "v2.1.0",
-      "gitref": "refs/tags/v2.1.0",
-      "url": "https://github.com/dotnet/dev-proxy/releases/tag/v2.1.0"
+      "version": "v2.2.0",
+      "gitref": "refs/tags/v2.2.0",
+      "url": "https://github.com/dotnet/dev-proxy/releases/tag/v2.2.0"
     },
     "fsautocomplete-bin": {
       "version": "v0.83.0",
@@ -103,10 +103,10 @@
       "version": "v4.0.33"
     },
     "ruby-solargraph": {
-      "version": "v0.58.2",
-      "gitref": "refs/tags/v0.58.2",
-      "revision": "c87b6f14a66e7cd44178ad9bf17935a3990117b1",
-      "url": "https://github.com/castwide/solargraph/releases/tag/v0.58.2"
+      "version": "v0.58.3",
+      "gitref": "refs/tags/v0.58.3",
+      "revision": "ae1a6e6921a74cc6df56897e52b48b946d8b3d0a",
+      "url": "https://github.com/castwide/solargraph/releases/tag/v0.58.3"
     },
     "ruby-yard-activesupport-concern": {
       "version": "v0.0.1",
@@ -136,10 +136,10 @@
       "url": "https://github.com/ufo5260987423/scheme-langserver/releases/tag/2.0.3"
     },
     "svelte-language-server": {
-      "version": "svelte-language-server@0.17.29",
-      "gitref": "refs/tags/svelte-language-server@0.17.29",
-      "revision": "a41b527c95222a14064eb3feeab4f2df8f02024c",
-      "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.17.29"
+      "version": "svelte-check@4.4.5",
+      "gitref": "refs/tags/svelte-check@4.4.5",
+      "revision": "920bca42f1f29c10771553bb959819ac374e1d49",
+      "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-check@4.4.5"
     },
     "yaml-language-server": {
       "version": "1.21.0",
