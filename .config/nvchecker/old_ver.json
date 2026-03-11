@@ -78,10 +78,10 @@
       "url": "https://github.com/andwn/marsdev/releases/tag/v1.0.0-rc1"
     },
     "mistral-vibe": {
-      "version": "v2.4.0",
-      "gitref": "refs/tags/v2.4.0",
-      "revision": "dd372ce494c5402132e90e6c8fdd7153abba3ce5",
-      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.4.0"
+      "version": "v2.4.1",
+      "gitref": "refs/tags/v2.4.1",
+      "revision": "e9428bce233eaae7fd92565a77b6ff4b6508f1ae",
+      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.4.1"
     },
     "moonlight-qt": {
       "version": "v6.1.0",
@@ -111,9 +111,9 @@
       "url": "https://github.com/kevinswiber/postman2openapi/releases/tag/1.2.1"
     },
     "pupdate-bin": {
-      "version": "4.7.0",
-      "gitref": "refs/tags/4.7.0",
-      "url": "https://github.com/mattpannella/pupdate/releases/tag/4.7.0"
+      "version": "4.8.0",
+      "gitref": "refs/tags/4.8.0",
+      "url": "https://github.com/mattpannella/pupdate/releases/tag/4.8.0"
     },
     "pvsneslib": {
       "version": "4.5.0",
