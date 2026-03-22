@@ -62,7 +62,7 @@ use_latest_tag = "true"
 [mistral-vibe]
 source = "github"
 github = "mistralai/mistral-vibe"
-use_latest_tag = "true"
+use_latest_release = true
 
 [moonlight-qt]
 source = "github"
@@ -102,7 +102,7 @@ url = "https://www.passmark.com/products/pt_linux/download.php"
 [python-agent-client-protocol]
 source = "github"
 github = "agentclientprotocol/python-sdk"
-use_latest_tag = "true"
+use_latest_release = true
 
 [pupdate-bin]
 source = "github"
