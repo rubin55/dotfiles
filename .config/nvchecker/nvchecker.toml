@@ -24,6 +24,11 @@ source = "github"
 github = "domferr/tilingshell"
 use_latest_release = "true"
 
+[ida-pro]
+source = "regex"
+url = "https://docs.hex-rays.com/release-notes"
+regex = "IDA ([0-9]+\\.[0-9][a-zA-Z0-9. ]*)"
+
 [infer-bin]
 source = "github"
 github = "facebook/infer"
@@ -158,6 +163,11 @@ use_latest_tag = "true"
 #source = "github"
 #github = "exislow/tidal-dl-ng"
 #use_latest_release = "true"
+
+[wolfram]
+source = "regex"
+url = "https://www.wolfram.com/mathematica/quick-revision-history/"
+regex = "<span class=\"title\">Mathematica ([0-9.]+)</span>"
 
 [yaml-language-server]
 source = "git"

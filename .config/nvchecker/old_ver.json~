@@ -10,9 +10,9 @@
       "version": "2026.01.4"
     },
     "dev-proxy-bin": {
-      "version": "v2.2.0",
-      "gitref": "refs/tags/v2.2.0",
-      "url": "https://github.com/dotnet/dev-proxy/releases/tag/v2.2.0"
+      "version": "v2.3.0",
+      "gitref": "refs/tags/v2.3.0",
+      "url": "https://github.com/dotnet/dev-proxy/releases/tag/v2.3.0"
     },
     "devproxy-bin": {
       "version": "v1.2.1",
@@ -33,6 +33,9 @@
       "version": "v9.1.7",
       "gitref": "refs/tags/v9.1.7",
       "url": "https://github.com/typicode/husky/releases/tag/v9.1.7"
+    },
+    "ida-pro": {
+      "version": "9.3"
     },
     "infer-bin": {
       "version": "v1.2.0",
@@ -77,11 +80,13 @@
       "revision": "9de7602716e320d3d653712ec60d7b0e1ec22f4e",
       "url": "https://github.com/andwn/marsdev/releases/tag/v1.0.0-rc1"
     },
+    "mathematica": {
+      "version": "14.3"
+    },
     "mistral-vibe": {
-      "version": "v2.5.0",
-      "gitref": "refs/tags/v2.5.0",
-      "revision": "5103019b01d9f5ef601ffe1d36952d7653942671",
-      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.5.0"
+      "version": "v2.6.2",
+      "gitref": "refs/tags/v2.6.2",
+      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.6.2"
     },
     "moonlight-qt": {
       "version": "v6.1.0",
