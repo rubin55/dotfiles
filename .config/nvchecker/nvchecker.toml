@@ -1,4 +1,5 @@
 [__config__]
+http_timeout = 30
 keyfile = "keys.toml"
 oldver = "old_ver.json"
 newver = "new_ver.json"
