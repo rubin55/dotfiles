@@ -17,6 +17,19 @@
     "list": "allow",
     "lsp": "allow",
     "todoread": "allow"
+  },
+   "provider": {
+    "local": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Llama.cpp (local)",
+      "options": {
+        "baseURL": "http://127.0.0.1:8080/v1"
+      },
+      "models": {
+        "HauhauCS/Qwen3.5-27B-Uncensored-HauhauCS-Aggressive:Q4_K_M": {
+          "name": "Qwen 3.5 27B (uncensored)"
+        }
+      }
+    }
   }
 }
-
