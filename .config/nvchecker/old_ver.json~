@@ -184,6 +184,9 @@
       "gitref": "refs/tags/v0.33.0",
       "url": "https://github.com/exislow/tidal-dl-ng/releases/tag/v0.33.0"
     },
+    "wolfram": {
+      "version": "14.3"
+    },
     "yaml-language-server": {
       "version": "1.21.0",
       "gitref": "refs/tags/1.21.0",

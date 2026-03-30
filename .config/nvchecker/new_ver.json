@@ -58,9 +58,9 @@
       "url": "https://github.com/andwn/marsdev/releases/tag/v1.0.0-rc1"
     },
     "mistral-vibe": {
-      "version": "v2.6.2",
-      "gitref": "refs/tags/v2.6.2",
-      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.6.2"
+      "version": "v2.7.0",
+      "gitref": "refs/tags/v2.7.0",
+      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.7.0"
     },
     "moonlight-qt": {
       "version": "v6.1.0",
@@ -96,9 +96,9 @@
       "url": "https://github.com/alekmaul/pvsneslib/releases/tag/4.5.0"
     },
     "python-agent-client-protocol": {
-      "version": "0.8.1",
-      "gitref": "refs/tags/0.8.1",
-      "url": "https://github.com/agentclientprotocol/python-sdk/releases/tag/0.8.1"
+      "version": "0.9.0",
+      "gitref": "refs/tags/0.9.0",
+      "url": "https://github.com/agentclientprotocol/python-sdk/releases/tag/0.9.0"
     },
     "rcu-bin": {
       "version": "v4.0.33"
