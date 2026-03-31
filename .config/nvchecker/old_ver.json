@@ -84,9 +84,9 @@
       "version": "14.3"
     },
     "mistral-vibe": {
-      "version": "v2.7.0",
-      "gitref": "refs/tags/v2.7.0",
-      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.7.0"
+      "version": "v2.7.1",
+      "gitref": "refs/tags/v2.7.1",
+      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.7.1"
     },
     "moonlight-qt": {
       "version": "v6.1.0",
@@ -168,10 +168,10 @@
       "url": "https://github.com/ufo5260987423/scheme-langserver/releases/tag/2.0.3"
     },
     "svelte-language-server": {
-      "version": "svelte-check@4.4.5",
-      "gitref": "refs/tags/svelte-check@4.4.5",
-      "revision": "920bca42f1f29c10771553bb959819ac374e1d49",
-      "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-check@4.4.5"
+      "version": "typescript-svelte-plugin@0.3.51",
+      "gitref": "refs/tags/typescript-svelte-plugin@0.3.51",
+      "revision": "6f37b8057486b612f17ebe30891466671844df61",
+      "url": "https://github.com/sveltejs/language-tools/releases/tag/typescript-svelte-plugin@0.3.51"
     },
     "talanoa-bin": {
       "version": "v0.7.12",
