@@ -7,6 +7,7 @@ type -p path.which || return
 path.which claude || return
 
 # Various preferences.
+export CLAUDE_CODE_DISABLE_AUTO_MEMORY=1
 export CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC=1
 export CLAUDE_CODE_DISABLE_TERMINAL_TITLE=1
 
