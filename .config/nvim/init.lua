@@ -1,15 +1,20 @@
 -- Neovim plugins.
 vim.pack.add({
-  'https://github.com/bjarneo/pixel.nvim.git',
   'https://github.com/neovim/nvim-lspconfig',
   'https://github.com/nvim-treesitter/nvim-treesitter',
 })
 
--- Theme configuration.
-vim.opt.termguicolors = false
-vim.cmd.colorscheme("pixel")
-vim.api.nvim_set_hl(0, "StatusLine", { ctermbg = 5, ctermfg = 0 })
-vim.api.nvim_set_hl(0, "StatusLineNC", { ctermbg = 6, ctermfg = 0 })
+-- Italic comments.
+vim.api.nvim_create_autocmd("ColorScheme", {
+  callback = function()
+    local old_hl = vim.api.nvim_get_hl(0, { name = "Comment" })
+    local new_hl = vim.tbl_extend( 'force', old_hl, { italic = true } )
+    vim.api.nvim_set_hl(0, "Comment", new_hl)
+  end,
+})
+
+-- Theme selection.
+vim.cmd.colorscheme("catppuccin")
 
 -- Default tab behavior.
 vim.opt.tabstop = 2

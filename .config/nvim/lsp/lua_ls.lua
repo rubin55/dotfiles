@@ -1,4 +1,3 @@
--- vim.lsp.config('lua_ls', {
 return {
   on_init = function(client)
     if client.workspace_folders then
