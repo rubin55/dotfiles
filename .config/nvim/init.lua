@@ -25,7 +25,7 @@ vim.api.nvim_create_autocmd('OptionSet', {
     if vim.o.background == 'dark' then
       vim.cmd.colorscheme('nightfox')
     end
-  end,
+  end
 })
 
 -- Default tab behavior.
@@ -34,7 +34,7 @@ vim.opt.shiftwidth = 2
 vim.opt.softtabstop = 2
 vim.opt.expandtab = true
 
--- Case-(in)sensitivity in search.
+-- Case-(in)sensitivity.
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.wildignorecase = true
@@ -42,10 +42,17 @@ vim.opt.wildignorecase = true
 -- Tree-sitter grammars.
 require('nvim-treesitter').install({ 'asm', 'astro', 'awk', 'bash', 'c', 'c_sharp', 'clojure', 'cmake', 'comment', 'cpp', 'css', 'csv', 'cuda', 'cue', 'dart', 'desktop', 'diff', 'dockerfile', 'editorconfig', 'eex', 'elixir', 'erlang', 'fsharp', 'git_config', 'git_rebase', 'gitattributes', 'gitcommit', 'gitignore', 'glsl', 'go', 'gomod', 'gosum', 'gotmpl', 'gpg', 'groovy', 'haskell', 'heex', 'helm', 'hlsl', 'html', 'http', 'ini', 'java', 'javadoc', 'javascript', 'jinja', 'jinja_inline', 'jq', 'jsdoc', 'json', 'just', 'kotlin', 'latex', 'llvm', 'lua', 'luadoc', 'm68k', 'make', 'markdown', 'markdown_inline', 'mermaid', 'nasm', 'nginx', 'ninja', 'objc', 'objdump', 'passwd', 'pem', 'perl', 'php', 'phpdoc', 'powershell', 'printf', 'properties', 'python', 'query', 'racket', 'rbs', 'regex', 'requirements', 'robots_txt', 'rst', 'ruby', 'rust', 'scala', 'scheme', 'scss', 'slang', 'sql', 'ssh_config', 'strace', 'svelte', 'swift', 'systemverilog', 'tlaplus', 'tmux', 'todotxt', 'toml', 'tsv', 'tsx', 'typescript', 'udev', 'vala', 'vhdl', 'vim', 'vimdoc', 'vue', 'wgsl', 'xml', 'xresources', 'yaml', 'zig' }):wait(300000)
 
--- LSP enablement.
+-- Tree-sitter start.
+vim.api.nvim_create_autocmd('FileType', {
+  callback = function()
+    pcall(vim.treesitter.start)
+  end
+})
+
+-- LSP servers.
 vim.lsp.enable({ 'ansiblels', 'asm_lsp', 'astro', 'awk_ls', 'bashls', 'biome', 'clangd', 'clojure_lsp', 'cmake', 'cssls', 'cue', 'dartls', 'diagnosticls', 'dockerls', 'elixirls', 'eslint', 'expert', 'flow', 'fsautocomplete', 'gopls', 'groovyls', 'helm_ls', 'html', 'jdtls', 'jsonls', 'kotlin_lsp', 'lemminx', 'lua_ls', 'marksman', 'metals', 'omnisharp', 'perlnavigator', 'powershell_es', 'pylsp', 'pyright', 'rubocop', 'ruff', 'rust_analyzer', 'scheme_langserver', 'solargraph', 'svelte', 'tailwindcss', 'vala_ls', 'vtsls', 'vue', 'yamlls', 'zls' })
 
--- Completion enablement.
+-- LSP completion.
 vim.opt.completeopt = { 'fuzzy', 'menuone', 'noselect', 'popup' }
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
@@ -54,15 +61,23 @@ vim.api.nvim_create_autocmd('LspAttach', {
     if client:supports_method('textDocument/completion') then
       vim.lsp.completion.enable(true, client.id, ev.buf, { autotrigger = true })
     end
-  end,
+  end
 })
 
 -- Fzf configuration.
 local fzf = require('fzf-lua')
-fzf.setup({"telescope",winopts={preview={default="bat"}}})
+fzf.setup({'telescope'})
 vim.keymap.set('n', '<C-\\>', fzf.buffers)
 vim.keymap.set('n', '<C-k>', fzf.builtin)
 vim.keymap.set('n', '<C-p>', fzf.files)
 vim.keymap.set('n', '<C-l>', fzf.live_grep)
 vim.keymap.set('n', '<C-g>', fzf.grep_project)
 vim.keymap.set('n', '<F1>', fzf.help_tags)
+
+-- Neovide configuration.
+if vim.g.neovide then
+  vim.o.guifont = "Monospace:h11.2:#e-subpixelantialias:#h-slight"
+  vim.g.neovide_pixel_geometry = "RGBH"
+  vim.g.neovide_text_gamma = 0.8
+  vim.g.neovide_text_contrast = 0.1
+end
