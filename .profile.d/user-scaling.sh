@@ -15,26 +15,28 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
 
   # Example ~/.fontsizes:
   # alacrittyMono=11
-  # codeMono=14
+  # codeMono=13.3
   # emacsMono=14
-  # emacsSans=13
+  # emacsSans=14
   # ghosttyMono=11
   # gnomeMono=11
-  # gnomeSans=10
-  # gnomeSerif=10
-  # jetbrainsMono=13
+  # gnomeSans=11
+  # gnomeSerif=11
+  # jetbrainsMono=14
+  # jetbrainsSans=14
+  # nvimMono=11.2
   # qt5Mono=11
-  # qt5Sans=10
+  # qt5Sans=11
   # qt6Mono=11
-  # qt6Sans=10
+  # qt6Sans=11
   # sublimeMono=11
-  # vimMono=11
+  # vimMono=11.2
   # x11Cursor=48
   # x11Dpi=192
   # x11Mono=11
-  # x11Sans=25
+  # x11Sans=34
   # zedMono=15
-  # zedSans=17
+  # zedSans=16
 
   # Check if $FONT_SIZE_PREFERENCES_FILE was set
   # else set a it to ~/.fontsizes by default.
@@ -395,7 +397,6 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
     fi
   fi
 
-
   # Current and wanted GhosTTY font size.
   ghosttyConfig="$HOME/.config/ghostty/config"
   if [[ -e "$ghosttyConfig" && -n "$ghosttyMono" ]]; then
@@ -425,7 +426,23 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
         sed -i "s|$currentSublimeMonoFontString|$wantedSublimeMonoFontString|g" "$sublimeConfig"
       fi
     fi
+
+  # Current and wanted Nvim font size.
+  nvimConfig="$HOME/.config/nvim/init.lua"
+  if [[ -e "$nvimConfig" && -n "$nvimMono" ]]; then
+    currentNvimMonoFontSize="$(grep 'vim.o.guifont' "$nvimConfig" | sed 's|.*:h\([0-9.]*\).*|\1|')"
+    wantedNvimMonoFontSize="$nvimMono"
+
+    if [[ "$currentNvimMonoFontSize" != "$wantedNvimMonoFontSize" ]]; then
+      log.info "Setting Nvim font size to: \"$wantedNvimMonoFontSize\""
+      currentNvimMonoFontString="$(echo ":h$currentNvimMonoFontSize" | sed 's|\.|\\\.|g')"
+      wantedNvimMonoFontString="$(echo ":h$wantedNvimMonoFontSize" | sed 's|\.|\\\.|g')"
+      sed -i "s|$currentNvimMonoFontString|$wantedNvimMonoFontString|g" "$nvimConfig"
+    fi
+  fi
+
   done
+
   # Write a timer file so we don't keep doing this for every shell invocation.
   echo "user-scaling.sh ran at $(date)" > /tmp/user-scaling.timer
 fi
