@@ -6,6 +6,81 @@ vim.pack.add({
   'https://github.com/EdenEast/nightfox.nvim.git',
 })
 
+-- Set background based on desktop bus inspection.
+local function set_bg_from_dbus()
+  if vim.fn.executable('dbus-send') == 0 then return end
+
+  local sudo_user = os.getenv('SUDO_USER')
+  local cmd
+
+  if sudo_user then
+    local uid = vim.fn.system({ 'id', '-u', sudo_user }):gsub('%s+', '')
+    local dbus_addr = string.format('unix:path=/run/user/%s/bus', uid)
+    local dbus_envs = string.format('DBUS_SESSION_BUS_ADDRESS=%s', dbus_addr)
+    cmd = { 'sudo', '-u', sudo_user, dbus_envs, 'dbus-send' }
+  else
+    cmd = { 'dbus-send' }
+  end
+
+  vim.list_extend(cmd, {
+    '--session', '--print-reply=literal',
+    '--dest=org.freedesktop.portal.Desktop',
+    '/org/freedesktop/portal/desktop',
+    'org.freedesktop.portal.Settings.Read',
+    'string:org.freedesktop.appearance',
+    'string:color-scheme'
+  })
+
+  local out = vim.fn.system(cmd)
+  if vim.v.shell_error ~= 0 then return end
+  local val = out:match('(%d+)%s*$')
+  if val == '1' then
+    vim.o.background = 'dark'
+  elseif val == '0' or val == '2' then
+    vim.o.background = 'light'
+  end
+end
+
+-- Sets italic comments on any theme.
+vim.api.nvim_create_autocmd('ColorScheme', {
+  callback = function()
+    local old_hl = vim.api.nvim_get_hl(0, { name = 'Comment' })
+    local new_hl = vim.tbl_extend('force', old_hl, { italic = true })
+    vim.api.nvim_set_hl(0, 'Comment', new_hl)
+  end
+})
+
+-- Sets theme based on background.
+vim.api.nvim_create_autocmd('OptionSet', {
+  pattern = 'background',
+  callback = function()
+    if vim.o.background == 'dark' then
+      vim.cmd.colorscheme('nightfox')
+    end
+    if vim.o.background == 'light' then
+      vim.cmd.colorscheme('dayfox')
+    end
+    if vim.g.neovide then
+      vim.g.neovide_theme = vim.o.background
+    end
+  end
+})
+
+-- Enable theme (and do some extra magic for neovide).
+if vim.g.neovide then
+  vim.o.guifont = 'Monospace:h11.2:#e-subpixelantialias:#h-slight'
+  vim.g.neovide_pixel_geometry = 'RGBH'
+  vim.g.neovide_text_gamma = 0.8
+  vim.g.neovide_text_contrast = 0.1
+  vim.api.nvim_create_autocmd('UIEnter', {
+    callback = function()
+      vim.defer_fn(set_bg_from_dbus, 10)
+    end
+  })
+else
+  set_bg_from_dbus()
+end
+
 -- Use system clipboard.
 vim.opt.clipboard = 'unnamedplus'
 
@@ -60,76 +135,3 @@ vim.keymap.set('n', '<C-p>', fzf.files)
 vim.keymap.set('n', '<C-l>', fzf.live_grep)
 vim.keymap.set('n', '<C-g>', fzf.grep_project)
 vim.keymap.set('n', '<F1>', fzf.help_tags)
-
--- Theme configuration.
-require('nightfox').setup({
-  options = {
-    styles = {
-      comments = 'italic'
-    }
-  }
-})
-
--- Theme based on background.
-vim.api.nvim_create_autocmd('OptionSet', {
-  pattern = 'background',
-  callback = function()
-    if vim.o.background == 'dark' then
-      vim.cmd.colorscheme('nightfox')
-    end
-    if vim.o.background == 'light' then
-      vim.cmd.colorscheme('dayfox')
-    end
-    if vim.g.neovide then
-      vim.g.neovide_theme = vim.o.background
-    end
-  end
-})
-
--- Set dark or light based on system theme.
-vim.api.nvim_create_autocmd('UIEnter', {
-  callback = function()
-    vim.defer_fn(function()
-      if vim.fn.executable('dbus-send') == 0 then return end
-
-      local sudo_user = os.getenv('SUDO_USER')
-      local cmd
-
-      if sudo_user then
-        local uid = vim.fn.system({ 'id', '-u', sudo_user }):gsub('%s+', '')
-        local dbus_addr = string.format('unix:path=/run/user/%s/bus', uid)
-        local dbus_envs = string.format('DBUS_SESSION_BUS_ADDRESS=%s', dbus_addr)
-        cmd = { 'sudo', '-u', sudo_user, dbus_envs, 'dbus-send' }
-      else
-        cmd = { 'dbus-send' }
-      end
-
-      vim.list_extend(cmd, {
-        '--session', '--print-reply=literal',
-        '--dest=org.freedesktop.portal.Desktop',
-        '/org/freedesktop/portal/desktop',
-        'org.freedesktop.portal.Settings.Read',
-        'string:org.freedesktop.appearance',
-        'string:color-scheme'
-      })
-
-      local out = vim.fn.system(cmd)
-      if vim.v.shell_error ~= 0 then return end
-      local val = out:match('(%d+)%s*$')
-      if val == '1' then
-        vim.o.background = 'dark'
-      elseif val == '0' or val == '2' then
-        vim.o.background = 'light'
-      end
-    end, 10)
-  end
-})
-
--- Neovide configuration.
-if vim.g.neovide then
-  vim.o.guifont = 'Monospace:h11.2:#e-subpixelantialias:#h-slight'
-  vim.g.neovide_pixel_geometry = 'RGBH'
-  vim.g.neovide_text_gamma = 0.8
-  vim.g.neovide_text_contrast = 0.1
-  vim.g.neovide_theme = 'auto'
-end
