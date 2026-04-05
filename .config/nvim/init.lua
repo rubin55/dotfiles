@@ -117,10 +117,8 @@ vim.api.nvim_create_autocmd('UIEnter', {
       local val = out:match('(%d+)%s*$')
       if val == '1' then
         vim.o.background = 'dark'
-        if vim.g.neovide then vim.g.neovide_theme = 'dark' end
       elseif val == '0' or val == '2' then
         vim.o.background = 'light'
-        if vim.g.neovide then vim.g.neovide_theme = 'light' end
       end
     end, 10)
   end
