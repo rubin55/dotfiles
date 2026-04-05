@@ -75,7 +75,7 @@ vim.api.nvim_create_autocmd('OptionSet', {
   pattern = 'background',
   callback = function()
     if vim.o.background == 'light' then
-      vim.cmd.colorscheme('dawnfox')
+      vim.cmd.colorscheme('dayfox')
     end
     if vim.o.background == 'dark' then
       vim.cmd.colorscheme('nightfox')
@@ -109,3 +109,4 @@ if vim.g.neovide then
   vim.g.neovide_text_contrast = 0.1
   vim.g.neovide_theme = 'auto'
 end
+
