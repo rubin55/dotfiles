@@ -81,6 +81,9 @@
     "openshift-pipelines-bin": {
       "version": "1.20.0"
     },
+    "pragmatapro-fonts": {
+      "version": "0.903"
+    },
     "pupdate-bin": {
       "version": "4.8.2",
       "gitref": "refs/tags/4.8.2",

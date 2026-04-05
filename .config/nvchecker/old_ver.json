@@ -115,6 +115,9 @@
       "gitref": "refs/tags/1.2.1",
       "url": "https://github.com/kevinswiber/postman2openapi/releases/tag/1.2.1"
     },
+    "pragmatapro-fonts": {
+      "version": "0.903"
+    },
     "pupdate-bin": {
       "version": "4.8.2",
       "gitref": "refs/tags/4.8.2",

@@ -84,9 +84,9 @@
       "version": "14.3"
     },
     "mistral-vibe": {
-      "version": "v2.7.2",
-      "gitref": "refs/tags/v2.7.2",
-      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.7.2"
+      "version": "v2.7.3",
+      "gitref": "refs/tags/v2.7.3",
+      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.7.3"
     },
     "moonlight-qt": {
       "version": "v6.1.0",
