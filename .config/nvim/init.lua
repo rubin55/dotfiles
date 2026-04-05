@@ -76,11 +76,12 @@ vim.api.nvim_create_autocmd('OptionSet', {
   callback = function()
     if vim.o.background == 'dark' then
       vim.cmd.colorscheme('nightfox')
-      if vim.g.neovide then vim.g.neovide_theme = 'dark' end
     end
     if vim.o.background == 'light' then
       vim.cmd.colorscheme('dayfox')
-      if vim.g.neovide then vim.g.neovide_theme = 'light' end
+    end
+    if vim.g.neovide then
+      vim.g.neovide_theme = vim.o.background
     end
   end
 })
