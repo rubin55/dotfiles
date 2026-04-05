@@ -74,11 +74,13 @@ require('nightfox').setup({
 vim.api.nvim_create_autocmd('OptionSet', {
   pattern = 'background',
   callback = function()
-    if vim.o.background == 'light' then
-      vim.cmd.colorscheme('dayfox')
-    end
     if vim.o.background == 'dark' then
       vim.cmd.colorscheme('nightfox')
+      if vim.g.neovide then vim.g.neovide_theme = 'dark' end
+    end
+    if vim.o.background == 'light' then
+      vim.cmd.colorscheme('dayfox')
+      if vim.g.neovide then vim.g.neovide_theme = 'light' end
     end
   end
 })
@@ -115,8 +117,10 @@ vim.api.nvim_create_autocmd('UIEnter', {
       local val = out:match('(%d+)%s*$')
       if val == '1' then
         vim.o.background = 'dark'
+        if vim.g.neovide then vim.g.neovide_theme = 'dark' end
       elseif val == '0' or val == '2' then
         vim.o.background = 'light'
+        if vim.g.neovide then vim.g.neovide_theme = 'light' end
       end
     end, 10)
   end
