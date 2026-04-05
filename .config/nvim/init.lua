@@ -6,7 +6,7 @@ vim.pack.add({
   'https://github.com/EdenEast/nightfox.nvim.git',
 })
 
--- Set background based on desktop bus inspection.
+-- Background light/dark based on DBUS inspection.
 local function set_bg_from_dbus()
   if vim.fn.executable('dbus-send') == 0 then return end
 
@@ -53,11 +53,11 @@ vim.api.nvim_create_autocmd('ColorScheme', {
 -- Sets theme based on background.
 vim.api.nvim_create_autocmd('OptionSet', {
   pattern = 'background',
+  nested = true,
   callback = function()
     if vim.o.background == 'dark' then
       vim.cmd.colorscheme('nightfox')
-    end
-    if vim.o.background == 'light' then
+    elseif vim.o.background == 'light' then
       vim.cmd.colorscheme('dayfox')
     end
     if vim.g.neovide then
@@ -66,7 +66,10 @@ vim.api.nvim_create_autocmd('OptionSet', {
   end
 })
 
--- Enable theme (and do some extra magic for neovide).
+-- Invoke DBUS-based background setting. Do this with a
+-- slight delay for Neovide, immediately on terminal.
+-- Additionally set some Neovide-specific settings
+-- when Neovide is detected.
 if vim.g.neovide then
   vim.o.guifont = 'Monospace:h11.2:#e-subpixelantialias:#h-slight'
   vim.g.neovide_pixel_geometry = 'RGBH'
@@ -81,8 +84,25 @@ else
   set_bg_from_dbus()
 end
 
+-- Remember where you were in a file.
+vim.api.nvim_create_autocmd('BufReadPost', {
+  callback = function()
+    local mark = vim.api.nvim_buf_get_mark(0, '"')
+    if mark[1] > 0 and mark[1] <= vim.api.nvim_buf_line_count(0) then
+      vim.api.nvim_win_set_cursor(0, mark)
+    end
+  end
+})
+
 -- Use system clipboard.
 vim.opt.clipboard = 'unnamedplus'
+
+-- Use block cursor always.
+vim.opt.guicursor = 'a:block'
+
+-- Line numbers.
+-- vim.opt.number = true
+-- vim.opt.relativenumber = true
 
 -- Default tab behavior.
 vim.opt.tabstop = 2
@@ -104,7 +124,7 @@ vim.g.loaded_ruby_provider = 0
 -- Tree-sitter grammars.
 require('nvim-treesitter').install({ 'asm', 'astro', 'awk', 'bash', 'c', 'c_sharp', 'clojure', 'cmake', 'comment', 'cpp', 'css', 'csv', 'cuda', 'cue', 'dart', 'desktop', 'diff', 'dockerfile', 'editorconfig', 'eex', 'elixir', 'erlang', 'fsharp', 'git_config', 'git_rebase', 'gitattributes', 'gitcommit', 'gitignore', 'glsl', 'go', 'gomod', 'gosum', 'gotmpl', 'gpg', 'groovy', 'haskell', 'heex', 'helm', 'hlsl', 'html', 'http', 'ini', 'java', 'javadoc', 'javascript', 'jinja', 'jinja_inline', 'jq', 'jsdoc', 'json', 'just', 'kotlin', 'latex', 'llvm', 'lua', 'luadoc', 'm68k', 'make', 'markdown', 'markdown_inline', 'mermaid', 'nasm', 'nginx', 'ninja', 'objc', 'objdump', 'passwd', 'pem', 'perl', 'php', 'phpdoc', 'powershell', 'printf', 'properties', 'python', 'query', 'racket', 'rbs', 'regex', 'requirements', 'robots_txt', 'rst', 'ruby', 'rust', 'scala', 'scheme', 'scss', 'slang', 'sql', 'ssh_config', 'strace', 'svelte', 'swift', 'systemverilog', 'tlaplus', 'tmux', 'todotxt', 'toml', 'tsv', 'tsx', 'typescript', 'udev', 'vala', 'vhdl', 'vim', 'vimdoc', 'vue', 'wgsl', 'xml', 'xresources', 'yaml', 'zig' }):wait(300000)
 
--- Tree-sitter start.
+-- Starts tree-sitter on supported file-types.
 vim.api.nvim_create_autocmd('FileType', {
   callback = function()
     pcall(vim.treesitter.start)
@@ -114,7 +134,7 @@ vim.api.nvim_create_autocmd('FileType', {
 -- LSP servers.
 vim.lsp.enable({ 'ansiblels', 'asm_lsp', 'astro', 'awk_ls', 'bashls', 'biome', 'clangd', 'clojure_lsp', 'cmake', 'cssls', 'cue', 'dartls', 'diagnosticls', 'dockerls', 'elixirls', 'eslint', 'expert', 'flow', 'fsautocomplete', 'gopls', 'groovyls', 'helm_ls', 'html', 'jdtls', 'jsonls', 'kotlin_lsp', 'lemminx', 'lua_ls', 'marksman', 'metals', 'omnisharp', 'perlnavigator', 'powershell_es', 'pylsp', 'pyright', 'rubocop', 'ruff', 'rust_analyzer', 'scheme_langserver', 'solargraph', 'svelte', 'tailwindcss', 'vala_ls', 'vtsls', 'vue', 'yamlls', 'zls' })
 
--- LSP completion.
+-- Enables LSP completion.
 vim.opt.completeopt = { 'fuzzy', 'menuone', 'noselect', 'popup' }
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('UserLspConfig', {}),
