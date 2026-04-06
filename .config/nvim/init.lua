@@ -132,7 +132,7 @@ vim.api.nvim_create_autocmd('FileType', {
 })
 
 -- LSP servers.
-vim.lsp.enable({ 'ansiblels', 'asm_lsp', 'astro', 'awk_ls', 'bashls', 'biome', 'clangd', 'clojure_lsp', 'cmake', 'cssls', 'cue', 'dartls', 'diagnosticls', 'dockerls', 'elixirls', 'eslint', 'expert', 'flow', 'fsautocomplete', 'gopls', 'groovyls', 'helm_ls', 'html', 'jdtls', 'jsonls', 'kotlin_lsp', 'lemminx', 'lua_ls', 'marksman', 'metals', 'omnisharp', 'perlnavigator', 'powershell_es', 'pylsp', 'pyright', 'rubocop', 'ruff', 'rust_analyzer', 'scheme_langserver', 'solargraph', 'svelte', 'tailwindcss', 'vala_ls', 'vtsls', 'vue', 'yamlls', 'zls' })
+vim.lsp.enable({ 'ansiblels', 'asm_lsp', 'astro', 'awk_ls', 'bashls', 'biome', 'clangd', 'clojure_lsp', 'cmake', 'cssls', 'cue', 'dartls', 'diagnosticls', 'dockerls', 'elixirls', 'eslint', 'expert', 'flow', 'fsautocomplete', 'gopls', 'groovyls', 'helm_ls', 'html', 'jdtls', 'jsonls', 'kotlin_lsp', 'lemminx', 'lua_ls', 'marksman', 'metals', 'omnisharp', 'perlnavigator', 'powershell_es', 'pylsp', 'pyright', 'rubocop', 'ruff', 'rust_analyzer', 'scheme_langserver', 'solargraph', 'svelte', 'tailwindcss', 'vala_ls', 'vtsls', 'vue_ls', 'yamlls', 'zls' })
 
 -- Enables LSP completion.
 vim.opt.completeopt = { 'fuzzy', 'menuone', 'noselect', 'popup' }
@@ -146,6 +146,15 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end
 })
 
+-- Shift-enter in terminal sends newline.
+vim.api.nvim_create_autocmd('TermOpen', {
+  callback = function(ev)
+    vim.keymap.set('t', '<S-CR>', function()
+      vim.api.nvim_chan_send(vim.b[ev.buf].terminal_job_id, '\n')
+    end, { buffer = ev.buf })
+  end
+})
+
 -- Fzf configuration.
 local fzf = require('fzf-lua')
 fzf.setup({ 'telescope' })
@@ -155,3 +164,4 @@ vim.keymap.set('n', '<C-p>', fzf.files)
 vim.keymap.set('n', '<C-l>', fzf.live_grep)
 vim.keymap.set('n', '<C-g>', fzf.grep_project)
 vim.keymap.set('n', '<F1>', fzf.help_tags)
+
