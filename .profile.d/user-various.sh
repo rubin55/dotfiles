@@ -23,7 +23,7 @@ if path.which dircolors; then
 fi
 
 # Set default editor.
-path.which subl && export EDITOR='subl -w'
+path.which nvim.sh && export EDITOR='nvim.sh -w'
 
 # Set up less to use lessfilter (pygments).
 export PAGER='less'
