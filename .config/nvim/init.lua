@@ -1,3 +1,6 @@
+-- Leader key.
+vim.g.mapleader = " "
+
 -- Neovim plugins.
 vim.pack.add({
   'https://github.com/neovim/nvim-lspconfig',
@@ -158,10 +161,12 @@ vim.api.nvim_create_autocmd('TermOpen', {
 -- Fzf configuration.
 local fzf = require('fzf-lua')
 fzf.setup({ 'telescope' })
-vim.keymap.set('n', '<C-\\>', fzf.buffers)
-vim.keymap.set('n', '<C-k>', fzf.builtin)
-vim.keymap.set('n', '<C-p>', fzf.files)
-vim.keymap.set('n', '<C-l>', fzf.live_grep)
-vim.keymap.set('n', '<C-g>', fzf.grep_project)
-vim.keymap.set('n', '<F1>', fzf.help_tags)
+
+-- Custom keybindings
+vim.keymap.set('n', '<Leader>a', fzf.builtin)
+vim.keymap.set('n', '<Leader>b', fzf.buffers)
+vim.keymap.set('n', '<Leader>f', fzf.files)
+vim.keymap.set('n', '<Leader>g', fzf.grep_project)
+vim.keymap.set('n', '<Leader>h', fzf.help_tags)
+vim.keymap.set('n', '<Leader>l', fzf.live_grep)
 
