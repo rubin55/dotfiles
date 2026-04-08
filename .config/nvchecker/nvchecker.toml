@@ -124,6 +124,7 @@ use_latest_tag = "true"
 source = "regex"
 regex = "v\\d+\\.\\d+\\.\\d+"
 url = "https://files.davisr.me/projects/rcu/download-59ck3sdT/"
+verify_cert = false
 
 [ruby-yard-activesupport-concern]
 source = "github"
