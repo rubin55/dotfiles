@@ -6,6 +6,8 @@ vim.pack.add({
   'https://github.com/neovim/nvim-lspconfig',
   'https://github.com/nvim-treesitter/nvim-treesitter',
   'https://github.com/ibhagwan/fzf-lua.git',
+  'https://github.com/sindrets/diffview.nvim.git',
+  'https://github.com/nvim-tree/nvim-web-devicons.git',
   'https://github.com/EdenEast/nightfox.nvim.git',
 })
 
@@ -103,9 +105,8 @@ vim.opt.clipboard = 'unnamedplus'
 -- Use block cursor always.
 vim.opt.guicursor = 'a:block'
 
--- Line numbers.
--- vim.opt.number = true
--- vim.opt.relativenumber = true
+-- Set a character for deleted lines in diff.
+vim.opt.fillchars:append { diff = "╱" }
 
 -- Default tab behavior.
 vim.opt.tabstop = 2
@@ -160,7 +161,10 @@ vim.api.nvim_create_autocmd('TermOpen', {
 
 -- Fzf configuration.
 local fzf = require('fzf-lua')
-fzf.setup({ 'telescope' })
+fzf.setup({
+  "telescope",
+  ui_select = true
+})
 
 -- Custom keybindings
 vim.keymap.set('n', '<Leader>a', fzf.builtin)
