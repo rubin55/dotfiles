@@ -11,6 +11,9 @@ vim.pack.add({
   'https://github.com/EdenEast/nightfox.nvim.git',
 })
 
+-- Enable extra icons.
+require('nvim-web-devicons').setup()
+
 -- Background light/dark based on DBUS inspection.
 local function set_bg_from_dbus()
   if vim.fn.executable('dbus-send') == 0 then return end
