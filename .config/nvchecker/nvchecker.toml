@@ -45,6 +45,15 @@ source = "pacman"
 pacman = "intel-media-driver"
 strip_release = "true"
 
+[intel-oneapi-base-toolkit]
+source = "cmd"
+cmd = "curl -sL 'https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html' | grep -oP 'targetValue2 = \"\\K[0-9.]+'"
+
+[jsonpath-python]
+source = "github"
+github = "sean2077/jsonpath-python"
+use_latest_release = true
+
 [jdk25-openj9-bin]
 source = "github"
 github = "ibmruntimes/semeru25-binaries"
