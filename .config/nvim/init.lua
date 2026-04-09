@@ -111,6 +111,9 @@ vim.opt.guicursor = 'a:block'
 -- Set a character for deleted lines in diff.
 vim.opt.fillchars:append { diff = "╱" }
 
+-- Remove the how-to-disable menu item.
+vim.cmd([[unmenu PopUp.How-to\ disable\ mouse]])
+
 -- Default tab behavior.
 vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
