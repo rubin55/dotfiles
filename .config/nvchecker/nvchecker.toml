@@ -49,6 +49,11 @@ strip_release = "true"
 source = "cmd"
 cmd = "curl -sL 'https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html' | grep -oP 'targetValue2 = \"\\K[0-9.]+'"
 
+[intel-openvino]
+source = "github"
+github = "openvinotoolkit/openvino"
+use_latest_release = "true"
+
 [jsonpath-python]
 source = "github"
 github = "sean2077/jsonpath-python"

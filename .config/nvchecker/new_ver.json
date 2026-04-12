@@ -7,9 +7,9 @@
       "revision": "b3956bda93ff3d45b644c7bc6d55e0e01c9b9a74"
     },
     "dev-proxy-bin": {
-      "version": "v2.4.0-beta.1",
-      "gitref": "refs/tags/v2.4.0-beta.1",
-      "url": "https://github.com/dotnet/dev-proxy/releases/tag/v2.4.0-beta.1"
+      "version": "v2.3.0",
+      "gitref": "refs/tags/v2.3.0",
+      "url": "https://github.com/dotnet/dev-proxy/releases/tag/v2.3.0"
     },
     "fsautocomplete-bin": {
       "version": "v0.83.0",
@@ -37,6 +37,11 @@
     },
     "intel-oneapi-base-toolkit": {
       "version": "2025.3.2"
+    },
+    "intel-openvino": {
+      "version": "2026.1.0",
+      "gitref": "refs/tags/2026.1.0",
+      "url": "https://github.com/openvinotoolkit/openvino/releases/tag/2026.1.0"
     },
     "jdk25-openj9-bin": {
       "version": "jdk-25.0.2+10.1_openj9-0.57.0",
@@ -66,9 +71,9 @@
       "url": "https://github.com/andwn/marsdev/releases/tag/v1.0.0-rc1"
     },
     "mistral-vibe": {
-      "version": "v2.7.3",
-      "gitref": "refs/tags/v2.7.3",
-      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.7.3"
+      "version": "v2.7.4",
+      "gitref": "refs/tags/v2.7.4",
+      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.7.4"
     },
     "moonlight-qt": {
       "version": "v6.1.0",
@@ -81,7 +86,7 @@
       "url": "https://github.com/Samsung/netcoredbg/releases/tag/3.1.3-1062"
     },
     "openshift-codeready-bin": {
-      "version": "2.59.0"
+      "version": "2.60.1"
     },
     "openshift-developer-bin": {
       "version": "v3.16.1"
@@ -93,9 +98,9 @@
       "version": "0.903"
     },
     "pupdate-bin": {
-      "version": "4.8.2",
-      "gitref": "refs/tags/4.8.2",
-      "url": "https://github.com/mattpannella/pupdate/releases/tag/4.8.2"
+      "version": "4.9.1",
+      "gitref": "refs/tags/4.9.1",
+      "url": "https://github.com/mattpannella/pupdate/releases/tag/4.9.1"
     },
     "pvsneslib": {
       "version": "4.5.0",
@@ -109,7 +114,7 @@
       "url": "https://github.com/agentclientprotocol/python-sdk/releases/tag/0.9.0"
     },
     "rcu-bin": {
-      "version": "v4.0.33"
+      "version": "v4.0.34"
     },
     "ruby-solargraph": {
       "version": "v0.58.3",
