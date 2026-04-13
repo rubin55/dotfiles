@@ -1,5 +1,5 @@
 -- Leader key.
-vim.g.mapleader = " "
+vim.g.mapleader = ' '
 
 -- Neovim plugins.
 vim.pack.add({
@@ -109,7 +109,7 @@ vim.opt.clipboard = 'unnamedplus'
 vim.opt.guicursor = 'a:block'
 
 -- Set a character for deleted lines in diff.
-vim.opt.fillchars:append { diff = "╱" }
+vim.opt.fillchars:append { diff = '╱' }
 
 -- Remove the how-to-disable menu item.
 vim.cmd([[unmenu PopUp.How-to\ disable\ mouse]])
@@ -124,6 +124,9 @@ vim.opt.expandtab = true
 vim.opt.ignorecase = true
 vim.opt.smartcase = true
 vim.opt.wildignorecase = true
+
+-- Enable window borders.
+vim.o.winborder = 'rounded'
 
 -- Disable providers.
 vim.g.loaded_node_provider = 0
@@ -168,7 +171,7 @@ vim.api.nvim_create_autocmd('TermOpen', {
 -- Fzf configuration.
 local fzf = require('fzf-lua')
 fzf.setup({
-  "telescope",
+  'telescope',
   ui_select = true
 })
 
