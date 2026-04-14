@@ -79,7 +79,7 @@ vim.api.nvim_create_autocmd('OptionSet', {
 -- Additionally set some Neovide-specific settings
 -- when Neovide is detected.
 if vim.g.neovide then
-  vim.o.guifont = 'Monospace:h11.2:#e-subpixelantialias:#h-slight'
+  vim.o.guifont = 'PragmataPro Mono:h11.2:#e-subpixelantialias:#h-none'
   vim.g.neovide_pixel_geometry = 'RGBH'
   vim.g.neovide_text_gamma = 0.8
   vim.g.neovide_text_contrast = 0.1
