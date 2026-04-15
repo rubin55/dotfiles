@@ -5,7 +5,7 @@
       "src": "https://github.com/sindrets/diffview.nvim.git"
     },
     "fzf-lua": {
-      "rev": "1e866cce085cc6df3d3e4fb59f00105fa84cef6c",
+      "rev": "b9f947aa15f7f050b0032a8e03f210005aedb897",
       "src": "https://github.com/ibhagwan/fzf-lua.git"
     },
     "nightfox.nvim": {
@@ -13,7 +13,7 @@
       "src": "https://github.com/EdenEast/nightfox.nvim.git"
     },
     "nvim-lspconfig": {
-      "rev": "8a9378a822719346a0288fa004dab302ca3c0a8f",
+      "rev": "d10ce09e42bb0ca8600fd610c3bb58676e61208d",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-treesitter": {
