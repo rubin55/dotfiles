@@ -51,6 +51,11 @@
     "intel-oneapi-base-toolkit": {
       "version": "2025.3.2"
     },
+    "intel-openvino": {
+      "version": "2026.1.0",
+      "gitref": "refs/tags/2026.1.0",
+      "url": "https://github.com/openvinotoolkit/openvino/releases/tag/2026.1.0"
+    },
     "jdk25-openj9-bin": {
       "version": "jdk-25.0.2+10.1_openj9-0.57.0",
       "gitref": "refs/tags/jdk-25.0.2+10.1_openj9-0.57.0",
