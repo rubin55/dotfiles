@@ -175,7 +175,11 @@ vim.api.nvim_create_autocmd('TermOpen', {
 
 -- Enable status line.
 require('lualine').setup({
-  options = { theme = 'auto' }
+  options = {
+    component_separators = { left = '', right = '' },
+    section_separators = { left = '', right = '' },
+    theme = 'auto'
+  }
 })
 
 -- Fzf configuration.
