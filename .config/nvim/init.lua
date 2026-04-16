@@ -3,16 +3,21 @@ vim.g.mapleader = ' '
 
 -- Neovim plugins.
 vim.pack.add({
-  'https://github.com/neovim/nvim-lspconfig',
-  'https://github.com/nvim-treesitter/nvim-treesitter',
-  'https://github.com/ibhagwan/fzf-lua.git',
-  'https://github.com/sindrets/diffview.nvim.git',
-  'https://github.com/nvim-tree/nvim-web-devicons.git',
   'https://github.com/EdenEast/nightfox.nvim.git',
+  'https://github.com/ibhagwan/fzf-lua.git',
+  'https://github.com/j-hui/fidget.nvim',
+  'https://github.com/neovim/nvim-lspconfig',
+  'https://github.com/nvim-lualine/lualine.nvim',
+  'https://github.com/nvim-tree/nvim-web-devicons.git',
+  'https://github.com/nvim-treesitter/nvim-treesitter',
+  'https://github.com/sindrets/diffview.nvim.git',
 })
 
 -- Enable extra icons.
 require('nvim-web-devicons').setup()
+
+-- Enable notifications.
+require('fidget').setup()
 
 -- Background light/dark based on DBUS inspection.
 local function set_bg_from_dbus()
@@ -126,7 +131,7 @@ vim.opt.smartcase = true
 vim.opt.wildignorecase = true
 
 -- Enable window borders.
-vim.o.winborder = 'rounded'
+vim.o.winborder = 'solid'
 
 -- Disable providers.
 vim.g.loaded_node_provider = 0
@@ -168,6 +173,11 @@ vim.api.nvim_create_autocmd('TermOpen', {
   end
 })
 
+-- Enable status line.
+require('lualine').setup({
+  options = { theme = 'auto' }
+})
+
 -- Fzf configuration.
 local fzf = require('fzf-lua')
 fzf.setup({
@@ -176,10 +186,15 @@ fzf.setup({
 })
 
 -- Custom keybindings
-vim.keymap.set('n', '<Leader>a', fzf.builtin)
-vim.keymap.set('n', '<Leader>b', fzf.buffers)
-vim.keymap.set('n', '<Leader>f', fzf.files)
-vim.keymap.set('n', '<Leader>g', fzf.grep_project)
-vim.keymap.set('n', '<Leader>h', fzf.help_tags)
-vim.keymap.set('n', '<Leader>l', fzf.live_grep)
+vim.keymap.set('n', '<Leader>a', fzf.builtin, { desc = 'All pickers' })
+vim.keymap.set('n', '<Leader>b', fzf.buffers, { desc = 'Buffers' })
+vim.keymap.set('n', '<Leader>c', fzf.changes, { desc = 'Changes' })
+vim.keymap.set('n', '<Leader>d', fzf.diagnostics_workspace, { desc = 'Diagnostics' })
+vim.keymap.set('n', '<Leader>f', fzf.files, { desc = 'Files' })
+vim.keymap.set('n', '<Leader>g', fzf.grep_project, { desc = 'Grep' })
+vim.keymap.set('n', '<Leader>h', fzf.help_tags, { desc = 'Help' })
+vim.keymap.set('n', '<Leader>k', fzf.keymaps, { desc = 'Keymaps' })
+vim.keymap.set('n', '<Leader>r', fzf.lsp_references, { desc = 'References' })
+vim.keymap.set('n', '<Leader>s', fzf.lsp_live_workspace_symbols, { desc = 'Symbols' })
+vim.keymap.set('n', '<Leader>t', fzf.treesitter, { desc = 'Treesitter' })
 
