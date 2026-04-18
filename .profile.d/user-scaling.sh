@@ -66,7 +66,7 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
     wantedZedUiFontSize="$zedSans"
 
     # Update Zed buffer font if different.
-    if [[ "$currentZedBufferFontSize" != "$wantedZedBufferFontSize" ]]; then
+    if [[ -n "$currentZedBufferFontSize" && "$currentZedBufferFontSize" != "$wantedZedBufferFontSize" ]]; then
       log.info "Setting Zed buffer font to: \"$currentZedBufferFontName $wantedZedBufferFontSize\""
       currentZedBufferFontString="\"buffer_font_size\": $currentZedBufferFontSize,"
       wantedZedBufferFontString="\"buffer_font_size\": $wantedZedBufferFontSize,"
@@ -74,7 +74,7 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
     fi
 
     # Update Zed ui font if different.
-    if [[ "$currentZedUiFontSize" != "$wantedZedUiFontSize" ]]; then
+    if [[ -n "$currentZedUiFontSize" && "$currentZedUiFontSize" != "$wantedZedUiFontSize" ]]; then
       log.info "Setting Zed ui font to: \"$currentZedUiFontName $wantedZedUiFontSize\""
       currentZedUiFontString="\"ui_font_size\": $currentZedUiFontSize,"
       wantedZedUiFontString="\"ui_font_size\": $wantedZedUiFontSize,"
@@ -93,7 +93,7 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
     wantedCodeTerminalFontSize="$wantedCodeEditorFontSize"
 
     # Update Visual Studio Code editor font if different.
-    if [[ "$currentCodeEditorFontSize" != "$wantedCodeEditorFontSize" ]]; then
+    if [[ -n "$currentCodeEditorFontSize" && "$currentCodeEditorFontSize" != "$wantedCodeEditorFontSize" ]]; then
       log.info "Setting Code editor font to: \"$currentCodeEditorFontName $wantedCodeEditorFontSize\""
       currentCodeEditorFontString="\"editor.fontSize\": $currentCodeEditorFontSize,"
       wantedCodeEditorFontString="\"editor.fontSize\": $wantedCodeEditorFontSize,"
@@ -101,7 +101,7 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
     fi
 
     # Update Visual Studio Code terminal font if different.
-    if [[ "$currentCodeTerminalFontSize" != "$wantedCodeTerminalFontSize" ]]; then
+    if [[ -n "$currentCodeTerminalFontSize" && "$currentCodeTerminalFontSize" != "$wantedCodeTerminalFontSize" ]]; then
       log.info "Setting Code terminal font to: \"$currentCodeTerminalFontName $wantedCodeTerminalFontSize\""
       currentCodeTerminalFontString="\"terminal.integrated.fontSize\": $currentCodeTerminalFontSize,"
       wantedCodeTerminalFontString="\"terminal.integrated.fontSize\": $wantedCodeTerminalFontSize,"
@@ -128,7 +128,7 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
         wantedEmacsVariablewidthFontSize="$emacsSans"
 
         # Update Emacs monospace font if different.
-        if [[ "$currentEmacsMonospaceFontSize" != "$wantedEmacsMonospaceFontSize" ]]; then
+        if [[ -n "$currentEmacsMonospaceFontSize" && "$currentEmacsMonospaceFontSize" != "$wantedEmacsMonospaceFontSize" ]]; then
         log.info "Setting Emacs monospace font to: \"$currentEmacsMonospaceFontName $wantedEmacsMonospaceFontSize\""
         currentEmacsMonospaceFontString="$(grep -A1 "(when (string= (system-name) \"$emacsHostIdentifier\")" "$emacsConfig" | tail -n1)"
         currentEmacsMonospaceFontLineNumber="$(grep -n -A1 "(when (string= (system-name) \"$emacsHostIdentifier\")" "$emacsConfig" | tail -n1 | cut -d- -f1)"
@@ -137,7 +137,7 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
         fi
 
         # Update Emacs variable-width font if different.
-        if [[ "$currentEmacsVariablewidthFontSize" != "$wantedEmacsVariablewidthFontSize" ]]; then
+        if [[ -n "$currentEmacsVariablewidthFontSize" && "$currentEmacsVariablewidthFontSize" != "$wantedEmacsVariablewidthFontSize" ]]; then
         log.info "Setting Emacs variable-width font to: \"$currentEmacsVariablewidthFontName $wantedEmacsVariablewidthFontSize\""
         currentEmacsVariablewidthFontString="$(grep -A2 "(when (string= (system-name) \"$emacsHostIdentifier\")" "$emacsConfig" | tail -n1)"
         currentEmacsVariablewidthFontLineNumber="$(grep -n -A2 "(when (string= (system-name) \"$emacsHostIdentifier\")" "$emacsConfig" | tail -n1 | cut -d- -f1)"
@@ -163,25 +163,25 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
     wantedGnomeTitleFontSize="$wantedGnomeInterfaceFontSize"
 
     # Update Gnome system monospace font if different.
-    if [[ "$currentGnomeMonospaceFontSize" != "$wantedGnomeMonospaceFontSize" ]]; then
+    if [[ -n "$currentGnomeMonospaceFontSize" && "$currentGnomeMonospaceFontSize" != "$wantedGnomeMonospaceFontSize" ]]; then
       log.info "Setting Gnome monospace font to: \"$currentGnomeMonospaceFontName $wantedGnomeMonospaceFontSize\""
       gsettings set org.gnome.desktop.interface monospace-font-name "$currentGnomeMonospaceFontName $wantedGnomeMonospaceFontSize" > /dev/null 2>&1
     fi
 
     # Update Gnome system interface font if different.
-    if [[ "$currentGnomeInterfaceFontSize" != "$wantedGnomeInterfaceFontSize" ]]; then
+    if [[ -n "$currentGnomeInterfaceFontSize" && "$currentGnomeInterfaceFontSize" != "$wantedGnomeInterfaceFontSize" ]]; then
       log.info "Setting Gnome interface font to: \"$currentGnomeInterfaceFontName $wantedGnomeInterfaceFontSize\""
       gsettings set org.gnome.desktop.interface font-name "$currentGnomeInterfaceFontName $wantedGnomeInterfaceFontSize" > /dev/null 2>&1
     fi
 
     # Update Gnome system document font if different.
-    if [[ "$currentGnomeDocumentFontSize" != "$wantedGnomeDocumentFontSize" ]]; then
+    if [[ -n "$currentGnomeDocumentFontSize" && "$currentGnomeDocumentFontSize" != "$wantedGnomeDocumentFontSize" ]]; then
       log.info "Setting Gnome document font to: \"$currentGnomeDocumentFontName $wantedGnomeDocumentFontSize\""
       gsettings set org.gnome.desktop.interface document-font-name "$currentGnomeDocumentFontName $wantedGnomeDocumentFontSize" > /dev/null 2>&1
     fi
 
     # Update Gnome system title font if different.
-    if [[ "$currentGnomeTitleFontSize" != "$wantedGnomeTitleFontSize" ]]; then
+    if [[ -n "$currentGnomeTitleFontSize" && "$currentGnomeTitleFontSize" != "$wantedGnomeTitleFontSize" ]]; then
       log.info "Setting Gnome title font to: \"$currentGnomeTitleFontName $wantedGnomeTitleFontSize\""
       gsettings set org.gnome.desktop.wm.preferences titlebar-font "$currentGnomeTitleFontName $wantedGnomeTitleFontSize" > /dev/null 2>&1
     fi
@@ -205,7 +205,7 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
     wantedGnomeThemeFontSize="${wantedGnomeInterfaceFontSize}pt"
 
     # Update Gnome theme config if different.
-    if [[ "$currentGnomeThemeFontSize" != "$wantedGnomeThemeFontSize" ]]; then
+    if [[ -n "$currentGnomeThemeFontSize" && "$currentGnomeThemeFontSize" != "$wantedGnomeThemeFontSize" ]]; then
       log.info "Setting Gnome theme font to: \"$currentGnomeThemeFontName $wantedGnomeThemeFontSize\""
       currentGnomeThemeFontString="font-size: $currentGnomeThemeFontSize;"
       wantedGnomeThemeFontString="font-size: $wantedGnomeThemeFontSize;"
@@ -228,7 +228,7 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
     wantedQt5SansFontSize="$qt5Sans"
 
     # Update QT5 general font settings if different.
-    if [[ "$currentQt5SansFontSize" != "$wantedQt5SansFontSize" ]]; then
+    if [[ -n "$currentQt5SansFontSize" && "$currentQt5SansFontSize" != "$wantedQt5SansFontSize" ]]; then
       log.info "Setting QT5 general font to: \"$wantedQt5SansFontName $wantedQt5SansFontSize\""
       currentQt5SansFontString="general=\"$currentQt5SansFontName,$currentQt5SansFontSize,"
       wantedQt5SansFontString="general=\"$wantedQt5SansFontName,$wantedQt5SansFontSize,"
@@ -236,7 +236,7 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
     fi
 
     # Update QT5 fixed font settings if different.
-    if [[ "$currentQt5MonoFontSize" != "$wantedQt5MonoFontSize" ]]; then
+    if [[ -n "$currentQt5MonoFontSize" && "$currentQt5MonoFontSize" != "$wantedQt5MonoFontSize" ]]; then
       log.info "Setting QT5 fixed font to: \"$wantedQt5MonoFontName $wantedQt5MonoFontSize\""
       currentQt5MonoFontString="fixed=\"$currentQt5MonoFontName,$currentQt5MonoFontSize,"
       wantedQt5MonoFontString="fixed=\"$wantedQt5MonoFontName,$wantedQt5MonoFontSize,"
@@ -257,7 +257,7 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
     wantedQt6SansFontSize="$qt6Sans"
 
     # Update QT6 general font settings if different.
-    if [[ "$currentQt6SansFontSize" != "$wantedQt6SansFontSize" ]]; then
+    if [[ -n "$currentQt6SansFontSize" && "$currentQt6SansFontSize" != "$wantedQt6SansFontSize" ]]; then
       log.info "Setting QT6 general font to: \"$wantedQt6SansFontName $wantedQt6SansFontSize\""
       currentQt6SansFontString="general=\"$currentQt6SansFontName,$currentQt6SansFontSize,"
       wantedQt6SansFontString="general=\"$wantedQt6SansFontName,$wantedQt6SansFontSize,"
@@ -265,7 +265,7 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
     fi
 
     # Update QT6 fixed font settings if different.
-    if [[ "$currentQt6MonoFontSize" != "$wantedQt6MonoFontSize" ]]; then
+    if [[ -n "$currentQt6MonoFontSize" && "$currentQt6MonoFontSize" != "$wantedQt6MonoFontSize" ]]; then
       log.info "Setting QT6 fixed font to: \"$wantedQt6MonoFontName $wantedQt6MonoFontSize\""
       currentQt6MonoFontString="fixed=\"$currentQt6MonoFontName,$currentQt6MonoFontSize,"
       wantedQt6MonoFontString="fixed=\"$wantedQt6MonoFontName,$wantedQt6MonoFontSize,"
@@ -285,7 +285,7 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
     wantedJetbrainsMonoFontSize2d="$jetbrainsMono.0"
 
     # Update JetBrains config if different.
-    if [[ "$currentJetbrainsMonoFontSize" && "$currentJetbrainsMonoFontSize" != "$wantedJetbrainsMonoFontSize" ]]; then
+    if [[ -n "$currentJetbrainsMonoFontSize" && "$currentJetbrainsMonoFontSize" != "$wantedJetbrainsMonoFontSize" ]]; then
       log.info "Setting $(echo "$jetbrainsConfig" | cut -d/ -f6) monospace font to: \"$currentJetbrainsMonoFontName $wantedJetbrainsMonoFontSize\""
       currentJetbrainsMonoFontNameString="name=\"FONT_FAMILY\" value=\"$currentJetbrainsMonoFontName\""
       wantedJetbrainsMonoFontNameString="name=\"FONT_FAMILY\" value=\"$wantedJetbrainsMonoFontName\""
@@ -308,7 +308,7 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
     wantedVimMonoFontSize="$vimMono"
 
     # Update Vim config if different.
-    if [[ "$currentVimMonoFontSize" != "$wantedVimMonoFontSize" ]]; then
+    if [[ -n "$currentVimMonoFontSize" && "$currentVimMonoFontSize" != "$wantedVimMonoFontSize" ]]; then
       log.info "Setting Vim monospace font to: \"$currentVimMonoFontName $wantedVimMonoFontSize\""
       currentVimMonoFontString="set guifont=$(echo "$currentVimMonoFontName $currentVimMonoFontSize" | sed 's| |\\\\ |g')"
       wantedVimMonoFontString="set guifont=$(echo "$currentVimMonoFontName $wantedVimMonoFontSize" | sed 's| |\\\\ |g')"
@@ -324,7 +324,7 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
     currentX11DpiValue="$(grep 'Xft.dpi:' "$x11Config" | awk '{ print $2 }')"
     wantedX11DpiValue="$x11Dpi"
 
-    if [[ "$currentX11DpiValue" != "$wantedX11DpiValue" ]]; then
+    if [[ -n "$currentX11DpiValue" && "$currentX11DpiValue" != "$wantedX11DpiValue" ]]; then
       log.info "Setting X11 dpi value to: \"$wantedX11DpiValue\""
       currentX11DpiString="Xft.dpi: $currentX11DpiValue"
       wantedX11DpiString="Xft.dpi: $wantedX11DpiValue"
@@ -340,7 +340,7 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
     currentX11SansFontSize="$(grep '^\*font:' "$x11Config" | cut -d- -f8)"
     wantedX11SansFontSize="$x11Sans"
 
-    if [[ "$currentX11SansFontSize" != "$wantedX11SansFontSize" ]]; then
+    if [[ -n "$currentX11SansFontSize" && "$currentX11SansFontSize" != "$wantedX11SansFontSize" ]]; then
       log.info "Setting X11 default font size to: \"$wantedX11SansFontSize\""
       currentX11SansFontString="$(grep '^\*font:' "$x11Config")"
       wantedX11SansFontString="$(echo "$currentX11SansFontString" | sed "s|-$currentX11SansFontSize-|-$wantedX11SansFontSize-|g")"
@@ -355,14 +355,14 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
     currentX11XtermFontSize="$(grep '^XTerm\*faceSize' "$x11Config" | awk '{ print $2 }')"
     wantedX11XtermFontSize="$x11Mono"
 
-    if [[ "$currentX11UxtermFontSize" != "$wantedX11UxtermFontSize" ]]; then
+    if [[ -n "$currentX11UxtermFontSize" && "$currentX11UxtermFontSize" != "$wantedX11UxtermFontSize" ]]; then
       log.info "Setting X11 uxterm font size to: \"$wantedX11UxtermFontSize\""
       currentX11UxtermFontString="UXTerm\*faceSize: $currentX11UxtermFontSize"
       wantedX11UxtermFontString="UXTerm\*faceSize: $wantedX11UxtermFontSize"
       sed -i "s|$currentX11UxtermFontString|$wantedX11UxtermFontString|g" "$x11Config"
     fi
 
-    if [[ "$currentX11XtermFontSize" != "$wantedX11XtermFontSize" ]]; then
+    if [[ -n "$currentX11XtermFontSize" && "$currentX11XtermFontSize" != "$wantedX11XtermFontSize" ]]; then
       log.info "Setting X11 xterm font size to: \"$wantedX11XtermFontSize\""
       currentX11XtermFontString="XTerm\*faceSize: $currentX11XtermFontSize"
       wantedX11XtermFontString="XTerm\*faceSize: $wantedX11XtermFontSize"
@@ -375,7 +375,7 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
     currentX11CursorSize="$(grep 'Xcursor.size:' "$x11Config" | awk '{ print $2 }')"
     wantedX11CursorSize="$x11Cursor"
 
-    if [[ "$currentX11CursorSize" != "$wantedX11CursorSize" ]]; then
+    if [[ -n "$currentX11CursorSize" && "$currentX11CursorSize" != "$wantedX11CursorSize" ]]; then
       log.info "Setting X11 cursor size to: \"$wantedX11CursorSize\""
       currentX11CursorString="Xcursor.size: $currentX11CursorSize"
       wantedX11CursorString="Xcursor.size: $wantedX11CursorSize"
@@ -389,7 +389,7 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
     currentAlacrittyMonoFontSize="$(grep '^size = ' "$alacrittyConfig" | awk '{ print $3 }')"
     wantedAlacrittyMonoFontSize="$alacrittyMono"
 
-    if [[ "$currentAlacrittyMonoFontSize" != "$wantedAlacrittyMonoFontSize" ]]; then
+    if [[ -n "$currentAlacrittyMonoFontSize" && "$currentAlacrittyMonoFontSize" != "$wantedAlacrittyMonoFontSize" ]]; then
       log.info "Setting Alacritty font size to: \"$wantedAlacrittyMonoFontSize\""
       currentAlacrittyMonoFontString="$(echo "size = $currentAlacrittyMonoFontSize" | sed 's|\.|\\\.|g')"
       wantedAlacrittyMonoFontString="$(echo "size = $wantedAlacrittyMonoFontSize" | sed 's|\.|\\\.|g')"
@@ -403,10 +403,10 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
     currentGhosTTYMonoFontSize="$(grep '^font-size = ' "$ghosttyConfig" | awk '{ print $3 }')"
     wantedGhosTTYMonoFontSize="$ghosttyMono"
 
-    if [[ "$currentGhosTTYMonoFontSize" != "$wantedGhosTTYMonoFontSize" ]]; then
+    if [[ -n "$currentGhosTTYMonoFontSize" && "$currentGhosTTYMonoFontSize" != "$wantedGhosTTYMonoFontSize" ]]; then
       log.info "Setting GhosTTY font size to: \"$wantedGhosTTYMonoFontSize\""
-      currentGhosTTYMonoFontString="$(echo "size = $currentGhosTTYMonoFontSize" | sed 's|\.|\\\.|g')"
-      wantedGhosTTYMonoFontString="$(echo "size = $wantedGhosTTYMonoFontSize" | sed 's|\.|\\\.|g')"
+      currentGhosTTYMonoFontString="$(echo "font-size = $currentGhosTTYMonoFontSize" | sed 's|\.|\\\.|g')"
+      wantedGhosTTYMonoFontString="$(echo "font-size = $wantedGhosTTYMonoFontSize" | sed 's|\.|\\\.|g')"
       sed -i "s|$currentGhosTTYMonoFontString|$wantedGhosTTYMonoFontString|g" "$ghosttyConfig"
     fi
   fi
@@ -419,7 +419,7 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
       currentSublimeMonoFontSize="$(grep '"font_size": ' "$sublimeConfig" | awk '{ print $2 }' | tr -cd '0-9')"
       wantedSublimeMonoFontSize="$sublimeMono"
 
-      if [[ "$currentSublimeMonoFontSize" != "$wantedSublimeMonoFontSize" ]]; then
+      if [[ -n "$currentSublimeMonoFontSize" && "$currentSublimeMonoFontSize" != "$wantedSublimeMonoFontSize" ]]; then
         log.info "Setting $sublimeProgramName font size to: \"$wantedSublimeMonoFontSize\""
         currentSublimeMonoFontString="$(echo "\"font_size\": $currentSublimeMonoFontSize" | sed 's|\.|\\\.|g')"
         wantedSublimeMonoFontString="$(echo "\"font_size\": $wantedSublimeMonoFontSize" | sed 's|\.|\\\.|g')"
@@ -430,10 +430,10 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
   # Current and wanted Nvim font size.
   nvimConfig="$HOME/.config/nvim/init.lua"
   if [[ -e "$nvimConfig" && -n "$nvimMono" ]]; then
-    currentNvimMonoFontSize="$(grep 'vim.o.guifont' "$nvimConfig" | sed 's|.*:h\([0-9.]*\).*|\1|')"
+    currentNvimMonoFontSize="$(grep 'vim.opt.guifont' "$nvimConfig" | sed 's|.*:h\([0-9.]*\).*|\1|')"
     wantedNvimMonoFontSize="$nvimMono"
 
-    if [[ "$currentNvimMonoFontSize" != "$wantedNvimMonoFontSize" ]]; then
+    if [[ -n "$currentNvimMonoFontSize" && "$currentNvimMonoFontSize" != "$wantedNvimMonoFontSize" ]]; then
       log.info "Setting Nvim font size to: \"$wantedNvimMonoFontSize\""
       currentNvimMonoFontString="$(echo ":h$currentNvimMonoFontSize" | sed 's|\.|\\\.|g')"
       wantedNvimMonoFontString="$(echo ":h$wantedNvimMonoFontSize" | sed 's|\.|\\\.|g')"
