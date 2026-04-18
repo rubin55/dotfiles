@@ -180,7 +180,7 @@ vim.api.nvim_create_autocmd('TermOpen', {
   end
 })
 
--- Enable status line.
+-- Enable statusline.
 require('lualine').setup({
   options = {
     component_separators = { left = '', right = '' },
@@ -192,6 +192,7 @@ require('lualine').setup({
 -- Fzf configuration.
 local fzf = require('fzf-lua')
 local actions = require('fzf-lua.actions')
+
 fzf.setup({
   'telescope',
   ui_select = true,
@@ -211,7 +212,7 @@ fzf.setup({
   }
 })
 
--- Custom keybindings
+-- Custom keybindings.
 vim.keymap.set('n', '<Leader>a', fzf.builtin, { desc = 'All pickers' })
 vim.keymap.set('n', '<Leader>b', fzf.buffers, { desc = 'Buffers' })
 vim.keymap.set('n', '<Leader>c', fzf.changes, { desc = 'Changes' })
@@ -220,6 +221,7 @@ vim.keymap.set('n', '<Leader>f', fzf.files, { desc = 'Files' })
 vim.keymap.set('n', '<Leader>g', fzf.grep_project, { desc = 'Grep' })
 vim.keymap.set('n', '<Leader>h', fzf.help_tags, { desc = 'Help' })
 vim.keymap.set('n', '<Leader>k', fzf.keymaps, { desc = 'Keymaps' })
+vim.keymap.set('n', '<Leader>m', fzf.marks, { desc = 'Marks' })
 vim.keymap.set('n', '<Leader>r', fzf.lsp_references, { desc = 'References' })
 vim.keymap.set('n', '<Leader>s', fzf.lsp_live_workspace_symbols, { desc = 'Symbols' })
 vim.keymap.set('n', '<Leader>t', fzf.treesitter, { desc = 'Treesitter' })
