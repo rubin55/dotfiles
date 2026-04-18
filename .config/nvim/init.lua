@@ -244,7 +244,7 @@ vim.keymap.set('n', 'mQ', function() haunt_api.to_quickfix({ current_buffer = tr
 vim.keymap.set('n', 'mq', function() haunt_api.to_quickfix() end, { desc = 'Send bookmarks to Quickfix (all)' })
 vim.keymap.set('n', 'my', function() haunt_api.yank_locations({current_buffer = true}) end, { desc = 'Send bookmarks to Clipboard (buffer)' })
 vim.keymap.set('n', 'mY', function() haunt_api.yank_locations() end, { desc = 'Send bookmarks to Clipboard (all)' })
-vim.keymap.set('n', '<Leader>m', function() haunt_picker.show() end, { desc = 'Show bookmark picker' })
+vim.keymap.set('n', '<Leader>m', function() haunt_picker.show({ prompt = "Bookmarks> " }) end, { desc = 'Show bookmark picker' })
 
 -- Fzf configuration.
 local fzf = require('fzf-lua')
