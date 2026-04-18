@@ -48,9 +48,9 @@ local function set_bg_from_dbus()
   if vim.v.shell_error ~= 0 then return end
   local val = out:match('(%d+)%s*$')
   if val == '1' then
-    vim.opt.background = 'dark'
+    vim.o.background = 'dark'
   elseif val == '0' or val == '2' then
-    vim.opt.background = 'light'
+    vim.o.background = 'light'
   end
 end
 
@@ -68,13 +68,13 @@ vim.api.nvim_create_autocmd('OptionSet', {
   pattern = 'background',
   nested = true,
   callback = function()
-    if vim.opt.background:get() == 'dark' then
+    if vim.o.background == 'dark' then
       vim.cmd.colorscheme('nightfox')
-    elseif vim.opt.background:get() == 'light' then
+    elseif vim.o.background == 'light' then
       vim.cmd.colorscheme('dayfox')
     end
     if vim.g.neovide then
-      vim.g.neovide_theme = vim.opt.background:get()
+      vim.g.neovide_theme = vim.o.background
     end
   end
 })
@@ -84,10 +84,13 @@ vim.api.nvim_create_autocmd('OptionSet', {
 -- Additionally set some Neovide-specific settings
 -- when Neovide is detected.
 if vim.g.neovide then
+  vim.g.neovide_cursor_animation_length = 0
+  vim.g.neovide_cursor_cell_color_fallback = true
+  vim.g.neovide_cursor_smooth_blink = false
   vim.g.neovide_pixel_geometry = 'RGBH'
-  vim.g.neovide_text_gamma = 0.8
   vim.g.neovide_text_contrast = 0.1
-  vim.opt.guifont = 'Monospace:h11.2:#e-subpixelantialias:#h-none'
+  vim.g.neovide_text_gamma = 0.8
+  vim.o.guifont = 'Monospace:h11.2:#e-subpixelantialias:#h-none'
   vim.api.nvim_create_autocmd('UIEnter', {
     callback = function()
       vim.defer_fn(set_bg_from_dbus, 10)
@@ -107,31 +110,31 @@ vim.api.nvim_create_autocmd('BufReadPost', {
   end
 })
 
--- Use system clipboard.
-vim.opt.clipboard = 'unnamedplus'
-
--- Use block cursor always.
-vim.opt.guicursor = 'a:block-blinkwait500-blinkon500-blinkoff500'
-
 -- Set a character for deleted lines in diff.
 vim.opt.fillchars:append { diff = '╱' }
+
+-- Use system clipboard.
+vim.o.clipboard = 'unnamedplus'
+
+-- Use block cursor always.
+vim.o.guicursor = 'a:block-blinkwait500-blinkon500-blinkoff500'
 
 -- Remove the how-to-disable menu item.
 vim.cmd([[unmenu PopUp.How-to\ disable\ mouse]])
 
 -- Default tab behavior.
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.softtabstop = 2
-vim.opt.expandtab = true
+vim.o.tabstop = 2
+vim.o.shiftwidth = 2
+vim.o.softtabstop = 2
+vim.o.expandtab = true
 
 -- Case-(in)sensitivity.
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-vim.opt.wildignorecase = true
+vim.o.ignorecase = true
+vim.o.smartcase = true
+vim.o.wildignorecase = true
 
 -- Enable window borders.
-vim.opt.winborder = 'solid'
+vim.o.winborder = 'solid'
 
 -- Disable providers.
 vim.g.loaded_node_provider = 0
