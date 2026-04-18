@@ -48,9 +48,9 @@ local function set_bg_from_dbus()
   if vim.v.shell_error ~= 0 then return end
   local val = out:match('(%d+)%s*$')
   if val == '1' then
-    vim.o.background = 'dark'
+    vim.opt.background = 'dark'
   elseif val == '0' or val == '2' then
-    vim.o.background = 'light'
+    vim.opt.background = 'light'
   end
 end
 
@@ -68,13 +68,13 @@ vim.api.nvim_create_autocmd('OptionSet', {
   pattern = 'background',
   nested = true,
   callback = function()
-    if vim.o.background == 'dark' then
+    if vim.opt.background:get() == 'dark' then
       vim.cmd.colorscheme('nightfox')
-    elseif vim.o.background == 'light' then
+    elseif vim.opt.background:get() == 'light' then
       vim.cmd.colorscheme('dayfox')
     end
     if vim.g.neovide then
-      vim.g.neovide_theme = vim.o.background
+      vim.g.neovide_theme = vim.opt.background:get()
     end
   end
 })
@@ -84,10 +84,10 @@ vim.api.nvim_create_autocmd('OptionSet', {
 -- Additionally set some Neovide-specific settings
 -- when Neovide is detected.
 if vim.g.neovide then
-  vim.o.guifont = 'PragmataPro Mono:h11.2:#e-subpixelantialias:#h-none'
   vim.g.neovide_pixel_geometry = 'RGBH'
   vim.g.neovide_text_gamma = 0.8
   vim.g.neovide_text_contrast = 0.1
+  vim.opt.guifont = 'Monospace:h11.2:#e-subpixelantialias:#h-none'
   vim.api.nvim_create_autocmd('UIEnter', {
     callback = function()
       vim.defer_fn(set_bg_from_dbus, 10)
@@ -111,7 +111,7 @@ vim.api.nvim_create_autocmd('BufReadPost', {
 vim.opt.clipboard = 'unnamedplus'
 
 -- Use block cursor always.
-vim.opt.guicursor = 'a:block'
+vim.opt.guicursor = 'a:block-blinkwait500-blinkon500-blinkoff500'
 
 -- Set a character for deleted lines in diff.
 vim.opt.fillchars:append { diff = '╱' }
@@ -131,7 +131,7 @@ vim.opt.smartcase = true
 vim.opt.wildignorecase = true
 
 -- Enable window borders.
-vim.o.winborder = 'solid'
+vim.opt.winborder = 'solid'
 
 -- Disable providers.
 vim.g.loaded_node_provider = 0
@@ -184,9 +184,24 @@ require('lualine').setup({
 
 -- Fzf configuration.
 local fzf = require('fzf-lua')
+local actions = require('fzf-lua.actions')
 fzf.setup({
   'telescope',
-  ui_select = true
+  ui_select = true,
+  actions = {
+    files = {
+      true,
+      ['enter']       = actions.file_edit_or_qf,
+      ['ctrl-s']      = actions.file_split,
+      ['ctrl-v']      = actions.file_vsplit,
+      ['ctrl-t']      = actions.file_tabedit,
+      ['alt-q']       = actions.file_sel_to_qf,
+      ['alt-Q']       = actions.file_sel_to_ll,
+      ['alt-i']       = actions.toggle_ignore,
+      ['alt-h']       = actions.toggle_hidden,
+      ['alt-f']       = actions.toggle_follow,
+    },
+  }
 })
 
 -- Custom keybindings
