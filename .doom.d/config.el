@@ -260,22 +260,22 @@
 
 ;; Font settings for FRAME, my Linux laptop.
 (when (string= (system-name) "FRAME")
-  (setq doom-font (font-spec :family "PragmataPro" :size 14 :weight 'normal)
+  (setq doom-font (font-spec :family "Monospace" :size 14 :weight 'normal)
         doom-variable-pitch-font (font-spec :family "Sans" :size 14)))
 
 ;; Font settings for THINK, my other Linux laptop.
 (when (string= (system-name) "THINK")
-  (setq doom-font (font-spec :family "PragmataPro" :size 16 :weight 'normal)
+  (setq doom-font (font-spec :family "Monospace" :size 16 :weight 'normal)
         doom-variable-pitch-font (font-spec :family "Sans" :size 16)))
 
 ;; Font settings for GEMINI, my Linux desktop at work.
 (when (string= (system-name) "GEMINI")
-  (setq doom-font (font-spec :family "PragmataPro" :size 18 :weight 'normal)
-        doom-variable-pitch-font (font-spec :family "Sans" :size 18)))
+  (setq doom-font (font-spec :family "Monospace" :size 14 :weight 'normal)
+        doom-variable-pitch-font (font-spec :family "Sans" :size 14)))
 
 ;; Font settings for TAURUS, my Linux desktop at home.
 (when (string= (system-name) "TAURUS")
-  (setq doom-font (font-spec :family "PragmataPro" :size 18 :weight 'normal)
+  (setq doom-font (font-spec :family "Monospace" :size 18 :weight 'normal)
         doom-variable-pitch-font (font-spec :family "Sans" :size 18)))
 
 ;; Configure doom theme through auto-dark.

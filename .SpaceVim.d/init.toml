@@ -10,7 +10,7 @@
   enable_tabline_filetype_icon = true
   escape_key_binding = ""
   filetree_direction = "left"
-  guifont = "PragmataPro Mono 12.5"
+  guifont = "Monospace 12.5"
   linespace = 1
   project_rooter_patterns = [ ".exercism", ".git" ]
   statusline_iseparator = "slant"

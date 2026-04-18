@@ -10,19 +10,19 @@ style = { shape = "Block", blinking = "Always" }
 size = 11
 
 [font.bold]
-family = "PragmataPro"
+family = "Monospace"
 style = "Regular"
 
 [font.bold_italic]
-family = "PragmataPro"
+family = "Monospace"
 style = "Italic"
 
 [font.italic]
-family = "PragmataPro"
+family = "Monospace"
 style = "Italic"
 
 [font.normal]
-family = "PragmataPro"
+family = "Monospace"
 style = "Regular"
 
 [keyboard]

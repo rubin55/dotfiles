@@ -134,14 +134,14 @@ if has('gui_running')
   set lines=44 columns=132
   "set guioptions+=m
   if has('gui_gtk3')
-    set guifont=PragmataPro\ Mono\ 13
+    set guifont=Monospace\ 13
   elseif has('gui_macvim')
-    set guifont=PragmataPro\ Mono:h16
+    set guifont=Monospace:h16
     set macligatures
     set macmeta
     set guioptions+=T
   elseif has('gui_win32')
-    set guifont=PragmataPro\ Mono:h11
+    set guifont=Monospace:h11
   endif
 endif
 
