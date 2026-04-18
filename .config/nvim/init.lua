@@ -141,7 +141,7 @@ vim.o.wildignorecase = true
 -- Configure window border.
 vim.o.winborder = 'solid'
 
--- Disable providers.
+-- Disable unused providers.
 vim.g.loaded_node_provider = 0
 vim.g.loaded_perl_provider = 0
 vim.g.loaded_python3_provider = 0
@@ -206,7 +206,7 @@ vim.api.nvim_create_autocmd('TermOpen', {
   end
 })
 
--- Enable statusline.
+-- Lualine configuration.
 require('lualine').setup({
   options = {
     component_separators = { left = '', right = '' },
@@ -224,14 +224,15 @@ haunt.setup({
   picker = 'fzf'
 })
 
--- Use project-specific bookmarks
-vim.api.nvim_create_autocmd('DirChanged', {
-  callback = function()
-    local cwd = vim.fn.getcwd()
-    local project_root = vim.fs.root(cwd, '.git') or cwd
-    haunt_api.change_data_dir(project_root .. '/.haunt/')
-  end
-})
+local function haunt_set_project_dir()
+  local cwd = vim.fn.getcwd()
+  local project_root = vim.fs.root(cwd, '.git') or cwd
+  haunt_api.change_data_dir(project_root .. '/.haunt/')
+end
+
+haunt_set_project_dir()
+
+vim.api.nvim_create_autocmd('DirChanged', { callback = haunt_set_project_dir })
 
 vim.keymap.set('n', 'ma', function() haunt_api.annotate() end, { desc = 'Add bookmark' })
 vim.keymap.set('n', 'md', function() haunt_api.delete() end, { desc = 'Delete bookmark' })
@@ -244,7 +245,7 @@ vim.keymap.set('n', 'mQ', function() haunt_api.to_quickfix({ current_buffer = tr
 vim.keymap.set('n', 'mq', function() haunt_api.to_quickfix() end, { desc = 'Send bookmarks to Quickfix (all)' })
 vim.keymap.set('n', 'my', function() haunt_api.yank_locations({current_buffer = true}) end, { desc = 'Send bookmarks to Clipboard (buffer)' })
 vim.keymap.set('n', 'mY', function() haunt_api.yank_locations() end, { desc = 'Send bookmarks to Clipboard (all)' })
-vim.keymap.set('n', '<Leader>m', function() haunt_picker.show({ prompt = "Bookmarks> " }) end, { desc = 'Show bookmark picker' })
+vim.keymap.set('n', '<Leader>m', function() haunt_picker.show({ prompt = 'Bookmarks> ' }) end, { desc = 'Show bookmark picker' })
 
 -- Fzf configuration.
 local fzf = require('fzf-lua')
