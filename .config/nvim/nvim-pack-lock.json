@@ -12,6 +12,10 @@
       "rev": "8969c8c2b668502d54478e46745d6647ff346e15",
       "src": "https://github.com/ibhagwan/fzf-lua.git"
     },
+    "haunt.nvim": {
+      "rev": "666d83868bac8b38f1dc765d9da6eca4d92c826f",
+      "src": "https://github.com/TheNoeTrevino/haunt.nvim.git"
+    },
     "lualine.nvim": {
       "rev": "a905eeebc4e63fdc48b5135d3bf8aea5618fb21c",
       "src": "https://github.com/nvim-lualine/lualine.nvim"

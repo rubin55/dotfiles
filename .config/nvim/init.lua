@@ -4,6 +4,7 @@ vim.g.mapleader = ' '
 -- Neovim plugins.
 vim.pack.add({
   'https://github.com/EdenEast/nightfox.nvim.git',
+  'https://github.com/TheNoeTrevino/haunt.nvim.git',
   'https://github.com/ibhagwan/fzf-lua.git',
   'https://github.com/j-hui/fidget.nvim',
   'https://github.com/neovim/nvim-lspconfig',
@@ -94,7 +95,7 @@ if vim.g.neovide then
   vim.g.neovide_position_animation_length = 0
   vim.g.neovide_text_contrast = 0.1
   vim.g.neovide_text_gamma = 0.8
-  vim.o.guifont = 'Monospace:h11.2:#e-subpixelantialias:#h-none'
+  vim.o.guifont = 'Monospace:h12.3:#e-subpixelantialias:#h-none'
   vim.api.nvim_create_autocmd('UIEnter', {
     callback = function()
       vim.defer_fn(set_bg_from_dbus, 10)
@@ -146,6 +147,31 @@ vim.g.loaded_perl_provider = 0
 vim.g.loaded_python3_provider = 0
 vim.g.loaded_ruby_provider = 0
 
+-- Set number defaults. 
+vim.o.number = false
+vim.o.relativenumber = false
+vim.o.signcolumn = 'yes'
+
+-- Toggle gutter function.
+local function toggle_gutter()
+  if not vim.o.number then
+    vim.o.number = true
+    vim.o.relativenumber = false
+    vim.o.signcolumn = 'number'
+  elseif not vim.o.relativenumber then
+    vim.o.number = true
+    vim.o.relativenumber = true
+    vim.o.signcolumn = 'number'
+  else
+    vim.o.number = false
+    vim.o.relativenumber = false
+    vim.o.signcolumn = 'yes'
+  end
+end
+
+-- Set toggle gutter key.
+vim.keymap.set('n', 'tg', toggle_gutter, { desc = 'Toggle gutter' })
+
 -- Tree-sitter grammars.
 require('nvim-treesitter').install({ 'asm', 'astro', 'awk', 'bash', 'c', 'c_sharp', 'clojure', 'cmake', 'comment', 'cpp', 'css', 'csv', 'cuda', 'cue', 'dart', 'desktop', 'diff', 'dockerfile', 'editorconfig', 'eex', 'elixir', 'erlang', 'fsharp', 'git_config', 'git_rebase', 'gitattributes', 'gitcommit', 'gitignore', 'glsl', 'go', 'gomod', 'gosum', 'gotmpl', 'gpg', 'groovy', 'haskell', 'heex', 'helm', 'hlsl', 'html', 'http', 'ini', 'java', 'javadoc', 'javascript', 'jinja', 'jinja_inline', 'jq', 'jsdoc', 'json', 'just', 'kotlin', 'latex', 'llvm', 'lua', 'luadoc', 'm68k', 'make', 'markdown', 'markdown_inline', 'mermaid', 'nasm', 'nginx', 'ninja', 'objc', 'objdump', 'passwd', 'pem', 'perl', 'php', 'phpdoc', 'powershell', 'printf', 'properties', 'python', 'query', 'racket', 'rbs', 'regex', 'requirements', 'robots_txt', 'rst', 'ruby', 'rust', 'scala', 'scheme', 'scss', 'slang', 'sql', 'ssh_config', 'strace', 'svelte', 'swift', 'systemverilog', 'tlaplus', 'tmux', 'todotxt', 'toml', 'tsv', 'tsx', 'typescript', 'udev', 'vala', 'vhdl', 'vim', 'vimdoc', 'vue', 'wgsl', 'xml', 'xresources', 'yaml', 'zig' }):wait(300000)
 
@@ -189,6 +215,37 @@ require('lualine').setup({
   }
 })
 
+-- Haunt configuration.
+local haunt = require('haunt')
+local haunt_api = require('haunt.api')
+local haunt_picker = require('haunt.picker')
+
+haunt.setup({
+  picker = 'fzf'
+})
+
+-- Use project-specific bookmarks
+vim.api.nvim_create_autocmd('DirChanged', {
+  callback = function()
+    local cwd = vim.fn.getcwd()
+    local project_root = vim.fs.root(cwd, '.git') or cwd
+    haunt_api.change_data_dir(project_root .. '/.haunt/')
+  end
+})
+
+vim.keymap.set('n', 'ma', function() haunt_api.annotate() end, { desc = 'Add bookmark' })
+vim.keymap.set('n', 'md', function() haunt_api.delete() end, { desc = 'Delete bookmark' })
+vim.keymap.set('n', 'mC', function() haunt_api.clear_all() end, { desc = 'Delete all bookmarks' })
+vim.keymap.set('n', 'mp', function() haunt_api.prev() end, { desc = 'Previous bookmark' })
+vim.keymap.set('n', 'mn', function() haunt_api.next() end, { desc = 'Next bookmark' })
+vim.keymap.set('n', 'mt', function() haunt_api.toggle_annotation() end, { desc = 'Toggle bookmark inline annotation message' })
+vim.keymap.set('n', 'mT', function() haunt_api.toggle_all_lines() end, { desc = 'Toggle all bookmark inline annotation messages' })
+vim.keymap.set('n', 'mQ', function() haunt_api.to_quickfix({ current_buffer = true }) end, { desc = 'Send bookmarks to Quickfix (buffer)' })
+vim.keymap.set('n', 'mq', function() haunt_api.to_quickfix() end, { desc = 'Send bookmarks to Quickfix (all)' })
+vim.keymap.set('n', 'my', function() haunt_api.yank_locations({current_buffer = true}) end, { desc = 'Send bookmarks to Clipboard (buffer)' })
+vim.keymap.set('n', 'mY', function() haunt_api.yank_locations() end, { desc = 'Send bookmarks to Clipboard (all)' })
+vim.keymap.set('n', '<Leader>m', function() haunt_picker.show() end, { desc = 'Show bookmark picker' })
+
 -- Fzf configuration.
 local fzf = require('fzf-lua')
 local actions = require('fzf-lua.actions')
@@ -212,7 +269,6 @@ fzf.setup({
   }
 })
 
--- Custom keybindings.
 vim.keymap.set('n', '<Leader>a', fzf.builtin, { desc = 'All pickers' })
 vim.keymap.set('n', '<Leader>b', fzf.buffers, { desc = 'Buffers' })
 vim.keymap.set('n', '<Leader>c', fzf.changes, { desc = 'Changes' })
@@ -221,8 +277,6 @@ vim.keymap.set('n', '<Leader>f', fzf.files, { desc = 'Files' })
 vim.keymap.set('n', '<Leader>g', fzf.grep_project, { desc = 'Grep' })
 vim.keymap.set('n', '<Leader>h', fzf.help_tags, { desc = 'Help' })
 vim.keymap.set('n', '<Leader>k', fzf.keymaps, { desc = 'Keymaps' })
-vim.keymap.set('n', '<Leader>m', fzf.marks, { desc = 'Marks' })
 vim.keymap.set('n', '<Leader>r', fzf.lsp_references, { desc = 'References' })
 vim.keymap.set('n', '<Leader>s', fzf.lsp_live_workspace_symbols, { desc = 'Symbols' })
 vim.keymap.set('n', '<Leader>t', fzf.treesitter, { desc = 'Treesitter' })
-
