@@ -87,7 +87,7 @@ if vim.g.neovide then
   vim.g.neovide_pixel_geometry = 'RGBH'
   vim.g.neovide_text_gamma = 0.8
   vim.g.neovide_text_contrast = 0.1
-  vim.opt.guifont = 'Monospace:h11.211.211.2:#e-subpixelantialias:#h-none'
+  vim.opt.guifont = 'Monospace:h11.2:#e-subpixelantialias:#h-none'
   vim.api.nvim_create_autocmd('UIEnter', {
     callback = function()
       vim.defer_fn(set_bg_from_dbus, 10)
