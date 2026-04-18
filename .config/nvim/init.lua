@@ -87,6 +87,9 @@ if vim.g.neovide then
   vim.g.neovide_cursor_animation_length = 0
   vim.g.neovide_cursor_cell_color_fallback = true
   vim.g.neovide_cursor_smooth_blink = false
+  vim.g.neovide_floating_shadow = false
+  vim.g.neovide_floating_blur_amount_x = 0
+  vim.g.neovide_floating_blur_amount_y = 0
   vim.g.neovide_pixel_geometry = 'RGBH'
   vim.g.neovide_text_contrast = 0.1
   vim.g.neovide_text_gamma = 0.8
@@ -133,7 +136,7 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.wildignorecase = true
 
--- Enable window borders.
+-- Configure window border.
 vim.o.winborder = 'solid'
 
 -- Disable providers.

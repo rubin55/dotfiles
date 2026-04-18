@@ -1,4 +1,4 @@
-no-multigrid = true
+no-multigrid = false
 tabs = false
 vsync = true
 srgb = true
