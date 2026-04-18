@@ -14,8 +14,8 @@ vim.pack.add({
   'https://github.com/sindrets/diffview.nvim.git',
 })
 
--- Configure custom double-width characters
--- which exist in the PragmataPro font.
+-- Tell neovim about double-width characters
+-- in the PragmataPro font (setcellwidths).
 require('pragmatapro').setup()
 
 -- Enable extra icons.
