@@ -159,9 +159,9 @@
       "version": "14.3"
     },
     "yaml-language-server": {
-      "version": "1.21.0",
-      "gitref": "refs/tags/1.21.0",
-      "revision": "abce2da9dc60901a8f0157c95320136dc0e50113"
+      "version": "1.22.0",
+      "gitref": "refs/tags/1.22.0",
+      "revision": "970952c50b4f819e0a137d902860a0074b63d0f6"
     }
   }
 }
