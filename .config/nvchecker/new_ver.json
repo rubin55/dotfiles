@@ -98,9 +98,9 @@
       "version": "0.903"
     },
     "pupdate-bin": {
-      "version": "4.9.1",
-      "gitref": "refs/tags/4.9.1",
-      "url": "https://github.com/mattpannella/pupdate/releases/tag/4.9.1"
+      "version": "4.10.0",
+      "gitref": "refs/tags/4.10.0",
+      "url": "https://github.com/mattpannella/pupdate/releases/tag/4.10.0"
     },
     "pvsneslib": {
       "version": "4.5.0",
