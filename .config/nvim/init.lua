@@ -142,6 +142,9 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.wildignorecase = true
 
+-- Configure linebreak on words.
+vim.o.linebreak = true
+
 -- Configure window border.
 vim.o.winborder = 'solid'
 
@@ -151,7 +154,7 @@ vim.g.loaded_perl_provider = 0
 vim.g.loaded_python3_provider = 0
 vim.g.loaded_ruby_provider = 0
 
--- Set number defaults. 
+-- Set number defaults.
 vim.o.number = false
 vim.o.relativenumber = false
 vim.o.signcolumn = 'yes'
@@ -210,6 +213,26 @@ vim.api.nvim_create_autocmd('TermOpen', {
   end
 })
 
+-- Close buffer without closing window.
+vim.keymap.set('c', '<CR>', function()
+  if vim.fn.getcmdtype() == ':' and vim.fn.getcmdline() == 'bd' then
+    vim.schedule(function()
+      local bufnr = vim.api.nvim_get_current_buf()
+      vim.cmd('bprevious')
+
+      if bufnr == vim.api.nvim_get_current_buf() then
+        vim.cmd('enew')
+      end
+
+      vim.cmd('silent! bdelete ' .. bufnr)
+    end)
+
+    return '<C-c>'
+  end
+
+  return '<CR>'
+end, { expr = true })
+
 -- Lualine configuration.
 require('lualine').setup({
   options = {
@@ -234,9 +257,7 @@ local function haunt_set_project_dir()
   haunt_api.change_data_dir(project_root .. '/.haunt/')
 end
 
-haunt_set_project_dir()
-
-vim.api.nvim_create_autocmd('DirChanged', { callback = haunt_set_project_dir })
+vim.api.nvim_create_autocmd({ 'VimEnter', 'DirChanged' }, { callback = haunt_set_project_dir })
 
 vim.keymap.set('n', 'ma', function() haunt_api.annotate() end, { desc = 'Add bookmark' })
 vim.keymap.set('n', 'md', function() haunt_api.delete() end, { desc = 'Delete bookmark' })
@@ -247,7 +268,7 @@ vim.keymap.set('n', 'mt', function() haunt_api.toggle_annotation() end, { desc =
 vim.keymap.set('n', 'mT', function() haunt_api.toggle_all_lines() end, { desc = 'Toggle all bookmark inline annotation messages' })
 vim.keymap.set('n', 'mQ', function() haunt_api.to_quickfix({ current_buffer = true }) end, { desc = 'Send bookmarks to Quickfix (buffer)' })
 vim.keymap.set('n', 'mq', function() haunt_api.to_quickfix() end, { desc = 'Send bookmarks to Quickfix (all)' })
-vim.keymap.set('n', 'my', function() haunt_api.yank_locations({current_buffer = true}) end, { desc = 'Send bookmarks to Clipboard (buffer)' })
+vim.keymap.set('n', 'my', function() haunt_api.yank_locations({ current_buffer = true }) end, { desc = 'Send bookmarks to Clipboard (buffer)' })
 vim.keymap.set('n', 'mY', function() haunt_api.yank_locations() end, { desc = 'Send bookmarks to Clipboard (all)' })
 vim.keymap.set('n', '<Leader>m', function() haunt_picker.show({ prompt = 'Bookmarks> ' }) end, { desc = 'Show bookmark picker' })
 
@@ -261,15 +282,15 @@ fzf.setup({
   actions = {
     files = {
       true,
-      ['enter']       = actions.file_edit_or_qf,
-      ['ctrl-s']      = actions.file_split,
-      ['ctrl-v']      = actions.file_vsplit,
-      ['ctrl-t']      = actions.file_tabedit,
-      ['alt-q']       = actions.file_sel_to_qf,
-      ['alt-Q']       = actions.file_sel_to_ll,
-      ['alt-i']       = actions.toggle_ignore,
-      ['alt-h']       = actions.toggle_hidden,
-      ['alt-f']       = actions.toggle_follow,
+      ['enter']  = actions.file_edit_or_qf,
+      ['ctrl-s'] = actions.file_split,
+      ['ctrl-v'] = actions.file_vsplit,
+      ['ctrl-t'] = actions.file_tabedit,
+      ['alt-q']  = actions.file_sel_to_qf,
+      ['alt-Q']  = actions.file_sel_to_ll,
+      ['alt-i']  = actions.toggle_ignore,
+      ['alt-h']  = actions.toggle_hidden,
+      ['alt-f']  = actions.toggle_follow,
     },
   }
 })
