@@ -248,20 +248,10 @@ local haunt_api = require('haunt.api')
 local haunt_picker = require('haunt.picker')
 
 haunt.setup({
+  data_dir = '~/.haunt',
+  per_branch_bookmarks = false,
   picker = 'fzf'
 })
-
--- Per-project bookmarks location (disabled for now).
--- local function haunt_set_project_dir()
---   local cwd = vim.fn.getcwd()
---   local project_root = vim.fs.root(cwd, '.git') or cwd
---   haunt_api.change_data_dir(project_root .. '/.haunt/')
--- end
--- 
--- vim.api.nvim_create_autocmd({ 'VimEnter', 'DirChanged' }, { callback = haunt_set_project_dir })
-
--- Static bookmarks location.
-haunt_api.change_data_dir(vim.fn.expand('~/.haunt/'))
 
 vim.keymap.set('n', 'ma', function() haunt_api.annotate() end, { desc = 'Add bookmark' })
 vim.keymap.set('n', 'md', function() haunt_api.delete() end, { desc = 'Delete bookmark' })
