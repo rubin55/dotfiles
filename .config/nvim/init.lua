@@ -1,6 +1,10 @@
 -- Leader key.
 vim.g.mapleader = ' '
 
+-- Disable netrw.
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 -- Neovim plugins.
 vim.pack.add({
   'https://github.com/EdenEast/nightfox.nvim.git',
@@ -9,6 +13,7 @@ vim.pack.add({
   'https://github.com/j-hui/fidget.nvim',
   'https://github.com/neovim/nvim-lspconfig',
   'https://github.com/nvim-lualine/lualine.nvim',
+  'https://github.com/nvim-tree/nvim-tree.lua.git',
   'https://github.com/nvim-tree/nvim-web-devicons.git',
   'https://github.com/nvim-treesitter/nvim-treesitter',
   'https://github.com/sindrets/diffview.nvim.git',
@@ -178,6 +183,30 @@ end
 
 -- Set toggle gutter key.
 vim.keymap.set('n', 'tg', toggle_gutter, { desc = 'Toggle gutter' })
+
+--Configure nvim-tree.
+require('nvim-tree').setup({
+  filters = {
+    dotfiles = false
+  },
+  renderer = {
+    group_empty = true
+  },
+  sort = {
+    sorter = 'case_sensitive'
+  },
+  sync_root_with_cwd = true,
+  update_focused_file = {
+    enable = true,
+    update_root = true
+  },
+  view = {
+    adaptive_size = true,
+    side = 'left'
+  },
+})
+
+vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<CR>', { desc = 'Toggle Explorer' })
 
 -- Tree-sitter grammars.
 require('nvim-treesitter').install({ 'asm', 'astro', 'awk', 'bash', 'c', 'c_sharp', 'clojure', 'cmake', 'comment', 'cpp', 'css', 'csv', 'cuda', 'cue', 'dart', 'desktop', 'diff', 'dockerfile', 'editorconfig', 'eex', 'elixir', 'erlang', 'fsharp', 'git_config', 'git_rebase', 'gitattributes', 'gitcommit', 'gitignore', 'glsl', 'go', 'gomod', 'gosum', 'gotmpl', 'gpg', 'groovy', 'haskell', 'heex', 'helm', 'hlsl', 'html', 'http', 'ini', 'java', 'javadoc', 'javascript', 'jinja', 'jinja_inline', 'jq', 'jsdoc', 'json', 'just', 'kotlin', 'latex', 'llvm', 'lua', 'luadoc', 'm68k', 'make', 'markdown', 'markdown_inline', 'mermaid', 'nasm', 'nginx', 'ninja', 'objc', 'objdump', 'passwd', 'pem', 'perl', 'php', 'phpdoc', 'powershell', 'printf', 'properties', 'python', 'query', 'racket', 'rbs', 'regex', 'requirements', 'robots_txt', 'rst', 'ruby', 'rust', 'scala', 'scheme', 'scss', 'slang', 'sql', 'ssh_config', 'strace', 'svelte', 'swift', 'systemverilog', 'tlaplus', 'tmux', 'todotxt', 'toml', 'tsv', 'tsx', 'typescript', 'udev', 'vala', 'vhdl', 'vim', 'vimdoc', 'vue', 'wgsl', 'xml', 'xresources', 'yaml', 'zig' }):wait(300000)
