@@ -7,9 +7,9 @@
       "revision": "b3956bda93ff3d45b644c7bc6d55e0e01c9b9a74"
     },
     "dev-proxy-bin": {
-      "version": "v2.3.2",
-      "gitref": "refs/tags/v2.3.2",
-      "url": "https://github.com/dotnet/dev-proxy/releases/tag/v2.3.2"
+      "version": "v2.3.4",
+      "gitref": "refs/tags/v2.3.4",
+      "url": "https://github.com/dotnet/dev-proxy/releases/tag/v2.3.4"
     },
     "fsautocomplete-bin": {
       "version": "v0.83.0",
