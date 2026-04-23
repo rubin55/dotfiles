@@ -132,6 +132,9 @@ vim.opt.fillchars:append { diff = '╱' }
 -- Use system clipboard.
 vim.o.clipboard = 'unnamedplus'
 
+-- Enable highlighted of line where cursor is.
+vim.o.cursorline = true
+
 -- Use block cursor always.
 vim.o.guicursor = 'a:block-blinkwait500-blinkon500-blinkoff500'
 
