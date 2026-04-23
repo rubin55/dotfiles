@@ -268,14 +268,22 @@ vim.keymap.set('c', '<CR>', function()
 end, { expr = true })
 
 -- Lualine configuration.
-local separators = (tonumber(vim.o.guifont:match(':h(%d+%.?%d*)')) or 0) >= 12
+local fzf_ext = require('lualine.extensions.fzf')
+fzf_ext.sections = {
+  lualine_a = fzf_ext.sections.lualine_a,
+  lualine_b = fzf_ext.sections.lualine_y,
+  lualine_z = fzf_ext.sections.lualine_z,
+}
+
+local dyn_sep = (tonumber(vim.o.guifont:match(':h(%d+%.?%d*)')) or 0) >= 12
   and { left = '', right = '' }
   or { left = '', right = '' }
 
 require('lualine').setup({
+  extensions = { fzf_ext, 'nvim-tree', 'quickfix' },
   options = {
     component_separators = { left = '', right = '' },
-    section_separators = separators,
+    section_separators = dyn_sep,
     theme = 'auto'
   }
 })
@@ -309,7 +317,7 @@ local fzf = require('fzf-lua')
 local actions = require('fzf-lua.actions')
 
 fzf.setup({
-  'telescope',
+  'borderless',
   ui_select = true,
   actions = {
     files = {
@@ -324,6 +332,9 @@ fzf.setup({
       ['alt-h']  = actions.toggle_hidden,
       ['alt-f']  = actions.toggle_follow,
     },
+  },
+  winopts = {
+    split = "belowright new"
   }
 })
 
