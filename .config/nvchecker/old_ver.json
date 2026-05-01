@@ -46,7 +46,10 @@
       "version": "22.9.0"
     },
     "intel-media-driver": {
-      "version": "25.4.6"
+      "version": "26.1.5"
+    },
+    "intel-oneapi": {
+      "version": "2026.0.0"
     },
     "intel-oneapi-base-toolkit": {
       "version": "2025.3.2"
@@ -57,9 +60,9 @@
       "url": "https://github.com/openvinotoolkit/openvino/releases/tag/2026.1.0"
     },
     "jdk25-openj9-bin": {
-      "version": "jdk-25.0.2+10.1_openj9-0.57.0",
-      "gitref": "refs/tags/jdk-25.0.2+10.1_openj9-0.57.0",
-      "url": "https://github.com/ibmruntimes/semeru25-binaries/releases/tag/jdk-25.0.2%2B10.1_openj9-0.57.0"
+      "version": "jdk-25.0.3.0",
+      "gitref": "refs/tags/jdk-25.0.3.0",
+      "url": "https://github.com/ibmruntimes/semeru25-binaries/releases/tag/jdk-25.0.3.0"
     },
     "jsonpath-python": {
       "version": "1.1.5",
@@ -97,9 +100,9 @@
       "version": "14.3"
     },
     "mistral-vibe": {
-      "version": "v2.8.1",
-      "gitref": "refs/tags/v2.8.1",
-      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.8.1"
+      "version": "v2.9.3",
+      "gitref": "refs/tags/v2.9.3",
+      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.9.3"
     },
     "moonlight-qt": {
       "version": "v6.1.0",
@@ -132,9 +135,9 @@
       "version": "0.903"
     },
     "pupdate-bin": {
-      "version": "4.10.0",
-      "gitref": "refs/tags/4.10.0",
-      "url": "https://github.com/mattpannella/pupdate/releases/tag/4.10.0"
+      "version": "4.11.0",
+      "gitref": "refs/tags/4.11.0",
+      "url": "https://github.com/mattpannella/pupdate/releases/tag/4.11.0"
     },
     "pvsneslib": {
       "version": "4.5.0",
@@ -184,10 +187,10 @@
       "url": "https://github.com/ufo5260987423/scheme-langserver/releases/tag/2.0.3"
     },
     "svelte-language-server": {
-      "version": "typescript-svelte-plugin@0.3.51",
-      "gitref": "refs/tags/typescript-svelte-plugin@0.3.51",
-      "revision": "6f37b8057486b612f17ebe30891466671844df61",
-      "url": "https://github.com/sveltejs/language-tools/releases/tag/typescript-svelte-plugin@0.3.51"
+      "version": "typescript-svelte-plugin@0.3.52",
+      "gitref": "refs/tags/typescript-svelte-plugin@0.3.52",
+      "revision": "a03f2d21e708214dc0f9bc866b1860f87fa29afe",
+      "url": "https://github.com/sveltejs/language-tools/releases/tag/typescript-svelte-plugin@0.3.52"
     },
     "talanoa-bin": {
       "version": "v0.7.12",

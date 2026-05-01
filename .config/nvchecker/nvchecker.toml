@@ -45,7 +45,7 @@ source = "pacman"
 pacman = "intel-media-driver"
 strip_release = "true"
 
-[intel-oneapi-base-toolkit]
+[intel-oneapi]
 source = "cmd"
 cmd = "curl -sL 'https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html' | grep -oP 'targetValue2 = \"\\K[0-9.]+'"
 

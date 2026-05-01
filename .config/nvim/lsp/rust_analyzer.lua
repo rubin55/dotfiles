@@ -1,6 +1,9 @@
 return {
   settings = {
     ['rust-analyzer'] = {
+      cargo = {
+        features = "all",
+      },
       check = {
         command = 'clippy',
       },
@@ -8,6 +11,9 @@ return {
         fullFunctionSignatures = {
           enable = true,
         },
+      },
+      diagnostics = {
+        disabled = { "unlinked-file" },
       },
       hover = {
         maxSubstitutionLength = nil,
