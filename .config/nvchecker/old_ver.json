@@ -10,9 +10,9 @@
       "version": "2026.01.4"
     },
     "dev-proxy-bin": {
-      "version": "v2.3.4",
-      "gitref": "refs/tags/v2.3.4",
-      "url": "https://github.com/dotnet/dev-proxy/releases/tag/v2.3.4"
+      "version": "v2.4.0",
+      "gitref": "refs/tags/v2.4.0",
+      "url": "https://github.com/dotnet/dev-proxy/releases/tag/v2.4.0"
     },
     "devproxy-bin": {
       "version": "v1.2.1",
