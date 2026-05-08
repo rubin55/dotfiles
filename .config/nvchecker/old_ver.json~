@@ -10,9 +10,9 @@
       "version": "2026.01.4"
     },
     "dev-proxy-bin": {
-      "version": "v2.3.4",
-      "gitref": "refs/tags/v2.3.4",
-      "url": "https://github.com/dotnet/dev-proxy/releases/tag/v2.3.4"
+      "version": "v2.4.0",
+      "gitref": "refs/tags/v2.4.0",
+      "url": "https://github.com/dotnet/dev-proxy/releases/tag/v2.4.0"
     },
     "devproxy-bin": {
       "version": "v1.2.1",
@@ -65,9 +65,9 @@
       "url": "https://github.com/ibmruntimes/semeru25-binaries/releases/tag/jdk-25.0.3.0"
     },
     "jsonpath-python": {
-      "version": "1.1.5",
-      "gitref": "refs/tags/1.1.5",
-      "url": "https://github.com/sean2077/jsonpath-python/releases/tag/1.1.5"
+      "version": "1.1.6",
+      "gitref": "refs/tags/1.1.6",
+      "url": "https://github.com/sean2077/jsonpath-python/releases/tag/1.1.6"
     },
     "kotlin-language-server-bin": {
       "version": "1.3.13",
@@ -100,9 +100,9 @@
       "version": "14.3"
     },
     "mistral-vibe": {
-      "version": "v2.9.3",
-      "gitref": "refs/tags/v2.9.3",
-      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.9.3"
+      "version": "v2.9.5",
+      "gitref": "refs/tags/v2.9.5",
+      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.9.5"
     },
     "moonlight-qt": {
       "version": "v6.1.0",
@@ -187,10 +187,10 @@
       "url": "https://github.com/ufo5260987423/scheme-langserver/releases/tag/2.0.3"
     },
     "svelte-language-server": {
-      "version": "typescript-svelte-plugin@0.3.52",
-      "gitref": "refs/tags/typescript-svelte-plugin@0.3.52",
-      "revision": "a03f2d21e708214dc0f9bc866b1860f87fa29afe",
-      "url": "https://github.com/sveltejs/language-tools/releases/tag/typescript-svelte-plugin@0.3.52"
+      "version": "svelte-language-server@0.18.0",
+      "gitref": "refs/tags/svelte-language-server@0.18.0",
+      "revision": "19bc197b17e9eded3e892db4d0abf27bf5097618",
+      "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.18.0"
     },
     "talanoa-bin": {
       "version": "v0.7.12",
@@ -206,9 +206,9 @@
       "version": "14.3"
     },
     "yaml-language-server": {
-      "version": "1.22.0",
-      "gitref": "refs/tags/1.22.0",
-      "revision": "970952c50b4f819e0a137d902860a0074b63d0f6"
+      "version": "1.23.0",
+      "gitref": "refs/tags/1.23.0",
+      "revision": "558f181f395c3544df513a54536acbfb28832d5d"
     }
   }
 }
