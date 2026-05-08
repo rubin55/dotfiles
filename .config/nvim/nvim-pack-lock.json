@@ -9,11 +9,11 @@
       "src": "https://github.com/j-hui/fidget.nvim"
     },
     "fzf-lua": {
-      "rev": "64590411e6cf3d603d1e1bdad3a3d051f2f5a91a",
+      "rev": "33fe4b6f0c817c4d99a7baeea82c4d17e57efd64",
       "src": "https://github.com/ibhagwan/fzf-lua.git"
     },
     "haunt.nvim": {
-      "rev": "c46f7b014f6fd270bcf5715887fb43f55a70e68f",
+      "rev": "4436d30d1b0cf21177f1f6f199d76d0ba6bfc322",
       "src": "https://github.com/TheNoeTrevino/haunt.nvim.git"
     },
     "lualine.nvim": {
@@ -25,7 +25,7 @@
       "src": "https://github.com/EdenEast/nightfox.nvim.git"
     },
     "nvim-lspconfig": {
-      "rev": "31026a13eefb20681124706a79fc1df6bf11ab27",
+      "rev": "451d4ef9abd4f0f08e379ef0d55d1c391b6125a7",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-tree.lua": {
