@@ -126,11 +126,13 @@ vim.api.nvim_create_autocmd('BufReadPost', {
   end
 })
 
+-- Copy to clipboard convenience shortcuts. Overrides
+-- the default-but-unused-by-me Y and P key mappings.
+vim.keymap.set({'n', 'v'}, 'Y', '"+y', { desc = 'Copy to system clipboard' })
+vim.keymap.set({'n', 'v'}, 'P', '"+p', { desc = 'Paste from system clipboard' })
+
 -- Set a character for deleted lines in diff.
 vim.opt.fillchars:append { diff = '╱' }
-
--- Use system clipboard.
-vim.o.clipboard = 'unnamedplus'
 
 -- Enable highlighted of line where cursor is.
 vim.o.cursorline = true
