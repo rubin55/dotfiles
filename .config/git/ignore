@@ -1,1 +1,94 @@
+# General macOS related.
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Icon must end with two \r's.
+Icon
+
+# Thumbnails.
+._*
+
+# Files that might appear in the root of a volume.
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share.
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Fuse mount has handle open of a deleted file.
+.fuse_hidden*
+
+# KDE directory preferences.
+.directory
+
+# Linux trash folder.
+.Trash-*
+
+# NFS open file is removed but is still being accessed.
+.nfs*
+
+# Windows thumbnail cache files.
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+
+# Folder config file.
+[Dd]esktop.ini
+
+# Recycle Bin used on file shares.
+$RECYCLE.BIN/
+
+# Windows Installer files.
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+
+# Windows shortcuts.
+*.lnk
+
+# JetBrains (IntelliJ, Android Studio, etc).
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Eclipse.
+.metadata/
+.settings/
+.project
+.classpath
+
+# Visual Studio.
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# Visual Studio Code.
+.vscode/
+*.code-workspace
+
+# Zed.
+.zed/
+
+# Sublime Text.
+*.sublime-project
+*.sublime-workspace
+
+# Haunt.nvim bookmark location.
 .haunt/
+
