@@ -131,6 +131,18 @@ vim.api.nvim_create_autocmd('BufReadPost', {
 vim.keymap.set({'n', 'v'}, 'Y', '"+y', { desc = 'Copy to system clipboard' })
 vim.keymap.set({'n', 'v'}, 'P', '"+p', { desc = 'Paste from system clipboard' })
 
+-- Make shift-arrow move selection in normal mode.
+vim.keymap.set('n', '<S-Down>', 'v<Down>')
+vim.keymap.set('n', '<S-Up>', 'v<Up>')
+vim.keymap.set('n', '<S-Right>', 'v<Right>')
+vim.keymap.set('n', '<S-Left>', 'v<Left>')
+
+-- Make shift-arrow move selection in visual mode.
+vim.keymap.set('v', '<S-Down>', '<Down>')
+vim.keymap.set('v', '<S-Up>', '<Up>')
+vim.keymap.set('v', '<S-Right>', '<Right>')
+vim.keymap.set('v', '<S-Left>', '<Left>')
+
 -- Set a character for deleted lines in diff.
 vim.opt.fillchars:append { diff = '╱' }
 
