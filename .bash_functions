@@ -146,11 +146,17 @@ function title.set() {
 }
 
 function title.case() {
-  echo "$1" | tr '[:upper:]' '[:lower:]' | awk '{for(j=1;j<=NF;j++){ $j=toupper(substr($j,1,1)) substr ($j,2) }}1'
+  local s="${1,,}"
+  local result="" word
+  for word in $s; do
+    [[ -n $result ]] && result+=" "
+    result+="${word^}"
+  done
+  echo "$result"
 }
 
 function host.short-name() {
-  hostname | cut -d '.' -f 1
+  echo "${HOSTNAME%%.*}"
 }
 
 function openvpn.connect() {
