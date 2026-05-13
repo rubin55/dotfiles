@@ -38,12 +38,12 @@
       "version": "9.3"
     },
     "infer-bin": {
-      "version": "v1.2.0",
-      "gitref": "refs/tags/v1.2.0",
-      "url": "https://github.com/facebook/infer/releases/tag/v1.2.0"
+      "version": "v1.3.0",
+      "gitref": "refs/tags/v1.3.0",
+      "url": "https://github.com/facebook/infer/releases/tag/v1.3.0"
     },
     "intel-gmmlib": {
-      "version": "22.9.0"
+      "version": "22.10.0"
     },
     "intel-media-driver": {
       "version": "26.1.5"
