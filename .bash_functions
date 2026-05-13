@@ -44,10 +44,12 @@ function array.join() {
 function path.which() {
   local IFS=,
   local executables=($1)
-  local path="$(path.sanitize "$2")"
-  local which="$(which which)"
-  [[ $path ]] && local PATH=$path
-  $which ${executables[@]} > /dev/null 2>&1
+  local exe
+  [[ -n $2 ]] && local PATH="$(path.sanitize "$2")"
+  for exe in "${executables[@]}"; do
+    type -P "$exe" >/dev/null 2>&1 || return 1
+  done
+  return 0
 }
 
 function path.sanitize() {
