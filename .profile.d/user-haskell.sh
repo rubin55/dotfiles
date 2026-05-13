@@ -9,7 +9,13 @@ path.which awk,ln || return
 # have man pages.
 if path.which ghc "$HOME/.ghcup/bin"; then
   export PATH="$(path.append "$HOME/.ghcup/bin:$HOME/.cabal/bin" "$PATH")"
-  GHC_VERSION="$(ghc --version | awk 'NF>1{print $NF}')"
+  # Discover GHC version via directory glob (avoids forking ghc --version).
+  GHC_VERSION=""
+  for d in "$HOME/.ghcup/ghc/"*/; do
+    [[ -d $d ]] || continue
+    GHC_VERSION="${d%/}"
+    GHC_VERSION="${GHC_VERSION##*/}"
+  done
   MANPATH_NEW="$HOME/.ghcup/ghc/$GHC_VERSION/share/doc/ghc-$GHC_VERSION/users_guide/build-man"
   if [[ -d "$MANPATH_NEW" ]]; then
     if [[ ! -L "$MANPATH_NEW/man1" ]]; then
