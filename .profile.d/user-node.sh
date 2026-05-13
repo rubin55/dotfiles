@@ -16,22 +16,25 @@ if [[ -s "$HOME/.nvm/nvm.sh" ]]; then
   fi
 fi
 
-# Configure NPM prefix.
+# Configure NPM prefix to ~/.node if .npmrc doesn't already set one.
 if path.which node,npm; then
-  NODE_VERSION="$(node --version)"
-
-  # The npm command is slow, only do this if we have no .npmrc.
-  if [[ ! -e "$HOME/.npmrc" ]]; then
-    NPM_CURRENT_PREFIX="$(npm config get prefix)"
-    if [[ "$NPM_CURRENT_PREFIX" != *"$HOME"* ]]; then
-      npm config set prefix $HOME/.node/$NODE_VERSION
-      mkdir -p "$HOME/.node/$NODE_VERSION/bin"
-    fi
+  NODE_PREFIX=""
+  if [[ -e "$HOME/.npmrc" ]]; then
+    while IFS= read -r line; do
+      if [[ "$line" =~ ^[[:space:]]*prefix[[:space:]]*=[[:space:]]*(.*)$ ]]; then
+        NODE_PREFIX="${BASH_REMATCH[1]}"
+        NODE_PREFIX="${NODE_PREFIX/#\~/$HOME}"
+        break
+      fi
+    done < "$HOME/.npmrc"
   fi
-
-  # Add NPM_CURRENT_PREFIX/bin to path if not in path already.
-  export PATH=$(path.append "$HOME/.node/$NODE_VERSION/bin" "$PATH")
+  if [[ -z "$NODE_PREFIX" ]]; then
+    NODE_PREFIX="$HOME/.node"
+    npm config set prefix "$NODE_PREFIX"
+    mkdir -p "$NODE_PREFIX/bin"
+  fi
+  export PATH="$(path.append "$NODE_PREFIX/bin" "$PATH")"
 fi
 
 # Unset temporary variables.
-unset NODE_VERSION NPM_CURRENT_PREFIX MANPATH_NEW
+unset NODE_VERSION MANPATH_NEW NODE_PREFIX line
