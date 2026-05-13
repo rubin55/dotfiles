@@ -12,3 +12,6 @@ if [ -z "$CLANGD_FLAGS" ]; then
 else
   log.debug "Not setting clangd --query-driver globs, because CLANGD_FLAGS is already set.."
 fi
+
+# Unset temporary variables.
+unset clangd_globs
