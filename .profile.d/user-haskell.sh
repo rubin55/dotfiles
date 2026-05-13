@@ -30,4 +30,4 @@ if path.which ghc "$HOME/.ghcup/bin"; then
 fi
 
 # Unset temporary variables.
-unset GHC_VERSION MANPATH_NEW
+unset GHC_VERSION MANPATH_NEW d
