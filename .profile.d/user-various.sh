@@ -47,7 +47,7 @@ export XZ_DEFAULTS="-T 0"
 
 # If we have git and git-prompt.sh somewhere, source git-prompt.sh.
 if path.which git,git-prompt.sh; then
-  source "$(which git-prompt.sh)"
+  source "$(type -P git-prompt.sh)"
 else
   # Set up dummy __git_ps1 function since git-prompt.sh was not found.
   __git_ps1() { true; }
