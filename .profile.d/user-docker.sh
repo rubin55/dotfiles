@@ -18,7 +18,7 @@ unset DOCKER_CLI_PLUGINS_PATH
 
 # Check for a docker host string on this host.
 if [[ -e "$HOME/.docker/host.string" ]]; then
-  DOCKER_HOST="$(cat "$HOME/.docker/host.string")"
+  read -r DOCKER_HOST < "$HOME/.docker/host.string"
 fi
 
 # Check if minikube is available and if it's running first.
@@ -27,9 +27,14 @@ if path.which minikube && test -e "$HOME/.minikube/config/config.json" && miniku
   #log.info "Minikube is running, setting DOCKER_HOST=$DOCKER_HOST"
   log.info "Minikube is running, you could do: eval \$(minikube docker-env)"
 elif [[ -n "$DOCKER_HOST" ]]; then
-  DOCKER_TYPE=$(echo "$DOCKER_HOST" | cut -d: -f1)
-  DOCKER_ADDR=$(echo "$DOCKER_HOST" | cut -d: -f2 | sed 's|^.*//||g; s|^.*@||g')
-  DOCKER_PORT=$(echo "$DOCKER_HOST" | cut -d: -f3)
+  # Parse "scheme://[user@]host[:port]" with bash parameter expansion.
+  DOCKER_TYPE="${DOCKER_HOST%%:*}"
+  DOCKER_REST="${DOCKER_HOST#*://}"
+  DOCKER_REST="${DOCKER_REST##*@}"
+  DOCKER_ADDR="${DOCKER_REST%%:*}"
+  if [[ "$DOCKER_REST" == *:* ]]; then
+    DOCKER_PORT="${DOCKER_REST##*:}"
+  fi
 
   # If DOCKER_PORT is empty, get port number from DOCKER_TYPE.
   declare -A DOCKER_NAMED_PORTS=([ssh]=22 [tcp]=2375 [tcps]=2376)
@@ -60,4 +65,4 @@ elif [[ -n "$DOCKER_HOST" ]]; then
 fi
 
 # Unset temporary variables.
-unset DOCKER_CLI_PLUGINS_PATH DOCKER_TYPE DOCKER_ADDR DOCKER_PORT
+unset DOCKER_CLI_PLUGINS_PATH DOCKER_TYPE DOCKER_ADDR DOCKER_PORT DOCKER_REST
