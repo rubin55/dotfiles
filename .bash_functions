@@ -103,7 +103,26 @@ function path.append() {
 }
 
 function os.platform() {
-  [[ "$(uname -r)" =~ "icrosoft" ]] && echo windows || uname -s | tr '[:upper:]' '[:lower:]'
+  if [[ -z $_OS_PLATFORM ]]; then
+    case "$OSTYPE" in
+      linux*)
+        local v=""
+        [[ -r /proc/version ]] && read -r v < /proc/version
+        if [[ "${v,,}" == *microsoft* ]]; then
+          _OS_PLATFORM=windows
+        else
+          _OS_PLATFORM=linux
+        fi
+        ;;
+      darwin*)       _OS_PLATFORM=darwin ;;
+      cygwin*|msys*) _OS_PLATFORM=windows ;;
+      freebsd*)      _OS_PLATFORM=freebsd ;;
+      openbsd*)      _OS_PLATFORM=openbsd ;;
+      netbsd*)       _OS_PLATFORM=netbsd ;;
+      *)             _OS_PLATFORM="${OSTYPE%%[0-9.-]*}" ;;
+    esac
+  fi
+  echo "$_OS_PLATFORM"
 }
 
 function net.port-open() {
