@@ -19,9 +19,14 @@ fi
 # Set a shorter alias for kubectl.
 alias kc='kubectl'
 
-# Add completion support to bash.
-source <(kubectl completion bash)
+# Add completion support to bash, cached in /tmp (regenerated each boot).
+KUBECTL_COMPLETION_CACHE=/tmp/kubectl-completion.bash
+if [[ ! -f $KUBECTL_COMPLETION_CACHE ]]; then
+  kubectl completion bash > "$KUBECTL_COMPLETION_CACHE"
+fi
+source "$KUBECTL_COMPLETION_CACHE"
 complete -F __start_kubectl kc
+unset KUBECTL_COMPLETION_CACHE
 
 # Unset temporary variables.
 unset KUBECONFIG_NEW config
