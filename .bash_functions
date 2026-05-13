@@ -51,55 +51,53 @@ function path.which() {
 }
 
 function path.sanitize() {
-  local IFS=:
-  local filtered=$(echo "$*" | sed -e 's#^:##; s#//*#/#g; s#::*#:#g; s#/\(:\|$\)#\1#g')
-  local memory=()
-  read -r -a array <<< "$filtered"
+  local input="$1"
+  local -a parts
+  local element joined=":" result=""
 
-  for element in "${array[@]}"; do
-    if [[ ! " ${memory[@]} " =~ " ${element} " ]]; then
-      log.debug "I have no memory of '$element', adding to memory: ${memory[*]}"
-      memory+=($element)
-    else
-      log.debug "I do have memory of '$element', not adding to memory: ${memory[*]}"
-    fi
+  IFS=: read -ra parts <<< "$input"
+
+  for element in "${parts[@]}"; do
+    [[ -z $element ]] && continue
+    while [[ $element == *//* ]]; do
+      element="${element//\/\//\/}"
+    done
+    while [[ ${#element} -gt 1 && $element == */ ]]; do
+      element="${element%/}"
+    done
+    [[ $element == "/" ]] && continue
+    case "$joined" in
+      *":$element:"*) continue ;;
+    esac
+    result="${result:+$result:}$element"
+    joined="$joined$element:"
   done
 
-  echo "${memory[*]}"
+  echo "$result"
 }
 
 function path.append() {
-  local IFS=:
-  local source_path=($(path.sanitize "$1"))
-  local target_path=($(path.sanitize "$2"))
-  local no_check="$3"
-  local bad_elements=()
+  local source target no_check="$3"
+  source="$(path.sanitize "$1")"
+  target="$(path.sanitize "$2")"
+  local -a parts
+  local element joined=":$target:"
+  local result="$target"
 
-  if [[ -z $target_path ]]; then
-    log.debug "Target path empty, function will return source path: ${source_path[*]}"
-  fi
+  IFS=: read -ra parts <<< "$source"
 
-  for element in "${source_path[@]}"; do
-    if [[ ! " ${target_path[@]} " =~ " ${element} " ]]; then
-      if [[ $no_check ]]; then
-        log.debug "I don't have '$element' yet, adding to target: ${target_path[*]}"
-        target_path+=($element)
-      elif [[ $element && -e $element ]]; then
-        log.debug "I don't have '$element' yet, adding to target: ${target_path[*]}"
-        target_path+=($element)
-      else
-        bad_elements+=($element)
-      fi
-    else
-      log.debug "I have '$element' already, not adding to target: ${target_path[*]}"
+  for element in "${parts[@]}"; do
+    case "$joined" in
+      *":$element:"*) continue ;;
+    esac
+    if [[ -z $no_check && ! -e $element ]]; then
+      continue
     fi
+    result="${result:+$result:}$element"
+    joined="$joined$element:"
   done
 
-  if [[ -n $bad_elements ]]; then
-    log.debug "Ignoring non-existing elements: $(array.join , "${bad_elements[@]}")"
-  fi
-
-  echo "${target_path[*]}"
+  echo "$result"
 }
 
 function os.platform() {
