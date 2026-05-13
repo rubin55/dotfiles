@@ -1,20 +1,20 @@
 # ~/.bash_functions: a convenient library of bash functions.
 
+declare -A LOG_LEVELS=([DEBUG]=0 [INFO]=1 [WARN]=2 [ERROR]=3)
+
 function log() {
-  #echo "f: ${FUNCNAME[@]}" > /tmp/f.out
-  #echo "b: ${BASH_SOURCE[@]}" > /tmp/b.out
-  [[ -z $BASH_LOG_LEVEL ]] && active_log_level=INFO || active_log_level=$BASH_LOG_LEVEL
-  declare -A levels=([DEBUG]=0 [INFO]=1 [WARN]=2 [ERROR]=3)
   local level="$1"
+  [[ ${LOG_LEVELS[$level]} ]] || return 1
+  local active_log_level="${BASH_LOG_LEVEL:-INFO}"
+  (( ${LOG_LEVELS[$level]} < ${LOG_LEVELS[$active_log_level]} )) && return 2
+  local name
   if [[ "${FUNCNAME[2]}" == 'source' ]]; then
-      local name="$(basename ${BASH_SOURCE[2]})"
+    name="${BASH_SOURCE[2]##*/}"
   elif [[ "${BASH_SOURCE[3]}" ]]; then
-      local name="$(basename ${BASH_SOURCE[3]})"
+    name="${BASH_SOURCE[3]##*/}"
   else
-      local name="$(basename ${FUNCNAME[-1]})"
+    name="${FUNCNAME[-1]##*/}"
   fi
-  [[ ${levels[$level]} ]] || return 1
-  (( ${levels[$level]} < ${levels[$active_log_level]} )) && return 2
   shift 1
   echo "[${level}] ${name}: ${*}" >&2
 }
