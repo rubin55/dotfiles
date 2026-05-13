@@ -27,7 +27,13 @@ require('pragmatapro').setup()
 require('nvim-web-devicons').setup()
 
 -- Enable notifications.
-require('fidget').setup()
+require('fidget').setup({
+  notification = {
+    window = {
+      avoid = { 'NvimTree' }
+    }
+  }
+})
 
 -- Background light/dark based on DBUS inspection.
 local function set_bg_from_dbus()
@@ -374,7 +380,7 @@ fzf.setup({
     },
   },
   winopts = {
-    split = "belowright new"
+    split = 'belowright new'
   }
 })
 
