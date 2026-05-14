@@ -160,6 +160,11 @@ source = "github"
 github = "RainbowCookie32/rusty-psn"
 use_latest_release = "true"
 
+[samba]
+source = "pacman"
+pacman = "samba"
+strip_release = "true"
+
 [sbom-tool-bin]
 source = "github"
 github = "microsoft/sbom-tool"
