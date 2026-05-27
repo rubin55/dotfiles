@@ -71,9 +71,9 @@
       "url": "https://github.com/andwn/marsdev/releases/tag/v1.0.0-rc1"
     },
     "mistral-vibe": {
-      "version": "v2.9.6",
-      "gitref": "refs/tags/v2.9.6",
-      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.9.6"
+      "version": "v2.11.0",
+      "gitref": "refs/tags/v2.11.0",
+      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.11.0"
     },
     "moonlight-qt": {
       "version": "v6.1.0",
@@ -86,7 +86,7 @@
       "url": "https://github.com/Samsung/netcoredbg/releases/tag/3.1.3-1062"
     },
     "openshift-codeready-bin": {
-      "version": "2.60.1"
+      "version": "2.61.0"
     },
     "openshift-developer-bin": {
       "version": "v3.16.1"
@@ -109,18 +109,18 @@
       "url": "https://github.com/alekmaul/pvsneslib/releases/tag/4.5.0"
     },
     "python-agent-client-protocol": {
-      "version": "0.10.0",
-      "gitref": "refs/tags/0.10.0",
-      "url": "https://github.com/agentclientprotocol/python-sdk/releases/tag/0.10.0"
+      "version": "0.10.1",
+      "gitref": "refs/tags/0.10.1",
+      "url": "https://github.com/agentclientprotocol/python-sdk/releases/tag/0.10.1"
     },
     "rcu-bin": {
       "version": "v4.0.34"
     },
     "ruby-solargraph": {
-      "version": "v0.59.0",
-      "gitref": "refs/tags/v0.59.0",
-      "revision": "ac2355a26d1feea28b8bb5d117cacd45fa01cd44",
-      "url": "https://github.com/castwide/solargraph/releases/tag/v0.59.0"
+      "version": "v0.59.2",
+      "gitref": "refs/tags/v0.59.2",
+      "revision": "145423bc92c5bf29111e6cc21fbe33674bb82bb0",
+      "url": "https://github.com/castwide/solargraph/releases/tag/v0.59.2"
     },
     "ruby-yard-activesupport-concern": {
       "version": "v0.0.1",
@@ -140,7 +140,7 @@
       "url": "https://github.com/RainbowCookie32/rusty-psn/releases/tag/v0.5.10"
     },
     "samba": {
-      "version": "2:4.24.2"
+      "version": "2:4.24.3"
     },
     "sbom-tool-bin": {
       "version": "v4.1.5",
