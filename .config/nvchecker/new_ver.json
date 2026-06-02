@@ -7,9 +7,9 @@
       "revision": "b3956bda93ff3d45b644c7bc6d55e0e01c9b9a74"
     },
     "dev-proxy-bin": {
-      "version": "v2.4.0",
-      "gitref": "refs/tags/v2.4.0",
-      "url": "https://github.com/dotnet/dev-proxy/releases/tag/v2.4.0"
+      "version": "v3.0.0",
+      "gitref": "refs/tags/v3.0.0",
+      "url": "https://github.com/dotnet/dev-proxy/releases/tag/v3.0.0"
     },
     "fsautocomplete-bin": {
       "version": "v0.83.0",
@@ -39,9 +39,9 @@
       "version": "2026.0.0"
     },
     "intel-openvino": {
-      "version": "2026.1.0",
-      "gitref": "refs/tags/2026.1.0",
-      "url": "https://github.com/openvinotoolkit/openvino/releases/tag/2026.1.0"
+      "version": "2026.2.0",
+      "gitref": "refs/tags/2026.2.0",
+      "url": "https://github.com/openvinotoolkit/openvino/releases/tag/2026.2.0"
     },
     "jdk25-openj9-bin": {
       "version": "jdk-25.0.3.0",
@@ -71,9 +71,9 @@
       "url": "https://github.com/andwn/marsdev/releases/tag/v1.0.0-rc1"
     },
     "mistral-vibe": {
-      "version": "v2.11.0",
-      "gitref": "refs/tags/v2.11.0",
-      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.11.0"
+      "version": "v2.13.0",
+      "gitref": "refs/tags/v2.13.0",
+      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.13.0"
     },
     "moonlight-qt": {
       "version": "v6.1.0",
@@ -148,15 +148,15 @@
       "url": "https://github.com/microsoft/sbom-tool/releases/tag/v4.1.5"
     },
     "scheme-langserver-bin": {
-      "version": "2.0.3",
-      "gitref": "refs/tags/2.0.3",
-      "url": "https://github.com/ufo5260987423/scheme-langserver/releases/tag/2.0.3"
+      "version": "2.1.0",
+      "gitref": "refs/tags/2.1.0",
+      "url": "https://github.com/ufo5260987423/scheme-langserver/releases/tag/2.1.0"
     },
     "svelte-language-server": {
-      "version": "svelte-language-server@0.18.0",
-      "gitref": "refs/tags/svelte-language-server@0.18.0",
-      "revision": "19bc197b17e9eded3e892db4d0abf27bf5097618",
-      "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.18.0"
+      "version": "svelte-language-server@0.18.1",
+      "gitref": "refs/tags/svelte-language-server@0.18.1",
+      "revision": "3ae0f3f4c7e6594a1488b2b1d690e856bb8ad435",
+      "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.18.1"
     },
     "wolfram": {
       "version": "14.3"
