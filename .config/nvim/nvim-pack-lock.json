@@ -13,7 +13,7 @@
       "src": "https://github.com/ibhagwan/fzf-lua.git"
     },
     "haunt.nvim": {
-      "rev": "113c2f0689fc8c203f7f316da992e44b074a71ea",
+      "rev": "be28256ec96d39bf3951966b72c7b34519019993",
       "src": "https://github.com/TheNoeTrevino/haunt.nvim.git"
     },
     "lualine.nvim": {
@@ -25,11 +25,11 @@
       "src": "https://github.com/EdenEast/nightfox.nvim.git"
     },
     "nvim-lspconfig": {
-      "rev": "9573948c38bfabeec353ae7dd7d3ffec4c506a6b",
+      "rev": "ed19590a3a9792901553c388d1aadafce012f80d",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-tree.lua": {
-      "rev": "07f541fcaa4a5ae019598240362449ab7e9812b3",
+      "rev": "82f58063d67defc620e1ef8be606fc62a7b5dc1e",
       "src": "https://github.com/nvim-tree/nvim-tree.lua.git"
     },
     "nvim-treesitter": {
