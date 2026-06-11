@@ -135,9 +135,9 @@
       "version": "0.903"
     },
     "pupdate-bin": {
-      "version": "4.11.0",
-      "gitref": "refs/tags/4.11.0",
-      "url": "https://github.com/mattpannella/pupdate/releases/tag/4.11.0"
+      "version": "4.12.0",
+      "gitref": "refs/tags/4.12.0",
+      "url": "https://github.com/mattpannella/pupdate/releases/tag/4.12.0"
     },
     "pvsneslib": {
       "version": "4.5.0",
