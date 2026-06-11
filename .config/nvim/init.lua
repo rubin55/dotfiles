@@ -96,7 +96,7 @@ vim.api.nvim_create_autocmd('OptionSet', {
 })
 
 -- Set GUI font.
-vim.o.guifont = 'Monospace:h12.3:#e-subpixelantialias:#h-none'
+vim.o.guifont = 'Monospace:h11.2:#e-subpixelantialias:#h-none'
 
 -- Invoke DBUS-based background setting. Do this with a
 -- slight delay for Neovide, immediately on terminal.
