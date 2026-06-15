@@ -70,6 +70,18 @@ local function set_bg_from_dbus()
   end
 end
 
+local function set_theme_from_bg()
+  if vim.o.background == 'dark' then
+    vim.cmd.colorscheme('nightfox')
+  elseif vim.o.background == 'light' then
+    vim.cmd.colorscheme('dayfox')
+  end
+
+  if vim.g.neovide then
+    vim.g.neovide_theme = vim.o.background
+  end
+end
+
 -- Sets italic comments on any theme.
 vim.api.nvim_create_autocmd('ColorScheme', {
   callback = function()
@@ -79,20 +91,11 @@ vim.api.nvim_create_autocmd('ColorScheme', {
   end
 })
 
--- Sets theme based on background.
+-- Causes theme to be set when changing background with set bg.
 vim.api.nvim_create_autocmd('OptionSet', {
   pattern = 'background',
   nested = true,
-  callback = function()
-    if vim.o.background == 'dark' then
-      vim.cmd.colorscheme('nightfox')
-    elseif vim.o.background == 'light' then
-      vim.cmd.colorscheme('dayfox')
-    end
-    if vim.g.neovide then
-      vim.g.neovide_theme = vim.o.background
-    end
-  end
+  callback = set_theme_from_bg
 })
 
 -- Set GUI font.
@@ -115,11 +118,15 @@ if vim.g.neovide then
   vim.g.neovide_text_gamma = 0.8
   vim.api.nvim_create_autocmd('UIEnter', {
     callback = function()
-      vim.defer_fn(set_bg_from_dbus, 10)
+      vim.defer_fn(function()
+        set_bg_from_dbus()
+        set_theme_from_bg()
+      end, 10)
     end
   })
 else
   set_bg_from_dbus()
+  set_theme_from_bg()
 end
 
 -- Remember where you were in a file.
