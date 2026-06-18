@@ -156,17 +156,20 @@ vim.keymap.set('v', '<S-Up>', '<Up>')
 vim.keymap.set('v', '<S-Right>', '<Right>')
 vim.keymap.set('v', '<S-Left>', '<Left>')
 
+-- Remove the how-to-disable menu item.
+vim.cmd([[unmenu PopUp.How-to\ disable\ mouse]])
+
 -- Set a character for deleted lines in diff.
 vim.opt.fillchars:append { diff = '╱' }
+
+-- Preserve window proportions.
+vim.opt.equalalways = false
 
 -- Enable highlighted of line where cursor is.
 vim.o.cursorline = true
 
 -- Use block cursor always.
 vim.o.guicursor = 'a:block-blinkwait500-blinkon500-blinkoff500'
-
--- Remove the how-to-disable menu item.
-vim.cmd([[unmenu PopUp.How-to\ disable\ mouse]])
 
 -- Default tab behavior.
 vim.o.tabstop = 2
@@ -233,9 +236,31 @@ require('nvim-tree').setup({
     update_root = true
   },
   view = {
-    adaptive_size = true,
-    side = 'left'
+    side = 'left',
+    float = {
+      enable = true,
+      quit_on_focus_loss = true,
+      open_win_config = function()
+        local w = 40
+        local h = vim.o.lines - 2
+        return {
+          relative = 'editor',
+          border = 'none',
+          width = w,
+          height = h,
+          row = 0,
+          col = 0,
+        }
+      end,
+    },
   },
+  on_attach = function(bufnr)
+    -- Keep nvim-tree's default buffer-local keymaps.
+    require('nvim-tree.api').config.mappings.default_on_attach(bufnr)
+    -- Add local key mapping to discard nvim-tree with Esc.
+    vim.keymap.set('n', '<Esc>', require('nvim-tree.api').tree.close,
+      { desc = 'Close explorer', buffer = bufnr, nowait = true })
+    end,
 })
 
 vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<CR>', { desc = 'Toggle Explorer' })
