@@ -304,13 +304,27 @@ vim.keymap.set('c', '<CR>', function()
   if vim.fn.getcmdtype() == ':' and vim.fn.getcmdline() == 'bd' then
     vim.schedule(function()
       local bufnr = vim.api.nvim_get_current_buf()
-      vim.cmd('bprevious')
 
-      if bufnr == vim.api.nvim_get_current_buf() then
-        vim.cmd('enew')
+      -- Don't do anything on an empty, unmodified, unnamed buffer.
+      if vim.api.nvim_buf_get_name(bufnr) == ''
+        and vim.bo[bufnr].buftype == ''
+        and not vim.bo[bufnr].modified then
+        return
       end
 
-      vim.cmd('silent! bdelete ' .. bufnr)
+      local wins  = vim.fn.win_findbuf(bufnr)
+
+      if #wins > 1 then
+        -- Buffer is still open elsewhere: just blank this window.
+        vim.cmd('enew')
+      else
+        -- Last window, switch away, then delete.
+        vim.cmd('bprevious')
+        if bufnr == vim.api.nvim_get_current_buf() then
+          vim.cmd('enew')
+        end
+        vim.cmd('silent! bdelete ' .. bufnr)
+      end
     end)
 
     return '<C-c>'
