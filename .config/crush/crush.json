@@ -1,6 +1,7 @@
 {
   "options": {
     "disable_metrics": true
+    "global_context_paths": ["~/.config/crush/CRUSH.md"]
   },
   "permissions": {
     "allowed_tools": [
