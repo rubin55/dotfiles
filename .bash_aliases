@@ -18,6 +18,7 @@ alias grep='grep --color=auto'
 # Various commonly used commands.
 alias alacritty-theme='alacritty-theme.sh'
 alias amqctl='amqctl.sh'
+alias crush='crush.sh'
 alias dstat='dool'
 alias gnome-accent='gnome-accent.sh'
 alias gnome-random-background='gnome-random-background.py'

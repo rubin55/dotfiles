@@ -1,0 +1,14 @@
+{
+    "permissions": {
+      "allowed_tools": [
+        "view",
+        "ls",
+        "glob",
+        "grep",
+        "lsp_diagnostics",
+        "lsp_references",
+        "agent",
+        "todos"
+      ]
+    }
+  }
