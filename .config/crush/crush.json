@@ -1,14 +1,17 @@
 {
-    "permissions": {
-      "allowed_tools": [
-        "view",
-        "ls",
-        "glob",
-        "grep",
-        "lsp_diagnostics",
-        "lsp_references",
-        "agent",
-        "todos"
-      ]
-    }
+  "options": {
+    "disable_metrics": true
+  },
+  "permissions": {
+    "allowed_tools": [
+      "view",
+      "ls",
+      "glob",
+      "grep",
+      "lsp_diagnostics",
+      "lsp_references",
+      "agent",
+      "todos"
+    ]
   }
+}
