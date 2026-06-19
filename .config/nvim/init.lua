@@ -249,18 +249,11 @@ require('nvim-tree').setup({
           width = w,
           height = h,
           row = 0,
-          col = 0,
+          col = 0
         }
-      end,
-    },
-  },
-  on_attach = function(bufnr)
-    -- Keep nvim-tree's default buffer-local keymaps.
-    require('nvim-tree.api').config.mappings.default_on_attach(bufnr)
-    -- Add local key mapping to discard nvim-tree with Esc.
-    vim.keymap.set('n', '<Esc>', require('nvim-tree.api').tree.close,
-      { desc = 'Close explorer', buffer = bufnr, nowait = true })
-    end,
+      end
+    }
+  }
 })
 
 vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<CR>', { desc = 'Toggle Explorer' })
@@ -289,6 +282,17 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
   end
 })
+
+-- Dismiss floating windows, such as LSP hover from K and nvim-tree.
+vim.keymap.set('n', '<Esc>', function()
+  local wins = vim.list_extend({ vim.api.nvim_get_current_win() }, vim.api.nvim_list_wins())
+  for _, win in ipairs(wins) do
+    if vim.api.nvim_win_get_config(win).relative ~= '' then
+      vim.api.nvim_win_close(win, false)
+      return
+    end
+  end
+end, { desc = 'Close floating window', nowait = true })
 
 -- Shift-enter in terminal sends newline.
 vim.api.nvim_create_autocmd('TermOpen', {
