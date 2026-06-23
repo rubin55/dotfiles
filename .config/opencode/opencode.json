@@ -18,7 +18,7 @@
     "lsp": "allow",
     "todoread": "allow"
   },
-   "provider": {
+  "provider": {
     "local": {
       "npm": "@ai-sdk/openai-compatible",
       "name": "Llama.cpp (local)",
@@ -31,5 +31,6 @@
         }
       }
     }
-  }
+  },
+  "small_model": "openrouter/google/gemma-4-31b-it:free"
 }
