@@ -1,0 +1,12 @@
+[notebook]
+dir = "~/Documents/Rubin/Notes"
+
+[note]
+filename = "{{slug title}}"
+extension = "md"
+
+[format.markdown]
+hashtags = true
+
+[tool]
+editor = "nvim.sh"
