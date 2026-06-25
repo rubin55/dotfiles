@@ -45,6 +45,9 @@ export LESS_TERMCAP_se=$'\e[0m'
 # Make xz use multiple threads by default.
 export XZ_DEFAULTS="-T 0"
 
+# Zettelkasten notebook directory.
+export ZK_NOTEBOOK_DIR="$HOME/Documents/Rubin/Notes"
+
 # If we have git and git-prompt.sh somewhere, source git-prompt.sh.
 if path.which git,git-prompt.sh; then
   source "$(type -P git-prompt.sh)"
