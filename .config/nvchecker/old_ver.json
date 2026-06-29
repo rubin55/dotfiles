@@ -100,9 +100,9 @@
       "version": "14.3"
     },
     "mistral-vibe": {
-      "version": "v2.17.1",
-      "gitref": "refs/tags/v2.17.1",
-      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.17.1"
+      "version": "v2.18.0",
+      "gitref": "refs/tags/v2.18.0",
+      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.18.0"
     },
     "moonlight-qt": {
       "version": "v6.1.0",
@@ -110,9 +110,9 @@
       "url": "https://github.com/moonlight-stream/moonlight-qt/releases/tag/v6.1.0"
     },
     "netcoredbg": {
-      "version": "3.1.3-1062",
-      "gitref": "refs/tags/3.1.3-1062",
-      "url": "https://github.com/Samsung/netcoredbg/releases/tag/3.1.3-1062"
+      "version": "3.2.0-1092",
+      "gitref": "refs/tags/3.2.0-1092",
+      "url": "https://github.com/Samsung/netcoredbg/releases/tag/3.2.0-1092"
     },
     "openshift-codeready-bin": {
       "version": "2.61.0"
@@ -135,9 +135,9 @@
       "version": "0.903"
     },
     "pupdate-bin": {
-      "version": "4.14.0",
-      "gitref": "refs/tags/4.14.0",
-      "url": "https://github.com/mattpannella/pupdate/releases/tag/4.14.0"
+      "version": "5.0.0",
+      "gitref": "refs/tags/5.0.0",
+      "url": "https://github.com/mattpannella/pupdate/releases/tag/5.0.0"
     },
     "pvsneslib": {
       "version": "4.5.0",
@@ -154,10 +154,10 @@
       "version": "v4.0.34"
     },
     "ruby-solargraph": {
-      "version": "v0.60.1",
-      "gitref": "refs/tags/v0.60.1",
-      "revision": "230993db4fca1699721fe050d639df466cae9013",
-      "url": "https://github.com/castwide/solargraph/releases/tag/v0.60.1"
+      "version": "v0.60.2",
+      "gitref": "refs/tags/v0.60.2",
+      "revision": "24fd7c5c52b363dbce23c96058c0fa2f91b2f50d",
+      "url": "https://github.com/castwide/solargraph/releases/tag/v0.60.2"
     },
     "ruby-yard-activesupport-concern": {
       "version": "v0.0.1",
@@ -206,7 +206,7 @@
       "url": "https://github.com/exislow/tidal-dl-ng/releases/tag/v0.33.0"
     },
     "wolfram": {
-      "version": "14.3"
+      "version": "15"
     },
     "yaml-language-server": {
       "version": "1.23.0",
