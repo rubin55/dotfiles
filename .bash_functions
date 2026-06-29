@@ -171,6 +171,10 @@ function openvpn.connect() {
   fi
 }
 
+function line.separator() {
+  printf "\n\e[31m%$(tput cols)s\e[0m\n\n" | tr ' ' -;
+}
+
 function count.down() {
   local seconds=$1
   trap 'echo; trap - SIGINT; return' SIGINT
