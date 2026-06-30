@@ -184,8 +184,14 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.wildignorecase = true
 
--- Configure linebreak on words.
+-- Enable linebreak on words, word wrap.
 vim.o.linebreak = true
+vim.o.wrap = true
+
+-- Set toggle word wrap key.
+vim.keymap.set("n", "tw", function()
+  vim.wo.wrap = not vim.wo.wrap
+end, { desc = "Toggle word wrap" })
 
 -- Configure window border.
 vim.o.winborder = 'solid'
