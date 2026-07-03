@@ -1,20 +1,22 @@
 {
-  "lastChangelogVersion": "0.80.2",
-  "theme": "dark",
-  "defaultModel": "glm-5.2",
-  "defaultProvider": "neuralwatt",
-  "defaultThinkingLevel": "xhigh",
   "compaction": {
     "enabled": false
   },
+  "defaultModel": "glm-5.2",
+  "defaultProvider": "neuralwatt",
+  "defaultThinkingLevel": "xhigh",
+  "defaultProjectTrust": "ask",
+  "enableInstallTelemetry": false,
+  "hideThinkingBlock": true,
   "images": {
     "autoResize": false
   },
-  "enableInstallTelemetry": false,
-  "defaultProjectTrust": "ask",
+  "lastChangelogVersion": "0.80.3",
   "packages": [
     "npm:pi-effort",
     "npm:pi-permission-system",
-    "git:github.com/rubin55/pi-neuralwatt"
-  ]
+    "git:github.com/rubin55/pi-neuralwatt",
+    "npm:pi-terminal-theme"
+  ],
+  "theme": "terminal"
 }
