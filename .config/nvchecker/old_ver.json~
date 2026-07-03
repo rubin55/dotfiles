@@ -10,9 +10,9 @@
       "version": "2026.01.4"
     },
     "dev-proxy-bin": {
-      "version": "v3.0.1",
-      "gitref": "refs/tags/v3.0.1",
-      "url": "https://github.com/dotnet/dev-proxy/releases/tag/v3.0.1"
+      "version": "v3.1.0",
+      "gitref": "refs/tags/v3.1.0",
+      "url": "https://github.com/dotnet/dev-proxy/releases/tag/v3.1.0"
     },
     "devproxy-bin": {
       "version": "v1.2.1",
@@ -100,9 +100,9 @@
       "version": "14.3"
     },
     "mistral-vibe": {
-      "version": "v2.18.2",
-      "gitref": "refs/tags/v2.18.2",
-      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.18.2"
+      "version": "v2.18.4",
+      "gitref": "refs/tags/v2.18.4",
+      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.18.4"
     },
     "moonlight-qt": {
       "version": "v6.1.0",
@@ -115,7 +115,7 @@
       "url": "https://github.com/Samsung/netcoredbg/releases/tag/3.2.0-1092"
     },
     "openshift-codeready-bin": {
-      "version": "2.61.0"
+      "version": "2.62.0"
     },
     "openshift-developer-bin": {
       "version": "v3.16.1"
@@ -135,9 +135,9 @@
       "version": "0.903"
     },
     "pupdate-bin": {
-      "version": "5.0.0",
-      "gitref": "refs/tags/5.0.0",
-      "url": "https://github.com/mattpannella/pupdate/releases/tag/5.0.0"
+      "version": "5.1.0",
+      "gitref": "refs/tags/5.1.0",
+      "url": "https://github.com/mattpannella/pupdate/releases/tag/5.1.0"
     },
     "pvsneslib": {
       "version": "4.5.0",
