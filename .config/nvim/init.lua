@@ -422,7 +422,7 @@ local actions = require('fzf-lua.actions')
 
 fzf.setup({
   'borderless',
-  ui_select = true,
+  ui_select = {},
   actions = {
     files = {
       true,
