@@ -135,9 +135,9 @@
       "version": "0.903"
     },
     "pupdate-bin": {
-      "version": "5.2.0",
-      "gitref": "refs/tags/5.2.0",
-      "url": "https://github.com/mattpannella/pupdate/releases/tag/5.2.0"
+      "version": "5.3.0",
+      "gitref": "refs/tags/5.3.0",
+      "url": "https://github.com/mattpannella/pupdate/releases/tag/5.3.0"
     },
     "pvsneslib": {
       "version": "4.5.0",
@@ -146,9 +146,9 @@
       "url": "https://github.com/alekmaul/pvsneslib/releases/tag/4.5.0"
     },
     "python-agent-client-protocol": {
-      "version": "0.10.1",
-      "gitref": "refs/tags/0.10.1",
-      "url": "https://github.com/agentclientprotocol/python-sdk/releases/tag/0.10.1"
+      "version": "0.11.0",
+      "gitref": "refs/tags/0.11.0",
+      "url": "https://github.com/agentclientprotocol/python-sdk/releases/tag/0.11.0"
     },
     "rcu-bin": {
       "version": "v4.0.34"
