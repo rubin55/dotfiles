@@ -135,9 +135,9 @@
       "version": "0.903"
     },
     "pupdate-bin": {
-      "version": "5.3.0",
-      "gitref": "refs/tags/5.3.0",
-      "url": "https://github.com/mattpannella/pupdate/releases/tag/5.3.0"
+      "version": "5.3.1",
+      "gitref": "refs/tags/5.3.1",
+      "url": "https://github.com/mattpannella/pupdate/releases/tag/5.3.1"
     },
     "pvsneslib": {
       "version": "4.5.0",
@@ -190,10 +190,10 @@
       "url": "https://github.com/ufo5260987423/scheme-langserver/releases/tag/2.1.5"
     },
     "svelte-language-server": {
-      "version": "svelte-check@4.7.1",
-      "gitref": "refs/tags/svelte-check@4.7.1",
-      "revision": "806dc47cd37ab08c32b1bd9cf46b9d8dea30e189",
-      "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-check@4.7.1"
+      "version": "svelte-check@4.7.2",
+      "gitref": "refs/tags/svelte-check@4.7.2",
+      "revision": "8a9ca3d7c452e71412e16f93b486708fd9a7d7b2",
+      "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-check@4.7.2"
     },
     "talanoa-bin": {
       "version": "v0.7.12",
@@ -209,9 +209,9 @@
       "version": "15"
     },
     "yaml-language-server": {
-      "version": "1.23.0",
-      "gitref": "refs/tags/1.23.0",
-      "revision": "558f181f395c3544df513a54536acbfb28832d5d"
+      "version": "1.24.0",
+      "gitref": "refs/tags/1.24.0",
+      "revision": "95ef21be3c25bc38338542afa643b8d30bebd298"
     }
   }
 }
