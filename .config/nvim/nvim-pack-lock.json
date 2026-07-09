@@ -29,7 +29,7 @@
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-tree.lua": {
-      "rev": "35d3511e7ad4cbfa44c78c406db663b6e2a07c0d",
+      "rev": "a797d5e20133fc031fba4aa7d1272f5b1d950a1c",
       "src": "https://github.com/nvim-tree/nvim-tree.lua.git"
     },
     "nvim-treesitter": {
