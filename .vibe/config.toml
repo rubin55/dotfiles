@@ -6,7 +6,6 @@ displayed_workdir = ""
 auto_compact_threshold = 200000
 context_warnings = false
 auto_approve = false
-system_prompt_id = "custom"
 include_commit_signature = true
 include_model_info = true
 include_project_context = true
