@@ -1,7 +1,6 @@
 # Custom user prompt
 
-Be terse in your responses. When writing code, prefer the idiomatic style of the language, and prefer as-simple-as-possible solutions. When writing
-comments, prefer short, one-line comments over elaborate paragraphs.
+Be terse in your responses. When writing code, prefer the idiomatic style of the language, and prefer as-simple-as-possible solutions. When writing comments, prefer short, one-line comments over elaborate paragraphs.
 
 When writing documentation or comments, don't use em dashes, don't use en dashes. Aim for a neutral, calm and succinct style.
 
