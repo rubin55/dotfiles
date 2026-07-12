@@ -6,33 +6,25 @@
       "gitref": "refs/tags/2.5.3",
       "revision": "b3956bda93ff3d45b644c7bc6d55e0e01c9b9a74"
     },
-    "cypher-shell": {
-      "version": "2026.01.4"
-    },
     "dev-proxy-bin": {
       "version": "v3.1.0",
       "gitref": "refs/tags/v3.1.0",
       "url": "https://github.com/dotnet/dev-proxy/releases/tag/v3.1.0"
-    },
-    "devproxy-bin": {
-      "version": "v1.2.1",
-      "gitref": "refs/tags/v1.2.1",
-      "url": "https://github.com/dotnet/dev-proxy/releases/tag/v1.2.1"
     },
     "fsautocomplete-bin": {
       "version": "v0.83.0",
       "gitref": "refs/tags/v0.83.0",
       "url": "https://github.com/ionide/FsAutoComplete/releases/tag/v0.83.0"
     },
+    "ghcup-hs": {
+      "version": "v0.2.6.2",
+      "gitref": "refs/tags/v0.2.6.2",
+      "url": "https://github.com/haskell/ghcup-hs/releases/tag/v0.2.6.2"
+    },
     "gnome-shell-extension-tiling-shell": {
       "version": "17.3",
       "gitref": "refs/tags/17.3",
       "url": "https://github.com/domferr/tilingshell/releases/tag/17.3"
-    },
-    "husky": {
-      "version": "v9.1.7",
-      "gitref": "refs/tags/v9.1.7",
-      "url": "https://github.com/typicode/husky/releases/tag/v9.1.7"
     },
     "ida-pro": {
       "version": "9.3"
@@ -51,9 +43,6 @@
     "intel-oneapi": {
       "version": "2026.0.0"
     },
-    "intel-oneapi-base-toolkit": {
-      "version": "2025.3.2"
-    },
     "intel-openvino": {
       "version": "2026.2.1",
       "gitref": "refs/tags/2026.2.1",
@@ -69,20 +58,14 @@
       "gitref": "refs/tags/1.1.6",
       "url": "https://github.com/sean2077/jsonpath-python/releases/tag/1.1.6"
     },
-    "kotlin-language-server-bin": {
-      "version": "1.3.13",
-      "gitref": "refs/tags/1.3.13",
-      "url": "https://github.com/fwcd/kotlin-language-server/releases/tag/1.3.13"
-    },
     "leanux": {
       "version": "2.0.1",
       "gitref": "refs/tags/2.0.1",
       "url": "https://github.com/jmspit/leanux/releases/tag/2.0.1"
     },
-    "lexical-bin": {
-      "version": "v0.7.3",
-      "gitref": "refs/tags/v0.7.3",
-      "url": "https://github.com/lexical-lsp/lexical/releases/tag/v0.7.3"
+    "llama.cpp": {
+      "version": "e3546c7948e3af463d0b401e6421d5a4c2faf565",
+      "revision": "e3546c7948e3af463d0b401e6421d5a4c2faf565"
     },
     "marksman": {
       "version": "2026-02-08",
@@ -96,18 +79,18 @@
       "revision": "9de7602716e320d3d653712ec60d7b0e1ec22f4e",
       "url": "https://github.com/andwn/marsdev/releases/tag/v1.0.0-rc1"
     },
-    "mathematica": {
-      "version": "14.3"
-    },
     "mistral-vibe": {
-      "version": "v2.19.0",
-      "gitref": "refs/tags/v2.19.0",
-      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.19.0"
+      "version": "v2.19.1",
+      "gitref": "refs/tags/v2.19.1",
+      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.19.1"
     },
     "moonlight-qt": {
       "version": "v6.1.0",
       "gitref": "refs/tags/v6.1.0",
       "url": "https://github.com/moonlight-stream/moonlight-qt/releases/tag/v6.1.0"
+    },
+    "nand2tetris": {
+      "version": "1IkIR8Pwq3PY49QgXpUJOkUUVht-TKIET"
     },
     "netcoredbg": {
       "version": "3.2.0-1092",
@@ -124,12 +107,7 @@
       "version": "1.20.0"
     },
     "passmark-performancetest-bin": {
-      "version": "v11.0 Build 1004"
-    },
-    "postman2openapi-bin": {
-      "version": "1.2.1",
-      "gitref": "refs/tags/1.2.1",
-      "url": "https://github.com/kevinswiber/postman2openapi/releases/tag/1.2.1"
+      "version": "v11.0.1004"
     },
     "pragmatapro-fonts": {
       "version": "0.903"
@@ -153,11 +131,37 @@
     "rcu-bin": {
       "version": "v4.0.34"
     },
+    "retro68": {
+      "version": "335fa54f6d8ad1360840f08a067ffede7f554300",
+      "revision": "335fa54f6d8ad1360840f08a067ffede7f554300"
+    },
+    "ruby-commander": {
+      "version": "v5.0.0",
+      "gitref": "refs/tags/v5.0.0",
+      "revision": "f541af8b43bee0cbae025cc48dd8cc72076abbcb",
+      "url": "https://github.com/commander-rb/commander/releases/tag/v5.0.0"
+    },
+    "ruby-parlour": {
+      "version": "9.1.2",
+      "gitref": "refs/tags/9.1.2",
+      "revision": "29145fa465d3ae4860c84e51d608322b0c78bb8b",
+      "url": "https://github.com/AaronC81/parlour/releases/tag/9.1.2"
+    },
+    "ruby-rubocop-yard": {
+      "version": "1.3.0",
+      "gitref": "refs/tags/v1.3.0",
+      "revision": "2239ff3f04ebffbe4369aab20cc61a1aac9fa0f6",
+      "url": "https://github.com/ksss/rubocop-yard/releases/tag/v1.3.0"
+    },
     "ruby-solargraph": {
       "version": "v0.60.2",
       "gitref": "refs/tags/v0.60.2",
       "revision": "24fd7c5c52b363dbce23c96058c0fa2f91b2f50d",
       "url": "https://github.com/castwide/solargraph/releases/tag/v0.60.2"
+    },
+    "ruby-sord": {
+      "version": "7.1.0",
+      "url": "https://rubygems.org/gems/sord/versions/7.1.0"
     },
     "ruby-yard-activesupport-concern": {
       "version": "v0.0.1",
@@ -195,15 +199,11 @@
       "revision": "8a9ca3d7c452e71412e16f93b486708fd9a7d7b2",
       "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-check@4.7.2"
     },
-    "talanoa-bin": {
-      "version": "v0.7.12",
-      "gitref": "refs/tags/v0.7.12",
-      "url": "https://github.com/talanoa-email/desktop-releases/releases/tag/v0.7.12"
-    },
     "tidal-dl-ng": {
-      "version": "v0.33.0",
-      "gitref": "refs/tags/v0.33.0",
-      "url": "https://github.com/exislow/tidal-dl-ng/releases/tag/v0.33.0"
+      "version": "0.33.0"
+    },
+    "winexe": {
+      "version": "4.24.4"
     },
     "wolfram": {
       "version": "15"

@@ -20,6 +20,11 @@ source = "github"
 github = "ionide/FsAutoComplete"
 use_latest_release = "true"
 
+[ghcup-hs]
+source = "github"
+github = "haskell/ghcup-hs"
+use_latest_release = "true"
+
 [gnome-shell-extension-tiling-shell]
 source = "github"
 github = "domferr/tilingshell"
@@ -64,6 +69,11 @@ source = "github"
 github = "ibmruntimes/semeru25-binaries"
 use_latest_release = "true"
 
+["llama.cpp"]
+source = "git"
+git = "https://github.com/ggml-org/llama.cpp.git"
+use_commit = true
+
 [leanux]
 source = "github"
 github = "jmspit/leanux"
@@ -89,6 +99,12 @@ source = "github"
 github = "moonlight-stream/moonlight-qt"
 use_latest_release = "true"
 
+[nand2tetris]
+source = "regex"
+url = "https://www.nand2tetris.org/software"
+regex = "drive\\.google\\.com/open\\?id=([A-Za-z0-9_-]+)"
+user_agent = "Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0"
+
 [netcoredbg]
 source = "github"
 github = "Samsung/netcoredbg"
@@ -109,10 +125,13 @@ source = "regex"
 regex = "\\d+\\.\\d+\\.\\d+"
 url = "https://mirror.openshift.com/pub/openshift-v4/clients/pipelines/"
 
-#[passmark-performancetest-bin]
-#source = "regex"
-#regex = ", (v\\d+\\.\\d+ Build \\d+), "
-#url = "https://www.passmark.com/products/pt_linux/download.php"
+[passmark-performancetest-bin]
+source = "regex"
+regex = ", (v\\d+\\.\\d+ Build \\d+), "
+url = "https://www.passmark.com/products/pt_linux/download.php"
+from_pattern = " Build "
+to_pattern = "."
+user_agent = "Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/128.0"
 
 [pragmatapro-fonts]
 source = "regex"
@@ -140,6 +159,36 @@ regex = "v\\d+\\.\\d+\\.\\d+"
 url = "https://files.davisr.me/projects/rcu/download-59ck3sdT/"
 verify_cert = false
 
+[retro68]
+source = "git"
+git = "https://github.com/autc04/Retro68.git"
+use_commit = true
+
+[ruby-commander]
+source = "github"
+github = "commander-rb/commander"
+use_latest_tag = "true"
+
+[ruby-parlour]
+source = "github"
+github = "AaronC81/parlour"
+use_latest_tag = "true"
+
+[ruby-rubocop-yard]
+source = "github"
+github = "ksss/rubocop-yard"
+use_latest_tag = "true"
+prefix = "v"
+
+[ruby-solargraph]
+source = "github"
+github = "castwide/solargraph"
+use_latest_tag = "true"
+
+[ruby-sord]
+source = "gems"
+gems = "sord"
+
 [ruby-yard-activesupport-concern]
 source = "github"
 github = "digitalcuisine/yard-activesupport-concern"
@@ -148,11 +197,6 @@ use_latest_tag = "true"
 [ruby-yard-solargraph]
 source = "github"
 github = "castwide/yard-solargraph"
-use_latest_tag = "true"
-
-[ruby-solargraph]
-source = "github"
-github = "castwide/solargraph"
 use_latest_tag = "true"
 
 [rusty-psn-bin]
@@ -180,10 +224,16 @@ source = "github"
 github = "sveltejs/language-tools"
 use_latest_tag = "true"
 
-#[tidal-dl-ng]
-#source = "github"
-#github = "exislow/tidal-dl-ng"
-#use_latest_release = "true"
+[tidal-dl-ng]
+source = "cmd"
+cmd = "curl -sL 'https://archive.org/advancedsearch.php?q=tidal_dl_ng-&fl[]=identifier&sort[]=date+desc&rows=50&output=json' | grep -oE 'tidal_dl_ng-[0-9]+\\.[0-9]+(\\.[0-9]+)*' | head -1 | sed 's/tidal_dl_ng-//'"
+
+[winexe]
+source = "pacman"
+pacman = "samba"
+strip_release = "true"
+from_pattern = "^\\d+:"
+to_pattern = ""
 
 [wolfram]
 source = "regex"
