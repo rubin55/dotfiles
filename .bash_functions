@@ -171,7 +171,7 @@ function openvpn.connect() {
   fi
 }
 
-function line.separator() {
+function title.line() {
   local s
   if [[ -n "$1" ]]; then s="-- $1 "; else s=""; fi
   printf "\n\e[31m%s%s\e[0m\n\n" "$s" "$(printf '%*s' $(($(tput cols)-${#s})) ''|tr ' ' -)"
