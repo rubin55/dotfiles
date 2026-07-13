@@ -64,8 +64,8 @@
       "url": "https://github.com/jmspit/leanux/releases/tag/2.0.1"
     },
     "llama.cpp": {
-      "version": "91c631b21d6e5d09e9c6659efdf6baeef5a44ddb",
-      "revision": "91c631b21d6e5d09e9c6659efdf6baeef5a44ddb"
+      "version": "6b4dc2116a92c5c8f2782bfe51fabe5ee66fb5ef",
+      "revision": "6b4dc2116a92c5c8f2782bfe51fabe5ee66fb5ef"
     },
     "marksman": {
       "version": "2026-02-08",
