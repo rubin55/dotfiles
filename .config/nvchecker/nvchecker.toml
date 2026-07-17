@@ -143,6 +143,11 @@ source = "github"
 github = "agentclientprotocol/python-sdk"
 use_latest_release = true
 
+[python-hatchling]
+source = "pacman"
+pacman = "python-hatchling"
+strip_release = "true"
+
 [pupdate-bin]
 source = "github"
 github = "mattpannella/pupdate"
