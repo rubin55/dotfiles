@@ -64,8 +64,8 @@
       "url": "https://github.com/jmspit/leanux/releases/tag/2.0.1"
     },
     "llama.cpp": {
-      "version": "0bd0ec60998d0f71ec45471b633bf2403ac81956",
-      "revision": "0bd0ec60998d0f71ec45471b633bf2403ac81956"
+      "version": "6bdd77f13cf11b264b4231d320afc404f48d576e",
+      "revision": "6bdd77f13cf11b264b4231d320afc404f48d576e"
     },
     "marksman": {
       "version": "2026-02-08",
@@ -80,9 +80,9 @@
       "url": "https://github.com/andwn/marsdev/releases/tag/v1.0.0-rc1"
     },
     "mistral-vibe": {
-      "version": "v2.20.0",
-      "gitref": "refs/tags/v2.20.0",
-      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.20.0"
+      "version": "v2.21.0",
+      "gitref": "refs/tags/v2.21.0",
+      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.21.0"
     },
     "moonlight-qt": {
       "version": "v6.1.0",

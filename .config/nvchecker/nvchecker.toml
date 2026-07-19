@@ -229,9 +229,9 @@ source = "github"
 github = "sveltejs/language-tools"
 use_latest_tag = "true"
 
-[tidal-dl-ng]
-source = "cmd"
-cmd = "curl -sL 'https://archive.org/advancedsearch.php?q=tidal_dl_ng-&fl[]=identifier&sort[]=date+desc&rows=50&output=json' | grep -oE 'tidal_dl_ng-[0-9]+\\.[0-9]+(\\.[0-9]+)*' | head -1 | sed 's/tidal_dl_ng-//'"
+#[tidal-dl-ng]
+#source = "cmd"
+#cmd = "curl -sL 'https://archive.org/advancedsearch.php?q=tidal_dl_ng-&fl[]=identifier&sort[]=date+desc&rows=50&output=json' | grep -oE 'tidal_dl_ng-[0-9]+\\.[0-9]+(\\.[0-9]+)*' | head -1 | sed 's/tidal_dl_ng-//'"
 
 [winexe]
 source = "pacman"
