@@ -17,6 +17,10 @@ Building Arch Linux packages locally, either from AUR or custom/local only.
 - `~/.makepkg.conf` — user makepkg config (authoritative for OPTIONS, env vars).
 - `/etc/makepkg.conf` —  system makepkg config, should be unmodified (i.e., default from package)
 
+## Note about makepkg in general
+
+You don't have to manually remove/create builddirs, makepkg does that for you. If you execute `makepkg -Csf`, it will clean before build, install any deps, and force build regardless of pre-existing package. Use force `-f` only when necessary.
+
 ## Notes about OPTIONS array in ~/.makepkg.conf
 
 - `!strip` — keeps DWARF inline in the main binary (no split debug packages).
