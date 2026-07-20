@@ -162,6 +162,7 @@ text/x-python=neovide.desktop
 text/vnd.trolltech.linguist=neovide.desktop
 x-scheme-handler/claude-cli=claude-code-url-handler.desktop
 x-scheme-handler/chromium=chromium.desktop
+x-scheme-handler/figma=figma-linux.desktop
 
 [Added Associations]
 application/epub+zip=com.github.johnfactotum.Foliate.desktop
