@@ -126,6 +126,9 @@ if vim.g.neovide then
       end, 10)
     end
   })
+  vim.keymap.set('n', '<F11>', function()
+    vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen
+  end, { desc = 'Toggle Neovide fullscreen' })
 else
   set_bg_from_dbus()
   set_theme_from_bg()
