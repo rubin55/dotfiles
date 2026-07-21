@@ -451,7 +451,6 @@ vim.keymap.set('n', '<Leader>m', function()
   haunt_picker.show({
     prompt = 'Bookmarks> ',
     fzf_opts = {
-      ['--no-bold'] = '',
       ['--delimiter'] = '^' .. fzf_regex_escape(cwd) .. '/|^.*/|:[0-9]+ |:[0-9]+$|:',
       ['--with-nth'] = '{4..} ({2}:{3})',
     },
@@ -481,6 +480,9 @@ end
 fzf.setup({
   'borderless',
   ui_select = {},
+  fzf_opts = {
+    ['--no-bold'] = true,
+  },
   git = {
     commits = {
       actions = {
