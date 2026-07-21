@@ -55,12 +55,12 @@ require('rose-pine').setup({
   palette = {
     dawn = {
       base = '#f1e8e0',
-      overlay = '#e0d8d1'
+      overlay = '#d0c8c1',
+      surface = '#e0d8d1'
     }
   },
   highlight_groups = {
-    NvimTreeNormal = { bg = '#e0d8d1' },
-    NvimTreeNormalFloat = { bg = '#e0d8d1' },
+    CursorLine = { bg = '#e0d8d1' },
     NvimTreeCursorLine = { bg = '#d0c8c1' }
   }
 })
