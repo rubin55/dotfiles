@@ -229,13 +229,13 @@ vim.o.wildignorecase = true
 vim.o.linebreak = true
 vim.o.wrap = true
 
--- Set toggle word wrap key.
-vim.keymap.set("n", "tw", function()
-  vim.wo.wrap = not vim.wo.wrap
-end, { desc = "Toggle word wrap" })
-
 -- Configure window border.
 vim.o.winborder = 'solid'
+
+-- Set number defaults.
+vim.o.number = false
+vim.o.relativenumber = false
+vim.o.signcolumn = 'yes'
 
 -- Disable unused providers.
 vim.g.loaded_node_provider = 0
@@ -243,10 +243,10 @@ vim.g.loaded_perl_provider = 0
 vim.g.loaded_python3_provider = 0
 vim.g.loaded_ruby_provider = 0
 
--- Set number defaults.
-vim.o.number = false
-vim.o.relativenumber = false
-vim.o.signcolumn = 'yes'
+-- Set toggle word wrap key.
+vim.keymap.set('n', 'tw', function()
+  vim.wo.wrap = not vim.wo.wrap
+end, { desc = 'Toggle word wrap' })
 
 -- Toggle gutter function.
 local function toggle_gutter()
