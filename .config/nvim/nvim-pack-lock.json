@@ -1,8 +1,16 @@
 {
   "plugins": {
+    "catppuccin.nvim": {
+      "rev": "058e83dc009e4dd62f30807054de9cc849699e27",
+      "src": "https://github.com/catppuccin/nvim"
+    },
     "diffview.nvim": {
       "rev": "4516612fe98ff56ae0415a259ff6361a89419b0a",
-      "src": "https://github.com/sindrets/diffview.nvim.git"
+      "src": "https://github.com/sindrets/diffview.nvim"
+    },
+    "everforest.nvim": {
+      "rev": "d235ca0aa6a29546e661a020e2618612acbbffbe",
+      "src": "https://github.com/neanias/everforest-nvim"
     },
     "fidget.nvim": {
       "rev": "6f793b2bcd2d35e201c09520f698bb763220908a",
@@ -10,11 +18,11 @@
     },
     "fzf-lua": {
       "rev": "532d463f5c83595192fe740572d8fd6902b2217a",
-      "src": "https://github.com/ibhagwan/fzf-lua.git"
+      "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "haunt.nvim": {
       "rev": "be28256ec96d39bf3951966b72c7b34519019993",
-      "src": "https://github.com/TheNoeTrevino/haunt.nvim.git"
+      "src": "https://github.com/TheNoeTrevino/haunt.nvim"
     },
     "lualine.nvim": {
       "rev": "221ce6b2d999187044529f49da6554a92f740a96",
@@ -22,15 +30,15 @@
     },
     "nightfox.nvim": {
       "rev": "4dacd3f0185a2227bdf3b6c0975a8f0bf87cac9a",
-      "src": "https://github.com/EdenEast/nightfox.nvim.git"
+      "src": "https://github.com/EdenEast/nightfox.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "98b0b8a52742afc9e2e2078e2e451f91beef1717",
+      "rev": "b89138d9af0a96e6048e202a15765fc6b6416bd4",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
-    "nvim-tree.lua": {
+    "nvim-tree": {
       "rev": "4213bd6eabac38b16dd6615002b6243b23cf3bf6",
-      "src": "https://github.com/nvim-tree/nvim-tree.lua.git"
+      "src": "https://github.com/nvim-tree/nvim-tree.lua"
     },
     "nvim-treesitter": {
       "rev": "7248feaca45e4d944591497964bc19afa89ad1c6",
@@ -38,7 +46,15 @@
     },
     "nvim-web-devicons": {
       "rev": "0ca28b61a04fe7426cefbdd52c2647ef0e335b5f",
-      "src": "https://github.com/nvim-tree/nvim-web-devicons.git"
+      "src": "https://github.com/nvim-tree/nvim-web-devicons"
+    },
+    "rose-pine.nvim": {
+      "rev": "ff483051a47e27d84bdef47703538df1ed9f4a47",
+      "src": "https://github.com/rose-pine/neovim"
+    },
+    "tomorrow-night-blue.nvim": {
+      "rev": "7afb568c364156129da4fd1150fb58f023ff80f4",
+      "src": "https://github.com/gnfisher/tomorrow-night-blue.nvim"
     }
   }
 }
