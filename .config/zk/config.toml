@@ -10,3 +10,7 @@ hashtags = true
 
 [tool]
 editor = "nvim.sh"
+
+[alias]
+ls = "zk list --format oneline $@"
+show = "zk list --quiet --format '{{abs-path}}' --delimiter0 --limit 1 $@ | xargs -0 $PAGER"
