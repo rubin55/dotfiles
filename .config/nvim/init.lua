@@ -7,16 +7,20 @@ vim.g.loaded_netrwPlugin = 1
 
 -- Neovim plugins.
 vim.pack.add({
-  'https://github.com/EdenEast/nightfox.nvim.git',
-  'https://github.com/TheNoeTrevino/haunt.nvim.git',
-  'https://github.com/ibhagwan/fzf-lua.git',
-  'https://github.com/j-hui/fidget.nvim',
-  'https://github.com/neovim/nvim-lspconfig',
-  'https://github.com/nvim-lualine/lualine.nvim',
-  'https://github.com/nvim-tree/nvim-tree.lua.git',
-  'https://github.com/nvim-tree/nvim-web-devicons.git',
-  'https://github.com/nvim-treesitter/nvim-treesitter',
-  'https://github.com/sindrets/diffview.nvim.git',
+  { name = 'catppuccin.nvim', src = 'https://github.com/catppuccin/nvim' },
+  { name = 'diffview.nvim', src = 'https://github.com/sindrets/diffview.nvim' },
+  { name = 'everforest.nvim', src = 'https://github.com/neanias/everforest-nvim' },
+  { name = 'fidget.nvim', src = 'https://github.com/j-hui/fidget.nvim' },
+  { name = 'fzf-lua', src = 'https://github.com/ibhagwan/fzf-lua' },
+  { name = 'haunt.nvim', src = 'https://github.com/TheNoeTrevino/haunt.nvim' },
+  { name = 'lualine.nvim', src = 'https://github.com/nvim-lualine/lualine.nvim' },
+  { name = 'nightfox.nvim', src = 'https://github.com/EdenEast/nightfox.nvim' },
+  { name = 'nvim-lspconfig', src = 'https://github.com/neovim/nvim-lspconfig' },
+  { name = 'nvim-tree', src = 'https://github.com/nvim-tree/nvim-tree.lua' },
+  { name = 'nvim-treesitter', src = 'https://github.com/nvim-treesitter/nvim-treesitter' },
+  { name = 'nvim-web-devicons', src = 'https://github.com/nvim-tree/nvim-web-devicons' },
+  { name = 'rose-pine.nvim', src = 'https://github.com/rose-pine/neovim' },
+  { name = 'tomorrow-night-blue.nvim', src = 'https://github.com/gnfisher/tomorrow-night-blue.nvim' },
 })
 
 -- Tell neovim about double-width characters
@@ -34,6 +38,30 @@ require('fidget').setup({
       avoid = { 'NvimTree' },
       y_padding = 1
     }
+  }
+})
+
+-- Configure everforest theme.
+require('everforest').setup({
+  background = 'soft'
+})
+
+-- Configure rose-pine theme.
+require('rose-pine').setup({
+  dark_variant = 'moon',
+  styles = {
+    bold = false
+  },
+  palette = {
+    dawn = {
+      base = '#f1e8e0',
+      overlay = '#e0d8d1'
+    }
+  },
+  highlight_groups = {
+    NvimTreeNormal = { bg = '#e0d8d1' },
+    NvimTreeNormalFloat = { bg = '#e0d8d1' },
+    NvimTreeCursorLine = { bg = '#d0c8c1' }
   }
 })
 
@@ -74,9 +102,9 @@ end
 
 local function set_theme_from_bg()
   if vim.o.background == 'dark' then
-    vim.cmd.colorscheme('terafox')
+    vim.cmd.colorscheme('everforest')
   elseif vim.o.background == 'light' then
-    vim.cmd.colorscheme('dawnfox')
+    vim.cmd.colorscheme('rose-pine')
   end
 
   if vim.g.neovide then
@@ -84,12 +112,21 @@ local function set_theme_from_bg()
   end
 end
 
--- Sets italic comments on any theme.
+-- Configure font preferences for any theme.
 vim.api.nvim_create_autocmd('ColorScheme', {
   callback = function()
+    -- Italic comments.
     local old_hl = vim.api.nvim_get_hl(0, { name = 'Comment' })
     local new_hl = vim.tbl_extend('force', old_hl, { italic = true })
     vim.api.nvim_set_hl(0, 'Comment', new_hl)
+
+    -- No bold.
+    for _, name in ipairs(vim.fn.getcompletion('', 'highlight')) do
+      local hl = vim.api.nvim_get_hl(0, { name = name, link = true })
+      if hl.bold then
+        vim.api.nvim_set_hl(0, name, vim.tbl_extend('force', hl, { bold = false }))
+      end
+    end
   end
 })
 
@@ -150,8 +187,8 @@ vim.keymap.set({'n', 'v'}, 'Y', '"+y', { desc = 'Copy to system clipboard' })
 vim.keymap.set({'n', 'v'}, 'P', '"+p', { desc = 'Paste from system clipboard' })
 
 -- Make shift-arrow move selection in normal mode.
-vim.keymap.set('n', '<S-Down>', 'v<Down>')
-vim.keymap.set('n', '<S-Up>', 'v<Up>')
+vim.keymap.set('n', '<S-Down>', 'v$')
+vim.keymap.set('n', '<S-Up>', 'v$o')
 vim.keymap.set('n', '<S-Right>', 'v<Right>')
 vim.keymap.set('n', '<S-Left>', 'v<Left>')
 
@@ -413,6 +450,7 @@ vim.keymap.set('n', '<Leader>m', function()
   haunt_picker.show({
     prompt = 'Bookmarks> ',
     fzf_opts = {
+      ['--no-bold'] = '',
       ['--delimiter'] = '^' .. fzf_regex_escape(cwd) .. '/|^.*/|:[0-9]+ |:[0-9]+$|:',
       ['--with-nth'] = '{4..} ({2}:{3})',
     },
