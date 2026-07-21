@@ -26,7 +26,7 @@ fi
 path.which nvim.sh && export EDITOR='nvim.sh -w'
 
 # Set up less to use lessfilter (pygments).
-export PAGER='less'
+export PAGER='less -FIRX'
 export LESS='-R --mouse --wheel-lines=2'
 export LESSOPEN='|~/.lessfilter %s'
 
