@@ -181,10 +181,11 @@ vim.api.nvim_create_autocmd('BufReadPost', {
   end
 })
 
--- Copy to clipboard convenience shortcuts. Overrides
--- the default-but-unused-by-me Y and P key mappings.
-vim.keymap.set({'n', 'v'}, 'Y', '"+y', { desc = 'Copy to system clipboard' })
-vim.keymap.set({'n', 'v'}, 'P', '"+p', { desc = 'Paste from system clipboard' })
+-- System clipboard shortcuts under <leader>, mirroring Vim's y/p grammar.
+vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y',  { desc = 'Yank to system clipboard' })
+vim.keymap.set({ 'n'      }, '<leader>Y', '"+y$', { desc = 'Yank to end of line to clipboard' })
+vim.keymap.set({ 'n', 'v' }, '<leader>p', '"+p',  { desc = 'Paste from system clipboard' })
+vim.keymap.set({ 'n', 'v' }, '<leader>P', '"+P',  { desc = 'Paste before from system clipboard' })
 
 -- Make shift-arrow move selection in normal mode.
 vim.keymap.set('n', '<S-Down>', 'v$')
