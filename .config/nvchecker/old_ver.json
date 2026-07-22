@@ -7,9 +7,9 @@
       "revision": "b3956bda93ff3d45b644c7bc6d55e0e01c9b9a74"
     },
     "dev-proxy-bin": {
-      "version": "v3.1.0",
-      "gitref": "refs/tags/v3.1.0",
-      "url": "https://github.com/dotnet/dev-proxy/releases/tag/v3.1.0"
+      "version": "v3.2.0",
+      "gitref": "refs/tags/v3.2.0",
+      "url": "https://github.com/dotnet/dev-proxy/releases/tag/v3.2.0"
     },
     "fsautocomplete-bin": {
       "version": "v0.83.0",
@@ -64,8 +64,8 @@
       "url": "https://github.com/jmspit/leanux/releases/tag/2.0.1"
     },
     "llama.cpp": {
-      "version": "76f46ad29d61fd8c1401e8221842934bf62a6064",
-      "revision": "76f46ad29d61fd8c1401e8221842934bf62a6064"
+      "version": "e8e6c7af2456fd50bb62f7a2bbd642e6fb14ae77",
+      "revision": "e8e6c7af2456fd50bb62f7a2bbd642e6fb14ae77"
     },
     "marksman": {
       "version": "2026-02-08",
@@ -80,9 +80,9 @@
       "url": "https://github.com/andwn/marsdev/releases/tag/v1.0.0-rc1"
     },
     "mistral-vibe": {
-      "version": "v2.21.0",
-      "gitref": "refs/tags/v2.21.0",
-      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.21.0"
+      "version": "v2.22.0",
+      "gitref": "refs/tags/v2.22.0",
+      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.22.0"
     },
     "moonlight-qt": {
       "version": "v6.1.0",
@@ -135,8 +135,8 @@
       "version": "v4.0.34"
     },
     "retro68": {
-      "version": "335fa54f6d8ad1360840f08a067ffede7f554300",
-      "revision": "335fa54f6d8ad1360840f08a067ffede7f554300"
+      "version": "f99ecb5aeb6fbb004c647518ea760daba2b1f6bb",
+      "revision": "f99ecb5aeb6fbb004c647518ea760daba2b1f6bb"
     },
     "ruby-commander": {
       "version": "v5.0.0",
@@ -209,7 +209,7 @@
       "version": "4.24.4"
     },
     "wolfram": {
-      "version": "15"
+      "version": "15.0.1"
     },
     "yaml-language-server": {
       "version": "1.24.0",
