@@ -23,8 +23,7 @@ vim.pack.add({
   { name = 'tomorrow-night-blue.nvim', src = 'https://github.com/gnfisher/tomorrow-night-blue.nvim' },
 })
 
--- Tell neovim about double-width characters
--- in the PragmataPro font (setcellwidths).
+-- Mark PragmataPro's double-width characters (setcellwidths).
 require('pragmatapro').setup()
 
 -- Enable extra icons.
@@ -43,7 +42,7 @@ require('fidget').setup({
 
 -- Configure everforest theme.
 require('everforest').setup({
-  background = 'soft'
+  background = 'hard'
 })
 
 -- Configure rose-pine theme.
@@ -140,10 +139,7 @@ vim.api.nvim_create_autocmd('OptionSet', {
 -- Set GUI font.
 vim.o.guifont = 'Monospace:h11.2:#e-subpixelantialias:#h-none'
 
--- Invoke DBUS-based background setting. Do this with a
--- slight delay for Neovide, immediately on terminal.
--- Additionally set some Neovide-specific settings
--- when Neovide is detected.
+-- Apply DBUS background (delayed under Neovide) and Neovide settings.
 if vim.g.neovide then
   vim.g.neovide_cursor_animation_length = 0
   vim.g.neovide_cursor_cell_color_fallback = true
@@ -268,7 +264,8 @@ end
 -- Set toggle gutter key.
 vim.keymap.set('n', 'tg', toggle_gutter, { desc = 'Toggle gutter' })
 
---Configure nvim-tree.
+-- Cached split width, updated when the split explorer is dragged.
+local explorer_width = 40
 require('nvim-tree').setup({
   filters = {
     dotfiles = false
@@ -286,26 +283,111 @@ require('nvim-tree').setup({
   },
   view = {
     side = 'left',
+    width = function() return explorer_width end,
     float = {
       enable = true,
       quit_on_focus_loss = true,
       open_win_config = function()
         local w = 40
         local h = vim.o.lines - 2
+        local r = require('nvim-tree.config').g.view.side == 'right'
         return {
           relative = 'editor',
           border = 'none',
           width = w,
           height = h,
           row = 0,
-          col = 0
+          col = r and (vim.o.columns - w) or 0
         }
       end
     }
   }
 })
 
-vim.keymap.set('n', '<leader>e', '<cmd>NvimTreeToggle<CR>', { desc = 'Toggle Explorer' })
+-- Remember the split's dragged width so file-open restores it.
+vim.api.nvim_create_autocmd('WinResized', {
+  callback = function()
+    local api = require('nvim-tree.api')
+    if not api.tree.is_visible() then return end
+    local winid = api.tree.winid()
+    -- Track the split only, not the float.
+    if winid and vim.api.nvim_win_get_config(winid).relative == '' then
+      explorer_width = vim.api.nvim_win_get_width(winid)
+    end
+  end,
+})
+
+-- Snapshot the non-tree windows' widths in the current tab, keyed by winid.
+local function snapshot_widths(tree_win)
+  local snap = {}
+  for _, w in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
+    if w ~= tree_win and vim.api.nvim_win_get_config(w).relative == '' then
+      snap[w] = vim.api.nvim_win_get_width(w)
+    end
+  end
+  return snap
+end
+
+-- Restore snapshot widths; the explorer's neighbour absorbs the change.
+local function absorb_adjacent(snap, side)
+  local wins = {}
+  for _, w in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
+    if snap[w] and vim.api.nvim_win_get_config(w).relative == '' then
+      wins[#wins + 1] = w
+    end
+  end
+  if #wins < 2 then return end
+
+  -- Adjacent window: nearest the explorer (leftmost for side 'left').
+  local adjacent, best
+  for _, w in ipairs(wins) do
+    local col = vim.api.nvim_win_get_position(w)[2]
+    if best == nil
+       or (side == 'left' and col < best)
+       or (side ~= 'left' and col > best) then
+      best, adjacent = col, w
+    end
+  end
+
+  -- Give non-adjacent windows their old width; neighbour takes the rest.
+  local avail, others = 0, 0
+  for _, w in ipairs(wins) do
+    avail = avail + vim.api.nvim_win_get_width(w)
+    if w ~= adjacent then others = others + snap[w] end
+  end
+  for _, w in ipairs(wins) do
+    if w ~= adjacent then vim.api.nvim_win_set_width(w, snap[w]) end
+  end
+  vim.api.nvim_win_set_width(adjacent, math.max(1, avail - others))
+end
+
+-- Open nvim-tree as a float (closes on file open) or split (stays open).
+local function toggle_explorer(float)
+  local api = require('nvim-tree.api')
+  local cfg = require('nvim-tree.config').g
+
+  -- Snapshot other windows so a split toggle only resizes the neighbour.
+  local snap = snapshot_widths(api.tree.winid())
+
+  -- Already open: close it, and only reopen when switching modes.
+  if api.tree.is_visible() then
+    local winid = api.tree.winid()
+    local was_float = winid and vim.api.nvim_win_get_config(winid).relative ~= ''
+    api.tree.close()
+    if not was_float then absorb_adjacent(snap, cfg.view.side) end
+    if was_float == float then return end
+  end
+
+  -- Re-register autocommands so the float-only WinLeave closer matches mode.
+  cfg.view.float.enable = float
+  cfg.actions.open_file.quit_on_open = float
+  require('nvim-tree.autocmd').global()
+  api.tree.open()
+  if not float then absorb_adjacent(snap, cfg.view.side) end
+end
+
+vim.keymap.set('n', '<leader>e', function() toggle_explorer(true)  end, { desc = 'Toggle Explorer (float)' })
+vim.keymap.set('n', '<leader>E', function() toggle_explorer(false) end, { desc = 'Toggle Explorer (split)' })
 
 -- Tree-sitter grammars.
 require('nvim-treesitter').install({ 'asm', 'astro', 'awk', 'bash', 'c', 'c_sharp', 'clojure', 'cmake', 'comment', 'cpp', 'css', 'csv', 'cuda', 'cue', 'dart', 'desktop', 'diff', 'dockerfile', 'editorconfig', 'eex', 'elixir', 'erlang', 'fsharp', 'git_config', 'git_rebase', 'gitattributes', 'gitcommit', 'gitignore', 'glsl', 'go', 'gomod', 'gosum', 'gotmpl', 'gpg', 'groovy', 'haskell', 'heex', 'helm', 'hlsl', 'html', 'http', 'ini', 'java', 'javadoc', 'javascript', 'jinja', 'jinja_inline', 'jq', 'jsdoc', 'json', 'just', 'kotlin', 'latex', 'llvm', 'lua', 'luadoc', 'm68k', 'make', 'markdown', 'markdown_inline', 'mermaid', 'nasm', 'nginx', 'ninja', 'objc', 'objdump', 'passwd', 'pem', 'perl', 'php', 'phpdoc', 'powershell', 'printf', 'properties', 'python', 'query', 'racket', 'rbs', 'regex', 'requirements', 'robots_txt', 'rst', 'ruby', 'rust', 'scala', 'scheme', 'scss', 'slang', 'sql', 'ssh_config', 'strace', 'svelte', 'swift', 'systemverilog', 'tlaplus', 'todotxt', 'toml', 'tsv', 'tsx', 'typescript', 'udev', 'vala', 'vhdl', 'vim', 'vimdoc', 'vue', 'wgsl', 'xml', 'xresources', 'yaml', 'zig' }):wait(300000)
@@ -332,7 +414,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
   end
 })
 
--- Dismiss floating windows, such as LSP hover from K and nvim-tree.
+-- Dismiss floating windows, such as LSP hover from K and nvim-tree with <Esc>.
 vim.keymap.set('n', '<Esc>', function()
   local wins = vim.list_extend({ vim.api.nvim_get_current_win() }, vim.api.nvim_list_wins())
   for _, win in ipairs(wins) do
@@ -365,6 +447,7 @@ vim.keymap.set('c', '<CR>', function()
         return
       end
 
+      -- All windows showing given 'bufnr'.
       local wins  = vim.fn.win_findbuf(bufnr)
 
       if #wins > 1 then
@@ -403,7 +486,24 @@ require('lualine').setup({
   options = {
     component_separators = { left = '', right = '' },
     section_separators = dyn_sep,
-    theme = 'auto'
+    theme = 'auto',
+    always_show_tabline = false,
+  },
+  tabline = {
+    lualine_a = {
+      {
+        'tabs', mode = 1, path = 0,
+        max_length = function() return vim.o.columns end,
+        fmt = function(name, context)
+          local tp = vim.api.nvim_list_tabpages()[context.tabnr]
+          local buf = vim.api.nvim_win_get_buf(vim.api.nvim_tabpage_get_win(tp))
+          local fname = vim.fn.fnamemodify(vim.api.nvim_buf_get_name(buf), ':t')
+          local icon = require('nvim-web-devicons').get_icon(
+            fname, vim.fn.fnamemodify(fname, ':e'), { default = true })
+          return icon and (icon .. ' ' .. name) or name
+        end
+      }
+    }
   }
 })
 
