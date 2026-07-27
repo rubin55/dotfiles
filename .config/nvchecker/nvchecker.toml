@@ -52,7 +52,7 @@ strip_release = "true"
 
 [intel-oneapi]
 source = "cmd"
-cmd = "curl -sL 'https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html' | grep -oP 'targetValue2 = \"\\K[0-9.]+'"
+cmd = "curl -sL 'https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html' | grep -oP 'intel-oneapi-toolkit-\\K[0-9]+\\.[0-9]+\\.[0-9]+(?=\\.[0-9]+_offline\\.sh)' | head -1"
 
 [intel-openvino]
 source = "github"

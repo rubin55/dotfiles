@@ -27,7 +27,7 @@
       "url": "https://github.com/domferr/tilingshell/releases/tag/17.3"
     },
     "ida-pro": {
-      "version": "9.3"
+      "version": "9.4"
     },
     "infer-bin": {
       "version": "v1.3.0",
@@ -41,7 +41,7 @@
       "version": "26.1.5"
     },
     "intel-oneapi": {
-      "version": "2026.0.0"
+      "version": "2026.1.0"
     },
     "intel-openvino": {
       "version": "2026.2.1",
@@ -64,8 +64,8 @@
       "url": "https://github.com/jmspit/leanux/releases/tag/2.0.1"
     },
     "llama.cpp": {
-      "version": "e8e6c7af2456fd50bb62f7a2bbd642e6fb14ae77",
-      "revision": "e8e6c7af2456fd50bb62f7a2bbd642e6fb14ae77"
+      "version": "0e4a0362239713ea95a6864a17a8de4b0ad90d62",
+      "revision": "0e4a0362239713ea95a6864a17a8de4b0ad90d62"
     },
     "marksman": {
       "version": "2026-02-08",
@@ -197,10 +197,10 @@
       "url": "https://github.com/ufo5260987423/scheme-langserver/releases/tag/2.1.5"
     },
     "svelte-language-server": {
-      "version": "svelte-check@4.7.3",
-      "gitref": "refs/tags/svelte-check@4.7.3",
-      "revision": "16662604f1676c0718eaa08922faddec98aa0924",
-      "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-check@4.7.3"
+      "version": "svelte-check@4.7.4",
+      "gitref": "refs/tags/svelte-check@4.7.4",
+      "revision": "887a1fea0e8d28d7f2c9e616c14a0e1d017d2270",
+      "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-check@4.7.4"
     },
     "tidal-dl-ng": {
       "version": "0.33.0"
