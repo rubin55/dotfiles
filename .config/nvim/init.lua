@@ -12,6 +12,7 @@ vim.pack.add({
   { name = 'everforest.nvim', src = 'https://github.com/neanias/everforest-nvim' },
   { name = 'fidget.nvim', src = 'https://github.com/j-hui/fidget.nvim' },
   { name = 'fzf-lua', src = 'https://github.com/ibhagwan/fzf-lua' },
+  { name = 'gitsigns.nvim', src = 'https://github.com/lewis6991/gitsigns.nvim.git' },
   { name = 'haunt.nvim', src = 'https://github.com/TheNoeTrevino/haunt.nvim' },
   { name = 'lualine.nvim', src = 'https://github.com/nvim-lualine/lualine.nvim' },
   { name = 'nightfox.nvim', src = 'https://github.com/EdenEast/nightfox.nvim' },
@@ -101,7 +102,7 @@ end
 
 local function set_theme_from_bg()
   if vim.o.background == 'dark' then
-    vim.cmd.colorscheme('everforest')
+    vim.cmd.colorscheme('nightfox')
   elseif vim.o.background == 'light' then
     vim.cmd.colorscheme('rose-pine')
   end
@@ -468,6 +469,11 @@ vim.keymap.set('c', '<CR>', function()
 
   return '<CR>'
 end, { expr = true })
+
+-- Gitsigns configuration.
+require('gitsigns').setup({
+  current_line_blame = true,
+})
 
 -- Lualine configuration.
 local fzf_ext = require('lualine.extensions.fzf')
