@@ -2,7 +2,7 @@
 
 # Check if functions are loaded and if required executables are available.
 type -p path.append path.which || return
-path.which find,sort || return
+path.which find,sort,kubectl || return
 
 # Construct KUBECONFIG_NEW.
 if [[ -d "$HOME/.kube/config.d" ]]; then
