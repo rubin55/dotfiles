@@ -588,6 +588,14 @@ fzf.setup({
   ui_select = {},
   fzf_opts = {
     ['--no-bold'] = true,
+    ['--exact'] = true,
+    ['--wrap'] = true,
+  },
+  grep = {
+    rg_opts = '--column --line-number --no-heading --color=always --smart-case --sort=path -e',
+    fzf_opts = {
+      ['--no-sort'] = true,
+    },
   },
   git = {
     commits = {
