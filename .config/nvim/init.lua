@@ -69,6 +69,8 @@ vim.api.nvim_create_autocmd('ColorScheme', {
       local palette = require('rose-pine.palette')
       vim.api.nvim_set_hl(0, 'CursorLine', { bg = palette.surface })
       vim.api.nvim_set_hl(0, 'NvimTreeCursorLine', { bg = palette.overlay })
+      -- Split separator same tone as the cursorline.
+      vim.api.nvim_set_hl(0, 'WinSeparator', { fg = palette.surface })
     end
   end
 })
@@ -207,8 +209,8 @@ vim.keymap.set('v', '<S-Left>', '<Left>')
 -- Remove the how-to-disable menu item.
 vim.cmd([[unmenu PopUp.How-to\ disable\ mouse]])
 
--- Set a character for deleted lines in diff.
-vim.opt.fillchars:append { diff = '╱' }
+-- Custom fill characters: deleted diff lines, solid split bar.
+vim.opt.fillchars:append { diff = '╱', vert = '█' }
 
 -- Preserve window proportions.
 vim.opt.equalalways = false
