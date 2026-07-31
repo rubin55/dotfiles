@@ -58,11 +58,19 @@ require('rose-pine').setup({
       overlay = '#d0c8c1',
       surface = '#e0d8d1'
     }
-  },
-  highlight_groups = {
-    CursorLine = { bg = '#e0d8d1' },
-    NvimTreeCursorLine = { bg = '#d0c8c1' }
   }
+})
+
+-- Cursor line overrides for rose-pine-dawn only.
+vim.api.nvim_create_autocmd('ColorScheme', {
+  pattern = 'rose-pine',
+  callback = function()
+    if vim.g.colors_name == 'rose-pine' and vim.o.background == 'light' then
+      local palette = require('rose-pine.palette')
+      vim.api.nvim_set_hl(0, 'CursorLine', { bg = palette.surface })
+      vim.api.nvim_set_hl(0, 'NvimTreeCursorLine', { bg = palette.overlay })
+    end
+  end
 })
 
 -- Background light/dark based on DBUS inspection.
