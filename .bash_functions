@@ -139,7 +139,8 @@ function net.port-open() {
   else
     local nmap=nmap
   fi
-  "$nmap" --max-retries 0 --host-timeout 100ms "$host" -p "$port" -T5 -oG - | grep -q "Host: $host\|Ports: $port/open"
+  "$nmap" --max-retries 0 --host-timeout 100ms "$host" -p "$port" -T5 -oG - \
+    | grep -q "Host: $host\|Ports: $port/open"
 }
 
 function vm.running() {
@@ -187,9 +188,9 @@ function title.append() {
 }
 
 function title.case() {
-  local s="${1,,}"
+  local string="${1,,}"
   local result="" word
-  for word in $s; do
+  for word in $string; do
     [[ -n $result ]] && result+=" "
     result+="${word^}"
   done
@@ -197,9 +198,10 @@ function title.case() {
 }
 
 function title.line() {
-  local s
-  if [[ -n "$1" ]]; then s="-- $1 "; else s=""; fi
-  printf "\n\e[31m%s%s\e[0m\n\n" "$s" "$(printf '%*s' $(($(tput cols)-${#s})) ''|tr ' ' -)"
+  local title
+  if [[ -n "$1" ]]; then title="-- $1 "; else title=""; fi
+  local dashes="$(printf '%*s' $(($(tput cols)-${#title})) ''|tr ' ' -)"
+  printf "\n\e[31m%s%s\e[0m\n\n" "$title" "$dashes"
 }
 
 function count.down() {
