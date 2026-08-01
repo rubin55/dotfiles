@@ -218,6 +218,39 @@ vim.opt.equalalways = false
 -- Enable highlighted of line where cursor is.
 vim.o.cursorline = true
 
+-- Make colorcolumn color match cursorline.
+vim.api.nvim_create_autocmd('ColorScheme', {
+  callback = function()
+    vim.api.nvim_set_hl(0, 'ColorColumn', { link = 'CursorLine' })
+  end,
+})
+
+-- Toggle ruler.
+local cc_cols = { 72, 80, 120, 132 }
+local cc_idx = 1
+local cc_match = nil
+local function set_ruler(idx)
+  cc_idx = idx
+  if cc_match then pcall(vim.fn.matchdelete, cc_match); cc_match = nil end
+  if cc_idx == 1 then
+    vim.o.colorcolumn = ''
+    print('ruler: off')
+  else
+    local c = cc_cols[cc_idx - 1]
+    vim.o.colorcolumn = table.concat(vim.fn.range(c + 1, c + 256), ',')
+    cc_match = vim.fn.matchadd('ColorColumn', string.format([[\%%>%dv.\+]], c))
+    print('ruler: ' .. c)
+  end
+end
+
+vim.keymap.set('n', 'tr', function()
+  set_ruler(cc_idx % (#cc_cols + 1) + 1)
+end, { desc = 'Toggle ruler size' })
+
+vim.keymap.set('n', 'TR', function()
+  set_ruler((cc_idx - 2) % (#cc_cols + 1) + 1)
+end, { desc = 'Toggle ruler size (go backwards)' })
+
 -- Use block cursor always.
 vim.o.guicursor = 'a:block-blinkwait500-blinkon500-blinkoff500'
 
@@ -232,9 +265,11 @@ vim.o.ignorecase = true
 vim.o.smartcase = true
 vim.o.wildignorecase = true
 
--- Enable linebreak on words, word wrap.
+-- Enable linebreak on words.
 vim.o.linebreak = true
-vim.o.wrap = true
+
+-- Disable word wrap by default.
+vim.o.wrap = false
 
 -- Configure window border.
 vim.o.winborder = 'solid'
