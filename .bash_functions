@@ -1,3 +1,4 @@
+# shellcheck shell=bash
 # ~/.bash_functions: a convenient library of bash functions.
 
 declare -A LOG_LEVELS=([DEBUG]=0 [INFO]=1 [WARN]=2 [ERROR]=3)
@@ -43,7 +44,8 @@ function array.join() {
 
 function path.which() {
   local IFS=,
-  local executables=($1)
+  local -a executables
+  read -ra executables <<< "$1"
   local exe
   [[ -n $2 ]] && local PATH="$(path.sanitize "$2")"
   for exe in "${executables[@]}"; do
@@ -125,38 +127,24 @@ function os.platform() {
   echo "$_OS_PLATFORM"
 }
 
+function host.short-name() {
+  echo "${HOSTNAME%%.*}"
+}
+
 function net.port-open() {
   local host="$1"
   local port="$2"
-  [[ "$(os.platform)" == "windows" ]] && local nmap=nmap.exe || local nmap=nmap
+  if [[ "$(os.platform)" == "windows" ]]; then
+    local nmap=nmap.exe
+  else
+    local nmap=nmap
+  fi
   "$nmap" --max-retries 0 --host-timeout 100ms "$host" -p "$port" -T5 -oG - | grep -q "Host: $host\|Ports: $port/open"
 }
 
 function vm.running() {
   local name="$1"
   virsh -c "qemu:///system" domstate "$name" | grep -q "running"
-}
-
-function title.set() {
-  [[ -z "$orig" ]] && orig="$PS1"
-  local code="\e]2;$*\a"
-  local string="\[$code\]"
-  echo -ne "${code}";
-  PS1="${orig}${string}";
-}
-
-function title.case() {
-  local s="${1,,}"
-  local result="" word
-  for word in $s; do
-    [[ -n $result ]] && result+=" "
-    result+="${word^}"
-  done
-  echo "$result"
-}
-
-function host.short-name() {
-  echo "${HOSTNAME%%.*}"
 }
 
 function openvpn.connect() {
@@ -171,6 +159,43 @@ function openvpn.connect() {
   fi
 }
 
+function title.set() {
+  [[ -z "$orig" ]] && orig="$PS1"
+  local code="\e]2;$*\a"
+  local string="\[$code\]"
+  echo -ne "${code}" >&2;
+  PS1="${orig}${string}";
+
+  # Cache titles so title.append can work.
+  local cache_dir="/tmp/terminal.titles"
+  [[ -d "$cache_dir" ]] || { mkdir -p "$cache_dir"; chmod 700 "$cache_dir"; }
+  local cache_file="$cache_dir/$$"
+  rm -f "$cache_file"
+  printf '%s\n' "$*" > "$cache_file"
+  chmod 600 "$cache_file"
+}
+
+function title.append() {
+  local f="/tmp/terminal.titles/$PPID"
+  [[ -L "$f" || ! -f "$f" ]] && return 1
+  local sz
+  sz=$(stat -c%s "$f" 2>/dev/null) || return 1
+  (( sz > 256 )) && return 1
+  local base
+  IFS= read -r base < "$f" || return 1
+  title.set "$base$1"
+}
+
+function title.case() {
+  local s="${1,,}"
+  local result="" word
+  for word in $s; do
+    [[ -n $result ]] && result+=" "
+    result+="${word^}"
+  done
+  echo "$result"
+}
+
 function title.line() {
   local s
   if [[ -n "$1" ]]; then s="-- $1 "; else s=""; fi
@@ -180,7 +205,7 @@ function title.line() {
 function count.down() {
   local seconds=$1
   trap 'echo; trap - SIGINT; return' SIGINT
-  while [ $seconds -gt 0 ]; do
+  while [ "$seconds" -gt 0 ]; do
     echo -ne "$seconds\033[0K\r"
     sleep 1
     : $((seconds--))
