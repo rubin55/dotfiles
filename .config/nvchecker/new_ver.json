@@ -64,8 +64,8 @@
       "url": "https://github.com/jmspit/leanux/releases/tag/2.0.1"
     },
     "llama.cpp": {
-      "version": "ea63b4d32ea1b66bdbe369be7f9443f6c00f8b31",
-      "revision": "ea63b4d32ea1b66bdbe369be7f9443f6c00f8b31"
+      "version": "876a4321163249c43ca4e986818fab5ab081f282",
+      "revision": "876a4321163249c43ca4e986818fab5ab081f282"
     },
     "marksman": {
       "version": "2026-02-08",
@@ -192,9 +192,9 @@
       "url": "https://github.com/microsoft/sbom-tool/releases/tag/v4.1.5"
     },
     "scheme-langserver-bin": {
-      "version": "2.1.5",
-      "gitref": "refs/tags/2.1.5",
-      "url": "https://github.com/ufo5260987423/scheme-langserver/releases/tag/2.1.5"
+      "version": "2.1.7",
+      "gitref": "refs/tags/2.1.7",
+      "url": "https://github.com/ufo5260987423/scheme-langserver/releases/tag/2.1.7"
     },
     "svelte-language-server": {
       "version": "svelte-check@4.7.4",

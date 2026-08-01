@@ -49,9 +49,9 @@
       "url": "https://github.com/openvinotoolkit/openvino/releases/tag/2026.2.1"
     },
     "jdk25-openj9-bin": {
-      "version": "jdk-25.0.3.0",
-      "gitref": "refs/tags/jdk-25.0.3.0",
-      "url": "https://github.com/ibmruntimes/semeru25-binaries/releases/tag/jdk-25.0.3.0"
+      "version": "jdk-25.0.4.0",
+      "gitref": "refs/tags/jdk-25.0.4.0",
+      "url": "https://github.com/ibmruntimes/semeru25-binaries/releases/tag/jdk-25.0.4.0"
     },
     "jsonpath-python": {
       "version": "1.1.6",
@@ -64,8 +64,8 @@
       "url": "https://github.com/jmspit/leanux/releases/tag/2.0.1"
     },
     "llama.cpp": {
-      "version": "ea63b4d32ea1b66bdbe369be7f9443f6c00f8b31",
-      "revision": "ea63b4d32ea1b66bdbe369be7f9443f6c00f8b31"
+      "version": "a09d8abf8c926be74c040674e86c69955deac09f",
+      "revision": "a09d8abf8c926be74c040674e86c69955deac09f"
     },
     "marksman": {
       "version": "2026-02-08",
@@ -80,9 +80,9 @@
       "url": "https://github.com/andwn/marsdev/releases/tag/v1.0.0-rc1"
     },
     "mistral-vibe": {
-      "version": "v2.23.1",
-      "gitref": "refs/tags/v2.23.1",
-      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.23.1"
+      "version": "v2.23.2",
+      "gitref": "refs/tags/v2.23.2",
+      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.23.2"
     },
     "moonlight-qt": {
       "version": "v6.1.0",
@@ -192,9 +192,9 @@
       "url": "https://github.com/microsoft/sbom-tool/releases/tag/v4.1.5"
     },
     "scheme-langserver-bin": {
-      "version": "2.1.5",
-      "gitref": "refs/tags/2.1.5",
-      "url": "https://github.com/ufo5260987423/scheme-langserver/releases/tag/2.1.5"
+      "version": "2.1.7",
+      "gitref": "refs/tags/2.1.7",
+      "url": "https://github.com/ufo5260987423/scheme-langserver/releases/tag/2.1.7"
     },
     "svelte-language-server": {
       "version": "svelte-check@4.7.4",
