@@ -428,7 +428,7 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
     fi
 
   # Current and wanted Nvim font size.
-  nvimConfig="$HOME/.config/nvim/init.lua"
+  nvimConfig="$HOME/.config/nvim/lua/appearance.lua"
   if [[ -e "$nvimConfig" && -n "$nvimMono" ]]; then
     currentNvimMonoFontSize="$(grep '^vim.o.guifont' "$nvimConfig" | sed 's|.*:h\([0-9.]*\).*|\1|')"
     wantedNvimMonoFontSize="$nvimMono"
