@@ -172,7 +172,7 @@ if vim.g.neovide then
   })
   vim.keymap.set('n', '<F11>', function()
     vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen
-  end, { desc = 'Toggle Neovide fullscreen' })
+  end, { desc = 'Toggle neovide fullscreen' })
 else
   set_bg_from_dbus()
   set_theme_from_bg()
@@ -225,31 +225,32 @@ vim.api.nvim_create_autocmd('ColorScheme', {
   end,
 })
 
--- Toggle ruler.
-local cc_cols = { 72, 80, 120, 132 }
+-- Toggle ruler; false is the off state.
+local cc_cols = { false, 72, 80, 120, 132 }
 local cc_idx = 1
-local cc_match = nil
+
 local function set_ruler(idx)
   cc_idx = idx
-  if cc_match then pcall(vim.fn.matchdelete, cc_match); cc_match = nil end
-  if cc_idx == 1 then
-    vim.o.colorcolumn = ''
-    print('ruler: off')
-  else
-    local c = cc_cols[cc_idx - 1]
-    vim.o.colorcolumn = table.concat(vim.fn.range(c + 1, c + 256), ',')
-    cc_match = vim.fn.matchadd('ColorColumn', string.format([[\%%>%dv.\+]], c))
-    print('ruler: ' .. c)
+  local c = cc_cols[cc_idx]
+  -- 'colorcolumn' shades text and empty cells alike, up to 256 columns past c.
+  local value = c and table.concat(vim.fn.range(c + 1, c + 256), ',') or ''
+
+  -- Set every window plus the default inherited by new ones.
+  vim.api.nvim_set_option_value('colorcolumn', value, { scope = 'global' })
+  for _, win in ipairs(vim.api.nvim_list_wins()) do
+    vim.api.nvim_set_option_value('colorcolumn', value, { win = win })
   end
+
+  print('ruler: ' .. (c and tostring(c) or 'off'))
 end
 
-vim.keymap.set('n', 'tr', function()
-  set_ruler(cc_idx % (#cc_cols + 1) + 1)
-end, { desc = 'Toggle ruler size' })
+-- Step through cc_cols, wrapping around in either direction.
+local function cycle_ruler(step)
+  set_ruler((cc_idx - 1 + step) % #cc_cols + 1)
+end
 
-vim.keymap.set('n', 'TR', function()
-  set_ruler((cc_idx - 2) % (#cc_cols + 1) + 1)
-end, { desc = 'Toggle ruler size (go backwards)' })
+vim.keymap.set('n', 'tr', function() cycle_ruler(1) end, { desc = 'Toggle ruler' })
+vim.keymap.set('n', 'TR', function() cycle_ruler(-1) end, { desc = 'Toggle ruler (go backwards)' })
 
 -- Use block cursor always.
 vim.o.guicursor = 'a:block-blinkwait500-blinkon500-blinkoff500'
@@ -432,8 +433,8 @@ local function toggle_explorer(float)
   if not float then absorb_adjacent(snap, cfg.view.side) end
 end
 
-vim.keymap.set('n', '<leader>e', function() toggle_explorer(true)  end, { desc = 'Toggle Explorer (float)' })
-vim.keymap.set('n', '<leader>E', function() toggle_explorer(false) end, { desc = 'Toggle Explorer (split)' })
+vim.keymap.set('n', '<leader>e', function() toggle_explorer(true)  end, { desc = 'Toggle explorer (float)' })
+vim.keymap.set('n', '<leader>E', function() toggle_explorer(false) end, { desc = 'Toggle explorer (split)' })
 
 -- Tree-sitter grammars.
 require('nvim-treesitter').install({ 'asm', 'astro', 'awk', 'bash', 'c', 'c_sharp', 'clojure', 'cmake', 'comment', 'cpp', 'css', 'csv', 'cuda', 'cue', 'dart', 'desktop', 'diff', 'dockerfile', 'editorconfig', 'eex', 'elixir', 'erlang', 'fsharp', 'git_config', 'git_rebase', 'gitattributes', 'gitcommit', 'gitignore', 'glsl', 'go', 'gomod', 'gosum', 'gotmpl', 'gpg', 'groovy', 'haskell', 'heex', 'helm', 'hlsl', 'html', 'http', 'ini', 'java', 'javadoc', 'javascript', 'jinja', 'jinja_inline', 'jq', 'jsdoc', 'json', 'just', 'kotlin', 'latex', 'llvm', 'lua', 'luadoc', 'm68k', 'make', 'markdown', 'markdown_inline', 'mermaid', 'nasm', 'nginx', 'ninja', 'objc', 'objdump', 'passwd', 'pem', 'perl', 'php', 'phpdoc', 'powershell', 'printf', 'properties', 'python', 'query', 'racket', 'rbs', 'regex', 'requirements', 'robots_txt', 'rst', 'ruby', 'rust', 'scala', 'scheme', 'scss', 'slang', 'sql', 'ssh_config', 'strace', 'svelte', 'swift', 'systemverilog', 'tlaplus', 'todotxt', 'toml', 'tsv', 'tsx', 'typescript', 'udev', 'vala', 'vhdl', 'vim', 'vimdoc', 'vue', 'wgsl', 'xml', 'xresources', 'yaml', 'zig' }):wait(300000)
