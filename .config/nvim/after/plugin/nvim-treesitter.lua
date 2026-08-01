@@ -15,7 +15,7 @@ require('nvim-treesitter').install({
   'systemverilog', 'tlaplus', 'todotxt', 'toml', 'tsv', 'tsx', 'typescript',
   'udev', 'vala', 'vhdl', 'vim', 'vimdoc', 'vue', 'wgsl', 'xml', 'xresources',
   'yaml', 'zig',
-}):wait(300000)
+}):wait()
 
 -- Starts tree-sitter on supported file-types.
 vim.api.nvim_create_autocmd('FileType', {
