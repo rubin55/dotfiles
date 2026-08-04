@@ -38,7 +38,7 @@
       "version": "22.10.0"
     },
     "intel-media-driver": {
-      "version": "26.1.5"
+      "version": "26.2.4"
     },
     "intel-oneapi": {
       "version": "2026.1.0"
@@ -64,8 +64,8 @@
       "url": "https://github.com/jmspit/leanux/releases/tag/2.0.1"
     },
     "llama.cpp": {
-      "version": "a09d8abf8c926be74c040674e86c69955deac09f",
-      "revision": "a09d8abf8c926be74c040674e86c69955deac09f"
+      "version": "89482bd665673362b59c57d63295bd7c8259af62",
+      "revision": "89482bd665673362b59c57d63295bd7c8259af62"
     },
     "marksman": {
       "version": "2026-02-08",
@@ -124,9 +124,9 @@
       "url": "https://github.com/alekmaul/pvsneslib/releases/tag/4.6.0"
     },
     "python-agent-client-protocol": {
-      "version": "0.11.1",
-      "gitref": "refs/tags/0.11.1",
-      "url": "https://github.com/agentclientprotocol/python-sdk/releases/tag/0.11.1"
+      "version": "0.12.0",
+      "gitref": "refs/tags/0.12.0",
+      "url": "https://github.com/agentclientprotocol/python-sdk/releases/tag/0.12.0"
     },
     "python-hatchling": {
       "version": "1.30.1"
@@ -139,10 +139,10 @@
       "revision": "f99ecb5aeb6fbb004c647518ea760daba2b1f6bb"
     },
     "ruby-commander": {
-      "version": "v5.0.0",
-      "gitref": "refs/tags/v5.0.0",
-      "revision": "f541af8b43bee0cbae025cc48dd8cc72076abbcb",
-      "url": "https://github.com/commander-rb/commander/releases/tag/v5.0.0"
+      "version": "v6.0.0",
+      "gitref": "refs/tags/v6.0.0",
+      "revision": "b4c6be4b149c906d6da79df264233a7e6556e64f",
+      "url": "https://github.com/commander-rb/commander/releases/tag/v6.0.0"
     },
     "ruby-parlour": {
       "version": "9.1.2",

@@ -69,10 +69,10 @@ source = "github"
 github = "ibmruntimes/semeru25-binaries"
 use_latest_release = "true"
 
-["llama.cpp"]
-source = "git"
-git = "https://github.com/ggml-org/llama.cpp.git"
-use_commit = true
+#["llama.cpp"]
+#source = "git"
+#git = "https://github.com/ggml-org/llama.cpp.git"
+#use_commit = true
 
 [leanux]
 source = "github"

@@ -38,7 +38,7 @@
       "version": "22.10.0"
     },
     "intel-media-driver": {
-      "version": "26.1.5"
+      "version": "26.2.4"
     },
     "intel-oneapi": {
       "version": "2026.1.0"
@@ -63,10 +63,6 @@
       "gitref": "refs/tags/2.0.1",
       "url": "https://github.com/jmspit/leanux/releases/tag/2.0.1"
     },
-    "llama.cpp": {
-      "version": "876a4321163249c43ca4e986818fab5ab081f282",
-      "revision": "876a4321163249c43ca4e986818fab5ab081f282"
-    },
     "marksman": {
       "version": "2026-02-08",
       "gitref": "refs/tags/2026-02-08",
@@ -80,9 +76,9 @@
       "url": "https://github.com/andwn/marsdev/releases/tag/v1.0.0-rc1"
     },
     "mistral-vibe": {
-      "version": "v2.23.2",
-      "gitref": "refs/tags/v2.23.2",
-      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.23.2"
+      "version": "v2.23.3",
+      "gitref": "refs/tags/v2.23.3",
+      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.23.3"
     },
     "moonlight-qt": {
       "version": "v6.1.0",
@@ -124,9 +120,9 @@
       "url": "https://github.com/alekmaul/pvsneslib/releases/tag/4.6.0"
     },
     "python-agent-client-protocol": {
-      "version": "0.11.1",
-      "gitref": "refs/tags/0.11.1",
-      "url": "https://github.com/agentclientprotocol/python-sdk/releases/tag/0.11.1"
+      "version": "0.12.0",
+      "gitref": "refs/tags/0.12.0",
+      "url": "https://github.com/agentclientprotocol/python-sdk/releases/tag/0.12.0"
     },
     "python-hatchling": {
       "version": "1.30.1"
@@ -139,10 +135,10 @@
       "revision": "f99ecb5aeb6fbb004c647518ea760daba2b1f6bb"
     },
     "ruby-commander": {
-      "version": "v5.0.0",
-      "gitref": "refs/tags/v5.0.0",
-      "revision": "f541af8b43bee0cbae025cc48dd8cc72076abbcb",
-      "url": "https://github.com/commander-rb/commander/releases/tag/v5.0.0"
+      "version": "v6.0.0",
+      "gitref": "refs/tags/v6.0.0",
+      "revision": "b4c6be4b149c906d6da79df264233a7e6556e64f",
+      "url": "https://github.com/commander-rb/commander/releases/tag/v6.0.0"
     },
     "ruby-parlour": {
       "version": "9.1.2",
@@ -179,9 +175,9 @@
       "url": "https://github.com/castwide/yard-solargraph/releases/tag/v0.1.0"
     },
     "rusty-psn-bin": {
-      "version": "v0.5.10",
-      "gitref": "refs/tags/v0.5.10",
-      "url": "https://github.com/RainbowCookie32/rusty-psn/releases/tag/v0.5.10"
+      "version": "v0.6.0",
+      "gitref": "refs/tags/v0.6.0",
+      "url": "https://github.com/RainbowCookie32/rusty-psn/releases/tag/v0.6.0"
     },
     "samba": {
       "version": "2:4.24.5"
@@ -192,9 +188,9 @@
       "url": "https://github.com/microsoft/sbom-tool/releases/tag/v4.1.5"
     },
     "scheme-langserver-bin": {
-      "version": "2.1.7",
-      "gitref": "refs/tags/2.1.7",
-      "url": "https://github.com/ufo5260987423/scheme-langserver/releases/tag/2.1.7"
+      "version": "2.1.8",
+      "gitref": "refs/tags/2.1.8",
+      "url": "https://github.com/ufo5260987423/scheme-langserver/releases/tag/2.1.8"
     },
     "svelte-language-server": {
       "version": "svelte-check@4.7.4",
