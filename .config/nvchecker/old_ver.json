@@ -44,9 +44,9 @@
       "version": "2026.1.0"
     },
     "intel-openvino": {
-      "version": "2026.2.1",
-      "gitref": "refs/tags/2026.2.1",
-      "url": "https://github.com/openvinotoolkit/openvino/releases/tag/2026.2.1"
+      "version": "2026.3.0",
+      "gitref": "refs/tags/2026.3.0",
+      "url": "https://github.com/openvinotoolkit/openvino/releases/tag/2026.3.0"
     },
     "jdk25-openj9-bin": {
       "version": "jdk-25.0.4.0",
@@ -80,9 +80,9 @@
       "url": "https://github.com/andwn/marsdev/releases/tag/v1.0.0-rc1"
     },
     "mistral-vibe": {
-      "version": "v2.23.3",
-      "gitref": "refs/tags/v2.23.3",
-      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.23.3"
+      "version": "v2.24.0",
+      "gitref": "refs/tags/v2.24.0",
+      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.24.0"
     },
     "moonlight-qt": {
       "version": "v6.1.0",
@@ -157,10 +157,10 @@
       "url": "https://github.com/ksss/rubocop-yard/releases/tag/v1.3.0"
     },
     "ruby-solargraph": {
-      "version": "v0.60.2",
-      "gitref": "refs/tags/v0.60.2",
-      "revision": "24fd7c5c52b363dbce23c96058c0fa2f91b2f50d",
-      "url": "https://github.com/castwide/solargraph/releases/tag/v0.60.2"
+      "version": "v0.60.3",
+      "gitref": "refs/tags/v0.60.3",
+      "revision": "0e0e1da9b23fb83ab47855d9fdd78f45978baee2",
+      "url": "https://github.com/castwide/solargraph/releases/tag/v0.60.3"
     },
     "ruby-sord": {
       "version": "7.1.0",
