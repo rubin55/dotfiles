@@ -157,10 +157,10 @@
       "url": "https://github.com/ksss/rubocop-yard/releases/tag/v1.3.0"
     },
     "ruby-solargraph": {
-      "version": "v0.60.2",
-      "gitref": "refs/tags/v0.60.2",
-      "revision": "24fd7c5c52b363dbce23c96058c0fa2f91b2f50d",
-      "url": "https://github.com/castwide/solargraph/releases/tag/v0.60.2"
+      "version": "v0.60.3",
+      "gitref": "refs/tags/v0.60.3",
+      "revision": "0e0e1da9b23fb83ab47855d9fdd78f45978baee2",
+      "url": "https://github.com/castwide/solargraph/releases/tag/v0.60.3"
     },
     "ruby-sord": {
       "version": "7.1.0",

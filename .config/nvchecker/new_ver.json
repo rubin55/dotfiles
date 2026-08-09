@@ -193,10 +193,10 @@
       "url": "https://github.com/ufo5260987423/scheme-langserver/releases/tag/2.1.8"
     },
     "svelte-language-server": {
-      "version": "svelte-check@4.7.4",
-      "gitref": "refs/tags/svelte-check@4.7.4",
-      "revision": "887a1fea0e8d28d7f2c9e616c14a0e1d017d2270",
-      "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-check@4.7.4"
+      "version": "@sveltejs/load-config@0.2.2",
+      "gitref": "refs/tags/@sveltejs/load-config@0.2.2",
+      "revision": "dcb1ffb24494597c34e929a85d1c499e4f2dade1",
+      "url": "https://github.com/sveltejs/language-tools/releases/tag/@sveltejs/load-config@0.2.2"
     },
     "winexe": {
       "version": "4.24.5"
