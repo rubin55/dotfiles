@@ -1,7 +1,7 @@
 {
   "plugins": {
     "catppuccin.nvim": {
-      "rev": "79e2049a0fdf7ec840f8463fe1d962c94493196b",
+      "rev": "edefef779ab08ce1a4a404713e3012b0d202bd35",
       "src": "https://github.com/catppuccin/nvim"
     },
     "diffview.nvim": {
@@ -25,7 +25,7 @@
       "src": "https://github.com/lewis6991/gitsigns.nvim.git"
     },
     "haunt.nvim": {
-      "rev": "be28256ec96d39bf3951966b72c7b34519019993",
+      "rev": "606cff70de7c664d3dd26b1cd2dc95c5a7dddbb7",
       "src": "https://github.com/TheNoeTrevino/haunt.nvim"
     },
     "lualine.nvim": {
@@ -45,7 +45,7 @@
       "src": "https://github.com/nvim-tree/nvim-tree.lua"
     },
     "nvim-treesitter": {
-      "rev": "3d3321b560a63ff92a8692401f303a5123336b86",
+      "rev": "c9f9ed6c1892f629ea399f4ee7905f2686fa13f2",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "nvim-web-devicons": {
