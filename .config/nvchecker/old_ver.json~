@@ -197,10 +197,10 @@
       "url": "https://github.com/ufo5260987423/scheme-langserver/releases/tag/2.1.8"
     },
     "svelte-language-server": {
-      "version": "svelte-check@4.7.4",
-      "gitref": "refs/tags/svelte-check@4.7.4",
-      "revision": "887a1fea0e8d28d7f2c9e616c14a0e1d017d2270",
-      "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-check@4.7.4"
+      "version": "svelte-language-server@0.18.4",
+      "gitref": "refs/tags/svelte-language-server@0.18.4",
+      "revision": "478dc2352d8812ff629e878726ef0190699e3d02",
+      "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.18.4"
     },
     "tidal-dl-ng": {
       "version": "0.33.0"

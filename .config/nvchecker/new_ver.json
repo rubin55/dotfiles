@@ -76,9 +76,9 @@
       "url": "https://github.com/andwn/marsdev/releases/tag/v1.0.0-rc1"
     },
     "mistral-vibe": {
-      "version": "v2.24.0",
-      "gitref": "refs/tags/v2.24.0",
-      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.24.0"
+      "version": "v2.24.1",
+      "gitref": "refs/tags/v2.24.1",
+      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.24.1"
     },
     "moonlight-qt": {
       "version": "v6.1.0",
@@ -193,10 +193,10 @@
       "url": "https://github.com/ufo5260987423/scheme-langserver/releases/tag/2.1.8"
     },
     "svelte-language-server": {
-      "version": "@sveltejs/load-config@0.2.2",
-      "gitref": "refs/tags/@sveltejs/load-config@0.2.2",
-      "revision": "dcb1ffb24494597c34e929a85d1c499e4f2dade1",
-      "url": "https://github.com/sveltejs/language-tools/releases/tag/@sveltejs/load-config@0.2.2"
+      "version": "svelte-language-server@0.18.4",
+      "gitref": "refs/tags/svelte-language-server@0.18.4",
+      "revision": "478dc2352d8812ff629e878726ef0190699e3d02",
+      "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.18.4"
     },
     "winexe": {
       "version": "4.24.5"
