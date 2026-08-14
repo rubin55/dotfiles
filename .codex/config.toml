@@ -1,7 +1,7 @@
 model_provider = "openrouter"
-model_reasoning_effort = "high"
-plan_mode_reasoning_effort = "xhigh"
-model="~openai/gpt-latest"
+model_reasoning_effort = "max"
+plan_mode_reasoning_effort = "max"
+model="openai/gpt-5.6-luna"
 
 [model_providers.openrouter]
 name = "openrouter"
@@ -19,3 +19,7 @@ network_access = true
 
 [sandbox_workspace_write]
 network_access = true
+
+[projects."/home/rubin/Desktop"]
+trust_level = "trusted"
+
