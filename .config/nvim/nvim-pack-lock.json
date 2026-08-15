@@ -17,11 +17,11 @@
       "src": "https://github.com/j-hui/fidget.nvim"
     },
     "fzf-lua": {
-      "rev": "8671012a7b2a1648595952c655039d51fb301c14",
+      "rev": "05e44d38de0a79c11fba5f7bf8138791b1dbdd1e",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "gitsigns.nvim": {
-      "rev": "31d6fb2d618bca1482b9f274751ead5f03461408",
+      "rev": "5be654f2232c10ddcad19c1607a67b6b4b78fc29",
       "src": "https://github.com/lewis6991/gitsigns.nvim.git"
     },
     "haunt.nvim": {
@@ -37,7 +37,7 @@
       "src": "https://github.com/EdenEast/nightfox.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "43ed3797b266e1ee8d222e491379ad471c9d3146",
+      "rev": "51dbf5359da86721662c87ca10eb73add973737b",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-tree": {
@@ -45,7 +45,7 @@
       "src": "https://github.com/nvim-tree/nvim-tree.lua"
     },
     "nvim-treesitter": {
-      "rev": "c9f9ed6c1892f629ea399f4ee7905f2686fa13f2",
+      "rev": "074aa4422bf029908338e855d0c0f71470a971bb",
       "src": "https://github.com/nvim-treesitter/nvim-treesitter"
     },
     "nvim-web-devicons": {
