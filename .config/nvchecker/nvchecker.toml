@@ -10,12 +10,12 @@ git = "https://git.code.sf.net/p/cdesktopenv/code"
 include_regex = '^[0-9]+\.[0-9]+\.[0-9]+$'
 use_max_tag = true
 
-[dev-proxy-bin]
+[dev-proxy]
 source = "github"
 github = "dotnet/dev-proxy"
 use_latest_release = "true"
 
-[fsautocomplete-bin]
+[fsautocomplete]
 source = "github"
 github = "ionide/FsAutoComplete"
 use_latest_release = "true"
@@ -148,7 +148,7 @@ source = "pacman"
 pacman = "python-hatchling"
 strip_release = "true"
 
-[pupdate-bin]
+[pupdate]
 source = "github"
 github = "mattpannella/pupdate"
 use_latest_release = "true"
@@ -204,7 +204,7 @@ source = "github"
 github = "castwide/yard-solargraph"
 use_latest_tag = "true"
 
-[rusty-psn-bin]
+[rusty-psn]
 source = "github"
 github = "RainbowCookie32/rusty-psn"
 use_latest_release = "true"
@@ -214,12 +214,12 @@ source = "pacman"
 pacman = "samba"
 strip_release = "true"
 
-[sbom-tool-bin]
+[sbom-tool]
 source = "github"
 github = "microsoft/sbom-tool"
 use_latest_release = "true"
 
-[scheme-langserver-bin]
+[scheme-langserver]
 source = "github"
 github = "ufo5260987423/scheme-langserver"
 use_latest_release = "true"

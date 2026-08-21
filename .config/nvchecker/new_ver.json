@@ -6,13 +6,13 @@
       "gitref": "refs/tags/2.5.3",
       "revision": "b3956bda93ff3d45b644c7bc6d55e0e01c9b9a74"
     },
-    "dev-proxy-bin": {
+    "dev-proxy": {
       "version": "v3.2.0",
       "gitref": "refs/tags/v3.2.0",
       "url": "https://github.com/dotnet/dev-proxy/releases/tag/v3.2.0",
       "creation_time": "2026-07-21T14:19:07Z"
     },
-    "fsautocomplete-bin": {
+    "fsautocomplete": {
       "version": "v0.83.0",
       "gitref": "refs/tags/v0.83.0",
       "url": "https://github.com/ionide/FsAutoComplete/releases/tag/v0.83.0",
@@ -87,10 +87,10 @@
       "revision_creation_time": "2023-06-11T08:04:30Z"
     },
     "mistral-vibe": {
-      "version": "v2.24.1",
-      "gitref": "refs/tags/v2.24.1",
-      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.24.1",
-      "creation_time": "2026-08-11T13:29:54Z"
+      "version": "v2.24.3",
+      "gitref": "refs/tags/v2.24.3",
+      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.24.3",
+      "creation_time": "2026-08-20T17:39:00Z"
     },
     "moonlight-qt": {
       "version": "v6.1.0",
@@ -108,7 +108,7 @@
       "creation_time": "2026-06-25T14:40:46Z"
     },
     "openshift-codeready-bin": {
-      "version": "2.62.0"
+      "version": "2.63.0"
     },
     "openshift-developer-bin": {
       "version": "v3.16.1"
@@ -122,11 +122,11 @@
     "pragmatapro-fonts": {
       "version": "0.903"
     },
-    "pupdate-bin": {
-      "version": "5.3.3",
-      "gitref": "refs/tags/5.3.3",
-      "url": "https://github.com/mattpannella/pupdate/releases/tag/5.3.3",
-      "creation_time": "2026-07-29T02:17:34Z"
+    "pupdate": {
+      "version": "5.6.0",
+      "gitref": "refs/tags/5.6.0",
+      "url": "https://github.com/mattpannella/pupdate/releases/tag/5.6.0",
+      "creation_time": "2026-08-21T03:26:53Z"
     },
     "pvsneslib": {
       "version": "4.6.0",
@@ -136,10 +136,10 @@
       "revision_creation_time": "2026-07-28T14:11:45Z"
     },
     "python-agent-client-protocol": {
-      "version": "0.12.0",
-      "gitref": "refs/tags/0.12.0",
-      "url": "https://github.com/agentclientprotocol/python-sdk/releases/tag/0.12.0",
-      "creation_time": "2026-08-01T15:58:00Z"
+      "version": "0.12.1",
+      "gitref": "refs/tags/0.12.1",
+      "url": "https://github.com/agentclientprotocol/python-sdk/releases/tag/0.12.1",
+      "creation_time": "2026-08-16T14:08:00Z"
     },
     "python-hatchling": {
       "version": "1.30.1"
@@ -197,22 +197,22 @@
       "url": "https://github.com/castwide/yard-solargraph/releases/tag/v0.1.0",
       "revision_creation_time": "2025-02-26T16:50:09-05:00"
     },
-    "rusty-psn-bin": {
+    "rusty-psn": {
       "version": "v0.6.0",
       "gitref": "refs/tags/v0.6.0",
       "url": "https://github.com/RainbowCookie32/rusty-psn/releases/tag/v0.6.0",
       "creation_time": "2026-08-03T00:02:15Z"
     },
     "samba": {
-      "version": "2:4.24.5"
+      "version": "2:4.24.6"
     },
-    "sbom-tool-bin": {
+    "sbom-tool": {
       "version": "v4.1.5",
       "gitref": "refs/tags/v4.1.5",
       "url": "https://github.com/microsoft/sbom-tool/releases/tag/v4.1.5",
       "creation_time": "2025-12-15T21:40:14Z"
     },
-    "scheme-langserver-bin": {
+    "scheme-langserver": {
       "version": "2.1.8",
       "gitref": "refs/tags/2.1.8",
       "url": "https://github.com/ufo5260987423/scheme-langserver/releases/tag/2.1.8",
@@ -226,7 +226,7 @@
       "revision_creation_time": "2026-08-13T05:44:16Z"
     },
     "winexe": {
-      "version": "4.24.5"
+      "version": "4.24.6"
     },
     "wolfram": {
       "version": "15.0.1"

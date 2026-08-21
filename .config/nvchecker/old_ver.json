@@ -6,25 +6,29 @@
       "gitref": "refs/tags/2.5.3",
       "revision": "b3956bda93ff3d45b644c7bc6d55e0e01c9b9a74"
     },
-    "dev-proxy-bin": {
+    "dev-proxy": {
       "version": "v3.2.0",
       "gitref": "refs/tags/v3.2.0",
-      "url": "https://github.com/dotnet/dev-proxy/releases/tag/v3.2.0"
+      "url": "https://github.com/dotnet/dev-proxy/releases/tag/v3.2.0",
+      "creation_time": "2026-07-21T14:19:07Z"
     },
-    "fsautocomplete-bin": {
+    "fsautocomplete": {
       "version": "v0.83.0",
       "gitref": "refs/tags/v0.83.0",
-      "url": "https://github.com/ionide/FsAutoComplete/releases/tag/v0.83.0"
+      "url": "https://github.com/ionide/FsAutoComplete/releases/tag/v0.83.0",
+      "creation_time": "2026-02-04T20:15:01Z"
     },
     "ghcup-hs": {
       "version": "v0.2.6.2",
       "gitref": "refs/tags/v0.2.6.2",
-      "url": "https://github.com/haskell/ghcup-hs/releases/tag/v0.2.6.2"
+      "url": "https://github.com/haskell/ghcup-hs/releases/tag/v0.2.6.2",
+      "creation_time": "2026-06-16T21:05:51Z"
     },
     "gnome-shell-extension-tiling-shell": {
       "version": "17.3",
       "gitref": "refs/tags/17.3",
-      "url": "https://github.com/domferr/tilingshell/releases/tag/17.3"
+      "url": "https://github.com/domferr/tilingshell/releases/tag/17.3",
+      "creation_time": "2026-01-31T09:27:59Z"
     },
     "ida-pro": {
       "version": "9.4"
@@ -32,7 +36,8 @@
     "infer-bin": {
       "version": "v1.3.0",
       "gitref": "refs/tags/v1.3.0",
-      "url": "https://github.com/facebook/infer/releases/tag/v1.3.0"
+      "url": "https://github.com/facebook/infer/releases/tag/v1.3.0",
+      "creation_time": "2026-05-12T15:44:13Z"
     },
     "intel-gmmlib": {
       "version": "22.10.0"
@@ -46,48 +51,52 @@
     "intel-openvino": {
       "version": "2026.3.0",
       "gitref": "refs/tags/2026.3.0",
-      "url": "https://github.com/openvinotoolkit/openvino/releases/tag/2026.3.0"
+      "url": "https://github.com/openvinotoolkit/openvino/releases/tag/2026.3.0",
+      "creation_time": "2026-08-04T16:16:22Z"
     },
     "jdk25-openj9-bin": {
       "version": "jdk-25.0.4.0",
       "gitref": "refs/tags/jdk-25.0.4.0",
-      "url": "https://github.com/ibmruntimes/semeru25-binaries/releases/tag/jdk-25.0.4.0"
+      "url": "https://github.com/ibmruntimes/semeru25-binaries/releases/tag/jdk-25.0.4.0",
+      "creation_time": "2026-07-30T03:08:11Z"
     },
     "jsonpath-python": {
       "version": "1.1.6",
       "gitref": "refs/tags/1.1.6",
-      "url": "https://github.com/sean2077/jsonpath-python/releases/tag/1.1.6"
+      "url": "https://github.com/sean2077/jsonpath-python/releases/tag/1.1.6",
+      "creation_time": "2026-05-07T01:26:19Z"
     },
     "leanux": {
       "version": "2.0.1",
       "gitref": "refs/tags/2.0.1",
-      "url": "https://github.com/jmspit/leanux/releases/tag/2.0.1"
-    },
-    "llama.cpp": {
-      "version": "89482bd665673362b59c57d63295bd7c8259af62",
-      "revision": "89482bd665673362b59c57d63295bd7c8259af62"
+      "url": "https://github.com/jmspit/leanux/releases/tag/2.0.1",
+      "creation_time": "2022-03-14T05:38:50Z"
     },
     "marksman": {
       "version": "2026-02-08",
       "gitref": "refs/tags/2026-02-08",
       "revision": "4340227338f8d2b369bf38d19f029f1effb532f6",
-      "url": "https://github.com/artempyanykh/marksman/releases/tag/2026-02-08"
+      "url": "https://github.com/artempyanykh/marksman/releases/tag/2026-02-08",
+      "revision_creation_time": "2026-02-08T20:52:58Z"
     },
     "marsdev": {
       "version": "v1.0.0-rc1",
       "gitref": "refs/tags/v1.0.0-rc1",
       "revision": "9de7602716e320d3d653712ec60d7b0e1ec22f4e",
-      "url": "https://github.com/andwn/marsdev/releases/tag/v1.0.0-rc1"
+      "url": "https://github.com/andwn/marsdev/releases/tag/v1.0.0-rc1",
+      "revision_creation_time": "2023-06-11T08:04:30Z"
     },
     "mistral-vibe": {
-      "version": "v2.24.1",
-      "gitref": "refs/tags/v2.24.1",
-      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.24.1"
+      "version": "v2.24.3",
+      "gitref": "refs/tags/v2.24.3",
+      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.24.3",
+      "creation_time": "2026-08-20T17:39:00Z"
     },
     "moonlight-qt": {
       "version": "v6.1.0",
       "gitref": "refs/tags/v6.1.0",
-      "url": "https://github.com/moonlight-stream/moonlight-qt/releases/tag/v6.1.0"
+      "url": "https://github.com/moonlight-stream/moonlight-qt/releases/tag/v6.1.0",
+      "creation_time": "2024-09-17T03:56:03Z"
     },
     "nand2tetris": {
       "version": "1IkIR8Pwq3PY49QgXpUJOkUUVht-TKIET"
@@ -95,10 +104,11 @@
     "netcoredbg": {
       "version": "3.2.0-1092",
       "gitref": "refs/tags/3.2.0-1092",
-      "url": "https://github.com/Samsung/netcoredbg/releases/tag/3.2.0-1092"
+      "url": "https://github.com/Samsung/netcoredbg/releases/tag/3.2.0-1092",
+      "creation_time": "2026-06-25T14:40:46Z"
     },
     "openshift-codeready-bin": {
-      "version": "2.62.0"
+      "version": "2.63.0"
     },
     "openshift-developer-bin": {
       "version": "v3.16.1"
@@ -112,21 +122,24 @@
     "pragmatapro-fonts": {
       "version": "0.903"
     },
-    "pupdate-bin": {
-      "version": "5.3.3",
-      "gitref": "refs/tags/5.3.3",
-      "url": "https://github.com/mattpannella/pupdate/releases/tag/5.3.3"
+    "pupdate": {
+      "version": "5.6.0",
+      "gitref": "refs/tags/5.6.0",
+      "url": "https://github.com/mattpannella/pupdate/releases/tag/5.6.0",
+      "creation_time": "2026-08-21T03:26:53Z"
     },
     "pvsneslib": {
       "version": "4.6.0",
       "gitref": "refs/tags/4.6.0",
       "revision": "1fab4b2a9d31a265805be58bb45c5a46480ea211",
-      "url": "https://github.com/alekmaul/pvsneslib/releases/tag/4.6.0"
+      "url": "https://github.com/alekmaul/pvsneslib/releases/tag/4.6.0",
+      "revision_creation_time": "2026-07-28T14:11:45Z"
     },
     "python-agent-client-protocol": {
-      "version": "0.12.0",
-      "gitref": "refs/tags/0.12.0",
-      "url": "https://github.com/agentclientprotocol/python-sdk/releases/tag/0.12.0"
+      "version": "0.12.1",
+      "gitref": "refs/tags/0.12.1",
+      "url": "https://github.com/agentclientprotocol/python-sdk/releases/tag/0.12.1",
+      "creation_time": "2026-08-16T14:08:00Z"
     },
     "python-hatchling": {
       "version": "1.30.1"
@@ -142,25 +155,29 @@
       "version": "v6.0.0",
       "gitref": "refs/tags/v6.0.0",
       "revision": "b4c6be4b149c906d6da79df264233a7e6556e64f",
-      "url": "https://github.com/commander-rb/commander/releases/tag/v6.0.0"
+      "url": "https://github.com/commander-rb/commander/releases/tag/v6.0.0",
+      "revision_creation_time": "2026-08-02T03:48:01Z"
     },
     "ruby-parlour": {
       "version": "9.1.2",
       "gitref": "refs/tags/9.1.2",
       "revision": "29145fa465d3ae4860c84e51d608322b0c78bb8b",
-      "url": "https://github.com/AaronC81/parlour/releases/tag/9.1.2"
+      "url": "https://github.com/AaronC81/parlour/releases/tag/9.1.2",
+      "revision_creation_time": "2025-07-07T21:07:13Z"
     },
     "ruby-rubocop-yard": {
       "version": "1.3.0",
       "gitref": "refs/tags/v1.3.0",
       "revision": "2239ff3f04ebffbe4369aab20cc61a1aac9fa0f6",
-      "url": "https://github.com/ksss/rubocop-yard/releases/tag/v1.3.0"
+      "url": "https://github.com/ksss/rubocop-yard/releases/tag/v1.3.0",
+      "revision_creation_time": "2026-06-27T09:18:35+09:00"
     },
     "ruby-solargraph": {
       "version": "v0.60.3",
       "gitref": "refs/tags/v0.60.3",
       "revision": "0e0e1da9b23fb83ab47855d9fdd78f45978baee2",
-      "url": "https://github.com/castwide/solargraph/releases/tag/v0.60.3"
+      "url": "https://github.com/castwide/solargraph/releases/tag/v0.60.3",
+      "revision_creation_time": "2026-08-05T06:13:09-04:00"
     },
     "ruby-sord": {
       "version": "7.1.0",
@@ -170,43 +187,46 @@
       "version": "v0.0.1",
       "gitref": "refs/tags/v0.0.1",
       "revision": "04882660ca1dc8bf6d062ad2d63f43c87164ff1f",
-      "url": "https://github.com/digitalcuisine/yard-activesupport-concern/releases/tag/v0.0.1"
+      "url": "https://github.com/digitalcuisine/yard-activesupport-concern/releases/tag/v0.0.1",
+      "revision_creation_time": "2015-06-02T17:28:01+02:00"
     },
     "ruby-yard-solargraph": {
       "version": "v0.1.0",
       "gitref": "refs/tags/v0.1.0",
       "revision": "04394d0486490eb9289fc1ce8e9d420471ca103a",
-      "url": "https://github.com/castwide/yard-solargraph/releases/tag/v0.1.0"
+      "url": "https://github.com/castwide/yard-solargraph/releases/tag/v0.1.0",
+      "revision_creation_time": "2025-02-26T16:50:09-05:00"
     },
-    "rusty-psn-bin": {
+    "rusty-psn": {
       "version": "v0.6.0",
       "gitref": "refs/tags/v0.6.0",
-      "url": "https://github.com/RainbowCookie32/rusty-psn/releases/tag/v0.6.0"
+      "url": "https://github.com/RainbowCookie32/rusty-psn/releases/tag/v0.6.0",
+      "creation_time": "2026-08-03T00:02:15Z"
     },
     "samba": {
-      "version": "2:4.24.5"
+      "version": "2:4.24.6"
     },
-    "sbom-tool-bin": {
+    "sbom-tool": {
       "version": "v4.1.5",
       "gitref": "refs/tags/v4.1.5",
-      "url": "https://github.com/microsoft/sbom-tool/releases/tag/v4.1.5"
+      "url": "https://github.com/microsoft/sbom-tool/releases/tag/v4.1.5",
+      "creation_time": "2025-12-15T21:40:14Z"
     },
-    "scheme-langserver-bin": {
+    "scheme-langserver": {
       "version": "2.1.8",
       "gitref": "refs/tags/2.1.8",
-      "url": "https://github.com/ufo5260987423/scheme-langserver/releases/tag/2.1.8"
+      "url": "https://github.com/ufo5260987423/scheme-langserver/releases/tag/2.1.8",
+      "creation_time": "2026-08-03T03:09:49Z"
     },
     "svelte-language-server": {
       "version": "svelte-language-server@0.18.4",
       "gitref": "refs/tags/svelte-language-server@0.18.4",
       "revision": "478dc2352d8812ff629e878726ef0190699e3d02",
-      "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.18.4"
-    },
-    "tidal-dl-ng": {
-      "version": "0.33.0"
+      "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.18.4",
+      "revision_creation_time": "2026-08-13T05:44:16Z"
     },
     "winexe": {
-      "version": "4.24.5"
+      "version": "4.24.6"
     },
     "wolfram": {
       "version": "15.0.1"
