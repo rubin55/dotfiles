@@ -25,7 +25,7 @@
       "src": "https://github.com/lewis6991/gitsigns.nvim.git"
     },
     "haunt.nvim": {
-      "rev": "606cff70de7c664d3dd26b1cd2dc95c5a7dddbb7",
+      "rev": "c973175dda88236ecda342fd3654b5dc4f6b7764",
       "src": "https://github.com/TheNoeTrevino/haunt.nvim"
     },
     "lualine.nvim": {
@@ -37,7 +37,7 @@
       "src": "https://github.com/EdenEast/nightfox.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "51dbf5359da86721662c87ca10eb73add973737b",
+      "rev": "bff1bd61cb1455040533201ca1edf1e84efa578f",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-tree": {
