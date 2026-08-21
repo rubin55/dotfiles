@@ -51,3 +51,24 @@ end
 -- Set toggle ruler keys.
 vim.keymap.set('n', 'tr', function() cycle_ruler(1) end, { desc = 'Toggle ruler' })
 vim.keymap.set('n', 'TR', function() cycle_ruler(-1) end, { desc = 'Toggle ruler (go backwards)' })
+
+-- Which lualine stop is active; persists across calls.
+local ll_idx = 1
+
+-- Toggle lualine function.
+local function cycle_lualine(step)
+  local stops = {
+    { ls = 2, ch = 1, name = 'on' },
+    { ls = 2, ch = 0, name = 'on, no cmdline' },
+    { ls = 0, ch = 0, name = 'off' },
+  }
+  ll_idx = (ll_idx - 1 + step) % #stops + 1
+
+  local s = stops[ll_idx]
+  vim.o.laststatus, vim.o.cmdheight = s.ls, s.ch
+  print('lualine: ' .. s.name)
+end
+
+-- Set toggle lualine keys.
+vim.keymap.set('n', 'ts', function() cycle_lualine(1) end, { desc = 'Toggle statusline' })
+vim.keymap.set('n', 'TS', function() cycle_lualine(-1) end, { desc = 'Toggle statusline (go backwards)' })
