@@ -160,7 +160,10 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
     wantedGnomeMonospaceFontSize="$gnomeMono"
     wantedGnomeInterfaceFontSize="$gnomeSans"
     wantedGnomeDocumentFontSize="$gnomeSerif"
-    wantedGnomeTitleFontSize="$wantedGnomeInterfaceFontSize"
+    # Gnome drops bold in titlebars for fractional sizes, so round
+    # to the nearest integer, with halves rounding down.
+    wantedGnomeTitleFontSize="$(awk -v size="$wantedGnomeInterfaceFontSize" \
+      'BEGIN { printf "%d", (size - int(size) > 0.5) ? int(size) + 1 : int(size) }')"
 
     # Update Gnome system monospace font if different.
     if [[ -n "$currentGnomeMonospaceFontSize" && "$currentGnomeMonospaceFontSize" != "$wantedGnomeMonospaceFontSize" ]]; then
