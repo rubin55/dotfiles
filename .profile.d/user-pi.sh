@@ -7,6 +7,7 @@ type -p path.which || return
 path.which pi || return
 
 # Various preferences.
+export PI_LENS_HOME="$HOME/.pi/lens"
 export PI_LENS_DISABLE_LSP_INSTALL=1
 export PI_LENS_DISABLE_TOOL_INSTALL=1
 
