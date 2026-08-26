@@ -30,7 +30,7 @@ done
 
 # Some subdirectories I have in my SCRIPTS_HOME.
 if [[ -n "$SCRIPTS_HOME" ]]; then
-    for DIR in perl power python ruby shell; do
+    for DIR in js lua perl power python ruby shell; do
       PATH_NEW+="$SCRIPTS_HOME/$DIR:"
     done
 fi
