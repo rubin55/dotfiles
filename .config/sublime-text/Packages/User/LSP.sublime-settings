@@ -66,7 +66,7 @@
     },
     "csharp": {
       "enabled": false,
-      "command": ["omnisharp", "--languageserver", "--encoding", "utf-8"],
+      "command": ["roslyn-language-server", "--stdio"],
       "selector": "source.cs",
     },
     "css": {
@@ -103,12 +103,12 @@
     },
     "elixir": {
       "enabled": false,
-      "command": ["elixir-ls"],
+      "command": ["expert", "--stdio"],
       "selector": "source.elixir | text.elixir",
     },
     "erlang": {
       "enabled": false,
-      "command": ["erlang_ls", "--transport", "stdio"],
+      "command": ["elp", "server"],
       "selector": "source.erlang",
     },
     "fsharp": {
@@ -151,7 +151,7 @@
     },
     "javascript": {
       "enabled": false,
-      "command": ["biome", "lsp-proxy"],
+      "command": ["vtsls", "--stdio"],
       "selector": "source.js | source.jsx | source.js.react",
     },
     "json": {
@@ -190,9 +190,9 @@
         "-NoLogo",
         "-NoProfile",
         "-File",
-        "/opt/powershell-editor-services/PowerShellEditorServices/Start-EditorServices.ps1",
+        "/usr/share/powershell/Modules/PowerShellEditorServices/Start-EditorServices.ps1",
         "-BundledModulesPath",
-        "/opt/powershell-editor-services",
+        "/usr/share/powershell/Modules",
         "-HostProfileId",
         "SublimeText",
         "-Stdio",
@@ -461,7 +461,7 @@
     },
     "typescript": {
       "enabled": false,
-      "command": ["biome", "lsp-proxy"],
+      "command": ["vtsls", "--stdio"],
       "selector": "source.ts | source.tsx | source.ts.react",
     },
     "vala": {
