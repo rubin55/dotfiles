@@ -2,7 +2,49 @@
   "$schema": "https://opencode.ai/config.json",
   "lsp": {
     "yaml-ls": {
-      "disabled": true
+      "command": [
+        "yaml-language-server",
+        "--stdio"
+      ],
+      "disabled": false,
+      "initialization": {
+        "yaml": {
+          "completion": true,
+          "customTags": [
+            "!reference sequence"
+          ],
+          "maxItemsComputed": 5000,
+          "format": {
+            "enable": true,
+            "singleQuote": false,
+            "bracketSpacing": true,
+            "proseWrap": "preserve",
+            "printWidth": 120
+          },
+          "hover": true,
+          "schemas": {},
+          "schemaStore": {
+            "enable": true
+          },
+          "validate": true,
+          "disableAdditionalProperties": false
+        }
+      }
+    },
+    "elixir-ls": {
+      "command": [
+        "expert",
+        "--stdio"
+      ]
+    },
+    "ruby-lsp": {
+      "command": [
+        "solargraph",
+        "stdio"
+      ],
+      "initialization": {
+        "diagnostics": true
+      }
     },
     "helm": {
       "command": [
@@ -11,7 +53,770 @@
       ],
       "extensions": [
         ".yaml"
+      ],
+      "disabled": true
+    },
+    "ansible": {
+      "command": [
+        "ansible-language-server",
+        "--stdio"
+      ],
+      "extensions": [
+        ".yaml",
+        ".yml"
+      ],
+      "disabled": true
+    },
+    "css": {
+      "command": [
+        "vscode-css-languageserver",
+        "--stdio"
+      ],
+      "extensions": [
+        ".css",
+        ".scss",
+        ".less"
       ]
+    },
+    "dockerfile": {
+      "command": [
+        "docker-langserver",
+        "--stdio"
+      ],
+      "extensions": [
+        "Dockerfile",
+        ".dockerfile"
+      ]
+    },
+    "erlang": {
+      "command": [
+        "elp",
+        "server"
+      ],
+      "extensions": [
+        ".erl"
+      ]
+    },
+    "groovy": {
+      "command": [
+        "groovy-language-server"
+      ],
+      "extensions": [
+        ".groovy"
+      ]
+    },
+    "html": {
+      "command": [
+        "vscode-html-languageserver",
+        "--stdio"
+      ],
+      "extensions": [
+        ".html"
+      ]
+    },
+    "json": {
+      "command": [
+        "vscode-json-languageserver",
+        "--stdio"
+      ],
+      "extensions": [
+        ".json",
+        ".jsonc"
+      ]
+    },
+    "markdown": {
+      "command": [
+        "marksman",
+        "server"
+      ],
+      "extensions": [
+        ".md",
+        ".markdown"
+      ]
+    },
+    "perl": {
+      "command": [
+        "perlnavigator",
+        "--stdio"
+      ],
+      "extensions": [
+        ".pl",
+        ".pm"
+      ]
+    },
+    "powershell": {
+      "command": [
+        "pwsh",
+        "-NoLogo",
+        "-NoProfile",
+        "-File",
+        "/usr/share/powershell/Modules/PowerShellEditorServices/Start-EditorServices.ps1",
+        "-BundledModulesPath",
+        "/usr/share/powershell/Modules",
+        "-HostProfileId",
+        "SublimeText",
+        "-Stdio",
+        "-LogLevel",
+        "Error",
+        "-LogPath",
+        "/tmp",
+        "-SessionDetailsPath",
+        "/tmp/PowerShellEditorServices.json"
+      ],
+      "extensions": [
+        ".ps1",
+        ".psm1",
+        ".psd1"
+      ]
+    },
+    "scala": {
+      "command": [
+        "metals"
+      ],
+      "extensions": [
+        ".scala"
+      ]
+    },
+    "scheme": {
+      "command": [
+        "scheme-langserver"
+      ],
+      "extensions": [
+        ".scm"
+      ]
+    },
+    "tailwind": {
+      "command": [
+        "tailwindcss-language-server"
+      ],
+      "extensions": [
+        ".css",
+        ".scss",
+        ".less",
+        ".html",
+        ".vue",
+        ".svelte",
+        ".tsx",
+        ".jsx"
+      ],
+      "initialization": {
+        "tailwindCSS": {
+          "colorDecorators": true,
+          "emmetCompletions": false,
+          "includeLanguages": {},
+          "files": {
+            "exclude": [
+              "**/.git/**",
+              "**/node_modules/**",
+              "**/.hg/**"
+            ]
+          },
+          "classAttributes": [
+            "class",
+            "className",
+            "ngClass"
+          ],
+          "rootFontSize": 16,
+          "showPixelEquivalents": true,
+          "validate": true,
+          "lint": {
+            "cssConflict": "warning",
+            "invalidApply": "error",
+            "invalidConfigPath": "error",
+            "invalidScreen": "error",
+            "invalidTailwindDirective": "error",
+            "invalidVariant": "error",
+            "recommendedVariantOrder": "warning"
+          },
+          "experimental": {
+            "classRegex": []
+          }
+        }
+      }
+    },
+    "vala": {
+      "command": [
+        "vala-language-server"
+      ],
+      "extensions": [
+        ".vala",
+        ".gs"
+      ]
+    },
+    "xml": {
+      "command": [
+        "lemminx"
+      ],
+      "extensions": [
+        ".xml"
+      ],
+      "initialization": {
+        "xml": {
+          "fileAssociations": [
+            {
+              "systemId": "http://www.w3.org/2001/XMLSchema.xsd",
+              "pattern": "**/*.xsd"
+            },
+            {
+              "systemId": "https://maven.apache.org/xsd/maven-4.0.0.xsd",
+              "pattern": "**/pom.xml"
+            }
+          ]
+        }
+      }
+    },
+    "astro": {
+      "command": [
+        "astro-ls",
+        "--stdio"
+      ],
+      "initialization": {
+        "diagnosticModel": 2,
+        "typescript": {
+          "tsdk": "/usr/lib/node_modules/typescript/lib"
+        },
+        "astro": {
+          "typescript": {
+            "enabled": true,
+            "allowArbitraryAttributes": false,
+            "diagnostics": {
+              "enabled": true
+            },
+            "hover": {
+              "enabled": true
+            },
+            "documentSymbols": {
+              "enabled": true
+            },
+            "completions": {
+              "enabled": true
+            },
+            "definitions": {
+              "enabled": true
+            },
+            "codeActions": {
+              "enabled": true
+            },
+            "signatureHelp": {
+              "enabled": true
+            },
+            "rename": {
+              "enabled": true
+            },
+            "semanticTokens": {
+              "enabled": true
+            }
+          },
+          "html": {
+            "enabled": true,
+            "hover": {
+              "enabled": true
+            },
+            "completions": {
+              "enabled": true,
+              "emmet": true
+            },
+            "tagComplete": {
+              "enabled": true
+            },
+            "documentSymbols": {
+              "enabled": true
+            }
+          },
+          "css": {
+            "enabled": true,
+            "hover": {
+              "enabled": true
+            },
+            "completions": {
+              "enabled": true,
+              "emmet": true
+            },
+            "documentColors": {
+              "enabled": true
+            },
+            "documentSymbols": {
+              "enabled": true
+            }
+          },
+          "format": {
+            "indentFrontmatter": false,
+            "newLineAfterFrontmatter": true
+          }
+        }
+      }
+    },
+    "dart": {
+      "command": [
+        "dart",
+        "language-server",
+        "--protocol",
+        "lsp"
+      ],
+      "env": {
+        "DART_SDK": "/home/rubin/.local/share/flutterup/bin/cache/dart-sdk",
+        "FLUTTER_ROOT": "/home/rubin/.local/share/flutterup"
+      },
+      "initialization": {
+        "onlyAnalyzeProjectsWithOpenFiles": true,
+        "suggestFromUnimportedLibraries": false,
+        "closingLabels": false,
+        "flutterOutline": false,
+        "outline": false,
+        "dart": {
+          "enableSdkFormatter": true,
+          "lineLength": 120,
+          "completeFunctionCalls": true,
+          "showTodos": false
+        }
+      }
+    },
+    "fsharp": {
+      "command": [
+        "fsautocomplete"
+      ],
+      "initialization": {
+        "AutomaticWorkspaceInit": true
+      }
+    },
+    "rust": {
+      "command": [
+        "rust-analyzer"
+      ],
+      "initialization": {
+        "check": {
+          "command": "clippy"
+        },
+        "completion": {
+          "fullFunctionSignatures": {
+            "enable": true
+          }
+        },
+        "hover": {
+          "maxSubstitutionLength": null,
+          "show": {
+            "enumVariants": 100,
+            "fields": 100
+          }
+        }
+      }
+    },
+    "svelte": {
+      "command": [
+        "svelteserver",
+        "--stdio"
+      ],
+      "initialization": {
+        "configuration": {
+          "svelte": {
+            "plugin": {
+              "css": {
+                "enable": true,
+                "globals": "",
+                "colorPresentations": {
+                  "enable": true
+                },
+                "completions": {
+                  "enable": true,
+                  "emmet": true
+                },
+                "diagnostics": {
+                  "enable": true
+                },
+                "documentColors": {
+                  "enable": true
+                },
+                "documentSymbols": {
+                  "enable": true
+                },
+                "hover": {
+                  "enable": true
+                },
+                "selectionRange": {
+                  "enable": true
+                }
+              },
+              "html": {
+                "enable": true,
+                "completions": {
+                  "enable": true,
+                  "emmet": true
+                },
+                "documentSymbols": {
+                  "enable": true
+                },
+                "hover": {
+                  "enable": true
+                },
+                "linkedEditing": {
+                  "enable": true
+                },
+                "renameTags": {
+                  "enable": true
+                },
+                "tagComplete": {
+                  "enable": true
+                }
+              },
+              "svelte": {
+                "enable": true,
+                "codeActions": {
+                  "enable": true
+                },
+                "compilerWarnings": {},
+                "completions": {
+                  "enable": true
+                },
+                "useNewTransformation": false,
+                "diagnostics": {
+                  "enable": true
+                },
+                "format": {
+                  "enable": true
+                },
+                "hover": {
+                  "enable": true
+                },
+                "rename": {
+                  "enable": true
+                },
+                "selectionRange": {
+                  "enable": true
+                }
+              },
+              "typescript": {
+                "enable": true,
+                "codeActions": {
+                  "enable": true
+                },
+                "completions": {
+                  "enable": true
+                },
+                "definitions": {
+                  "enable": true
+                },
+                "diagnostics": {
+                  "enable": true
+                },
+                "documentSymbols": {
+                  "enable": true
+                },
+                "findReferences": {
+                  "enable": true
+                },
+                "hover": {
+                  "enable": true
+                },
+                "rename": {
+                  "enable": true
+                },
+                "selectionRange": {
+                  "enable": true
+                },
+                "semanticTokens": {
+                  "enable": true
+                },
+                "signatureHelp": {
+                  "enable": true
+                }
+              }
+            }
+          }
+        },
+        "javascript": {
+          "inlayHints": {
+            "enumMemberValues": {
+              "enabled": false
+            },
+            "functionLikeReturnTypes": {
+              "enabled": false
+            },
+            "parameterNames": {
+              "enabled": "none",
+              "suppressWhenArgumentMatchesName": true
+            },
+            "parameterTypes": {
+              "enabled": false
+            },
+            "propertyDeclarationTypes": {
+              "enabled": false
+            },
+            "variableTypes": {
+              "enabled": false,
+              "suppressWhenTypeMatchesName": {
+                "enabled": true
+              }
+            }
+          }
+        },
+        "typescript": {
+          "inlayHints": {
+            "enumMemberValues": {
+              "enabled": false
+            },
+            "functionLikeReturnTypes": {
+              "enabled": false
+            },
+            "parameterNames": {
+              "enabled": "none",
+              "suppressWhenArgumentMatchesName": true
+            },
+            "parameterTypes": {
+              "enabled": false
+            },
+            "propertyDeclarationTypes": {
+              "enabled": false
+            },
+            "variableTypes": {
+              "enabled": false,
+              "suppressWhenTypeMatchesName": {
+                "enabled": true
+              }
+            }
+          }
+        }
+      }
+    },
+    "vue": {
+      "command": [
+        "vue-language-server",
+        "--stdio"
+      ],
+      "env": {
+        "NODE_ENV": "production"
+      },
+      "initialization": {
+        "vue": {
+          "format": {
+            "script": {
+              "initialIndent": false
+            },
+            "style": {
+              "initialIndent": false
+            },
+            "template": {
+              "initialIndent": true
+            },
+            "wrapAttributes": "auto"
+          },
+          "inlayHints": {
+            "destructuredProps": false,
+            "inlineHandlerLeading": false,
+            "missingProps": false,
+            "optionsWrapper": false,
+            "vBindShorthand": false
+          },
+          "suggest": {
+            "componentNameCasing": "preferPascalCase",
+            "defineAssignment": true,
+            "propNameCasing": "preferKebabCase"
+          }
+        },
+        "javascript": {
+          "inlayHints": {
+            "enumMemberValues": {
+              "enabled": false
+            },
+            "functionLikeReturnTypes": {
+              "enabled": false
+            },
+            "parameterNames": {
+              "enabled": "none",
+              "suppressWhenArgumentMatchesName": true
+            },
+            "parameterTypes": {
+              "enabled": false
+            },
+            "propertyDeclarationTypes": {
+              "enabled": false
+            },
+            "variableTypes": {
+              "enabled": false,
+              "suppressWhenTypeMatchesName": {
+                "enabled": true
+              }
+            }
+          },
+          "suggest": {
+            "autoImports": false,
+            "classMemberSnippets": {
+              "enabled": true
+            },
+            "completeFunctionCalls": false,
+            "includeAutomaticOptionalChainCompletions": true,
+            "includeCompletionsForImportStatements": true,
+            "includeCompletionsWithSnippetText": true,
+            "jsdoc": {
+              "generateReturns": true
+            },
+            "objectLiteralMethodSnippets": {
+              "enabled": true
+            }
+          },
+          "preferences": {
+            "quoteStyle": "auto",
+            "importModuleSpecifier": "shortest",
+            "importModuleSpecifierEnding": "auto",
+            "jsxAttributeCompletionStyle": "auto",
+            "autoImportFileExcludePatterns": []
+          }
+        },
+        "typescript": {
+          "inlayHints": {
+            "enumMemberValues": {
+              "enabled": false
+            },
+            "functionLikeReturnTypes": {
+              "enabled": false
+            },
+            "parameterNames": {
+              "enabled": "none",
+              "suppressWhenArgumentMatchesName": true
+            },
+            "parameterTypes": {
+              "enabled": false
+            },
+            "propertyDeclarationTypes": {
+              "enabled": false
+            },
+            "variableTypes": {
+              "enabled": false,
+              "suppressWhenTypeMatchesName": {
+                "enabled": true
+              }
+            }
+          },
+          "suggest": {
+            "autoImports": false,
+            "classMemberSnippets": {
+              "enabled": true
+            },
+            "completeFunctionCalls": false,
+            "includeAutomaticOptionalChainCompletions": true,
+            "includeCompletionsForImportStatements": true,
+            "includeCompletionsWithSnippetText": true,
+            "jsdoc": {
+              "generateReturns": true
+            },
+            "objectLiteralMethodSnippets": {
+              "enabled": true
+            }
+          },
+          "preferences": {
+            "quoteStyle": "auto",
+            "importModuleSpecifier": "shortest",
+            "importModuleSpecifierEnding": "auto",
+            "jsxAttributeCompletionStyle": "auto",
+            "autoImportFileExcludePatterns": []
+          }
+        },
+        "emmet": {
+          "excludeLanguages": [
+            "markdown"
+          ],
+          "preferences": {},
+          "showAbbreviationSuggestions": true,
+          "showExpandedAbbreviation": "always",
+          "showSuggestionsAsSnippets": false,
+          "syntaxProfiles": {},
+          "variables": {}
+        },
+        "css": {
+          "completion": {
+            "completePropertyWithSemicolon": true,
+            "triggerPropertyValueCompletion": true
+          },
+          "customData": [],
+          "format": {
+            "braceStyle": "collapse",
+            "enable": true,
+            "maxPreserveNewLines": null,
+            "newlineBetweenRules": true,
+            "newlineBetweenSelectors": true,
+            "preserveNewLines": true,
+            "spaceAroundSelectorSeparator": false
+          },
+          "hover": {
+            "documentation": true,
+            "references": true
+          }
+        },
+        "less": {
+          "completion": {
+            "completePropertyWithSemicolon": true,
+            "triggerPropertyValueCompletion": true
+          },
+          "format": {
+            "braceStyle": "collapse",
+            "enable": true,
+            "maxPreserveNewLines": null,
+            "newlineBetweenRules": true,
+            "newlineBetweenSelectors": true,
+            "preserveNewLines": true,
+            "spaceAroundSelectorSeparator": false
+          },
+          "hover": {
+            "documentation": true,
+            "references": true
+          }
+        },
+        "scss": {
+          "completion": {
+            "completePropertyWithSemicolon": true,
+            "triggerPropertyValueCompletion": true
+          },
+          "format": {
+            "braceStyle": "collapse",
+            "enable": true,
+            "maxPreserveNewLines": null,
+            "newlineBetweenRules": true,
+            "newlineBetweenSelectors": true,
+            "preserveNewLines": true,
+            "spaceAroundSelectorSeparator": false
+          },
+          "hover": {
+            "documentation": true,
+            "references": true
+          }
+        },
+        "html": {
+          "autoClosingTags": true,
+          "autoCreateQuotes": true,
+          "completion": {
+            "attributeDefaultValue": "doublequotes"
+          },
+          "customData": [],
+          "format": {
+            "contentUnformatted": "pre,code,textarea",
+            "enable": true,
+            "extraLiners": "head, body, /html",
+            "indentHandlebars": false,
+            "indentInnerHtml": false,
+            "maxPreserveNewLines": null,
+            "preserveNewLines": true,
+            "templating": false,
+            "unformatted": "wbr",
+            "unformattedContentDelimiter": "",
+            "wrapAttributes": "auto",
+            "wrapAttributesIndentSize": null,
+            "wrapLineLength": 120
+          },
+          "hover": {
+            "documentation": true,
+            "references": true
+          }
+        }
+      }
+    },
+    "zls": {
+      "command": [
+        "zls"
+      ],
+      "initialization": {
+        "zls": {
+          "enable_build_on_save": true
+        }
+      }
     }
   },
   "mcp": {
