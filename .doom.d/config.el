@@ -60,8 +60,11 @@
 ;; Make magit find my git repositories.
 (setq magit-repository-directories '(("~/Source" . 3)))
 
-;; Make projectile find my projects.
+;; Make projectile find my projects. Discovery is manual (SPC p D);
+;; otherwise the first project-switching command of each session walks
+;; the whole search path before showing anything.
 (setq projectile-project-search-path '(("~/Source" . 3) ("~/Documents/Rubin/Exercism" . 2) ("~/Documents/Rubin/Courses" . 1)))
+(setq projectile-auto-discover nil)
 
 ;; Hide menubar, toolbar and scrollbar by default.
 (menu-bar-mode -1)
@@ -98,7 +101,7 @@
 (add-to-list 'auto-mode-alist '("\\.svelte\\'" . svelte-mode))
 
 ;; astro-ts-mode ships no usable autoloads (see packages.el) and errors
-;; if any of its grammars are missing. 
+;; if any of its grammars are missing.
 (autoload 'astro-ts-mode "astro-ts-mode" "Major mode for Astro templates." t)
 
 ;; The package only registers this recipe once it loads, which is too late
@@ -107,7 +110,7 @@
 (after! treesit
   (add-to-list 'treesit-language-source-alist
                '(astro "https://github.com/virchau13/tree-sitter-astro"
-                 :commit "213f6e6973d9b456c6e50e86f19f66877e7ef0ee")))
+                       :commit "213f6e6973d9b456c6e50e86f19f66877e7ef0ee")))
 
 (defun +astro-ts-mode ()
   "Enable `astro-ts-mode', installing its grammars first if needed."
@@ -128,16 +131,24 @@
 
 ;; Configure lsp-modes.
 (after! lsp-mode
+  (setq lsp-enable-suggest-server-download nil)
+
   (setq lsp-xml-prefer-jar nil
         lsp-xml-bin-file "/usr/bin/lemminx")
 
   (setq lsp-xml-file-associations
         [(:systemId "https://maven.apache.org/xsd/maven-4.0.0.xsd"
-          :pattern "**/*.pom")])
+                    :pattern "**/*.pom")])
 
   (setq lsp-fsharp-auto-workspace-init t)
 
-  (setq lsp-pwsh-exe "/usr/bin/pwsh")
+  (setq lsp-pwsh-dir "/usr/share/powershell/Modules"
+        lsp-pwsh-pses-script
+        (concat lsp-pwsh-dir "/PowerShellEditorServices/Start-EditorServices.ps1")
+        lsp-pwsh-log-path
+        (expand-file-name "lsp-pwsh" temporary-file-directory))
+
+  (make-directory lsp-pwsh-log-path t)
 
   (lsp-register-client
    (make-lsp-client
