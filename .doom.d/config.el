@@ -94,148 +94,73 @@
 ;; Always enable server mode, for emacsclient sessions.
 (server-start)
 
-;; Disable some lsp servers.
-(setq lsp-disabled-clients '(semgrep-ls))
+;; lang/web claims .svelte for web-mode; give it a mode of its own.
+(add-to-list 'auto-mode-alist '("\\.svelte\\'" . svelte-mode))
 
-;; Configure lsp python mode explicitly.
-;; Not required for python-language-server.
-;; (use-package lsp-pyright
-;;   :hook (python-mode . (lambda ()
-;;                          (require 'lsp-pyright)
-;;                          (lsp))))
+;; astro-ts-mode ships no usable autoloads (see packages.el) and errors
+;; if any of its grammars are missing. 
+(autoload 'astro-ts-mode "astro-ts-mode" "Major mode for Astro templates." t)
 
-;; Configure lsp c mode.
-(use-package ccls
-  :hook ((c-mode c++-mode objc-mode cuda-mode) . (lambda ()
-                                                   (require 'ccls)
-                                                   (lsp))))
-;; Configure lsp clojure mode.
-(use-package lsp-mode
-  :hook ((clojure-mode . lsp)
-         (clojurec-mode . lsp)
-         (clojurescript-mode . lsp)))
+;; The package only registers this recipe once it loads, which is too late
+;; to install from. The css and typescript recipes come from lang/web and
+;; lang/javascript. Kept in sync with the pinned astro-ts-mode.
+(after! treesit
+  (add-to-list 'treesit-language-source-alist
+               '(astro "https://github.com/virchau13/tree-sitter-astro"
+                 :commit "213f6e6973d9b456c6e50e86f19f66877e7ef0ee")))
 
-;; Configure lsp javascript and typescript modes.
-(use-package lsp-mode
-  :hook ((javascript-mode . lsp)
-         (js2-mode . lsp)
-         (js2-jsx-mode . lsp)
-         (typescript-mode . lsp)
-         (typescript-tsx-mode . lsp)))
+(defun +astro-ts-mode ()
+  "Enable `astro-ts-mode', installing its grammars first if needed."
+  (interactive)
+  (require 'treesit)
+  (dolist (lang '(astro html css typescript))
+    (unless (treesit-ready-p lang t)
+      (treesit-ensure-installed lang)))
+  (astro-ts-mode))
 
-;; Configure lsp go mode.
-(use-package lsp-mode
-  :hook ((go-mode . lsp)
-         (go-dot-mod-mode . lsp)))
+(add-to-list 'auto-mode-alist '("\\.astro\\'" . +astro-ts-mode))
 
-;; Configure lsp haskell mode.
-(use-package lsp-haskell
-  :hook ((haskell-mode . lsp))
-  :config
-  (setq lsp-haskell-process-path-hie "haskell-language-server")
-  ;; Comment/uncomment this line to see interactions between lsp client/server.
-  ;;(setq lsp-log-io t)
-  )
+;; No :lang module covers these, so nothing would start a server for them
+;; the way the +lsp flags do elsewhere.
+(add-hook 'astro-ts-mode-local-vars-hook #'lsp! 'append)
+(add-hook 'svelte-mode-local-vars-hook #'lsp! 'append)
+(add-hook 'powershell-mode-local-vars-hook #'lsp! 'append)
 
-;; Configure lsp ruby mode.
-(use-package lsp-mode
-  :hook ((ruby-mode . lsp)))
+;; Configure lsp-modes.
+(after! lsp-mode
+  (setq lsp-xml-prefer-jar nil
+        lsp-xml-bin-file "/usr/bin/lemminx")
 
-;; Configure lsp scala mode.
-(use-package lsp-mode
-  :hook ((scala-mode . lsp)))
-
-;; Configure lsp java mode.
-(use-package lsp-mode
-  :hook ((java-mode . lsp))
-  :config
-  (setq lsp-java-server-install-dir "/usr/share/java/jdtls"))
-
-;; Configure lsp csharp mode.
-(use-package lsp-mode
-  :hook ((csharp-mode . lsp)))
-
-;; Configure lsp cmake mode.
-(use-package lsp-mode
-  :hook ((cmake-mode . lsp)))
-
-;; Configure lsp css mode.
-(use-package lsp-mode
-  :hook ((css-mode . lsp)
-         (less-css-mode . lsp)
-         (sass-mode . lsp)
-         (scss-mode . lsp)))
-
-;; Configure lsp docker mode.
-(use-package lsp-mode
-  :hook ((dockerfile-mode . lsp)))
-
-;; Configure lsp groovy mode.
-(use-package lsp-mode
-  :hook ((groovy-mode . lsp)
-         (groovy-electric-mode . lsp))
-  :config
-  (setq lsp-groovy-server-file "/usr/share/java/groovy-language-server/groovy-language-server-all.jar"))
-
-;; Configure lsp lua mode.
-(use-package lsp-mode
-  :hook ((lua-mode . lsp))
-  :config
-  (setq lsp-clients-lua-language-server-install-dir "/usr/lib/lua-language-server/")
-  (setq lsp-clients-lua-language-server-bin "/usr/lib/lua-language-server/bin/lua-language-server"))
-
-;; Configure lsp json mode.
-(use-package lsp-mode
-  :hook ((json-mode . lsp)))
-
-;; Configure lsp powershell mode.
-(use-package lsp-mode
-  :hook ((powershell-mode . lsp))
-  :config
-  (setq lsp-pwsh-exe "/usr/bin/pwsh"))
-
-;; Configure lsp html mode.
-(use-package lsp-mode
-  :hook ((html-mode . lsp)))
-
-;; Configure lsp yaml mode.
-(use-package lsp-mode
-  :hook ((yaml-mode . lsp)))
-
-;; Configure lsp xml mode.
-(use-package lsp-mode
-  :hook ((xml-mode . lsp)
-         (nxml-mode . lsp))
-  :config
-  (setq lsp-xml-bin-file "/usr/bin/lemminx")
-  (setq lsp-xml-jar-file "/usr/share/java/lemminx/lemminx-0.31.0.jar")
-  (setq lsp-xml-server-work-dir "~/.lemminx")
   (setq lsp-xml-file-associations
-        '(((:systemId . "https://maven.apache.org/xsd/maven-4.0.0.xsd")
-           (:pattern . "**/*.pom")))))
+        [(:systemId "https://maven.apache.org/xsd/maven-4.0.0.xsd"
+          :pattern "**/*.pom")])
 
-;; Configure lsp sql mode.
-(use-package lsp-mode
-  :hook ((sql-mode . lsp)))
+  (setq lsp-fsharp-auto-workspace-init t)
 
-;; Configure lsp (la)tex mode.
-(use-package lsp-mode
-  :hook ((tex-mode . lsp)
-         (latex-mode . lsp)))
+  (setq lsp-pwsh-exe "/usr/bin/pwsh")
 
-;; Configure lsp erlang mode.
-(use-package lsp-mode
-  :hook ((erlang-mode . lsp)
-         (erlang-edoc-mode . lsp)))
+  (lsp-register-client
+   (make-lsp-client
+    :new-connection (lsp-stdio-connection '("kotlin-lsp" "--stdio"))
+    :major-modes '(kotlin-mode kotlin-ts-mode)
+    :priority 1
+    :server-id 'kotlin-lsp))
 
-;; Configure lsp elixir mode.
-(use-package lsp-mode
-  :hook ((elixir-mode . lsp)
-         (alchemist-mode . lsp))
-  :init (add-to-list 'exec-path "/usr/lib/elixir-ls"))
+  (lsp-register-client
+   (make-lsp-client
+    :new-connection (lsp-stdio-connection
+                     '("roslyn-language-server" "--stdio" "--autoLoadProjects"
+                       "--logLevel" "Information"))
+    :major-modes '(csharp-mode csharp-ts-mode)
+    :priority 1
+    :server-id 'roslyn-ls))
 
-;; Enable lsp logging.
-(setq lsp-log-io t)
+  (lsp-register-client
+   (make-lsp-client
+    :new-connection (lsp-stdio-connection '("expert" "--stdio"))
+    :major-modes '(elixir-mode elixir-ts-mode heex-ts-mode)
+    :priority 1
+    :server-id 'expert-ls)))
 
 ;; Configure flycheck markdown mode.
 (setq flycheck-markdown-markdownlint-cli-config "~/.markdownlintrc")
@@ -262,11 +187,6 @@
 (when (string= (system-name) "FRAME")
   (setq doom-font (font-spec :family "Monospace" :size 14 :weight 'normal)
         doom-variable-pitch-font (font-spec :family "Sans" :size 14)))
-
-;; Font settings for THINK, my other Linux laptop.
-(when (string= (system-name) "THINK")
-  (setq doom-font (font-spec :family "Monospace" :size 16 :weight 'normal)
-        doom-variable-pitch-font (font-spec :family "Sans" :size 16)))
 
 ;; Font settings for GEMINI, my Linux desktop at work.
 (when (string= (system-name) "GEMINI")
@@ -315,10 +235,6 @@
 ;; Disable insane 'jk' to-command-mode sequence.
 (after! evil-escape
   (setq evil-escape-key-sequence nil))
-
-;; Enable lsp-ui-doc.
-(after! lsp-ui
-  (setq lsp-ui-doc-enable t))
 
 ;; Show emacs version after startup.
 (add-hook 'window-setup-hook (lambda () (run-with-timer 1.2 nil #'call-interactively 'version)))

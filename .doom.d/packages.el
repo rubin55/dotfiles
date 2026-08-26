@@ -48,12 +48,14 @@
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;;(unpin! t)
 
+;; Disable calling `treesit-ready-p' at load time for astro-ts-mode
+(package! astro-ts-mode :recipe (:build (:not autoloads)))
 (package! auto-dark)
 (package! cue-mode)
 (package! earthfile-mode)
 (package! flycheck-kotlin)
-(package! lsp-pyright)
 (package! nov)
 (package! powershell)
+(package! svelte-mode)
 (package! visual-fill-column)
 (package! vterm-toggle)
