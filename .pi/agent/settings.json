@@ -2,20 +2,20 @@
   "compaction": {
     "enabled": false
   },
-  "defaultModel": "glm-5.2",
-  "defaultProvider": "neuralwatt",
-  "defaultThinkingLevel": "xhigh",
+  "defaultModel": "Qwen3.8-27B",
+  "defaultProvider": "hetzner",
+  "defaultThinkingLevel": "high",
   "defaultProjectTrust": "ask",
   "enableInstallTelemetry": false,
   "hideThinkingBlock": true,
   "images": {
     "autoResize": false
   },
-  "lastChangelogVersion": "0.80.3",
+  "lastChangelogVersion": "0.84.4",
   "packages": [
-    "npm:pi-effort",
+    "npm:pi-lens",
+    "npm:pi-model-doctor",
     "npm:pi-permission-system",
-    "git:github.com/rubin55/pi-neuralwatt",
     "npm:pi-terminal-theme"
   ],
   "theme": "terminal"
