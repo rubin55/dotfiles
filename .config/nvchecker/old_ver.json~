@@ -13,10 +13,10 @@
       "creation_time": "2026-07-21T14:19:07Z"
     },
     "fsautocomplete": {
-      "version": "v0.83.0",
-      "gitref": "refs/tags/v0.83.0",
-      "url": "https://github.com/ionide/FsAutoComplete/releases/tag/v0.83.0",
-      "creation_time": "2026-02-04T20:15:01Z"
+      "version": "v0.84.0",
+      "gitref": "refs/tags/v0.84.0",
+      "url": "https://github.com/ionide/FsAutoComplete/releases/tag/v0.84.0",
+      "creation_time": "2026-08-29T15:45:43Z"
     },
     "ghcup-hs": {
       "version": "v0.2.6.2",
