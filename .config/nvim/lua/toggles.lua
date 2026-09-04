@@ -1,7 +1,7 @@
 -- Set toggle word wrap key.
-vim.keymap.set('n', 'tw', function()
+vim.keymap.set('n', '<leader>tw', function()
   vim.wo.wrap = not vim.wo.wrap
-  print('wrap: ' .. (vim.wo.wrap and 'on' or 'off'))
+  vim.notify('wrap: ' .. (vim.wo.wrap and 'on' or 'off'))
 end, { desc = 'Toggle word wrap' })
 
 -- Toggle gutter function.
@@ -10,22 +10,22 @@ local function toggle_gutter()
     vim.o.number = true
     vim.o.relativenumber = false
     vim.o.signcolumn = 'number'
-    print('gutter: absolute')
+    vim.notify('gutter: absolute')
   elseif not vim.o.relativenumber then
     vim.o.number = true
     vim.o.relativenumber = true
     vim.o.signcolumn = 'number'
-    print('gutter: relative')
+    vim.notify('gutter: relative')
   else
     vim.o.number = false
     vim.o.relativenumber = false
     vim.o.signcolumn = 'yes'
-    print('gutter: off')
+    vim.notify('gutter: off')
   end
 end
 
 -- Set toggle gutter key.
-vim.keymap.set('n', 'tg', toggle_gutter, { desc = 'Toggle gutter' })
+vim.keymap.set('n', '<leader>tg', toggle_gutter, { desc = 'Toggle gutter' })
 
 -- Which ruler stop is active; persists across calls.
 local cc_idx = 1
@@ -45,12 +45,12 @@ local function cycle_ruler(step)
     vim.api.nvim_set_option_value('colorcolumn', value, { win = win })
   end
 
-  print('ruler: ' .. (c and tostring(c) or 'off'))
+  vim.notify('ruler: ' .. (c and tostring(c) or 'off'))
 end
 
 -- Set toggle ruler keys.
-vim.keymap.set('n', 'tr', function() cycle_ruler(1) end, { desc = 'Toggle ruler' })
-vim.keymap.set('n', 'TR', function() cycle_ruler(-1) end, { desc = 'Toggle ruler (go backwards)' })
+vim.keymap.set('n', '<leader>tr', function() cycle_ruler(1) end, { desc = 'Toggle ruler' })
+vim.keymap.set('n', '<leader>tR', function() cycle_ruler(-1) end, { desc = 'Toggle ruler (go backwards)' })
 
 -- Which lualine stop is active; persists across calls.
 local ll_idx = 1
@@ -66,9 +66,9 @@ local function cycle_lualine(step)
 
   local s = stops[ll_idx]
   vim.o.laststatus, vim.o.cmdheight = s.ls, s.ch
-  print('lualine: ' .. s.name)
+  vim.notify('lualine: ' .. s.name)
 end
 
 -- Set toggle lualine keys.
-vim.keymap.set('n', 'ts', function() cycle_lualine(1) end, { desc = 'Toggle statusline' })
-vim.keymap.set('n', 'TS', function() cycle_lualine(-1) end, { desc = 'Toggle statusline (go backwards)' })
+vim.keymap.set('n', '<leader>ts', function() cycle_lualine(1) end, { desc = 'Toggle statusline' })
+vim.keymap.set('n', '<leader>tS', function() cycle_lualine(-1) end, { desc = 'Toggle statusline (go backwards)' })
