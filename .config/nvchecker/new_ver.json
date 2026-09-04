@@ -87,10 +87,10 @@
       "revision_creation_time": "2023-06-11T08:04:30Z"
     },
     "mistral-vibe": {
-      "version": "v2.24.5",
-      "gitref": "refs/tags/v2.24.5",
-      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.24.5",
-      "creation_time": "2026-08-27T15:29:03Z"
+      "version": "v2.25.0",
+      "gitref": "refs/tags/v2.25.0",
+      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.25.0",
+      "creation_time": "2026-09-04T08:53:52Z"
     },
     "moonlight-qt": {
       "version": "v6.1.0",
@@ -213,10 +213,10 @@
       "creation_time": "2025-12-15T21:40:14Z"
     },
     "scheme-langserver": {
-      "version": "2.1.8",
-      "gitref": "refs/tags/2.1.8",
-      "url": "https://github.com/ufo5260987423/scheme-langserver/releases/tag/2.1.8",
-      "creation_time": "2026-08-03T03:09:49Z"
+      "version": "2.1.9",
+      "gitref": "refs/tags/2.1.9",
+      "url": "https://github.com/ufo5260987423/scheme-langserver/releases/tag/2.1.9",
+      "creation_time": "2026-09-03T08:59:17Z"
     },
     "svelte-language-server": {
       "version": "svelte-language-server@0.18.4",
