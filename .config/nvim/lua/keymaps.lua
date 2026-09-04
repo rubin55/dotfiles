@@ -18,6 +18,7 @@ vim.keymap.set('v', '<S-Left>', '<Left>')
 
 -- Dismiss floating windows, such as LSP hover from K and nvim-tree with <Esc>.
 vim.keymap.set('n', '<Esc>', function()
+  vim.cmd('nohlsearch')
   local wins = vim.list_extend({ vim.api.nvim_get_current_win() }, vim.api.nvim_list_wins())
   for _, win in ipairs(wins) do
     if vim.api.nvim_win_get_config(win).relative ~= '' then
@@ -25,7 +26,7 @@ vim.keymap.set('n', '<Esc>', function()
       return
     end
   end
-end, { desc = 'Close floating window', nowait = true })
+end, { desc = 'Close floating window and clear search highlight', nowait = true })
 
 -- Shift-enter in terminal sends newline.
 vim.api.nvim_create_autocmd('TermOpen', {
