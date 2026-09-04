@@ -7,7 +7,7 @@ fzf_ext.sections = {
 }
 
 local dyn_sep = (tonumber(vim.o.guifont:match(':h(%d+%.?%d*)')) or 0) >= 12
-  and { left = '', right = '' }
+  and { left = '', right = '' }
   or { left = '', right = '' }
 
 require('lualine').setup({
