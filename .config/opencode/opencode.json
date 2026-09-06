@@ -820,6 +820,11 @@
     }
   },
   "mcp": {
+    "Computer Use": {
+      "type": "local",
+      "command": ["/usr/bin/computer-use-linux", "mcp"],
+      "enabled": false
+    },
     "Wolfram": {
       "type": "local",
       "command": [
