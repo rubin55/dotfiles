@@ -67,14 +67,17 @@ fzf.setup({
   }
 })
 
-vim.keymap.set('n', '<Leader>a', fzf.builtin, { desc = 'All pickers' })
+-- Commonly used, so lower-case.
 vim.keymap.set('n', '<Leader>b', fzf.buffers, { desc = 'Buffers' })
-vim.keymap.set('n', '<Leader>c', fzf.git_commits, { desc = 'Commits' })
-vim.keymap.set('n', '<Leader>d', fzf.diagnostics_workspace, { desc = 'Diagnostics' })
 vim.keymap.set('n', '<Leader>f', fzf.files, { desc = 'Files' })
 vim.keymap.set('n', '<Leader>g', fzf.grep_project, { desc = 'Grep' })
-vim.keymap.set('n', '<Leader>h', fzf.help_tags, { desc = 'Help' })
-vim.keymap.set('n', '<Leader>k', fzf.keymaps, { desc = 'Keymaps' })
-vim.keymap.set('n', '<Leader>r', fzf.lsp_references, { desc = 'References' })
-vim.keymap.set('n', '<Leader>s', fzf.lsp_live_workspace_symbols, { desc = 'Symbols' })
+
+-- Less-commonly used, upper-case.
+vim.keymap.set('n', '<Leader>A', fzf.builtin, { desc = 'All pickers' })
+vim.keymap.set('n', '<Leader>C', fzf.git_commits, { desc = 'Commits' })
+vim.keymap.set('n', '<Leader>D', fzf.diagnostics_workspace, { desc = 'Diagnostics' })
+vim.keymap.set('n', '<Leader>H', fzf.help_tags, { desc = 'Help' })
+vim.keymap.set('n', '<Leader>K', fzf.keymaps, { desc = 'Keymaps' })
+vim.keymap.set('n', '<Leader>R', fzf.lsp_references, { desc = 'References' })
+vim.keymap.set('n', '<Leader>S', fzf.lsp_live_workspace_symbols, { desc = 'Symbols' })
 vim.keymap.set('n', '<Leader>T', fzf.treesitter, { desc = 'Treesitter' })
