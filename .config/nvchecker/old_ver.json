@@ -231,6 +231,12 @@
       "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.18.4",
       "revision_creation_time": "2026-08-13T05:44:16Z"
     },
+    "tree-sitter-bash": {
+      "version": "0.25.1",
+      "gitref": "refs/tags/v0.25.1",
+      "url": "https://github.com/tree-sitter/tree-sitter-bash/releases/tag/v0.25.1",
+      "creation_time": "2025-12-02T17:00:27Z"
+    },
     "winexe": {
       "version": "4.24.6"
     },
