@@ -852,5 +852,5 @@
     "lsp": "allow",
     "todoread": "allow"
   },
-  "small_model": "openrouter/google/gemma-4-31b-it:free"
+  "small_model": "opencode/ling-2.6-flash-free"
 }
