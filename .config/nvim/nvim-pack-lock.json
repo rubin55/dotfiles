@@ -37,7 +37,7 @@
       "src": "https://github.com/EdenEast/nightfox.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "da1aff0332774a0f60d52bf972e815dfc226f276",
+      "rev": "19576de1c1b6d1b5e231ea6ef9cba9a811c322bb",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-tree": {
