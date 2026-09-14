@@ -165,6 +165,7 @@ x-scheme-handler/chromium=chromium.desktop
 x-scheme-handler/figma=figma-linux.desktop
 x-scheme-handler/ircs=chromium.desktop
 x-scheme-handler/irc=chromium.desktop
+inode/directory=org.gnome.Nautilus.desktop
 
 [Added Associations]
 application/epub+zip=com.github.johnfactotum.Foliate.desktop
