@@ -52,7 +52,7 @@
       "version": "26.2.4"
     },
     "intel-oneapi": {
-      "version": "2026.1.0"
+      "version": "2026.1.1"
     },
     "intel-openvino": {
       "version": "2026.3.1",
@@ -93,10 +93,10 @@
       "revision_creation_time": "2023-06-11T08:04:30Z"
     },
     "mistral-vibe": {
-      "version": "v2.25.0",
-      "gitref": "refs/tags/v2.25.0",
-      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.25.0",
-      "creation_time": "2026-09-04T08:53:52Z"
+      "version": "v2.25.4",
+      "gitref": "refs/tags/v2.25.4",
+      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.25.4",
+      "creation_time": "2026-09-12T18:39:34Z"
     },
     "moonlight-qt": {
       "version": "v6.1.0",
@@ -129,10 +129,10 @@
       "version": "0.903"
     },
     "pupdate": {
-      "version": "5.7.0",
-      "gitref": "refs/tags/5.7.0",
-      "url": "https://github.com/mattpannella/pupdate/releases/tag/5.7.0",
-      "creation_time": "2026-08-31T03:26:52Z"
+      "version": "5.8.0",
+      "gitref": "refs/tags/5.8.0",
+      "url": "https://github.com/mattpannella/pupdate/releases/tag/5.8.0",
+      "creation_time": "2026-09-10T02:32:08Z"
     },
     "pvsneslib": {
       "version": "4.6.0",
@@ -210,7 +210,7 @@
       "creation_time": "2026-08-03T00:02:15Z"
     },
     "samba": {
-      "version": "2:4.24.6"
+      "version": "2:4.24.7"
     },
     "sbom-tool": {
       "version": "v4.1.5",
@@ -238,7 +238,7 @@
       "creation_time": "2025-12-02T17:00:27Z"
     },
     "winexe": {
-      "version": "4.24.6"
+      "version": "4.24.7"
     },
     "wolfram": {
       "version": "15.0.1"

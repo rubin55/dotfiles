@@ -25,6 +25,11 @@ source = "github"
 github = "ionide/FsAutoComplete"
 use_latest_release = "true"
 
+[gemrb]
+source = "github"
+github = "gemrb/gemrb"
+use_latest_release = "true"
+
 [ghcup-hs]
 source = "github"
 github = "haskell/ghcup-hs"
