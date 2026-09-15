@@ -8,7 +8,7 @@ vim.o.cursorline = true
 vim.o.guicursor = 'a:block-blinkwait500-blinkon500-blinkoff500'
 
 -- Set GUI font. Read by after/plugin/lualine.lua, which runs later.
-vim.o.guifont = 'Monospace:h12.3:#e-subpixelantialias:#h-none'
+vim.o.guifont = 'Monospace:h11.2:#e-subpixelantialias:#h-none'
 
 -- Configure window border.
 vim.o.winborder = 'solid'
