@@ -5,16 +5,16 @@ vim.keymap.set({ 'n', 'v' }, '<leader>p', '"+p',  { desc = 'Paste from system cl
 vim.keymap.set({ 'n', 'v' }, '<leader>P', '"+P',  { desc = 'Paste before from system clipboard' })
 
 -- Make shift-arrow move selection in normal mode.
-vim.keymap.set('n', '<S-Down>', 'v$')
-vim.keymap.set('n', '<S-Up>', 'v$o')
-vim.keymap.set('n', '<S-Right>', 'v<Right>')
-vim.keymap.set('n', '<S-Left>', 'v<Left>')
+vim.keymap.set('n', '<S-Down>', 'v$', { desc = 'Select start down' })
+vim.keymap.set('n', '<S-Up>', 'v$o', { desc = 'Select start up' })
+vim.keymap.set('n', '<S-Right>', 'v<Right>', { desc = 'Select start right' })
+vim.keymap.set('n', '<S-Left>', 'v<Left>', { desc = 'Select start left' })
 
 -- Make shift-arrow move selection in visual mode.
-vim.keymap.set('v', '<S-Down>', '<Down>')
-vim.keymap.set('v', '<S-Up>', '<Up>')
-vim.keymap.set('v', '<S-Right>', '<Right>')
-vim.keymap.set('v', '<S-Left>', '<Left>')
+vim.keymap.set('v', '<S-Down>', '<Down>', { desc = 'Select extend down' })
+vim.keymap.set('v', '<S-Up>', '<Up>', { desc = 'Select extend up' })
+vim.keymap.set('v', '<S-Right>', '<Right>', { desc = 'Select extend right' })
+vim.keymap.set('v', '<S-Left>', '<Left>', { desc = 'Select extend left' })
 
 -- Dismiss floating windows, such as LSP hover from K and nvim-tree with <Esc>.
 vim.keymap.set('n', '<Esc>', function()
@@ -26,14 +26,14 @@ vim.keymap.set('n', '<Esc>', function()
       return
     end
   end
-end, { desc = 'Close floating window and clear search highlight', nowait = true })
+end, { desc = 'Close float, clear search highlight', nowait = true })
 
 -- Shift-enter in terminal sends newline.
 vim.api.nvim_create_autocmd('TermOpen', {
   callback = function(ev)
     vim.keymap.set('t', '<S-CR>', function()
       vim.api.nvim_chan_send(vim.b[ev.buf].terminal_job_id, '\n')
-    end, { buffer = ev.buf })
+    end, { buffer = ev.buf, desc = 'Send newline to terminal' })
   end
 })
 
@@ -70,4 +70,4 @@ vim.keymap.set('c', '<CR>', function()
   end
 
   return '<CR>'
-end, { expr = true })
+end, { expr = true, desc = ':bd closes buffer, keeping window, else normal Enter' })
