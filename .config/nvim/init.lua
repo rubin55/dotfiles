@@ -16,6 +16,7 @@ vim.pack.add({
   { name = 'haunt.nvim', src = 'https://github.com/TheNoeTrevino/haunt.nvim' },
   { name = 'lualine.nvim', src = 'https://github.com/nvim-lualine/lualine.nvim' },
   { name = 'nightfox.nvim', src = 'https://github.com/EdenEast/nightfox.nvim' },
+  { name = 'nordic.nvim', src = 'https://github.com/AlexvZyl/nordic.nvim' },
   { name = 'nvim-lspconfig', src = 'https://github.com/neovim/nvim-lspconfig' },
   { name = 'nvim-tree', src = 'https://github.com/nvim-tree/nvim-tree.lua' },
   { name = 'nvim-treesitter', src = 'https://github.com/nvim-treesitter/nvim-treesitter' },
