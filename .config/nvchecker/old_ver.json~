@@ -7,16 +7,16 @@
       "revision": "b3956bda93ff3d45b644c7bc6d55e0e01c9b9a74"
     },
     "computer-use-linux": {
-      "version": "v0.6.0",
-      "gitref": "refs/tags/v0.6.0",
-      "url": "https://github.com/agent-sh/computer-use-linux/releases/tag/v0.6.0",
-      "creation_time": "2026-09-14T21:21:32Z"
+      "version": "v0.7.0",
+      "gitref": "refs/tags/v0.7.0",
+      "url": "https://github.com/agent-sh/computer-use-linux/releases/tag/v0.7.0",
+      "creation_time": "2026-09-16T08:15:17Z"
     },
     "dev-proxy": {
-      "version": "v3.2.0",
-      "gitref": "refs/tags/v3.2.0",
-      "url": "https://github.com/dotnet/dev-proxy/releases/tag/v3.2.0",
-      "creation_time": "2026-07-21T14:19:07Z"
+      "version": "v3.3.0",
+      "gitref": "refs/tags/v3.3.0",
+      "url": "https://github.com/dotnet/dev-proxy/releases/tag/v3.3.0",
+      "creation_time": "2026-09-14T09:27:03Z"
     },
     "fsautocomplete": {
       "version": "v0.84.0",
