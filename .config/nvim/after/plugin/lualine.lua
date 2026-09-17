@@ -32,8 +32,8 @@ require('lualine').setup({
   sections = {
     lualine_a = {'mode'},
     lualine_b = {'branch', 'diff', 'diagnostics'},
-    lualine_c = {'filename'},
-    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_c = {},
+    lualine_x = {},
     lualine_y = {'progress'},
     lualine_z = {'location'}
   },
@@ -56,10 +56,12 @@ require('lualine').setup({
   },
   winbar = {
     lualine_b = { { 'filetype', icon_only = true, colored = true, cond = has_file }, },
-    lualine_c = { { 'filename', path = 1, cond = has_file } }
+    lualine_c = { { 'filename', path = 1, cond = has_file } },
+    lualine_x = {'encoding', 'fileformat' },
   },
   inactive_winbar = {
     lualine_b = { { 'filetype', icon_only = true, colored = false, cond = has_file }, },
-    lualine_c = { { 'filename', path = 1, cond = has_file } }
+    lualine_c = { { 'filename', path = 1, cond = has_file } },
+    lualine_x = {'encoding', 'fileformat' },
   }
 })
