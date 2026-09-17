@@ -4,6 +4,9 @@ require('rose-pine').setup({
   styles = {
     bold = false
   },
+  highlight_groups = {
+    String = { fg = "subtle" }
+  },
   palette = {
     dawn = {
       base = '#f1e8e0',
