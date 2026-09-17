@@ -1,4 +1,11 @@
 -- Lualine configuration.
+
+-- Has file conditional helper.
+local function has_file()
+  return vim.fn.empty(vim.fn.expand('%:t')) == 0
+end
+
+-- Fzf extensions.
 local fzf_ext = require('lualine.extensions.fzf')
 fzf_ext.sections = {
   lualine_a = fzf_ext.sections.lualine_a,
@@ -6,18 +13,31 @@ fzf_ext.sections = {
   lualine_z = fzf_ext.sections.lualine_z,
 }
 
+-- Use certain separators with certain font-sizes.
 local dyn_sep = (tonumber(vim.o.guifont:match(':h(%d+%.?%d*)')) or 0) >= 12
   and { left = '', right = '' }
   or { left = '', right = '' }
 
+-- Lualine setup.
 require('lualine').setup({
   extensions = { fzf_ext, 'nvim-tree', 'quickfix' },
   options = {
-    component_separators = { left = '', right = '' },
-    section_separators = dyn_sep,
-    theme = 'auto',
     always_show_tabline = false,
+    component_separators = { left = '', right = '' },
+    disabled_filetypes = { winbar = { 'NvimTree', 'fzf' } },
+    globalstatus = false,
+    section_separators = dyn_sep,
+    theme = 'auto'
   },
+  sections = {
+    lualine_a = {'mode'},
+    lualine_b = {'branch', 'diff', 'diagnostics'},
+    lualine_c = {'filename'},
+    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_y = {'progress'},
+    lualine_z = {'location'}
+  },
+  inactive_sections = {},
   tabline = {
     lualine_a = {
       {
@@ -33,5 +53,13 @@ require('lualine').setup({
         end
       }
     }
+  },
+  winbar = {
+    lualine_b = { { 'filetype', icon_only = true, colored = true, cond = has_file }, },
+    lualine_c = { { 'filename', path = 1, cond = has_file } }
+  },
+  inactive_winbar = {
+    lualine_b = { { 'filetype', icon_only = true, colored = false, cond = has_file }, },
+    lualine_c = { { 'filename', path = 1, cond = has_file } }
   }
 })
