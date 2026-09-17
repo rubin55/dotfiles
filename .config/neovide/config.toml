@@ -1,8 +1,8 @@
-no-multigrid = false
+no-multigrid = true
 tabs = false
 vsync = true
 srgb = true
 
 [box-drawing]
-mode = "font-glyph"
+mode = "native"
 
