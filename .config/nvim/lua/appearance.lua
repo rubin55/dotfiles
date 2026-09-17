@@ -1,8 +1,8 @@
--- Custom fill characters: deleted diff lines, solid split bar.
-vim.opt.fillchars:append { diff = '╱', vert = '█' }
+-- Custom fill characters. Can also be '╱', '─' and '│'.
+vim.opt.fillchars:append { diff = '╱', horiz = '█', vert = '█' }
 
 -- Enable highlighted of line where cursor is.
-vim.o.cursorline = true
+vim.o.cursorline = false
 
 -- Use block cursor always.
 vim.o.guicursor = 'a:block-blinkwait500-blinkon500-blinkoff500'
