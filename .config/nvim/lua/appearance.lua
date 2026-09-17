@@ -50,7 +50,7 @@ end
 
 local function set_theme_from_bg()
   if vim.o.background == 'dark' then
-    vim.cmd.colorscheme('nightfox')
+    vim.cmd.colorscheme('nordic')
   elseif vim.o.background == 'light' then
     vim.cmd.colorscheme('rose-pine')
   end

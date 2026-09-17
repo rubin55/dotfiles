@@ -57,11 +57,11 @@ require('lualine').setup({
   winbar = {
     lualine_b = { { 'filetype', icon_only = true, colored = true, cond = has_file }, },
     lualine_c = { { 'filename', path = 1, cond = has_file } },
-    lualine_x = {'encoding', 'fileformat' },
+    lualine_x = { { 'encoding', cond = has_file }, { 'fileformat', cond = has_file } }
   },
   inactive_winbar = {
     lualine_b = { { 'filetype', icon_only = true, colored = false, cond = has_file }, },
     lualine_c = { { 'filename', path = 1, cond = has_file } },
-    lualine_x = {'encoding', 'fileformat' },
+    lualine_x = { { 'encoding', cond = has_file }, { 'fileformat', cond = has_file } }
   }
 })
