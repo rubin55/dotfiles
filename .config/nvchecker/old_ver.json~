@@ -61,10 +61,10 @@
       "version": "2026.1.1"
     },
     "intel-openvino": {
-      "version": "2026.3.1",
-      "gitref": "refs/tags/2026.3.1",
-      "url": "https://github.com/openvinotoolkit/openvino/releases/tag/2026.3.1",
-      "creation_time": "2026-08-26T11:27:49Z"
+      "version": "2026.4.0",
+      "gitref": "refs/tags/2026.4.0",
+      "url": "https://github.com/openvinotoolkit/openvino/releases/tag/2026.4.0",
+      "creation_time": "2026-09-16T17:19:56Z"
     },
     "jdk25-openj9-bin": {
       "version": "jdk-25.0.4.10",
