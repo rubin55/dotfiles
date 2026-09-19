@@ -1,9 +1,8 @@
-model_provider = "orcarouter"
-
 model = "z-ai/glm-5.3-flash"
 model_reasoning_effort = "max"
 plan_mode_reasoning_effort = "max"
 
+model_provider = "orcarouter"
 model_catalog_json = "/home/rubin/.codex/model-catalogs/orcarouter.json"
 
 [model_providers.orcarouter]

@@ -7,8 +7,8 @@ network_access = true
 [sandbox_workspace_write]
 network_access = true
 
-[projects."/home/rubin/Desktop"]
-trust_level = "trusted"
+[tui]
+terminal_title = []
 
 [mcp_servers.Wolfram]
 command = "/opt/wolfram/Executables/wolfram"
@@ -29,3 +29,4 @@ args = ["mcp"]
 
 [mcp_servers.Neovim]
 command = "nvim-mcp"
+

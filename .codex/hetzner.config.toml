@@ -1,9 +1,8 @@
-model_provider = "hetzner"
-
 model = "Qwen3.8-27B"
 model_reasoning_effort = "max"
 plan_mode_reasoning_effort = "max"
 
+model_provider = "hetzner"
 model_catalog_json = "/home/rubin/.codex/model-catalogs/hetzner.json"
 
 [model_providers.hetzner]

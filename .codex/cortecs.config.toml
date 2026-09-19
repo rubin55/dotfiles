@@ -1,9 +1,8 @@
-model_provider = "cortecs"
-
 model = "glm-5.3-flash"
 model_reasoning_effort = "max"
 plan_mode_reasoning_effort = "max"
 
+model_provider = "cortecs"
 model_catalog_json = "/home/rubin/.codex/model-catalogs/cortecs.json"
 
 [model_providers.cortecs]

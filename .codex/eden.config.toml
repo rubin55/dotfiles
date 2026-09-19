@@ -1,9 +1,8 @@
-model_provider = "eden"
-
 model = "qwen/deepseek-v4.1-flash"
 model_reasoning_effort = "max"
 plan_mode_reasoning_effort = "max"
 
+model_provider = "eden"
 model_catalog_json = "/home/rubin/.codex/model-catalogs/eden.json"
 
 [model_providers.eden]
@@ -13,3 +12,6 @@ base_url="https://api.edenai.run/v3"
 [model_providers.eden.auth]
 command = "tipi.sh"
 args = ["edenai", "default-api-token"]
+
+[projects."/home/rubin/Source/Rubin/dotfiles"]
+trust_level = "trusted"
