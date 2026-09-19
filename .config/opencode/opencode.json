@@ -13,6 +13,11 @@
         "url": "https://mcp.figma.com/mcp",
         "disabled": true
       },
+      "Neovim": {
+        "type": "local",
+        "command": ["/usr/bin/nvim-mcp"],
+        "disabled": true
+      },
       "Wolfram": {
         "type": "local",
         "command": [
