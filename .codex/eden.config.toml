@@ -12,6 +12,3 @@ base_url="https://api.edenai.run/v3"
 [model_providers.eden.auth]
 command = "tipi.sh"
 args = ["edenai", "default-api-token"]
-
-[projects."/home/rubin/Source/Rubin/dotfiles"]
-trust_level = "trusted"
