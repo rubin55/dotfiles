@@ -60,15 +60,6 @@ source = "pacman"
 pacman = "intel-media-driver"
 strip_release = "true"
 
-[intel-oneapi]
-source = "cmd"
-cmd = "curl -sL 'https://www.intel.com/content/www/us/en/developer/tools/oneapi/base-toolkit-download.html' | grep -oP 'intel-oneapi-toolkit-\\K[0-9]+\\.[0-9]+\\.[0-9]+(?=\\.[0-9]+_offline\\.sh)' | head -1"
-
-[intel-openvino]
-source = "github"
-github = "openvinotoolkit/openvino"
-use_latest_release = "true"
-
 [jsonpath-python]
 source = "github"
 github = "sean2077/jsonpath-python"
@@ -78,11 +69,6 @@ use_latest_release = true
 source = "github"
 github = "ibmruntimes/semeru25-binaries"
 use_latest_release = "true"
-
-#["llama.cpp"]
-#source = "git"
-#git = "https://github.com/ggml-org/llama.cpp.git"
-#use_commit = true
 
 [leanux]
 source = "github"
@@ -99,11 +85,6 @@ source = "github"
 github = "andwn/marsdev"
 use_latest_tag = "true"
 
-[mistral-vibe]
-source = "github"
-github = "mistralai/mistral-vibe"
-use_latest_release = true
-
 [moonlight-qt]
 source = "github"
 github = "moonlight-stream/moonlight-qt"
@@ -118,6 +99,11 @@ user_agent = "Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/1
 [netcoredbg]
 source = "github"
 github = "Samsung/netcoredbg"
+use_latest_release = "true"
+
+[nvim-mcp]
+source = "github"
+github = "linw1995/nvim-mcp"
 use_latest_release = "true"
 
 [openshift-codeready-bin]
@@ -147,16 +133,6 @@ user_agent = "Mozilla/5.0 (X11; Linux x86_64; rv:128.0) Gecko/20100101 Firefox/1
 source = "regex"
 regex = "The actual version is (\\d{1}\\.\\d{3})"
 url = "https://fsd.it/shop/fonts/pragmatapro/"
-
-[python-agent-client-protocol]
-source = "github"
-github = "agentclientprotocol/python-sdk"
-use_latest_release = true
-
-[python-hatchling]
-source = "pacman"
-pacman = "python-hatchling"
-strip_release = "true"
 
 [pupdate]
 source = "github"
@@ -238,16 +214,6 @@ use_latest_release = "true"
 source = "github"
 github = "sveltejs/language-tools"
 use_latest_tag = "true"
-
-#[tidal-dl-ng]
-#source = "cmd"
-#cmd = "curl -sL 'https://archive.org/advancedsearch.php?q=tidal_dl_ng-&fl[]=identifier&sort[]=date+desc&rows=50&output=json' | grep -oE 'tidal_dl_ng-[0-9]+\\.[0-9]+(\\.[0-9]+)*' | head -1 | sed 's/tidal_dl_ng-//'"
-
-[tree-sitter-bash]
-source = "github"
-github = "tree-sitter/tree-sitter-bash"
-use_latest_release = true
-prefix = "v"
 
 [winexe]
 source = "pacman"

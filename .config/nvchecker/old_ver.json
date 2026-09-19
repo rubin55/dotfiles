@@ -7,10 +7,10 @@
       "revision": "b3956bda93ff3d45b644c7bc6d55e0e01c9b9a74"
     },
     "computer-use-linux": {
-      "version": "v0.7.0",
-      "gitref": "refs/tags/v0.7.0",
-      "url": "https://github.com/agent-sh/computer-use-linux/releases/tag/v0.7.0",
-      "creation_time": "2026-09-16T08:15:17Z"
+      "version": "v0.7.1",
+      "gitref": "refs/tags/v0.7.1",
+      "url": "https://github.com/agent-sh/computer-use-linux/releases/tag/v0.7.1",
+      "creation_time": "2026-09-19T12:28:59Z"
     },
     "dev-proxy": {
       "version": "v3.3.0",
@@ -57,15 +57,6 @@
     "intel-media-driver": {
       "version": "26.2.4"
     },
-    "intel-oneapi": {
-      "version": "2026.1.1"
-    },
-    "intel-openvino": {
-      "version": "2026.4.0",
-      "gitref": "refs/tags/2026.4.0",
-      "url": "https://github.com/openvinotoolkit/openvino/releases/tag/2026.4.0",
-      "creation_time": "2026-09-16T17:19:56Z"
-    },
     "jdk25-openj9-bin": {
       "version": "jdk-25.0.4.10",
       "gitref": "refs/tags/jdk-25.0.4.10",
@@ -97,12 +88,6 @@
       "revision": "9de7602716e320d3d653712ec60d7b0e1ec22f4e",
       "url": "https://github.com/andwn/marsdev/releases/tag/v1.0.0-rc1",
       "revision_creation_time": "2023-06-11T08:04:30Z"
-    },
-    "mistral-vibe": {
-      "version": "v2.25.5",
-      "gitref": "refs/tags/v2.25.5",
-      "url": "https://github.com/mistralai/mistral-vibe/releases/tag/v2.25.5",
-      "creation_time": "2026-09-18T11:09:46Z"
     },
     "moonlight-qt": {
       "version": "v6.1.0",
@@ -146,15 +131,6 @@
       "revision": "1fab4b2a9d31a265805be58bb45c5a46480ea211",
       "url": "https://github.com/alekmaul/pvsneslib/releases/tag/4.6.0",
       "revision_creation_time": "2026-07-28T14:11:45Z"
-    },
-    "python-agent-client-protocol": {
-      "version": "0.12.1",
-      "gitref": "refs/tags/0.12.1",
-      "url": "https://github.com/agentclientprotocol/python-sdk/releases/tag/0.12.1",
-      "creation_time": "2026-08-16T14:08:00Z"
-    },
-    "python-hatchling": {
-      "version": "1.30.1"
     },
     "rcu-bin": {
       "version": "v4.0.34"
@@ -236,12 +212,6 @@
       "revision": "478dc2352d8812ff629e878726ef0190699e3d02",
       "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.18.4",
       "revision_creation_time": "2026-08-13T05:44:16Z"
-    },
-    "tree-sitter-bash": {
-      "version": "0.25.1",
-      "gitref": "refs/tags/v0.25.1",
-      "url": "https://github.com/tree-sitter/tree-sitter-bash/releases/tag/v0.25.1",
-      "creation_time": "2025-12-02T17:00:27Z"
     },
     "winexe": {
       "version": "4.24.7"
