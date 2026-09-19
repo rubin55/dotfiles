@@ -3,7 +3,7 @@
   "update": "disable",
   "mcp": {
     "servers": {
-      "Computer Use": {
+      "Computer": {
         "type": "local",
         "command": ["/usr/bin/computer-use-linux", "mcp"],
         "disabled": true
