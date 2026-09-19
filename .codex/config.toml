@@ -10,3 +10,22 @@ network_access = true
 [projects."/home/rubin/Desktop"]
 trust_level = "trusted"
 
+[mcp_servers.Wolfram]
+command = "/opt/wolfram/Executables/wolfram"
+args = ["-run", 'PacletSymbol["Wolfram/AgentTools","Wolfram`AgentTools`StartMCPServer"][]', "-noinit", "-noprompt"]
+
+[mcp_servers.Wolfram.env]
+MCP_SERVER_NAME = "WolframLanguage"
+WOLFRAM_BASE = "/usr/share/Wolfram"
+WOLFRAM_LOCALBASE = "/home/rubin/.Wolfram/Objects"
+WOLFRAM_USERBASE = "/home/rubin/.Wolfram"
+
+[mcp_servers.Figma]
+url = "https://mcp.figma.com/mcp"
+
+[mcp_servers.Computer]
+command = "computer-use-linux"
+args = ["mcp"]
+
+[mcp_servers.Neovim]
+command = "nvim-mcp"
