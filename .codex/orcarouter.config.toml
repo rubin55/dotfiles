@@ -1,4 +1,4 @@
-model = "z-ai/glm-5.3-flash"
+model = "google/gemini-3.8-flash"
 model_reasoning_effort = "max"
 plan_mode_reasoning_effort = "max"
 
