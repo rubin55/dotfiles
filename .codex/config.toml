@@ -29,7 +29,3 @@ args = ["mcp"]
 
 [mcp_servers.Neovim]
 command = "nvim-mcp"
-
-[projects."/home/rubin/Desktop"]
-trust_level = "trusted"
-
