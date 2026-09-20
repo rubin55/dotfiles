@@ -12,3 +12,4 @@ base_url="https://api.orcarouter.ai/v1"
 [model_providers.orcarouter.auth]
 command = "tipi.sh"
 args = ["orcarouter", "default-api-token"]
+

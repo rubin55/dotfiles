@@ -1,4 +1,4 @@
-model = "glm-5.3"
+model = "kimi-k3"
 model_reasoning_effort = "max"
 plan_mode_reasoning_effort = "max"
 

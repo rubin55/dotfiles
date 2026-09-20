@@ -2,13 +2,13 @@ model = "qwen/deepseek-v4.1-flash"
 model_reasoning_effort = "max"
 plan_mode_reasoning_effort = "max"
 
-model_provider = "eden"
-model_catalog_json = "/home/rubin/.codex/model-catalogs/eden.json"
+model_provider = "edenai"
+model_catalog_json = "/home/rubin/.codex/model-catalogs/edenai.json"
 
-[model_providers.eden]
-name = "eden"
+[model_providers.edenai]
+name = "edenai"
 base_url="https://api.edenai.run/v3"
 
-[model_providers.eden.auth]
+[model_providers.edenai.auth]
 command = "tipi.sh"
 args = ["edenai", "default-api-token"]
