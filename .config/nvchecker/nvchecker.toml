@@ -104,7 +104,7 @@ use_latest_release = "true"
 [nvim-mcp]
 source = "github"
 github = "linw1995/nvim-mcp"
-use_latest_release = "true"
+use_latest_tag = "true"
 
 [openshift-codeready-bin]
 source = "regex"
