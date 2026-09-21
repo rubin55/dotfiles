@@ -1,4 +1,4 @@
-model = "z-ai/glm-5.3"
+model = "xiaomi/mimo-v2.6-pro"
 model_reasoning_effort = "max"
 plan_mode_reasoning_effort = "max"
 

@@ -12,6 +12,3 @@ base_url="https://opencode.ai/zen/v1"
 [model_providers.opencode.auth]
 command = "tipi.sh"
 args = ["opencode", "zen-api-key"]
-
-[projects."/home/rubin/Source/Rubin/dotfiles"]
-trust_level = "trusted"
