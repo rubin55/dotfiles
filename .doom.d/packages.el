@@ -49,10 +49,14 @@
 ;;(unpin! t)
 
 ;; Disable calling `treesit-ready-p' at load time for astro-ts-mode
-(package! astro-ts-mode :recipe (:build (:not autoloads)))
+(package! astro-ts-mode
+  :recipe (:build (:not autoloads)))
 (package! auto-dark)
 (package! cue-mode)
 (package! earthfile-mode)
+(package! mcp-server
+  :recipe (:host github :repo "rhblind/emacs-mcp-server"
+           :files ("*.el" "tools/*.el" "mcp-wrapper.py" "mcp-wrapper.sh")))
 (package! flycheck-kotlin)
 (package! nov)
 (package! powershell)

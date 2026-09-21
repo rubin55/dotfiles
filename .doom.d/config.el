@@ -76,8 +76,8 @@
 (setq default-frame-alist '((width . 132) (height . 48)))
 
 ;; Set line spacing.
-(when (string= (system-name) "FRAME")
-  (setq-default line-spacing 1))
+;;(when (string= (system-name) "FRAME")
+(setq-default line-spacing 1)
 
 ;; Enable long line wrap by default.
 (global-visual-line-mode 1)
@@ -110,7 +110,7 @@
 (after! treesit
   (add-to-list 'treesit-language-source-alist
                '(astro "https://github.com/virchau13/tree-sitter-astro"
-                       :commit "213f6e6973d9b456c6e50e86f19f66877e7ef0ee")))
+                 :commit "213f6e6973d9b456c6e50e86f19f66877e7ef0ee")))
 
 (defun +astro-ts-mode ()
   "Enable `astro-ts-mode', installing its grammars first if needed."
@@ -138,7 +138,7 @@
 
   (setq lsp-xml-file-associations
         [(:systemId "https://maven.apache.org/xsd/maven-4.0.0.xsd"
-                    :pattern "**/*.pom")])
+          :pattern "**/*.pom")])
 
   (setq lsp-fsharp-auto-workspace-init t)
 
@@ -235,6 +235,18 @@
 ;; Disable insane 'jk' to-command-mode sequence.
 (after! evil-escape
   (setq evil-escape-key-sequence nil))
+
+;; Enable emacs MCP server.
+(use-package! mcp-server
+  :config
+  (setq mcp-server-socket-name nil)
+  (add-hook 'emacs-startup-hook #'mcp-server-start-unix)
+  (add-hook 'kill-emacs-hook (lambda () (ignore-errors (mcp-server-stop))))
+  (advice-add 'mcp-server-start-unix :after
+              (lambda (&rest _)
+                (let ((proc (get-process "emacs-mcp-unix-server")))
+                  (when proc
+                    (set-process-query-on-exit-flag proc nil))))))
 
 ;; Show emacs version after startup.
 (add-hook 'window-setup-hook (lambda () (run-with-timer 1.2 nil #'call-interactively 'version)))
