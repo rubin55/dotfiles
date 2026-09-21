@@ -8,6 +8,11 @@
         "command": ["/usr/bin/computer-use-linux", "mcp"],
         "disabled": true
       },
+      "Emacs": {
+        "type": "local",
+        "command": [ "/home/rubin/Source/Rubin/scripts/python/emacs-mcp-server.py" ],
+        "disabled": true
+      },
       "Figma": {
         "type": "remote",
         "url": "https://mcp.figma.com/mcp",
