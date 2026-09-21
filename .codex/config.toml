@@ -10,6 +10,19 @@ network_access = true
 [tui]
 terminal_title = []
 
+[mcp_servers.Computer]
+command = "computer-use-linux"
+args = ["mcp"]
+
+[mcp_servers.Emacs]
+command = "/home/rubin/Source/Rubin/scripts/python/emacs-mcp-server.py"
+
+[mcp_servers.Figma]
+url = "https://mcp.figma.com/mcp"
+
+[mcp_servers.Neovim]
+command = "nvim-mcp"
+
 [mcp_servers.Wolfram]
 command = "/opt/wolfram/Executables/wolfram"
 args = ["-run", 'PacletSymbol["Wolfram/AgentTools","Wolfram`AgentTools`StartMCPServer"][]', "-noinit", "-noprompt"]
@@ -20,12 +33,3 @@ WOLFRAM_BASE = "/usr/share/Wolfram"
 WOLFRAM_LOCALBASE = "/home/rubin/.Wolfram/Objects"
 WOLFRAM_USERBASE = "/home/rubin/.Wolfram"
 
-[mcp_servers.Figma]
-url = "https://mcp.figma.com/mcp"
-
-[mcp_servers.Computer]
-command = "computer-use-linux"
-args = ["mcp"]
-
-[mcp_servers.Neovim]
-command = "nvim-mcp"
