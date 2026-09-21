@@ -2,7 +2,7 @@
 
 # Check if functions are loaded and if required executables are available.
 type -p log.info os.platform path.which || return
-path.which awk,cut,find,grep,gsettings,hostname,sed,xmllint || return
+path.which awk,cut,find,grep,gsettings,sed,xmllint || return
 
 # Check if we have a timer file that's at least a day old.
 if [[ ! -z "$(find /tmp/user-scaling.timer -mtime +1 -print 2> /dev/null)" ]]; then
@@ -112,38 +112,27 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
   # Current and wanted Emacs settings.
   emacsConfig="$HOME/.doom.d/config.el"
   if [[ -e "$emacsConfig" && -n "$emacsMono" && -n "$emacsSans" ]]; then
-    emacsHostIdentifier="$(hostname | cut -d. -f1)"
-    emacsHostIdentifierInConfigMonospace="$(grep -A1 "(when (string= (system-name) \"$emacsHostIdentifier\")" "$emacsConfig" | tail -n1)"
-    emacsHostIdentifierInConfigVariablewidth="$(grep -A2 "(when (string= (system-name) \"$emacsHostIdentifier\")" "$emacsConfig" | tail -n1)"
-    if [[ -e "$emacsConfig" && -n "$emacsHostIdentifier" && -n "$emacsHostIdentifierInConfigMonospace" && -n "$emacsHostIdentifierInConfigVariablewidth" && -n "$emacsMono" && -n "$emacsSans" ]]; then
-        currentEmacsMonospaceFontName="$(echo "$emacsHostIdentifierInConfigMonospace" | awk -F ':' '{print $2}' \
-                    | cut -d' ' -f2 | sed -e "s|'||g" -e 's|"||g' -e 's|)||g')"
-        currentEmacsMonospaceFontSize="$(echo "$emacsHostIdentifierInConfigMonospace" | awk -F ':' '{print $3}' \
-                    | cut -d' ' -f2 | sed -e "s|'||g" -e 's|"||g' -e 's|)||g')"
-        currentEmacsVariablewidthFontName="$(echo "$emacsHostIdentifierInConfigVariablewidth" | awk -F ':' '{print $2}' \
-                    | cut -d' ' -f2 | sed -e "s|'||g" -e 's|"||g' -e 's|)||g')"
-        currentEmacsVariablewidthFontSize="$(echo "$emacsHostIdentifierInConfigVariablewidth" | awk -F ':' '{print $3}' \
-                    | cut -d' ' -f2 | sed -e "s|'||g" -e 's|"||g' -e 's|)||g')"
-        wantedEmacsMonospaceFontSize="$emacsMono"
-        wantedEmacsVariablewidthFontSize="$emacsSans"
+    currentEmacsMonoFontName="$(grep -m1 '^(setq doom-font (font-spec' "$emacsConfig" | awk -F ':' '{print $2}' | cut -d' ' -f2 | sed -e "s|'||g" -e 's|"||g' -e 's|)||g')"
+    currentEmacsMonoFontSize="$(grep -m1 '^(setq doom-font (font-spec' "$emacsConfig" | awk -F ':' '{print $3}' | cut -d' ' -f2 | sed -e "s|'||g" -e 's|"||g' -e 's|)||g')"
+    currentEmacsSansFontName="$(grep -m1 '^[[:space:]]*doom-variable-pitch-font (font-spec' "$emacsConfig" | awk -F ':' '{print $2}' | cut -d' ' -f2 | sed -e "s|'||g" -e 's|"||g' -e 's|)||g')"
+    currentEmacsSansFontSize="$(grep -m1 '^[[:space:]]*doom-variable-pitch-font (font-spec' "$emacsConfig" | awk -F ':' '{print $3}' | cut -d' ' -f2 | sed -e "s|'||g" -e 's|"||g' -e 's|)||g')"
+    wantedEmacsMonoFontSize="$emacsMono"
+    wantedEmacsSansFontSize="$emacsSans"
 
-        # Update Emacs monospace font if different.
-        if [[ -n "$currentEmacsMonospaceFontSize" && "$currentEmacsMonospaceFontSize" != "$wantedEmacsMonospaceFontSize" ]]; then
-        log.info "Setting Emacs monospace font to: \"$currentEmacsMonospaceFontName $wantedEmacsMonospaceFontSize\""
-        currentEmacsMonospaceFontString="$(grep -A1 "(when (string= (system-name) \"$emacsHostIdentifier\")" "$emacsConfig" | tail -n1)"
-        currentEmacsMonospaceFontLineNumber="$(grep -n -A1 "(when (string= (system-name) \"$emacsHostIdentifier\")" "$emacsConfig" | tail -n1 | cut -d- -f1)"
-        wantedEmacsMonospaceFontString="$(echo "$currentEmacsMonospaceFontString" | sed "s|:size $currentEmacsMonospaceFontSize|:size $wantedEmacsMonospaceFontSize|")"
-        sed -i "${currentEmacsMonospaceFontLineNumber}s|$currentEmacsMonospaceFontString|$wantedEmacsMonospaceFontString|" "$emacsConfig"
-        fi
+    # Update Emacs monospace font if different.
+    if [[ -n "$currentEmacsMonoFontSize" && "$currentEmacsMonoFontSize" != "$wantedEmacsMonoFontSize" ]]; then
+      log.info "Setting Emacs monospace font to: \"$currentEmacsMonoFontName $wantedEmacsMonoFontSize\""
+      currentEmacsMonoFontString=":family \"$currentEmacsMonoFontName\" :size $currentEmacsMonoFontSize"
+      wantedEmacsMonoFontString=":family \"$currentEmacsMonoFontName\" :size $wantedEmacsMonoFontSize"
+      sed -i "s|$currentEmacsMonoFontString|$wantedEmacsMonoFontString|g" "$emacsConfig"
+    fi
 
-        # Update Emacs variable-width font if different.
-        if [[ -n "$currentEmacsVariablewidthFontSize" && "$currentEmacsVariablewidthFontSize" != "$wantedEmacsVariablewidthFontSize" ]]; then
-        log.info "Setting Emacs variable-width font to: \"$currentEmacsVariablewidthFontName $wantedEmacsVariablewidthFontSize\""
-        currentEmacsVariablewidthFontString="$(grep -A2 "(when (string= (system-name) \"$emacsHostIdentifier\")" "$emacsConfig" | tail -n1)"
-        currentEmacsVariablewidthFontLineNumber="$(grep -n -A2 "(when (string= (system-name) \"$emacsHostIdentifier\")" "$emacsConfig" | tail -n1 | cut -d- -f1)"
-        wantedEmacsVariablewidthFontString="$(echo "$currentEmacsVariablewidthFontString" | sed "s|:size $currentEmacsVariablewidthFontSize|:size $wantedEmacsVariablewidthFontSize|")"
-        sed -i "${currentEmacsVariablewidthFontLineNumber}s|$currentEmacsVariablewidthFontString|$wantedEmacsVariablewidthFontString|" "$emacsConfig"
-        fi
+    # Update Emacs variable-width font if different.
+    if [[ -n "$currentEmacsSansFontSize" && "$currentEmacsSansFontSize" != "$wantedEmacsSansFontSize" ]]; then
+      log.info "Setting Emacs variable-width font to: \"$currentEmacsSansFontName $wantedEmacsSansFontSize\""
+      currentEmacsSansFontString=":family \"$currentEmacsSansFontName\" :size $currentEmacsSansFontSize"
+      wantedEmacsSansFontString=":family \"$currentEmacsSansFontName\" :size $wantedEmacsSansFontSize"
+      sed -i "s|$currentEmacsSansFontString|$wantedEmacsSansFontString|g" "$emacsConfig"
     fi
   fi
 
@@ -451,4 +440,4 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
 fi
 
 # Unset temporary variables.
-unset FONT_SIZE_PREFERENCES_FILE codeConfig emacsHostIdentifier emacsConfig jetbrainsConfigs jetbrainsConfig vimConfig codeMono emacsMono emacsSans gnomeMono gnomeSans gnomeSerif jetbrainsMono vimMono currentCodeEditorFontName currentCodeEditorFontSize currentCodeTerminalFontName currentCodeTerminalFontSize currentEmacsMonospaceFontName currentEmacsMonospaceFontSize currentEmacsVariablewidthFontName currentEmacsVariablewidthFontSize currentGnomeDocumentFontName currentGnomeDocumentFontSize currentGnomeInterfaceFontName currentGnomeInterfaceFontSize currentGnomeMonospaceFontName currentGnomeMonospaceFontSize currentGnomeThemeFontName currentGnomeThemeFontSize currentGnomeTitleFontName currentGnomeTitleFontSize currentJetbrainsMonoFontName currentJetbrainsMonoFontSize currentJetbrainsMonoFontSize2d currentVimMonoFontName currentVimMonoFontSize wantedCodeEditorFontSize wantedCodeTerminalFontSize wantedEmacsMonospaceFontSize wantedEmacsVariablewidthFontSize wantedGnomeDocumentFontSize wantedGnomeInterfaceFontSize wantedGnomeMonospaceFontSize wantedGnomeThemeFontSize wantedGnomeTitleFontSize wantedJetbrainsMonoFontName wantedJetbrainsMonoFontSize wantedJetbrainsMonoFontSize2d wantedVimMonoFontSize currentQt5MonoFontName currentQt5MonoFontSize currentQt5SansFontName currentQt5SansFontSize currentQt6MonoFontName currentQt6MonoFontSize currentQt6SansFontName currentQt6SansFontSize wantedQt5MonoFontName wantedQt5MonoFontSize wantedQt5SansFontName wantedQt5SansFontSize wantedQt6MonoFontName wantedQt6MonoFontSize wantedQt6SansFontName wantedQt6SansFontSize emacsHostIdentifierInConfigMonospace emacsHostIdentifierInConfigVariablewidth qt5Config qt5Mono qt5Sans qt6Config qt6Mono qt6Sans themeConfig wantedAlacrittyMonoFontSize wantedX11CursorSize wantedX11SansFontSize wantedX11UxtermFontSize wantedX11XtermFontSize x11Config x11Cursor x11Mono x11Sans alacrittyConfig alacrittyMono currentAlacrittyMonoFontSize currentX11CursorSize currentX11SansFontSize currentX11UxtermFontSize currentX11XtermFontSize currentAlacrittyMonoFontString currentCodeEditorFontString currentCodeTerminalFontString currentEmacsMonospaceFontLineNumber currentEmacsMonospaceFontString currentEmacsVariablewidthFontLineNumber currentEmacsVariablewidthFontString currentGhosTTYMonoFontSize currentGhosTTYMonoFontString currentGnomeThemeFontString currentJetbrainsMonoFontNameString currentJetbrainsMonoFontSize2dString currentJetbrainsMonoFontSizeString currentNvimMonoFontSize currentNvimMonoFontString currentQt5MonoFontString currentQt5SansFontString currentQt6MonoFontString currentQt6SansFontString currentSublimeMonoFontSize currentSublimeMonoFontString currentVimMonoFontString currentX11CursorString currentX11DpiString currentX11DpiValue currentX11SansFontString currentX11UxtermFontString currentX11XtermFontString currentZedBufferFontName currentZedBufferFontSize currentZedBufferFontString currentZedUiFontName currentZedUiFontSize currentZedUiFontString ghosttyConfig nvimConfig sublimeConfig sublimeConfigs sublimeProgramName wantedAlacrittyMonoFontString wantedCodeEditorFontString wantedCodeTerminalFontString wantedEmacsMonospaceFontString wantedEmacsVariablewidthFontString wantedGhosTTYMonoFontSize wantedGhosTTYMonoFontString wantedGnomeThemeFontString wantedJetbrainsMonoFontNameString wantedJetbrainsMonoFontSize2dString wantedJetbrainsMonoFontSizeString wantedNvimMonoFontSize wantedNvimMonoFontString wantedQt5MonoFontString wantedQt5SansFontString wantedQt6MonoFontString wantedQt6SansFontString wantedSublimeMonoFontSize wantedSublimeMonoFontString wantedVimMonoFontString wantedX11CursorString wantedX11DpiString wantedX11DpiValue wantedX11SansFontString wantedX11UxtermFontString wantedX11XtermFontString wantedZedBufferFontSize wantedZedBufferFontString wantedZedUiFontSize wantedZedUiFontString zedConfig
+unset FONT_SIZE_PREFERENCES_FILE codeConfig emacsConfig jetbrainsConfigs jetbrainsConfig vimConfig codeMono emacsMono emacsSans gnomeMono gnomeSans gnomeSerif jetbrainsMono vimMono currentCodeEditorFontName currentCodeEditorFontSize currentCodeTerminalFontName currentCodeTerminalFontSize currentEmacsMonoFontName currentEmacsMonoFontSize currentEmacsSansFontName currentEmacsSansFontSize currentGnomeDocumentFontName currentGnomeDocumentFontSize currentGnomeInterfaceFontName currentGnomeInterfaceFontSize currentGnomeMonospaceFontName currentGnomeMonospaceFontSize currentGnomeThemeFontName currentGnomeThemeFontSize currentGnomeTitleFontName currentGnomeTitleFontSize currentJetbrainsMonoFontName currentJetbrainsMonoFontSize currentJetbrainsMonoFontSize2d currentVimMonoFontName currentVimMonoFontSize wantedCodeEditorFontSize wantedCodeTerminalFontSize wantedEmacsMonoFontSize wantedEmacsSansFontSize wantedGnomeDocumentFontSize wantedGnomeInterfaceFontSize wantedGnomeMonospaceFontSize wantedGnomeThemeFontSize wantedGnomeTitleFontSize wantedJetbrainsMonoFontName wantedJetbrainsMonoFontSize wantedJetbrainsMonoFontSize2d wantedVimMonoFontSize currentQt5MonoFontName currentQt5MonoFontSize currentQt5SansFontName currentQt5SansFontSize currentQt6MonoFontName currentQt6MonoFontSize currentQt6SansFontName currentQt6SansFontSize wantedQt5MonoFontName wantedQt5MonoFontSize wantedQt5SansFontName wantedQt5SansFontSize wantedQt6MonoFontName wantedQt6MonoFontSize wantedQt6SansFontName wantedQt6SansFontSize qt5Config qt5Mono qt5Sans qt6Config qt6Mono qt6Sans themeConfig wantedAlacrittyMonoFontSize wantedX11CursorSize wantedX11SansFontSize wantedX11UxtermFontSize wantedX11XtermFontSize x11Config x11Cursor x11Mono x11Sans alacrittyConfig alacrittyMono currentAlacrittyMonoFontSize currentX11CursorSize currentX11SansFontSize currentX11UxtermFontSize currentX11XtermFontSize currentAlacrittyMonoFontString currentCodeEditorFontString currentCodeTerminalFontString currentEmacsMonoFontString currentEmacsSansFontString currentGhosTTYMonoFontSize currentGhosTTYMonoFontString currentGnomeThemeFontString currentJetbrainsMonoFontNameString currentJetbrainsMonoFontSize2dString currentJetbrainsMonoFontSizeString currentNvimMonoFontSize currentNvimMonoFontString currentQt5MonoFontString currentQt5SansFontString currentQt6MonoFontString currentQt6SansFontString currentSublimeMonoFontSize currentSublimeMonoFontString currentVimMonoFontString currentX11CursorString currentX11DpiString currentX11DpiValue currentX11SansFontString currentX11UxtermFontString currentX11XtermFontString currentZedBufferFontName currentZedBufferFontSize currentZedBufferFontString currentZedUiFontName currentZedUiFontSize currentZedUiFontString ghosttyConfig nvimConfig sublimeConfig sublimeConfigs sublimeProgramName wantedAlacrittyMonoFontString wantedCodeEditorFontString wantedCodeTerminalFontString wantedEmacsMonoFontString wantedEmacsSansFontString wantedGhosTTYMonoFontSize wantedGhosTTYMonoFontString wantedGnomeThemeFontString wantedJetbrainsMonoFontNameString wantedJetbrainsMonoFontSize2dString wantedJetbrainsMonoFontSizeString wantedNvimMonoFontSize wantedNvimMonoFontString wantedQt5MonoFontString wantedQt5SansFontString wantedQt6MonoFontString wantedQt6SansFontString wantedSublimeMonoFontSize wantedSublimeMonoFontString wantedVimMonoFontString wantedX11CursorString wantedX11DpiString wantedX11DpiValue wantedX11SansFontString wantedX11UxtermFontString wantedX11XtermFontString wantedZedBufferFontSize wantedZedBufferFontString wantedZedUiFontSize wantedZedUiFontString zedConfig
