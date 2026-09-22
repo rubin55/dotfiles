@@ -36,9 +36,10 @@ name = "opencode"
 base_url="https://opencode.ai/zen/v1"
 auth_keys = ["opencode", "zen-api-key"]
 user_agent = "opencode/stable/2.0.8/opencode"
-balance_cookie = "opencode.ai/auth"
-balance_page_url = "https://opencode.ai/workspace/wrk_01M1K9Y1J009VQ0W47VKHC3K0J/billing"
-balance_pattern = "balance:(\\d+)"
+balance_cookie = "opencode.ai/__Host-console_session"
+balance_api_url = "https://opencode.ai/console/api/billing/status"
+balance_field = "availableMicroCents"
+balance_headers = { x-org-id = "wrk_01M1K9Y1J009VQ0W47VKHC3K0J" }
 balance_scale = 1e8
 
 [[model_providers]]
@@ -53,15 +54,15 @@ auth_keys = ["orcarouter", "default-api-token"]
 
 [[models]]
 name = "claude-fable-5.1"
-aliases = ["claude-fable-5-1"]
+aliases = []
 
 [[models]]
-name = "claude-opus-5"
-aliases = ["anthropic.claude-opus-5", "databricks-claude-opus-5"]
+name = "claude-opus-5-5"
+aliases = ["anthropic.claude-opus-5-5", "databricks-claude-opus-5-5"]
 
 [[models]]
 name = "deepseek-v4.1-flash"
-aliases = ["deepseek-v4-1-flash"]
+aliases = ["deepseek-v4p1-flash"]
 
 [[models]]
 name = "gemini-3.8-flash"
@@ -69,19 +70,19 @@ aliases = []
 
 [[models]]
 name = "glm-5.3"
-aliases = ["databricks-glm-5-3", "zai-glm-5-3"]
+aliases = ["databricks-glm-5-3", "glm-5p3", "zai-glm-5-3"]
 
 [[models]]
 name = "glm-5.3-flash"
-aliases = ["databricks-glm-5-3-flash"]
-
-[[models]]
-name = "mimo-v2.6-pro"
-aliases = []
+aliases = ["databricks-glm-5-3-flash", "glm-5p3-flash"]
 
 [[models]]
 name = "gpt-6-astra"
 aliases = ["databricks-gpt-6-astra"]
+
+[[models]]
+name = "gpt-6-sol"
+aliases = ["databricks-gpt-6-sol"]
 
 [[models]]
 name = "grok-4.7"
@@ -92,13 +93,26 @@ name = "kimi-k3"
 aliases = ["databricks-kimi-k3"]
 
 [[models]]
+name = "mimo-v2.6-pro"
+aliases = []
+
+[[models]]
+name = "mimo-v2.6-flash"
+aliases = ["mimo-v2.6-flash-free"]
+
+[[models]]
 name = "mistral-medium-3.5"
-aliases = ["mistral-medium-3-5", "mistral-medium-3.5-128b"]
+aliases = ["mistral-medium-3.5-128b"]
 
 [[models]]
 name = "muse-spark-1.3"
 aliases = ["muse-spark-1.3-contributor", "muse-spark-1.3-contributor-free"]
 
 [[models]]
+name = "qwen3.8-max"
+aliases = ["qwen3-8-max-0902"]
+
+[[models]]
 name = "qwen3.8-27b"
 aliases = ["qwen3.8-27b:free"]
+
