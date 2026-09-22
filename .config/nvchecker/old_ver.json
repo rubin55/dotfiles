@@ -13,10 +13,10 @@
       "creation_time": "2026-09-19T12:28:59Z"
     },
     "dev-proxy": {
-      "version": "v3.3.0",
-      "gitref": "refs/tags/v3.3.0",
-      "url": "https://github.com/dotnet/dev-proxy/releases/tag/v3.3.0",
-      "creation_time": "2026-09-14T09:27:03Z"
+      "version": "v3.3.1",
+      "gitref": "refs/tags/v3.3.1",
+      "url": "https://github.com/dotnet/dev-proxy/releases/tag/v3.3.1",
+      "creation_time": "2026-09-22T13:01:50Z"
     },
     "fsautocomplete": {
       "version": "v0.84.0",
@@ -208,10 +208,10 @@
       "creation_time": "2025-12-15T21:40:14Z"
     },
     "scheme-langserver": {
-      "version": "2.1.9",
-      "gitref": "refs/tags/2.1.9",
-      "url": "https://github.com/ufo5260987423/scheme-langserver/releases/tag/2.1.9",
-      "creation_time": "2026-09-03T08:59:17Z"
+      "version": "2.1.10",
+      "gitref": "refs/tags/2.1.10",
+      "url": "https://github.com/ufo5260987423/scheme-langserver/releases/tag/2.1.10",
+      "creation_time": "2026-09-22T06:14:14Z"
     },
     "svelte-language-server": {
       "version": "svelte-language-server@0.18.4",
