@@ -16,6 +16,7 @@ alias fgrep='fgrep --color=auto'
 alias grep='grep --color=auto'
 
 # Various commonly used commands.
+alias aimap='aimap.py'
 alias alacritty-theme='alacritty-theme.sh'
 alias amqctl='amqctl.sh'
 alias crush='crush.sh'
