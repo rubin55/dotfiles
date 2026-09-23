@@ -104,6 +104,21 @@ function path.append() {
   echo "$result"
 }
 
+function env.persist() {
+  local id="$1" key="$2" value="$3"
+  local file="$HOME/.config/environment.d/${id}.conf"
+  if [[ -e $file ]]; then
+    local line
+    while IFS= read -r line; do
+      [[ $line == "${key}=\"${value}\"" ]] && return 0
+    done < "$file"
+  fi
+  log.info "Persisting ${key}=${value} to ${file}"
+  mkdir -p "${file%/*}"
+  [[ -e $file ]] && sed -i "/^${key}=/d" "$file"
+  printf '%s="%s"\n' "$key" "$value" >> "$file"
+}
+
 function os.platform() {
   if [[ -z $_OS_PLATFORM ]]; then
     case "$OSTYPE" in

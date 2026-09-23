@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Check if functions are loaded and if required executables are available.
-type -p path.which || return
+type -p env.persist path.which || return
 path.which racket || return
 
-export PLT_DISPLAY_BACKING_SCALE=1
+env.persist racket PLT_DISPLAY_BACKING_SCALE 1
