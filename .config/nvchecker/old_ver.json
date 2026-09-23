@@ -112,7 +112,7 @@
       "revision_creation_time": "2025-12-03T21:52:46+08:00"
     },
     "openshift-codeready-bin": {
-      "version": "2.63.0"
+      "version": "2.64.0"
     },
     "openshift-developer-bin": {
       "version": "v3.16.1"
