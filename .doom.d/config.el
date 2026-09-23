@@ -63,8 +63,13 @@
 ;; Make projectile find my projects. Discovery is manual (SPC p D);
 ;; otherwise the first project-switching command of each session walks
 ;; the whole search path before showing anything.
-(setq projectile-project-search-path '(("~/Source" . 3) ("~/Documents/Rubin/Exercism" . 2) ("~/Documents/Rubin/Courses" . 1)))
 (setq projectile-auto-discover nil)
+(setq projectile-project-search-path
+      '(("~/Documents/Rubin/Courses" . 1)
+        ("~/Documents/Rubin/Exercism" . 2)
+        ("~/Documents/Rubin/Notes" . 0)
+        ("~/Documents/Rubin/Skills" . 0)
+        ("~/Source" . 3)))
 
 ;; Hide menubar, toolbar and scrollbar by default.
 (menu-bar-mode -1)
@@ -247,6 +252,9 @@
                 (let ((proc (get-process "emacs-mcp-unix-server")))
                   (when proc
                     (set-process-query-on-exit-flag proc nil))))))
+
+;; Enable interactive prompting for permissions.
+(setq mcp-server-security-prompt-for-permissions t)
 
 ;; Show emacs version after startup.
 (add-hook 'window-setup-hook (lambda () (run-with-timer 1.2 nil #'call-interactively 'version)))
