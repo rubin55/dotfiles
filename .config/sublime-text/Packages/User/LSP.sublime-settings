@@ -131,7 +131,7 @@
     },
     "haskell": {
       "enabled": false,
-      "command": ["haskell-language-server-wrapper", "--lsp"],
+      "command": ["/home/rubin/.ghcup/bin/haskell-language-server-wrapper", "--lsp"],
       "selector": "source.haskell",
     },
     "helm": {
@@ -220,7 +220,7 @@
     },
     "rust": {
       "enabled": false,
-      "command": ["rust-analyzer"],
+      "command": ["/usr/lib/rustup/bin/rust-analyzer"],
       "selector": "source.rust",
       "initializationOptions": {
         "check": {
