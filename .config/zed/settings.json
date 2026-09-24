@@ -1,9 +1,7 @@
 {
   "agent_servers": {
     "codex-acp": {
-      "type": "registry"
-      //"command": "codex",
-      //"args": ["--profile", "openrouter", "acp"]
+      "type": "registry",
     },
     "claude-acp": {
       "type": "registry"
@@ -24,7 +22,7 @@
   "git_panel": {
     "dock": "left"
   },
-  "agent_buffer_font_size": 15,
+  "agent_buffer_font_size": 14,
   "auto_update": false,
   "buffer_font_family": "PragmataPro Mono",
   "buffer_font_size": 15,
@@ -36,18 +34,16 @@
   "show_wrap_guides": true,
   "soft_wrap": "editor_width",
   "ui_font_family": "Ubuntu",
-  "ui_font_size": 14,
+  "ui_font_size": 16,
   "ui_font_weight": 399,
   "vim_mode": false,
   "wrap_guides": [80, 120],
 
   "agent": {
+    "sidebar_side": "right",
     "sandbox_permissions": {
-      "network_hosts": [
-        "zed.dev",
-        "developers.openai.com",
-        "learn.chatgpt.com"
-      ]
+      "allow_all_hosts": true,
+      "network_hosts": []
     },
     "tool_permissions": {
       "tools": {
