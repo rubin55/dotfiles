@@ -58,10 +58,10 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
   # Current and wanted Zed settings.
   zedConfig="$HOME/.config/zed/settings.json"
   if [[ -e "$zedConfig" && -n "$zedMono" ]]; then
-    currentZedBufferFontName="$(grep "buffer_font_family" "$zedConfig" | cut -d: -f2 | sed -e 's|"||g' -e 's|,||g' -e 's|^[[:space:]]*||g' -e 's|[[:space:]]*$||g')"
-    currentZedBufferFontSize="$(grep "buffer_font_size" "$zedConfig" | cut -d: -f2 | sed -e 's|"||g' -e 's|,||g' -e 's|^[[:space:]]*||g' -e 's|[[:space:]]*$||g')"
-    currentZedUiFontName="$(grep "ui_font_family" "$zedConfig" | cut -d: -f2 | sed -e 's|"||g' -e 's|,||g' -e 's|^[[:space:]]*||g' -e 's|[[:space:]]*$||g')"
-    currentZedUiFontSize="$(grep "ui_font_size" "$zedConfig" | cut -d: -f2 | sed -e 's|"||g' -e 's|,||g' -e 's|^[[:space:]]*||g' -e 's|[[:space:]]*$||g')"
+    currentZedBufferFontName="$(grep '"buffer_font_family"' "$zedConfig" | cut -d: -f2 | sed -e 's|"||g' -e 's|,||g' -e 's|^[[:space:]]*||g' -e 's|[[:space:]]*$||g')"
+    currentZedBufferFontSize="$(grep '"buffer_font_size"' "$zedConfig" | cut -d: -f2 | sed -e 's|"||g' -e 's|,||g' -e 's|^[[:space:]]*||g' -e 's|[[:space:]]*$||g')"
+    currentZedUiFontName="$(grep '"ui_font_family"' "$zedConfig" | cut -d: -f2 | sed -e 's|"||g' -e 's|,||g' -e 's|^[[:space:]]*||g' -e 's|[[:space:]]*$||g')"
+    currentZedUiFontSize="$(grep '"ui_font_size"' "$zedConfig" | cut -d: -f2 | sed -e 's|"||g' -e 's|,||g' -e 's|^[[:space:]]*||g' -e 's|[[:space:]]*$||g')"
     wantedZedBufferFontSize="$zedMono"
     wantedZedUiFontSize="$zedSans"
 
