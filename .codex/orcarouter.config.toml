@@ -1,6 +1,6 @@
 model = "google/gemini-3.8-flash"
-model_reasoning_effort = "max"
-plan_mode_reasoning_effort = "max"
+model_reasoning_effort = "medium"
+plan_mode_reasoning_effort = "medium"
 
 model_provider = "orcarouter"
 model_catalog_json = "/home/rubin/.codex/model-catalogs/orcarouter.json"
@@ -12,4 +12,3 @@ base_url="https://api.orcarouter.ai/v1"
 [model_providers.orcarouter.auth]
 command = "tipi.sh"
 args = ["orcarouter", "default-api-token"]
-

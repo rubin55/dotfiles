@@ -1,14 +1,12 @@
 [analytics]
 enabled = false
 
-[sandbox_read_only]
-network_access = true
-
 [sandbox_workspace_write]
 network_access = true
 
 [tui]
 terminal_title = []
+screen_reader_detection_done = true
 
 [mcp_servers.Computer]
 command = "computer-use-linux"
@@ -32,4 +30,3 @@ MCP_SERVER_NAME = "WolframLanguage"
 WOLFRAM_BASE = "/usr/share/Wolfram"
 WOLFRAM_LOCALBASE = "/home/rubin/.Wolfram/Objects"
 WOLFRAM_USERBASE = "/home/rubin/.Wolfram"
-
