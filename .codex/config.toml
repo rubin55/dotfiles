@@ -1,6 +1,9 @@
 [analytics]
 enabled = false
 
+[features]
+daemon_auto_start = false
+
 [sandbox_workspace_write]
 network_access = true
 
