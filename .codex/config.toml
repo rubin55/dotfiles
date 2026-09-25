@@ -1,11 +1,31 @@
+default_permissions = "workspace-write-net"
+
 [analytics]
 enabled = false
 
 [features]
 daemon_auto_start = false
+network_proxy = true
 
-[sandbox_workspace_write]
-network_access = true
+[permissions.workspace-write-net]
+description = "Workspace write with public web access."
+extends = ":workspace"
+
+[permissions.workspace-write-net.network]
+enabled = true
+
+[permissions.workspace-write-net.network.domains]
+"*" = "allow"
+
+[permissions.read-only-net]
+description = "Read only with selected net access."
+extends = ":read-only"
+
+[permissions.read-only-net.network]
+enabled = true
+
+[permissions.read-only-net.network.domains]
+"*" = "allow"
 
 [tui]
 terminal_title = []
