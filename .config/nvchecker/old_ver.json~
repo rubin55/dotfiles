@@ -58,10 +58,10 @@
       "version": "26.2.4"
     },
     "jdk25-openj9-bin": {
-      "version": "jdk-25.0.4.10",
-      "gitref": "refs/tags/jdk-25.0.4.10",
-      "url": "https://github.com/ibmruntimes/semeru25-binaries/releases/tag/jdk-25.0.4.10",
-      "creation_time": "2026-08-27T21:38:12Z"
+      "version": "jdk-25.0.4.15",
+      "gitref": "refs/tags/jdk-25.0.4.15",
+      "url": "https://github.com/ibmruntimes/semeru25-binaries/releases/tag/jdk-25.0.4.15",
+      "creation_time": "2026-09-24T16:32:27Z"
     },
     "jsonpath-python": {
       "version": "1.1.6",
@@ -112,7 +112,7 @@
       "revision_creation_time": "2025-12-03T21:52:46+08:00"
     },
     "openshift-codeready-bin": {
-      "version": "2.63.0"
+      "version": "2.64.0"
     },
     "openshift-developer-bin": {
       "version": "v3.16.1"

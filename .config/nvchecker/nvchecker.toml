@@ -210,6 +210,11 @@ source = "github"
 github = "ufo5260987423/scheme-langserver"
 use_latest_release = "true"
 
+[sonarqube-cli]
+source = "github"
+github = "SonarSource/sonarqube-cli"
+use_latest_release = "true"
+
 [svelte-language-server]
 source = "github"
 github = "sveltejs/language-tools"
