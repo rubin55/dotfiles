@@ -49,6 +49,9 @@
 ;; Be able to switch buffers by clicking on their tab.
 (setq mouse-1-click-follows-link -450)
 
+;; Drag the right fringe to resize a window; the divider is only 1px.
+(map! [right-fringe down-mouse-1] #'mouse-drag-vertical-line)
+
 ;; Configure mouse scrolling to be nicer.
 (setq pixel-scroll-precision-mode t)
 (setq pixel-scroll-precision-large-scroll-height 40.0)
@@ -134,9 +137,33 @@
 (add-hook 'svelte-mode-local-vars-hook #'lsp! 'append)
 (add-hook 'powershell-mode-local-vars-hook #'lsp! 'append)
 
+;; Width of the documentation popup from K, as a share of the frame.
+(defvar lsp-help-width 0.4)
+
+(defun lsp-help-save-width (frame)
+  "Remember the width of the documentation popup after a resize."
+  (when-let* ((win (get-buffer-window "*lsp-help*" frame)))
+    (setq lsp-help-width
+          (/ (float (window-total-width win))
+             (window-total-width (frame-root-window frame))))))
+
+(defun lsp-help-apply-width (win)
+  "Give the documentation popup WIN the remembered width."
+  (unless (frame-root-window-p win)
+    (let ((width (round (* lsp-help-width
+                           (window-total-width (frame-root-window win))))))
+      (window-resize win (- width (window-total-width win)) t))))
+
+(add-hook 'window-size-change-functions #'lsp-help-save-width)
+
 ;; Configure lsp-modes.
 (after! lsp-mode
   (setq lsp-enable-suggest-server-download nil)
+
+  ;; Show documentation from K on the right side of the frame, at the
+  ;; width it had when it last closed.
+  (set-popup-rule! "^\\*lsp-help"
+    :side 'right :size #'lsp-help-apply-width :quit t :select t)
 
   (setq lsp-xml-prefer-jar nil
         lsp-xml-bin-file "/usr/bin/lemminx")
