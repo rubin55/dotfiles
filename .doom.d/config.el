@@ -52,7 +52,7 @@
 ;; Configure mouse scrolling to be nicer.
 (setq pixel-scroll-precision-mode t)
 (setq pixel-scroll-precision-large-scroll-height 40.0)
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 1))) ;; one line at a time
+(setq mouse-wheel-scroll-amount '(1 ((shift) . 3))) ;; one line at a time
 (setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
 (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
 (setq scroll-step 1) ;; keyboard scroll one line at a time
