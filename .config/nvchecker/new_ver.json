@@ -7,10 +7,10 @@
       "revision": "b3956bda93ff3d45b644c7bc6d55e0e01c9b9a74"
     },
     "computer-use-linux": {
-      "version": "v0.7.1",
-      "gitref": "refs/tags/v0.7.1",
-      "url": "https://github.com/agent-sh/computer-use-linux/releases/tag/v0.7.1",
-      "creation_time": "2026-09-19T12:28:59Z"
+      "version": "v0.7.3",
+      "gitref": "refs/tags/v0.7.3",
+      "url": "https://github.com/agent-sh/computer-use-linux/releases/tag/v0.7.3",
+      "creation_time": "2026-09-26T19:07:36Z"
     },
     "dev-proxy": {
       "version": "v3.3.1",
@@ -143,8 +143,8 @@
       "version": "v4.0.34"
     },
     "retro68": {
-      "version": "f99ecb5aeb6fbb004c647518ea760daba2b1f6bb",
-      "revision": "f99ecb5aeb6fbb004c647518ea760daba2b1f6bb"
+      "version": "f3b44a4749f97140a83af8325da2600df5c3f903",
+      "revision": "f3b44a4749f97140a83af8325da2600df5c3f903"
     },
     "ruby-commander": {
       "version": "v6.0.0",

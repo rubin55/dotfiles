@@ -7,10 +7,10 @@
       "revision": "b3956bda93ff3d45b644c7bc6d55e0e01c9b9a74"
     },
     "computer-use-linux": {
-      "version": "v0.7.1",
-      "gitref": "refs/tags/v0.7.1",
-      "url": "https://github.com/agent-sh/computer-use-linux/releases/tag/v0.7.1",
-      "creation_time": "2026-09-19T12:28:59Z"
+      "version": "v0.7.2",
+      "gitref": "refs/tags/v0.7.2",
+      "url": "https://github.com/agent-sh/computer-use-linux/releases/tag/v0.7.2",
+      "creation_time": "2026-09-25T22:03:48Z"
     },
     "dev-proxy": {
       "version": "v3.3.1",
@@ -212,6 +212,12 @@
       "gitref": "refs/tags/2.1.10",
       "url": "https://github.com/ufo5260987423/scheme-langserver/releases/tag/2.1.10",
       "creation_time": "2026-09-22T06:14:14Z"
+    },
+    "sonarqube-cli": {
+      "version": "1.8.0.5274",
+      "gitref": "refs/tags/1.8.0.5274",
+      "url": "https://github.com/SonarSource/sonarqube-cli/releases/tag/1.8.0.5274",
+      "creation_time": "2026-09-15T07:58:51Z"
     },
     "svelte-language-server": {
       "version": "svelte-language-server@0.18.4",
