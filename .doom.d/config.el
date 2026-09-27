@@ -327,8 +327,8 @@
   (or (not lsp-ui-doc-use-childframe)
       (not (or (display-graphic-p) (featurep 'tty-child-frames)))))
 
-(defun lsp-doc-hide-border (frame _window)
-  "Draw the border of FRAME in its background color, without dividers."
+(defun lsp-doc-setup-frame (frame _window)
+  "Hide the border and window dividers of FRAME."
   (let ((bg (frame-parameter frame 'background-color)))
     (set-face-background 'internal-border bg frame)
     (set-face-background 'child-frame-border bg frame)
@@ -350,9 +350,11 @@
   (advice-add 'lsp-ui-doc--make-smaller-empty-lines
               :after #'lsp-doc-fill-code-gaps)
   (add-hook 'window-size-change-functions #'lsp-doc-reflow)
-  (add-hook 'lsp-ui-doc-frame-hook #'lsp-doc-hide-border)
+  (add-hook 'lsp-ui-doc-frame-hook #'lsp-doc-setup-frame)
   ;; A wider border to grab; it has the background color.
   (setf (alist-get 'internal-border-width lsp-ui-doc-frame-parameters) 6)
+  ;; A click must not take the keyboard; it stays there when hidden.
+  (setf (alist-get 'no-accept-focus lsp-ui-doc-frame-parameters) t)
   (set-lookup-handlers! 'lsp-ui-mode
     :documentation '(lsp-ui-doc-show :async t)))
 
