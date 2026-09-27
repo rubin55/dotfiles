@@ -78,6 +78,22 @@
 ;; Drag the right fringe to resize a window; the divider is only 1px.
 (map! [right-fringe down-mouse-1] #'mouse-drag-vertical-line)
 
+;; Wider window divider to grab with the mouse; it shows a 1px line.
+(setq window-divider-default-right-width 6)
+
+(defun divider-hide-padding-h ()
+  "Draw all but the last pixel of the window divider in the background."
+  (let ((bg (face-background (if (facep 'solaire-default-face)
+                                 'solaire-default-face
+                               'default)
+                             nil t)))
+    (set-face-foreground 'window-divider-last-pixel
+                         (face-foreground 'vertical-border nil t))
+    (set-face-foreground 'window-divider bg)
+    (set-face-foreground 'window-divider-first-pixel bg)))
+
+(add-hook 'doom-load-theme-hook #'divider-hide-padding-h)
+
 ;; Configure mouse scrolling to be nicer.
 (setq pixel-scroll-precision-mode t)
 (setq pixel-scroll-precision-large-scroll-height 40.0)
@@ -180,12 +196,13 @@
               (win (frame-parameter frame 'lsp-ui-doc--window-origin))
               ((window-live-p win)))
     (pcase-let* ((`(,left ,top ,right ,bottom) (window-inside-pixel-edges win))
-                 (width (round (* lsp-doc-width (- right left)))))
+                 (width (round (* lsp-doc-width (- right left))))
+                 (border (* 2 (frame-parameter frame 'internal-border-width))))
       (modify-frame-parameters
        frame `((left . (+ ,(- right width)))
                (top . (+ ,top))
-               (width . (text-pixels . ,width))
-               (height . (text-pixels . ,(- bottom top))))))))
+               (width . (text-pixels . ,(- width border)))
+               (height . (text-pixels . ,(- bottom top border))))))))
 
 (defun lsp-doc-reflow (frame)
   "Wrap and place the documentation float again after FRAME resizes."
@@ -195,7 +212,7 @@
               ((window-live-p win)))
     ;; A resize of the float itself comes from a mouse drag.
     (when (eq frame doc)
-      (setq lsp-doc-width (/ (float (frame-text-width doc))
+      (setq lsp-doc-width (/ (float (frame-pixel-width doc))
                              (window-body-width win t))))
     (with-selected-window win
       (apply #'lsp-ui-doc--render-buffer lsp-doc-last)
@@ -229,10 +246,14 @@
 (after! lsp-ui
   (advice-add 'lsp-ui-doc--render-buffer :before #'lsp-doc-prepare)
   (advice-add 'lsp-ui-doc--move-frame :after #'lsp-doc-place)
+  ;; Its fill-region merges code lines when one line is too wide.
+  (advice-add 'lsp-ui-doc--resize-buffer :override #'ignore)
   (advice-add 'lsp-ui-doc--make-smaller-empty-lines
               :after #'lsp-doc-fill-code-gaps)
   (add-hook 'window-size-change-functions #'lsp-doc-reflow)
   (add-hook 'lsp-ui-doc-frame-hook #'lsp-doc-hide-border)
+  ;; A wider border to grab; it has the background color.
+  (setf (alist-get 'internal-border-width lsp-ui-doc-frame-parameters) 6)
   (set-lookup-handlers! 'lsp-ui-mode
     :documentation '(lsp-ui-doc-show :async t)))
 
