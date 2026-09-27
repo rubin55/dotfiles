@@ -10,14 +10,15 @@ vim.lsp.enable({
   'yamlls', 'zls',
 })
 
--- Float that shows LSP hover docs; the next K reuses it.
+-- Float that shows LSP hover docs.
 local hover_win
 
--- Float width as a share of its window; a drag or resize changes it.
+-- Float width ratio.
 local hover_ratio = 0.4
 
--- Full-height float on the right edge of window src.
--- getwininfo() height leaves out the winbar, unlike nvim_win_get_height.
+-- Full-height float on the right edge of the window.
+-- Note: getwininfo() height leaves out the winbar,
+-- unlike nvim_win_get_height.
 local function hover_config(src)
   local info = vim.fn.getwininfo(src)[1]
   local w = math.floor(info.width * hover_ratio + 0.5)
@@ -33,7 +34,7 @@ local function hover_config(src)
   }
 end
 
--- Show markdown lines in the float of window src; returns the buffer.
+-- Show hover.
 local function show_hover(src, lines)
   local buf = vim.api.nvim_create_buf(false, true)
   vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
@@ -176,7 +177,6 @@ vim.api.nvim_create_autocmd('CompleteDone', {
 local resizing = false
 
 -- Resize the hover float by dragging its left padding with the mouse.
--- Other mouse events keep their default action.
 local function hover_mouse(key)
   return function()
     local pos = vim.fn.getmousepos()
@@ -229,7 +229,6 @@ vim.api.nvim_create_autocmd('LspAttach', {
     if client:supports_method('textDocument/completion') then
       vim.lsp.completion.enable(true, client.id, ev.buf, {
         autotrigger = true,
-        -- The float shows the signature; in the menu it would cover the float.
         convert = function() return { menu = '' } end
       })
       vim.keymap.set('i', '<C-Space>', vim.lsp.completion.get, { buffer = ev.buf, desc = 'LSP completion' })
