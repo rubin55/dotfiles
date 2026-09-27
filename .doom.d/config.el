@@ -55,6 +55,26 @@
 ;; Be able to switch buffers by clicking on their tab.
 (setq mouse-1-click-follows-link -450)
 
+(defun centaur-tabs-drag (event)
+  "Move the tab dragged with EVENT to the tab where it was released."
+  (interactive "e")
+  (let* ((from (centaur-tabs-get-tab-from-event event))
+         (end (posn-string (event-end event)))
+         (to (and end (get-text-property (cdr end) 'centaur-tabs-tab (car end)))))
+    (when (and from to (not (equal from to)))
+      (let* ((tabset (centaur-tabs-tab-tabset from))
+             (tabs (centaur-tabs-tabs tabset))
+             (i (cl-position to tabs :test #'equal))
+             (rest (remove from tabs)))
+        (set tabset (append (seq-take rest i) (list from) (seq-drop rest i)))
+        (centaur-tabs-set-template tabset nil)
+        (centaur-tabs-display-update)))))
+
+;; Drag a tab to put it in a different place.
+(after! centaur-tabs
+  (define-key centaur-tabs-default-map [tab-line drag-mouse-1]
+              #'centaur-tabs-drag))
+
 ;; Drag the right fringe to resize a window; the divider is only 1px.
 (map! [right-fringe down-mouse-1] #'mouse-drag-vertical-line)
 
