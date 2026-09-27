@@ -55,13 +55,23 @@
 ;; Be able to switch buffers by clicking on their tab.
 (setq mouse-1-click-follows-link -450)
 
-(defun centaur-tabs-drag (event)
-  "Move the tab dragged with EVENT to the tab where it was released."
+(defvar centaur-tabs-pressed nil
+  "The tab under the last mouse press on the tab line.")
+
+(defun centaur-tabs-press (event)
+  "Remember the tab under the mouse press EVENT."
   (interactive "e")
-  (let* ((from (centaur-tabs-get-tab-from-event event))
+  (setq centaur-tabs-pressed (centaur-tabs-get-tab-from-event event)))
+
+(defun centaur-tabs-release (event)
+  "Move the pressed tab to the tab under EVENT, or select that tab."
+  (interactive "e")
+  (let* ((from centaur-tabs-pressed)
          (end (posn-string (event-end event)))
          (to (and end (get-text-property (cdr end) 'centaur-tabs-tab (car end)))))
-    (when (and from to (not (equal from to)))
+    (setq centaur-tabs-pressed nil)
+    (if (not (and from to (not (equal from to))))
+        (centaur-tabs-do-select event)
       (let* ((tabset (centaur-tabs-tab-tabset from))
              (tabs (centaur-tabs-tabs tabset))
              (i (cl-position to tabs :test #'equal))
@@ -70,10 +80,11 @@
         (centaur-tabs-set-template tabset nil)
         (centaur-tabs-display-update)))))
 
-;; Drag a tab to put it in a different place.
+;; Drag a tab to move it; compare tabs, as terminals send a click.
 (after! centaur-tabs
-  (define-key centaur-tabs-default-map [tab-line drag-mouse-1]
-              #'centaur-tabs-drag))
+  (define-key centaur-tabs-default-map [tab-line down-mouse-1] #'centaur-tabs-press)
+  (define-key centaur-tabs-default-map [tab-line mouse-1] #'centaur-tabs-release)
+  (define-key centaur-tabs-default-map [tab-line drag-mouse-1] #'centaur-tabs-release))
 
 ;; Drag the right fringe to resize a window; the divider is only 1px.
 (map! [right-fringe down-mouse-1] #'mouse-drag-vertical-line)
@@ -93,6 +104,9 @@
     (set-face-foreground 'window-divider-first-pixel bg)))
 
 (add-hook 'doom-load-theme-hook #'divider-hide-padding-h)
+
+;; Use the mouse in terminals; Emacs 31 does not do it inside tmux.
+(add-hook 'tty-setup-hook #'xterm-mouse-mode)
 
 ;; Configure mouse scrolling to be nicer.
 (setq pixel-scroll-precision-mode t)
@@ -190,19 +204,29 @@
   (setq lsp-doc-last args
         lsp-ui-doc-max-width (round (* lsp-doc-width (window-body-width)))))
 
+(defun lsp-doc-span (win)
+  "Return the left and right pixel edges of WIN that the float may cover."
+  (cons (car (window-inside-pixel-edges win))
+        (- (nth 2 (window-pixel-edges win))
+           (window-right-divider-width win)
+           (window-scroll-bar-width win))))
+
 (defun lsp-doc-place (&rest _)
   "Put the documentation float on the right side of its window."
   (when-let* ((frame (lsp-ui-doc--get-frame))
               (win (frame-parameter frame 'lsp-ui-doc--window-origin))
               ((window-live-p win)))
-    (pcase-let* ((`(,left ,top ,right ,bottom) (window-inside-pixel-edges win))
+    (pcase-let* ((`(,left . ,right) (lsp-doc-span win))
+                 (`(_ ,top _ ,bottom) (window-inside-pixel-edges win))
                  (width (round (* lsp-doc-width (- right left))))
-                 (border (* 2 (frame-parameter frame 'internal-border-width))))
+                 ;; Border size; terminals do not draw internal borders.
+                 (bw (- (frame-pixel-width frame) (frame-text-width frame)))
+                 (bh (- (frame-pixel-height frame) (frame-text-height frame))))
       (modify-frame-parameters
        frame `((left . (+ ,(- right width)))
                (top . (+ ,top))
-               (width . (text-pixels . ,(- width border)))
-               (height . (text-pixels . ,(- bottom top border))))))))
+               (width . (text-pixels . ,(- width bw)))
+               (height . (text-pixels . ,(- bottom top bh))))))))
 
 (defun lsp-doc-reflow (frame)
   "Wrap and place the documentation float again after FRAME resizes."
@@ -212,12 +236,41 @@
               ((window-live-p win)))
     ;; A resize of the float itself comes from a mouse drag.
     (when (eq frame doc)
-      (setq lsp-doc-width (/ (float (frame-pixel-width doc))
-                             (window-body-width win t))))
+      (let ((span (lsp-doc-span win)))
+        (setq lsp-doc-width (/ (float (frame-pixel-width doc))
+                               (- (cdr span) (car span))))))
     (with-selected-window win
       (apply #'lsp-ui-doc--render-buffer lsp-doc-last)
       (lsp-doc-place)
       (lsp-ui-doc--fix-hr-props))))
+
+(defun lsp-doc-break-lines (width)
+  "Break lines longer than WIDTH at word boundaries, except code."
+  (save-excursion
+    (goto-char (point-min))
+    (while (not (eobp))
+      (let ((bol (point))
+            (eol (copy-marker (line-end-position))))
+        (when (and (> (- eol bol) width) (not (lsp-doc-code-face-p bol)))
+          ;; Indent the next lines under the text of a list item.
+          (looking-at "[ \t]*\\([-*+]\\|[0-9]+[.)]\\)?[ \t]*")
+          (let ((fill-column width)
+                (fill-prefix (make-string (- (match-end 0) bol) ?\s)))
+            (fill-region-as-paragraph bol eol)))
+        (goto-char eol)
+        (forward-line 1)))))
+
+(defun lsp-doc-wrap (&rest _)
+  "Wrap long lines in the documentation float at word boundaries."
+  (let ((tty (not (display-graphic-p))))
+    (with-current-buffer (lsp-ui-doc--make-buffer-name)
+      (setq truncate-lines nil
+            word-wrap t)
+      (visual-wrap-prefix-mode 1)
+      ;; Child frames in terminals do not show visual wrapping.
+      (when tty
+        (let ((inhibit-read-only t))
+          (lsp-doc-break-lines (- lsp-ui-doc-max-width 2)))))))
 
 (defun lsp-doc-code-face-p (pos)
   "Return non-nil if POS has the markdown code face."
@@ -236,16 +289,62 @@
         (add-face-text-property (point) (+ (point) 2) 'markdown-code-face t))
       (forward-line 1))))
 
+(defun lsp-doc-drag-edge (event)
+  "Resize the documentation float with a drag from its first column."
+  (interactive "e")
+  (let* ((doc (lsp-ui-doc--get-frame))
+         (win (frame-parameter doc 'lsp-ui-doc--window-origin))
+         (start (event-start event))
+         (end (event-end event)))
+    (if (not (zerop (car (posn-col-row start))))
+        (mouse-set-region event)
+      (pcase-let* ((`(,left . ,right) (lsp-doc-span win))
+                   (endwin (posn-window end))
+                   (x (+ (car (posn-x-y end))
+                         (if (eq (window-frame endwin) doc)
+                             (car (frame-position doc))
+                           (car (window-inside-pixel-edges endwin))))))
+        (setq lsp-doc-width
+              (min 0.9 (max 0.1 (/ (float (- right x)) (- right left)))))
+        (lsp-doc-reflow nil)))))
+
+(defun lsp-doc-fix-hr-props ()
+  "Draw rule lines so that nothing on their line wraps to a new row."
+  (with-current-buffer (lsp-ui-doc--make-buffer-name)
+    (let ((inhibit-read-only t)
+          (pos (point-min)))
+      (while (setq pos (text-property-any pos (point-max)
+                                          'lsp-ui-doc--replace-hr t))
+        (put-text-property pos (1+ pos) 'display
+                           '(space :align-to (- right-fringe 1) :height (1)))
+        (put-text-property (1+ pos) (save-excursion (goto-char pos)
+                                                    (line-end-position))
+                           'display '(space :width 0))
+        (setq pos (1+ pos))))))
+
+(defun lsp-doc-inline-p ()
+  "Return non-nil when the documentation cannot use a child frame."
+  (or (not lsp-ui-doc-use-childframe)
+      (not (or (display-graphic-p) (featurep 'tty-child-frames)))))
+
 (defun lsp-doc-hide-border (frame _window)
-  "Draw the border of FRAME in its background color."
+  "Draw the border of FRAME in its background color, without dividers."
   (let ((bg (frame-parameter frame 'background-color)))
     (set-face-background 'internal-border bg frame)
-    (set-face-background 'child-frame-border bg frame)))
+    (set-face-background 'child-frame-border bg frame)
+    (modify-frame-parameters frame '((right-divider-width . 0)
+                                     (bottom-divider-width . 0)))))
 
 ;; Show docs from K in a full-height float on the right of the window.
 (after! lsp-ui
   (advice-add 'lsp-ui-doc--render-buffer :before #'lsp-doc-prepare)
+  (advice-add 'lsp-ui-doc--render-buffer :after #'lsp-doc-wrap)
   (advice-add 'lsp-ui-doc--move-frame :after #'lsp-doc-place)
+  (advice-add 'lsp-ui-doc--inline-p :override #'lsp-doc-inline-p)
+  ;; A wrapped rule line makes mouse wheel scrolling stop in the float.
+  (advice-add 'lsp-ui-doc--fix-hr-props :override #'lsp-doc-fix-hr-props)
+  ;; Terminals have no border to drag; drag the first column instead.
+  (define-key lsp-ui-doc-frame-mode-map [drag-mouse-1] #'lsp-doc-drag-edge)
   ;; Its fill-region merges code lines when one line is too wide.
   (advice-add 'lsp-ui-doc--resize-buffer :override #'ignore)
   (advice-add 'lsp-ui-doc--make-smaller-empty-lines
