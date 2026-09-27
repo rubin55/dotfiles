@@ -358,9 +358,96 @@
   (set-lookup-handlers! 'lsp-ui-mode
     :documentation '(lsp-ui-doc-show :async t)))
 
+;; Completion docs show in the float from K, not in a corfu popup.
+(remove-hook 'corfu-mode-hook #'corfu-popupinfo-mode)
+
+;; Candidate whose docs are requested, and if the float shows them.
+(defvar lsp-doc-candidate nil)
+(defvar lsp-doc-completion-shown nil)
+
+(defun lsp-doc-completion-string (item)
+  "Render the docs of completion ITEM, with the signature on top if new."
+  (let* ((detail (lsp:completion-item-detail? item))
+         (docs (lsp:completion-item-documentation? item))
+         (raw (if (stringp docs) docs (and docs (lsp:markup-content-value docs))))
+         (text (lsp--render-element docs)))
+    (if (and detail (not (string-search detail (or raw ""))))
+        (concat (lsp--render-string detail (lsp-buffer-language)) "\n\n" text)
+      text)))
+
+(defun lsp-doc-completion-show (&rest _)
+  "Show the docs of the selected LSP completion candidate in the float."
+  (let ((cand (and (>= corfu--index 0) (nth corfu--index corfu--candidates)))
+        (win (selected-window)))
+    (unless (eq cand lsp-doc-candidate)
+      (setq lsp-doc-candidate cand)
+      (when (and cand (get-text-property 0 'lsp-completion-item cand))
+        (lsp-completion--resolve-async
+         cand
+         (lambda (item)
+           ;; Skip a reply for a candidate that is no longer selected.
+           (when (and (eq cand lsp-doc-candidate) (window-live-p win))
+             (with-selected-window win
+               (let ((doc (lsp-doc-completion-string item)))
+                 (unless (string-blank-p doc)
+                   (lsp-ui-doc--display "" doc)
+                   (setq lsp-doc-completion-shown t)))))))))))
+
+(defun lsp-doc-completion-hide (&rest _)
+  "Hide the float when it shows completion docs."
+  (setq lsp-doc-candidate nil)
+  (when lsp-doc-completion-shown
+    (setq lsp-doc-completion-shown nil)
+    (lsp-ui-doc--hide-frame)))
+
+(after! corfu
+  (advice-add 'corfu--exhibit :after #'lsp-doc-completion-show)
+  (advice-add 'corfu--teardown :before #'lsp-doc-completion-hide))
+
+(defun lsp-doc-diagnostic-string (err)
+  "Render flycheck ERR as a header in its level color above its message."
+  ;; lsp-mode's own levels use the fringe face of their base level.
+  (let* ((face (flycheck-error-level-fringe-face (flycheck-error-level err)))
+         (level (string-remove-prefix "flycheck-fringe-" (symbol-name face)))
+         (head (mapconcat (lambda (part) (format "%s" part))
+                          (delq nil (list (upcase level)
+                                          (or (flycheck-error-group err)
+                                              (flycheck-error-checker err))
+                                          (flycheck-error-id err)))
+                          " ")))
+    ;; Without the blank line, the fill of the float can join the two.
+    (concat (propertize head 'face face) "\n\n"
+            (lsp--render-string (flycheck-error-message err) "markdown"))))
+
+(defun lsp-doc-diagnostics ()
+  "Show the diagnostics of the current line in the float from K."
+  (interactive)
+  (require 'lsp-ui)
+  (let ((line (line-number-at-pos)))
+    (if-let* ((errs (seq-filter (lambda (err) (eql (flycheck-error-line err) line))
+                                (bound-and-true-p flycheck-current-errors))))
+        (lsp-ui-doc--display
+         "" (mapconcat #'lsp-doc-diagnostic-string errs "\n\n\n"))
+      (message "No diagnostics"))))
+
+;; No diagnostics beside code, in popups or on hover; C-w d shows them.
+(remove-hook 'flycheck-mode-hook #'+syntax-init-popups-h)
+(setq lsp-ui-sideline-show-diagnostics nil
+      flycheck-help-echo-function nil)
+
+;; Like Neovim; C-w c and SPC w d still delete the window.
+(map! :n "C-w d"   #'lsp-doc-diagnostics
+      :n "C-w C-d" #'lsp-doc-diagnostics)
+
+;; Eldoc hides the error behind the LSP hover; the remap changes keys only.
+(map! [remap flycheck-display-error-at-point] #'lsp-doc-diagnostics)
+
 ;; Configure lsp-modes.
 (after! lsp-mode
   (setq lsp-enable-suggest-server-download nil)
+
+  ;; The float shows the signature; in the menu it would cover the float.
+  (setq lsp-completion-show-detail nil)
 
   (setq lsp-xml-prefer-jar nil
         lsp-xml-bin-file "/usr/bin/lemminx")
