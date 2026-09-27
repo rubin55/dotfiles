@@ -22,6 +22,9 @@
 ;; Default indent length.
 (setq standard-indent 2)
 
+;; Enable editorconfig early, so the first file opened also gets it.
+(editorconfig-mode 1)
+
 ;; Make treemacs not use variable width fonts.
 (setq doom-themes-treemacs-enable-variable-pitch nil)
 
@@ -137,33 +140,82 @@
 (add-hook 'svelte-mode-local-vars-hook #'lsp! 'append)
 (add-hook 'powershell-mode-local-vars-hook #'lsp! 'append)
 
-;; Width of the documentation popup from K, as a share of the frame.
-(defvar lsp-help-width 0.4)
+;; Width of the float from K as a share of its window; a drag sets it.
+(defvar lsp-doc-width 0.4)
 
-(defun lsp-help-save-width (frame)
-  "Remember the width of the documentation popup after a resize."
-  (when-let* ((win (get-buffer-window "*lsp-help*" frame)))
-    (setq lsp-help-width
-          (/ (float (window-total-width win))
-             (window-total-width (frame-root-window frame))))))
+;; Arguments of the last `lsp-ui-doc--render-buffer' call.
+(defvar lsp-doc-last nil)
 
-(defun lsp-help-apply-width (win)
-  "Give the documentation popup WIN the remembered width."
-  (unless (frame-root-window-p win)
-    (let ((width (round (* lsp-help-width
-                           (window-total-width (frame-root-window win))))))
-      (window-resize win (- width (window-total-width win)) t))))
+(defun lsp-doc-prepare (&rest args)
+  "Remember ARGS and wrap the documentation to fit the float."
+  (setq lsp-doc-last args
+        lsp-ui-doc-max-width (round (* lsp-doc-width (window-body-width)))))
 
-(add-hook 'window-size-change-functions #'lsp-help-save-width)
+(defun lsp-doc-place (&rest _)
+  "Put the documentation float on the right side of its window."
+  (when-let* ((frame (lsp-ui-doc--get-frame))
+              (win (frame-parameter frame 'lsp-ui-doc--window-origin))
+              ((window-live-p win)))
+    (pcase-let* ((`(,left ,top ,right ,bottom) (window-inside-pixel-edges win))
+                 (width (round (* lsp-doc-width (- right left)))))
+      (modify-frame-parameters
+       frame `((left . (+ ,(- right width)))
+               (top . (+ ,top))
+               (width . (text-pixels . ,width))
+               (height . (text-pixels . ,(- bottom top))))))))
+
+(defun lsp-doc-reflow (frame)
+  "Wrap and place the documentation float again after FRAME resizes."
+  (when-let* ((doc (lsp-ui-doc--get-frame))
+              ((frame-visible-p doc))
+              (win (frame-parameter doc 'lsp-ui-doc--window-origin))
+              ((window-live-p win)))
+    ;; A resize of the float itself comes from a mouse drag.
+    (when (eq frame doc)
+      (setq lsp-doc-width (/ (float (frame-text-width doc))
+                             (window-body-width win t))))
+    (with-selected-window win
+      (apply #'lsp-ui-doc--render-buffer lsp-doc-last)
+      (lsp-doc-place)
+      (lsp-ui-doc--fix-hr-props))))
+
+(defun lsp-doc-code-face-p (pos)
+  "Return non-nil if POS has the markdown code face."
+  (memq 'markdown-code-face (ensure-list (get-text-property pos 'face))))
+
+(defun lsp-doc-fill-code-gaps (&rest _)
+  "Give empty lines inside code blocks the code background."
+  (save-excursion
+    (goto-char (point-min))
+    (while (not (eobp))
+      ;; lsp-ui-doc turns each empty line into a small " \n" line.
+      (when (and (looking-at " \n")
+                 (> (point) 1)
+                 (lsp-doc-code-face-p (1- (point)))
+                 (lsp-doc-code-face-p (+ (point) 2)))
+        (add-face-text-property (point) (+ (point) 2) 'markdown-code-face t))
+      (forward-line 1))))
+
+(defun lsp-doc-hide-border (frame _window)
+  "Draw the border of FRAME in its background color."
+  (let ((bg (frame-parameter frame 'background-color)))
+    (set-face-background 'internal-border bg frame)
+    (set-face-background 'child-frame-border bg frame)))
+
+;; Show docs from K in a full-height float on the right of the window.
+(after! lsp-ui
+  (advice-add 'lsp-ui-doc--render-buffer :before #'lsp-doc-prepare)
+  (advice-add 'lsp-ui-doc--move-frame :after #'lsp-doc-place)
+  (advice-add 'lsp-ui-doc--make-smaller-empty-lines
+              :after #'lsp-doc-fill-code-gaps)
+  (add-hook 'window-size-change-functions #'lsp-doc-reflow)
+  (add-hook 'lsp-ui-doc-frame-hook #'lsp-doc-hide-border)
+  (set-lookup-handlers! 'lsp-ui-mode
+    :documentation '(lsp-ui-doc-show :async t)))
 
 ;; Configure lsp-modes.
 (after! lsp-mode
   (setq lsp-enable-suggest-server-download nil)
-
-  ;; Show documentation from K on the right side of the frame, at the
-  ;; width it had when it last closed.
-  (set-popup-rule! "^\\*lsp-help"
-    :side 'right :size #'lsp-help-apply-width :quit t :select t)
 
   (setq lsp-xml-prefer-jar nil
         lsp-xml-bin-file "/usr/bin/lemminx")
@@ -282,6 +334,19 @@
 
 ;; Enable interactive prompting for permissions.
 (setq mcp-server-security-prompt-for-permissions t)
+
+;; Allow MCP access to *Messages*, shells and compilation output.
+(setq mcp-server-security-sensitive-buffer-patterns nil)
+
+;; Answering "!" in an MCP prompt allows all operations this session.
+(defvar +mcp-allow-all nil)
+(defadvice! +mcp-allow-all-a (fn op &optional data)
+  :around #'mcp-server-security-check-permission
+  (or +mcp-allow-all
+      (prog1 (funcall fn op data)
+        (when (gethash (format "%s:%s" op data)
+                       mcp-server-security--permission-cache)
+          (setq +mcp-allow-all t)))))
 
 ;; Show emacs version after startup.
 (add-hook 'window-setup-hook (lambda () (run-with-timer 1.2 nil #'call-interactively 'version)))
