@@ -519,7 +519,7 @@
   :hook (doom-init-ui . auto-dark-mode)
   :config
   (setq custom-safe-themes t)
-  (setq auto-dark-themes '((doom-dracula) (doom-rose-pine-dawn))))
+  (setq auto-dark-themes '((doom-rose-pine-moon) (doom-rose-pine-dawn))))
 
 ;; Disable bold, enable italic.
 (after! doom-themes
