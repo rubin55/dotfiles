@@ -81,8 +81,8 @@ name = "gpt-6-astra"
 aliases = ["databricks-gpt-6-astra"]
 
 [[models]]
-name = "gpt-6-sol"
-aliases = ["databricks-gpt-6-sol"]
+name = "gpt-6.1-sol"
+aliases = ["databricks-gpt-6.1-sol"]
 
 [[models]]
 name = "grok-4.7"
