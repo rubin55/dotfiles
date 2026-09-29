@@ -38,6 +38,16 @@ require('nvim-tree').setup({
   }
 })
 
+-- Style the split like the float: float background, no separator.
+vim.api.nvim_create_autocmd('ColorScheme', {
+  callback = function()
+    local bg = vim.api.nvim_get_hl(0, { name = 'Normal', link = false }).bg
+    vim.api.nvim_set_hl(0, 'NvimTreeNormal', { link = 'NormalFloat' })
+    vim.api.nvim_set_hl(0, 'NvimTreeSignColumn', { link = 'Normal' })
+    vim.api.nvim_set_hl(0, 'NvimTreeWinSeparator', { fg = bg, bg = bg })
+  end
+})
+
 -- Remember the split's dragged width so file-open restores it.
 vim.api.nvim_create_autocmd('WinResized', {
   callback = function()
