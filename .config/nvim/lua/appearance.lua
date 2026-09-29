@@ -78,6 +78,10 @@ vim.api.nvim_create_autocmd('ColorScheme', {
 
     -- Make colorcolumn color match cursorline.
     vim.api.nvim_set_hl(0, 'ColorColumn', { link = 'CursorLine' })
+
+    -- Make window separator color match statusline background.
+    local sl = vim.api.nvim_get_hl(0, { name = 'StatusLine', link = false })
+    vim.api.nvim_set_hl(0, 'WinSeparator', { fg = sl.bg, bg = sl.bg })
   end
 })
 

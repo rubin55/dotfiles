@@ -24,8 +24,6 @@ vim.api.nvim_create_autocmd('ColorScheme', {
       local palette = require('rose-pine.palette')
       vim.api.nvim_set_hl(0, 'CursorLine', { bg = palette.surface })
       vim.api.nvim_set_hl(0, 'NvimTreeCursorLine', { bg = palette.overlay })
-      -- Split separator same tone as the cursorline.
-      vim.api.nvim_set_hl(0, 'WinSeparator', { fg = palette.surface })
     end
   end
 })
