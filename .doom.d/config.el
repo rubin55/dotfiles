@@ -1,7 +1,6 @@
 ;;; $DOOMDIR/config.el -*- lexical-binding: t; -*-
 
-;; Place your private configuration here! Remember, you do not need to run 'doom
-;; sync' after modifying this file!
+;; Private config; changes here do not need 'doom sync'.
 
 ;; Disable bold fonts.
 (defun remap-faces-default-attributes ()
@@ -37,17 +36,41 @@
 ;; Make treemacs not use png icons in gui mode.
 ;;(setq treemacs-no-png-images t)
 
+(defun +treemacs-add-project-a (fn path name)
+  "Call FN with PATH and NAME in lowercase, then sort the projects."
+  (let ((result (funcall fn path (and name (downcase name)))))
+    (when (eq (car-safe result) 'success)
+      (let ((ws (treemacs-current-workspace)))
+        (setf (treemacs-workspace->projects ws)
+              (sort (treemacs-workspace->projects ws)
+                    :key (lambda (p) (downcase (treemacs-project->name p)))))
+        (treemacs--consolidate-projects)
+        (treemacs--persist)))
+    result))
 
-;; Try to avoid emacs window chaos. If this is a step too far, then replace
-;; display-buffer-same-window with display-buffer-pop-up-window.
+(defun +treemacs-add-current-project-h ()
+  "Add the current project to treemacs if it is in the search path."
+  (when-let* ((root (projectile-project-root))
+              ((seq-some (lambda (dir) (file-in-directory-p root (car dir)))
+                         projectile-project-search-path)))
+    (treemacs-do-add-project-to-workspace root (projectile-project-name root))))
+
+(after! treemacs
+  ;; Doom disables follow mode by default.
+  (treemacs-follow-mode 1)
+  (add-hook 'find-file-hook #'+treemacs-add-current-project-h)
+  (advice-add 'treemacs-do-add-project-to-workspace
+              :around #'+treemacs-add-project-a))
+
+
+;; Reuse windows; use display-buffer-pop-up-window if this is too much.
 (customize-set-variable 'display-buffer-base-action
                         '((display-buffer-reuse-window display-buffer-same-window)
                           (reusable-frames . t)))
 
 (customize-set-variable 'even-window-sizes nil)
 
-;; Group tabs by (projectile) project, and active tab
-;; is shown with a colored line on top.
+;; Group tabs by projectile project; mark the active tab with a top bar.
 (with-eval-after-load 'centaur-tabs
   (centaur-tabs-group-by-projectile-project)
   (setq centaur-tabs-set-bar 'over))
@@ -116,19 +139,17 @@
 (setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
 (setq scroll-step 1) ;; keyboard scroll one line at a time
 
-;; Make magit find my git repositories.
-(setq magit-repository-directories '(("~/Source" . 3)))
-
-;; Make projectile find my projects. Discovery is manual (SPC p D);
-;; otherwise the first project-switching command of each session walks
-;; the whole search path before showing anything.
-(setq projectile-auto-discover nil)
+;; Make projectile, magit and treemacs find my projects.
 (setq projectile-project-search-path
       '(("~/Documents/Rubin/Courses" . 1)
         ("~/Documents/Rubin/Exercism" . 2)
         ("~/Documents/Rubin/Notes" . 0)
         ("~/Documents/Rubin/Skills" . 0)
         ("~/Source" . 3)))
+(setq magit-repository-directories projectile-project-search-path)
+
+;; Discover projects only with SPC p D; auto-discovery is slow.
+(setq projectile-auto-discover nil)
 
 ;; Hide menubar, toolbar and scrollbar by default.
 (menu-bar-mode -1)
@@ -164,13 +185,10 @@
 ;; lang/web claims .svelte for web-mode; give it a mode of its own.
 (add-to-list 'auto-mode-alist '("\\.svelte\\'" . svelte-mode))
 
-;; astro-ts-mode ships no usable autoloads (see packages.el) and errors
-;; if any of its grammars are missing.
+;; astro-ts-mode has no usable autoloads (see packages.el).
 (autoload 'astro-ts-mode "astro-ts-mode" "Major mode for Astro templates." t)
 
-;; The package only registers this recipe once it loads, which is too late
-;; to install from. The css and typescript recipes come from lang/web and
-;; lang/javascript. Kept in sync with the pinned astro-ts-mode.
+;; astro-ts-mode adds this recipe too late; keep it in sync with the pin.
 (after! treesit
   (add-to-list 'treesit-language-source-alist
                '(astro "https://github.com/virchau13/tree-sitter-astro"
@@ -187,8 +205,7 @@
 
 (add-to-list 'auto-mode-alist '("\\.astro\\'" . +astro-ts-mode))
 
-;; No :lang module covers these, so nothing would start a server for them
-;; the way the +lsp flags do elsewhere.
+;; No :lang module starts a language server for these modes.
 (add-hook 'astro-ts-mode-local-vars-hook #'lsp! 'append)
 (add-hook 'svelte-mode-local-vars-hook #'lsp! 'append)
 (add-hook 'powershell-mode-local-vars-hook #'lsp! 'append)
@@ -492,23 +509,9 @@
 ;; Configure flycheck markdown mode.
 (setq flycheck-markdown-markdownlint-cli-config "~/.markdownlintrc")
 
-;; Some functionality uses this to identify you, e.g. GPG configuration, email
-;; clients, file templates and snippets.
+;; Identify me to GPG, email clients, file templates and snippets.
 (setq user-full-name "Rubin Simons'"
       user-mail-address "me@rubin55.org")
-
-;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
-;; are the three important ones:
-;;
-;; + `doom-font'
-;; + `doom-variable-pitch-font'
-;; + `doom-big-font' -- used for `doom-big-font-mode'; use this for
-;;   presentations or streaming.
-;;
-;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
-;; font string. You generally only need these two:
-;; (setq doom-font (font-spec :family "monospace" :size 12 :weight 'semi-light)
-;;       doom-variable-pitch-font (font-spec :family "sans" :size 13))
 
 ;; Font settings, sizes are updated by .profile.d/user-scaling.sh.
 (setq doom-font (font-spec :family "Monospace" :size 14 :weight 'normal)
@@ -526,16 +529,13 @@
   (setq doom-themes-enable-bold nil
         doom-themes-enable-italic t))
 
-;; If you use `org' and don't want your org files in the default location below,
-;; change `org-directory'. It must be set before org loads!
+;; Set `org-directory' before org loads.
 (setq org-directory "~/.org/")
 
-;; This determines the style of line numbers in effect. If set to `nil', line
-;; numbers are disabled. For relative line numbers, set this to `relative'.
+;; Line number style: t, `relative', or nil to disable.
 (setq display-line-numbers-type t)
 
-;; Don't auto-close vterms when they're not visible, and always open a vterm
-;; buffer in the current window.
+;; Keep hidden vterms open and show vterm buffers in the current window.
 (after! vterm
   (setq vterm-toggle-reset-window-configration-after-exit 'kill-window-only)
   (setq vterm-toggle-hide-method nil)
@@ -669,6 +669,9 @@
       :desc "Git blame line" "t b" #'git-blame-line-mode
       :desc "Big mode"       "t B" #'doom-big-font-mode)
 
+(map! :leader
+      :desc "List bookmarks" "b L" #'bookmark-bmenu-list)
+
 ;; Enable emacs MCP server.
 (use-package! mcp-server
   :config
@@ -699,20 +702,3 @@
 
 ;; Show emacs version after startup.
 ;;(add-hook 'window-setup-hook (lambda () (run-with-timer 1.2 nil #'call-interactively 'version)))
-
-;; Here are some additional functions/macros that could help you configure Doom:
-;;
-;; - `load!' for loading external *.el files relative to this one
-;; - `use-package!' for configuring packages
-;; - `after!' for running code after a package has loaded
-;; - `add-load-path!' for adding directories to the `load-path', relative to
-;;   this file. Emacs searches the `load-path' when you load packages with
-;;   `require' or `use-package'.
-;; - `map!' for binding new keys
-;;
-;; To get information about any of these functions/macros, move the cursor over
-;; the highlighted symbol at press 'K' (non-evil users must press 'C-c c k').
-;; This will open documentation for it, including demos of how they are used.
-;;
-;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
-;; they are implemented.
