@@ -53,12 +53,12 @@ base_url="https://api.orcarouter.ai/v1"
 auth_keys = ["orcarouter", "default-api-token"]
 
 [[models]]
-name = "claude-fable-5.1"
-aliases = []
-
-[[models]]
 name = "claude-opus-5-5"
 aliases = ["anthropic.claude-opus-5-5", "databricks-claude-opus-5-5"]
+
+[[models]]
+name = "claude-sonnet-5-5"
+aliases = ["anthropic.claude-sonnet-5-5", "databricks-claude-sonnet-5-5"]
 
 [[models]]
 name = "deepseek-v4.1-flash"
