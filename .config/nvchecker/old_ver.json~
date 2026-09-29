@@ -214,10 +214,10 @@
       "creation_time": "2026-09-22T06:14:14Z"
     },
     "sonarqube-cli": {
-      "version": "1.8.0.5274",
-      "gitref": "refs/tags/1.8.0.5274",
-      "url": "https://github.com/SonarSource/sonarqube-cli/releases/tag/1.8.0.5274",
-      "creation_time": "2026-09-15T07:58:51Z"
+      "version": "1.9.0.15656",
+      "gitref": "refs/tags/1.9.0.15656",
+      "url": "https://github.com/SonarSource/sonarqube-cli/releases/tag/1.9.0.15656",
+      "creation_time": "2026-09-29T14:55:45Z"
     },
     "svelte-language-server": {
       "version": "svelte-language-server@0.18.4",
