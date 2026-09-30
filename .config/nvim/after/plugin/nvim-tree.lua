@@ -130,5 +130,5 @@ local function toggle_explorer(float)
   if not float then absorb_adjacent(snap, cfg.view.side) end
 end
 
-vim.keymap.set('n', '<leader>e', function() toggle_explorer(true)  end, { desc = 'Toggle explorer (float)' })
-vim.keymap.set('n', '<leader>E', function() toggle_explorer(false) end, { desc = 'Toggle explorer (split)' })
+vim.keymap.set('n', '<leader>te', function() toggle_explorer(true)  end, { desc = 'Toggle explorer (float)' })
+vim.keymap.set('n', '<leader>tE', function() toggle_explorer(false) end, { desc = 'Toggle explorer (split)' })

@@ -32,8 +32,8 @@ require('gitsigns').setup({
     map('n', '<leader>hq', gs.setqflist, { desc = 'Git hunks to quickfix' })
     map('n', '<leader>hQ', function() gs.setqflist('all') end, { desc = 'Git all hunks to quickfix' })
 
-    map('n', '<leader>b', gs.toggle_current_line_blame, { desc = 'Toggle git blame' })
-    map('n', '<leader>d', gs.toggle_word_diff, { desc = 'Toggle git word diff' })
+    map('n', '<leader>tb', gs.toggle_current_line_blame, { desc = 'Toggle git blame' })
+    map('n', '<leader>td', gs.toggle_word_diff, { desc = 'Toggle git word diff' })
 
     map({ 'o', 'x' }, 'ih', gs.select_hunk, { desc = 'Select hunk' })
   end,
