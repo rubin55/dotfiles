@@ -36,30 +36,66 @@
 ;; Make treemacs not use png icons in gui mode.
 ;;(setq treemacs-no-png-images t)
 
-(defun +treemacs-add-project-a (fn path name)
-  "Call FN with PATH and NAME in lowercase, then sort the projects."
-  (let ((result (funcall fn path (and name (downcase name)))))
-    (when (eq (car-safe result) 'success)
-      (let ((ws (treemacs-current-workspace)))
-        (sort (treemacs-workspace->projects ws) :in-place t
-              :key (lambda (p) (downcase (treemacs-project->name p))))
-        (treemacs--consolidate-projects)
-        (treemacs--persist)))
-    result))
+(defun +treemacs-search-path-p (path)
+  "Return non-nil if PATH is in the projectile search path."
+  (seq-some (lambda (dir) (file-in-directory-p path (car dir)))
+            projectile-project-search-path))
+
+(defun +treemacs-tidy-a ()
+  "Remove duplicate workspaces and projects outside the search path.
+Lowercase and sort the projects that stay."
+  (let* ((ws (treemacs-current-workspace))
+         (names (mapcar #'treemacs-project->name
+                        (treemacs-workspace->projects ws))))
+    ;; Renaming a perspective to a used name makes a duplicate.
+    (setq treemacs--workspaces
+          (cl-remove-duplicates treemacs--workspaces :from-end t
+                                :key #'treemacs-workspace->name
+                                :test #'string=))
+    (dolist (w treemacs--workspaces)
+      (dolist (p (treemacs-workspace->projects w))
+        (setf (treemacs-project->name p) (downcase (treemacs-project->name p))))
+      (setf (treemacs-workspace->projects w)
+            (sort (seq-filter (lambda (p)
+                                (+treemacs-search-path-p (treemacs-project->path p)))
+                              (treemacs-workspace->projects w))
+                  :key #'treemacs-project->name)))
+    (cond ((not (memq ws treemacs--workspaces))
+           (treemacs-persp--on-perspective-switch))
+          ((not (equal names (mapcar #'treemacs-project->name
+                                     (treemacs-workspace->projects ws))))
+           (treemacs--consolidate-projects)))))
 
 (defun +treemacs-add-current-project-h ()
   "Add the current project to treemacs if it is in the search path."
   (when-let* ((root (projectile-project-root))
-              ((seq-some (lambda (dir) (file-in-directory-p root (car dir)))
-                         projectile-project-search-path)))
+              ((+treemacs-search-path-p root)))
     (treemacs-do-add-project-to-workspace root (projectile-project-name root))))
+
+(defun +treemacs-sync-workspace-h ()
+  "Tidy the workspace, then add the projects of all its files."
+  ;; A new workspace can get a project outside the search path.
+  (+treemacs-tidy-a)
+  (dolist (buf (seq-filter #'buffer-file-name (+workspace-buffer-list)))
+    (with-current-buffer buf (+treemacs-add-current-project-h))))
+
+(defun +treemacs-toggle-a ()
+  "Toggle treemacs; first sync the projects of the workspace."
+  (require 'treemacs)
+  (unless (eq (treemacs-current-visibility) 'visible)
+    (+treemacs-sync-workspace-h))
+  (treemacs))
+
+;; Doom's toggle removes all projects but the current one; keep them.
+(advice-add '+treemacs/toggle :override #'+treemacs-toggle-a)
 
 (after! treemacs
   ;; Doom disables follow mode by default.
   (treemacs-follow-mode 1)
   (add-hook 'find-file-hook #'+treemacs-add-current-project-h)
-  (advice-add 'treemacs-do-add-project-to-workspace
-              :around #'+treemacs-add-project-a))
+  (add-hook 'treemacs-switch-workspace-hook #'+treemacs-sync-workspace-h)
+  ;; All project changes are persisted, so tidy up before that.
+  (advice-add 'treemacs--persist :before #'+treemacs-tidy-a))
 
 
 ;; Reuse windows; use display-buffer-pop-up-window if this is too much.
@@ -69,9 +105,28 @@
 
 (customize-set-variable 'even-window-sizes nil)
 
-;; Group tabs by projectile project; mark the active tab with a top bar.
+(defun +dashboard-tabs-h (&optional _)
+  "Show the tab bar in the dashboard only if files are open."
+  (when-let* ((buf (get-buffer doom-fallback-buffer-name)))
+    (with-current-buffer buf
+      (setq-local tab-line-format
+                  (and (seq-some #'buffer-file-name (+workspace-buffer-list))
+                       (default-value 'tab-line-format))))))
+
+;; Show all tabs in one group; mark the active tab with a top bar.
 (with-eval-after-load 'centaur-tabs
-  (centaur-tabs-group-by-projectile-project)
+  (setq centaur-tabs-buffer-groups-function
+        (lambda () (list centaur-tabs-common-group-name)))
+  ;; Also show a tab for the current buffer if it is not in the workspace.
+  (setq centaur-tabs-buffer-list-function
+        (lambda () (seq-uniq (append (+tabs-buffer-list) (list (current-buffer))))))
+  ;; Hide the tab bar only in internal buffers and ediff's control panel.
+  (setq centaur-tabs-excluded-prefixes
+        '(" *which" " *Mini" " *temp" "*Ediff" "*ediff"))
+  ;; Doom always hides the tab bar in the dashboard; decide on each change.
+  ;; Run after Doom's dashboard reload, which can reset local variables.
+  (remove-hook '+dashboard-mode-hook #'+tabs-disable-centaur-tabs-mode-maybe-h)
+  (add-hook 'window-buffer-change-functions #'+dashboard-tabs-h 90)
   (setq centaur-tabs-set-bar 'over))
 
 ;; Be able to switch buffers by clicking on their tab.
@@ -107,6 +162,19 @@
   (define-key centaur-tabs-default-map [tab-line down-mouse-1] #'centaur-tabs-press)
   (define-key centaur-tabs-default-map [tab-line mouse-1] #'centaur-tabs-release)
   (define-key centaur-tabs-default-map [tab-line drag-mouse-1] #'centaur-tabs-release))
+
+(defun +centaur-tabs-close-tab-a (fn tab)
+  "Kill the buffer of TAB with FN if it visits a file, else bury it.
+Then show a real buffer in its windows, or the dashboard."
+  (let* ((buf (centaur-tabs-tab-value tab))
+         (windows (get-buffer-window-list buf)))
+    (if (buffer-file-name buf)
+        (funcall fn tab)
+      ;; Its tab shows only while it is current, so this removes the tab.
+      (with-current-buffer buf (bury-buffer)))
+    (doom-fixup-windows (seq-filter #'window-live-p windows))))
+
+(advice-add 'centaur-tabs-buffer-close-tab :around #'+centaur-tabs-close-tab-a)
 
 ;; Drag the right fringe to resize a window; the divider is only 1px.
 (map! [right-fringe down-mouse-1] #'mouse-drag-vertical-line)
