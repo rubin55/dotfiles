@@ -54,17 +54,23 @@ Doom's toggle removes all projects but the current one."
 (add-hook 'doom-load-theme-hook #'divider-hide-padding-h)
 
 ;; Disable bold; doom-themes-enable-bold only covers theme faces.
+(defun +unbold-face (face &rest _)
+  "Give FACE the normal weight if it is heavier than medium."
+  (let ((weight (face-attribute face :weight)))
+    (when (seq-some (lambda (entry)
+                      (and (> (aref entry 0) 100)
+                           (memq weight (append entry nil))))
+                    font-weight-table)
+      (set-face-attribute face nil :weight 'normal))))
+
 (defun +unbold-faces-h ()
   "Give all faces that are heavier than medium the normal weight."
-  (dolist (face (face-list))
-    (let ((weight (face-attribute face :weight)))
-      (when (seq-some (lambda (entry)
-                        (and (> (aref entry 0) 100)
-                             (memq weight (append entry nil))))
-                      font-weight-table)
-        (set-face-attribute face nil :weight 'normal)))))
+  (mapc #'+unbold-face (face-list)))
 
 (add-hook 'doom-load-theme-hook #'+unbold-faces-h)
+
+;; Also unbold the faces of packages that load after the theme.
+(advice-add 'custom-declare-face :after #'+unbold-face)
 
 ;; Use the mouse in terminals; Emacs 31 does not do it inside tmux.
 (add-hook 'tty-setup-hook #'xterm-mouse-mode)
