@@ -61,7 +61,9 @@ Doom's toggle removes all projects but the current one."
                       (and (> (aref entry 0) 100)
                            (memq weight (append entry nil))))
                     font-weight-table)
-      (set-face-attribute face nil :weight 'normal))))
+      ;; Emacs recomputes faces from their spec, for example for a new
+      ;; frame; it then drops a set-face-attribute but keeps this.
+      (face-spec-set face '((t :weight normal)) 'face-override-spec))))
 
 (defun +unbold-faces-h ()
   "Give all faces that are heavier than medium the normal weight."
@@ -142,6 +144,10 @@ Doom's toggle removes all projects but the current one."
 
 ;; Set `org-directory' before org loads.
 (setq org-directory "~/.org/")
+
+;; Use the basedpyright fork; it shows docs of compiled modules too.
+;; Set it before lsp-pyright loads, which reads it then.
+(setq lsp-pyright-langserver-command "basedpyright")
 
 ;; Git blame of the current line at its end.
 (load! "lisp/git-blame")

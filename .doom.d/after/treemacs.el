@@ -6,6 +6,15 @@
       doom-themes-treemacs-enable-variable-pitch nil)
 (doom-themes-treemacs-config)
 
+;; Show the project name and its icon at the normal text size.
+(custom-set-faces! '(treemacs-root-face :height 1.0))
+(treemacs-modify-theme "doom-colors"
+  :config
+  (treemacs-create-icon
+   :icon (format " %s\t" (nerd-icons-octicon "nf-oct-repo" :v-adjust 0
+                                              :face 'doom-themes-treemacs-root-face))
+   :extensions (root-open root-closed)))
+
 (defun +treemacs-search-path-p (path)
   "Return non-nil if PATH is in the projectile search path."
   (seq-some (lambda (dir) (file-in-directory-p path (car dir)))

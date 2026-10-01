@@ -11,8 +11,25 @@
 (define-key lsp-ui-doc-frame-mode-map [drag-mouse-1] #'lsp-hover-drag-edge)
 ;; Its fill-region merges code lines when one line is too wide.
 (advice-add 'lsp-ui-doc--resize-buffer :override #'ignore)
+;; Its fill merges list items and code lines; join soft breaks instead.
+(advice-add 'lsp-ui-doc--fill-document :override #'lsp-hover-join-lines)
+;; It trims the hard line breaks, which the join must keep.
+(advice-add 'lsp-ui-doc--inline-formatted-string
+            :filter-args #'lsp-hover-mark-hard-breaks)
+(advice-add 'lsp-ui-doc--make-smaller-empty-lines
+            :before #'lsp-hover-replace-nbsp)
+;; Workaround: rust-analyzer keeps hidden doctest lines in indented code.
+(advice-add 'lsp-ui-doc--make-smaller-empty-lines
+            :before #'lsp-hover-drop-hidden-lines)
 (advice-add 'lsp-ui-doc--make-smaller-empty-lines
             :after #'lsp-hover-fill-code-gaps)
+;; It removes the empty lines around headings; add space there and
+;; around link definitions and code blocks.
+(advice-add 'lsp-ui-doc--make-smaller-empty-lines
+            :after #'lsp-hover-add-space)
+;; Runs after the gaps in code blocks have the code face.
+(advice-add 'lsp-ui-doc--handle-hr-lines :after #'lsp-hover-shade-code)
+(advice-add 'lsp-ui-doc--handle-hr-lines :after #'lsp-hover-space-rules)
 (add-hook 'window-size-change-functions #'lsp-hover-reflow)
 (add-hook 'lsp-ui-doc-frame-hook #'lsp-hover-setup-frame)
 ;; A wider border to grab; it has the background color.
@@ -21,6 +38,10 @@
 (setf (alist-get 'no-accept-focus lsp-ui-doc-frame-parameters) t)
 (set-lookup-handlers! 'lsp-ui-mode
   :documentation '(lsp-ui-doc-show :async t))
+
+;; It deletes the float on load-theme so that a new float gets the new
+;; colors; auto-dark switches with enable-theme.
+(add-hook 'enable-theme-functions (lambda (_) (lsp-ui-doc--delete-frame)))
 
 ;; No diagnostics beside code; C-w d shows them.
 (setq lsp-ui-sideline-show-diagnostics nil)
