@@ -27,15 +27,6 @@
 ;; Do not highlight the current line.
 (remove-hook 'doom-first-input-hook #'global-hl-line-mode)
 
-;; Make treemacs not use variable width fonts.
-(setq doom-themes-treemacs-enable-variable-pitch nil)
-
-;; Scale treemacs icons to something that looks appealing.
-;;(treemacs-resize-icons 16)
-
-;; Make treemacs not use png icons in gui mode.
-;;(setq treemacs-no-png-images t)
-
 (defun +treemacs-search-path-p (path)
   "Return non-nil if PATH is in the projectile search path."
   (seq-some (lambda (dir) (file-in-directory-p path (car dir)))
@@ -97,6 +88,14 @@ Lowercase and sort the projects that stay."
   ;; All project changes are persisted, so tidy up before that.
   (advice-add 'treemacs--persist :before #'+treemacs-tidy-a))
 
+;; Use the doom-themes icons in treemacs, with monospace labels.
+(setq doom-themes-treemacs-theme "doom-colors"
+      doom-themes-treemacs-enable-variable-pitch nil)
+
+;; Doom's treemacs-nerd-icons is disabled in packages.el.
+(after! treemacs
+  (doom-themes-treemacs-config))
+
 
 ;; Reuse windows; use display-buffer-pop-up-window if this is too much.
 (customize-set-variable 'display-buffer-base-action
@@ -117,9 +116,14 @@ Lowercase and sort the projects that stay."
 (with-eval-after-load 'centaur-tabs
   (setq centaur-tabs-buffer-groups-function
         (lambda () (list centaur-tabs-common-group-name)))
-  ;; Also show a tab for the current buffer if it is not in the workspace.
+  ;; Also show a tab for the current buffer, unless in a side window.
   (setq centaur-tabs-buffer-list-function
-        (lambda () (seq-uniq (append (+tabs-buffer-list) (list (current-buffer))))))
+        (lambda ()
+          (let ((buf (current-buffer)))
+            (seq-uniq
+             (append (+tabs-buffer-list)
+                     (unless (window-parameter (get-buffer-window buf) 'window-side)
+                       (list buf)))))))
   ;; Hide the tab bar only in internal buffers and ediff's control panel.
   (setq centaur-tabs-excluded-prefixes
         '(" *which" " *Mini" " *temp" "*Ediff" "*ediff"))
@@ -198,13 +202,9 @@ Then show a real buffer in its windows, or the dashboard."
 ;; Use the mouse in terminals; Emacs 31 does not do it inside tmux.
 (add-hook 'tty-setup-hook #'xterm-mouse-mode)
 
-;; Configure mouse scrolling to be nicer.
-(setq pixel-scroll-precision-mode t)
-(setq pixel-scroll-precision-large-scroll-height 40.0)
-(setq mouse-wheel-scroll-amount '(1 ((shift) . 3))) ;; one line at a time
-(setq mouse-wheel-progressive-speed nil) ;; don't accelerate scrolling
-(setq mouse-wheel-follow-mouse 't) ;; scroll window under mouse
-(setq scroll-step 1) ;; keyboard scroll one line at a time
+;; Scroll 4 lines per wheel step, 8 with shift, without acceleration.
+(setq mouse-wheel-scroll-amount '(4 ((shift) . 8)))
+(setq mouse-wheel-progressive-speed nil)
 
 ;; Make projectile, magit and treemacs find my projects.
 (setq projectile-project-search-path
@@ -218,28 +218,20 @@ Then show a real buffer in its windows, or the dashboard."
 ;; Discover projects only with SPC p D; auto-discovery is slow.
 (setq projectile-auto-discover nil)
 
-;; Hide menubar, toolbar and scrollbar by default.
-(menu-bar-mode -1)
-(tool-bar-mode -1)
-(toggle-scroll-bar -1)
-
-;; Set initial window size.
-;; (when window-system (set-frame-size (selected-frame) 132 48))
-(setq default-frame-alist '((width . 132) (height . 48)))
+;; Set the frame size; keep Doom's entries, which hide the scroll bar.
+(add-to-list 'default-frame-alist '(width . 132))
+(add-to-list 'default-frame-alist '(height . 48))
 
 ;; Set line spacing.
-;;(when (string= (system-name) "FRAME")
 (setq-default line-spacing 1)
 
 ;; Enable long line wrap by default.
 (global-visual-line-mode 1)
-(setq-default word-wrap t)
 
 ;; Configure nov.el epub mode.
 (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
 (setq nov-text-width t)
 (setq visual-fill-column-center-text t)
-(add-hook 'nov-mode-hook 'visual-line-mode)
 (add-hook 'nov-mode-hook 'visual-fill-column-mode)
 (add-hook 'nov-mode-hook 'adaptive-wrap-prefix-mode)
 
@@ -577,12 +569,16 @@ Then show a real buffer in its windows, or the dashboard."
 (setq flycheck-markdown-markdownlint-cli-config "~/.markdownlintrc")
 
 ;; Identify me to GPG, email clients, file templates and snippets.
-(setq user-full-name "Rubin Simons'"
+(setq user-full-name "Rubin Simons"
       user-mail-address "me@rubin55.org")
 
 ;; Font settings, sizes are updated by .profile.d/user-scaling.sh.
 (setq doom-font (font-spec :family "Monospace" :size 14 :weight 'normal)
       doom-variable-pitch-font (font-spec :family "Sans" :size 14))
+
+;; More contrast for the mode line in both rose-pine variants.
+(setq doom-rose-pine-dawn-brighter-modeline t
+      doom-rose-pine-moon-brighter-modeline t)
 
 ;; Configure doom theme through auto-dark.
 (use-package! auto-dark
@@ -591,22 +587,16 @@ Then show a real buffer in its windows, or the dashboard."
   (setq custom-safe-themes t)
   (setq auto-dark-themes '((doom-rose-pine-moon) (doom-rose-pine-dawn))))
 
-;; Disable bold, enable italic.
+;; Disable bold.
 (after! doom-themes
-  (setq doom-themes-enable-bold nil
-        doom-themes-enable-italic t))
+  (setq doom-themes-enable-bold nil))
 
 ;; Set `org-directory' before org loads.
 (setq org-directory "~/.org/")
 
-;; Line number style: t, `relative', or nil to disable.
-(setq display-line-numbers-type t)
-
 ;; Keep hidden vterms open and show vterm buffers in the current window.
 (after! vterm
-  (setq vterm-toggle-reset-window-configration-after-exit 'kill-window-only)
   (setq vterm-toggle-hide-method nil)
-  (setq vterm-toggle-fullscreen-p nil)
   (add-to-list 'display-buffer-alist
                '((lambda (buffer-or-name _)
                    (let ((buffer (get-buffer buffer-or-name)))
@@ -742,7 +732,6 @@ Then show a real buffer in its windows, or the dashboard."
 ;; Enable emacs MCP server.
 (use-package! mcp-server
   :config
-  (setq mcp-server-socket-name nil)
   (add-hook 'emacs-startup-hook #'mcp-server-start-unix)
   (add-hook 'kill-emacs-hook (lambda () (ignore-errors (mcp-server-stop))))
   (advice-add 'mcp-server-start-unix :after
@@ -766,6 +755,3 @@ Then show a real buffer in its windows, or the dashboard."
         (when (gethash (format "%s:%s" op data)
                        mcp-server-security--permission-cache)
           (setq +mcp-allow-all t)))))
-
-;; Show emacs version after startup.
-;;(add-hook 'window-setup-hook (lambda () (run-with-timer 1.2 nil #'call-interactively 'version)))

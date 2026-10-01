@@ -63,3 +63,6 @@
 (package! svelte-mode)
 (package! visual-fill-column)
 (package! vterm-toggle)
+
+;; Treemacs uses the doom-themes icon theme; see config.el.
+(package! treemacs-nerd-icons :disable t)

@@ -131,7 +131,7 @@
     ;; Modeline
     (modeline-bg                 (if doom-rose-pine-brighter-modeline overlay surface))
     (modeline-fg                 text)
-    (modeline-bg-alt             (if doom-rose-pine-brighter-modeline muted overlay))
+    (modeline-bg-alt             overlay)
     (modeline-fg-alt             text) ; should this be darker or lighter?
     (modeline-bg-inactive        base)
     (modeline-fg-inactive        subtle)
