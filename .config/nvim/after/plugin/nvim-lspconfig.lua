@@ -1,11 +1,11 @@
 -- LSP servers. Per-server settings live in after/lsp/<name>.lua.
 vim.lsp.enable({
-  'ansiblels', 'asm_lsp', 'astro', 'awk_ls', 'bashls', 'biome', 'clangd',
-  'clojure_lsp', 'cmake', 'cssls', 'cue', 'dartls', 'diagnosticls', 'dockerls',
-  'elixirls', 'eslint', 'expert', 'flow', 'fsautocomplete', 'gopls', 'groovyls',
-  'helm_ls', 'hls', 'html', 'jdtls', 'jsonls', 'kotlin_lsp', 'lemminx',
-  'lua_ls', 'marksman', 'metals', 'omnisharp', 'perlnavigator', 'powershell_es',
-  'pylsp', 'pyright', 'rubocop', 'ruff', 'rust_analyzer', 'scheme_langserver',
+  'ansiblels', 'asm_lsp', 'astro', 'awk_ls', 'basedpyright', 'bashls', 'biome',
+  'clangd', 'clojure_lsp', 'cmake', 'cssls', 'cue', 'dartls', 'diagnosticls',
+  'dockerls', 'elixirls', 'eslint', 'expert', 'flow', 'fsautocomplete', 'gopls',
+  'groovyls', 'helm_ls', 'hls', 'html', 'jdtls', 'jsonls', 'kotlin_lsp',
+  'lemminx', 'lua_ls', 'marksman', 'metals', 'omnisharp', 'perlnavigator',
+  'powershell_es', 'rubocop', 'ruff', 'rust_analyzer', 'scheme_langserver',
   'solargraph', 'svelte', 'tailwindcss', 'vala_ls', 'vtsls', 'vue_ls',
   'yamlls', 'zls',
 })

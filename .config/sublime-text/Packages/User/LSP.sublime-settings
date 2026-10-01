@@ -207,7 +207,7 @@
     },
     "python": {
       "enabled": false,
-      "command": ["pylsp"],
+      "command": ["basedpyright-langserver", "--stdio"],
       "selector": "source.python",
     },
     "ruby": {
