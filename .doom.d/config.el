@@ -115,19 +115,8 @@ Doom's toggle removes all projects but the current one."
 
 (add-to-list 'auto-mode-alist '("\\.astro\\'" . +astro-ts-mode))
 
-;; No :lang module starts a language server for these modes.
-(add-hook 'astro-ts-mode-local-vars-hook #'lsp! 'append)
-(add-hook 'svelte-mode-local-vars-hook #'lsp! 'append)
-(add-hook 'powershell-mode-local-vars-hook #'lsp! 'append)
-
 ;; Docs, diagnostics and completion docs from LSP in a float.
 (load! "lisp/lsp-hover")
-
-;; Completion docs show in the float from K, not in a corfu popup.
-(remove-hook 'corfu-mode-hook #'corfu-popupinfo-mode)
-
-;; No diagnostics in popups; C-w d shows them.
-(remove-hook 'flycheck-mode-hook #'+syntax-init-popups-h)
 
 ;; Like Neovim; C-w c and SPC w d still delete the window.
 (map! :n "C-w d"   #'lsp-hover-diagnostics
