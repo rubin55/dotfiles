@@ -86,9 +86,6 @@ Doom's toggle removes all projects but the current one."
 (add-to-list 'default-frame-alist '(width . 132))
 (add-to-list 'default-frame-alist '(height . 48))
 
-;; Set line spacing.
-(setq-default line-spacing 1)
-
 ;; Enable long line wrap by default.
 (global-visual-line-mode 1)
 
@@ -130,8 +127,8 @@ Doom's toggle removes all projects but the current one."
       user-mail-address "me@rubin55.org")
 
 ;; Font settings, sizes are updated by .profile.d/user-scaling.sh.
-(setq doom-font (font-spec :family "Monospace" :size 14 :weight 'normal)
-      doom-variable-pitch-font (font-spec :family "Sans" :size 14))
+(setq doom-font (font-spec :family "Monospace" :size 15 :weight 'normal)
+      doom-variable-pitch-font (font-spec :family "Sans" :size 16))
 
 ;; Switch between the dark and light theme with the system.
 (add-hook 'doom-init-ui-hook #'auto-dark-mode)
