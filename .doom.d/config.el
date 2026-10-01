@@ -127,8 +127,9 @@ Doom's toggle removes all projects but the current one."
       user-mail-address "me@rubin55.org")
 
 ;; Font settings, sizes are updated by .profile.d/user-scaling.sh.
-(setq doom-font (font-spec :family "Monospace" :size 15 :weight 'normal)
-      doom-variable-pitch-font (font-spec :family "Sans" :size 16))
+(setq doom-font (font-spec :family "PragmataPro" :size 15 :weight 'normal)
+      doom-symbol-font (font-spec :family "PragmataPro"))
+doom-variable-pitch-font (font-spec :family "Ubuntu" :size 16)
 
 ;; Switch between the dark and light theme with the system.
 (add-hook 'doom-init-ui-hook #'auto-dark-mode)

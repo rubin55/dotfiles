@@ -44,3 +44,13 @@
   :major-modes '(elixir-mode elixir-ts-mode heex-ts-mode)
   :priority 1
   :server-id 'expert-ls))
+
+;; Show the code lenses in full size italic.
+(set-face-attribute 'lsp-details-face nil
+                    :inherit 'shadow :height 1.0 :slant 'italic)
+
+;; Show the git blame with the same face as the code lenses.
+(set-face-attribute 'git-blame-line nil :inherit 'lsp-details-face)
+
+;; Lenses use U+FE0E; its fallback font makes their lines taller.
+(aset composition-function-table #xFE0E nil)
