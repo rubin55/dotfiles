@@ -41,9 +41,8 @@
   (let ((result (funcall fn path (and name (downcase name)))))
     (when (eq (car-safe result) 'success)
       (let ((ws (treemacs-current-workspace)))
-        (setf (treemacs-workspace->projects ws)
-              (sort (treemacs-workspace->projects ws)
-                    :key (lambda (p) (downcase (treemacs-project->name p)))))
+        (sort (treemacs-workspace->projects ws) :in-place t
+              :key (lambda (p) (downcase (treemacs-project->name p))))
         (treemacs--consolidate-projects)
         (treemacs--persist)))
     result))
