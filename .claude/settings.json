@@ -1,5 +1,7 @@
 {
   "cleanupPeriodDays": 2,
+  "editorMode": "normal",
+  "effortLevel": "high",
   "enabledPlugins": {
     "clangd-lsp@claude-plugins-official": true,
     "csharp-lsp@claude-plugins-official": true,
@@ -10,5 +12,20 @@
     "rust-analyzer-lsp@claude-plugins-official": true,
     "swift-lsp@claude-plugins-official": true,
     "typescript-lsp@claude-plugins-official": true
-  }
+  },
+  "model": "opus",
+  "modelSettings": {
+    "claude-opus-5-5": {
+      "effortLevel": "xhigh"
+    }
+  },
+  "permissions": {
+    "defaultMode": "default"
+  },
+  "promptSuggestionEnabled": false,
+  "skipWorkflowUsageWarning": true,
+  "spinnerTipsEnabled": false,
+  "switchModelsOnFlag": false,
+  "theme": "auto",
+  "tui": "fullscreen"
 }
