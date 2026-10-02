@@ -34,10 +34,24 @@ local function hover_config(src)
   }
 end
 
+-- Replace markdown links with their text, outside code blocks.
+-- Wrap counts concealed text, so long URLs make lines wrap early.
+local function strip_links(lines)
+  local out, code = {}, false
+  for _, l in ipairs(lines) do
+    if l:match('^%s*```') then code = not code end
+    if not code then
+      l = l:gsub('(%b[])%b()', function(t) return t:sub(2, -2) end)
+    end
+    table.insert(out, l)
+  end
+  return out
+end
+
 -- Show hover.
 local function show_hover(src, lines)
   local buf = vim.api.nvim_create_buf(false, true)
-  vim.api.nvim_buf_set_lines(buf, 0, -1, false, lines)
+  vim.api.nvim_buf_set_lines(buf, 0, -1, false, strip_links(lines))
   vim.bo[buf].bufhidden = 'wipe'
   vim.bo[buf].modifiable = false
   vim.bo[buf].filetype = 'markdown'
