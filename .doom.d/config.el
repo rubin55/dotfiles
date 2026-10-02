@@ -54,6 +54,8 @@ Doom's toggle removes all projects but the current one."
 (add-hook 'doom-load-theme-hook #'divider-hide-padding-h)
 
 ;; Disable bold; doom-themes-enable-bold only covers theme faces.
+(setq doom-themes-enable-bold nil)
+
 (defun +unbold-face (face &rest _)
   "Give FACE the normal weight if it is heavier than medium."
   (let ((weight (face-attribute face :weight)))
@@ -130,6 +132,9 @@ Doom's toggle removes all projects but the current one."
 ;; Eldoc hides the error behind the LSP hover; the remap changes keys only.
 (map! [remap flycheck-display-error-at-point] #'lsp-hover-diagnostics)
 
+;; Emacs Lisp has no LSP; show its docs from K in the float too.
+(advice-add '+emacs-lisp-lookup-documentation :before-until #'lsp-hover-elisp)
+
 ;; Identify me to GPG, email clients, file templates and snippets.
 (setq user-full-name "Rubin Simons"
       user-mail-address "me@rubin55.org")
@@ -141,6 +146,10 @@ Doom's toggle removes all projects but the current one."
 
 ;; Switch between the dark and light theme with the system.
 (add-hook 'doom-init-ui-hook #'auto-dark-mode)
+
+;; More contrast for the mode line in both rose-pine variants.
+(setq doom-rose-pine-dawn-brighter-modeline t
+      doom-rose-pine-moon-brighter-modeline t)
 
 ;; Set `org-directory' before org loads.
 (setq org-directory "~/.org/")

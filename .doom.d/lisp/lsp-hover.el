@@ -1,8 +1,8 @@
 ;;; $DOOMDIR/lisp/lsp-hover.el -*- lexical-binding: t; -*-
 
-;; Show docs, diagnostics and completion docs from LSP in a float
-;; on the right side of the window. after/lsp-ui.el and
-;; after/corfu.el connect these functions to the packages.
+;; Show docs, diagnostics and completion docs from LSP, and Emacs Lisp
+;; docs, in a float on the right side of the window. after/lsp-ui.el,
+;; after/corfu.el and config.el connect these functions to the packages.
 
 ;; Width of the float from K as a share of its window; a drag sets it.
 (defvar lsp-hover-width 0.4)
@@ -363,6 +363,71 @@ Start before COL if a line of the block is indented less."
         (lsp-ui-doc--display
          "" (mapconcat #'lsp-hover-diagnostic-string errs "\n\n\n"))
       (message "No diagnostics"))))
+
+(defun lsp-hover-keep-indented (string)
+  "Mark the indented lines of STRING and the lines above them.
+The float does not join these lines; in docstrings they are code or tables."
+  (let ((start 0))
+    (while (string-match "^[ \t].*" string start)
+      (let ((beg (match-beginning 0))
+            (end (match-end 0)))
+        (when (> beg 1)
+          (put-text-property (- beg 2) (1- beg) 'lsp-hover-keep-lines t string))
+        (put-text-property (1- end) end 'lsp-hover-keep-lines t string)
+        (setq start (min (1+ end) (length string)))))
+    string))
+
+(defun lsp-hover-elisp-summary (sym)
+  "Return the kind of SYM and its file, and the default of a changed option."
+  ;; With the definition, it finds the functions in C too.
+  (let ((file (find-lisp-object-file-name
+               sym (if (fboundp sym) (symbol-function sym) 'defvar)))
+        (std (and (not (fboundp sym)) (get sym 'standard-value))))
+    (concat (cond ((not (fboundp sym))
+                   (if (custom-variable-p sym) "Customizable variable" "Variable"))
+                  ((special-form-p sym) "Special form")
+                  ((macrop sym) "Macro")
+                  ((commandp sym) "Command")
+                  (t "Function"))
+            (cond ((eq file 'C-source) " in C source code")
+                  (file (concat " in " (file-name-nondirectory file))))
+            (when std
+              (let ((default (eval (car std) t)))
+                (unless (equal default (symbol-value sym))
+                  (format "; default `%S`" default))))
+            ".")))
+
+(defun lsp-hover-elisp-markdown (sym)
+  "Return the signature and docs of the Emacs Lisp symbol SYM as markdown."
+  (let ((print-length 10)
+        (print-level 3))
+    (pcase-let ((`(,usage . ,doc)
+                 (if (fboundp sym)
+                     (let ((doc (documentation sym t))
+                           (args (help-function-arglist sym t)))
+                       (or (help-split-fundoc doc sym)
+                           (cons (if (listp args)
+                                     (format "%S" (help--make-usage sym args))
+                                   ;; An autoload that did not load yet.
+                                   (symbol-name sym))
+                                 doc)))
+                   (cons (format "%s ⇒ %S" sym (symbol-value sym))
+                         (documentation-property
+                          sym 'variable-documentation t)))))
+      (concat "```elisp\n" usage "\n```\n\n"
+              (lsp-hover-elisp-summary sym) "\n\n"
+              (lsp-hover-keep-indented (substitute-command-keys (or doc "")))))))
+
+(defun lsp-hover-elisp (thing)
+  "Show the docs of the Emacs Lisp symbol THING in the float from K.
+Return nil for Doom modules and unknown symbols, so that Doom shows them."
+  (when-let* (((not (doom-module-at-point)))
+              (sym (intern-soft thing))
+              ((or (fboundp sym) (boundp sym))))
+    (require 'lsp-ui)
+    (lsp-ui-doc--display
+     thing (lsp--render-string (lsp-hover-elisp-markdown sym) "markdown"))
+    'deferred))
 
 ;; Candidate whose docs are requested, and if the float shows them.
 (defvar lsp-hover-candidate nil)
