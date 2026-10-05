@@ -1,9 +1,30 @@
-model = "qwen/deepseek-v4.1-flash"
+model = "greenference/deepseek-v4.1-flash"
 model_reasoning_effort = "max"
 plan_mode_reasoning_effort = "max"
 
 model_provider = "edenai"
 model_catalog_json = "/home/rubin/.codex/model-catalogs/edenai.json"
+
+# Edenai only takes function tools, no namespaces or web_search.
+web_search = "disabled"
+
+[features]
+multi_agent = false
+
+[mcp_servers.Computer]
+enabled = false
+
+[mcp_servers.Emacs]
+enabled = false
+
+[mcp_servers.Figma]
+enabled = false
+
+[mcp_servers.Neovim]
+enabled = false
+
+[mcp_servers.Wolfram]
+enabled = false
 
 [model_providers.edenai]
 name = "edenai"
