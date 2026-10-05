@@ -4,7 +4,7 @@
 type -p log.info path.append || return
 
 # Inherit or set ANDROID_HOME.
-ANDROID_HOME="${ANDROID_HOME:-/opt/android-sdk}"
+ANDROID_HOME="${ANDROID_HOME:-$HOME/.android/sdk}"
 
 # If ANDROID_HOME exists, do a few things extra.
 if [[ -d "$ANDROID_HOME" ]]; then
