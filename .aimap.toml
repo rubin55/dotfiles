@@ -2,7 +2,7 @@
 
 [[model_evaluators]]
 name = "artificial-analysis"
-base_url = "https://artificialanalysis.ai/api/v2/data/llms/models"
+base_url = "https://artificialanalysis.ai/api/v2/language/models/free"
 auth_keys = [ "artificialanalysis", "default-api-token"]
 auth_header = "x-api-key"
 
