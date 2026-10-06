@@ -17,7 +17,7 @@
       "src": "https://github.com/j-hui/fidget.nvim"
     },
     "fzf-lua": {
-      "rev": "bba13a0d260ca5e049683344ba70791c9ad8ece6",
+      "rev": "ed0e0ead1789ee349cbf025900931fb402b1e05e",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "gitsigns.nvim": {
@@ -41,7 +41,7 @@
       "src": "https://github.com/AlexvZyl/nordic.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "5c6eecf8579be3601f9d2abf5301bc0349162d36",
+      "rev": "910f0c4d46aa186641518395bc7e6fffb4d23baf",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-tree": {
