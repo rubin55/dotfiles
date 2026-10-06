@@ -97,6 +97,10 @@ name = "mimo-v2.6-flash"
 aliases = ["mimo-v2.6-flash-free"]
 
 [[models]]
+name = "mistral-large-4"
+aliases = ["mistral-large-4-0"]
+
+[[models]]
 name = "muse-spark-1.3"
 aliases = ["muse-spark-1.3-contributor", "muse-spark-1.3-contributor-free"]
 
