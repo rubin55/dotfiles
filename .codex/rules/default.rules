@@ -1,0 +1,5 @@
+prefix_rule(
+  pattern = [["gh", "glab"]],
+  decision = "prompt",
+  justification = "Needs desktop keyring credential access"
+)
