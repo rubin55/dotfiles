@@ -15,6 +15,11 @@ source = "github"
 github = "agent-sh/computer-use-linux"
 use_latest_release = "true"
 
+[ctranslate2]
+source = "github"
+github = "OpenNMT/CTranslate2"
+use_latest_release = "true"
+
 [dev-proxy]
 source = "github"
 github = "dotnet/dev-proxy"

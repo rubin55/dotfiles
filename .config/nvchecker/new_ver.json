@@ -7,10 +7,16 @@
       "revision": "b3956bda93ff3d45b644c7bc6d55e0e01c9b9a74"
     },
     "computer-use-linux": {
-      "version": "v0.7.11",
-      "gitref": "refs/tags/v0.7.11",
-      "url": "https://github.com/agent-sh/computer-use-linux/releases/tag/v0.7.11",
-      "creation_time": "2026-10-04T04:43:31Z"
+      "version": "v0.7.12",
+      "gitref": "refs/tags/v0.7.12",
+      "url": "https://github.com/agent-sh/computer-use-linux/releases/tag/v0.7.12",
+      "creation_time": "2026-10-07T17:46:03Z"
+    },
+    "ctranslate2": {
+      "version": "v4.8.2",
+      "gitref": "refs/tags/v4.8.2",
+      "url": "https://github.com/OpenNMT/CTranslate2/releases/tag/v4.8.2",
+      "creation_time": "2026-08-31T19:11:59Z"
     },
     "dev-proxy": {
       "version": "v3.3.1",
@@ -168,11 +174,11 @@
       "revision_creation_time": "2026-06-27T09:18:35+09:00"
     },
     "ruby-solargraph": {
-      "version": "v0.60.4",
-      "gitref": "refs/tags/v0.60.4",
-      "revision": "4fe772e98adddf35dcdedbb95091fe375db4d01e",
-      "url": "https://github.com/castwide/solargraph/releases/tag/v0.60.4",
-      "revision_creation_time": "2026-08-30T06:54:27-04:00"
+      "version": "v0.61.0",
+      "gitref": "refs/tags/v0.61.0",
+      "revision": "f4591fd53051a36cd9bf7375ac6887d0cd502246",
+      "url": "https://github.com/castwide/solargraph/releases/tag/v0.61.0",
+      "revision_creation_time": "2026-10-07T08:50:48-04:00"
     },
     "ruby-sord": {
       "version": "7.1.0",
