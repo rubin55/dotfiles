@@ -41,11 +41,11 @@
       "src": "https://github.com/AlexvZyl/nordic.nvim"
     },
     "nvim-lspconfig": {
-      "rev": "910f0c4d46aa186641518395bc7e6fffb4d23baf",
+      "rev": "db68de3575fff9dd9bb78b34c8371759ed35fe34",
       "src": "https://github.com/neovim/nvim-lspconfig"
     },
     "nvim-tree": {
-      "rev": "478c69c0fe253caea88de9c5e138bfa77395a59a",
+      "rev": "355bcc85a48f45b3e728219f10b880d569928965",
       "src": "https://github.com/nvim-tree/nvim-tree.lua"
     },
     "nvim-treesitter": {
