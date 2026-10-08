@@ -12,3 +12,6 @@ env.persist qt QT_QPA_PLATFORMTHEME qt6ct
 
 # Use QAdwaitaDecorations for Qt 5 and Qt 6 window decorations.
 env.persist qt QT_WAYLAND_DECORATION qadwaitadecorations
+
+# Make sure QT applications regardless of IsEnabled can show their trees.
+env.persist qt QT_LINUX_ACCESSIBILITY_ALWAYS_ON 1 
