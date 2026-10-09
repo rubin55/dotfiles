@@ -61,6 +61,10 @@ name = "claude-sonnet-5-5"
 aliases = ["anthropic.claude-sonnet-5-5", "databricks-claude-sonnet-5-5"]
 
 [[models]]
+name = "claude-haiku-5-5"
+aliases = ["anthropic.claude-haiku-5-5", "databricks-claude-haiku-5-5"]
+
+[[models]]
 name = "deepseek-v4.1-flash"
 aliases = ["deepseek-v4p1-flash"]
 
