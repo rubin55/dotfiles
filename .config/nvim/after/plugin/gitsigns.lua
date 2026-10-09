@@ -1,6 +1,19 @@
 -- Gitsigns configuration.
+
+-- Wrap a blame format so it shows nothing on blank lines.
+local function skip_blank(fmt)
+  return function(name, info)
+    if vim.api.nvim_get_current_line():match('^%s*$') then return {} end
+    local expand = require('gitsigns.blame_formatter').expand_string
+    local text = expand(fmt, name, info, { self_author_text = 'You' })
+    return { { text, 'GitSignsCurrentLineBlame' } }
+  end
+end
+
 require('gitsigns').setup({
   current_line_blame = true,
+  current_line_blame_formatter = skip_blank(' <author>, <author_time:%R> - <summary> '),
+  current_line_blame_formatter_nc = skip_blank(' <author>'),
   on_attach = function(bufnr)
     local gs = require('gitsigns')
     local function map(mode, l, r, opts)
