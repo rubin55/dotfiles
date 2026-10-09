@@ -7,10 +7,10 @@
       "revision": "b3956bda93ff3d45b644c7bc6d55e0e01c9b9a74"
     },
     "computer-use-linux": {
-      "version": "v0.7.12",
-      "gitref": "refs/tags/v0.7.12",
-      "url": "https://github.com/agent-sh/computer-use-linux/releases/tag/v0.7.12",
-      "creation_time": "2026-10-07T17:46:03Z"
+      "version": "v0.7.13",
+      "gitref": "refs/tags/v0.7.13",
+      "url": "https://github.com/agent-sh/computer-use-linux/releases/tag/v0.7.13",
+      "creation_time": "2026-10-08T19:12:05Z"
     },
     "ctranslate2": {
       "version": "v4.8.2",
@@ -31,10 +31,10 @@
       "creation_time": "2026-09-22T13:01:50Z"
     },
     "fsautocomplete": {
-      "version": "v0.84.0",
-      "gitref": "refs/tags/v0.84.0",
-      "url": "https://github.com/ionide/FsAutoComplete/releases/tag/v0.84.0",
-      "creation_time": "2026-08-29T15:45:43Z"
+      "version": "v0.85.0",
+      "gitref": "refs/tags/v0.85.0",
+      "url": "https://github.com/ionide/FsAutoComplete/releases/tag/v0.85.0",
+      "creation_time": "2026-10-09T15:42:14Z"
     },
     "gemrb": {
       "version": "v0.9.5",
@@ -155,8 +155,8 @@
       "version": "v4.0.34"
     },
     "retro68": {
-      "version": "8d1e0da4cb8234ccc101ae961854085b09e87119",
-      "revision": "8d1e0da4cb8234ccc101ae961854085b09e87119"
+      "version": "d8b891a6028342fdb8c18750c3a13473ab974d82",
+      "revision": "d8b891a6028342fdb8c18750c3a13473ab974d82"
     },
     "ruby-commander": {
       "version": "v6.0.0",
