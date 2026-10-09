@@ -42,9 +42,12 @@ require('nvim-tree').setup({
 vim.api.nvim_create_autocmd('ColorScheme', {
   callback = function()
     local bg = vim.api.nvim_get_hl(0, { name = 'Normal', link = false }).bg
+    local float_bg = vim.api.nvim_get_hl(0, { name = 'NormalFloat', link = false }).bg
     vim.api.nvim_set_hl(0, 'NvimTreeNormal', { link = 'NormalFloat' })
-    vim.api.nvim_set_hl(0, 'NvimTreeSignColumn', { link = 'Normal' })
+    vim.api.nvim_set_hl(0, 'NvimTreeSignColumn', { link = 'NvimTreeNormal' })
     vim.api.nvim_set_hl(0, 'NvimTreeWinSeparator', { fg = bg, bg = bg })
+    -- Hide the ~ on lines past the end of the tree.
+    vim.api.nvim_set_hl(0, 'NvimTreeEndOfBuffer', { fg = float_bg })
   end
 })
 
@@ -105,21 +108,26 @@ local function absorb_adjacent(snap, side)
   vim.api.nvim_win_set_width(adjacent, math.max(1, avail - others))
 end
 
--- Open nvim-tree as a float (closes on file open) or split (stays open).
-local function toggle_explorer(float)
+-- Cycle nvim-tree: closed, float (closes on file open), split, closed.
+local function cycle_explorer()
   local api = require('nvim-tree.api')
   local cfg = require('nvim-tree.config').g
 
   -- Snapshot other windows so a split toggle only resizes the neighbour.
   local snap = snapshot_widths(api.tree.winid())
 
-  -- Already open: close it, and only reopen when switching modes.
+  -- Split open: close it. Float open: close it and reopen as split.
+  local float = true
   if api.tree.is_visible() then
     local winid = api.tree.winid()
     local was_float = winid and vim.api.nvim_win_get_config(winid).relative ~= ''
     api.tree.close()
-    if not was_float then absorb_adjacent(snap, cfg.view.side) end
-    if was_float == float then return end
+    if not was_float then
+      absorb_adjacent(snap, cfg.view.side)
+      vim.notify('explorer: off')
+      return
+    end
+    float = false
   end
 
   -- Re-register autocommands so the float-only WinLeave closer matches mode.
@@ -128,7 +136,7 @@ local function toggle_explorer(float)
   require('nvim-tree.autocmd').global()
   api.tree.open()
   if not float then absorb_adjacent(snap, cfg.view.side) end
+  vim.notify('explorer: ' .. (float and 'float' or 'split'))
 end
 
-vim.keymap.set('n', '<leader>te', function() toggle_explorer(true)  end, { desc = 'Toggle explorer (float)' })
-vim.keymap.set('n', '<leader>tE', function() toggle_explorer(false) end, { desc = 'Toggle explorer (split)' })
+vim.keymap.set('n', '<leader>e', cycle_explorer, { desc = 'Explorer' })
