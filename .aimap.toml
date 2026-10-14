@@ -74,9 +74,8 @@ name = "deepseek-v4.1-flash"
 aliases = ["databricks-deepseek-v4-1-flash", "deepseek-v4p1-flash"]
 
 [[models]]
-name = "gemini-3.1-pro"
-aliases = ["gemini-3.1-pro-preview"]
-scores = "gemini-3-1-pro-preview"
+name = "gemini-4-argon"
+aliases = ["databricks-gemini-4-argon"]
 
 [[models]]
 name = "gemini-3.8-flash"
