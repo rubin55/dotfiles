@@ -149,8 +149,8 @@
       "version": "v4.0.34"
     },
     "retro68": {
-      "version": "d8b891a6028342fdb8c18750c3a13473ab974d82",
-      "revision": "d8b891a6028342fdb8c18750c3a13473ab974d82"
+      "version": "0101fa21ab27eaec637032b60f8b8605ef108b19",
+      "revision": "0101fa21ab27eaec637032b60f8b8605ef108b19"
     },
     "ruby-commander": {
       "version": "v6.0.0",
@@ -220,10 +220,10 @@
       "creation_time": "2026-09-22T06:14:14Z"
     },
     "sonarqube-cli": {
-      "version": "1.9.0.15656",
-      "gitref": "refs/tags/1.9.0.15656",
-      "url": "https://github.com/SonarSource/sonarqube-cli/releases/tag/1.9.0.15656",
-      "creation_time": "2026-09-29T14:55:45Z"
+      "version": "1.10.0.16040",
+      "gitref": "refs/tags/1.10.0.16040",
+      "url": "https://github.com/SonarSource/sonarqube-cli/releases/tag/1.10.0.16040",
+      "creation_time": "2026-10-14T11:05:37Z"
     },
     "svelte-language-server": {
       "version": "svelte-language-server@0.18.4",
