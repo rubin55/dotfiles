@@ -32,19 +32,24 @@ terminal_title = []
 screen_reader_detection_done = true
 
 [mcp_servers.Computer]
+enabled = false
 command = "computer-use-linux"
 args = ["mcp"]
 
 [mcp_servers.Emacs]
+enabled = false
 command = "/home/rubin/Source/Rubin/scripts/python/emacs-mcp-server.py"
 
 [mcp_servers.Figma]
+enabled = false
 url = "https://mcp.figma.com/mcp"
 
 [mcp_servers.Neovim]
+enabled = false
 command = "nvim-mcp"
 
 [mcp_servers.Wolfram]
+enabled = false
 command = "/opt/wolfram/Executables/wolfram"
 args = ["-run", 'PacletSymbol["Wolfram/AgentTools","Wolfram`AgentTools`StartMCPServer"][]', "-noinit", "-noprompt"]
 
