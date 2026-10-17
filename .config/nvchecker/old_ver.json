@@ -7,10 +7,10 @@
       "revision": "b3956bda93ff3d45b644c7bc6d55e0e01c9b9a74"
     },
     "computer-use-linux": {
-      "version": "v0.7.17",
-      "gitref": "refs/tags/v0.7.17",
-      "url": "https://github.com/agent-sh/computer-use-linux/releases/tag/v0.7.17",
-      "creation_time": "2026-10-15T22:22:25Z"
+      "version": "v0.7.19",
+      "gitref": "refs/tags/v0.7.19",
+      "url": "https://github.com/agent-sh/computer-use-linux/releases/tag/v0.7.19",
+      "creation_time": "2026-10-17T18:56:40Z"
     },
     "ctranslate2": {
       "version": "v4.8.3",
@@ -49,10 +49,10 @@
       "creation_time": "2026-06-16T21:05:51Z"
     },
     "gnome-shell-extension-tiling-shell": {
-      "version": "17.3",
-      "gitref": "refs/tags/17.3",
-      "url": "https://github.com/domferr/tilingshell/releases/tag/17.3",
-      "creation_time": "2026-01-31T09:27:59Z"
+      "version": "18.0",
+      "gitref": "refs/tags/18.0",
+      "url": "https://github.com/domferr/tilingshell/releases/tag/18.0",
+      "creation_time": "2026-10-17T11:05:53Z"
     },
     "ida-pro": {
       "version": "9.4"
@@ -155,8 +155,8 @@
       "version": "v4.0.34"
     },
     "retro68": {
-      "version": "91b5d69b5d70c907948af8408245d10cc638245d",
-      "revision": "91b5d69b5d70c907948af8408245d10cc638245d"
+      "version": "afedcdcb53d40f25d7c68db9a63a3bb1b021d77b",
+      "revision": "afedcdcb53d40f25d7c68db9a63a3bb1b021d77b"
     },
     "ruby-commander": {
       "version": "v6.0.0",

@@ -232,11 +232,11 @@
       "creation_time": "2026-10-14T11:05:37Z"
     },
     "svelte-language-server": {
-      "version": "svelte-language-server@0.18.4",
-      "gitref": "refs/tags/svelte-language-server@0.18.4",
-      "revision": "478dc2352d8812ff629e878726ef0190699e3d02",
-      "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.18.4",
-      "revision_creation_time": "2026-08-13T05:44:16Z"
+      "version": "svelte-language-server@0.18.5",
+      "gitref": "refs/tags/svelte-language-server@0.18.5",
+      "revision": "a96288bd33963373560c62f4348804253d8e64f9",
+      "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.18.5",
+      "revision_creation_time": "2026-10-16T13:21:41Z"
     },
     "winexe": {
       "version": "4.25.0"
