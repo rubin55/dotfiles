@@ -94,3 +94,8 @@ $RECYCLE.BIN/
 
 # Sonar.
 **/.sonar-config.json 
+
+# AI Agents.
+.codex
+.claude
+.opencode
