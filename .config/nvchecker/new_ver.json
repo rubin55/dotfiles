@@ -7,10 +7,10 @@
       "revision": "b3956bda93ff3d45b644c7bc6d55e0e01c9b9a74"
     },
     "computer-use-linux": {
-      "version": "v0.7.16",
-      "gitref": "refs/tags/v0.7.16",
-      "url": "https://github.com/agent-sh/computer-use-linux/releases/tag/v0.7.16",
-      "creation_time": "2026-10-12T22:26:30Z"
+      "version": "v0.7.17",
+      "gitref": "refs/tags/v0.7.17",
+      "url": "https://github.com/agent-sh/computer-use-linux/releases/tag/v0.7.17",
+      "creation_time": "2026-10-15T22:22:25Z"
     },
     "ctranslate2": {
       "version": "v4.8.3",
@@ -25,10 +25,10 @@
       "creation_time": "2026-09-22T13:01:50Z"
     },
     "fsautocomplete": {
-      "version": "v0.85.3",
-      "gitref": "refs/tags/v0.85.3",
-      "url": "https://github.com/ionide/FsAutoComplete/releases/tag/v0.85.3",
-      "creation_time": "2026-10-12T06:54:45Z"
+      "version": "v0.85.4",
+      "gitref": "refs/tags/v0.85.4",
+      "url": "https://github.com/ionide/FsAutoComplete/releases/tag/v0.85.4",
+      "creation_time": "2026-10-15T19:59:07Z"
     },
     "gemrb": {
       "version": "v0.9.5",
@@ -149,8 +149,8 @@
       "version": "v4.0.34"
     },
     "retro68": {
-      "version": "0101fa21ab27eaec637032b60f8b8605ef108b19",
-      "revision": "0101fa21ab27eaec637032b60f8b8605ef108b19"
+      "version": "91b5d69b5d70c907948af8408245d10cc638245d",
+      "revision": "91b5d69b5d70c907948af8408245d10cc638245d"
     },
     "ruby-commander": {
       "version": "v6.0.0",
@@ -226,11 +226,11 @@
       "creation_time": "2026-10-14T11:05:37Z"
     },
     "svelte-language-server": {
-      "version": "svelte-language-server@0.18.4",
-      "gitref": "refs/tags/svelte-language-server@0.18.4",
-      "revision": "478dc2352d8812ff629e878726ef0190699e3d02",
-      "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.18.4",
-      "revision_creation_time": "2026-08-13T05:44:16Z"
+      "version": "svelte-language-server@0.18.5",
+      "gitref": "refs/tags/svelte-language-server@0.18.5",
+      "revision": "a96288bd33963373560c62f4348804253d8e64f9",
+      "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.18.5",
+      "revision_creation_time": "2026-10-16T13:21:41Z"
     },
     "winexe": {
       "version": "4.25.0"
@@ -239,9 +239,9 @@
       "version": "15.0.1"
     },
     "yaml-language-server": {
-      "version": "1.25.0",
-      "gitref": "refs/tags/1.25.0",
-      "revision": "617fd33a2f1002a737116b280c18bb852d3913c0"
+      "version": "2.0.0",
+      "gitref": "refs/tags/2.0.0",
+      "revision": "712c1c77a687d1a2feddce4c49d88f1e560f9758"
     }
   }
 }

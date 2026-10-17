@@ -7,10 +7,10 @@
       "revision": "b3956bda93ff3d45b644c7bc6d55e0e01c9b9a74"
     },
     "computer-use-linux": {
-      "version": "v0.7.16",
-      "gitref": "refs/tags/v0.7.16",
-      "url": "https://github.com/agent-sh/computer-use-linux/releases/tag/v0.7.16",
-      "creation_time": "2026-10-12T22:26:30Z"
+      "version": "v0.7.17",
+      "gitref": "refs/tags/v0.7.17",
+      "url": "https://github.com/agent-sh/computer-use-linux/releases/tag/v0.7.17",
+      "creation_time": "2026-10-15T22:22:25Z"
     },
     "ctranslate2": {
       "version": "v4.8.3",
@@ -31,10 +31,10 @@
       "creation_time": "2026-09-22T13:01:50Z"
     },
     "fsautocomplete": {
-      "version": "v0.85.3",
-      "gitref": "refs/tags/v0.85.3",
-      "url": "https://github.com/ionide/FsAutoComplete/releases/tag/v0.85.3",
-      "creation_time": "2026-10-12T06:54:45Z"
+      "version": "v0.85.4",
+      "gitref": "refs/tags/v0.85.4",
+      "url": "https://github.com/ionide/FsAutoComplete/releases/tag/v0.85.4",
+      "creation_time": "2026-10-15T19:59:07Z"
     },
     "gemrb": {
       "version": "v0.9.5",
@@ -155,8 +155,8 @@
       "version": "v4.0.34"
     },
     "retro68": {
-      "version": "d8b891a6028342fdb8c18750c3a13473ab974d82",
-      "revision": "d8b891a6028342fdb8c18750c3a13473ab974d82"
+      "version": "91b5d69b5d70c907948af8408245d10cc638245d",
+      "revision": "91b5d69b5d70c907948af8408245d10cc638245d"
     },
     "ruby-commander": {
       "version": "v6.0.0",
@@ -226,10 +226,10 @@
       "creation_time": "2026-09-22T06:14:14Z"
     },
     "sonarqube-cli": {
-      "version": "1.9.0.15656",
-      "gitref": "refs/tags/1.9.0.15656",
-      "url": "https://github.com/SonarSource/sonarqube-cli/releases/tag/1.9.0.15656",
-      "creation_time": "2026-09-29T14:55:45Z"
+      "version": "1.10.0.16040",
+      "gitref": "refs/tags/1.10.0.16040",
+      "url": "https://github.com/SonarSource/sonarqube-cli/releases/tag/1.10.0.16040",
+      "creation_time": "2026-10-14T11:05:37Z"
     },
     "svelte-language-server": {
       "version": "svelte-language-server@0.18.4",
@@ -245,9 +245,9 @@
       "version": "15.0.1"
     },
     "yaml-language-server": {
-      "version": "1.25.0",
-      "gitref": "refs/tags/1.25.0",
-      "revision": "617fd33a2f1002a737116b280c18bb852d3913c0"
+      "version": "2.0.0",
+      "gitref": "refs/tags/2.0.0",
+      "revision": "712c1c77a687d1a2feddce4c49d88f1e560f9758"
     }
   }
 }
