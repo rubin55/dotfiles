@@ -5,3 +5,6 @@
 .profile.d/local-*
 .config/nvchecker/keys.toml
 *.sublime-*
+
+!.codex
+!.claude
