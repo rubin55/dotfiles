@@ -1,5 +1,9 @@
-[trusted-dirs]
+["*".trusted-dirs]
 "/home/rubin/Desktop" = 0
 "/home/rubin/Packaging/Build" = 1
 "/home/rubin/Packaging/Repository" = 0
 "/home/rubin/Source" = 2
+
+# Keep the Codex config copy in dotfiles as it is.
+[codex.mcp.disabled]
+"/home/rubin/Source/Rubin/dotfiles" = "all"
