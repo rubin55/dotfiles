@@ -80,6 +80,11 @@ source = "github"
 github = "jmspit/leanux"
 use_latest_release = "true"
 
+[maki]
+source = "github"
+github = "tontinton/maki"
+use_latest_tag = "true"
+
 [marksman]
 source = "github"
 github = "artempyanykh/marksman"

@@ -7,10 +7,10 @@
       "revision": "b3956bda93ff3d45b644c7bc6d55e0e01c9b9a74"
     },
     "computer-use-linux": {
-      "version": "v0.7.19",
-      "gitref": "refs/tags/v0.7.19",
-      "url": "https://github.com/agent-sh/computer-use-linux/releases/tag/v0.7.19",
-      "creation_time": "2026-10-17T18:56:40Z"
+      "version": "v0.7.22",
+      "gitref": "refs/tags/v0.7.22",
+      "url": "https://github.com/agent-sh/computer-use-linux/releases/tag/v0.7.22",
+      "creation_time": "2026-10-20T20:08:14Z"
     },
     "ctranslate2": {
       "version": "v4.8.3",
@@ -87,6 +87,13 @@
       "url": "https://github.com/jmspit/leanux/releases/tag/2.0.1",
       "creation_time": "2022-03-14T05:38:50Z"
     },
+    "maki": {
+      "version": "v0.6.4",
+      "gitref": "refs/tags/v0.6.4",
+      "revision": "621ef0c4788e5c553691280444974cc9b9523d5f",
+      "url": "https://github.com/tontinton/maki/releases/tag/v0.6.4",
+      "revision_creation_time": "2026-10-17T11:44:48Z"
+    },
     "marksman": {
       "version": "2026-02-08",
       "gitref": "refs/tags/2026-02-08",
@@ -139,10 +146,10 @@
       "version": "0.903"
     },
     "pupdate": {
-      "version": "5.8.0",
-      "gitref": "refs/tags/5.8.0",
-      "url": "https://github.com/mattpannella/pupdate/releases/tag/5.8.0",
-      "creation_time": "2026-09-10T02:32:08Z"
+      "version": "5.9.0",
+      "gitref": "refs/tags/5.9.0",
+      "url": "https://github.com/mattpannella/pupdate/releases/tag/5.9.0",
+      "creation_time": "2026-10-19T02:21:23Z"
     },
     "pvsneslib": {
       "version": "4.6.0",
@@ -205,10 +212,10 @@
       "revision_creation_time": "2025-02-26T16:50:09-05:00"
     },
     "rusty-psn": {
-      "version": "v0.6.0",
-      "gitref": "refs/tags/v0.6.0",
-      "url": "https://github.com/RainbowCookie32/rusty-psn/releases/tag/v0.6.0",
-      "creation_time": "2026-08-03T00:02:15Z"
+      "version": "v0.7.1",
+      "gitref": "refs/tags/v0.7.1",
+      "url": "https://github.com/RainbowCookie32/rusty-psn/releases/tag/v0.7.1",
+      "creation_time": "2026-10-20T02:31:11Z"
     },
     "samba": {
       "version": "2:4.25.0"
