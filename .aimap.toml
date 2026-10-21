@@ -70,8 +70,8 @@ aliases = ["databricks-deepseek-v4-pro-0813", "deepseek-v4-pro-ga-260813"]
 scores = "deepseek-v4-pro"
 
 [[models]]
-name = "deepseek-v4.1-flash"
-aliases = ["deepseek-v4.1-flash-free", "databricks-deepseek-v4-1-flash", "deepseek-v4p1-flash"]
+name = "deepseek-v4.1-flash-1017"
+aliases = ["deepseek-v4p1-flash-1017"]
 
 [[models]]
 name = "gemini-4-argon"
