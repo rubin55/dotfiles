@@ -1,7 +1,6 @@
 {
   "agentPushNotifEnabled": false,
   "cleanupPeriodDays": 2,
-  "editorMode": "vim",
   "effortLevel": "high",
   "enableArtifact": false,
   "enabledPlugins": {
@@ -18,11 +17,6 @@
   "feedbackDrafts": "off",
   "inputNeededNotifEnabled": false,
   "model": "opus",
-  "modelSettings": {
-    "claude-opus-5-5": {
-      "effortLevel": "xhigh"
-    }
-  },
   "outputStyle": "Concise",
   "permissions": {
     "defaultMode": "default"
@@ -31,6 +25,10 @@
   "remoteControlAtStartup": false,
   "skipWorkflowUsageWarning": true,
   "spinnerTipsEnabled": false,
+  "statusLine": {
+    "command": "bash ~/.claude/statusline-command.sh",
+    "type": "command"
+  },
   "switchModelsOnFlag": false,
   "syncClaudeAiSkills": false,
   "theme": "auto",
