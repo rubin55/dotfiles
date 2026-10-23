@@ -106,8 +106,8 @@ name = "grok-4.7"
 aliases = ["databricks-grok-4-7", "xai.grok-4.7"]
 
 [[models]]
-name = "kimi-k3"
-aliases = ["databricks-kimi-k3", "moonshotai.kimi-k3"]
+name = "kimi-k3.1-pro"
+aliases = ["databricks-kimi-k3-1-pro", "moonshotai.kimi-k3.1-pro"]
 
 [[models]]
 name = "mimo-v2.6-flash"
