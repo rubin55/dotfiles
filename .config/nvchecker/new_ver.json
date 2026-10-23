@@ -25,10 +25,10 @@
       "creation_time": "2026-09-22T13:01:50Z"
     },
     "fsautocomplete": {
-      "version": "v0.85.4",
-      "gitref": "refs/tags/v0.85.4",
-      "url": "https://github.com/ionide/FsAutoComplete/releases/tag/v0.85.4",
-      "creation_time": "2026-10-15T19:59:07Z"
+      "version": "v0.86.0",
+      "gitref": "refs/tags/v0.86.0",
+      "url": "https://github.com/ionide/FsAutoComplete/releases/tag/v0.86.0",
+      "creation_time": "2026-10-23T16:31:00Z"
     },
     "gemrb": {
       "version": "v0.9.5",
@@ -139,6 +139,10 @@
     "pragmatapro-fonts": {
       "version": "0.903"
     },
+    "prettier-plugin-java": {
+      "version": "2.11.0",
+      "url": "https://www.npmjs.com/package/prettier-plugin-java/v/2.11.0"
+    },
     "pupdate": {
       "version": "5.9.0",
       "gitref": "refs/tags/5.9.0",
@@ -156,8 +160,8 @@
       "version": "v4.0.34"
     },
     "retro68": {
-      "version": "afedcdcb53d40f25d7c68db9a63a3bb1b021d77b",
-      "revision": "afedcdcb53d40f25d7c68db9a63a3bb1b021d77b"
+      "version": "0cbd3cb918a127a0d30a675b337f8f8e15062786",
+      "revision": "0cbd3cb918a127a0d30a675b337f8f8e15062786"
     },
     "ruby-commander": {
       "version": "v6.0.0",
@@ -227,10 +231,10 @@
       "creation_time": "2026-09-22T06:14:14Z"
     },
     "sonarqube-cli": {
-      "version": "1.10.0.16040",
-      "gitref": "refs/tags/1.10.0.16040",
-      "url": "https://github.com/SonarSource/sonarqube-cli/releases/tag/1.10.0.16040",
-      "creation_time": "2026-10-14T11:05:37Z"
+      "version": "1.10.1.16776",
+      "gitref": "refs/tags/1.10.1.16776",
+      "url": "https://github.com/SonarSource/sonarqube-cli/releases/tag/1.10.1.16776",
+      "creation_time": "2026-10-23T16:01:47Z"
     },
     "svelte-language-server": {
       "version": "svelte-language-server@0.18.5",

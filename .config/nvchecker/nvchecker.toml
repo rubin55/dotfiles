@@ -144,6 +144,10 @@ source = "regex"
 regex = "The actual version is (\\d{1}\\.\\d{3})"
 url = "https://fsd.it/shop/fonts/pragmatapro/"
 
+[prettier-plugin-java]
+source = "npm"
+npm = "prettier-plugin-java"
+
 [pupdate]
 source = "github"
 github = "mattpannella/pupdate"
