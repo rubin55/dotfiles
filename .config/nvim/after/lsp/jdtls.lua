@@ -1,8 +1,7 @@
 return {
-  -- Let newer JDKs read old jars with bad zip64 headers.
-  cmd_env = { JDK_JAVA_OPTIONS = '-Djdk.util.zip.disableZip64ExtraFieldValidation=true' },
   settings = {
     java = {
+      autobuild = { enabled = false },
       configuration = {
         runtimes = {
           { name = 'JavaSE-1.8', path = '/usr/lib/jvm/java-8-openjdk' },
