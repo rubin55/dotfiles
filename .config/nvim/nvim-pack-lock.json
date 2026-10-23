@@ -17,11 +17,11 @@
       "src": "https://github.com/j-hui/fidget.nvim"
     },
     "fzf-lua": {
-      "rev": "a306c293b37bd7c8c1e8e1e6c0d7d3d9c3de3f21",
+      "rev": "507dfc85551ff2d9293ec215f10f19395252aada",
       "src": "https://github.com/ibhagwan/fzf-lua"
     },
     "gitsigns.nvim": {
-      "rev": "fd780920613e541cbdfac41bf711583ed49f9249",
+      "rev": "683137003522aebd6948358334164a6ba2ca7cd5",
       "src": "https://github.com/lewis6991/gitsigns.nvim.git"
     },
     "haunt.nvim": {
