@@ -66,8 +66,8 @@ else
     PS1='[\u@\h \W$(__git_ps1 " (%s)")]\$ '
 fi
 
-# Set terminal title to title-cased hostname.
-title.set $(title.case $(host.short-name))
+# Set terminal title to title-cased hostname in interactive shells.
+[[ $- == *i* ]] && title.set "$(title.case "$(host.short-name)")"
 
 # Prevent run-by-bash-apps to change title
 PROMPT_COMMAND='echo -en "\033]0;\a"'

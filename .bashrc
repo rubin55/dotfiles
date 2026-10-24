@@ -18,7 +18,8 @@ fi
 type -p log.debug os.platform path.which path.append || return
 
 # Source scripts in ~/.profile.d if exists.
-if [ "$BASH_PROFILE_INITIALIZED" != "true" ]; then
+# Interactive shells need prompt, options and completions each time.
+if [[ $- == *i* || $BASH_PROFILE_INITIALIZED != true ]]; then
   if [ -d "$HOME/.profile.d" ] || [ -h "$HOME/.profile.d" ]; then
     for s in ~/.profile.d/*.sh; do
       log.debug "Loading $s"
