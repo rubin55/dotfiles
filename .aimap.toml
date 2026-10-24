@@ -15,10 +15,7 @@ auth_keys = ["cortecs", "default-api-token"]
 name = "edenai"
 base_url="https://api.edenai.run/v3"
 auth_keys = ["edenai", "default-api-token"]
-balance_login = ["edenai", "rubin@raaf.io"]
-balance_token_url = "https://api.edenai.run/v2/token"
-balance_account_url = "https://api.edenai.run/v2/user/account/user"
-balance_field = "credits"
+balance_path = "https://api.edenai.run/v2/cost_management/credits/"
 
 [[model_providers]]
 name = "hetzner"
