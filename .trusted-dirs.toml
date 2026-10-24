@@ -1,6 +1,7 @@
 ["*".trusted-dirs]
 "/home/rubin/Desktop" = 0
-"/home/rubin/Packaging/Build" = 1
+"/home/rubin/Documents" = 2
+"/home/rubin/Packaging/Build" = 2
 "/home/rubin/Packaging/Repository" = 0
 "/home/rubin/Source" = 2
 
