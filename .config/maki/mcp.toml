@@ -1,0 +1,26 @@
+[mcp.Computer]
+command = ["/usr/bin/computer-use-linux", "mcp"]
+enabled = false
+
+[mcp.Emacs]
+command = ["/home/rubin/Source/Rubin/scripts/python/emacs-mcp-server.py"]
+enabled = false
+
+[mcp.Figma]
+url = "https://mcp.figma.com/mcp"
+enabled = false
+
+[mcp.Neovim]
+command = ["/usr/bin/nvim-mcp"]
+enabled = false
+
+[mcp.Wolfram]
+command = [
+    "/opt/wolfram/Executables/wolfram",
+    "-run",
+    'PacletSymbol["Wolfram/AgentTools","Wolfram`AgentTools`StartMCPServer"][]',
+    "-noinit",
+    "-noprompt",
+]
+environment = { MCP_SERVER_NAME = "WolframLanguage", WOLFRAM_BASE = "/opt/wolfram", WOLFRAM_USERBASE = "/home/rubin/.Wolfram", WOLFRAM_LOCALBASE = "/home/rubin/.Wolfram/Objects" }
+enabled = false
