@@ -16,3 +16,7 @@
 	required = true
 [commit]
 	gpgsign = true
+[advice]
+	detachedHead = false
+[tag]
+	gpgSign = true
