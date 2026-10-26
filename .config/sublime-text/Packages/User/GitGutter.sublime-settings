@@ -1,0 +1,11 @@
+{
+	// Blame for the current line is in the status bar
+	"show_line_annotation": false,
+
+	// Show only the blame for the current line
+	"status_bar_text": [
+		"{% if line_commit and line_commit[:7] != '0000000' %}",
+			"{{line_commit[:7]}} {{line_author}} ({{line_author_age}})",
+		"{% endif %}"
+	],
+}

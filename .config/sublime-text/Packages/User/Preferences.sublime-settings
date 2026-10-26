@@ -18,6 +18,9 @@
 	"highlight_line": true,
 	"block_caret": true,
 	"caret_style": "blink",
+
+	// GitGutter draws the diff markers
+	"mini_diff": false,
     
 	"ignored_packages":
 	[

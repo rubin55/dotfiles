@@ -17,6 +17,7 @@
 		"EditorConfig",
 		"ElixirSyntax",
 		"F#",
+		"GitGutter",
 		"INI",
 		"JsPrettier",
 		"Kotlin",
