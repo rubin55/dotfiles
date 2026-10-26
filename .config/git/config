@@ -20,3 +20,5 @@
 	detachedHead = false
 [tag]
 	gpgSign = true
+[fetch]
+	prune = true
