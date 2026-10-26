@@ -22,7 +22,7 @@ enabled = false
 
 [features]
 daemon_auto_start = false
-network_proxy = true
+network_proxy = false
 
 [tools.update_plan]
 enabled = true
@@ -31,8 +31,14 @@ enabled = true
 description = "Workspace write with public web access."
 extends = ":workspace"
 
+[permissions.workspace-write-net.filesystem]
+"~/.kube/cache" = "write"
+"~/.sonar" = "write"
+
 [permissions.workspace-write-net.network]
 enabled = true
+# Linux seccomp cannot filter by path; needed for D-Bus, gpg, docker.
+dangerously_allow_all_unix_sockets = true
 
 [permissions.workspace-write-net.network.domains]
 "*" = "allow"
@@ -41,8 +47,14 @@ enabled = true
 description = "Read only with selected net access."
 extends = ":read-only"
 
+[permissions.read-only-net.filesystem]
+"~/.kube/cache" = "write"
+"~/.sonar" = "write"
+
 [permissions.read-only-net.network]
 enabled = true
+# Linux seccomp cannot filter by path; needed for D-Bus, gpg, docker.
+dangerously_allow_all_unix_sockets = true
 
 [permissions.read-only-net.network.domains]
 "*" = "allow"
