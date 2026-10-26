@@ -1,7 +1,7 @@
 default_permissions = "workspace-write-net"
 
 developer_instructions = '''
-No apply_patch function tool exists here. Always edit and create files with the apply_patch command; do not use sed, printf, echo or shell redirection to write files. Run apply_patch with exec_command and a heredoc:
+If no apply_patch tool exists, always edit and create files with the apply_patch command; do not use sed, printf, echo or shell redirection to write files. Run apply_patch with exec_command and a heredoc, on its own, not chained with other commands in the same call:
 
 apply_patch <<'EOF'
 *** Begin Patch
