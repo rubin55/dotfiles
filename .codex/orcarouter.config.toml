@@ -1,9 +1,11 @@
-model = "google/gemini-3.8-flash"
-model_reasoning_effort = "medium"
+model = "deepseek/deepseek-v4.1-flash-1017"
+model_reasoning_effort = "max"
 plan_mode_reasoning_effort = "medium"
 
 model_provider = "orcarouter"
 model_catalog_json = "/home/rubin/.codex/model-catalogs/orcarouter.json"
+
+web_search = "disabled"
 
 [model_providers.orcarouter]
 name = "orcarouter"

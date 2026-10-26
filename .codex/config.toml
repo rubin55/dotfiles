@@ -1,11 +1,31 @@
 default_permissions = "workspace-write-net"
 
+developer_instructions = '''
+No apply_patch function tool exists here. Always edit and create files with the apply_patch command; do not use sed, printf, echo or shell redirection to write files. Run apply_patch with exec_command and a heredoc:
+
+apply_patch <<'EOF'
+*** Begin Patch
+*** Update File: path/to/file
+...
+*** End Patch
+EOF
+
+If no web_search tool exists, search the web with curl through exec_command, on the DuckDuckGo HTML endpoint with a url-encoded query:
+
+curl -s -A 'Mozilla/5.0' 'https://html.duckduckgo.com/html/?q=<query>'
+
+Each result is an a tag with class result__a. Its target URL is the url-encoded uddg parameter of the href. Then fetch the pages you need with curl. For current information, search; do not answer from memory.
+'''
+
 [analytics]
 enabled = false
 
 [features]
 daemon_auto_start = false
 network_proxy = true
+
+[tools.update_plan]
+enabled = true
 
 [permissions.workspace-write-net]
 description = "Workspace write with public web access."

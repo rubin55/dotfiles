@@ -1,9 +1,11 @@
-model = "kimi-k3"
+model = "deepseek-v4.1-flash"
 model_reasoning_effort = "max"
 plan_mode_reasoning_effort = "max"
 
 model_provider = "neuralwatt"
 model_catalog_json = "/home/rubin/.codex/model-catalogs/neuralwatt.json"
+
+web_search = "disabled"
 
 [model_providers.neuralwatt]
 name = "neuralwatt"

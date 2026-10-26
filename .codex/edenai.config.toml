@@ -1,6 +1,6 @@
-model = "xiaomi/mimo-v2.6-pro"
+model = "qwen/deepseek-v4.1-flash-1017"
 #model = "greenference/deepseek-v4.1-flash"
-model_reasoning_effort = "high"
+model_reasoning_effort = "max"
 plan_mode_reasoning_effort = "high"
 
 model_provider = "edenai"
