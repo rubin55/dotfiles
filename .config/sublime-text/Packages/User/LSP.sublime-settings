@@ -146,7 +146,7 @@
     },
     "java": {
       "enabled": false,
-      "command": ["jdtls"],
+      "command": ["jdtls", "-data", "$home/.cache/nvim/jdtls/workspace/${folder/.*\\///}"],
       "selector": "source.java",
       "settings": {
         "java.autobuild.enabled": false,
