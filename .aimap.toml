@@ -6,6 +6,12 @@ base_url = "https://artificialanalysis.ai/api/v2/language/models/free"
 auth_keys = [ "artificialanalysis", "default-api-token"]
 auth_header = "x-api-key"
 
+[[model_evaluators]]
+name = "benchlm"
+type = "benchlm"
+base_url = "https://data.benchlm.ai/v1"
+auth_keys = ["benchlm", "default-api-token"]
+
 [[model_providers]]
 name = "cortecs"
 base_url="https://api.cortecs.ai/v1"
@@ -64,7 +70,7 @@ aliases = ["anthropic.claude-sonnet-5-5", "databricks-claude-sonnet-5-5"]
 [[models]]
 name = "deepseek-v4-pro-0813"
 aliases = ["databricks-deepseek-v4-pro-0813", "deepseek-v4-pro-ga-260813"]
-scores = "deepseek-v4-pro"
+scores = { artificial-analysis = "deepseek-v4-pro" }
 
 [[models]]
 name = "deepseek-v4.1-flash-1017"
