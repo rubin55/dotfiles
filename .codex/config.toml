@@ -15,6 +15,8 @@ If no web_search tool exists, search the web with curl through exec_command, on 
 curl -s -A 'Mozilla/5.0' 'https://html.duckduckgo.com/html/?q=<query>'
 
 Each result is an a tag with class result__a. Its target URL is the url-encoded uddg parameter of the href. Then fetch the pages you need with curl. For current information, search; do not answer from memory.
+
+Each exec_command runs in its own sandbox process namespace. When the command ends, all of its processes are killed, including daemons and background jobs. To keep a server running, start it in the foreground in a persistent exec_command session, and use it from other commands.
 '''
 
 [analytics]
@@ -32,8 +34,31 @@ description = "Workspace write with public web access."
 extends = ":workspace"
 
 [permissions.workspace-write-net.filesystem]
+"/run/user/1001" = "write"
+"~/.bun" = "write"
+"~/.cabal" = "write"
+"~/.cache" = "write"
+"~/.cargo" = "write"
+"~/.config/sbt" = "write"
+"~/.ghcup" = "write"
+"~/.gradle" = "write"
+"~/.hex" = "write"
+"~/.ivy2" = "write"
+"~/.java" = "write"
 "~/.kube/cache" = "write"
+"~/.local/share/pnpm" = "write"
+"~/.local/share/scalacli" = "write"
+"~/.local/share/uv" = "write"
+"~/.local/state/pnpm" = "write"
+"~/.m2" = "write"
+"~/.mix" = "write"
+"~/.npm" = "write"
+"~/.rustup" = "write"
+"~/.sbt" = "write"
 "~/.sonar" = "write"
+"~/.stack" = "write"
+"~/.yarn" = "write"
+"~/Packaging" = "write"
 
 [permissions.workspace-write-net.network]
 enabled = true
