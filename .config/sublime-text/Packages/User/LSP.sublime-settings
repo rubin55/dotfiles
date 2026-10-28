@@ -146,14 +146,15 @@
     },
     "java": {
       "enabled": false,
-      "command": ["jdtls", "-data", "$home/.cache/nvim/jdtls/workspace/${folder/.*\\///}"],
+      "command": ["jdtls", "-data", "$home/.cache/sublime-text/LSP/jdtls/workspace/${folder/.*\\///}"],
       "selector": "source.java",
       "settings": {
         "java.autobuild.enabled": false,
         "java.configuration.runtimes": [
           { "name": "JavaSE-1.8", "path": "/usr/lib/jvm/java-8-openjdk" },
-          { "name": "JavaSE-21", "path": "/usr/lib/jvm/java-21-openjdk" },
-          { "name": "JavaSE-25", "path": "/usr/lib/jvm/java-25-graalvm", "default": true },
+          { "name": "JavaSE-25", "path": "/usr/lib/jvm/java-25-openjdk", "default": true },
+          // { "name": "JavaSE-25", "path": "/usr/lib/jvm/java-25-graalvm" },
+          // { "name": "JavaSE-25", "path": "/usr/lib/jvm/java-25-openj9" },
         ],
       },
     },
