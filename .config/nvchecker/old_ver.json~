@@ -7,10 +7,10 @@
       "revision": "b3956bda93ff3d45b644c7bc6d55e0e01c9b9a74"
     },
     "computer-use-linux": {
-      "version": "v0.7.28",
-      "gitref": "refs/tags/v0.7.28",
-      "url": "https://github.com/agent-sh/computer-use-linux/releases/tag/v0.7.28",
-      "creation_time": "2026-10-27T11:36:23Z"
+      "version": "v0.7.31",
+      "gitref": "refs/tags/v0.7.31",
+      "url": "https://github.com/agent-sh/computer-use-linux/releases/tag/v0.7.31",
+      "creation_time": "2026-10-28T01:54:38Z"
     },
     "ctranslate2": {
       "version": "v4.8.4",
@@ -222,7 +222,7 @@
       "creation_time": "2026-10-20T02:31:11Z"
     },
     "samba": {
-      "version": "2:4.25.1"
+      "version": "2:4.25.0"
     },
     "sbom-tool": {
       "version": "v4.1.5",
@@ -250,7 +250,7 @@
       "revision_creation_time": "2026-10-16T13:21:41Z"
     },
     "winexe": {
-      "version": "4.25.1"
+      "version": "4.25.0"
     },
     "wolfram": {
       "version": "15.0.1"
