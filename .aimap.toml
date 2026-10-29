@@ -81,6 +81,10 @@ name = "gemini-4-argon"
 aliases = ["databricks-gemini-4-argon"]
 
 [[models]]
+name = "gemini-4-carbon"
+aliases = ["databricks-gemini-4-carbon"]
+
+[[models]]
 name = "gemini-3.8-flash"
 aliases = ["databricks-gemini-3-8-flash"]
 
@@ -99,6 +103,10 @@ aliases = ["databricks-gpt-6-astra", "openai.gpt-6-astra"]
 [[models]]
 name = "gpt-6-luna"
 aliases = ["databricks-gpt-6-luna", "openai.gpt-6-luna"]
+
+[[models]]
+name = "gpt-6.1-terra"
+aliases = ["databricks-gpt-6.1-terra", "openai.gpt-6.1-terra"]
 
 [[models]]
 name = "gpt-6.1-sol"
