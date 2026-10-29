@@ -14,7 +14,7 @@ If no web_search tool exists, search the web with curl through exec_command, on 
 
 curl -s -A 'Mozilla/5.0' 'https://html.duckduckgo.com/html/?q=<query>'
 
-Each result is an a tag with class result__a. Its target URL is the url-encoded uddg parameter of the href. Then fetch the pages you need with curl. For current information, search; do not answer from memory.
+Each result is a tag with class result__a. Its target URL is the url-encoded uddg parameter of the href. Then fetch the pages you need with curl. For current information, search; do not answer from memory.
 
 Each exec_command runs in its own sandbox process namespace. When the command ends, all of its processes are killed, including daemons and background jobs. To keep a server running, start it in the foreground in a persistent exec_command session, and use it from other commands.
 '''
@@ -87,6 +87,9 @@ dangerously_allow_all_unix_sockets = true
 [tui]
 terminal_title = []
 screen_reader_detection_done = true
+
+[tui.model_availability_nux]
+"gpt-6.1-sol" = 3
 
 [mcp_servers.Computer]
 enabled = false
