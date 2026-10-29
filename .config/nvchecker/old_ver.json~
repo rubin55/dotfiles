@@ -25,16 +25,16 @@
       "creation_time": "2026-08-31T19:11:59Z"
     },
     "dev-proxy": {
-      "version": "v3.3.1",
-      "gitref": "refs/tags/v3.3.1",
-      "url": "https://github.com/dotnet/dev-proxy/releases/tag/v3.3.1",
-      "creation_time": "2026-09-22T13:01:50Z"
+      "version": "v4.0.0",
+      "gitref": "refs/tags/v4.0.0",
+      "url": "https://github.com/dotnet/dev-proxy/releases/tag/v4.0.0",
+      "creation_time": "2026-10-29T09:42:46Z"
     },
     "fsautocomplete": {
-      "version": "v0.86.0",
-      "gitref": "refs/tags/v0.86.0",
-      "url": "https://github.com/ionide/FsAutoComplete/releases/tag/v0.86.0",
-      "creation_time": "2026-10-23T16:31:00Z"
+      "version": "v0.86.1",
+      "gitref": "refs/tags/v0.86.1",
+      "url": "https://github.com/ionide/FsAutoComplete/releases/tag/v0.86.1",
+      "creation_time": "2026-10-29T09:49:32Z"
     },
     "gemrb": {
       "version": "v0.9.5",
@@ -70,10 +70,10 @@
       "version": "26.3.5"
     },
     "jdk25-openj9-bin": {
-      "version": "jdk-25.0.4.15",
-      "gitref": "refs/tags/jdk-25.0.4.15",
-      "url": "https://github.com/ibmruntimes/semeru25-binaries/releases/tag/jdk-25.0.4.15",
-      "creation_time": "2026-09-24T16:32:27Z"
+      "version": "jdk-25.0.5.0",
+      "gitref": "refs/tags/jdk-25.0.5.0",
+      "url": "https://github.com/ibmruntimes/semeru25-binaries/releases/tag/jdk-25.0.5.0",
+      "creation_time": "2026-10-28T17:57:24Z"
     },
     "jsonpath-python": {
       "version": "1.1.6",
@@ -166,8 +166,8 @@
       "version": "v4.0.34"
     },
     "retro68": {
-      "version": "0cbd3cb918a127a0d30a675b337f8f8e15062786",
-      "revision": "0cbd3cb918a127a0d30a675b337f8f8e15062786"
+      "version": "d77319746eb37be026af760c7cde461e552c3585",
+      "revision": "d77319746eb37be026af760c7cde461e552c3585"
     },
     "ruby-commander": {
       "version": "v6.0.0",
@@ -222,7 +222,7 @@
       "creation_time": "2026-10-20T02:31:11Z"
     },
     "samba": {
-      "version": "2:4.25.0"
+      "version": "2:4.25.1"
     },
     "sbom-tool": {
       "version": "v4.1.5",
@@ -250,7 +250,7 @@
       "revision_creation_time": "2026-10-16T13:21:41Z"
     },
     "winexe": {
-      "version": "4.25.0"
+      "version": "4.25.1"
     },
     "wolfram": {
       "version": "15.0.1"
