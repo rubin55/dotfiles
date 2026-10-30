@@ -89,6 +89,10 @@ $RECYCLE.BIN/
 *.sublime-project
 *.sublime-workspace
 
+# Scala projects.
+.bloop/
+.metals/
+
 # Haunt.nvim bookmark location.
 .haunt/
 
