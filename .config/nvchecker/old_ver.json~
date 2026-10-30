@@ -191,11 +191,11 @@
       "revision_creation_time": "2026-06-27T09:18:35+09:00"
     },
     "ruby-solargraph": {
-      "version": "v0.61.0",
-      "gitref": "refs/tags/v0.61.0",
-      "revision": "f4591fd53051a36cd9bf7375ac6887d0cd502246",
-      "url": "https://github.com/castwide/solargraph/releases/tag/v0.61.0",
-      "revision_creation_time": "2026-10-07T08:50:48-04:00"
+      "version": "v0.62.0",
+      "gitref": "refs/tags/v0.62.0",
+      "revision": "c06e240ef2d130776e7ad65c3472c4103af5f8fe",
+      "url": "https://github.com/castwide/solargraph/releases/tag/v0.62.0",
+      "revision_creation_time": "2026-10-30T11:55:57-04:00"
     },
     "ruby-sord": {
       "version": "7.1.0",
