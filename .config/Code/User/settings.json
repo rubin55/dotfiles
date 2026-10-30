@@ -1,7 +1,7 @@
 {
   "[csv][tsv]": {
     "editor.insertSpaces": false,
-    "editor.tabSize": 24
+    "editor.tabSize": 48
   },
   "[rust]": {
     "editor.defaultFormatter": "rust-lang.rust-analyzer",
@@ -19,11 +19,8 @@
   "calva.enableInspectorRainbow": true,
   "chat.agent.enabled": false,
   "chat.disableAIFeatures": true,
-  "chat.sendElementsToChat.enabled": false,
-  "chat.todoListTool.descriptionField": false,
   "chat.tools.terminal.autoApproveWorkspaceNpmScripts": false,
   "chat.tools.terminal.enableAutoApprove": false,
-  "chat.commandCenter.enabled": false,
   "chat.detectParticipant.enabled": false,
   "chat.extensionTools.enabled": false,
   "containers.containers.label": "ContainerName",
@@ -44,7 +41,7 @@
   "editor.insertSpaces": true,
   "editor.largeFileOptimizations": false,
   "editor.lineHeight": 16,
-  "editor.minimap.enabled": false,
+  "editor.minimap.enabled": true,
   "editor.quickSuggestions": {
     "comments": "off",
     "other": "off",
@@ -102,8 +99,8 @@
   "files.trimFinalNewlines": true,
   "files.trimTrailingWhitespace": true,
   "files.watcherExclude": {
-    "**/.bloop": true,
-    "**/.metals": true
+    "**/.bloop/**": true,
+    "**/.metals/**/*.{java,scala}": true
   },
   "git.openRepositoryInParentFolders": "never",
   "haskell.manageHLS": "GHCup",
@@ -117,8 +114,6 @@
     "\\.venv"
   ],
   "python.defaultInterpreterPath": "/home/rubin/Source/ICTU/wallet/wallet_docs/.venv",
-  "lldb.launch.expressions": "native",
-  "lldb.library": "/usr/lib/swift/lib/liblldb.so",
   "Lua.workspace.ignoreDir": [
     ".venv",
     ".vscode",
@@ -130,6 +125,7 @@
   "maven.showInExplorerContextMenu": false,
   "notebook.experimental.generate": false,
   "openapi.codeLens": false,
+  "problems.decorations.enabled": false,
   "rainbow_csv.enable_auto_csv_lint": false,
   "redhat.telemetry.enabled": false,
   "rust-analyzer.check.command": "clippy",
@@ -151,9 +147,8 @@
   "terminal.integrated.fontWeightBold": "normal",
   "terminal.integrated.profiles.linux": {
     "tmux": {
-      "path": "tmux",
-      "icon": "terminal-tmux",
-      "args": ["new-session", "-A", "-s", "0"]
+      "path": "/usr/bin/tmux",
+      "icon": "terminal-tmux"
     }
   },
   "terminal.integrated.scrollback": 10000,
@@ -166,6 +161,7 @@
     "**/_*/*/**"
   ],
   "todo-tree.regex.regex": "(//|#|<!--|;|/\\*|^)\\s*($TAGS)",
+  "todo-tree.ripgrep.ripgrep": "/usr/bin/rg",
   "todo-tree.tree.tagsOnly": true,
   "window.autoDetectColorScheme": true,
   "window.commandCenter": false,
@@ -201,6 +197,10 @@
     "[Catppuccin Latte]": {
       "editorLineNumber.foreground": "#acaebd",
       "editorRuler.foreground": "#ecedef"
+    },
+    "[Dark 2026]": {
+      "editorLineNumber.foreground": "#373d42",
+      "editorRuler.foreground": "#1A1B1C"
     }
   },
   "workbench.commandPalette.showAskInChat": false,
@@ -209,13 +209,17 @@
   "workbench.iconTheme": "catppuccin-latte",
   "workbench.layoutControl.enabled": false,
   "workbench.panel.defaultLocation": "bottom",
-  "workbench.preferredDarkColorTheme": "Catppuccin Frappé",
-  "workbench.preferredLightColorTheme": "Catppuccin Latte",
   "workbench.sideBar.location": "left",
   "workbench.startupEditor": "none",
   "workbench.tree.enableStickyScroll": false,
   "workbench.tree.indent": 20,
   "yaml.customTags": [
     "!reference sequence"
-  ]
+  ],
+  "yaml.schemas": {
+    "/Users/rubin/.vscode/extensions/continue.continue-1.0.21-darwin-arm64/config-yaml-schema.json": [
+      ".continue/**/*.yaml"
+    ]
+  },
+  "workbench.activityBar.compact": true
 }
