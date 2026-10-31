@@ -150,6 +150,7 @@
       "selector": "source.java",
       "settings": {
         "java.autobuild.enabled": false,
+        "java.settings.url": "/home/rubin/.config/jdtls/settings.prefs",
         "java.configuration.runtimes": [
           { "name": "JavaSE-1.8", "path": "/usr/lib/jvm/java-8-openjdk" },
           { "name": "JavaSE-25", "path": "/usr/lib/jvm/java-25-openjdk", "default": true },

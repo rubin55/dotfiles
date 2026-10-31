@@ -158,6 +158,9 @@ Doom's toggle removes all projects but the current one."
 ;; Set it before lsp-pyright loads, which reads it then.
 (setq lsp-pyright-langserver-command "basedpyright")
 
+;; Shared JDT options for jdtls, the same file as the other editors.
+(setq lsp-java-settings-url "/home/rubin/.config/jdtls/settings.prefs")
+
 ;; Git blame of the current line at its end.
 (load! "lisp/git-blame")
 (git-blame-line-mode 1)

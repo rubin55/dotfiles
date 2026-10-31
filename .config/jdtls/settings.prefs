@@ -1,0 +1,3 @@
+# Workspace-wide JDT options; see java.settings.url in jdtls clients.
+# Empty task tags keep TODO comments out of the diagnostics.
+org.eclipse.jdt.core.compiler.taskTags=
