@@ -108,12 +108,12 @@
   "java.import.gradle.enabled": false,
   "java.import.projectSelection": "manual",
   "java.project.importOnFirstTimeStartup": "interactive",
+  "java.settings.url": "/home/rubin/.config/jdtls/settings.prefs",
   "java.project.resourceFilters": [
     "node_modules",
     "\\.git",
     "\\.venv"
   ],
-  "python.defaultInterpreterPath": "/home/rubin/Source/ICTU/wallet/wallet_docs/.venv",
   "Lua.workspace.ignoreDir": [
     ".venv",
     ".vscode",
@@ -167,7 +167,7 @@
   "window.commandCenter": false,
   "window.openFilesInNewWindow": "off",
   "window.titleBarStyle": "custom",
-  "window.zoomLevel": 0.66,
+  "window.zoomLevel": 1,
   "window.zoomPerWindow": false,
   "workbench.colorCustomizations": {
     "[*Dark*][GitHub]": {
