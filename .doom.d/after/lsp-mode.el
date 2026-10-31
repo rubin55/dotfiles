@@ -14,14 +14,6 @@
 
 (setq lsp-fsharp-auto-workspace-init t)
 
-(setq lsp-pwsh-dir "/usr/share/powershell/Modules"
-      lsp-pwsh-pses-script
-      (concat lsp-pwsh-dir "/PowerShellEditorServices/Start-EditorServices.ps1")
-      lsp-pwsh-log-path
-      (expand-file-name "lsp-pwsh" temporary-file-directory))
-
-(make-directory lsp-pwsh-log-path t)
-
 (lsp-register-client
  (make-lsp-client
   :new-connection (lsp-stdio-connection '("kotlin-lsp" "--stdio"))

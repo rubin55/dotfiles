@@ -59,7 +59,6 @@
            :files ("*.el" "tools/*.el" "mcp-wrapper.py" "mcp-wrapper.sh")))
 (package! flycheck-kotlin)
 (package! nov)
-(package! powershell)
 (package! svelte-mode)
 (package! visual-fill-column)
 (package! vterm-toggle)

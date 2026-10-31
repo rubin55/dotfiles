@@ -5,9 +5,8 @@ vim.lsp.enable({
   'dockerls', 'elixirls', 'eslint', 'expert', 'flow', 'fsautocomplete', 'gopls',
   'groovyls', 'helm_ls', 'hls', 'html', 'jdtls', 'jsonls', 'kotlin_lsp',
   'lemminx', 'lua_ls', 'marksman', 'metals', 'omnisharp', 'perlnavigator',
-  'powershell_es', 'rubocop', 'ruff', 'rust_analyzer', 'scheme_langserver',
-  'solargraph', 'svelte', 'tailwindcss', 'vala_ls', 'vtsls', 'vue_ls',
-  'yamlls', 'zls',
+  'rubocop', 'ruff', 'rust_analyzer', 'scheme_langserver', 'solargraph',
+  'svelte', 'tailwindcss', 'vala_ls', 'vtsls', 'vue_ls', 'yamlls', 'zls',
 })
 
 -- Float that shows LSP hover docs.

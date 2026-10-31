@@ -146,9 +146,6 @@
   name = "lang#perl"
 
 [[layers]]
-  name = "lang#powershell"
-
-[[layers]]
   name = "lang#python"
   enabled_linters = ["python", "pylint"]
   enable_typeinfo = true

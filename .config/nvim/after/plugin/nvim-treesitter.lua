@@ -9,7 +9,7 @@ require('nvim-treesitter').install({
   'jinja_inline', 'jq', 'jsdoc', 'json', 'just', 'kotlin', 'latex', 'llvm',
   'lua', 'luadoc', 'm68k', 'make', 'markdown', 'markdown_inline', 'mermaid',
   'nasm', 'nginx', 'ninja', 'objc', 'objdump', 'passwd', 'pem', 'perl', 'php',
-  'phpdoc', 'powershell', 'printf', 'properties', 'python', 'query', 'racket',
+  'phpdoc', 'printf', 'properties', 'python', 'query', 'racket',
   'rbs', 'regex', 'requirements', 'robots_txt', 'rst', 'ruby', 'rust', 'scala',
   'scheme', 'scss', 'slang', 'sql', 'ssh_config', 'strace', 'svelte', 'swift',
   'systemverilog', 'tlaplus', 'todotxt', 'toml', 'tsv', 'tsx', 'typescript',
