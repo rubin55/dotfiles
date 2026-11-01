@@ -18,6 +18,9 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
   # codeMono=13.3
   # emacsMono=14
   # emacsSans=14
+  # firefoxMinimum=12
+  # firefoxMono=12
+  # firefoxSans=16
   # ghosttyMono=11
   # gnomeMono=11
   # gnomeSans=11
@@ -30,6 +33,9 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
   # qt6Mono=11
   # qt6Sans=11
   # sublimeMono=11
+  # thunderbirdMinimum=12
+  # thunderbirdMono=16
+  # thunderbirdSans=16
   # vimMono=11.2
   # x11Cursor=48
   # x11Dpi=192
@@ -446,9 +452,44 @@ if [[ "$(os.platform)" == "linux" && ! -e /tmp/user-scaling.timer ]]; then
 
   done
 
+  # Current and wanted Firefox and Thunderbird font sizes (whole pixels).
+  mozillaApps=("Firefox:$HOME/.mozilla/firefox:$firefoxMono:$firefoxSans:$firefoxMinimum" "Thunderbird:$HOME/.thunderbird:$thunderbirdMono:$thunderbirdSans:$thunderbirdMinimum")
+  for mozillaApp in "${mozillaApps[@]}"; do
+    IFS=: read -r mozillaName mozillaDir mozillaMono mozillaSans mozillaMinimum <<< "$mozillaApp"
+    mozillaConfigs="$(find "$mozillaDir" -maxdepth 2 -type f -name user.js 2> /dev/null)"
+    for mozillaConfig in $mozillaConfigs; do
+      if [[ -n "$mozillaMono" && -n "$mozillaSans" && -n "$mozillaMinimum" ]]; then
+        currentMozillaMonoFontSize="$(grep -m1 '"font.size.monospace.x-western"' "$mozillaConfig" | sed 's|.*, *\([0-9]*\)).*|\1|')"
+        currentMozillaSansFontSize="$(grep -m1 '"font.size.variable.x-western"' "$mozillaConfig" | sed 's|.*, *\([0-9]*\)).*|\1|')"
+        currentMozillaMinimumFontSize="$(grep -m1 '"font.minimum-size.x-western"' "$mozillaConfig" | sed 's|.*, *\([0-9]*\)).*|\1|')"
+        wantedMozillaMonoFontSize="$mozillaMono"
+        wantedMozillaSansFontSize="$mozillaSans"
+        wantedMozillaMinimumFontSize="$mozillaMinimum"
+
+        # Update monospace (plain text) font size if different.
+        if [[ -n "$currentMozillaMonoFontSize" && "$currentMozillaMonoFontSize" != "$wantedMozillaMonoFontSize" ]]; then
+          log.info "Setting $mozillaName monospace font size to: \"$wantedMozillaMonoFontSize\""
+          sed -i "s|\(\"font.size.monospace.x-[a-z]*\", *\)[0-9]*)|\1$wantedMozillaMonoFontSize)|g" "$mozillaConfig"
+        fi
+
+        # Update variable-width (HTML) font size if different.
+        if [[ -n "$currentMozillaSansFontSize" && "$currentMozillaSansFontSize" != "$wantedMozillaSansFontSize" ]]; then
+          log.info "Setting $mozillaName variable-width font size to: \"$wantedMozillaSansFontSize\""
+          sed -i "s|\(\"font.size.variable.x-[a-z]*\", *\)[0-9]*)|\1$wantedMozillaSansFontSize)|g" "$mozillaConfig"
+        fi
+
+        # Update minimum font size if different.
+        if [[ -n "$currentMozillaMinimumFontSize" && "$currentMozillaMinimumFontSize" != "$wantedMozillaMinimumFontSize" ]]; then
+          log.info "Setting $mozillaName minimum font size to: \"$wantedMozillaMinimumFontSize\""
+          sed -i "s|\(\"font.minimum-size.x-[a-z]*\", *\)[0-9]*)|\1$wantedMozillaMinimumFontSize)|g" "$mozillaConfig"
+        fi
+      fi
+    done
+  done
+
   # Write a timer file so we don't keep doing this for every shell invocation.
   echo "user-scaling.sh ran at $(date)" > /tmp/user-scaling.timer
 fi
 
 # Unset temporary variables.
-unset FONT_SIZE_PREFERENCES_FILE codeConfig emacsConfig jetbrainsConfigs jetbrainsConfig vimConfig codeMono emacsMono emacsSans gnomeMono gnomeSans gnomeSerif jetbrainsMono vimMono currentCodeEditorFontName currentCodeEditorFontSize currentCodeTerminalFontName currentCodeTerminalFontSize currentEmacsMonoFontName currentEmacsMonoFontSize currentEmacsSansFontName currentEmacsSansFontSize currentGnomeDocumentFontName currentGnomeDocumentFontSize currentGnomeInterfaceFontName currentGnomeInterfaceFontSize currentGnomeMonospaceFontName currentGnomeMonospaceFontSize currentGnomeThemeFontName currentGnomeThemeFontSize currentGnomeTitleFontName currentGnomeTitleFontSize currentJetbrainsMonoFontName currentJetbrainsMonoFontSize currentJetbrainsMonoFontSize2d currentVimMonoFontName currentVimMonoFontSize wantedCodeEditorFontSize wantedCodeTerminalFontSize wantedEmacsMonoFontSize wantedEmacsSansFontSize wantedGnomeDocumentFontSize wantedGnomeInterfaceFontSize wantedGnomeMonospaceFontSize wantedGnomeThemeFontSize wantedGnomeTitleFontSize wantedJetbrainsMonoFontName wantedJetbrainsMonoFontSize wantedJetbrainsMonoFontSize2d wantedVimMonoFontSize currentQt5MonoFontName currentQt5MonoFontSize currentQt5SansFontName currentQt5SansFontSize currentQt6MonoFontName currentQt6MonoFontSize currentQt6SansFontName currentQt6SansFontSize wantedQt5MonoFontName wantedQt5MonoFontSize wantedQt5SansFontName wantedQt5SansFontSize wantedQt6MonoFontName wantedQt6MonoFontSize wantedQt6SansFontName wantedQt6SansFontSize qt5Config qt5Mono qt5Sans qt6Config qt6Mono qt6Sans themeConfig wantedAlacrittyMonoFontSize wantedX11CursorSize wantedX11SansFontSize wantedX11UxtermFontSize wantedX11XtermFontSize x11Config x11Cursor x11Mono x11Sans alacrittyConfig alacrittyMono currentAlacrittyMonoFontSize currentX11CursorSize currentX11SansFontSize currentX11UxtermFontSize currentX11XtermFontSize currentAlacrittyMonoFontString currentCodeEditorFontString currentCodeTerminalFontString currentEmacsMonoFontString currentEmacsSansFontString currentGhosTTYMonoFontSize currentGhosTTYMonoFontString currentGnomeThemeFontString currentJetbrainsMonoFontNameString currentJetbrainsMonoFontSize2dString currentJetbrainsMonoFontSizeString currentNvimMonoFontSize currentNvimMonoFontString currentQt5MonoFontString currentQt5SansFontString currentQt6MonoFontString currentQt6SansFontString currentSublimeMonoFontSize currentSublimeMonoFontString currentVimMonoFontString currentX11CursorString currentX11DpiString currentX11DpiValue currentX11SansFontString currentX11UxtermFontString currentX11XtermFontString currentZedAgentBufferFontSize currentZedAgentBufferFontString currentZedBufferFontName currentZedBufferFontSize currentZedBufferFontString currentZedUiFontName currentZedUiFontSize currentZedUiFontString ghosttyConfig nvimConfig sublimeConfig sublimeConfigs sublimeProgramName wantedAlacrittyMonoFontString wantedCodeEditorFontString wantedCodeTerminalFontString wantedEmacsMonoFontString wantedEmacsSansFontString wantedGhosTTYMonoFontSize wantedGhosTTYMonoFontString wantedGnomeThemeFontString wantedJetbrainsMonoFontNameString wantedJetbrainsMonoFontSize2dString wantedJetbrainsMonoFontSizeString wantedNvimMonoFontSize wantedNvimMonoFontString wantedQt5MonoFontString wantedQt5SansFontString wantedQt6MonoFontString wantedQt6SansFontString wantedSublimeMonoFontSize wantedSublimeMonoFontString wantedVimMonoFontString wantedX11CursorString wantedX11DpiString wantedX11DpiValue wantedX11SansFontString wantedX11UxtermFontString wantedX11XtermFontString wantedZedAgentBufferFontSize wantedZedAgentBufferFontString wantedZedBufferFontSize wantedZedBufferFontString wantedZedUiFontSize wantedZedUiFontString zedConfig
+unset FONT_SIZE_PREFERENCES_FILE codeConfig emacsConfig jetbrainsConfigs jetbrainsConfig vimConfig codeMono emacsMono emacsSans gnomeMono gnomeSans gnomeSerif jetbrainsMono vimMono currentCodeEditorFontName currentCodeEditorFontSize currentCodeTerminalFontName currentCodeTerminalFontSize currentEmacsMonoFontName currentEmacsMonoFontSize currentEmacsSansFontName currentEmacsSansFontSize currentGnomeDocumentFontName currentGnomeDocumentFontSize currentGnomeInterfaceFontName currentGnomeInterfaceFontSize currentGnomeMonospaceFontName currentGnomeMonospaceFontSize currentGnomeThemeFontName currentGnomeThemeFontSize currentGnomeTitleFontName currentGnomeTitleFontSize currentJetbrainsMonoFontName currentJetbrainsMonoFontSize currentJetbrainsMonoFontSize2d currentVimMonoFontName currentVimMonoFontSize wantedCodeEditorFontSize wantedCodeTerminalFontSize wantedEmacsMonoFontSize wantedEmacsSansFontSize wantedGnomeDocumentFontSize wantedGnomeInterfaceFontSize wantedGnomeMonospaceFontSize wantedGnomeThemeFontSize wantedGnomeTitleFontSize wantedJetbrainsMonoFontName wantedJetbrainsMonoFontSize wantedJetbrainsMonoFontSize2d wantedVimMonoFontSize currentQt5MonoFontName currentQt5MonoFontSize currentQt5SansFontName currentQt5SansFontSize currentQt6MonoFontName currentQt6MonoFontSize currentQt6SansFontName currentQt6SansFontSize wantedQt5MonoFontName wantedQt5MonoFontSize wantedQt5SansFontName wantedQt5SansFontSize wantedQt6MonoFontName wantedQt6MonoFontSize wantedQt6SansFontName wantedQt6SansFontSize qt5Config qt5Mono qt5Sans qt6Config qt6Mono qt6Sans themeConfig wantedAlacrittyMonoFontSize wantedX11CursorSize wantedX11SansFontSize wantedX11UxtermFontSize wantedX11XtermFontSize x11Config x11Cursor x11Mono x11Sans alacrittyConfig alacrittyMono currentAlacrittyMonoFontSize currentX11CursorSize currentX11SansFontSize currentX11UxtermFontSize currentX11XtermFontSize currentAlacrittyMonoFontString currentCodeEditorFontString currentCodeTerminalFontString currentEmacsMonoFontString currentEmacsSansFontString currentGhosTTYMonoFontSize currentGhosTTYMonoFontString currentGnomeThemeFontString currentJetbrainsMonoFontNameString currentJetbrainsMonoFontSize2dString currentJetbrainsMonoFontSizeString currentNvimMonoFontSize currentNvimMonoFontString currentQt5MonoFontString currentQt5SansFontString currentQt6MonoFontString currentQt6SansFontString currentSublimeMonoFontSize currentSublimeMonoFontString currentVimMonoFontString currentX11CursorString currentX11DpiString currentX11DpiValue currentX11SansFontString currentX11UxtermFontString currentX11XtermFontString currentZedAgentBufferFontSize currentZedAgentBufferFontString currentZedBufferFontName currentZedBufferFontSize currentZedBufferFontString currentZedUiFontName currentZedUiFontSize currentZedUiFontString ghosttyConfig nvimConfig sublimeConfig sublimeConfigs sublimeProgramName wantedAlacrittyMonoFontString wantedCodeEditorFontString wantedCodeTerminalFontString wantedEmacsMonoFontString wantedEmacsSansFontString wantedGhosTTYMonoFontSize wantedGhosTTYMonoFontString wantedGnomeThemeFontString wantedJetbrainsMonoFontNameString wantedJetbrainsMonoFontSize2dString wantedJetbrainsMonoFontSizeString wantedNvimMonoFontSize wantedNvimMonoFontString wantedQt5MonoFontString wantedQt5SansFontString wantedQt6MonoFontString wantedQt6SansFontString wantedSublimeMonoFontSize wantedSublimeMonoFontString wantedVimMonoFontString wantedX11CursorString wantedX11DpiString wantedX11DpiValue wantedX11SansFontString wantedX11UxtermFontString wantedX11XtermFontString wantedZedAgentBufferFontSize wantedZedAgentBufferFontString wantedZedBufferFontSize wantedZedBufferFontString wantedZedUiFontSize wantedZedUiFontString zedConfig firefoxMinimum firefoxMono firefoxSans thunderbirdMinimum thunderbirdMono thunderbirdSans mozillaApps mozillaApp mozillaName mozillaDir mozillaMinimum mozillaMono mozillaSans mozillaConfigs mozillaConfig currentMozillaMinimumFontSize currentMozillaMonoFontSize currentMozillaSansFontSize wantedMozillaMinimumFontSize wantedMozillaMonoFontSize wantedMozillaSansFontSize
