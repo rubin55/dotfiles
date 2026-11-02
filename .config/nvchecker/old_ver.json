@@ -7,16 +7,16 @@
       "revision": "b3956bda93ff3d45b644c7bc6d55e0e01c9b9a74"
     },
     "computer-use-linux": {
-      "version": "v0.7.35",
-      "gitref": "refs/tags/v0.7.35",
-      "url": "https://github.com/agent-sh/computer-use-linux/releases/tag/v0.7.35",
-      "creation_time": "2026-10-31T14:44:30Z"
+      "version": "v0.7.36",
+      "gitref": "refs/tags/v0.7.36",
+      "url": "https://github.com/agent-sh/computer-use-linux/releases/tag/v0.7.36",
+      "creation_time": "2026-11-01T19:39:35Z"
     },
     "ctranslate2": {
-      "version": "v4.8.4",
-      "gitref": "refs/tags/v4.8.4",
-      "url": "https://github.com/OpenNMT/CTranslate2/releases/tag/v4.8.4",
-      "creation_time": "2026-10-25T19:04:59Z"
+      "version": "v4.8.5",
+      "gitref": "refs/tags/v4.8.5",
+      "url": "https://github.com/OpenNMT/CTranslate2/releases/tag/v4.8.5",
+      "creation_time": "2026-11-02T18:46:09Z"
     },
     "ctranslate2-cuda": {
       "version": "v4.8.2",
@@ -243,11 +243,11 @@
       "creation_time": "2026-10-27T13:32:40Z"
     },
     "svelte-language-server": {
-      "version": "svelte-language-server@0.18.5",
-      "gitref": "refs/tags/svelte-language-server@0.18.5",
-      "revision": "a96288bd33963373560c62f4348804253d8e64f9",
-      "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.18.5",
-      "revision_creation_time": "2026-10-16T13:21:41Z"
+      "version": "svelte-language-server@0.18.6",
+      "gitref": "refs/tags/svelte-language-server@0.18.6",
+      "revision": "68101d3abda149e27475fc16525ed09da67c8f2a",
+      "url": "https://github.com/sveltejs/language-tools/releases/tag/svelte-language-server@0.18.6",
+      "revision_creation_time": "2026-11-01T18:03:06Z"
     },
     "winexe": {
       "version": "4.25.1"
