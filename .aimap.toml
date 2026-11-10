@@ -56,8 +56,8 @@ base_url="https://api.orcarouter.ai/v1"
 auth_keys = ["orcarouter", "default-api-token"]
 
 [[models]]
-name = "claude-haiku-5-5"
-aliases = ["anthropic.claude-haiku-5-5", "databricks-claude-haiku-5-5"]
+name = "claude-fable-5-2"
+aliases = ["anthropic.claude-fable-5-2", "databricks-claude-fable-5-2"]
 
 [[models]]
 name = "claude-opus-5-5"
@@ -66,6 +66,10 @@ aliases = ["anthropic.claude-opus-5-5", "databricks-claude-opus-5-5"]
 [[models]]
 name = "claude-sonnet-5-5"
 aliases = ["anthropic.claude-sonnet-5-5", "databricks-claude-sonnet-5-5"]
+
+[[models]]
+name = "claude-haiku-5-5"
+aliases = ["anthropic.claude-haiku-5-5", "databricks-claude-haiku-5-5"]
 
 [[models]]
 name = "deepseek-v4-pro-0813"
@@ -77,12 +81,12 @@ name = "deepseek-v4.1-flash-1017"
 aliases = ["deepseek-v4p1-flash-1017"]
 
 [[models]]
-name = "gemini-4-argon"
-aliases = ["databricks-gemini-4-argon"]
-
-[[models]]
 name = "gemini-4-carbon"
 aliases = ["databricks-gemini-4-carbon"]
+
+[[models]]
+name = "gemini-4-argon"
+aliases = ["databricks-gemini-4-argon"]
 
 [[models]]
 name = "gemini-3.8-flash"
@@ -101,16 +105,16 @@ name = "gpt-6-astra"
 aliases = ["databricks-gpt-6-astra", "openai.gpt-6-astra"]
 
 [[models]]
-name = "gpt-6-luna"
-aliases = ["databricks-gpt-6-luna", "openai.gpt-6-luna"]
+name = "gpt-6.1-sol"
+aliases = ["databricks-gpt-6.1-sol", "openai.gpt-6.1-sol"]
 
 [[models]]
 name = "gpt-6.1-terra"
 aliases = ["databricks-gpt-6.1-terra", "openai.gpt-6.1-terra"]
 
 [[models]]
-name = "gpt-6.1-sol"
-aliases = ["databricks-gpt-6.1-sol", "openai.gpt-6.1-sol"]
+name = "gpt-6-luna"
+aliases = ["databricks-gpt-6-luna", "openai.gpt-6-luna"]
 
 [[models]]
 name = "grok-4.7"
@@ -121,19 +125,15 @@ name = "kimi-k3.1-pro"
 aliases = ["databricks-kimi-k3-1-pro", "moonshotai.kimi-k3.1-pro"]
 
 [[models]]
+name = "mimo-v2.6-pro"
+
+[[models]]
 name = "mimo-v2.6-flash"
 aliases = ["mimo-v2.6-flash-free"]
 
 [[models]]
-name = "mimo-v2.6-pro"
-
-[[models]]
 name = "mistral-large-4"
 aliases = ["mistral-large-4-0"]
-
-[[models]]
-name = "muse-spark-1.3"
-aliases = ["muse-spark-1.3-contributor", "muse-spark-1.3-contributor-free"]
 
 [[models]]
 name = "muse-wonder-1.0"
@@ -141,12 +141,16 @@ aliases = ["muse-wonder"]
 scores = { artificial-analysis = "muse-wonder" }
 
 [[models]]
-name = "qwen3.8-27b"
-aliases = ["qwen3.8-27b:free"]
+name = "muse-spark-1.3"
+aliases = ["muse-spark-1.3-contributor", "muse-spark-1.3-contributor-free"]
 
 [[models]]
 name = "qwen3.8-max-0902"
 scores = { artificial-analysis = "qwen3.8-max" }
+
+[[models]]
+name = "qwen3.8-27b"
+aliases = ["qwen3.8-27b:free"]
 
 [[models]]
 name = "tencent/hy4"
