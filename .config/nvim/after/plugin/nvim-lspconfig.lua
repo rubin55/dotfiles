@@ -54,7 +54,7 @@ local function show_hover(src, lines)
   vim.bo[buf].bufhidden = 'wipe'
   vim.bo[buf].modifiable = false
   vim.bo[buf].filetype = 'markdown'
-  vim.keymap.set('n', 'q', '<Cmd>close<CR>', { buffer = buf })
+  vim.keymap.set('n', 'q', '<Cmd>close<CR>', { buffer = buf, desc = 'Close hover float' })
 
   -- Reuse an open float, and move it to the source window.
   if hover_win and vim.api.nvim_win_is_valid(hover_win) then
@@ -129,9 +129,8 @@ local function diagnostics_right()
 end
 
 -- Replace the default diagnostic float keys.
-for _, lhs in ipairs({ '<C-w>d', '<C-w><C-d>' }) do
-  vim.keymap.set('n', lhs, diagnostics_right, { desc = 'Diagnostics in float' })
-end
+vim.keymap.set('n', '<C-w>d', diagnostics_right, { desc = 'Diagnostics in float' })
+vim.keymap.set('n', '<C-w><C-d>', diagnostics_right, { desc = 'Diagnostics in float' })
 
 -- Hover float buffer that shows docs of a completion item.
 local completion_buf

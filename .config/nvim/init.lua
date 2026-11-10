@@ -1,5 +1,5 @@
--- Leader key. Must precede any mapping that uses <leader>.
-vim.g.mapleader = ' '
+-- Leader key. Must precede any mapping that uses <Leader>.
+vim.g.mapleader = '\\'
 
 -- Disable (internal) netrw. Must happen before its plugin file is sourced.
 vim.g.loaded_netrw = 1

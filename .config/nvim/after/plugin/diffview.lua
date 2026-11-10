@@ -26,7 +26,7 @@ vim.api.nvim_create_autocmd('ColorScheme', {
   end
 })
 
-vim.keymap.set('n', '<leader>tv', function()
+vim.keymap.set('n', '<Leader>tv', function()
   local lib = require('diffview.lib')
   if lib.get_current_view() then
     vim.cmd('DiffviewClose')

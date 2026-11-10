@@ -19,10 +19,10 @@ vim.o.wildignorecase = true
 vim.o.linebreak = true
 
 -- Disable word wrap.
-vim.o.wrap = false
+vim.o.wrap = true
 
 -- Set number defaults.
-vim.o.number = false
+vim.o.number = true
 vim.o.relativenumber = false
 vim.o.signcolumn = 'yes'
 

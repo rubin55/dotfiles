@@ -139,4 +139,4 @@ local function cycle_explorer()
   vim.notify('explorer: ' .. (float and 'float' or 'split'))
 end
 
-vim.keymap.set('n', '<leader>e', cycle_explorer, { desc = 'Explorer' })
+vim.keymap.set('n', '<Leader>e', cycle_explorer, { desc = 'Explorer' })

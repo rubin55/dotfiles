@@ -19,7 +19,7 @@ local function toggle_gutter()
 end
 
 -- Set toggle gutter key.
-vim.keymap.set('n', '<leader>tg', toggle_gutter, { desc = 'Toggle gutter' })
+vim.keymap.set('n', '<Leader>tg', toggle_gutter, { desc = 'Toggle gutter' })
 
 -- Which ruler stop is active; persists across calls.
 local tr_idx = 1
@@ -43,7 +43,7 @@ local function toggle_ruler()
 end
 
 -- Set toggle ruler key.
-vim.keymap.set('n', '<leader>tr', toggle_ruler, { desc = 'Toggle ruler' })
+vim.keymap.set('n', '<Leader>tr', toggle_ruler, { desc = 'Toggle ruler' })
 
 -- Which statusline stop is active; persists across calls.
 local ts_idx = 1
@@ -63,10 +63,9 @@ local function toggle_statusline()
 end
 
 -- Set toggle statusline key.
-vim.keymap.set('n', '<leader>ts', toggle_statusline, { desc = 'Toggle statusline' })
+vim.keymap.set('n', '<Leader>ts', toggle_statusline, { desc = 'Toggle statusline' })
 -- Set toggle word wrap key.
-vim.keymap.set('n', '<leader>tw', function()
+vim.keymap.set('n', '<Leader>tw', function()
   vim.wo.wrap = not vim.wo.wrap
   vim.notify('wrap: ' .. (vim.wo.wrap and 'on' or 'off'))
 end, { desc = 'Toggle word wrap' })
-

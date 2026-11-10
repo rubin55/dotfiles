@@ -1,8 +1,8 @@
--- System clipboard shortcuts under <leader>, mirroring Vim's y/p grammar.
-vim.keymap.set({ 'n', 'v' }, '<leader>y', '"+y',  { desc = 'Yank to system clipboard' })
-vim.keymap.set({ 'n'      }, '<leader>Y', '"+y$', { desc = 'Yank to end of line to clipboard' })
-vim.keymap.set({ 'n', 'v' }, '<leader>p', '"+p',  { desc = 'Paste from system clipboard' })
-vim.keymap.set({ 'n', 'v' }, '<leader>P', '"+P',  { desc = 'Paste before from system clipboard' })
+-- System clipboard shortcuts under <Leader>, mirroring Vim's y/p grammar.
+vim.keymap.set({ 'n', 'v' }, '<Leader>y', '"+y',  { desc = 'Yank to system clipboard' })
+vim.keymap.set({ 'n'      }, '<Leader>Y', '"+y$', { desc = 'Yank to end of line to clipboard' })
+vim.keymap.set({ 'n', 'v' }, '<Leader>p', '"+p',  { desc = 'Paste from system clipboard' })
+vim.keymap.set({ 'n', 'v' }, '<Leader>P', '"+P',  { desc = 'Paste before from system clipboard' })
 
 -- Make shift-arrow move selection in normal mode.
 vim.keymap.set('n', '<S-Down>', 'v$', { desc = 'Select start down' })
