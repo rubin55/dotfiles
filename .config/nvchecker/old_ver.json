@@ -7,10 +7,10 @@
       "revision": "b3956bda93ff3d45b644c7bc6d55e0e01c9b9a74"
     },
     "computer-use-linux": {
-      "version": "v0.7.36",
-      "gitref": "refs/tags/v0.7.36",
-      "url": "https://github.com/agent-sh/computer-use-linux/releases/tag/v0.7.36",
-      "creation_time": "2026-11-01T19:39:35Z"
+      "version": "v0.7.49",
+      "gitref": "refs/tags/v0.7.49",
+      "url": "https://github.com/agent-sh/computer-use-linux/releases/tag/v0.7.49",
+      "creation_time": "2026-11-09T21:22:24Z"
     },
     "ctranslate2": {
       "version": "v4.8.5",
@@ -43,10 +43,7 @@
       "creation_time": "2026-03-23T22:32:30Z"
     },
     "ghcup-hs": {
-      "version": "v0.2.6.2",
-      "gitref": "refs/tags/v0.2.6.2",
-      "url": "https://github.com/haskell/ghcup-hs/releases/tag/v0.2.6.2",
-      "creation_time": "2026-06-16T21:05:51Z"
+      "version": "0.2.6.2"
     },
     "gnome-shell-extension-tiling-shell": {
       "version": "18.0",
@@ -55,16 +52,16 @@
       "creation_time": "2026-10-17T11:05:53Z"
     },
     "ida-pro": {
-      "version": "9.4"
+      "version": "9.5"
     },
     "infer-bin": {
       "version": "v1.3.0",
       "gitref": "refs/tags/v1.3.0",
-      "url": "https://github.com/facebook/infer/releases/tag/v1.3.0",
+      "url": "https://github.com/meta/infer/releases/tag/v1.3.0",
       "creation_time": "2026-05-12T15:44:13Z"
     },
     "intel-gmmlib": {
-      "version": "22.10.0"
+      "version": "22.10.2"
     },
     "intel-media-driver": {
       "version": "26.3.5"
@@ -88,11 +85,11 @@
       "creation_time": "2022-03-14T05:38:50Z"
     },
     "maki": {
-      "version": "v0.7.0",
-      "gitref": "refs/tags/v0.7.0",
-      "revision": "85a5ae2786f650da7fba641acf6020895c978de9",
-      "url": "https://github.com/tontinton/maki/releases/tag/v0.7.0",
-      "revision_creation_time": "2026-10-31T11:14:33Z"
+      "version": "v0.7.1",
+      "gitref": "refs/tags/v0.7.1",
+      "revision": "6b1dc8db8b1b121dd24d4b8aaf00cc24ceea9733",
+      "url": "https://github.com/tontinton/maki/releases/tag/v0.7.1",
+      "revision_creation_time": "2026-11-06T22:26:28Z"
     },
     "marksman": {
       "version": "2026-02-08",
@@ -150,24 +147,24 @@
       "url": "https://www.npmjs.com/package/prettier-plugin-java/v/2.11.0"
     },
     "pupdate": {
-      "version": "5.9.0",
-      "gitref": "refs/tags/5.9.0",
-      "url": "https://github.com/mattpannella/pupdate/releases/tag/5.9.0",
-      "creation_time": "2026-10-19T02:21:23Z"
+      "version": "5.9.2",
+      "gitref": "refs/tags/5.9.2",
+      "url": "https://github.com/mattpannella/pupdate/releases/tag/5.9.2",
+      "creation_time": "2026-11-07T04:25:13Z"
     },
     "pvsneslib": {
-      "version": "4.6.0",
-      "gitref": "refs/tags/4.6.0",
-      "revision": "1fab4b2a9d31a265805be58bb45c5a46480ea211",
-      "url": "https://github.com/alekmaul/pvsneslib/releases/tag/4.6.0",
-      "revision_creation_time": "2026-07-28T14:11:45Z"
+      "version": "4.7.0",
+      "gitref": "refs/tags/4.7.0",
+      "revision": "a556c49bdd976cd951a385dd9c80e1b0ad356d6b",
+      "url": "https://github.com/alekmaul/pvsneslib/releases/tag/4.7.0",
+      "revision_creation_time": "2026-11-08T03:31:16Z"
     },
     "rcu-bin": {
       "version": "v4.0.34"
     },
     "retro68": {
-      "version": "2aa5c87e88771c6057f52bf830af9d440a5e4e36",
-      "revision": "2aa5c87e88771c6057f52bf830af9d440a5e4e36"
+      "version": "a4a389c41e90b1095a40ccf13f28678b6cfbba86",
+      "revision": "a4a389c41e90b1095a40ccf13f28678b6cfbba86"
     },
     "ruby-commander": {
       "version": "v6.0.0",
@@ -191,11 +188,11 @@
       "revision_creation_time": "2026-06-27T09:18:35+09:00"
     },
     "ruby-solargraph": {
-      "version": "v0.62.0",
-      "gitref": "refs/tags/v0.62.0",
-      "revision": "c06e240ef2d130776e7ad65c3472c4103af5f8fe",
-      "url": "https://github.com/castwide/solargraph/releases/tag/v0.62.0",
-      "revision_creation_time": "2026-10-30T11:55:57-04:00"
+      "version": "v0.62.1",
+      "gitref": "refs/tags/v0.62.1",
+      "revision": "14fa13a42b1ff1cf747eaa2acea4bdee9f023b8e",
+      "url": "https://github.com/castwide/solargraph/releases/tag/v0.62.1",
+      "revision_creation_time": "2026-11-04T05:14:38-05:00"
     },
     "ruby-sord": {
       "version": "7.1.0",
@@ -231,10 +228,10 @@
       "creation_time": "2025-12-15T21:40:14Z"
     },
     "scheme-langserver": {
-      "version": "2.1.11",
-      "gitref": "refs/tags/2.1.11",
-      "url": "https://github.com/ufo5260987423/scheme-langserver/releases/tag/2.1.11",
-      "creation_time": "2026-10-30T04:15:52Z"
+      "version": "2.2.0",
+      "gitref": "refs/tags/2.2.0",
+      "url": "https://github.com/ufo5260987423/scheme-langserver/releases/tag/2.2.0",
+      "creation_time": "2026-11-06T05:35:34Z"
     },
     "sonarqube-cli": {
       "version": "1.11.0.16877",

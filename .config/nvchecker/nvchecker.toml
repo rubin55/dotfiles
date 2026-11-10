@@ -36,9 +36,11 @@ github = "gemrb/gemrb"
 use_latest_release = "true"
 
 [ghcup-hs]
-source = "github"
-github = "haskell/ghcup-hs"
-use_latest_release = "true"
+source = "cmd"
+cmd = """
+curl -fsSL https://codeberg.org/haskell/ghcup-metadata/raw/branch/develop/ghcup-0.1.0.yaml |
+yq -er '.ghcupDownloads.GHCup.toolVersions | keys | max_by(split(".") | map(tonumber))'
+"""
 
 [gnome-shell-extension-tiling-shell]
 source = "github"
