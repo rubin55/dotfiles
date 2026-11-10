@@ -126,7 +126,6 @@ aliases = ["mimo-v2.6-flash-free"]
 
 [[models]]
 name = "mimo-v2.6-pro"
-aliases = []
 
 [[models]]
 name = "mistral-large-4"
@@ -147,5 +146,7 @@ aliases = ["qwen3.8-27b:free"]
 
 [[models]]
 name = "qwen3.8-max-0902"
-aliases = []
 scores = { artificial-analysis = "qwen3.8-max" }
+
+[[models]]
+name = "tencent/hy4"
