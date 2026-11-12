@@ -25,7 +25,7 @@ balance_path = "https://api.edenai.run/v2/cost_management/credits/"
 
 [[model_providers]]
 name = "hetzner"
-base_url="https://inference.hetzner.com/api/v1"
+base_url="https://inference.hetzner.com/v1"
 auth_keys = ["hetzner", "default-api-token"]
 
 [[model_providers]]
@@ -123,6 +123,10 @@ aliases = ["databricks-grok-4-7", "xai.grok-4.7"]
 [[models]]
 name = "kimi-k3.1-pro"
 aliases = ["databricks-kimi-k3-1-pro", "moonshotai.kimi-k3.1-pro"]
+
+[[models]]
+name = "meituan/longcat-2.5"
+aliases = ["longcat-2.5-free"]
 
 [[models]]
 name = "mimo-v2.6-pro"
