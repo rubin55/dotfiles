@@ -1,4 +1,12 @@
--- System clipboard shortcuts under <Leader>, mirroring Vim's y/p grammar.
+-- Copy relative path of current buffer to system clipboard.
+vim.keymap.set('n', '<Leader>yr', function()
+  local file = vim.api.nvim_buf_get_name(0)
+  if file ~= '' then
+    vim.fn.setreg('+', vim.fn.fnamemodify(file, ':.'))
+  end
+end, { desc = 'Copy relative file path' })
+
+-- System clipboard shortcuts under <Leader>, mirroring Vim's y/p.
 vim.keymap.set({ 'n', 'v' }, '<Leader>y', '"+y',  { desc = 'Yank to system clipboard' })
 vim.keymap.set({ 'n'      }, '<Leader>Y', '"+y$', { desc = 'Yank to end of line to clipboard' })
 vim.keymap.set({ 'n', 'v' }, '<Leader>p', '"+p',  { desc = 'Paste from system clipboard' })
@@ -28,9 +36,13 @@ vim.keymap.set('n', '<Esc>', function()
   end
 end, { desc = 'Close float, clear search highlight', nowait = true })
 
--- Shift-enter in terminal sends newline.
+-- Back to normal mode with <Esc>, shift-enter sends newline.
 vim.api.nvim_create_autocmd('TermOpen', {
   callback = function(ev)
+    vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', {
+      buffer = ev.buf,
+      desc = 'Exit terminal insert or visual mode',
+    })
     vim.keymap.set('t', '<S-CR>', function()
       vim.api.nvim_chan_send(vim.b[ev.buf].terminal_job_id, '\n')
     end, { buffer = ev.buf, desc = 'Send newline to terminal' })
