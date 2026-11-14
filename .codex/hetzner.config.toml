@@ -9,7 +9,7 @@ web_search = "disabled"
 
 [model_providers.hetzner]
 name = "hetzner"
-base_url="https://inference.hetzner.com/api/v1"
+base_url="https://inference.hetzner.com/v1"
 
 [model_providers.hetzner.auth]
 command = "tipi.sh"
