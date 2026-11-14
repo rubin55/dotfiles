@@ -85,11 +85,11 @@
       "creation_time": "2022-03-14T05:38:50Z"
     },
     "maki": {
-      "version": "v0.7.1",
-      "gitref": "refs/tags/v0.7.1",
-      "revision": "6b1dc8db8b1b121dd24d4b8aaf00cc24ceea9733",
-      "url": "https://github.com/tontinton/maki/releases/tag/v0.7.1",
-      "revision_creation_time": "2026-11-06T22:26:28Z"
+      "version": "v0.7.2",
+      "gitref": "refs/tags/v0.7.2",
+      "revision": "339b61a5518ad9d98cc9cba6f3dbf44e48ce93cc",
+      "url": "https://github.com/tontinton/maki/releases/tag/v0.7.2",
+      "revision_creation_time": "2026-11-14T10:41:31Z"
     },
     "marksman": {
       "version": "2026-02-08",
