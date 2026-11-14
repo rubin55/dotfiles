@@ -175,11 +175,11 @@
       "revision_creation_time": "2025-07-07T21:07:13Z"
     },
     "ruby-rubocop-yard": {
-      "version": "1.3.0",
-      "gitref": "refs/tags/v1.3.0",
-      "revision": "2239ff3f04ebffbe4369aab20cc61a1aac9fa0f6",
-      "url": "https://github.com/ksss/rubocop-yard/releases/tag/v1.3.0",
-      "revision_creation_time": "2026-06-27T09:18:35+09:00"
+      "version": "1.4.0",
+      "gitref": "refs/tags/v1.4.0",
+      "revision": "963769cc7f686d94976d9b82db1dce379c93605e",
+      "url": "https://github.com/ksss/rubocop-yard/releases/tag/v1.4.0",
+      "revision_creation_time": "2026-11-14T10:49:53+09:00"
     },
     "ruby-solargraph": {
       "version": "v0.62.1",
