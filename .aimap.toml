@@ -125,10 +125,6 @@ name = "kimi-k3.1-pro"
 aliases = ["databricks-kimi-k3-1-pro", "moonshotai.kimi-k3.1-pro"]
 
 [[models]]
-name = "meituan/longcat-2.5"
-aliases = ["longcat-2.5-free"]
-
-[[models]]
 name = "mimo-v2.6-pro"
 
 [[models]]
