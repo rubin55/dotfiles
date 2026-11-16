@@ -7,10 +7,10 @@
       "revision": "b3956bda93ff3d45b644c7bc6d55e0e01c9b9a74"
     },
     "computer-use-linux": {
-      "version": "v0.7.53",
-      "gitref": "refs/tags/v0.7.53",
-      "url": "https://github.com/agent-sh/computer-use-linux/releases/tag/v0.7.53",
-      "creation_time": "2026-11-12T17:59:12Z"
+      "version": "v0.7.54",
+      "gitref": "refs/tags/v0.7.54",
+      "url": "https://github.com/agent-sh/computer-use-linux/releases/tag/v0.7.54",
+      "creation_time": "2026-11-15T21:23:44Z"
     },
     "ctranslate2": {
       "version": "v4.9.0",
@@ -85,11 +85,11 @@
       "creation_time": "2022-03-14T05:38:50Z"
     },
     "maki": {
-      "version": "v0.7.1",
-      "gitref": "refs/tags/v0.7.1",
-      "revision": "6b1dc8db8b1b121dd24d4b8aaf00cc24ceea9733",
-      "url": "https://github.com/tontinton/maki/releases/tag/v0.7.1",
-      "revision_creation_time": "2026-11-06T22:26:28Z"
+      "version": "v0.7.2",
+      "gitref": "refs/tags/v0.7.2",
+      "revision": "339b61a5518ad9d98cc9cba6f3dbf44e48ce93cc",
+      "url": "https://github.com/tontinton/maki/releases/tag/v0.7.2",
+      "revision_creation_time": "2026-11-14T10:41:31Z"
     },
     "marksman": {
       "version": "2026-02-08",
@@ -143,8 +143,8 @@
       "version": "0.903"
     },
     "prettier-plugin-java": {
-      "version": "2.11.0",
-      "url": "https://www.npmjs.com/package/prettier-plugin-java/v/2.11.0"
+      "version": "2.12.0",
+      "url": "https://www.npmjs.com/package/prettier-plugin-java/v/2.12.0"
     },
     "pupdate": {
       "version": "5.10.1",
@@ -153,11 +153,11 @@
       "creation_time": "2026-11-07T15:40:59Z"
     },
     "pvsneslib": {
-      "version": "4.7.0",
-      "gitref": "refs/tags/4.7.0",
-      "revision": "a556c49bdd976cd951a385dd9c80e1b0ad356d6b",
-      "url": "https://github.com/alekmaul/pvsneslib/releases/tag/4.7.0",
-      "revision_creation_time": "2026-11-08T03:31:16Z"
+      "version": "4.7.1",
+      "gitref": "refs/tags/4.7.1",
+      "revision": "0d68f8e6944167cc8ef3c50a257130ec41ee7ae6",
+      "url": "https://github.com/alekmaul/pvsneslib/releases/tag/4.7.1",
+      "revision_creation_time": "2026-11-15T13:59:46Z"
     },
     "rcu-bin": {
       "version": "v4.0.34"
