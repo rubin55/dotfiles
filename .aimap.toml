@@ -78,7 +78,7 @@ scores = { artificial-analysis = "deepseek-v4-pro" }
 
 [[models]]
 name = "deepseek-v4.1-flash-1017"
-aliases = ["deepseek-v4p1-flash-1017"]
+aliases = ["deepseek-v4p1-flash-1017", "deepseek-v4.1-flash-free"]
 
 [[models]]
 name = "gemini-4-carbon"
@@ -98,15 +98,15 @@ aliases = ["databricks-glm-5-3", "glm-5p3", "zai-glm-5-3"]
 
 [[models]]
 name = "glm-5.3-flash"
-aliases = ["glm-5.3-flash-free", "databricks-glm-5-3-flash", "glm-5p3-flash"]
+aliases = ["databricks-glm-5-3-flash", "glm-5p3-flash", "zai-glm-5-3-flash", "glm-5.3-flash-free"]
 
 [[models]]
-name = "gpt-6-astra"
-aliases = ["databricks-gpt-6-astra", "openai.gpt-6-astra"]
+name = "gpt-6.2-astra"
+aliases = ["databricks-gpt-6.2-astra", "openai.gpt-6.2-astra"]
 
 [[models]]
-name = "gpt-6.1-sol"
-aliases = ["databricks-gpt-6.1-sol", "openai.gpt-6.1-sol"]
+name = "gpt-6.2-sol"
+aliases = ["databricks-gpt-6.2-sol", "openai.gpt-6.2-sol"]
 
 [[models]]
 name = "gpt-6.1-terra"
@@ -145,12 +145,16 @@ name = "muse-spark-1.3"
 aliases = ["muse-spark-1.3-contributor", "muse-spark-1.3-contributor-free"]
 
 [[models]]
-name = "qwen3.8-max-0902"
-scores = { artificial-analysis = "qwen3.8-max" }
+name = "qwen4-max"
 
 [[models]]
 name = "qwen3.8-27b"
 aliases = ["qwen3.8-27b:free"]
 
 [[models]]
-name = "tencent/hy4"
+name = "hy4"
+scores = { artificial-analysis = "tencent-hy4" }
+
+[[models]]
+name = "hy4-flash"
+aliases = ["hy4-flash-free"]
