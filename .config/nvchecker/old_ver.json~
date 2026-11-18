@@ -7,10 +7,7 @@
       "revision": "b3956bda93ff3d45b644c7bc6d55e0e01c9b9a74"
     },
     "computer-use-linux": {
-      "version": "v0.7.54",
-      "gitref": "refs/tags/v0.7.54",
-      "url": "https://github.com/agent-sh/computer-use-linux/releases/tag/v0.7.54",
-      "creation_time": "2026-11-15T21:23:44Z"
+      "version": "v0.7.56"
     },
     "ctranslate2": {
       "version": "v4.9.0",
@@ -31,10 +28,7 @@
       "creation_time": "2026-10-29T09:42:46Z"
     },
     "fsautocomplete": {
-      "version": "v0.86.1",
-      "gitref": "refs/tags/v0.86.1",
-      "url": "https://github.com/ionide/FsAutoComplete/releases/tag/v0.86.1",
-      "creation_time": "2026-10-29T09:49:32Z"
+      "version": "v0.87.0"
     },
     "gemrb": {
       "version": "v0.9.5",
@@ -188,11 +182,7 @@
       "revision_creation_time": "2026-11-14T10:49:53+09:00"
     },
     "ruby-solargraph": {
-      "version": "v0.62.1",
-      "gitref": "refs/tags/v0.62.1",
-      "revision": "14fa13a42b1ff1cf747eaa2acea4bdee9f023b8e",
-      "url": "https://github.com/castwide/solargraph/releases/tag/v0.62.1",
-      "revision_creation_time": "2026-11-04T05:14:38-05:00"
+      "version": "v0.62.2"
     },
     "ruby-sord": {
       "version": "7.1.0",
