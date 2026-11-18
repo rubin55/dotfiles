@@ -166,6 +166,11 @@ x-scheme-handler/figma=figma-linux.desktop
 x-scheme-handler/ircs=chromium.desktop
 x-scheme-handler/irc=chromium.desktop
 inode/directory=org.gnome.Nautilus.desktop
+x-scheme-handler/nxm=amethystmodmanager-nxm.desktop
+x-scheme-handler/ror2mm=amethystmodmanager-ror2mm.desktop
+x-scheme-handler/gale=amethystmodmanager-gale.desktop
+x-scheme-handler/wabbajack=amethystmodmanager-wabbajack.desktop
+x-scheme-handler/modl=amethystmodmanager-modl.desktop
 
 [Added Associations]
 application/epub+zip=com.github.johnfactotum.Foliate.desktop
@@ -289,3 +294,8 @@ text/x-makefile=neovide.desktop;sublime_text.desktop
 text/x-java=neovide.desktop;sublime_text.desktop
 text/x-c++src=neovide.desktop;sublime_text.desktop
 text/vnd.trolltech.linguist=neovide.desktop;sublime_text.desktop
+x-scheme-handler/nxm=amethystmodmanager-nxm.desktop
+x-scheme-handler/ror2mm=amethystmodmanager-ror2mm.desktop
+x-scheme-handler/gale=amethystmodmanager-gale.desktop
+x-scheme-handler/wabbajack=amethystmodmanager-wabbajack.desktop
+x-scheme-handler/modl=amethystmodmanager-modl.desktop
