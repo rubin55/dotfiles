@@ -81,6 +81,10 @@ name = "deepseek-v4.1-flash-1017"
 aliases = ["deepseek-v4p1-flash-1017", "deepseek-v4.1-flash-free"]
 
 [[models]]
+name = "gemini-4-neon"
+aliases = ["databricks-gemini-4-neon"]
+
+[[models]]
 name = "gemini-4-carbon"
 aliases = ["databricks-gemini-4-carbon"]
 
@@ -89,8 +93,8 @@ name = "gemini-4-argon"
 aliases = ["databricks-gemini-4-argon"]
 
 [[models]]
-name = "gemini-3.8-flash"
-aliases = ["databricks-gemini-3-8-flash"]
+name = "gemini-4-hydrogen"
+aliases = ["databricks-gemini-4-hydrogen"]
 
 [[models]]
 name = "glm-5.3"
