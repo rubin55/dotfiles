@@ -97,6 +97,12 @@ source = "github"
 github = "andwn/marsdev"
 use_latest_tag = "true"
 
+[momw-tools-pack-bin]
+source = "gitlab"
+gitlab = "modding-openmw/momw-tools-pack"
+use_max_tag = true
+include_regex = '^[0-9]+\.[0-9]+$'
+
 [moonlight-qt]
 source = "github"
 github = "moonlight-stream/moonlight-qt"

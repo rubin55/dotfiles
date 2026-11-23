@@ -7,16 +7,16 @@
       "revision": "b3956bda93ff3d45b644c7bc6d55e0e01c9b9a74"
     },
     "computer-use-linux": {
-      "version": "v0.7.56",
-      "gitref": "refs/tags/v0.7.56",
-      "url": "https://github.com/agent-sh/computer-use-linux/releases/tag/v0.7.56",
-      "creation_time": "2026-11-17T03:38:19Z"
+      "version": "v0.7.60",
+      "gitref": "refs/tags/v0.7.60",
+      "url": "https://github.com/agent-sh/computer-use-linux/releases/tag/v0.7.60",
+      "creation_time": "2026-11-22T21:04:37Z"
     },
     "ctranslate2": {
-      "version": "v4.9.0",
-      "gitref": "refs/tags/v4.9.0",
-      "url": "https://github.com/OpenNMT/CTranslate2/releases/tag/v4.9.0",
-      "creation_time": "2026-11-10T19:49:16Z"
+      "version": "v4.9.1",
+      "gitref": "refs/tags/v4.9.1",
+      "url": "https://github.com/OpenNMT/CTranslate2/releases/tag/v4.9.1",
+      "creation_time": "2026-11-22T10:06:53Z"
     },
     "ctranslate2-cuda": {
       "version": "v4.8.2",
@@ -85,11 +85,11 @@
       "creation_time": "2022-03-14T05:38:50Z"
     },
     "maki": {
-      "version": "v0.7.2",
-      "gitref": "refs/tags/v0.7.2",
-      "revision": "339b61a5518ad9d98cc9cba6f3dbf44e48ce93cc",
-      "url": "https://github.com/tontinton/maki/releases/tag/v0.7.2",
-      "revision_creation_time": "2026-11-14T10:41:31Z"
+      "version": "v0.7.3",
+      "gitref": "refs/tags/v0.7.3",
+      "revision": "e5ae88506e698bfe08898c62cdae56ac954710a8",
+      "url": "https://github.com/tontinton/maki/releases/tag/v0.7.3",
+      "revision_creation_time": "2026-11-19T22:39:41Z"
     },
     "marksman": {
       "version": "2026-02-08",
@@ -104,6 +104,14 @@
       "revision": "9de7602716e320d3d653712ec60d7b0e1ec22f4e",
       "url": "https://github.com/andwn/marsdev/releases/tag/v1.0.0-rc1",
       "revision_creation_time": "2023-06-11T08:04:30Z"
+    },
+    "momw-tools-pack-bin": {
+      "version": "1.59",
+      "gitref": "refs/tags/1.59",
+      "revision": "fe1ab0468b308b158f03b3d887cf2f6572720f0b",
+      "url": "https://gitlab.com/modding-openmw/momw-tools-pack/-/tags/1.59",
+      "creation_time": "2026-11-11T06:30:58.000Z",
+      "revision_creation_time": "2026-11-10T23:30:58.000-07:00"
     },
     "moonlight-qt": {
       "version": "v6.2.0",
@@ -147,10 +155,10 @@
       "url": "https://www.npmjs.com/package/prettier-plugin-java/v/2.12.0"
     },
     "pupdate": {
-      "version": "5.10.1",
-      "gitref": "refs/tags/5.10.1",
-      "url": "https://github.com/mattpannella/pupdate/releases/tag/5.10.1",
-      "creation_time": "2026-11-07T15:40:59Z"
+      "version": "5.10.2",
+      "gitref": "refs/tags/5.10.2",
+      "url": "https://github.com/mattpannella/pupdate/releases/tag/5.10.2",
+      "creation_time": "2026-11-19T03:10:27Z"
     },
     "pvsneslib": {
       "version": "4.7.1",
