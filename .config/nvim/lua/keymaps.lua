@@ -39,10 +39,12 @@ end, { desc = 'Close float, clear search highlight', nowait = true })
 -- Back to normal mode with <Esc>, shift-enter sends newline.
 vim.api.nvim_create_autocmd('TermOpen', {
   callback = function(ev)
-    vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', {
-      buffer = ev.buf,
-      desc = 'Exit terminal insert or visual mode',
-    })
+    if vim.bo[ev.buf].filetype ~= 'fzf' then
+      vim.keymap.set('t', '<Esc>', '<C-\\><C-n>', {
+        buffer = ev.buf,
+        desc = 'Exit terminal insert or visual mode',
+      })
+    end
     vim.keymap.set('t', '<S-CR>', function()
       vim.api.nvim_chan_send(vim.b[ev.buf].terminal_job_id, '\n')
     end, { buffer = ev.buf, desc = 'Send newline to terminal' })
