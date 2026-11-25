@@ -2,7 +2,7 @@ return {
   settings = {
     java = {
       autobuild = { enabled = false },
-      settings = { url = '/home/rubin/.config/jdtls/settings.prefs' },
+      settings = { url = vim.fn.expand('~/.config/jdtls/settings.prefs') },
       configuration = {
         runtimes = {
           { name = 'JavaSE-25', path = '/usr/lib/jvm/java-25-openjdk', default = true },
