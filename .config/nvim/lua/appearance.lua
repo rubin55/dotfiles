@@ -112,17 +112,12 @@ if vim.g.neovide then
   vim.g.neovide_position_animation_length = 0
   vim.g.neovide_text_contrast = 0.1
   vim.g.neovide_text_gamma = 0.8
-  vim.api.nvim_create_autocmd('UIEnter', {
-    callback = function()
-      vim.defer_fn(apply_theme, 10)
-    end
-  })
   vim.keymap.set('n', '<F11>', function()
     vim.g.neovide_fullscreen = not vim.g.neovide_fullscreen
   end, { desc = 'Toggle neovide fullscreen' })
-else
-  vim.api.nvim_create_autocmd('VimEnter', {
-    nested = true,
-    callback = apply_theme
-  })
 end
+
+vim.api.nvim_create_autocmd('VimEnter', {
+  nested = true,
+  callback = apply_theme
+})
