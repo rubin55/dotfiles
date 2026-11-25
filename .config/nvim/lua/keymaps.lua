@@ -29,7 +29,9 @@ vim.keymap.set('n', '<Esc>', function()
   vim.cmd('nohlsearch')
   local wins = vim.list_extend({ vim.api.nvim_get_current_win() }, vim.api.nvim_list_wins())
   for _, win in ipairs(wins) do
-    if vim.api.nvim_win_get_config(win).relative ~= '' then
+    -- Skip unfocusable floats, such as fidget notifications.
+    local cfg = vim.api.nvim_win_get_config(win)
+    if cfg.relative ~= '' and cfg.focusable ~= false then
       vim.api.nvim_win_close(win, false)
       return
     end
