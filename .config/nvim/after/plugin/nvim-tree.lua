@@ -64,6 +64,23 @@ vim.api.nvim_create_autocmd('WinResized', {
   end,
 })
 
+-- Close the explorer on :q of the last other window, so nvim quits.
+vim.api.nvim_create_autocmd('QuitPre', {
+  callback = function()
+    local api = require('nvim-tree.api')
+    local tree = api.tree.winid()
+    local cur = vim.api.nvim_get_current_win()
+    if not tree or tree == cur then return end
+    for _, w in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
+      if w ~= tree and w ~= cur
+         and vim.api.nvim_win_get_config(w).relative == '' then
+        return
+      end
+    end
+    api.tree.close()
+  end,
+})
+
 -- Snapshot the non-tree windows' widths in the current tab, keyed by winid.
 local function snapshot_widths(tree_win)
   local snap = {}
