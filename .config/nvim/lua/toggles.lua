@@ -1,19 +1,20 @@
--- Toggle gutter function.
+-- Toggle gutter function, for the current window.
 local function toggle_gutter()
-  if not vim.o.number then
-    vim.o.number = true
-    vim.o.relativenumber = false
-    vim.o.signcolumn = 'number'
+  local wo = vim.wo
+  if not wo.number then
+    wo.number = true
+    wo.relativenumber = false
+    wo.signcolumn = 'number'
     vim.notify('gutter: absolute')
-  elseif not vim.o.relativenumber then
-    vim.o.number = true
-    vim.o.relativenumber = true
-    vim.o.signcolumn = 'number'
+  elseif not wo.relativenumber then
+    wo.number = true
+    wo.relativenumber = true
+    wo.signcolumn = 'number'
     vim.notify('gutter: relative')
   else
-    vim.o.number = false
-    vim.o.relativenumber = false
-    vim.o.signcolumn = 'yes'
+    wo.number = false
+    wo.relativenumber = false
+    wo.signcolumn = 'yes'
     vim.notify('gutter: off')
   end
 end
@@ -21,24 +22,19 @@ end
 -- Set toggle gutter key.
 vim.keymap.set('n', '<Leader>tg', toggle_gutter, { desc = 'Toggle gutter' })
 
--- Which ruler stop is active; persists across calls.
-local tr_idx = 1
-
--- Toggle ruler function.
+-- Toggle ruler function, for the current window.
 local function toggle_ruler()
-  local tr_cols = { false, 72, 80, 120, 132 }
-  tr_idx = tr_idx % #tr_cols + 1
+  local stops = { 72, 80, 120, 132 }
 
-  -- Colorcolumn shades text and empty cells alike, up to 256 columns past c.
-  local c = tr_cols[tr_idx]
-  local value = c and table.concat(vim.fn.range(c + 1, c + 256), ',') or ''
-
-  -- Set every window plus the default inherited by new ones.
-  vim.api.nvim_set_option_value('colorcolumn', value, { scope = 'global' })
-  for _, win in ipairs(vim.api.nvim_list_wins()) do
-    vim.api.nvim_set_option_value('colorcolumn', value, { win = win })
+  -- Current ruler: the first colorcolumn entry minus one, else off.
+  local cur = (tonumber(vim.wo.colorcolumn:match('^%d+')) or 0) - 1
+  local c = stops[1]
+  for i, s in ipairs(stops) do
+    if s == cur then c = stops[i + 1] end
   end
 
+  -- Colorcolumn shades text and empty cells alike, up to 256 columns past c.
+  vim.wo.colorcolumn = c and table.concat(vim.fn.range(c + 1, c + 256), ',') or ''
   vim.notify('ruler: ' .. (c and tostring(c) or 'off'))
 end
 
