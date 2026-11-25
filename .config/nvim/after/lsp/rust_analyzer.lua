@@ -2,7 +2,7 @@ return {
   settings = {
     ['rust-analyzer'] = {
       cargo = {
-        features = "all",
+        features = 'all',
       },
       check = {
         command = 'clippy',
@@ -13,7 +13,7 @@ return {
         },
       },
       diagnostics = {
-        disabled = { "unlinked-file" },
+        disabled = { 'unlinked-file' },
       },
       hover = {
         maxSubstitutionLength = nil,

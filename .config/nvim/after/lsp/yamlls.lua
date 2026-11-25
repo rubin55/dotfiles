@@ -2,7 +2,7 @@ return {
   settings = {
     yaml = {
       customTags = {
-        "!reference sequence",
+        '!reference sequence',
       },
     },
   },

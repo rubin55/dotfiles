@@ -1,5 +1,5 @@
 vim.filetype.add({
   filename = {
-    [".bash_functions"] = "bash",
+    ['.bash_functions'] = 'bash',
   },
 })
