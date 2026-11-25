@@ -22,7 +22,7 @@
     },
     "gitsigns.nvim": {
       "rev": "ea38d317af34f8ffcfbaf0f0dcc1471736661a4c",
-      "src": "https://github.com/lewis6991/gitsigns.nvim.git"
+      "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
     "haunt.nvim": {
       "rev": "a614d90be50b49dfe18aac2f3c2394c69feefd01",

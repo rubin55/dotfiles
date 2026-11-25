@@ -12,7 +12,7 @@ vim.pack.add({
   { name = 'everforest.nvim', src = 'https://github.com/neanias/everforest-nvim' },
   { name = 'fidget.nvim', src = 'https://github.com/j-hui/fidget.nvim' },
   { name = 'fzf-lua', src = 'https://github.com/ibhagwan/fzf-lua' },
-  { name = 'gitsigns.nvim', src = 'https://github.com/lewis6991/gitsigns.nvim.git' },
+  { name = 'gitsigns.nvim', src = 'https://github.com/lewis6991/gitsigns.nvim' },
   { name = 'haunt.nvim', src = 'https://github.com/TheNoeTrevino/haunt.nvim' },
   { name = 'lualine.nvim', src = 'https://github.com/nvim-lualine/lualine.nvim' },
   { name = 'nightfox.nvim', src = 'https://github.com/EdenEast/nightfox.nvim' },
