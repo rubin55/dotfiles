@@ -24,7 +24,7 @@ vim.o.wrap = true
 -- Set number defaults.
 vim.o.number = true
 vim.o.relativenumber = false
-vim.o.signcolumn = 'yes'
+vim.o.signcolumn = 'number'
 
 -- Disable unused providers.
 vim.g.loaded_node_provider = 0
