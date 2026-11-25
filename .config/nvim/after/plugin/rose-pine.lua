@@ -18,7 +18,7 @@ require('rose-pine').setup({
 
 -- Cursor line overrides for rose-pine-dawn only.
 vim.api.nvim_create_autocmd('ColorScheme', {
-  pattern = 'rose-pine',
+  pattern = 'rose-pine*',
   callback = function()
     if vim.g.colors_name == 'rose-pine' and vim.o.background == 'light' then
       local palette = require('rose-pine.palette')
