@@ -37,7 +37,7 @@ require('gitsigns').setup({
     map('v', '<Leader>hr', function() gs.reset_hunk({ vim.fn.line('.'), vim.fn.line('v') }) end, { desc = 'Git reset hunk (visual)' })
     map('n', '<Leader>hS', gs.stage_buffer, { desc = 'Git stage buffer' })
     map('n', '<Leader>hR', gs.reset_buffer, { desc = 'Git reset buffer' })
-    map('n', '<Leader>hp', gs.preview_hunk, { desc = 'Git review hunk' })
+    map('n', '<Leader>hp', gs.preview_hunk, { desc = 'Git preview hunk' })
     map('n', '<Leader>hi', gs.preview_hunk_inline, { desc = 'Git preview hunk inline' })
     map('n', '<Leader>hb', function() gs.blame_line({ full = true }) end, { desc = 'Git blame line' })
     map('n', '<Leader>hd', gs.diffthis, { desc = 'Git diff' })
