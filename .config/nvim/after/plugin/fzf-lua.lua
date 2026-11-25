@@ -63,7 +63,7 @@ fzf.setup({
     },
   },
   winopts = {
-    split = 'belowright new'
+    split = 'botright new'
   }
 })
 
