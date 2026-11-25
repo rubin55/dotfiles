@@ -1,7 +1,7 @@
 -- Custom fill characters. Can also be '╱', '─' and '│'.
 vim.opt.fillchars:append { diff = '╱', horiz = '█', vert = '█' }
 
--- Enable highlighted of line where cursor is.
+-- Disable highlight of the line where the cursor is.
 vim.o.cursorline = false
 
 -- Use block cursor always.

@@ -18,7 +18,7 @@ vim.o.wildignorecase = true
 -- Enable linebreak on words.
 vim.o.linebreak = true
 
--- Disable word wrap.
+-- Enable word wrap.
 vim.o.wrap = true
 
 -- Set number defaults.
