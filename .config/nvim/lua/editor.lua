@@ -1,5 +1,5 @@
 -- Remove the how-to-disable menu item.
-vim.cmd([[unmenu PopUp.How-to\ disable\ mouse]])
+vim.cmd([[silent! aunmenu PopUp.How-to\ disable\ mouse]])
 
 -- Preserve window proportions.
 vim.o.equalalways = false
