@@ -13,7 +13,7 @@ vim.o.guifont = 'Monospace:h11.2:#e-subpixelantialias:#h-none'
 -- Configure window border.
 vim.o.winborder = 'solid'
 
--- Background light/dark based on DBUS inspection.
+-- Background light/dark based on DBUS inspection. True if it was set.
 local function set_bg_from_dbus()
   if vim.fn.executable('dbus-send') == 0 then return end
 
@@ -45,7 +45,10 @@ local function set_bg_from_dbus()
     vim.o.background = 'dark'
   elseif val == '0' or val == '2' then
     vim.o.background = 'light'
+  else
+    return false
   end
+  return true
 end
 
 local function set_theme_from_bg()
@@ -96,8 +99,10 @@ vim.api.nvim_create_autocmd('OptionSet', {
 -- after/plugin/ file, so the theme plugins are set up whatever order they
 -- loaded in. Nested, or :colorscheme would not fire the ColorScheme event.
 local function apply_theme()
-  set_bg_from_dbus()
-  set_theme_from_bg()
+  -- Setting background fires OptionSet, which already sets the theme.
+  if not set_bg_from_dbus() then
+    set_theme_from_bg()
+  end
 end
 
 -- Neovide settings.
