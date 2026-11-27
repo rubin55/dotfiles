@@ -161,11 +161,11 @@
       "creation_time": "2026-11-19T03:10:27Z"
     },
     "pvsneslib": {
-      "version": "4.7.1",
-      "gitref": "refs/tags/4.7.1",
-      "revision": "0d68f8e6944167cc8ef3c50a257130ec41ee7ae6",
-      "url": "https://github.com/alekmaul/pvsneslib/releases/tag/4.7.1",
-      "revision_creation_time": "2026-11-15T13:59:46Z"
+      "version": "4.8.0",
+      "gitref": "refs/tags/4.8.0",
+      "revision": "55a2ca825de361cbbc2c949c38329da7053fcba9",
+      "url": "https://github.com/alekmaul/pvsneslib/releases/tag/4.8.0",
+      "revision_creation_time": "2026-11-26T05:06:55Z"
     },
     "rcu-bin": {
       "version": "v4.0.34"
@@ -242,10 +242,10 @@
       "creation_time": "2026-11-06T05:35:34Z"
     },
     "sonarqube-cli": {
-      "version": "1.12.0.17622",
-      "gitref": "refs/tags/1.12.0.17622",
-      "url": "https://github.com/SonarSource/sonarqube-cli/releases/tag/1.12.0.17622",
-      "creation_time": "2026-11-11T09:47:46Z"
+      "version": "1.13.1.18209",
+      "gitref": "refs/tags/1.13.1.18209",
+      "url": "https://github.com/SonarSource/sonarqube-cli/releases/tag/1.13.1.18209",
+      "creation_time": "2026-11-24T17:18:40Z"
     },
     "svelte-language-server": {
       "version": "svelte-language-server@0.18.6",
